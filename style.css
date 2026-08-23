@@ -1117,3 +1117,568 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; }
     }
 
 }
+
+/* =========================================================
+   SUPPORT THE PROJECT — FULL RESPONSIVE DESIGN
+========================================================= */
+
+/* MAIN SUPPORT SECTION */
+
+.support-section {
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.support-container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .support-section {
+        padding: 70px 20px;
+    }
+
+    .support-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 45px 35px;
+    }
+
+    .support-icon {
+        width: 105px;
+        min-width: 105px;
+        height: 105px;
+        margin: 0 auto;
+    }
+
+    .support-content {
+        width: 100%;
+    }
+
+    .support-content h2 {
+        font-size: 38px;
+    }
+
+    .support-intro {
+        font-size: 17px;
+    }
+
+    .support-features {
+        justify-content: center;
+    }
+
+    .support-btn {
+        margin: 0 auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .support-section {
+        width: 100%;
+        min-height: auto;
+
+        padding: 55px 12px;
+
+        box-sizing: border-box;
+    }
+
+    .support-container {
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+
+        padding: 32px 18px;
+
+        gap: 25px;
+
+        border-radius: 24px;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* ICON */
+
+    .support-icon {
+
+        width: 85px;
+        min-width: 85px;
+
+        height: 85px;
+
+        font-size: 38px;
+
+        border-radius: 25px;
+
+        margin: 0 auto;
+    }
+
+
+    /* CONTENT */
+
+    .support-content {
+
+        width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+    .support-label {
+
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 8px;
+    }
+
+    .support-content h2 {
+
+        font-size: 30px;
+
+        line-height: 1.15;
+
+        margin-bottom: 15px;
+    }
+
+    .support-content p {
+
+        font-size: 14px;
+
+        line-height: 1.65;
+
+        margin-bottom: 18px;
+    }
+
+    .support-intro {
+
+        font-size: 16px !important;
+
+        line-height: 1.55 !important;
+    }
+
+
+    /* FEATURES */
+
+    .support-features {
+
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+
+        margin: 20px 0 25px;
+    }
+
+    .support-feature {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 11px 13px;
+
+        border-radius: 13px;
+
+        text-align: left;
+    }
+
+
+    /* SUPPORT BUTTON */
+
+    .support-btn {
+
+        width: 100%;
+
+        min-height: 52px;
+
+        padding: 14px 18px;
+
+        justify-content: center;
+
+        text-align: center;
+
+        font-size: 14px;
+
+        border-radius: 14px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* NOTE */
+
+    .support-note {
+
+        font-size: 11px !important;
+
+        line-height: 1.5 !important;
+
+        margin-top: 12px !important;
+    }
+}
+
+
+/* =========================================================
+   SUPPORT MODAL — MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .support-modal {
+
+        position: fixed;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 10px;
+
+        display: none;
+
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+
+        overflow-y: auto;
+    }
+
+    .support-modal.active {
+
+        display: flex;
+    }
+
+
+    .support-modal-box {
+
+        width: 100%;
+
+        max-width: 420px;
+
+        max-height: calc(100vh - 20px);
+
+        margin: auto;
+
+        padding: 28px 18px;
+
+        box-sizing: border-box;
+
+        border-radius: 22px;
+
+        overflow-y: auto;
+
+        overflow-x: hidden;
+    }
+
+
+    /* CLOSE BUTTON */
+
+    .close-support {
+
+        top: 10px;
+        right: 10px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 23px;
+
+        z-index: 5;
+    }
+
+
+    /* MODAL ICON */
+
+    .modal-heart {
+
+        font-size: 40px;
+
+        margin-bottom: 5px;
+    }
+
+
+    /* MODAL TITLE */
+
+    .support-modal-box h3 {
+
+        width: 100%;
+
+        font-size: 23px;
+
+        line-height: 1.25;
+
+        margin: 0 auto 12px;
+
+        padding: 0 20px;
+
+        box-sizing: border-box;
+    }
+
+
+    /* MODAL DESCRIPTION */
+
+    .support-modal-box > p {
+
+        font-size: 14px;
+
+        line-height: 1.6;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* =====================================================
+       QR CONTAINER
+    ===================================================== */
+
+    .qr-container {
+
+        width: 100%;
+
+        max-width: 300px;
+
+        margin: 0 auto 18px;
+
+        padding: 14px;
+
+        box-sizing: border-box;
+
+        border-radius: 18px;
+    }
+
+
+    /* QR IMAGE */
+
+    .support-qr {
+
+        display: block;
+
+        width: 100%;
+
+        max-width: 260px;
+
+        height: auto;
+
+        margin: 0 auto 12px;
+
+        object-fit: contain;
+    }
+
+
+    /* QR TEXT */
+
+    .qr-instruction {
+
+        width: 100%;
+
+        font-size: 12px !important;
+
+        line-height: 1.5 !important;
+
+        text-align: center;
+
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       TRANSPARENCY BOX
+    ===================================================== */
+
+    .transparency-box {
+
+        width: 100%;
+
+        box-sizing: border-box;
+
+        padding: 13px;
+
+        border-radius: 13px;
+
+        text-align: left;
+    }
+
+    .transparency-box strong {
+
+        font-size: 12px;
+    }
+
+    .transparency-box p {
+
+        font-size: 10px !important;
+
+        line-height: 1.55 !important;
+
+        margin: 5px 0 0 !important;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES — 380px AND BELOW
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .support-section {
+
+        padding: 40px 8px;
+    }
+
+    .support-container {
+
+        padding: 28px 14px;
+
+        border-radius: 20px;
+    }
+
+
+    .support-icon {
+
+        width: 75px;
+        min-width: 75px;
+
+        height: 75px;
+
+        font-size: 32px;
+
+        border-radius: 22px;
+    }
+
+
+    .support-content h2 {
+
+        font-size: 26px;
+    }
+
+    .support-intro {
+
+        font-size: 15px !important;
+    }
+
+    .support-content p {
+
+        font-size: 13px;
+    }
+
+
+    /* MODAL */
+
+    .support-modal {
+
+        padding: 7px;
+    }
+
+    .support-modal-box {
+
+        max-height: calc(100vh - 14px);
+
+        padding: 25px 13px;
+
+        border-radius: 19px;
+    }
+
+    .support-modal-box h3 {
+
+        font-size: 20px;
+
+        padding: 0 15px;
+    }
+
+
+    /* QR */
+
+    .qr-container {
+
+        max-width: 270px;
+
+        padding: 12px;
+    }
+
+    .support-qr {
+
+        max-width: 235px;
+    }
+
+    .qr-instruction {
+
+        font-size: 11px !important;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES — 320px AND BELOW
+========================================================= */
+
+@media (max-width: 320px) {
+
+    .support-section {
+
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .support-container {
+
+        padding: 24px 12px;
+    }
+
+    .support-content h2 {
+
+        font-size: 23px;
+    }
+
+    .support-btn {
+
+        font-size: 13px;
+
+        padding: 13px 10px;
+    }
+
+    .support-modal-box {
+
+        padding: 22px 10px;
+    }
+
+    .qr-container {
+
+        max-width: 245px;
+
+        padding: 10px;
+    }
+
+    .support-qr {
+
+        max-width: 215px;
+    }
+}
