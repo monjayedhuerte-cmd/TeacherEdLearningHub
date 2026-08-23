@@ -14,7 +14,7 @@
     "subject": "Mathematics",
     "grade": "Grade 2",
     "description": "Learn to estimate the sum of 3-6 digits number.",
-    "file": "http://127.0.0.1:5500/lessons/mathematics/grade-2/math2-estimating-sum/estimating_sum_grade2.html",
+    "file": "lessons/mathematics/grade-2/math2-estimating-sum/estimating_sum_grade2.html",
     "date": "2026-08-24",
     "featured": true,
     "icon": "calculator"
@@ -34,7 +34,7 @@
     "subject": "ESP",
     "grade": "Grade 2",
     "description": "Isang interactive classroom lesson para matutuhan ng mga bata ang magagalang na salita at kilos—sa pamamagitan ng laro, sitwasyon, pagsagot, role-play, at pagtataya.",
-    "file": "http://127.0.0.1:5500/lessons/esp/grade-2/Ako_Ay_Magalang_ESP2_Interactive_Website/Ako_Ay_Magalang_ESP2_Interactive.html",
+    "file": "lessons/esp/grade-2/Ako_Ay_Magalang_ESP2_Interactive_Website/Ako_Ay_Magalang_ESP2_Interactive.html",
     "date": "2026-08-25",
     "featured": false,
     "icon": "heart-handshake"
@@ -104,7 +104,7 @@
     "subject": "Filipino",
     "grade": "Grade 3",
     "description": "Paggawa ng Mabuti sa Kumunidad.",
-    "file": "http://127.0.0.1:5500/lessons/filipino/grade-3/MabutingGawa/Filipino3_Mabutinggawa.html",
+    "file": "lessons/filipino/grade-3/MabutingGawa/Filipino3_Mabutinggawa.html",
     "featured": false,
     "icon": "book-open"
   }
