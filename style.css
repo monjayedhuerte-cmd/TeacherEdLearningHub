@@ -357,3 +357,763 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; }
     font-weight: 600;
     color: #315bea;
 }
+
+/* =========================================
+   SUPPORT THE LEARNING HUB
+========================================= */
+
+.support-section {
+    position: relative;
+    padding: 100px 20px;
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #eef5ff
+    );
+    overflow: hidden;
+}
+
+.support-section::before {
+    content: "";
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background: rgba(37, 99, 235, 0.08);
+    top: -150px;
+    right: -100px;
+}
+
+.support-section::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: rgba(59, 130, 246, 0.06);
+    bottom: -120px;
+    left: -80px;
+}
+
+.support-container {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1050px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    gap: 60px;
+
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.8);
+
+    border-radius: 30px;
+
+    padding: 55px;
+
+    box-shadow:
+        0 20px 60px rgba(15, 23, 42, 0.10);
+}
+
+
+/* ICON */
+
+.support-icon {
+    min-width: 130px;
+    height: 130px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 55px;
+
+    border-radius: 35px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #3b82f6
+    );
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.25);
+
+    animation: supportFloat 3s ease-in-out infinite;
+}
+
+
+/* CONTENT */
+
+.support-content {
+    flex: 1;
+}
+
+.support-label {
+    display: inline-block;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #2563eb;
+
+    margin-bottom: 10px;
+}
+
+.support-content h2 {
+    margin: 0 0 15px;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    color: #0f172a;
+
+    line-height: 1.1;
+}
+
+.support-intro {
+    font-size: 19px;
+    font-weight: 600;
+
+    color: #334155;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px;
+}
+
+.support-content p {
+    color: #64748b;
+
+    line-height: 1.7;
+
+    margin-bottom: 25px;
+}
+
+
+/* FEATURES */
+
+.support-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin: 25px 0 30px;
+}
+
+.support-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #f8fafc;
+
+    padding: 12px 15px;
+
+    border-radius: 15px;
+
+    border: 1px solid #e2e8f0;
+}
+
+.support-feature > span {
+    font-size: 22px;
+}
+
+.support-feature strong {
+    display: block;
+
+    color: #1e293b;
+
+    font-size: 14px;
+}
+
+.support-feature small {
+    color: #64748b;
+
+    font-size: 11px;
+}
+
+
+/* BUTTON */
+
+.support-btn {
+    border: none;
+
+    padding: 16px 26px;
+
+    border-radius: 15px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+
+    transition: all 0.3s ease;
+}
+
+.support-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(37, 99, 235, 0.35);
+}
+
+.support-btn:active {
+    transform: scale(0.97);
+}
+
+
+/* NOTE */
+
+.support-note {
+    margin-top: 15px !important;
+
+    font-size: 12px !important;
+
+    color: #64748b !important;
+}
+
+
+/* =========================================
+   SUPPORT MODAL
+========================================= */
+
+.support-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15, 23, 42, 0.65);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 9999;
+}
+
+.support-modal.active {
+    display: flex;
+
+    animation: modalFade 0.3s ease;
+}
+
+.support-modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 480px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    padding: 40px;
+
+    text-align: center;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,0.25);
+
+    animation: modalSlide 0.35s ease;
+}
+
+.close-support {
+    position: absolute;
+
+    top: 15px;
+    right: 18px;
+
+    width: 35px;
+    height: 35px;
+
+    border: none;
+
+    background: #f1f5f9;
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #475569;
+}
+
+.modal-heart {
+    font-size: 50px;
+
+    margin-bottom: 10px;
+}
+
+.support-modal-box h3 {
+    color: #0f172a;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.support-modal-box > p {
+    color: #64748b;
+
+    line-height: 1.6;
+
+    margin-bottom: 25px;
+}
+
+
+/* PAYMENT OPTIONS */
+
+.support-options {
+    display: grid;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    width: 100%;
+
+    border: 1px solid #e2e8f0;
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.payment-option:hover {
+    background: #eff6ff;
+
+    border-color: #93c5fd;
+
+    transform: translateY(-2px);
+}
+
+.payment-option > span {
+    font-size: 28px;
+}
+
+.payment-option strong {
+    display: block;
+
+    color: #1e293b;
+
+    font-size: 15px;
+}
+
+.payment-option small {
+    color: #64748b;
+
+    font-size: 12px;
+}
+
+
+/* TRANSPARENCY */
+
+.transparency-box {
+    background: #f8fafc;
+
+    border-radius: 15px;
+
+    padding: 15px;
+
+    text-align: left;
+}
+
+.transparency-box strong {
+    color: #334155;
+
+    font-size: 13px;
+}
+
+.transparency-box p {
+    margin: 6px 0 0;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #64748b;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes supportFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes modalFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlide {
+
+    from {
+        transform: translateY(30px) scale(0.95);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .support-section {
+        padding: 70px 15px;
+    }
+
+    .support-container {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 35px 25px;
+
+        gap: 30px;
+    }
+
+    .support-icon {
+        min-width: 100px;
+        width: 100px;
+        height: 100px;
+
+        font-size: 42px;
+    }
+
+    .support-features {
+        justify-content: center;
+    }
+
+    .support-btn {
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .support-modal-box {
+        padding: 35px 22px;
+    }
+
+}
+
+.qr-container {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.support-qr {
+    display: block;
+    width: min(280px, 100%);
+    height: auto;
+    margin: 0 auto 15px;
+    border-radius: 12px;
+}
+
+.qr-instruction {
+    margin: 0 !important;
+    color: #475569 !important;
+    font-size: 13px !important;
+}
+
+/* =========================================
+   RESPONSIVE SUPPORT QR
+========================================= */
+
+.qr-container {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 20px;
+
+    padding: 20px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 20px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+.support-qr {
+    display: block;
+
+    width: min(280px, 100%);
+    max-width: 100%;
+    height: auto;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+
+    margin: 0 auto 15px;
+
+    border-radius: 12px;
+
+    /* Prevents the QR from becoming blurry */
+    image-rendering: auto;
+}
+
+.qr-instruction {
+    margin: 0 !important;
+
+    color: #475569 !important;
+
+    font-size: 13px !important;
+
+    line-height: 1.5 !important;
+}
+
+
+/* =========================================
+   MOBILE QR
+========================================= */
+
+@media (max-width: 600px) {
+
+    .support-modal {
+        padding: 12px;
+    }
+
+    .support-modal-box {
+        width: 100%;
+        max-width: 420px;
+
+        max-height: 92vh;
+
+        overflow-y: auto;
+
+        padding: 30px 18px;
+
+        border-radius: 22px;
+    }
+
+    .qr-container {
+        width: 100%;
+
+        max-width: 300px;
+
+        padding: 15px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        border-radius: 18px;
+    }
+
+    .support-qr {
+        width: min(250px, 100%);
+
+        margin-bottom: 12px;
+    }
+
+    .qr-instruction {
+        font-size: 12px !important;
+    }
+
+}
+
+
+/* =========================================
+   VERY SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+
+    .support-modal {
+        padding: 8px;
+    }
+
+    .support-modal-box {
+        padding: 25px 14px;
+
+        border-radius: 18px;
+    }
+
+    .qr-container {
+        max-width: 260px;
+
+        padding: 12px;
+    }
+
+    .support-qr {
+        width: min(220px, 100%);
+    }
+
+    .modal-heart {
+        font-size: 40px;
+    }
+
+    .support-modal-box h3 {
+        font-size: 21px;
+    }
+
+}
+
+.qr-container {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto 20px;
+    padding: 20px;
+
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* QR CROPPING WINDOW */
+.qr-crop {
+    width: 250px;
+    height: 250px;
+
+    margin: 0 auto 18px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    position: relative;
+
+    background: white;
+}
+
+/* ENLARGE THE ORIGINAL GCASH IMAGE */
+.support-qr {
+    position: absolute;
+
+    width: 620px;
+    max-width: none;
+
+    height: auto;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+/* TEXT */
+
+.qr-instruction {
+    margin: 0 !important;
+
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+
+    color: #475569 !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .qr-container {
+        max-width: 310px;
+        padding: 15px;
+    }
+
+    .qr-crop {
+        width: 230px;
+        height: 230px;
+    }
+
+    .support-qr {
+        width: 570px;
+    }
+
+}
+
+
+/* SMALL PHONES */
+
+@media (max-width: 380px) {
+
+    .qr-container {
+        max-width: 280px;
+    }
+
+    .qr-crop {
+        width: 210px;
+        height: 210px;
+    }
+
+    .support-qr {
+        width: 520px;
+    }
+
+}

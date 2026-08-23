@@ -300,3 +300,50 @@ document.addEventListener("DOMContentLoaded", () => {
   loadLessons();
   refreshIcons();
 });
+
+/* =========================================
+   SUPPORT MODAL
+========================================= */
+
+function openSupportModal() {
+
+    const modal = document.getElementById("supportModal");
+
+    modal.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeSupportModal() {
+
+    const modal = document.getElementById("supportModal");
+
+    modal.classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+/* Close when clicking outside */
+
+document.addEventListener("click", function(event) {
+
+    const modal = document.getElementById("supportModal");
+
+    if (event.target === modal) {
+        closeSupportModal();
+    }
+
+});
+
+
+/* Close with ESC */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+        closeSupportModal();
+    }
+
+});
