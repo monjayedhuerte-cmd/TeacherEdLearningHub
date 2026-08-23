@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Filipino 3 | Community Hero Interactive Lesson</title>
+<style>
+:root{
+ --navy:#16324a;--blue:#347fa5;--sky:#eaf7fb;--gold:#f6c453;--green:#42966c;
+ --cream:#fffaf0;--ink:#203747;--muted:#71828c;--white:#fff;--line:#dfe9ed;
+ --shadow:0 18px 45px rgba(22,50,74,.13);--radius:28px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:#f4f8fa;color:var(--ink);line-height:1.6}
+button,textarea{font:inherit}
+.topbar{
+ position:sticky;top:0;z-index:30;height:72px;background:rgba(255,255,255,.94);
+ backdrop-filter:blur(14px);border-bottom:1px solid var(--line);
+ display:flex;align-items:center;justify-content:space-between;padding:0 30px;
+}
+.brand{display:flex;align-items:center;gap:12px}.logo{width:45px;height:45px;border-radius:14px;background:var(--gold);display:grid;place-items:center;font-weight:900;color:var(--navy)}
+.brand strong{display:block;color:var(--navy)}.brand small{color:var(--muted)}
+.progress-wrap{display:flex;align-items:center;gap:10px;width:min(330px,42vw)}.progress{height:9px;background:#e7eef1;border-radius:20px;overflow:hidden;flex:1}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--green));transition:.45s}.percent{font-weight:800;font-size:12px;color:var(--navy)}
+.lesson{min-height:calc(100vh - 72px);display:flex;flex-direction:column}
+.slide{display:none;min-height:calc(100vh - 150px);padding:38px clamp(18px,5vw,70px) 28px;animation:fade .5s ease}
+.slide.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.hero{min-height:calc(100vh - 150px);display:grid;place-items:center;text-align:center;background:
+ radial-gradient(circle at 15% 15%,#f6c45333 0 90px,transparent 91px),
+ radial-gradient(circle at 85% 25%,#42966c22 0 120px,transparent 121px)}
+.hero-card{max-width:980px;margin:auto;background:linear-gradient(135deg,#17364f,#347fa5);color:#fff;padding:55px 35px;border-radius:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-card:after{content:"";position:absolute;width:250px;height:250px;border-radius:50%;right:-90px;top:-100px;background:#ffffff10}
+.kicker{font-size:12px;letter-spacing:2px;font-weight:900;color:#ffdc7a;text-transform:uppercase}
+h1{font-size:clamp(34px,5vw,64px);line-height:1.04;margin:12px 0}
+.hero-card p{max-width:760px;margin:0 auto 25px;color:#e6f3f7;font-size:18px}
+.emoji{font-size:72px;letter-spacing:5px;margin-bottom:5px}
+.btn{border:0;border-radius:15px;padding:13px 20px;font-weight:900;cursor:pointer;background:var(--blue);color:#fff;box-shadow:0 6px 0 #24647f;transition:.15s}
+.btn:hover{transform:translateY(-2px)}.btn:active{transform:translateY(3px);box-shadow:none}
+.btn.gold{background:var(--gold);color:var(--navy);box-shadow:0 6px 0 #d29d28}.btn.green{background:var(--green);box-shadow:0 6px 0 #2e7653}.btn.light{background:#edf3f5;color:var(--navy);box-shadow:none}
+.btnrow{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+.title{text-align:center;max-width:850px;margin:0 auto 22px}.title .number{font-size:12px;font-weight:900;letter-spacing:1.5px;color:var(--blue);text-transform:uppercase}.title h2{font-size:clamp(28px,4vw,44px);line-height:1.12;margin:5px 0}.title p{color:var(--muted);margin:0}
+.card{max-width:1050px;margin:18px auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:25px;box-shadow:var(--shadow)}
+.motivation{background:linear-gradient(135deg,#fff8e4,#eff9f3)}
+.big-question{text-align:center;padding:24px}.big-question .scene{font-size:76px}.big-question h3{font-size:29px;line-height:1.25;margin:8px 0}
+.image-box{width:100%;background:#f7fafb;border-radius:22px;border:2px dashed #b9cbd3;padding:10px;text-align:center;color:var(--muted)}
+.image-box img{width:100%;height:auto;display:block;border-radius:17px;object-fit:contain}
+.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.choice{border:2px solid var(--line);background:#fff;border-radius:20px;padding:20px 12px;cursor:pointer;text-align:center;transition:.2s}
+.choice:hover{transform:translateY(-4px);border-color:#83bed3}.choice.selected{border-color:var(--green);background:#eef9f2}.choice.wrong{border-color:#d77a72;background:#fff0ef}.choice .icon{font-size:45px}.choice strong{display:block;font-size:17px}
+.feedback{min-height:30px;text-align:center;font-weight:900;margin:13px 0;color:var(--green)}
+.instruction{background:var(--sky);border-left:5px solid var(--blue);padding:13px 16px;border-radius:13px;margin:14px 0}
+.word-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.word{border:2px solid var(--line);border-radius:18px;padding:18px;text-align:center;cursor:pointer;background:#fff}.word:hover,.word.selected{background:#eef9f2;border-color:var(--green)}.word b{font-size:20px}.word small{display:block;color:var(--muted)}
+.info{display:none;margin-top:14px;background:#fff9dd;border:1px solid #f0d98a;padding:15px;border-radius:15px}
+.quiz{display:grid;gap:9px}.option{border:2px solid var(--line);background:#fff;padding:13px 15px;border-radius:14px;text-align:left;cursor:pointer}.option.correct{background:#ebf8ef;border-color:#4fa978}.option.wrong{background:#fff0ef;border-color:#d57971}
+.story{background:#fffdf7}.story-scene{display:none}.story-scene.active{display:block}.story-scene h3{font-size:26px;margin:5px 0}.story-text{font-size:17px;max-width:850px;margin:auto}.story-number{font-size:12px;color:var(--blue);font-weight:900;text-transform:uppercase}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}.box{background:#f8fafb;border:1px solid var(--line);border-radius:18px;padding:18px}
+.sequence{display:grid;gap:9px}.seq{display:flex;align-items:center;gap:12px;padding:13px;border:2px solid var(--line);border-radius:15px}.num{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font-weight:900;flex:none}
+.summary{background:linear-gradient(135deg,#eaf8f0,#fdf8e7);text-align:center}.summary .formula{font-size:25px;font-weight:900;color:var(--navy)}
+textarea{width:100%;min-height:125px;border:1px solid var(--line);border-radius:15px;padding:14px;resize:vertical}
+.rewards{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.reward{padding:10px 14px;border-radius:13px;background:#eef2f4;color:#8b979e;font-size:13px;font-weight:800}.reward.on{background:#fff0b9;color:#76550b}
+.bottom{
+ position:sticky;bottom:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+ border-top:1px solid var(--line);padding:12px 30px;display:flex;align-items:center;justify-content:space-between;gap:12px
+}
+.step{font-size:12px;color:var(--muted);font-weight:800}.navbtns{display:flex;gap:8px}
+.spark{position:fixed;pointer-events:none;font-size:24px;animation:float 1.3s ease-out forwards;z-index:100}
+@keyframes float{0%{transform:translateY(0) scale(.6);opacity:0}20%{opacity:1}100%{transform:translateY(-120px) scale(1.2);opacity:0}}
+.footer{text-align:center;color:var(--muted);font-size:11px;padding:14px}
+
+.image-controls{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:10px}
+.image-controls .img-btn{border:1px solid #d7e3e8;background:#fff;color:#16324a;border-radius:11px;padding:8px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.image-controls .img-btn:hover{background:#eef8fb}
+.image-controls .img-btn.remove{color:#a44d46}
+.custom-image{display:none}
+.image-box.has-image{border-style:solid;border-color:#b9d4dd}
+
+@media(max-width:800px){.topbar{padding:0 15px}.brand small{display:none}.progress-wrap{width:180px}.slide{padding:25px 15px}.choice-grid,.word-grid,.two{grid-template-columns:1fr}.hero-card{padding:40px 20px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><div class="logo">F3</div><div><strong>Filipino 3 • Community Hero</strong><small>Teacher Ed • Interactive Instructional Material</small></div></div>
+ <div class="progress-wrap"><div class="progress"><i id="bar"></i></div><span class="percent" id="pct">0%</span></div>
+</header>
+
+<main class="lesson">
+
+<section class="slide active hero" data-title="Simula">
+ <div class="hero-card">
+  <div class="emoji">🌱 🧒 🏘️</div><div class="kicker">Filipino 3 • Learning Mission</div>
+  <h1>Ang Mabuting Gawa ay Simula ng Pagbabago sa Komunidad</h1>
+  <p>Ngayong araw, hindi lang tayo manonood. Tayo ay <strong>mag-iisip, pipili, makikinig, magpapaliwanag, at kikilos.</strong></p>
+  <div class="btnrow"><button class="btn gold" onclick="nextSlide()">START MISSION 🚀</button></div>
+ </div>
+</section>
+
+<section class="slide" data-title="Motivation">
+ <div class="title"><div class="number">Mission 1 • Motivation</div><h2>🌱 May Problema sa Komunidad!</h2><p>Observe first. Huwag munang sabihin ang sagot.</p></div>
+ <div class="card motivation">
+  <div class="image-box" id="imageBoxMotivation">
+   <img id="imgMotivation" class="custom-image" alt="Larawan ng komunidad na nangangailangan ng tulong">
+   <div id="placeholderMotivation" style="padding:35px 10px;font-size:55px">🗑️🏘️😟<p><strong>Motivation Image</strong><br><small>Mag-upload ng larawan para sa sitwasyong tatalakayin.</small></p></div>
+   <input id="fileMotivation" type="file" accept="image/*" hidden onchange="loadImage(this,'imgMotivation','placeholderMotivation','imageBoxMotivation','motivation')">
+   <div class="image-controls">
+    <button class="img-btn" onclick="document.getElementById('fileMotivation').click()">📷 Change Image</button>
+    <button class="img-btn remove" onclick="removeImage('imgMotivation','placeholderMotivation','imageBoxMotivation','motivation')">🗑️ Remove</button>
+   </div>
+  </div>
+  <div class="big-question"><div class="scene">🗑️ 😟 🏘️</div><h3>Kung ikaw ang narito, ano ang gagawin mo?</h3><p>“Bago tayo pumili, tingnan muna nang mabuti ang sitwasyon.”</p></div>
+  <div class="choice-grid">
+   <button class="choice" onclick="choose(this,true,'motFb')"><div class="icon">🧹</div><strong>Maglilinis at tutulong</strong></button>
+   <button class="choice" onclick="choose(this,false,'motFb')"><div class="icon">🚶</div><strong>Aalis na lang</strong></button>
+   <button class="choice" onclick="choose(this,false,'motFb')"><div class="icon">👀</div><strong>Hahayaan ko</strong></button>
+  </div>
+  <div id="motFb" class="feedback"></div>
+  <div class="instruction"><strong>👩‍🏫 Teacher Move:</strong> Tawagin ang 3–5 mag-aaral. “Bakit iyon ang pinili mo?” Huwag agad magbigay ng final answer.</div>
+ </div>
+</section>
+
+<section class="slide" data-title="Word Adventure">
+ <div class="title"><div class="number">Mission 2 • Paglinang ng Talasalitaan</div><h2>🔤 Word Adventure</h2><p>I-discover ang mga salitang kailangan natin sa aralin.</p></div>
+ <div class="card">
+  <div class="word-grid">
+   <div class="word" onclick="word(this,'Pangkat ng mga taong naninirahan at nagtutulungan sa isang lugar.')"><b>komunidad</b><small>🌱 Word Seed</small></div>
+   <div class="word" onclick="word(this,'Kilos na nakabubuti o nakatutulong sa kapwa.')"><b>mabuting gawa</b><small>❤️ Word Seed</small></div>
+   <div class="word" onclick="word(this,'Pag-unlad o paglipat tungo sa ibang kalagayan.')"><b>pagbabago</b><small>🌳 Word Seed</small></div>
+   <div class="word" onclick="word(this,'Sama-samang pagkilos upang makamit ang isang layunin.')"><b>pagtutulungan</b><small>🤝 Word Seed</small></div>
+  </div>
+  <div id="wordInfo" class="info"></div>
+ </div>
+ <div class="card"><h3>🎯 Context Challenge</h3><p>Nagtulungan ang mga bata upang linisin ang kanilang ______.</p>
+  <div class="quiz">
+   <button class="option" onclick="quiz(this,true,'wordFb')">komunidad</button>
+   <button class="option" onclick="quiz(this,false,'wordFb')">lapis</button>
+   <button class="option" onclick="quiz(this,false,'wordFb')">sapatos</button>
+  </div><div id="wordFb" class="feedback"></div>
+  <div class="instruction"><strong>Class Call:</strong> Bago i-click, lahat ay bumuo muna ng sagot. Pagkatapos ay pumili ng isang mag-aaral na magpapaliwanag.</div>
+ </div>
+</section>
+
+<section class="slide" data-title="Pang-ukol">
+ <div class="title"><div class="number">Mission 3 • Gramatika</div><h2>🕵️ Pang-ukol Quest</h2><p>Hanapin ang salitang nag-uugnay sa pangungusap.</p></div>
+ <div class="card"><div class="two">
+  <div class="box">🌳 Naglinis si Lina <strong>sa</strong> parke.</div>
+  <div class="box">🎁 Ang proyekto ay <strong>para sa</strong> mga bata.</div>
+  <div class="box">📖 <strong>Ayon sa</strong> kuwento, tumulong si Lina.</div>
+  <div class="box">👩 Nagbigay siya ng pagkain <strong>kay</strong> Ana.</div>
+ </div><div class="instruction">💡 Ang <strong>pang-ukol</strong> ay salitang pangkayarian na nag-uugnay sa pangngalan o panghalip sa ibang salita.</div></div>
+ <div class="card"><h3>🎯 Your Turn</h3><p>Ang mga bata ay nagbigay ng pagkain ______ matatanda.</p>
+  <div class="quiz">
+   <button class="option" onclick="quiz(this,false,'gramFb')">kay</button>
+   <button class="option" onclick="quiz(this,true,'gramFb')">para sa</button>
+   <button class="option" onclick="quiz(this,false,'gramFb')">mula</button>
+  </div><div id="gramFb" class="feedback"></div>
+  <div class="instruction"><strong>👩‍🏫 Teacher Move:</strong> Tawagin ang isang bata para ipaliwanag kung bakit “para sa” ang sagot.</div>
+ </div>
+</section>
+
+<section class="slide" data-title="Story">
+ <div class="title"><div class="number">Mission 4 • Pag-unawa sa Teksto</div><h2>📖 Story Mode</h2><p>Makinig, magbasa, humula, at magbigay ng ebidensiya.</p></div>
+ <div class="card story">
+  <div class="image-box" id="imageBoxStory">
+   <img id="imgStory" class="custom-image" alt="Si Lina at ang Malinis na Kalsada">
+   <div id="placeholderStory" style="padding:35px 10px;font-size:55px">🧒🧹🏘️<p><strong>Story Image</strong><br><small>Mag-upload ng larawan ng kuwento.</small></p></div>
+   <input id="fileStory" type="file" accept="image/*" hidden onchange="loadImage(this,'imgStory','placeholderStory','imageBoxStory','story')">
+   <div class="image-controls">
+    <button class="img-btn" onclick="document.getElementById('fileStory').click()">📷 Change Image</button>
+    <button class="img-btn remove" onclick="removeImage('imgStory','placeholderStory','imageBoxStory','story')">🗑️ Remove</button>
+   </div>
+  </div>
+  <div id="story1" class="story-scene active">
+   <div class="story-number">Scene 1 of 4</div><h3>🗑️ Isang Umaga...</h3>
+   <div class="story-text"><p>Napansin ni <strong>Lina</strong> na maraming kalat sa kalsada malapit sa kanilang tahanan. Naisip niyang hindi ito magandang tingnan at maaaring pagmulan ng sakit.</p></div>
+   <div class="instruction"><strong>PREDICT:</strong> Ano kaya ang gagawin ni Lina? Magpa-sagot muna sa klase bago pindutin ang button.</div>
+   <div class="btnrow"><button class="btn gold" onclick="story(2)">Reveal Scene 2 →</button></div>
+  </div>
+  <div id="story2" class="story-scene">
+   <div class="story-number">Scene 2 of 4</div><h3>🧹 Nagsimula si Lina</h3>
+   <div class="story-text"><p>Kumuha siya ng walis at sako. Nagsimula siyang mamulot ng mga kalat. Nakita siya ng kaniyang mga kaibigan at tinanong kung bakit siya naglilinis.</p></div>
+   <div class="instruction"><strong>PREDICT:</strong> Ano kaya ang gagawin ng kaniyang mga kaibigan?</div>
+   <div class="btnrow"><button class="btn gold" onclick="story(3)">Reveal Scene 3 →</button></div>
+  </div>
+  <div id="story3" class="story-scene">
+   <div class="story-number">Scene 3 of 4</div><h3>🤝 Isang Mabuting Halimbawa</h3>
+   <div class="story-text"><p>Ipinaliwanag ni Lina na ang <strong>mabuting gawa ay maaaring maging simula ng pagbabago</strong>. Dahil dito, tumulong ang kaniyang mga kaibigan. Maya-maya, sumama rin ang ilang kapitbahay.</p></div>
+   <div class="instruction"><strong>THINK:</strong> Anong katangian ni Lina ang makikita rito? Magpa-raise hand bago magpatuloy.</div>
+   <div class="btnrow"><button class="btn gold" onclick="story(4)">Reveal Scene 4 →</button></div>
+  </div>
+  <div id="story4" class="story-scene">
+   <div class="story-number">Scene 4 of 4</div><h3>🌳 Nagbago ang Komunidad</h3>
+   <div class="story-text"><p>Sa huli, naging malinis ang kanilang kalsada. Natuwa ang buong komunidad at nangako silang pananatilihing malinis ang kanilang paligid.</p></div>
+   <div class="summary"><div class="formula">🌱 Maliit na kabutihan → 🤝 Pagtutulungan → 🌳 Pagbabago</div></div>
+   <div class="btnrow"><button class="btn green" onclick="completeStep();nextSlide()">Continue →</button></div>
+  </div>
+ </div>
+ <div class="instruction"><strong>👩‍🏫 Teacher Move:</strong> Basahin o ipabasa ang bawat scene. Tawagin ang iba't ibang mag-aaral para sa prediction. Huwag paulit-ulit ang parehong bata.</div>
+ </div>
+</section>
+
+<section class="slide" data-title="Character">
+ <div class="title"><div class="number">Mission 5 • Pagsusuri ng Tauhan</div><h2>🔎 Character Detective</h2><p>Hindi sapat ang sagot. Kailangan may ebidensiya mula sa kuwento.</p></div>
+ <div class="card">
+  <div class="big-question"><div class="scene">🧒🕵️</div><h3>Anong katangian ni Lina?</h3><p>Piliin ang sinusuportahan ng kuwento.</p></div>
+  <div class="choice-grid">
+   <button class="choice" onclick="choose(this,true,'charFb')"><div class="icon">💪</div><strong>Masipag</strong></button>
+   <button class="choice" onclick="choose(this,true,'charFb')"><div class="icon">🤝</div><strong>Matulungin</strong></button>
+   <button class="choice" onclick="choose(this,false,'charFb')"><div class="icon">😴</div><strong>Tamad</strong></button>
+  </div><div id="charFb" class="feedback"></div>
+  <div class="instruction"><strong>Evidence Sentence:</strong> “Nasabi ko ito dahil __________.” Tawagin ang dalawang mag-aaral na magbibigay ng ebidensiya.</div>
+ </div>
+</section>
+
+<section class="slide" data-title="Sequence">
+ <div class="title"><div class="number">Mission 6 • Pagkakasunod-sunod</div><h2>🔢 Ayusin ang Kuwento</h2><p>May anim na mahahalagang pangyayari. Sabay-sabay nating suriin.</p></div>
+ <div class="card">
+  <div class="sequence">
+   <div class="seq"><div class="num">1</div> Nakita ni Lina ang maraming kalat.</div>
+   <div class="seq"><div class="num">2</div> Kumuha siya ng walis at sako.</div>
+   <div class="seq"><div class="num">3</div> Nakita siya ng kaniyang mga kaibigan.</div>
+   <div class="seq"><div class="num">4</div> Tumulong ang kaniyang mga kaibigan.</div>
+   <div class="seq"><div class="num">5</div> Naging malinis ang kanilang kalsada.</div>
+   <div class="seq"><div class="num">6</div> Nangako ang komunidad na panatilihing malinis ang paligid.</div>
+  </div>
+  <div class="instruction">👩‍🏫 Bago ipakita ang sequence, ipabigay sa mga bata ang sagot sa pamamagitan ng daliri: 1, 2, 3, 4, 5, 6.</div>
+  <div class="btnrow"><button class="btn gold" onclick="showSeq()">Reveal & Discuss ✨</button></div>
+  <div id="seqFb" class="feedback"></div>
+ </div>
+</section>
+
+<section class="slide" data-title="Cause Effect">
+ <div class="title"><div class="number">Mission 7 • Sanhi at Bunga</div><h2>🌿 Cause & Effect</h2><p>Alamin: Ano ang dahilan? Ano ang naging resulta?</p></div>
+ <div class="card summary"><div class="formula">🗑️ Sanhi → 🧹 Gawa → 🤝 Pagtutulungan → 🌳 Bunga</div><p>Maraming kalat → Naglinis si Lina → Sumunod ang iba → Naging malinis ang komunidad.</p></div>
+ <div class="card"><h3>🎯 Challenge</h3><p>Kung maraming tao ang gagawa ng mabuti, ano ang maaaring maging bunga?</p>
+  <div class="choice-grid">
+   <button class="choice" onclick="choose(this,true,'causeFb')"><div class="icon">🏘️</div><strong>Mas maayos na komunidad</strong></button>
+   <button class="choice" onclick="choose(this,false,'causeFb')"><div class="icon">🗑️</div><strong>Mas maraming kalat</strong></button>
+   <button class="choice" onclick="choose(this,false,'causeFb')"><div class="icon">😡</div><strong>Mas maraming away</strong></button>
+  </div><div id="causeFb" class="feedback"></div>
+ </div>
+</section>
+
+<section class="slide" data-title="Pagbubuod">
+ <div class="title"><div class="number">Mission 8 • Pagbubuod</div><h2>💡 Buoin ang Kuwento</h2><p>Gamitin ang mahahalagang ideya para makabuo ng buod.</p></div>
+ <div class="card summary">
+  <div class="formula">Tauhan + Suliranin + Mahahalagang Pangyayari + Bunga + Aral</div>
+  <p>Si Lina ay __________. Napansin niya ang __________. Dahil dito, __________. Sumunod ang __________. Sa huli, __________. Natutuhan natin na __________.</p>
+ </div>
+ <div class="card">
+  <h3>🎤 Whole-Class Summary</h3>
+  <div class="instruction">Tawagin ang anim na mag-aaral. Bawat isa ay bubuo ng isang bahagi ng buod. Ang buong klase ang tutulong kung may kailangang ayusin.</div>
+  <div class="btnrow"><button class="btn green" onclick="completeStep();nextSlide()">We Built the Summary →</button></div>
+ </div>
+</section>
+
+<section class="slide" data-title="Final Challenge">
+ <div class="title"><div class="number">Mission 9 • Pagtataya</div><h2>🏆 Community Hero Challenge</h2><p>Subukan natin kung gaano kalalim ang iyong pag-unawa.</p></div>
+ <div class="card"><h3>⭐ Challenge 1</h3><p>Alin ang pang-ukol?</p><div class="quiz"><button class="option" onclick="final(this,true)">para sa</button><button class="option" onclick="final(this,false)">mabuti</button></div></div>
+ <div class="card"><h3>⭐ Challenge 2</h3><p>Sino ang pangunahing tauhan?</p><div class="quiz"><button class="option" onclick="final(this,true)">Lina</button><button class="option" onclick="final(this,false)">Ang tindera</button></div></div>
+ <div class="card"><h3>⭐ Challenge 3</h3><p>Ano ang pangunahing mensahe?</p><div class="quiz"><button class="option" onclick="final(this,true)">Ang maliit na mabuting gawa ay maaaring maging simula ng malaking pagbabago.</button><button class="option" onclick="final(this,false)">Hindi mahalaga ang pagtutulungan.</button></div></div>
+ <div class="card"><h3>⭐ Challenge 4</h3><p>Ano ang bunga ng pagtutulungan?</p><div class="quiz"><button class="option" onclick="final(this,true)">Naging malinis ang kanilang kalsada.</button><button class="option" onclick="final(this,false)">Lalong dumami ang kalat.</button></div></div>
+ <div class="card summary"><h3>🏅 Class Progress</h3><div class="rewards"><span id="r1" class="reward">🌱 Seed</span><span id="r2" class="reward">🌿 Helper</span><span id="r3" class="reward">🌳 Changemaker</span><span id="r4" class="reward">🏆 Community Hero</span></div><div id="finalFb" class="feedback"></div></div>
+</section>
+
+<section class="slide" data-title="Application">
+ <div class="title"><div class="number">Mission 10 • Paglalapat</div><h2>❤️ Ako ang Simula</h2><p>Ang tunay na pagtatapos ng aralin ay isang mabuting gawa.</p></div>
+ <div class="card">
+  <div class="big-question"><div class="scene">🙋‍♀️ 🌱 🙋‍♂️</div><h3>Anong mabuting gawa ang kaya mong gawin ngayong araw?</h3></div>
+  <div class="choice-grid">
+   <button class="choice" onclick="choose(this,true,'applyFb')"><div class="icon">🏫</div><strong>Sa Paaralan</strong></button>
+   <button class="choice" onclick="choose(this,true,'applyFb')"><div class="icon">🏠</div><strong>Sa Bahay</strong></button>
+   <button class="choice" onclick="choose(this,true,'applyFb')"><div class="icon">🏘️</div><strong>Sa Komunidad</strong></button>
+  </div><div id="applyFb" class="feedback"></div>
+ </div>
+ <div class="card"><h3>📝 My Community Hero Promise</h3><p>Tapusin ang pangungusap:</p><p><strong>“Magsisimula ako sa isang mabuting gawa dahil __________.”</strong></p>
+  <textarea placeholder="Isulat o ihanda ang iyong sagot para maibahagi sa klase."></textarea>
+  <div class="btnrow"><button class="btn green" onclick="missionComplete()">I Accept the Mission 🌱</button></div>
+ </div>
+</section>
+
+<section class="slide" data-title="End">
+ <div class="hero" style="min-height:auto">
+  <div class="hero-card"><div class="emoji">🌱🌳🏆</div><div class="kicker">Mission Complete</div><h1>Ikaw ang Simula!</h1><p>Ang mabuting gawa ay maaaring maliit, ngunit maaari itong makahikayat ng iba at maging simula ng malaking pagbabago.</p><div class="btnrow"><button class="btn gold" onclick="goTo(0)">↺ Start Again</button></div></div>
+ </div>
+</section>
+
+</main>
+
+<div class="bottom">
+ <div class="step" id="stepText">Step 1 of 12 • Simula</div>
+ <div class="navbtns"><button class="btn light" id="back" onclick="prevSlide()">← Balik</button><button class="btn" id="next" onclick="nextSlide()">Susunod →</button></div>
+</div>
+<div class="footer">Filipino 3 • Teacher-Guided Student-Centered Interactive IM • Teacher Ed • Agosto 21, 2026</div>
+
+<script>
+let current=0, points=0, finalScore=0, answeredFinal=0;
+const slides=[...document.querySelectorAll('.slide')];
+
+function goTo(i){
+ current=Math.max(0,Math.min(slides.length-1,i));
+ slides.forEach((s,n)=>s.classList.toggle('active',n===current));
+ updateNav();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function nextSlide(){if(current<slides.length-1){current++;goTo(current);addSparkles();}}
+function prevSlide(){if(current>0){current--;goTo(current);}}
+
+function loadImage(input,imgId,placeholderId,boxId,key){
+ const file=input.files && input.files[0];
+ if(!file)return;
+ if(!file.type.startsWith('image/')){alert('Pumili lamang ng image file.');return;}
+ const reader=new FileReader();
+ reader.onload=e=>{
+  const data=e.target.result;
+  document.getElementById(imgId).src=data;
+  document.getElementById(imgId).style.display='block';
+  document.getElementById(placeholderId).style.display='none';
+  document.getElementById(boxId).classList.add('has-image');
+  try{localStorage.setItem('fil3_'+key,data)}catch(err){}
+  addSparkles(5);
+ };
+ reader.readAsDataURL(file);
+}
+function removeImage(imgId,placeholderId,boxId,key){
+ document.getElementById(imgId).src='';
+ document.getElementById(imgId).style.display='none';
+ document.getElementById(placeholderId).style.display='block';
+ document.getElementById(boxId).classList.remove('has-image');
+ localStorage.removeItem('fil3_'+key);
+}
+function restoreImages(){
+ [['imgMotivation','placeholderMotivation','imageBoxMotivation','motivation'],
+  ['imgStory','placeholderStory','imageBoxStory','story']].forEach(a=>{
+   const data=localStorage.getItem('fil3_'+a[3]);
+   if(data){
+    document.getElementById(a[0]).src=data;
+    document.getElementById(a[0]).style.display='block';
+    document.getElementById(a[1]).style.display='none';
+    document.getElementById(a[2]).classList.add('has-image');
+   }
+  });
+}
+
+function updateNav(){
+ let p=Math.round((current/(slides.length-1))*100);
+ document.getElementById('bar').style.width=p+'%';document.getElementById('pct').textContent=p+'%';
+ document.getElementById('stepText').textContent=`Step ${current+1} of ${slides.length} • ${slides[current].dataset.title}`;
+ document.getElementById('back').disabled=current===0;document.getElementById('next').textContent=current===slides.length-1?'Tapos':'Susunod →';
+ document.getElementById('back').style.opacity=current===0?.45:1;
+}
+function completeStep(){points++;updateRewards();}
+function updateRewards(){
+ let levels=[0,3,6,9];
+ ['r1','r2','r3','r4'].forEach((id,i)=>{if(points>=levels[i])document.getElementById(id)?.classList.add('on')});
+}
+function choose(el,good,target){
+ el.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected','wrong'));
+ el.classList.add(good?'selected':'wrong');
+ const f=document.getElementById(target);
+ f.textContent=good?'🌟 Mahusay! Ngayon, ipaliwanag kung bakit iyon ang pinili mo.':'💡 Pag-isipan muli. Aling kilos ang tunay na makatutulong sa iba?';
+ if(good){points++;updateRewards();addSparkles();}
+}
+function word(el,msg){
+ document.querySelectorAll('.word').forEach(w=>w.classList.remove('selected'));el.classList.add('selected');
+ const info=document.getElementById('wordInfo');info.style.display='block';info.innerHTML='💬 <strong>Kahulugan:</strong> '+msg;
+}
+function quiz(el,good,target){
+ el.parentElement.querySelectorAll('.option').forEach(x=>x.classList.remove('correct','wrong'));
+ el.classList.add(good?'correct':'wrong');
+ const f=document.getElementById(target);f.textContent=good?'✅ Tama! Ipaliwanag ang sagot sa klase.':'💡 Balikan ang pangungusap at gamitin ang konteksto.';
+ if(good){points++;updateRewards();addSparkles();}
+}
+function story(n){
+ document.querySelectorAll('.story-scene').forEach(s=>s.classList.remove('active'));
+ document.getElementById('story'+n).classList.add('active');
+ if(n===4){points++;updateRewards();addSparkles();}
+}
+function showSeq(){
+ document.getElementById('seqFb').textContent='🎉 1 → 2 → 3 → 4 → 5 → 6. Ngayon, ipaliwanag sa klase kung bakit mahalaga ang bawat pangyayari.';
+ points++;updateRewards();addSparkles();
+}
+function final(el,good){
+ if(el.dataset.done)return;el.dataset.done='1';el.classList.add(good?'correct':'wrong');answeredFinal++;
+ if(good){finalScore++;points++;updateRewards();addSparkles();}
+ document.getElementById('finalFb').textContent=`⭐ Nakakuha ka ng ${finalScore} tamang sagot sa ngayon.`;
+}
+function missionComplete(){
+ points=10;updateRewards();addSparkles(16);
+ setTimeout(()=>nextSlide(),500);
+}
+function addSparkles(count=8){
+ for(let i=0;i<count;i++){
+  const s=document.createElement('div');s.className='spark';s.textContent=['✨','🌱','⭐','💚','🎉'][Math.floor(Math.random()*5)];
+  s.style.left=(35+Math.random()*30)+'vw';s.style.top=(45+Math.random()*20)+'vh';
+  document.body.appendChild(s);setTimeout(()=>s.remove(),1300);
+ }
+}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextSlide();if(e.key==='ArrowLeft')prevSlide();});
+updateNav();
+restoreImages();
+</script>
+</body>
+</html>

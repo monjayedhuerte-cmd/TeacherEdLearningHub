@@ -1,0 +1,10 @@
+{
+  "title": "Existing GitHub Pages Lesson",
+  "subject": "Mathematics",
+  "grade": "Grade 3",
+  "description": "An interactive lesson hosted in another GitHub repository.",
+  "file": "https://yourname.github.io/my-existing-lesson/",
+  "date": "2026-08-24",
+  "featured": false,
+  "icon": "external-link"
+}

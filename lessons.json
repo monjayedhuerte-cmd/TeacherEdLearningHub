@@ -1,0 +1,111 @@
+[
+  {
+    "title": "Roman Numerals",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "Learn to read and write Roman numerals through interactive activities.",
+    "file": "https://monjayedhuerte-cmd.github.io/romannumeralsMath2/",
+    "date": "2026-08-18",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
+    "title": "Estimating Sum",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "Learn to estimate the sum of 3-6 digits number.",
+    "file": "http://127.0.0.1:5500/lessons/mathematics/grade-2/math2-estimating-sum/estimating_sum_grade2.html",
+    "date": "2026-08-24",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
+    "title": "Kagandahang Loob",
+    "subject": "ESP",
+    "grade": "Grade 2",
+    "description": "Discover how good deeds can create positive changes in the community.",
+    "file": "https://monjayedhuerte-cmd.github.io/kagandahangloobESP2/",
+    "date": "2026-08-18",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
+    "title": "Ako ay Magalang",
+    "subject": "ESP",
+    "grade": "Grade 2",
+    "description": "Isang interactive classroom lesson para matutuhan ng mga bata ang magagalang na salita at kilos—sa pamamagitan ng laro, sitwasyon, pagsagot, role-play, at pagtataya.",
+    "file": "http://127.0.0.1:5500/lessons/esp/grade-2/Ako_Ay_Magalang_ESP2_Interactive_Website/Ako_Ay_Magalang_ESP2_Interactive.html",
+    "date": "2026-08-25",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
+    "title": "Wikang Pambansa, Pahalagahan Natin",
+    "subject": "Filipino",
+    "grade": "Grade 3",
+    "description": "Isang interactive na paglalakbay kung saan ikaw ang tagapagtuklas ng mga salita, ideya, at impormasyong mahalaga sa ating bansa.",
+    "file": "https://monjayedhuerte-cmd.github.io/wikangpambansaFilipino3/",
+    "date": "2026-08-18",
+    "featured": false,
+    "icon": "languages"
+  },
+  {
+    "title": "Starting Up the Computer",
+    "subject": "Computer",
+    "grade": "Grade 2",
+    "description": "Discover what happens inside a computer when you press the power button, restart, log in, and shut down.",
+    "file": "https://monjayedhuerte-cmd.github.io/Computer2Lesson7/",
+    "date": "2026-08-20",
+    "featured": false,
+    "icon": "monitor"
+  },
+  {
+    "title": "Become an Output Explorer!",
+    "subject": "Computer",
+    "grade": "Grade 2",
+    "description": "Your mission is to discover how a computer shows, prints, and plays the information it processes.",
+    "file": "https://monjayedhuerte-cmd.github.io/OutputdevicesexplorerComputer2/",
+    "date": "2026-08-20",
+    "featured": false,
+    "icon": "monitor"
+  },
+  {
+    "title": "The Tongue & Sense of Taste",
+    "subject": "Science",
+    "grade": "Grade 1",
+    "description": "Your tongue is hiding a tiny world of taste. Explore, discover, and become a Taste Detective.",
+    "file": "https://monjayedhuerte-cmd.github.io/science1/",
+    "date": "2026-08-19",
+    "featured": false,
+    "icon": "tongue"
+  },
+  {
+    "title": "Ang Kasaysayan ng Ating Pamayanan",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 3",
+    "description": "Explore the history and important stories of our community.",
+    "file": "https://monjayedhuerte-cmd.github.io/angkasaysayanngatingpamayananAP3/",
+    "date": "2026-08-18",
+    "featured": false,
+    "icon": "map"
+  },
+  {
+    "title": "Ang Kasaysayan ng Ating Pamayanan",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 1",
+    "description": "Tuklasin kung bakit natatangi ang bawat tao, alamin ang kahulugan ng indibidwal at indibidwalidad, at bumuo ng sarili mong timeline ng buhay.",
+    "file": "https://monjayedhuerte-cmd.github.io/angakingkwentoAP1/",
+    "date": "2026-08-18",
+    "featured": false,
+    "icon": "map"
+  },
+  {
+    "title": "Mabuting Gawa",
+    "subject": "Filipino",
+    "grade": "Grade 3",
+    "description": "Paggawa ng Mabuti sa Kumunidad.",
+    "file": "http://127.0.0.1:5500/lessons/filipino/grade-3/MabutingGawa/Filipino3_Mabutinggawa.html",
+    "featured": false,
+    "icon": "book-open"
+  }
+]

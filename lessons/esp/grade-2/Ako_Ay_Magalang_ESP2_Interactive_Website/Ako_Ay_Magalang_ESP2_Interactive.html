@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ako ay Magalang | Edukasyon sa Pagpapakatao 2</title>
+<style>
+:root{
+  --navy:#17324d; --blue:#2d6cdf; --sky:#eef6ff; --gold:#f4b942;
+  --orange:#ef8b43; --green:#36a269; --red:#df5b5b; --ink:#243447;
+  --white:#fff; --muted:#6d7b89; --shadow:0 12px 30px rgba(23,50,77,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f9fc;color:var(--ink)}
+button{font:inherit;cursor:pointer}
+.app{min-height:100vh}
+header{
+ position:sticky;top:0;z-index:50;background:rgba(23,50,77,.96);color:white;
+ padding:12px 20px;box-shadow:0 4px 20px rgba(0,0,0,.15)
+}
+.topbar{max-width:1250px;margin:auto;display:flex;align-items:center;gap:14px}
+.logo{font-weight:800;font-size:20px;white-space:nowrap}
+.logo span{color:#ffd166}
+.nav{display:flex;gap:6px;overflow:auto;margin-left:auto}
+.nav button{border:0;background:transparent;color:#dce9f7;padding:9px 11px;border-radius:10px;font-size:13px}
+.nav button:hover,.nav button.active{background:#2b4d6d;color:white}
+.container{max-width:1250px;margin:auto;padding:25px 18px 60px}
+.hero{
+ background:linear-gradient(135deg,#17324d,#285d8d);color:#fff;border-radius:25px;padding:38px;
+ box-shadow:var(--shadow);position:relative;overflow:hidden
+}
+.hero:after{content:"😊";position:absolute;font-size:170px;right:30px;bottom:-30px;opacity:.13}
+.badge{display:inline-block;background:#ffd166;color:#17324d;padding:7px 12px;border-radius:999px;font-weight:800;font-size:12px}
+h1{font-size:clamp(34px,5vw,60px);margin:14px 0 8px}
+.hero p{max-width:700px;font-size:18px;line-height:1.6;color:#e9f3ff}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.btn{border:0;border-radius:12px;padding:12px 17px;font-weight:800}
+.btn.primary{background:#ffd166;color:#17324d}.btn.light{background:white;color:#17324d}.btn.dark{background:#17324d;color:white}
+.btn.success{background:#36a269;color:white}.btn.danger{background:#df5b5b;color:white}
+.progress-wrap{margin-top:22px;background:rgba(255,255,255,.2);border-radius:99px;height:10px}
+.progress{height:100%;width:0;background:#ffd166;border-radius:99px;transition:.4s}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+.stat{background:white;border-radius:16px;padding:17px;box-shadow:var(--shadow)}
+.stat b{font-size:26px;color:var(--navy);display:block}.stat small{color:var(--muted)}
+.section{display:none;margin-top:25px}.section.active{display:block;animation:fade .35s}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.section-title{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}
+.section-title h2{margin:0;font-size:30px;color:var(--navy)}
+.card{background:white;border-radius:20px;padding:22px;box-shadow:var(--shadow);margin-bottom:15px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.word-card,.action-card{
+ border:2px solid #e5edf5;border-radius:18px;padding:22px;transition:.2s;background:#fff
+}
+.word-card:hover,.action-card:hover{transform:translateY(-3px);box-shadow:0 10px 22px rgba(23,50,77,.1)}
+.icon{font-size:45px}.word{font-size:27px;font-weight:900;color:var(--navy);margin:8px 0}
+.definition{color:#526170;line-height:1.55}.example{background:var(--sky);padding:12px;border-radius:12px;margin-top:12px}
+.clickable{cursor:pointer}
+.question{font-size:22px;font-weight:800;line-height:1.45}
+.option-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.option{
+ border:2px solid #dce6ef;background:white;border-radius:15px;padding:17px;text-align:left;
+ font-weight:700;transition:.2s
+}
+.option:hover{border-color:var(--blue);transform:translateY(-2px)}
+.option.correct{border-color:var(--green);background:#eaf8f1}.option.wrong{border-color:var(--red);background:#fff0f0}
+.feedback{margin-top:15px;padding:14px;border-radius:12px;font-weight:700;display:none}
+.feedback.show{display:block}
+.emoji-choice{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}
+.emoji-btn{font-size:80px;border:3px solid #e5edf5;background:white;border-radius:25px;padding:25px}
+.emoji-btn:hover{transform:scale(1.03)}
+.scenario{font-size:20px;line-height:1.6;background:#fffaf0;border-left:6px solid var(--gold);padding:18px;border-radius:12px}
+.lesson-list{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.pill{padding:14px;border-radius:15px;background:#eef6ff;text-align:center;font-weight:800;color:var(--navy)}
+.pledge textarea{width:100%;min-height:130px;border:2px solid #dce6ef;border-radius:15px;padding:15px;font:inherit;resize:vertical}
+.rubric{width:100%;border-collapse:collapse}.rubric th,.rubric td{border:1px solid #dfe7ee;padding:11px;text-align:center}.rubric th{background:#17324d;color:#fff}
+.teacher-panel{background:#fff7e5;border:2px dashed #e9b449}
+.note{color:#667788;font-size:14px;line-height:1.5}
+.footer{margin-top:25px;text-align:center;color:#74808c;font-size:13px}
+.timer{font-size:35px;font-weight:900;color:var(--navy);text-align:center}
+.score-big{font-size:65px;font-weight:900;color:var(--green);text-align:center}
+@media(max-width:850px){
+ .nav{display:none}.stats{grid-template-columns:repeat(2,1fr)}.grid,.grid3{grid-template-columns:1fr}
+ .lesson-list{grid-template-columns:repeat(2,1fr)}.hero{padding:28px}.hero:after{font-size:100px}
+}
+@media(max-width:520px){.container{padding:15px 12px 40px}.stats{grid-template-columns:1fr 1fr}.option-grid,.emoji-choice{grid-template-columns:1fr}.lesson-list{grid-template-columns:1fr 1fr}h1{font-size:38px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="topbar">
+  <div class="logo">TEACHER <span>ED</span> • ESP 2</div>
+  <nav class="nav" id="nav"></nav>
+ </div>
+</header>
+
+<main class="container">
+<section class="hero">
+ <span class="badge">EDUKASYON SA PAGPAPAKATAO 2 • ARALIN 7</span>
+ <h1>Ako ay Magalang</h1>
+ <p>Isang interactive classroom lesson para matutuhan ng mga bata ang magagalang na salita at kilos—sa pamamagitan ng laro, sitwasyon, pagsagot, role-play, at pagtataya.</p>
+ <div class="actions">
+   <button class="btn primary" onclick="startLesson()">▶ Simulan ang Aralin</button>
+   <button class="btn light" onclick="go('overview')">📋 Tingnan ang Layunin</button>
+   <button class="btn light" onclick="toggleFullscreen()">⛶ Fullscreen</button>
+ </div>
+ <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+</section>
+
+<div class="stats">
+ <div class="stat"><b id="score">0</b><small>Puntos</small></div>
+ <div class="stat"><b id="stars">0 ⭐</b><small>Stars</small></div>
+ <div class="stat"><b id="done">0%</b><small>Lesson Progress</small></div>
+ <div class="stat"><b id="current">1/10</b><small>Lesson Part</small></div>
+</div>
+
+<section class="section active" id="home">
+ <div class="section-title"><h2>Teacher Dashboard</h2></div>
+ <div class="grid">
+  <div class="card">
+   <h3>🎯 Layunin ng Aralin</h3>
+   <ul>
+    <li>Natutukoy ang mga salita at kilos na nagpapakita ng paggalang.</li>
+    <li>Naipaliliwanag kung bakit mahalagang maging magalang.</li>
+    <li>Nakapipili ng angkop na magalang na pananalita.</li>
+    <li>Naisasagawa ang mga kilos na nagpapakita ng paggalang.</li>
+    <li>Napahahalagahan ang pagiging magalang.</li>
+   </ul>
+  </div>
+  <div class="card teacher-panel">
+   <h3>👩‍🏫 Teacher Mode</h3>
+   <p>Gamitin ang website habang nagtuturo. Ang mga activity ay maaaring sagutan ng buong klase nang sabay-sabay, o gamitin ng isang mag-aaral sa computer/projector.</p>
+   <button class="btn primary" onclick="startLesson()">Magsimula →</button>
+   <p class="note">Tip: I-project sa TV/LED at hayaang ang mga bata ang pumili ng sagot. Pagkatapos ng bawat activity, gamitin ang discussion prompts.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="overview">
+ <div class="section-title"><h2>1. Layunin at Panimulang Gawain</h2><button class="btn dark" onclick="go('motivation')">Next →</button></div>
+ <div class="card">
+  <h3>📖 Pangunahing Kaisipan</h3>
+  <p>Ang pagiging magalang ay pagpapakita ng pagsasaalang-alang, kabutihan, at tamang pakikitungo sa kapwa sa pamamagitan ng ating mga salita at kilos.</p>
+  <div class="lesson-list">
+   <div class="pill">🙏 Panalangin</div><div class="pill">👋 Pagbati</div><div class="pill">🧑‍🎓 Attendance</div><div class="pill">🔁 Balik-aral</div>
+  </div>
+ </div>
+ <div class="card">
+  <h3>🗣️ Teacher Script</h3>
+  <p><b>Teacher:</b> “Magandang araw, mga bata! Napansin ninyo ba na gumamit tayo ng salitang <b>po</b>? Bakit kaya mahalagang gumamit tayo ng mga salitang nagpapakita ng paggalang?”</p>
+  <p class="note">Hayaan ang mga mag-aaral na magbigay ng sariling sagot bago ipakilala ang bagong aralin.</p>
+ </div>
+</section>
+
+<section class="section" id="motivation">
+ <div class="section-title"><h2>2. Motivation: 😊 O ☹️?</h2></div>
+ <div class="card">
+  <p class="question" id="motQ"></p>
+  <div class="emoji-choice">
+   <button class="emoji-btn" onclick="motAnswer(true)">😊<br><small>Magalang</small></button>
+   <button class="emoji-btn" onclick="motAnswer(false)">☹️<br><small>Hindi magalang</small></button>
+  </div>
+  <div class="feedback" id="motFeedback"></div>
+  <div class="actions"><button class="btn dark" onclick="nextMot()">Susunod na Sitwasyon →</button></div>
+ </div>
+</section>
+
+<section class="section" id="words">
+ <div class="section-title"><h2>3. Mga Salitang Nagpapakita ng Paggalang</h2></div>
+ <div class="grid">
+  <div class="word-card clickable"><div class="icon">🎁</div><div class="word">SALAMAT</div><div class="definition">Ginagamit kapag tumatanggap ng tulong, regalo, o kabutihan mula sa iba.</div><div class="example">“Salamat po sa pagtulong ninyo sa akin.”</div></div>
+  <div class="word-card clickable"><div class="icon">🚶</div><div class="word">MAWALANG-GALANG NA PO</div><div class="definition">Ginagamit kapag nais magsabi o gumawa ng isang bagay nang may paggalang, gaya ng pakikiraan.</div><div class="example">“Mawalang-galang na po, maaari po ba akong dumaan?”</div></div>
+  <div class="word-card clickable"><div class="icon">💛</div><div class="word">PATAWAD</div><div class="definition">Ginagamit kapag nakasakit, nakagawa ng mali, o nakagawa ng hindi magandang bagay sa kapwa.</div><div class="example">“Patawad po, hindi ko sinasadyang matapakan ang inyong paa.”</div></div>
+  <div class="word-card clickable"><div class="icon">✋</div><div class="word">MAAARI PO BA?</div><div class="definition">Ginagamit kapag humihingi ng tulong o pahintulot.</div><div class="example">“Maaari po ba akong makahiram ng lapis?”</div></div>
+ </div>
+ <div class="card teacher-panel"><b>💡 Discuss:</b> Magbigay ng sariling halimbawa ang mga bata para sa bawat salita.</div>
+</section>
+
+<section class="section" id="actions">
+ <div class="section-title"><h2>4. Mga Kilos na Nagpapakita ng Magandang Asal</h2></div>
+ <div class="grid">
+  <div class="action-card"><div class="icon">👋</div><h3>Pagbati</h3><p>“Magandang umaga po.” “Magandang hapon po.” “Kumusta po?”</p></div>
+  <div class="action-card"><div class="icon">🤝</div><h3>Pakikipagkamay</h3><p>Maayos at magalang na pakikipag-ugnayan sa kapwa.</p></div>
+  <div class="action-card"><div class="icon">🫶</div><h3>Pagtulong</h3><p>Pagtulong sa matanda, kaklase, bata, guro, o nangangailangan.</p></div>
+  <div class="action-card"><div class="icon">🌿</div><h3>Pagiging Mahinahon</h3><p>Hindi sumisigaw, nanunukso, o nagsasalita ng masasakit na salita.</p></div>
+ </div>
+ <div class="card">
+  <h3>🔄 Palitan ang Salita</h3>
+  <p><b>Sa halip na:</b> “Hindi mo naman alam!”</p><p><b>Sabihin:</b> “Subukan natin ulit.”</p>
+  <p><b>Sa halip na:</b> “Ang kulit mo!”</p><p><b>Sabihin:</b> “Maaari ba nating pag-usapan nang maayos?”</p>
+ </div>
+</section>
+
+<section class="section" id="match">
+ <div class="section-title"><h2>5. Activity: Ano ang Sasabihin Ko?</h2></div>
+ <div class="card">
+  <p class="question" id="matchQ"></p>
+  <div class="option-grid" id="matchOptions"></div>
+  <div class="feedback" id="matchFeedback"></div>
+  <div class="actions"><button class="btn dark" onclick="nextMatch()">Next →</button></div>
+ </div>
+</section>
+
+<section class="section" id="roleplay">
+ <div class="section-title"><h2>6. Ipakita Mo! 🎭</h2></div>
+ <div class="card">
+  <p>Basahin ang sitwasyon. Pumili ng mag-aaral/pangkat at ipagawa ang role-play.</p>
+  <div class="scenario" id="roleScenario"></div>
+  <div class="actions">
+   <button class="btn primary" onclick="randomRole()">🎲 Random Situation</button>
+   <button class="btn light" onclick="speakRole()">🔊 Basahin</button>
+  </div>
+  <h3>Rubric</h3>
+  <table class="rubric"><tr><th>Pamantayan</th><th>3</th><th>2</th><th>1</th></tr>
+  <tr><td>Wastong magalang na salita</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  <tr><td>Wastong kilos</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  <tr><td>Malinaw na pagpapakita</td><td>✓</td><td>✓</td><td>✓</td></tr>
+  <tr><td>Maayos na pakikitungo</td><td>✓</td><td>✓</td><td>✓</td></tr></table>
+  <p class="note">3 – Napakahusay • 2 – Mahusay • 1 – Kailangan pang magsanay</p>
+ </div>
+</section>
+
+<section class="section" id="practice">
+ <div class="section-title"><h2>7. Magalang Ako! 🧠</h2></div>
+ <div class="card">
+  <p class="question" id="practiceQ"></p>
+  <div class="option-grid" id="practiceOptions"></div>
+  <div class="feedback" id="practiceFeedback"></div>
+  <div class="actions"><button class="btn dark" onclick="nextPractice()">Next →</button></div>
+ </div>
+</section>
+
+<section class="section" id="generalize">
+ <div class="section-title"><h2>8. Paglalahat</h2></div>
+ <div class="card">
+  <h3>💭 Pag-usapan Natin</h3>
+  <ol>
+   <li>Ano ang ibig sabihin ng pagiging magalang?</li>
+   <li>Ano-ano ang mga salitang nagpapakita ng paggalang?</li>
+   <li>Ano-ano ang mga kilos na nagpapakita ng magandang asal?</li>
+   <li>Bakit mahalagang maging magalang tayo?</li>
+  </ol>
+  <button class="btn primary" onclick="showSummary()">✨ Ipakita ang Buod</button>
+  <div id="summary" class="example" style="display:none">
+   <b>Ang pagiging magalang</b> ay pagpapakita ng mabuting pananalita at mabuting kilos sa kapwa.<br><br>
+   <b>Salita:</b> Salamat • Mawalang-galang na po • Patawad • Maaari po ba?<br>
+   <b>Kilos:</b> Pagbati • Pakikipagkamay • Pagtulong • Pagiging mahinahon
+  </div>
+ </div>
+</section>
+
+<section class="section" id="pledge">
+ <div class="section-title"><h2>9. Ang Pangako Ko 💛</h2></div>
+ <div class="card pledge">
+  <p><b>Ako ay magalang dahil...</b></p>
+  <textarea id="p1" placeholder="Isulat ang iyong sagot..."></textarea>
+  <p><b>Simula ngayon, gagamitin ko ang salitang...</b></p>
+  <textarea id="p2" placeholder="Halimbawa: Salamat po"></textarea>
+  <p><b>Ipapakita ko ang paggalang sa pamamagitan ng...</b></p>
+  <textarea id="p3" placeholder="Isulat ang iyong sagot..."></textarea>
+  <div class="actions"><button class="btn primary" onclick="savePledge()">💾 I-save ang Pangako</button><button class="btn light" onclick="printPledge()">🖨️ Print</button></div>
+  <div class="feedback" id="pledgeFeedback"></div>
+ </div>
+</section>
+
+<section class="section" id="assessment">
+ <div class="section-title"><h2>10. Pagtataya 🏆</h2></div>
+ <div class="card">
+  <div id="quizArea"></div>
+  <div class="score-big" id="finalScore" style="display:none"></div>
+  <div class="actions"><button class="btn primary" onclick="restartQuiz()">🔄 Ulitin ang Pagtataya</button><button class="btn success" onclick="go('home')">🏠 Teacher Dashboard</button></div>
+ </div>
+</section>
+
+<section class="section" id="homework">
+ <div class="section-title"><h2>Takdang-Aralin 🏠</h2></div>
+ <div class="card">
+  <h3>“Magalang Ako sa Bahay”</h3>
+  <p>Sumulat ng dalawang sitwasyon kung saan nagpapakita ka ng pagiging magalang sa iyong kapwa.</p>
+  <div class="example"><b>Halimbawa:</b><br>1. Binabati ko ang aking mga magulang tuwing umaga.<br>2. Sinasabi ko ang “Salamat po” kapag tinutulungan ako ng aking pamilya.</div>
+ </div>
+ <div class="card teacher-panel">
+  <h3>🌟 Differentiated Activities</h3>
+  <ul>
+   <li><b>Mabilis matuto:</b> Gumawa ng sariling diyalogo gamit ang hindi bababa sa tatlong magagalang na salita.</li>
+   <li><b>Nangangailangan ng gabay:</b> Itugma ang sitwasyon sa magalang na salita gamit ang word cards.</li>
+   <li><b>Visual learners:</b> Gumamit ng larawan ng pagbati, pakikipagkamay, pagtulong, paghingi ng tawad, at pagpapasalamat.</li>
+   <li><b>Kinesthetic learners:</b> Role play at “Ipakita Mo!”</li>
+   <li><b>Nahihirapang magsalita:</b> Pumili muna ng word card bago bumuo ng sariling pangungusap.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="section" id="teacher">
+ <div class="section-title"><h2>Teacher Notes & Closing</h2></div>
+ <div class="card">
+  <h3>🎤 Maikling Teacher Script</h3>
+  <p>“Mga bata, kapag may tumulong sa atin, ano ang sinasabi natin?”</p>
+  <p><b>Mga bata:</b> “Salamat po!”</p>
+  <p>“Kapag may nagawa tayong mali, ano ang sinasabi natin?”</p>
+  <p><b>Mga bata:</b> “Patawad po!”</p>
+  <p>“Kapag gusto nating humingi ng pahintulot?”</p>
+  <p><b>Mga bata:</b> “Maaari po ba?”</p>
+  <p>“At kapag may dadaanan tayong tao?”</p>
+  <p><b>Mga bata:</b> “Mawalang-galang na po!”</p>
+ </div>
+ <div class="hero" style="padding:28px;margin-top:15px">
+  <h2>“Ako ay magalang sa salita at sa gawa!”</h2>
+  <p>Ang pagiging magalang ay hindi lamang ginagawa kapag may nakakakita sa atin. Dapat tayong maging magalang sa lahat ng oras—sa bahay, sa paaralan, at kahit saan tayo pumunta.</p>
+ </div>
+</section>
+
+<div class="footer">Teacher Ed • Edukasyon sa Pagpapakatao 2 • Aralin 7: Ako ay Magalang</div>
+</main>
+</div>
+
+<script>
+const sections=['home','overview','motivation','words','actions','match','roleplay','practice','generalize','pledge','assessment','homework','teacher'];
+const labels=['Home','Panimula','Motivation','Mga Salita','Mga Kilos','Ano ang Sasabihin?','Role Play','Practice','Paglalahat','Pangako','Pagtataya','Takdang-Aralin','Teacher Notes'];
+const nav=document.getElementById('nav');
+sections.forEach((s,i)=>{let b=document.createElement('button');b.textContent=labels[i];b.onclick=()=>go(s);b.dataset.s=s;nav.appendChild(b)});
+
+let score=0,stars=0,visited=new Set(['home']);
+function go(id){
+ document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ visited.add(id);
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.s===id));
+ updateStats();
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function updateStats(){
+ const pct=Math.round((visited.size/sections.length)*100);
+ document.getElementById('score').textContent=score;
+ document.getElementById('stars').textContent=stars+' ⭐';
+ document.getElementById('done').textContent=pct+'%';
+ document.getElementById('progress').style.width=pct+'%';
+ let idx=Math.max(1,sections.indexOf([...visited].slice(-1)[0])+1);
+ document.getElementById('current').textContent=idx+'/'+sections.length;
+}
+function startLesson(){go('overview')}
+function addPoint(n=1){score+=n; if(n>0)stars++; updateStats()}
+function toggleFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}
+function speak(text){if('speechSynthesis' in window){speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(text);u.lang='fil-PH';speechSynthesis.speak(u)}}
+
+const mot=[
+ ['Nakita ni Carlo ang kanyang guro. Sinabi niya, “Magandang umaga po, Teacher.”',true],
+ ['Humingi si Ben ng laruan at kinuha niya ito nang walang paalam.',false],
+ ['Nakatanggap si Maria ng regalo. Sinabi niya, “Salamat po.”',true],
+ ['Nabangga ni Pedro ang kanyang kaklase ngunit tumawa lamang siya at hindi humingi ng tawad.',false],
+ ['Nakita ni Ana ang isang matandang nahihirapang magdala ng gamit. Tinulungan niya ito.',true]
+];
+let mi=0,motLocked=false;
+function renderMot(){document.getElementById('motQ').textContent=mot[mi][0];document.getElementById('motFeedback').className='feedback';motLocked=false}
+function motAnswer(ans){
+ if(motLocked)return; motLocked=true;
+ const f=document.getElementById('motFeedback');
+ if(ans===mot[mi][1]){f.textContent='✅ Tama! Ipinapakita nito ang paggalang.';f.style.background='#eaf8f1';f.style.color='#18734b';addPoint()}
+ else{f.textContent='❌ Balikan natin. Isipin kung ang kilos ay may paggalang sa kapwa.';f.style.background='#fff0f0';f.style.color='#a63f3f'}
+ f.classList.add('show')
+}
+function nextMot(){mi++;if(mi>=mot.length){go('words');return}renderMot()}
+
+const match=[
+ ['Tinulungan ka ng iyong kaklase na buhatin ang iyong mga libro.',['Salamat','Patawad','Maaari po ba?','Mawalang-galang na po'],'Salamat'],
+ ['Hindi mo sinasadyang natapakan ang paa ng iyong kaklase.',['Salamat','Patawad','Maaari po ba?','Magandang umaga po'],'Patawad'],
+ ['Gusto mong makahiram ng lapis.',['Patawad','Salamat','Maaari po ba akong makahiram?','Mawalang-galang na po'],'Maaari po ba akong makahiram?'],
+ ['May taong nakaharang sa iyong daraanan.',['Salamat','Patawad','Mawalang-galang na po, maaari po ba akong dumaan?','Magandang hapon po'],'Mawalang-galang na po, maaari po ba akong dumaan?'],
+ ['Nakakita ka ng guro sa umaga.',['Magandang umaga po.','Patawad po.','Salamat po.','Maaari po ba?'],'Magandang umaga po.']
+];
+let mqi=0,mLocked=false;
+function renderMatch(){
+ let q=match[mqi];document.getElementById('matchQ').textContent=q[0];let box=document.getElementById('matchOptions');box.innerHTML='';
+ q[1].forEach(o=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>matchAnswer(b,o);box.appendChild(b)});
+ document.getElementById('matchFeedback').className='feedback';mLocked=false;
+}
+function matchAnswer(btn,o){
+ if(mLocked)return;mLocked=true;let f=document.getElementById('matchFeedback');
+ if(o===match[mqi][2]){btn.classList.add('correct');f.textContent='🌟 Mahusay! Iyan ang angkop na magalang na pananalita.';f.style.background='#eaf8f1';addPoint()}
+ else{btn.classList.add('wrong');f.textContent='Subukan nating isipin kung anong magalang na salita ang kailangan sa sitwasyong ito.';f.style.background='#fff0f0'}
+ f.classList.add('show')
+}
+function nextMatch(){mqi++;if(mqi>=match.length){go('roleplay');return}renderMatch()}
+
+const roles=[
+'Sa Paaralan: Nakita mo ang iyong guro sa hallway. Ipakita ang pagbati at paggamit ng “po.”',
+'Sa Bahay: Humingi ka ng tulong sa iyong nanay. Gamitin ang “Maaari po ba?” at magalang na pananalita.',
+'Sa Silid-Aralan: Nabangga mo ang iyong kaklase. Sabihin ang “Patawad” at ipakita ang pagiging mahinahon.',
+'Sa Pamayanan: May matandang nahihirapang magdala ng gamit. Ipakita ang pagtulong at magalang na pakikitungo.'
+];
+let ri=0;
+function randomRole(){ri=Math.floor(Math.random()*roles.length);document.getElementById('roleScenario').textContent=roles[ri]}
+function speakRole(){speak(roles[ri])}
+
+const practice=[
+ ['Tumanggap ka ng regalo.',['Salamat','Patawad','Maaari po ba?','Pagbati'],'Salamat'],
+ ['May nagawa kang mali.',['Pagtulong','Patawad','Pagbati','Salamat'],'Patawad'],
+ ['Hihingi ka ng pahintulot.',['Maaari po ba?','Patawad','Pagiging mahinahon','Pakikipagkamay'],'Maaari po ba?'],
+ ['May daraanan kang tao.',['Salamat','Mawalang-galang na po','Pagtulong','Patawad'],'Mawalang-galang na po'],
+ ['Nakita mo ang iyong guro.',['Pagtulong','Pagbati','Patawad','Salamat'],'Pagbati'],
+ ['May matandang nangangailangan ng tulong.',['Pagbati','Pagiging mahinahon','Pagtulong','Pakikipagkamay'],'Pagtulong'],
+ ['May hindi kayo napagkasunduan ng kaibigan.',['Pagiging mahinahon','Pagtulong','Salamat','Pagbati'],'Pagiging mahinahon']
+];
+let pi=0,pLocked=false;
+function renderPractice(){
+ let q=practice[pi];document.getElementById('practiceQ').textContent=q[0];let box=document.getElementById('practiceOptions');box.innerHTML='';
+ q[1].forEach(o=>{let b=document.createElement('button');b.className='option';b.textContent=o;b.onclick=()=>practiceAnswer(b,o);box.appendChild(b)});
+ document.getElementById('practiceFeedback').className='feedback';pLocked=false
+}
+function practiceAnswer(btn,o){
+ if(pLocked)return;pLocked=true;let f=document.getElementById('practiceFeedback');
+ if(o===practice[pi][2]){btn.classList.add('correct');f.textContent='⭐ Tama! Magalang na salita o kilos iyan.';f.style.background='#eaf8f1';addPoint()}
+ else{btn.classList.add('wrong');f.textContent='❌ Hindi iyan ang pinakaangkop na sagot.';f.style.background='#fff0f0'}
+ f.classList.add('show')
+}
+function nextPractice(){pi++;if(pi>=practice.length){go('generalize');return}renderPractice()}
+
+function showSummary(){document.getElementById('summary').style.display='block';addPoint()}
+function savePledge(){localStorage.setItem('esp2Pledge',JSON.stringify({p1:p1.value,p2:p2.value,p3:p3.value}));let f=document.getElementById('pledgeFeedback');f.textContent='💾 Nai-save ang iyong pangako sa browser na ito.';f.style.background='#eaf8f1';f.className='feedback show'}
+function printPledge(){window.print()}
+
+const quiz=[
+ ['Tinulungan ka ng iyong kaklase sa iyong gawain. Ano ang dapat mong sabihin?',['Umalis ka.','Salamat.','Bilisan mo.'],1],
+ ['Hindi mo sinasadyang natapakan ang paa ng iyong kaklase. Ano ang dapat mong sabihin?',['Patawad.','Kasalanan mo.','Hindi ko problema.'],0],
+ ['Gusto mong makahiram ng lapis. Ano ang dapat mong sabihin?',['Bigay mo sa akin iyan.','Maaari po ba akong makahiram?','Akin na iyan.'],1],
+ ['May matandang nahihirapang magdala ng gamit. Ano ang dapat mong gawin?',['Tawanan siya.','Iwasan siya.','Tulungan siya.'],2],
+ ['Nakakita ka ng iyong guro sa umaga. Ano ang nararapat mong gawin?',['Tumalikod.','Batiin siya.','Takbuhan siya.'],1]
+];
+let qi=0,qscore=0,qLocked=false;
+function renderQuiz(){
+ const q=quiz[qi],area=document.getElementById('quizArea');
+ area.innerHTML=`<p class="note">Tanong ${qi+1} ng ${quiz.length}</p><div class="question">${q[0]}</div><div class="option-grid">${q[1].map((x,i)=>`<button class="option" onclick="quizAnswer(this,${i})">${String.fromCharCode(65+i)}. ${x}</button>`).join('')}</div><div class="feedback" id="quizFeedback"></div><div class="actions"><button class="btn dark" onclick="nextQuiz()">Next →</button></div>`;
+ qLocked=false
+}
+function quizAnswer(btn,i){
+ if(qLocked)return;qLocked=true;let f=document.getElementById('quizFeedback');
+ if(i===quiz[qi][2]){btn.classList.add('correct');f.textContent='✅ Tama!';f.style.background='#eaf8f1';qscore++;addPoint()}
+ else{btn.classList.add('wrong');f.textContent='❌ Balikan ang aralin at isipin ang magalang na kilos o salita.';f.style.background='#fff0f0'}
+ f.classList.add('show')
+}
+function nextQuiz(){
+ qi++;if(qi>=quiz.length){
+  document.getElementById('quizArea').innerHTML='';
+  const fs=document.getElementById('finalScore');fs.style.display='block';fs.textContent=qscore+'/'+quiz.length;
+  const msg=document.createElement('p');msg.className='question';msg.style.textAlign='center';
+  msg.textContent=qscore===5?'🏆 Napakahusay! Handa ka nang maging halimbawa ng pagiging magalang.':qscore>=3?'🌟 Mahusay! Balikan ang ilang bahagi upang lalo pang gumaling.':'💪 Patuloy na magsanay. Kaya mo iyan!';
+  document.getElementById('quizArea').appendChild(msg);return
+ }
+ renderQuiz()
+}
+function restartQuiz(){qi=0;qscore=0;document.getElementById('finalScore').style.display='none';renderQuiz()}
+
+const saved=JSON.parse(localStorage.getItem('esp2Pledge')||'null');
+if(saved){p1.value=saved.p1||'';p2.value=saved.p2||'';p3.value=saved.p3||''}
+renderMot();renderMatch();renderPractice();renderQuiz();randomRole();updateStats();
+</script>
+</body>
+</html>

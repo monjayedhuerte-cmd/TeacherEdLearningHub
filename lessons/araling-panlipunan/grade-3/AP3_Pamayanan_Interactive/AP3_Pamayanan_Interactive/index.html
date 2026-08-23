@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AP 3 • Ang Kasaysayan ng Ating Pamayanan</title>
+<meta name="description" content="Interactive Araling Panlipunan 3 lesson website tungkol sa kasaysayan, pagbabago, pagpapatuloy at pag-unlad ng pamayanan.">
+<style>
+:root{
+  --ink:#24324a; --muted:#637089; --paper:#fffdf8; --cream:#f7f0df;
+  --green:#477a58; --green2:#6fa66f; --gold:#f2b84b; --orange:#ed8d45;
+  --blue:#4c91c7; --red:#d85b57; --purple:#7d65b6;
+  --shadow:0 14px 35px rgba(38,55,79,.12);
+  --radius:24px;
+}
+*{box-sizing:border-box;scroll-behavior:smooth}
+body{
+  margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);
+  background:
+    radial-gradient(circle at 10% 5%,rgba(242,184,75,.18),transparent 25%),
+    radial-gradient(circle at 90% 12%,rgba(111,166,111,.18),transparent 25%),
+    #f4f7f2;
+}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.topbar{
+  position:sticky;top:0;z-index:30;background:rgba(255,253,248,.94);
+  backdrop-filter:blur(12px);border-bottom:1px solid #e7e2d7;
+  display:flex;align-items:center;justify-content:space-between;padding:10px 4vw;
+}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900}
+.brand-badge{width:42px;height:42px;border-radius:14px;background:var(--green);color:white;display:grid;place-items:center;font-size:22px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.nav button{border:0;background:transparent;padding:9px 12px;border-radius:12px;color:var(--muted);font-weight:700}
+.nav button:hover{background:#eef4ed;color:var(--green)}
+.container{width:min(1120px,92vw);margin:auto}
+.hero{padding:55px 0 35px}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:25px;align-items:center}
+.kicker{color:var(--green);font-weight:900;letter-spacing:.08em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,6vw,5rem);line-height:.98;margin:12px 0 18px}
+.hero p{font-size:1.15rem;color:var(--muted);line-height:1.7;max-width:720px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{border:0;border-radius:16px;padding:13px 18px;font-weight:900;box-shadow:0 7px 18px rgba(0,0,0,.08)}
+.btn.primary{background:var(--green);color:#fff}.btn.gold{background:var(--gold);color:#3b301b}.btn.light{background:#fff}
+.hero-art{
+  min-height:370px;border-radius:34px;background:linear-gradient(145deg,#eaf3e7,#fff7dc);
+  position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e2eadc;
+}
+.sun{position:absolute;width:110px;height:110px;border-radius:50%;background:#ffd76a;right:45px;top:32px}
+.hill{position:absolute;bottom:-55px;width:150%;height:220px;border-radius:50% 50% 0 0;background:#75a56c;left:-25%}
+.hill.two{height:160px;background:#4f8659;bottom:-75px;left:20%;opacity:.8}
+.house{position:absolute;left:24%;bottom:105px;width:170px;height:115px;background:#fff8e7;border:5px solid #674c38;border-radius:8px}
+.house:before{content:"";position:absolute;left:-18px;top:-75px;border-left:105px solid transparent;border-right:105px solid transparent;border-bottom:80px solid #c96d47}
+.door{position:absolute;bottom:0;left:66px;width:40px;height:65px;background:#76523d}
+.window{position:absolute;bottom:42px;left:20px;width:35px;height:30px;background:#8cc5dc;border:4px solid #674c38}
+.window.r{left:auto;right:20px}
+.person{position:absolute;right:22%;bottom:90px;font-size:78px;filter:drop-shadow(0 6px 2px rgba(0,0,0,.12))}
+.floating{position:absolute;background:#fff;border-radius:16px;padding:9px 12px;font-weight:900;box-shadow:var(--shadow);animation:float 3.5s ease-in-out infinite}
+.f1{top:100px;left:30px}.f2{top:185px;right:24px;animation-delay:1s}.f3{bottom:35px;left:35px;animation-delay:1.8s}
+@keyframes float{50%{transform:translateY(-9px)}}
+.section{padding:45px 0}
+.section-head{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}
+.section-head h2{margin:0;font-size:clamp(1.8rem,4vw,3rem)}
+.section-head p{margin:5px 0 0;color:var(--muted);max-width:700px;line-height:1.6}
+.card{background:var(--paper);border:1px solid #e8e2d7;border-radius:var(--radius);box-shadow:var(--shadow)}
+.lesson-map{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.map-card{padding:20px;min-height:170px;transition:.2s;position:relative;overflow:hidden}
+.map-card:hover{transform:translateY(-4px)}
+.map-card .num{font-size:3rem;font-weight:1000;color:#dce7d8}
+.map-card h3{margin:4px 0}.map-card p{color:var(--muted);line-height:1.5}
+.map-card button{border:0;background:#eef4ed;color:var(--green);padding:9px 12px;border-radius:12px;font-weight:800}
+.content-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.story{padding:25px}
+.story h3{font-size:1.45rem;margin-top:0}
+.story p,.story li{color:#566277;line-height:1.75}
+.highlight{background:linear-gradient(135deg,#edf7ed,#fff7df);border-left:6px solid var(--green);padding:16px;border-radius:16px;margin:15px 0}
+.image-card{overflow:hidden}.image-card img{width:100%;height:260px;object-fit:cover;display:block}.image-card .caption{padding:15px 18px;color:var(--muted);font-size:.92rem}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.timeline{position:relative;margin:20px 0;padding:10px 0}
+.timeline:before{content:"";position:absolute;left:23px;top:0;bottom:0;width:4px;background:#d8e6d3;border-radius:5px}
+.event{position:relative;padding:15px 15px 15px 60px;margin:8px 0}
+.dot{position:absolute;left:12px;top:21px;width:26px;height:26px;background:var(--gold);border:5px solid #fff;border-radius:50%;box-shadow:0 0 0 2px #d7c891}
+.event h4{margin:0 0 4px}.event p{margin:0;color:var(--muted);line-height:1.55}
+.game{padding:25px}
+.game-title{display:flex;align-items:center;gap:12px}
+.game-title .emoji{font-size:2rem}
+.options{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:15px}
+.option{padding:15px;border:2px solid #e6e8e3;background:#fff;border-radius:16px;text-align:left;font-weight:800}
+.option:hover{border-color:var(--green);background:#f5faf3}
+.feedback{margin-top:14px;padding:14px;border-radius:14px;font-weight:800;display:none}
+.feedback.show{display:block}.good{background:#e6f5e6;color:#276337}.bad{background:#fff0e9;color:#9a4c2d}
+.progress{height:12px;background:#e6ece4;border-radius:20px;overflow:hidden}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--green),var(--gold));transition:.4s}
+.scorebox{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:15px 0}
+.pill{background:#eef4ed;padding:8px 12px;border-radius:999px;font-weight:900}
+.sort-area{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sort-column{min-height:220px;border:2px dashed #ccd9c9;border-radius:18px;padding:14px;background:#fafcf9}
+.sort-column h4{margin:0 0 10px}.sort-item{background:#fff;padding:11px 12px;border-radius:13px;margin:8px 0;box-shadow:0 3px 10px rgba(0,0,0,.05);font-weight:800;cursor:pointer}
+.sort-item.selected{outline:3px solid var(--gold)}
+.student-tools{display:grid;grid-template-columns:1fr .8fr;gap:18px}
+.student-list{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.student{background:#edf4ec;border:0;border-radius:999px;padding:9px 12px;font-weight:800}
+.random-name{min-height:140px;display:grid;place-items:center;text-align:center;font-size:2rem;font-weight:1000;background:linear-gradient(135deg,#fff6d8,#eaf4ea);border-radius:20px}
+input[type=text]{width:100%;padding:13px 15px;border:2px solid #e2e6df;border-radius:14px;outline:0}
+input[type=text]:focus{border-color:var(--green)}
+footer{padding:40px 0 65px;color:var(--muted);text-align:center}
+.modal{position:fixed;inset:0;background:rgba(22,31,45,.58);display:none;place-items:center;padding:20px;z-index:50}
+.modal.show{display:grid}.modal-box{background:#fffdf8;max-width:650px;width:100%;border-radius:26px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.25)}
+.close{float:right;border:0;background:#edf1ec;border-radius:10px;padding:8px 12px;font-weight:900}
+.badge-pop{position:fixed;right:20px;bottom:20px;background:#fff;border:2px solid var(--gold);padding:16px 18px;border-radius:18px;box-shadow:var(--shadow);display:none;z-index:40;font-weight:900}
+.badge-pop.show{display:block;animation:pop .4s}
+@keyframes pop{0%{transform:scale(.8)}100%{transform:scale(1)}}
+@media(max-width:850px){
+ .hero-grid,.content-grid,.student-tools,.sort-area{grid-template-columns:1fr}
+ .lesson-map{grid-template-columns:repeat(2,1fr)} .gallery{grid-template-columns:1fr 1fr}
+ .nav{display:none}.hero-art{min-height:320px}
+}
+@media(max-width:560px){
+ .lesson-map,.gallery,.options{grid-template-columns:1fr}
+ .topbar{padding:9px 3vw}.brand span{font-size:.9rem}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="brand-badge">🇵🇭</div><span>AP 3 • Pamayanan</span></div>
+  <nav class="nav">
+    <button onclick="go('simula')">Simula</button>
+    <button onclick="go('aralin')">Aralin</button>
+    <button onclick="go('larawan')">Larawan</button>
+    <button onclick="go('laro')">Laro</button>
+    <button onclick="go('guro')">Teacher Mode</button>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="simula">
+<div class="container hero-grid">
+  <div>
+    <div class="kicker">Araling Panlipunan • Baitang 3</div>
+    <h1>Ang Kasaysayan ng Ating Pamayanan</h1>
+    <p>Halina't maging <strong>History Explorer!</strong> Tuklasin kung paano nagbabago, nagpapatuloy, umuunlad, at naaapektuhan ng mahahalagang pangyayari ang isang pamayanan.</p>
+    <div class="cta-row">
+      <button class="btn primary" onclick="go('aralin')">🚀 Simulan ang Paglalakbay</button>
+      <button class="btn gold" onclick="go('laro')">🎮 Maglaro</button>
+    </div>
+  </div>
+  <div class="hero-art" aria-label="Ilustrasyon ng pamayanan">
+    <div class="sun"></div><div class="hill"></div><div class="hill two"></div>
+    <div class="house"><div class="door"></div><div class="window"></div><div class="window r"></div></div>
+    <div class="person">🧒</div>
+    <div class="floating f1">🕰️ Noon</div><div class="floating f2">🏙️ Ngayon</div><div class="floating f3">🌱 Bukas</div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="aralin">
+<div class="container">
+  <div class="section-head">
+    <div><div class="kicker">Mission Map</div><h2>4 na Hakbang ng History Explorer</h2>
+    <p>Ginawa ang daloy upang hindi lamang magbasa ang mga bata—magmasid, maghambing, mag-isip, at sumubok din sila.</p></div>
+  </div>
+  <div class="lesson-map">
+    <div class="card map-card"><div class="num">01</div><h3>🔎 Tuklasin</h3><p>Ano ang kasaysayan? Ano ang pamayanan?</p><button onclick="openLesson('tuklasin')">Buksan</button></div>
+    <div class="card map-card"><div class="num">02</div><h3>🕰️ Ihambing</h3><p>Hanapin ang nagbago at hindi nagbago.</p><button onclick="openLesson('ihambing')">Buksan</button></div>
+    <div class="card map-card"><div class="num">03</div><h3>🏛️ Alamin</h3><p>Mga pangalan, pangyayari, pamahalaan at pag-unlad.</p><button onclick="openLesson('alamin')">Buksan</button></div>
+    <div class="card map-card"><div class="num">04</div><h3>🎯 Subukin</h3><p>Mga laro at hamon para masukat ang natutuhan.</p><button onclick="go('laro')">Buksan</button></div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container content-grid">
+  <article class="card story" id="tuklasin">
+    <h3>🔎 Ano ang Kasaysayan ng Pamayanan?</h3>
+    <p>Ang <strong>kasaysayan</strong> ay pag-aaral tungkol sa mga mahahalagang pangyayari at pagbabago sa nakaraan. Ang <strong>pamayanan</strong> naman ay lugar kung saan sama-samang namumuhay ang mga tao.</p>
+    <div class="highlight">💡 <strong>Isipin:</strong> Kung makapagsasalita ang inyong barangay, ano kaya ang kuwento nito mula noon hanggang ngayon?</div>
+    <ul>
+      <li>May mga bagay na <strong>nagbabago</strong>.</li>
+      <li>May mga bagay na <strong>patuloy o hindi nagbabago</strong>.</li>
+      <li>May mga pangyayaring nakaaapekto sa pamayanan.</li>
+      <li>Mahalagang malaman ang kasaysayan upang mapahalagahan ang sariling pamayanan.</li>
+    </ul>
+  </article>
+  <article class="card story" id="ihambing">
+    <h3>🕰️ Noon → Ngayon</h3>
+    <p>Maaaring magbago ang mga gusali, daan, transportasyon, komunikasyon, negosyo at paraan ng pamumuhay. Ngunit maaaring magpatuloy ang mga tradisyon, pangalan, kuwento, lugar at pagpapahalaga.</p>
+    <div class="highlight">👀 <strong>History Eyes:</strong> Kapag may nakita kang lumang larawan, itanong: “Ano ang pareho? Ano ang iba?”</div>
+    <button class="btn primary" onclick="openLesson('ihambing')">Subukan ang Paghahambing</button>
+  </article>
+</div>
+</section>
+
+<section class="section" id="larawan">
+<div class="container">
+  <div class="section-head">
+    <div><div class="kicker">Visual History</div><h2>Tingnan, Magmasid, Magtanong</h2>
+    <p>Mga larawang sanggunian mula sa aklat na ibinahagi mo. Gamitin ang mga ito bilang visual prompts sa talakayan.</p></div>
+  </div>
+  <div class="gallery">
+    <article class="card image-card"><img src="assets/paulino-santos.jpg" alt="Larawan ni Heneral Paulino Santos at sagisag ng General Santos"><div class="caption"><strong>👤 Isang taong naging bahagi ng kasaysayan</strong><br>Tanong: Bakit maaaring maging pangalan ng isang lungsod ang pangalan ng isang tao?</div></article>
+    <article class="card image-card"><img src="assets/kagitingan.jpg" alt="Dambana ng Kagitingan"><div class="caption"><strong>🕊️ Alaala at monumento</strong><br>Tanong: Bakit nagtatayo ng dambana o monumento ang mga pamayanan?</div></article>
+    <article class="card image-card"><img src="assets/makati-cebu.jpg" alt="Mga larawan ng Makati at Cebu"><div class="caption"><strong>🏙️ Pamayanang umuunlad</strong><br>Tanong: Anong pagbabago ang mapapansin sa gusali, daan, transportasyon at negosyo?</div></article>
+    <article class="card image-card"><img src="assets/tacloban-marawi.jpg" alt="Larawan ng Tacloban at Marawi pagkatapos ng sakuna at labanan"><div class="caption"><strong>🌧️ Hamon sa pamayanan</strong><br>Tanong: Paano bumabangon ang isang pamayanan pagkatapos ng sakuna o labanan?</div></article>
+    <article class="card image-card"><img src="assets/davao-carmona.jpg" alt="Sagisag ng Davao Occidental at Carmona"><div class="caption"><strong>🪧 Pangalan at pagkakakilanlan</strong><br>Tanong: Ano ang maaaring ipahiwatig ng pangalan at sagisag ng isang lugar?</div></article>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Timeline Mission</div><h2>Mga Pangyayaring Humubog sa Pamayanan</h2><p>Gamitin ang timeline bilang halimbawa kung paano nagbabago ang katayuan at tungkulin ng isang pamayanan.</p></div></div>
+  <div class="card story">
+    <div class="timeline">
+      <div class="event"><div class="dot"></div><h4>1939 • Itinatag ang Lungsod Quezon</h4><p>Isang halimbawa ng mahalagang pagbabago sa kasaysayan ng isang pamayanan.</p></div>
+      <div class="event"><div class="dot"></div><h4>1942 • Bahagi ng Greater Manila</h4><p>Makikita rito na maaaring magbago ang administratibong katayuan ng isang lugar.</p></div>
+      <div class="event"><div class="dot"></div><h4>1948 • Kabisera ng Pilipinas</h4><p>Naging mahalaga ang lungsod sa pamamahala ng bansa.</p></div>
+      <div class="event"><div class="dot"></div><h4>1976 • Paglipat ng kabisera</h4><p>Nagpapakita na maaaring magbago ang tungkulin ng isang pamayanan sa paglipas ng panahon.</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section">
+<div class="container content-grid">
+  <article class="card story">
+    <h3>🏛️ Sino ang Nakaaapekto sa Pamayanan?</h3>
+    <p>Malaki ang impluwensiya ng <strong>pamahalaan</strong>. Gumagawa ito ng mga batas at patakaran na maaaring magtatag, magbago o magpaunlad ng pamayanan.</p>
+    <p>Kasama rin sa pagbabago ang mga tao, negosyo, industriya, imprastraktura, kalikasan at mahahalagang pangyayari.</p>
+  </article>
+  <article class="card story">
+    <h3>🌱 Ano ang Kaunlaran?</h3>
+    <p>Ang <strong>kaunlaran</strong> ay tumutukoy sa gumagandang pamumuhay sa isang pamayanan.</p>
+    <ul>
+      <li>mas maayos na daan</li><li>mas mabuting transportasyon</li><li>mas mahusay na komunikasyon</li><li>mas maraming trabaho at negosyo</li><li>mas maayos na serbisyo</li>
+    </ul>
+    <div class="highlight">⚠️ Tandaan: Hindi lahat ng pagbabago ay mabuti. Ang sakuna at digmaan ay maaaring magdulot ng pinsala at paghihirap.</div>
+  </article>
+</div>
+</section>
+
+<section class="section" id="laro">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Game Zone</div><h2>🎮 History Explorer Challenges</h2><p>Maaaring gamitin sa buong klase. Magbigay ng puntos, badges, o papuri sa bawat tamang sagot.</p></div></div>
+
+  <div class="card game">
+    <div class="game-title"><div class="emoji">🧠</div><div><h3>Challenge 1: Nagbago o Hindi Nagbago?</h3><small>Basahin ang sitwasyon at piliin ang pinakamahusay na sagot.</small></div></div>
+    <div class="scorebox"><span class="pill">Score: <span id="score1">0</span>/5</span><span class="pill">⭐ Badges: <span id="badges">0</span></span></div>
+    <div class="progress"><span id="prog1"></span></div>
+    <div id="game1"></div>
+  </div>
+
+  <div class="card game" style="margin-top:20px">
+    <div class="game-title"><div class="emoji">🧩</div><div><h3>Challenge 2: History Detective</h3><small>Hanapin ang tamang konsepto.</small></div></div>
+    <div id="game2"></div>
+  </div>
+
+  <div class="card game" style="margin-top:20px">
+    <div class="game-title"><div class="emoji">🕰️</div><div><h3>Challenge 3: Ayusin ang Daloy</h3><small>I-click ang mga pangyayari sa tamang pagkakasunod-sunod.</small></div></div>
+    <div id="timelineGame"></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="guro">
+<div class="container">
+  <div class="section-head"><div><div class="kicker">Teacher Mode</div><h2>👩‍🏫 Tawag ng Mag-aaral</h2><p>Maglagay ng mga pangalan at gamitin ang random picker kapag gusto mong mabigyan ng pagkakataon ang lahat na sumagot.</p></div></div>
+  <div class="student-tools">
+    <div class="card story">
+      <h3>Class List</h3>
+      <input id="studentInput" type="text" placeholder="Ilagay ang pangalan..." onkeydown="if(event.key==='Enter') addStudent()">
+      <div class="cta-row"><button class="btn primary" onclick="addStudent()">➕ Idagdag</button><button class="btn light" onclick="clearStudents()">🗑️ Linisin</button></div>
+      <div id="studentList" class="student-list"></div>
+    </div>
+    <div class="card story">
+      <h3>🎲 Random Picker</h3>
+      <div class="random-name" id="randomName">Handa na ba?</div>
+      <div class="cta-row"><button class="btn gold" onclick="pickStudent()">🎯 Pumili ng Mag-aaral</button></div>
+    </div>
+  </div>
+</div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>AP 3 • Ang Kasaysayan ng Ating Pamayanan</strong><br>
+    Interactive instructional material • Teacher Ed<br>
+    <small>Batay sa mga pahinang ibinahagi ng guro at idinisenyo bilang visual, interactive classroom companion.</small>
+  </div>
+</footer>
+
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
+<div class="badge-pop" id="badgePop">🏅 Bagong Badge!</div>
+
+<script>
+const state={score:0,q:0,badges:0,students:JSON.parse(localStorage.getItem('ap3Students')||'[]')};
+
+function go(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
+function openLesson(type){
+  const data={
+    tuklasin:{title:'🔎 Tuklasin',html:`<h3>Ano ang kasaysayan?</h3><p>Ang kasaysayan ng pamayanan ay kuwento ng mga tao, lugar at mahahalagang pangyayaring naganap sa paglipas ng panahon.</p><div class="highlight">👀 <strong>Teacher prompt:</strong> “Ano ang isang bagay sa ating barangay na gusto mong malaman kung paano nagsimula?”</div><button class="btn primary" onclick="closeModal();go('laro')">Handa na ako!</button>`},
+    ihambing:{title:'🕰️ Ihambing',html:`<h3>Noon at Ngayon</h3><p>Maghanap ng <strong>2 nagbago</strong> at <strong>2 hindi nagbago</strong> sa inyong pamayanan.</p><ul><li>Nagbago: gusali, daan, sasakyan, teknolohiya</li><li>Maaaring nagpatuloy: pangalan ng lugar, tradisyon, makasaysayang pook, ilang kaugalian</li></ul><button class="btn primary" onclick="closeModal();go('laro')">Subukan ang laro</button>`},
+    alamin:{title:'🏛️ Alamin',html:`<h3>Mga Pangalan at Mahahalagang Pangyayari</h3><p>May mga pamayanan na ipinangalan sa tao, bagay, lugar o salitang mula sa katutubong wika. May mga pangyayaring nagbabago sa pamahalaan, kabuhayan at anyo ng isang pamayanan.</p><div class="highlight">🧭 <strong>History Detective:</strong> Hanapin ang dahilan kung bakit mahalaga ang isang pangalan, gusali, monumento o pangyayari.</div>`}
+  };
+  document.getElementById('modalContent').innerHTML=`<h2>${data[type].title}</h2>${data[type].html}`;
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+window.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+
+const questions=[
+ {q:'Ang isang lumang tulay ay pinalitan ng mas matibay na tulay. Ano ito?',a:'Nagbago',o:['Nagbago','Hindi nagbago']},
+ {q:'Patuloy na ginagamit ng mga tao ang dating pangalan ng kanilang barangay. Ano ito?',a:'Hindi nagbago',o:['Nagbago','Hindi nagbago']},
+ {q:'Nadagdagan ang mga bagong daan at sasakyan sa pamayanan.',a:'Nagbago',o:['Nagbago','Hindi nagbago']},
+ {q:'Patuloy na ginaganap ang taunang tradisyon ng barangay.',a:'Hindi nagbago',o:['Nagbago','Hindi nagbago']},
+ {q:'Nagtayo ng bagong palengke at mga negosyo sa lugar.',a:'Nagbago',o:['Nagbago','Hindi nagbago']}
+];
+function renderGame1(){
+ if(state.q>=questions.length){
+  document.getElementById('game1').innerHTML=`<div class="highlight">🎉 Tapos na! Ang iyong score ay <strong>${state.score}/${questions.length}</strong>. ${state.score>=4?'Napakahusay, History Explorer!':'Magandang simula! Subukan muli.'}</div><button class="btn gold" onclick="resetGame1()">🔄 Laruin muli</button>`;
+  return;
+ }
+ const x=questions[state.q];
+ document.getElementById('game1').innerHTML=`<h4>${state.q+1}. ${x.q}</h4><div class="options">${x.o.map(v=>`<button class="option" onclick="answer1('${v}')">${v}</button>`).join('')}</div><div id="fb1" class="feedback"></div>`;
+}
+function answer1(v){
+ const correct=v===questions[state.q].a, fb=document.getElementById('fb1');
+ if(correct){state.score++;state.badges++;fb.className='feedback show good';fb.textContent='✅ Tama!';}
+ else {fb.className='feedback show bad';fb.textContent='💭 Balikan ang kahulugan ng “nagbago” at “hindi nagbago.”';}
+ state.q++;
+ document.getElementById('score1').textContent=state.score;
+ document.getElementById('badges').textContent=state.badges;
+ document.getElementById('prog1').style.width=(state.q/questions.length*100)+'%';
+ if(correct) showBadge();
+ setTimeout(renderGame1,500);
+}
+function resetGame1(){state.score=0;state.q=0;document.getElementById('score1').textContent=0;document.getElementById('prog1').style.width='0%';renderGame1()}
+function showBadge(){const b=document.getElementById('badgePop');b.textContent='🏅 Tamang sagot! +1 Badge';b.classList.add('show');setTimeout(()=>b.classList.remove('show'),1300)}
+
+const detective=[
+ {q:'Ano ang tawag sa mga bagay o lugar na nagpapaalala sa nakaraan?',a:'Saksi ng kasaysayan',o:['Saksi ng kasaysayan','Kaunlaran','Transportasyon']},
+ {q:'Ano ang tumutukoy sa gumagandang pamumuhay sa pamayanan?',a:'Kaunlaran',o:['Kaunlaran','Digmaan','Lumang pangalan']},
+ {q:'Ano ang maaaring gumawa ng mga batas na nakaaapekto sa pamayanan?',a:'Pamahalaan',o:['Pamahalaan','Laruan','Panahon']},
+ {q:'Ano ang maaaring magdulot ng pinsala sa pamayanan?',a:'Sakuna',o:['Sakuna','Tradisyon','Pangalan']}
+];
+let d=0;
+function renderGame2(){
+ if(d>=detective.length){document.getElementById('game2').innerHTML='<div class="highlight">🕵️ Mahusay! Natapos mo ang History Detective.</div><button class="btn gold" onclick="d=0;renderGame2()">🔄 Muli</button>';return}
+ const x=detective[d];
+ document.getElementById('game2').innerHTML=`<h4>${d+1}. ${x.q}</h4><div class="options">${x.o.map(v=>`<button class="option" onclick="answer2('${v}')">${v}</button>`).join('')}</div><div id="fb2" class="feedback"></div>`;
+}
+function answer2(v){
+ const fb=document.getElementById('fb2');
+ if(v===detective[d].a){fb.className='feedback show good';fb.textContent='🌟 Tama!';d++;setTimeout(renderGame2,450)}else{fb.className='feedback show bad';fb.textContent='Subukan muli!';}
+}
+
+const timelineItems=[
+ '1939 — Itinatag ang Lungsod Quezon',
+ '1942 — Bahagi ng Greater Manila',
+ '1948 — Kabisera ng Pilipinas',
+ '1976 — Inilipat ang kabisera sa Lungsod ng Maynila'
+];
+let order=[];
+function renderTimeline(){
+ document.getElementById('timelineGame').innerHTML=`<p>I-click ang mga pangyayari sa tamang pagkakasunod-sunod:</p><div id="tlChoices"></div><div id="tlAnswer" class="highlight" style="display:none"></div>`;
+ const arr=[...timelineItems].sort(()=>Math.random()-.5);
+ const box=document.getElementById('tlChoices');
+ arr.forEach(item=>{const b=document.createElement('button');b.className='option';b.style.width='100%';b.style.marginBottom='9px';b.textContent=item;b.onclick=()=>selectTL(item,b);box.appendChild(b)});
+}
+function selectTL(item,b){
+ if(order.includes(item))return;
+ order.push(item);b.disabled=true;b.style.opacity=.5;
+ if(order.length===timelineItems.length){
+   const ok=order.every((x,i)=>x===timelineItems[i]);
+   const ans=document.getElementById('tlAnswer');ans.style.display='block';
+   ans.innerHTML=ok?'🎉 Napakagaling! Tama ang buong timeline.':'💡 Malapit na! Ang tamang ayos ay 1939 → 1942 → 1948 → 1976.';
+ }
+}
+function resetTL(){order=[];renderTimeline()}
+
+function addStudent(){
+ const input=document.getElementById('studentInput'), name=input.value.trim();
+ if(!name)return;
+ state.students.push(name);input.value='';saveStudents();renderStudents();
+}
+function saveStudents(){localStorage.setItem('ap3Students',JSON.stringify(state.students))}
+function clearStudents(){state.students=[];saveStudents();renderStudents();document.getElementById('randomName').textContent='Handa na ba?'}
+function renderStudents(){
+ const box=document.getElementById('studentList');
+ box.innerHTML=state.students.map((n,i)=>`<button class="student" onclick="state.students.splice(${i},1);saveStudents();renderStudents()">👤 ${n} ×</button>`).join('');
+}
+function pickStudent(){
+ if(!state.students.length){document.getElementById('randomName').textContent='Magdagdag muna ng pangalan 😊';return}
+ const box=document.getElementById('randomName');let ticks=0;
+ const timer=setInterval(()=>{box.textContent=state.students[Math.floor(Math.random()*state.students.length)];ticks++;if(ticks>14)clearInterval(timer)},80);
+}
+
+renderGame1();renderGame2();renderTimeline();renderStudents();
+</script>
+</body>
+</html>

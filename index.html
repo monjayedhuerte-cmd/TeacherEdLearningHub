@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8fafc">
+  <meta name="description" content="Teacher Ed Learning Hub — interactive lessons, activities, and learning materials.">
+  <title>Teacher Ed | Learning Hub</title>
+
+  <!-- Lucide: clean, modern, consistent icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="site-bg"></div>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="nav-inner">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+        <span class="brand-mark"><i data-lucide="graduation-cap"></i></span>
+        <span>
+          <strong>EDJAY</strong>
+          <small>Learning Hub</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main navigation">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#subjects" class="nav-link">Subjects</a>
+        <a href="#lessons" class="nav-link">Lessons</a>
+        <a href="#about" class="nav-link">About</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-button" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+          <i data-lucide="moon"></i>
+        </button>
+        <button class="menu-button" id="menuButton" aria-label="Open menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#lessons">Lessons</a>
+      <a href="#about">About</a>
+    </div>
+  </header>
+
+  <main id="home">
+
+    <!-- HERO -->
+    <section class="hero section-shell">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          YOUR DIGITAL CLASSROOM
+        </div>
+
+        <h1>
+          Learn beyond the
+          <span>classroom.</span>
+        </h1>
+
+        <p>
+          Explore interactive lessons, activities, games, and learning
+          materials prepared by <strong>Teacher Ed</strong>.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#lessons" class="primary-button">
+            <i data-lucide="book-open"></i>
+            Explore Lessons
+          </a>
+          <button class="secondary-button" id="todayButton">
+            <i data-lucide="sparkles"></i>
+            Today's Learning
+          </button>
+        </div>
+
+        <div class="hero-mini-stats">
+          <div><strong id="lessonCount">0</strong><span>Lessons</span></div>
+          <div><strong id="subjectCount">0</strong><span>Subjects</span></div>
+          <div><strong>∞</strong><span>Possibilities</span></div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-card card-one">
+          <i data-lucide="lightbulb"></i>
+          <span>Discover</span>
+        </div>
+        <div class="floating-card card-two">
+          <i data-lucide="gamepad-2"></i>
+          <span>Practice</span>
+        </div>
+        <div class="floating-card card-three">
+          <i data-lucide="trophy"></i>
+          <span>Master</span>
+        </div>
+
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
+
+        <div class="learning-illustration">
+          <div class="illustration-glow"></div>
+          <div class="book-shape">
+            <div class="book-page left-page">
+              <i data-lucide="book-open-check"></i>
+              <span>LEARN</span>
+            </div>
+            <div class="book-page right-page">
+              <i data-lucide="brain"></i>
+              <span>GROW</span>
+            </div>
+          </div>
+          <div class="spark spark-a">✦</div>
+          <div class="spark spark-b">✦</div>
+          <div class="spark spark-c">✦</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEARCH -->
+    <section class="search-section section-shell">
+      <div class="search-box">
+        <i data-lucide="search"></i>
+        <input id="searchInput" type="search" placeholder="Search lessons, subjects, or topics..." autocomplete="off">
+        <kbd>⌘ K</kbd>
+      </div>
+    </section>
+
+    <!-- SUBJECTS -->
+    <section class="content-section section-shell" id="subjects">
+      <div class="section-heading">
+        <div>
+          <span class="section-kicker">EXPLORE</span>
+          <h2>What would you like to learn?</h2>
+          <p>Choose a subject and start exploring.</p>
+        </div>
+        <a href="#lessons" class="text-link">View all lessons <i data-lucide="arrow-right"></i></a>
+      </div>
+
+      <div class="subject-grid" id="subjectGrid"></div>
+    </section>
+
+    <!-- TODAY -->
+    <section class="today-section section-shell" id="todaySection">
+      <div class="today-card">
+        <div class="today-icon">
+          <i data-lucide="calendar-check-2"></i>
+        </div>
+        <div class="today-content">
+          <span class="section-kicker">TODAY'S LEARNING</span>
+          <h2 id="todayTitle">Loading today's lesson...</h2>
+          <p id="todayDescription"></p>
+          <div class="today-meta">
+            <span id="todaySubject"></span>
+            <span class="dot-separator"></span>
+            <span id="todayGrade"></span>
+          </div>
+        </div>
+        <a id="todayLink" class="light-button" href="#">
+          Start Learning <i data-lucide="arrow-up-right"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- LESSONS -->
+    <section class="content-section section-shell" id="lessons">
+      <div class="section-heading lesson-heading">
+        <div>
+          <span class="section-kicker">LEARNING LIBRARY</span>
+          <h2>Interactive Lessons</h2>
+          <p>Learn at your own pace through Teacher Ed's digital classroom.</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="filter-scroll" id="subjectFilters"></div>
+        <select id="gradeFilter" aria-label="Filter by grade">
+          <option value="all">All Grades</option>
+        </select>
+      </div>
+
+      <div class="lesson-grid" id="lessonGrid"></div>
+      <div class="empty-state hidden" id="emptyState">
+        <div class="empty-icon"><i data-lucide="search-x"></i></div>
+        <h3>No lessons found</h3>
+        <p>Try another search, subject, or grade.</p>
+        <button class="secondary-button" id="clearFilters">Clear filters</button>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about-section section-shell" id="about">
+      <div class="about-card">
+        <div class="about-symbol"><i data-lucide="graduation-cap"></i></div>
+        <div>
+          <span class="section-kicker">ABOUT THE HUB</span>
+          <h2>One place for every lesson.</h2>
+          <p>
+            The Teacher Ed Learning Hub brings your classroom's interactive
+            materials together in one organized digital space. New lessons
+            can be added as simple HTML files while the hub stays familiar
+            for your learners throughout the school year.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="brand-mark"><i data-lucide="graduation-cap"></i></span>
+        <div>
+          <strong>EDJAY Learning Hub</strong>
+          <small>Learn • Explore • Grow</small>
+        </div>
+      </div>
+      <p>Created for learning with Teacher Ed.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>
