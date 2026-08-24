@@ -10,6 +10,16 @@
     "icon": "calculator"
   },
   {
+    "title": "Adding Numbers Without Regrouping",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "You will add 4- to 6-digit numbers, using up to four addends, without regrouping.",
+    "file": "lessons/mathematics/grade-2/Grade2_Adding_Without_Regrouping_Interactive/index.html",
+    "date": "2026-09-02",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
     "title": "Estimating Sum",
     "subject": "Mathematics",
     "grade": "Grade 2",

@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grade 2 Math Mission — Adding Without Regrouping</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand"><span class="logo">Σ</span><div><small>GRADE 2 MATHEMATICS</small><b>Math Mission</b></div></div>
+  <div class="tools"><button id="focus">Focus Mode</button><button id="sound">Sound On</button><button id="reset">Reset</button></div>
+</header>
+<div class="progress"><div><span id="bar"></span></div><small id="counter"></small></div>
+<main id="app"></main>
+<footer><b>Teacher cue:</b> <span id="cue"></span><button id="notes">Teacher Notes</button></footer>
+
+<div id="modal" class="overlay hidden"><div class="modal"><button class="x" id="close">×</button><h2>Teacher Delivery Notes</h2><div id="notesText"></div></div></div>
+<div id="done" class="overlay hidden"><div class="modal center"><div class="star">★</div><h2>Mission Complete</h2><p id="score"></p><button class="primary" id="closeDone">Continue</button></div></div>
+<script src="script.js"></script>
+</body>
+</html>
