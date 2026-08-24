@@ -107,7 +107,17 @@
     "file": "https://monjayedhuerte-cmd.github.io/science1/",
     "date": "2026-08-19",
     "featured": false,
-    "icon": "tongue"
+    "icon": "DNA Helix"
+  },
+  {
+    "title": "The Skin and The Sense of Touch",
+    "subject": "Science",
+    "grade": "Grade 1",
+    "description": "Your eyes cannot see what is inside the Mystery Bag. But your skin can help you discover what you touch!",
+    "file": "lessons/science/grade-1/Skin_Detectives_Grade1_Interactive_Website/index.html",
+    "date": "2026-08-19",
+    "featured": false,
+    "icon": "DNA Helix"
   },
   {
     "title": "Ang Kasaysayan ng Ating Pamayanan",

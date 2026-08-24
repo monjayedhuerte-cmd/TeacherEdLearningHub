@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skin Detectives | Grade 1 Science</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🖐️</div>
+      <div><strong>SKIN DETECTIVES</strong><span>Grade 1 Science • Teacher Ed</span></div>
+    </div>
+    <div class="progress-wrap">
+      <span id="progressText">Mission 1 of 7</span>
+      <div class="progress"><div id="progressBar"></div></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="screen active" data-screen="0">
+      <div class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow">🔬 SCIENCE MISSION</div>
+          <h1>Can Your Skin<br><span>Tell a Secret?</span></h1>
+          <p>Your eyes cannot see what is inside the Mystery Bag. But your skin can help you discover what you touch!</p>
+          <button class="primary" onclick="nextScreen()">Start the Mission 🚀</button>
+        </div>
+        <div class="hero-art">
+          <div class="floating-bubble b1">SOFT</div>
+          <div class="floating-bubble b2">COLD</div>
+          <div class="floating-bubble b3">ROUGH</div>
+          <div class="hand">🖐️</div>
+          <div class="glow"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="1">
+      <div class="card mystery-card">
+        <div class="eyebrow">🕵️ TOUCH DETECTIVE</div>
+        <h2>The Secret Touch Box</h2>
+        <p class="lead">You cannot look. You can only use your imaginary detective touch!</p>
+        <div class="mystery-row">
+          <div class="mystery-box" onclick="revealMystery()">🎁<span>Tap the box</span></div>
+          <div class="clues">
+            <button class="clue" onclick="showClue('soft')">☁️ Soft?</button>
+            <button class="clue" onclick="showClue('hard')">🪵 Hard?</button>
+            <button class="clue" onclick="showClue('smooth')">🪞 Smooth?</button>
+            <button class="clue" onclick="showClue('rough')">🪨 Rough?</button>
+          </div>
+        </div>
+        <div id="mysteryResult" class="result">Touch the box, then choose what it feels like!</div>
+        <button class="secondary" onclick="nextScreen()">I solved it! ➜</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="2">
+      <div class="card">
+        <div class="eyebrow">🧠 DISCOVER</div>
+        <h2>What Is Our Skin?</h2>
+        <p class="lead">The <b>skin</b> covers and protects our body. It is also a <b>sense organ</b> that helps us touch and feel.</p>
+        <div class="sense-grid">
+          <div class="sense hot"><span>🔥</span><b>HOT / WARM</b><small>“That feels warm!”</small></div>
+          <div class="sense cold"><span>❄️</span><b>COLD</b><small>“Brrr, that's cold!”</small></div>
+          <div class="sense soft"><span>☁️</span><b>SOFT</b><small>“It feels fluffy!”</small></div>
+          <div class="sense hard"><span>🪵</span><b>HARD</b><small>“It feels solid!”</small></div>
+          <div class="sense smooth"><span>🪞</span><b>SMOOTH</b><small>“It feels even!”</small></div>
+          <div class="sense rough"><span>🪨</span><b>ROUGH</b><small>“It feels bumpy!”</small></div>
+          <div class="sense pressure"><span>🤝</span><b>PRESSURE</b><small>“I can feel a squeeze.”</small></div>
+          <div class="sense pain"><span>❤️‍🩹</span><b>PAIN</b><small>“My body is warning me.”</small></div>
+        </div>
+        <button class="secondary" onclick="nextScreen()">Explore the Skin ➜</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="3">
+      <div class="card">
+        <div class="eyebrow">🔍 SKIN LAB</div>
+        <h2>Explore the Parts of the Skin</h2>
+        <p class="lead">Tap a label on the picture. Each part has a job!</p>
+        <div class="skin-lab">
+          <div class="skin-picture" aria-label="Interactive skin diagram">
+            <svg viewBox="0 0 720 430" role="img">
+              <defs>
+                <linearGradient id="epi" x1="0" x2="1"><stop offset="0" stop-color="#ffd5c7"/><stop offset="1" stop-color="#f5ad9e"/></linearGradient>
+                <linearGradient id="dermis" x1="0" x2="1"><stop offset="0" stop-color="#f3a18e"/><stop offset="1" stop-color="#df756d"/></linearGradient>
+              </defs>
+              <path d="M80 105 Q180 75 280 105 T480 105 T640 105 L640 315 Q540 350 440 320 T240 330 T80 300 Z" fill="#f8c1b5" stroke="#a84d5c" stroke-width="4"/>
+              <path d="M80 105 Q180 75 280 105 T480 105 T640 105 L640 140 Q540 160 440 140 T240 155 T80 145Z" fill="url(#epi)" stroke="#a84d5c" stroke-width="3"/>
+              <path d="M80 145 Q170 155 250 145 T420 140 T640 140 L640 315 Q540 350 440 320 T240 330 T80 300Z" fill="url(#dermis)" opacity=".9"/>
+              <g stroke="#7d3d52" stroke-width="5" fill="none">
+                <path d="M180 110 Q170 165 180 245"/>
+                <path d="M300 105 Q285 165 300 255"/>
+                <path d="M475 105 Q455 175 470 260"/>
+              </g>
+              <g fill="#f5a08e" stroke="#7d3d52" stroke-width="3">
+                <ellipse cx="180" cy="245" rx="18" ry="28"/><ellipse cx="300" cy="255" rx="18" ry="28"/><ellipse cx="470" cy="260" rx="18" ry="28"/>
+              </g>
+              <g stroke="#7d3d52" stroke-width="3" fill="none">
+                <path d="M180 270 C155 295 175 315 150 330 C130 345 150 355 175 340"/>
+                <path d="M300 280 C325 300 305 315 330 330 C350 342 335 360 315 350"/>
+                <path d="M470 285 C445 300 465 320 440 340 C420 355 435 365 460 350"/>
+              </g>
+              <g fill="#c95162" stroke="#7d3d52" stroke-width="2">
+                <circle cx="245" cy="205" r="7"/><circle cx="350" cy="215" r="7"/><circle cx="540" cy="205" r="7"/><circle cx="410" cy="280" r="7"/>
+              </g>
+              <g stroke="#fff" stroke-width="3" opacity=".8">
+                <path d="M115 200 C155 190 175 200 200 185"/><path d="M360 170 C400 160 420 175 455 160"/><path d="M500 230 C530 215 560 225 590 205"/>
+              </g>
+              <text x="110" y="90" font-size="22" font-weight="700" fill="#633447">EPIDERMIS</text>
+              <text x="500" y="380" font-size="22" font-weight="700" fill="#633447">DERMIS</text>
+            </svg>
+            <button class="hotspot h-epi" onclick="skinPart('epidermis')">1</button>
+            <button class="hotspot h-dermis" onclick="skinPart('dermis')">2</button>
+            <button class="hotspot h-hair" onclick="skinPart('hair')">3</button>
+            <button class="hotspot h-pore" onclick="skinPart('pores')">4</button>
+            <button class="hotspot h-sweat" onclick="skinPart('sweat')">5</button>
+            <button class="hotspot h-nerve" onclick="skinPart('nerves')">6</button>
+            <button class="hotspot h-oil" onclick="skinPart('oil')">7</button>
+          </div>
+          <div id="partInfo" class="part-info">
+            <div class="part-icon">👆</div>
+            <h3>Tap a number!</h3>
+            <p>Explore the picture to learn about the parts of the skin.</p>
+          </div>
+        </div>
+        <div class="teacher-note">For Grade 1: focus on recognizing the parts and their simple jobs. The skin's main job in today's lesson is helping us touch and feel.</div>
+        <button class="secondary" onclick="nextScreen()">I know the skin! ➜</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="4">
+      <div class="card">
+        <div class="eyebrow">🎮 PLAY & PRACTICE</div>
+        <h2>Where Does It Belong?</h2>
+        <p class="lead">Choose the feeling that matches the object.</p>
+        <div id="classifyGame" class="game-box"></div>
+        <div id="score" class="score">⭐ Score: 0</div>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="5">
+      <div class="card">
+        <div class="eyebrow">⚡ QUICK CHECK</div>
+        <h2>Skin Super Quiz</h2>
+        <div id="quiz"></div>
+        <div id="quizResult" class="quiz-result"></div>
+        <button id="finishQuiz" class="primary hidden" onclick="nextScreen()">Finish Mission 🏆</button>
+      </div>
+    </section>
+
+    <section class="screen" data-screen="6">
+      <div class="card celebration">
+        <div class="trophy">🏆</div>
+        <div class="eyebrow">MISSION COMPLETE</div>
+        <h2>You Are a Skin Scientist!</h2>
+        <p class="lead">You discovered that your skin protects your body and helps you touch and feel the world around you.</p>
+        <div class="big-message">🖐️ TOUCH • FEEL • DISCOVER • PROTECT</div>
+        <div class="exit-ticket">
+          <h3>🎫 Exit Ticket</h3>
+          <p>Tell Teacher Ed one thing your skin can feel.</p>
+          <div class="choices">
+            <button onclick="exitAnswer(this)">Soft</button>
+            <button onclick="exitAnswer(this)">Hard</button>
+            <button onclick="exitAnswer(this)">Cold</button>
+            <button onclick="exitAnswer(this)">Rough</button>
+            <button onclick="exitAnswer(this)">Smooth</button>
+          </div>
+          <p id="exitMessage"></p>
+        </div>
+        <button class="secondary" onclick="location.reload()">🔄 Start Again</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>🧪 Science Mission • The Skin and the Sense of Touch</span>
+    <button onclick="toggleTeacherPanel()">Teacher Controls</button>
+  </footer>
+
+  <div id="teacherPanel" class="teacher-panel">
+    <div class="panel-card">
+      <button class="close" onclick="toggleTeacherPanel()">×</button>
+      <h2>👩‍🏫 Teacher Ed's Quick Guide</h2>
+      <ul>
+        <li>Use the Mystery Bag to hook attention.</li>
+        <li>Let pupils describe real objects using touch words.</li>
+        <li>Use the interactive skin picture to introduce the parts.</li>
+        <li>Remind pupils never to touch very hot, sharp, or dangerous objects.</li>
+        <li>Ask: “How does your skin help you every day?”</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
