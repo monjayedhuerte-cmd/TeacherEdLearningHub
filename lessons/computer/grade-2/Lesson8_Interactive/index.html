@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Computer 2 | Lesson 8: Loading Up the Computer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-icon">▣</div>
+    <div><strong>COMPUTER 2</strong><span>Interactive Learning Hub</span></div>
+  </div>
+  <div class="lesson-badge">LESSON 8 · LOADING UP THE COMPUTER</div>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">ICT • LEARN • EXPLORE • PRACTICE</p>
+    <h1>Loading Up the Computer</h1>
+    <p>Learn how software is installed, how programs are removed properly, and how to stay safe when downloading software.</p>
+    <button class="primary" onclick="scrollToId('learn')">Start Learning →</button>
+  </div>
+  <div class="hero-art">
+    <div class="monitor">
+      <div class="screen"><span>INSTALL</span><div class="progress-demo"></div><small>Preparing your application...</small></div>
+      <div class="stand"></div><div class="base"></div>
+    </div>
+  </div>
+</section>
+
+<main>
+<section class="objectives card" id="learn">
+  <div class="section-title"><span>01</span><div><p>LEARNING TARGETS</p><h2>What will I learn?</h2></div></div>
+  <div class="objective-grid">
+    <div>📦 <b>Define</b><br>installation and software.</div>
+    <div>🔧 <b>Identify</b><br>installing and uninstalling software.</div>
+    <div>🪜 <b>Follow</b><br>the basic installation procedure.</div>
+    <div>💿 <b>Discover</b><br>how programs can be installed from CD/DVD.</div>
+  </div>
+</section>
+
+<section class="teacher card">
+  <div class="teacher-head">
+    <div class="avatar">👨‍🏫</div>
+    <div><p>TEACHER FACILITATOR</p><h2>Teacher's Explanation</h2></div>
+  </div>
+  <div class="explain">
+    <h3>What is software installation?</h3>
+    <p>Teacher: <b>Software installation</b> is the process of preparing a program so that it can work on a computer. An installer places the necessary program files in the proper locations and may ask us to choose options before the program is ready.</p>
+    <p>Think of it like bringing a new tool into your classroom. Before you can use the tool, you need to unpack it, put its parts in the right place, and follow the instructions.</p>
+    <div class="tip"><b>Teacher tip:</b> Learners should never install unfamiliar software without permission. Download only from trusted sources and ask an adult/teacher when unsure.</div>
+  </div>
+</section>
+
+<section class="concepts card">
+  <div class="section-title"><span>02</span><div><p>EXPLORE THE CONCEPT</p><h2>Important words</h2></div></div>
+  <div class="term-grid">
+    <article><b>Installer</b><p>A program that prepares and installs another program on the computer.</p></article>
+    <article><b>Executable</b><p>A file that can be run as a program.</p></article>
+    <article><b>Malware</b><p>Software designed to disrupt, damage, or gain unauthorized access.</p></article>
+    <article><b>Antivirus</b><p>Software that helps prevent, detect, scan for, and remove harmful software.</p></article>
+    <article><b>Decompression</b><p>Expanding compressed files back into usable files.</p></article>
+    <article><b>Default</b><p>A preselected option used when the user does not choose another option.</p></article>
+  </div>
+</section>
+
+<section class="how card">
+  <div class="section-title"><span>03</span><div><p>WATCH THE PROCESS</p><h2>How does installation work?</h2></div></div>
+  <p class="intro">The learner controls a safe simulation. No real software is installed. Watch each stage and read the explanation.</p>
+  <div class="install-sim">
+    <div class="sim-window">
+      <div class="windowbar"><span>Setup Wizard</span><button onclick="resetInstall()">↻</button></div>
+      <div class="sim-body">
+        <div class="app-logo">APP</div>
+        <h3 id="simTitle">Ready to Install</h3>
+        <p id="simText">A setup program guides the user through the installation.</p>
+        <div class="sim-progress"><div id="simProgress"></div></div>
+        <div class="sim-actions">
+          <button id="backBtn" onclick="installBack()" disabled>Back</button>
+          <button class="primary" id="nextBtn" onclick="installNext()">Next</button>
+        </div>
+      </div>
+    </div>
+    <aside class="stage-list" id="stageList"></aside>
+  </div>
+</section>
+
+<section class="teacher card">
+  <div class="section-title"><span>04</span><div><p>TEACHER EXPLANATION</p><h2>What is happening at each stage?</h2></div></div>
+  <div class="teacher-grid">
+    <div><span>1</span><h3>Get the program</h3><p>Download from a trusted source or use a legitimate CD/DVD. Check the source before opening the file.</p></div>
+    <div><span>2</span><h3>Open Setup</h3><p>The installer or setup program starts. It prepares the computer for the application.</p></div>
+    <div><span>3</span><h3>Choose options</h3><p>The installer may ask for language, license agreement, installation type, or location.</p></div>
+    <div><span>4</span><h3>Install files</h3><p>The setup program copies and prepares the required files. A progress bar may appear.</p></div>
+    <div><span>5</span><h3>Finish</h3><p>When installation is complete, click Finish or Close. Some programs may ask for a restart.</p></div>
+    <div><span>6</span><h3>Use the program</h3><p>The new program may appear in the Start menu and may also create a shortcut.</p></div>
+  </div>
+</section>
+
+<section class="safety card">
+  <div class="section-title"><span>05</span><div><p>SAFETY FIRST</p><h2>Safe or Unsafe?</h2></div></div>
+  <p>Click each card. Explain your choice before revealing the answer.</p>
+  <div class="safety-grid">
+    <button class="choice" onclick="reveal(this,'SAFE','Downloading from the official developer website is generally safer than using an unknown source.')"><b>Official website</b><small>Download from the software maker.</small><strong>?</strong></button>
+    <button class="choice" onclick="reveal(this,'UNSAFE','Unknown download sites may distribute modified or harmful files.')"><b>Unknown website</b><small>Download from a strange pop-up site.</small><strong>?</strong></button>
+    <button class="choice" onclick="reveal(this,'SAFE','Checking the file with security software before opening is a good safety habit.')"><b>Scan first</b><small>Check a downloaded file before opening.</small><strong>?</strong></button>
+    <button class="choice" onclick="reveal(this,'UNSAFE','Installing software without permission can create security and account problems.')"><b>No permission</b><small>Install anything without asking.</small><strong>?</strong></button>
+  </div>
+</section>
+
+<section class="uninstall card">
+  <div class="section-title"><span>06</span><div><p>MAINTAIN THE COMPUTER</p><h2>How do we uninstall properly?</h2></div></div>
+  <div class="path">
+    <div>1<br><b>Start</b></div><i>→</i><div>2<br><b>Settings</b></div><i>→</i><div>3<br><b>System</b></div><i>→</i><div>4<br><b>Apps & Features</b></div><i>→</i><div>5<br><b>Select Program</b></div><i>→</i><div>6<br><b>Uninstall</b></div>
+  </div>
+  <div class="warning"><b>Important:</b> Do not uninstall a program simply by deleting its folder or desktop shortcut. A shortcut is only a link; deleting it does not remove the program itself.</div>
+</section>
+
+<section class="cd card">
+  <div class="section-title"><span>07</span><div><p>HANDS-ON EXPLORATION</p><h2>CD/DVD Installation</h2></div></div>
+  <div class="cd-layout">
+    <div class="disc" onclick="startCD()">💿<small>CLICK ME</small></div>
+    <div id="cdSteps">
+      <p>Click the disc to begin the simulation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="practice card">
+  <div class="section-title"><span>08</span><div><p>CHECK YOUR LEARNING</p><h2>Quick Challenge</h2></div></div>
+  <div id="quiz"></div>
+  <button class="primary" onclick="gradeQuiz()">Check My Answers</button>
+  <div id="quizResult"></div>
+</section>
+</main>
+
+<footer>
+  <b>COMPUTER 2 • LESSON 8</b>
+  <p>Teacher facilitates. Learners explore, explain, practice, and apply.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

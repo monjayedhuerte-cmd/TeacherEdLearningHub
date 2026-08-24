@@ -60,6 +60,16 @@
     "icon": "monitor"
   },
   {
+    "title": "Loading Up the Computer",
+    "subject": "Computer",
+    "grade": "Grade 2",
+    "description": "Learn how software is installed, how programs are removed properly, and how to stay safe when downloading software.",
+    "file": "lessons/computer/grade-2/Lesson8_Interactive/index.html",
+    "date": "2026-09-02",
+    "featured": false,
+    "icon": "monitor"
+  },
+  {
     "title": "Become an Output Explorer!",
     "subject": "Computer",
     "grade": "Grade 2",
