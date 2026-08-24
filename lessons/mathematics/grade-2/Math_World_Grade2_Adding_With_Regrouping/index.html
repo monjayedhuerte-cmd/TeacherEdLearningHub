@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math World | Adding with Regrouping</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="stars"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="planet">∑</div>
+    <div>
+      <div class="eyebrow">GRADE 2 MATHEMATICS</div>
+      <h1>Math World</h1>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button id="focusBtn" title="Reduce visual distractions">Focus Mode</button>
+    <button id="soundBtn" title="Toggle sound">Sound On</button>
+    <button id="resetBtn">Restart</button>
+  </div>
+</header>
+
+<section class="mission-bar">
+  <div class="mission-info">
+    <span class="badge">MISSION 03</span>
+    <strong id="stageTitle">Welcome to Math World</strong>
+  </div>
+  <div class="xp"><span id="xpText">0 XP</span><div class="xp-track"><div id="xpBar"></div></div></div>
+</section>
+
+<main id="app"></main>
+
+<footer class="teacher-bar">
+  <div><strong>Teacher Guide:</strong> <span id="teacherCue"></span></div>
+  <button id="teacherNotes">Teacher Notes</button>
+</footer>
+
+<div id="teacherModal" class="overlay hidden">
+  <div class="modal">
+    <button class="close" id="closeTeacher">×</button>
+    <h2>Teacher Control Room</h2>
+    <div id="teacherContent"></div>
+  </div>
+</div>
+
+<div id="finishModal" class="overlay hidden">
+  <div class="modal center">
+    <div class="big-star">★</div>
+    <h2>Math World Mission Complete!</h2>
+    <p id="finalMessage"></p>
+    <button class="primary" id="closeFinish">Continue</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

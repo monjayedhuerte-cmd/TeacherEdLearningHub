@@ -30,6 +30,16 @@
     "icon": "calculator"
   },
   {
+    "title": "Adding Numbers With Regrouping",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "Today we enter the Regrouping Lab, where numbers can “move” into a new place-value home.",
+    "file": "lessons/mathematics/grade-2/Math_World_Grade2_Adding_With_Regrouping/index.html",
+    "date": "2026-09-02",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
     "title": "Kagandahang Loob",
     "subject": "ESP",
     "grade": "Grade 2",
