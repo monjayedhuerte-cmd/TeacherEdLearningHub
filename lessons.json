@@ -130,6 +130,16 @@
     "icon": "map"
   },
   {
+    "title": "Ang Aking Pamilya",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 1",
+    "description": "Kilalanin ang mga kasapi ng pamilya, alamin ang kanilang mga tungkulin, at tuklasin kung bakit mahalaga ang bawat isa.",
+    "file": "lessons/araling-panlipunan/grade-1/Aralin_9_Ang_Aking_Pamilya_Interactive/index.html",
+    "date": "2026-08-27",
+    "featured": false,
+    "icon": "map"
+  },
+  {
     "title": "Pagkilala sa Kulturang Pilipino",
     "subject": "Araling Panlipunan",
     "grade": "Grade 3",

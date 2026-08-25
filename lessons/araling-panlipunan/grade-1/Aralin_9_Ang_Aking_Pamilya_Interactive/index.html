@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aralin 9 | Ang Aking Pamilya</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="confetti" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🏠</div>
+      <div>
+        <span>ARALING PANLIPUNAN</span>
+        <strong>Aralin 9: Ang Aking Pamilya</strong>
+      </div>
+    </div>
+    <button class="teacher-btn" id="teacherModeBtn">👩‍🏫 Teacher Mode</button>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-text">
+        <div class="badge">🌈 Tara, matuto tayo!</div>
+        <h1>Ang Aking <span>Pamilya</span></h1>
+        <p class="hero-sub">
+          Kilalanin ang mga kasapi ng pamilya, alamin ang kanilang mga tungkulin,
+          at tuklasin kung bakit mahalaga ang bawat isa.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-go="motivation">🚀 Simulan ang Aralin</button>
+          <button class="soft-btn" data-go="lesson">📖 Tingnan ang Aralin</button>
+        </div>
+        <div class="learning-goals">
+          <div>🎯 Makilala</div><div>🤝 Maunawaan</div><div>❤️ Pahalagahan</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="sun">☀️</div>
+        <div class="cloud c1">☁️</div>
+        <div class="cloud c2">☁️</div>
+        <div class="house">
+          <div class="roof"></div>
+          <div class="window">👨‍👩‍👧‍👦</div>
+          <div class="door">🚪</div>
+          <div class="flower f1">🌷</div>
+          <div class="flower f2">🌼</div>
+          <div class="tree">🌳</div>
+        </div>
+      </div>
+    </section>
+
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <button class="nav-pill active" data-go="motivation">1. Motivation</button>
+      <button class="nav-pill" data-go="explore">2. Tuklasin</button>
+      <button class="nav-pill" data-go="discuss">3. Talakayin</button>
+      <button class="nav-pill" data-go="practice">4. Gawin</button>
+      <button class="nav-pill" data-go="familytree">5. Family Tree</button>
+      <button class="nav-pill" data-go="check">6. Suriin</button>
+      <button class="nav-pill" data-go="values">7. Pahalagahan</button>
+    </nav>
+
+    <section class="section motivation" id="motivation">
+      <div class="section-heading">
+        <span class="section-number">01</span>
+        <div>
+          <p class="eyebrow">MOTIBASYON</p>
+          <h2>Hulaan Mo, Pamilya Ko! 🕵️‍♀️</h2>
+        </div>
+      </div>
+      <div class="mystery-card">
+        <div class="mystery-visual">
+          <div class="mystery-house">🏠</div>
+          <div class="question-bubble">❓</div>
+        </div>
+        <div class="mystery-content">
+          <h3>May isang misteryosong bahay!</h3>
+          <p>
+            May mga taong nakatira rito. Sila ay nagmamahalan, nagtutulungan,
+            nag-aalaga at gumagabay sa isa't isa.
+          </p>
+          <p class="big-question">Sino kaya sila?</p>
+          <div class="answer-buttons">
+            <button class="choice" data-answer="school">🏫 Paaralan</button>
+            <button class="choice" data-answer="family">👨‍👩‍👧‍👦 Pamilya</button>
+            <button class="choice" data-answer="market">🛒 Palengke</button>
+          </div>
+          <div class="feedback" id="motivationFeedback"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="explore">
+      <div class="section-heading">
+        <span class="section-number">02</span>
+        <div>
+          <p class="eyebrow">TUKLASIN</p>
+          <h2>Ano ang Pamilya? 🏡</h2>
+        </div>
+      </div>
+      <div class="definition-card">
+        <div class="definition-icon">❤️</div>
+        <div>
+          <h3>Ang Pamilya</h3>
+          <p>
+            Ang pamilya ay ang pinakamaliit na grupo ng mga tao sa pamayanan.
+            Karaniwan itong binubuo ng tatay, nanay, at anak o mga anak.
+          </p>
+          <p>
+            May iba't ibang anyo ng pamilya. Maaaring may dalawang magulang,
+            isang magulang, o kasama ang iba pang kamag-anak.
+          </p>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <span>🌟</span>
+        <p><strong>Tandaan:</strong> Maaaring magkakaiba ang anyo ng bawat pamilya,
+          ngunit <strong>mahalaga ang bawat kasapi</strong> at dapat silang mahalin,
+          igalang at tulungan.</p>
+      </div>
+
+      <h3 class="subheading">Iba't ibang Pamilya</h3>
+      <div class="family-types">
+        <article class="type-card">
+          <div class="type-icon">👨‍👩‍👧</div>
+          <h3>Two-parent family</h3>
+          <p>May dalawang magulang at anak o mga anak.</p>
+        </article>
+        <article class="type-card">
+          <div class="type-icon">👩‍👧</div>
+          <h3>Solo-parent family</h3>
+          <p>Isang magulang ang kasama at gumagabay sa anak o mga anak.</p>
+        </article>
+        <article class="type-card">
+          <div class="type-icon">👨‍👩‍👧‍👦👴👵</div>
+          <h3>Extended family</h3>
+          <p>Kasama o malapit sa pamilya ang ibang kamag-anak tulad ng lolo, lola, tito, tita at pinsan.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section soft-bg" id="discuss">
+      <div class="section-heading">
+        <span class="section-number">03</span>
+        <div>
+          <p class="eyebrow">TALAKAYIN NATIN</p>
+          <h2>Sino-sino ang Kasapi? 👨‍👩‍👧‍👦</h2>
+        </div>
+      </div>
+      <p class="section-intro">I-click ang bawat card upang malaman ang tungkol sa kasapi ng pamilya.</p>
+      <div class="member-grid">
+        <button class="member-card" data-member="tatay"><span>👨</span><strong>Tatay</strong><small>Haligi ng tahanan</small></button>
+        <button class="member-card" data-member="nanay"><span>👩</span><strong>Nanay</strong><small>Ilaw ng tahanan</small></button>
+        <button class="member-card" data-member="kuya"><span>👦</span><strong>Kuya</strong><small>Nakatatandang kapatid</small></button>
+        <button class="member-card" data-member="ate"><span>👧</span><strong>Ate</strong><small>Nakatatandang kapatid</small></button>
+        <button class="member-card" data-member="bunso"><span>👶</span><strong>Bunso</strong><small>Pinakabatang kasapi</small></button>
+        <button class="member-card" data-member="lolo"><span>👴</span><strong>Lolo</strong><small>Magulang ng magulang</small></button>
+        <button class="member-card" data-member="lola"><span>👵</span><strong>Lola</strong><small>Magulang ng magulang</small></button>
+        <button class="member-card" data-member="tito"><span>🧔</span><strong>Tito</strong><small>Kapatid ng magulang</small></button>
+        <button class="member-card" data-member="tita"><span>👩‍🦱</span><strong>Tita</strong><small>Kapatid ng magulang</small></button>
+        <button class="member-card" data-member="pinsan"><span>🧒</span><strong>Pinsan</strong><small>Anak ng tito/tita</small></button>
+      </div>
+      <div class="member-info" id="memberInfo">
+        <div class="info-icon">👆</div>
+        <div><h3>Pumili ng isang kasapi</h3><p>I-click ang larawan sa itaas upang makita ang paliwanag.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="practice">
+      <div class="section-heading">
+        <span class="section-number">04</span>
+        <div>
+          <p class="eyebrow">PAGLINANG NG KASANAYAN</p>
+          <h2>Sino Siya? 🎯</h2>
+        </div>
+      </div>
+      <div class="game-card">
+        <div class="game-top">
+          <div>
+            <span class="game-label">MATCHING GAME</span>
+            <h3>Hanapin ang Tamang Kasapi!</h3>
+          </div>
+          <div class="score-chip">⭐ <span id="matchScore">0</span>/5</div>
+        </div>
+        <p class="game-instruction">I-click ang tamang kasapi para sa bawat sitwasyon.</p>
+        <div class="match-question" id="matchQuestion"></div>
+        <div class="match-options" id="matchOptions"></div>
+        <div class="feedback" id="matchFeedback"></div>
+        <button class="primary-btn hidden" id="nextMatch">➡️ Susunod</button>
+      </div>
+    </section>
+
+    <section class="section familytree-section" id="familytree">
+      <div class="section-heading">
+        <span class="section-number">05</span>
+        <div>
+          <p class="eyebrow">PAGPAPALALIM</p>
+          <h2>Ang Aking Family Tree 🌳</h2>
+        </div>
+      </div>
+      <div class="tree-explain">
+        <div class="tree-icon">🌳</div>
+        <div>
+          <h3>Ano ang family tree?</h3>
+          <p>
+            Ang <strong>family tree</strong> ay isang ilustrasyon na nagpapakita
+            ng ugnayan ng bawat kasapi ng isang pamilya.
+          </p>
+        </div>
+      </div>
+      <div class="tree-demo">
+        <div class="generation top">
+          <div class="person">👴<span>Lolo</span></div>
+          <div class="person">👵<span>Lola</span></div>
+        </div>
+        <div class="branch-line"></div>
+        <div class="generation middle">
+          <div class="person">👩<span>Mama</span></div>
+          <div class="person">👨<span>Papa</span></div>
+        </div>
+        <div class="branch-line"></div>
+        <div class="generation children">
+          <div class="person">👦<span>Kuya</span></div>
+          <div class="person special">🧒<span>Ako</span></div>
+          <div class="person">👧<span>Ate</span></div>
+        </div>
+      </div>
+      <div class="create-tree">
+        <h3>🎨 Gumawa ng Iyong Family Tree</h3>
+        <p>Isulat ang pangalan ng bawat kasapi. Hindi kailangang pareho sa halimbawa ang iyong pamilya.</p>
+        <div class="tree-inputs">
+          <input id="parent1" placeholder="👩 Nanay / Magulang">
+          <input id="parent2" placeholder="👨 Tatay / Magulang">
+          <input id="sibling1" placeholder="👦 Ate / Kuya">
+          <input id="me" placeholder="🧒 Ako">
+          <input id="sibling2" placeholder="👧 Bunso / Kapatid">
+        </div>
+        <button class="primary-btn" id="buildTree">🌳 Ipakita ang Tree</button>
+        <div class="custom-tree" id="customTree"></div>
+      </div>
+    </section>
+
+    <section class="section soft-bg" id="check">
+      <div class="section-heading">
+        <span class="section-number">06</span>
+        <div>
+          <p class="eyebrow">PAGTATAYA</p>
+          <h2>Suriin ang Iyong Natutuhan! 🧠</h2>
+        </div>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-progress"><div id="quizProgressBar"></div></div>
+        <div class="quiz-meta"><span id="quizNumber">Tanong 1 ng 7</span><span>⭐ <b id="quizScore">0</b></span></div>
+        <div id="quizContent"></div>
+        <div class="feedback" id="quizFeedback"></div>
+        <button class="primary-btn hidden" id="nextQuiz">➡️ Susunod na Tanong</button>
+      </div>
+    </section>
+
+    <section class="section values" id="values">
+      <div class="section-heading">
+        <span class="section-number">07</span>
+        <div>
+          <p class="eyebrow">PAGPAPAHALAGA</p>
+          <h2>Ipagmalaki ang Iyong Pamilya! ❤️</h2>
+        </div>
+      </div>
+      <div class="heart-card">
+        <div class="big-heart">❤️</div>
+        <h3>Family Appreciation Circle</h3>
+        <p>Tapusin ang pangungusap:</p>
+        <p class="sentence">“Mahal ko ang aking pamilya dahil <span id="sentenceBlank">__________</span>.”</p>
+        <div class="sentence-buttons">
+          <button data-sentence="lagi nila akong minamahal">💖 Laging minamahal</button>
+          <button data-sentence="tinutulungan nila ako">🤝 Tinutulungan ako</button>
+          <button data-sentence="lagi kaming nagtutulungan">🏡 Nagtutulungan kami</button>
+          <button data-sentence="masaya kami kapag magkakasama">😊 Masaya kami</button>
+        </div>
+        <div class="celebration" id="celebration"></div>
+      </div>
+      <div class="closing-card">
+        <div>🌟</div>
+        <p><strong>Tandaan:</strong> Maaaring magkakaiba ang ating mga pamilya, ngunit ang bawat kasapi ay mahalaga. Mahalin, igalang, tulungan at pahalagahan natin ang ating pamilya.</p>
+      </div>
+    </section>
+
+    <section class="section teacher-notes hidden" id="teacherPanel">
+      <div class="section-heading">
+        <span class="section-number">👩‍🏫</span>
+        <div><p class="eyebrow">TEACHER MODE</p><h2>Gabay ni Teacher</h2></div>
+      </div>
+      <div class="teacher-grid">
+        <article><h3>🎤 Motivation</h3><p>Gamitin ang “Family Mystery” bago ipakilala ang konsepto. Hayaang manghula at magbahagi ang mga bata.</p></article>
+        <article><h3>💬 Talakayan</h3><p>Iwasang ipilit na iisa ang anyo ng pamilya. Bigyang-diin na magkakaiba ang pamilya ngunit mahalaga ang bawat kasapi.</p></article>
+        <article><h3>🎨 Family Tree</h3><p>Payagang gumamit ang bata ng sariling halimbawa ng pamilya. Maaaring gumuhit sa papel pagkatapos ng digital activity.</p></article>
+        <article><h3>📝 Assessment</h3><p>Gamitin ang 7-item interactive quiz bilang formative assessment. Iugnay ang resulta sa follow-up activity.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>🏠 <strong>Aralin 9: Ang Aking Pamilya</strong></div>
+    <div>Made for young learners • Araling Panlipunan</div>
+  </footer>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-box">
+      <button class="modal-close" id="modalClose">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
