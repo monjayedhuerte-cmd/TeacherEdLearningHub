@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Science 1 - Skin Detectives</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap');
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#f4f7ff,#fff9ef);color:#26324d;font-family:Nunito,sans-serif}
+header{position:sticky;top:0;z-index:5;background:#ffffffed;backdrop-filter:blur(10px);padding:12px 5%;box-shadow:0 2px 15px #39436b12}
+nav{max-width:1150px;margin:auto;display:flex;justify-content:space-between;align-items:center}.brand{font-weight:900;font-size:18px}.brand span{background:linear-gradient(135deg,#7657d9,#ff6f91);color:white;padding:10px;border-radius:13px;margin-right:8px}
+nav button,.start,.next{border:0;border-radius:12px;padding:10px 15px;background:#eee9ff;color:#5c43b9;font-weight:900;cursor:pointer}
+main{max-width:1150px;margin:auto;padding:28px 18px 60px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:20px}.hero>div{border-radius:28px;padding:30px;box-shadow:0 15px 40px #4d447020}
+.hero-main{background:linear-gradient(135deg,#7052d2,#a07cf0);color:white}.hero-main h1{font:800 52px/0.95 'Baloo 2';margin:10px 0}.hero-main p{font-size:18px;line-height:1.5}.mission{background:white}.mission h2,h2,h3{font-family:'Baloo 2';margin-top:0}.mission h2{font-size:30px}.start{background:#ffd65a;color:#513d00;margin-top:10px;box-shadow:0 5px #dcae2d}
+section{margin-top:30px}.title{display:flex;justify-content:space-between;align-items:end;margin-bottom:14px}.title h2{font-size:34px;margin:0}.title p{color:#69738a}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.card{padding:20px;border-radius:20px;color:white;min-height:135px;box-shadow:0 10px 25px #3332}.card b{font-size:30px}.card h3{font-size:24px;margin:5px 0}.hot{background:#ff765f}.cold{background:#4ca8f5}.soft{background:#65c796}.hard{background:#9a7962}
+.panel{background:white;border-radius:25px;padding:20px;box-shadow:0 15px 40px #4d447020}.explore{display:grid;grid-template-columns:1.1fr .9fr;gap:20px}
+.viewer{position:relative;background:#fff3ea;padding:8px;border-radius:18px}.viewer img{width:100%;display:block;border-radius:12px}.hint{text-align:center;padding:10px;color:#68728a;font-size:13px}
+.dot{position:absolute;transform:translate(-50%,-50%);width:34px;height:34px;border:3px solid white;border-radius:50%;background:#ff6f91;color:white;font-weight:900;cursor:pointer;box-shadow:0 5px 14px #3335}.dot:hover,.dot.on{background:#7052d2;transform:translate(-50%,-50%) scale(1.15)}
+.parts{display:grid;grid-template-columns:1fr 1fr;gap:10px}.part{padding:12px;border:2px solid #edf0f7;border-radius:15px;background:white;text-align:left;cursor:pointer;font-weight:900}.part:hover,.part.on{border-color:#c8bcff;background:#f7f4ff}.explain{margin-top:12px;padding:16px;border-radius:16px;background:linear-gradient(135deg,#eff9ff,#f8f1ff);min-height:125px}.explain h3{font-size:25px;margin:0 0 5px}.explain p{line-height:1.5;color:#536078}
+.game{display:grid;grid-template-columns:.7fr 1.3fr;gap:18px}.object{font-size:75px;text-align:center}.gamebox{text-align:center;padding:25px;background:linear-gradient(135deg,#fff,#f2eeff);border-radius:22px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:10px}.choice{border:0;border-radius:14px;background:#fff;padding:15px;box-shadow:0 6px 15px #3331;font-weight:900;cursor:pointer}.feedback{text-align:center;font-weight:900;min-height:28px;margin-top:12px}
+.quiz{display:none}.quiz.show{display:block}.q{background:white;padding:22px;border-radius:22px;box-shadow:0 15px 40px #4d447020}.q h3{font-size:28px}.answers{display:grid;gap:10px}.answers button{padding:13px;border:2px solid #edf0f7;background:white;border-radius:13px;text-align:left;font-weight:800;cursor:pointer}.correct{background:#eafff5!important;border-color:#55c89d!important}.wrong{background:#fff0f3!important;border-color:#ff8291!important}
+footer{text-align:center;color:#788197;margin-top:35px;font-size:13px}
+@media(max-width:800px){.hero,.explore,.game{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}}@media(max-width:500px){.parts{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.hero-main h1{font-size:42px}nav button{display:none}}
+</style>
+</head>
+<body>
+<header><nav><div class="brand"><span>🔬</span> SCIENCE 1 <small>• Skin Detectives</small></div>
+<div><button onclick="go('learn')">Learn</button> <button onclick="go('parts')">Parts</button> <button onclick="go('game')">Play</button> <button onclick="go('quiz')">Check</button></div></nav></header>
+<main>
+<div class="hero"><div class="hero-main"><div>GRADE 1 SCIENCE • OUR BODY</div><h1>Meet Your Amazing Skin! 🖐️</h1><p>Your skin covers your body. It helps you <b>touch, feel, and protect</b> yourself.</p></div>
+<div class="mission"><h2>🕵️ Skin Detective Mission</h2><p>Look at the picture. Click the numbered dots or the names to discover what each part of the skin does.</p><button class="start" onclick="go('parts')">Start Mission 🚀</button></div></div>
+
+<section id="learn"><div class="title"><div><h2>🌟 What Can Your Skin Feel?</h2><p>Your skin helps you notice different things.</p></div></div>
+<div class="cards"><div class="card hot"><b>🔥</b><h3>Hot</h3><p>Your skin can tell when something is hot.</p></div><div class="card cold"><b>❄️</b><h3>Cold</h3><p>Your skin can tell when something is cold.</p></div><div class="card soft"><b>☁️</b><h3>Soft</h3><p>Your skin can feel soft things.</p></div><div class="card hard"><b>🪵</b><h3>Hard</h3><p>Your skin can feel hard things.</p></div></div></section>
+
+<section id="parts"><div class="title"><div><h2>🔎 Explore the Parts of the Skin</h2><p>Click a pink number or a part name.</p></div></div>
+<div class="explore"><div class="panel"><div class="viewer">
+<img src="skin-anatomy.png" alt="Skin anatomy diagram">
+<button class="dot" style="left:21%;top:35%" data-p="epidermis">1</button>
+<button class="dot" style="left:35%;top:49%" data-p="dermis">2</button>
+<button class="dot" style="left:55%;top:22%" data-p="hair">3</button>
+<button class="dot" style="left:74%;top:36%" data-p="pore">4</button>
+<button class="dot" style="left:72%;top:62%" data-p="sweat">5</button>
+<button class="dot" style="left:57%;top:67%" data-p="bulb">6</button>
+<button class="dot" style="left:64%;top:49%" data-p="nerve">7</button>
+<button class="dot" style="left:73%;top:82%" data-p="fat">8</button>
+</div><div class="hint">👆 Tap a number to learn!</div></div>
+<div class="panel"><div class="parts">
+<button class="part" data-p="epidermis">1️⃣ Epidermis<br><small>Top layer</small></button>
+<button class="part" data-p="dermis">2️⃣ Dermis<br><small>Layer below</small></button>
+<button class="part" data-p="hair">3️⃣ Hair<br><small>Helps protect skin</small></button>
+<button class="part" data-p="pore">4️⃣ Sweat Pore<br><small>Tiny opening</small></button>
+<button class="part" data-p="sweat">5️⃣ Sweat Gland<br><small>Makes sweat</small></button>
+<button class="part" data-p="bulb">6️⃣ Hair Bulb<br><small>Where hair grows</small></button>
+<button class="part" data-p="nerve">7️⃣ Nerve<br><small>Helps you feel</small></button>
+<button class="part" data-p="fat">8️⃣ Fat Tissue<br><small>Cushions the body</small></button>
+</div><div class="explain" id="explain"><h3>👋 Choose a part!</h3><p>Click a number or name and I will explain it in simple words.</p></div></div></div></section>
+
+<section id="game"><div class="title"><div><h2>🎮 Touch Detective Game</h2><p>What would your skin feel?</p></div><b>Score: <span id="score">0</span>/5</b></div>
+<div class="game"><div class="gamebox"><div class="object" id="emoji">🧊</div><h2 id="obj">Ice Cube</h2></div><div class="panel"><div class="choices" id="choices"></div><div class="feedback" id="feedback"></div></div></div></section>
+
+<section id="quiz" class="quiz"><div class="title"><div><h2>🧠 Skin Check</h2><p>Show what you learned!</p></div></div><div class="q"><h3 id="question"></h3><div class="answers" id="answers"></div><div class="feedback" id="qfeed"></div><button class="next" id="next" style="display:none" onclick="nextQ()">Next ➜</button></div></section>
+<footer>Science 1 • Skin Detectives • Keep exploring, little scientist! 👩‍🔬👨‍🔬</footer>
+</main>
+<script>
+const P={
+epidermis:["Epidermis","🛡️","The epidermis is the TOP layer of the skin. It helps cover and protect your body."],
+dermis:["Dermis","🏠","The dermis is the layer below the epidermis. It contains important parts such as nerves and glands."],
+hair:["Hair","🪶","Fine hair grows above the skin. It helps protect the skin from dust and germs."],
+pore:["Sweat Pore","💧","A pore is a tiny opening in the skin. Sweat can come out through pores."],
+sweat:["Sweat Gland","💦","Sweat glands make sweat. Sweating helps your body cool down."],
+bulb:["Hair Bulb","🌱","The hair bulb is at the bottom of a hair. This is where the hair grows."],
+nerve:["Nerve","⚡","Nerves help you feel touch, pressure, pain, and changes in temperature."],
+fat:["Fat Tissue","🧸","Fat tissue is a soft layer under the skin. It helps cushion and protect the body."]
+};
+function part(k){let p=P[k];document.querySelectorAll("[data-p]").forEach(x=>x.classList.toggle("on",x.dataset.p==k));document.getElementById("explain").innerHTML=`<h3>${p[1]} ${p[0]}</h3><p>${p[2]}</p>`}
+document.querySelectorAll("[data-p]").forEach(x=>x.onclick=()=>part(x.dataset.p));
+function go(id){document.getElementById(id).scrollIntoView({behavior:"smooth"});if(id=="quiz"){document.querySelector(".quiz").classList.add("show")}}
+
+const items=[["🧊","Ice Cube","cold"],["☁️","Cotton","soft"],["🪵","Wooden Block","hard"],["🪨","Rock","rough"],["🥤","Warm Chocolate Drink","hot"]], names=["🔥 Hot","❄️ Cold","☁️ Soft","🪵 Hard","🪨 Rough"];
+let gi=0,score=0;function game(){let x=items[gi];emoji.textContent=x[0];obj.textContent=x[1];feedback.textContent="";choices.innerHTML=names.map(n=>`<button class="choice" onclick="answer('${n.slice(2).toLowerCase()}')">${n}</button>`).join("")}
+function answer(a){if(a==items[gi][2]){score++;document.getElementById("score").textContent=score;feedback.textContent="🎉 Great job!";gi=(gi+1)%5;setTimeout(game,600)}else feedback.textContent="💡 Try again. Think about how it feels!"}game();
+
+const Q=[["Which is the top layer of skin?",["Epidermis","Dermis","Fat tissue"],0],["What comes out through pores?",["Hair","Sweat","Bones"],1],["What helps you feel pain and pressure?",["Nerves","Hair","Fat"],0],["Which part makes sweat?",["Sweat gland","Epidermis","Hair"],0],["What can skin tell you?",["Only sounds","Hot, cold, and textures","Only colors"],1]];let qi=0,qs=0,done=false;
+function quiz(){let q=Q[qi];question.textContent=q[0];answers.innerHTML=q[1].map((a,i)=>`<button onclick="qa(${i})">${a}</button>`).join("");qfeed.textContent="";next.style.display="none";done=false}
+function qa(i){if(done)return;done=true;let bs=[...answers.children];bs[Q[qi][2]].classList.add("correct");if(i==Q[qi][2]){qs++;qfeed.textContent="🌟 Correct!"}else{bs[i].classList.add("wrong");qfeed.textContent="💡 Good try! Look at the green answer."}next.style.display="inline-block"}
+function nextQ(){qi++;if(qi<Q.length)quiz();else document.querySelector(".q").innerHTML=`<div style="text-align:center"><div style="font-size:65px">🏆</div><h3>Mission Complete!</h3><p>You scored <b>${qs}/${Q.length}</b>. Amazing, Skin Detective!</p><button class="next" onclick="qi=0;qs=0;quiz()">Try Again 🔁</button></div>`}
+quiz();
+</script>
+</body></html>

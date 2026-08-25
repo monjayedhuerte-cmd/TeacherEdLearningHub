@@ -107,7 +107,7 @@
     "file": "https://monjayedhuerte-cmd.github.io/science1/",
     "date": "2026-08-19",
     "featured": false,
-    "icon": "DNA"
+    "icon": "lab"
   },
   {
     "title": "The Skin and The Sense of Touch",
@@ -117,7 +117,17 @@
     "file": "lessons/science/grade-1/Skin_Detectives_Grade1_Interactive_Website/index.html",
     "date": "2026-08-19",
     "featured": false,
-    "icon": "DNA"
+    "icon": "hand"
+  },
+  {
+    "title": "Parts of the Skin",
+    "subject": "Science",
+    "grade": "Grade 1",
+    "description": "Look at the picture. Click the numbered dots or the names to discover what each part of the skin does.",
+    "file": "lessons/science/grade-1/Science1_Skin_Parts_Interactive/index.html",
+    "date": "2026-08-26",
+    "featured": false,
+    "icon": "hand"
   },
   {
     "title": "Ang Kasaysayan ng Ating Pamayanan",
