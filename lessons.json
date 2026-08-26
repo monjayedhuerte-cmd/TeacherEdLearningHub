@@ -190,6 +190,15 @@
     "icon": "map"
   },
   {
+   "title": "Classroom Picker",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "A fun random student picker for classroom participation.",
+   "file": "lessons/Teacher%20Tools/Classroom_Pick_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
     "title": "Ang Laki ng Aking Pamilya",
     "subject": "Araling Panlipunan",
     "grade": "Grade 1",
