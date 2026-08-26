@@ -194,7 +194,79 @@
    "subject": "Teacher Tools",
    "grade": "Teacher",
    "description": "A fun random student picker for classroom participation.",
-   "file": "lessons/Teacher%20Tools/Classroom_Pick_Teacher_Ed/index.html",
+   "file": "lessons/TeacherTools/Classroom_Pick_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Attention Getter",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Pick a routine that matches your class and the moment.",
+   "file": "lessons/TeacherTools/Classroom_Attention_Getter_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Brain Break Tool",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Pick a mood or let the generator surprise the class.",
+   "file": "lessons/TeacherTools/Classroom_Brain_Break_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Exit Tickets",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Choose an exit ticket. Select a prompt or let the tool pick one for you.",
+   "file": "lessons/TeacherTools/Classroom_Exit_Ticket_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Classroom Noise Meter",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Set the noise target",
+   "file": "lessons/TeacherTools/Classroom_Noise_Meter_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Classroom Picker",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Let the wheel choose today's student!",
+   "file": "lessons/TeacherTools/Classroom_Pick_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Classroom Timer",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Set the time and let the countdown begin.",
+   "file": "lessons/TeacherTools/Classroom_Timer_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Quick Class Pool",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Choose the anwer the best describe the student.",
+   "file": "lessons/TeacherTools/Quick_Class_Poll_Tool_Teacher_Ed/index.html",
+   "featured": true,
+   "icon": "shuffle"
+  },
+  {
+   "title": "Quick Class Pool",
+   "subject": "Teacher Tools",
+   "grade": "Teacher",
+   "description": "Choose the anwer the best describe the student.",
+   "file": "lessons/TeacherTools/Quick_Class_Poll_Tool_Teacher_Ed/index.html",
    "featured": true,
    "icon": "shuffle"
   },
@@ -217,4 +289,5 @@
     "featured": false,
     "icon": "book-open"
   }
+  
 ]
