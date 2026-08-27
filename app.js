@@ -165,17 +165,58 @@ function renderLessons() {
   refreshIcons();
 }
 
+function getLocalDateString() {
+  const now = new Date();
+
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, "0");
+  const day = String(now.getDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`;
+}
+
 function renderToday() {
-  const sorted = [...LESSONS].sort((a, b) => b.date.localeCompare(a.date));
-  const today = sorted[0];
+  const todayDate = getLocalDateString();
 
-  if (!today) return;
+  // Find lessons scheduled for today's date
+  const todaysLessons = LESSONS
+    .filter(lesson => lesson.date === todayDate)
+    .sort((a, b) => a.title.localeCompare(b.title));
 
+  const today = todaysLessons[0];
+
+  // No lesson scheduled today
+  if (!today) {
+    $("#todayTitle").textContent = "No lesson scheduled today";
+
+    $("#todayDescription").textContent =
+      "There is no lesson scheduled for today. Explore the Lessons section to review other learning materials.";
+
+    $("#todaySubject").textContent =
+      "Teacher Ed Learning Hub";
+
+    $("#todayGrade").textContent =
+      "Today's Learning";
+
+    $("#todayLink").href = "#lessons";
+
+    return;
+  }
+
+  // Display today's lesson
   $("#todayTitle").textContent = today.title;
-  $("#todayDescription").textContent = today.description;
-  $("#todaySubject").textContent = today.subject;
-  $("#todayGrade").textContent = today.grade;
-  $("#todayLink").href = today.file;
+
+  $("#todayDescription").textContent =
+    today.description;
+
+  $("#todaySubject").textContent =
+    today.subject;
+
+  $("#todayGrade").textContent =
+    today.grade;
+
+  $("#todayLink").href =
+    today.file;
 }
 
 function initializeStats() {
