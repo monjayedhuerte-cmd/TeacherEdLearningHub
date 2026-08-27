@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Araling Panlipunan 1 | Ang Laki ng Aking Pamilya</title>
+<meta name="description" content="Interactive classroom lesson for Grade 1 Araling Panlipunan — Ang Laki ng Aking Pamilya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg1:#dff6ff; --bg2:#fff4d6; --ink:#18324a; --muted:#557086;
+  --primary:#2f80ed; --secondary:#7c5cff; --accent:#ffb84d; --green:#35b779;
+  --danger:#ef6461; --glass:rgba(255,255,255,.62); --line:rgba(255,255,255,.7);
+  --shadow:0 18px 45px rgba(41,72,110,.15); --radius:26px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);font-family:Nunito,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg1),#edf5ff 48%,var(--bg2));min-height:100vh;overflow-x:hidden}
+body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(8px);opacity:.5}.body:before{}
+body:before{width:360px;height:360px;background:#9de8ff;left:-120px;top:80px}.body:after{}
+body:after{width:420px;height:420px;background:#ffd69a;right:-140px;bottom:-100px}
+button,input{font:inherit}.app{min-height:100vh}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.58);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);box-shadow:0 8px 25px rgba(37,70,100,.08)}
+.nav{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;white-space:nowrap}.logo{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#2f80ed,#7c5cff);color:#fff;font-size:23px;box-shadow:0 8px 20px rgba(47,128,237,.25)}
+.navlinks{display:flex;gap:7px;overflow:auto;flex:1;padding-bottom:2px}.navlinks button{border:0;background:transparent;color:#38556d;padding:9px 11px;border-radius:14px;font-weight:800;cursor:pointer;white-space:nowrap}.navlinks button.active,.navlinks button:hover{background:rgba(255,255,255,.72);color:#245fc1}.tools{display:flex;gap:7px}.iconbtn{border:1px solid rgba(255,255,255,.8);background:rgba(255,255,255,.58);width:42px;height:42px;border-radius:14px;cursor:pointer;box-shadow:0 6px 16px rgba(30,60,90,.08)}
+main{max-width:1200px;margin:auto;padding:26px 18px 70px}.hero{min-height:calc(100vh - 100px);display:grid;place-items:center}.glass{background:var(--glass);border:1px solid var(--line);box-shadow:var(--shadow);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-radius:var(--radius)}
+.hero-card{width:100%;padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;overflow:hidden;position:relative}.hero-card:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:rgba(255,255,255,.35);right:-80px;top:-90px}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.65);padding:7px 12px;border-radius:999px;font-size:13px;font-weight:900;color:#31669b}.hero h1{font-family:'Baloo 2';font-size:clamp(42px,6vw,72px);line-height:.94;margin:16px 0 12px;letter-spacing:-1px}.hero h1 span{color:#2f80ed}.subtitle{font-size:19px;color:var(--muted);max-width:650px}.translation{display:block;color:#688096;font-size:.78em;margin-top:5px;font-style:italic}.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}.btn{border:0;border-radius:16px;padding:13px 18px;font-weight:900;cursor:pointer;transition:.2s;box-shadow:0 8px 18px rgba(35,72,105,.1)}.btn:hover{transform:translateY(-2px)}.primary{background:linear-gradient(135deg,#2f80ed,#5f6df5);color:#fff}.soft{background:rgba(255,255,255,.7);color:#2b5272;border:1px solid rgba(255,255,255,.8)}
+.hero-art{position:relative;min-height:430px;display:grid;place-items:center}.hero-art img{width:min(100%,480px);max-height:460px;object-fit:contain;border-radius:24px;filter:drop-shadow(0 22px 25px rgba(45,67,90,.15))}.floating{position:absolute;background:rgba(255,255,255,.76);backdrop-filter:blur(12px);padding:12px 16px;border-radius:18px;box-shadow:var(--shadow);font-weight:900}.f1{top:35px;left:5px}.f2{right:0;top:150px}.f3{bottom:30px;left:25px}
+.section{display:none;animation:fade .35s ease}.section.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:15px;margin:18px 0}.section-head h2{font-family:'Baloo 2';font-size:42px;line-height:1;margin:0}.section-head p{margin:6px 0 0;color:var(--muted)}.time{background:rgba(255,255,255,.62);padding:9px 13px;border-radius:14px;font-weight:900;white-space:nowrap}.panel{padding:24px;margin-bottom:18px}.grid{display:grid;gap:16px}.grid3{grid-template-columns:repeat(3,1fr)}.grid2{grid-template-columns:repeat(2,1fr)}
+.motivation-card{position:relative;overflow:hidden;cursor:pointer;min-height:250px}.motivation-card img{width:100%;height:250px;object-fit:cover;display:block;transition:.35s}.motivation-card:hover img{transform:scale(1.04)}.caption{position:absolute;inset:auto 0 0;padding:34px 16px 16px;background:linear-gradient(transparent,rgba(10,30,45,.82));color:white}.caption strong{font-size:20px}.question-box{padding:20px;border-radius:20px;background:rgba(255,255,255,.54);border:1px solid rgba(255,255,255,.72);margin-top:15px}.question{font-size:22px;font-weight:900}.teacher-note{font-size:14px;color:var(--muted);margin-top:7px}.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.chip{background:rgba(255,255,255,.7);padding:8px 12px;border-radius:999px;font-weight:800}
+.concept{padding:22px;min-height:260px;position:relative}.concept .emoji{font-size:42px}.concept h3{font-family:'Baloo 2';font-size:28px;margin:7px 0}.example{margin-top:14px;padding:12px;border-radius:16px;background:rgba(255,255,255,.58);font-weight:900}.toggle-answer{margin-top:12px}.hidden{display:none!important}
+.activity-stage{text-align:center;padding:30px}.scenario{font-family:'Baloo 2';font-size:clamp(30px,4vw,48px);line-height:1.05;min-height:105px;display:grid;place-items:center}.scenario-en{color:var(--muted);font-size:18px;font-style:italic;margin-bottom:20px}.choice-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.choice{border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.72);border-radius:20px;padding:18px;cursor:pointer;font-weight:900;font-size:18px;transition:.2s}.choice:hover{transform:translateY(-2px)}.choice.correct{outline:4px solid rgba(53,183,121,.25);background:rgba(181,245,216,.75)}.choice.wrong{outline:4px solid rgba(239,100,97,.22);background:rgba(255,208,208,.7)}.feedback{min-height:45px;margin-top:15px;font-weight:900;font-size:18px}.activity-controls{display:flex;justify-content:center;gap:10px;margin-top:15px}.score{font-weight:900;color:#2b6e51}
+.need{display:flex;align-items:center;gap:18px;padding:20px}.need .big{font-size:50px}.need h3{margin:0;font-family:'Baloo 2';font-size:28px}.need p{margin:2px 0;color:var(--muted)}
+.application{display:grid;grid-template-columns:.9fr 1.1fr;gap:20px;align-items:stretch}.heart{display:grid;place-items:center;font-size:110px;background:linear-gradient(135deg,rgba(255,255,255,.45),rgba(255,190,205,.35))}.sentence{font-family:'Baloo 2';font-size:36px;line-height:1.1}.response{min-height:130px;width:100%;resize:vertical;border:1px solid rgba(255,255,255,.9);border-radius:18px;background:rgba(255,255,255,.65);padding:16px;outline:none}.saved-msg{margin-top:10px;font-weight:900;color:#2b6e51}
+.general-card{text-align:center;padding:35px}.big-quote{font-family:'Baloo 2';font-size:36px;line-height:1.1;max-width:800px;margin:10px auto}.summary-pills{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:20px}.summary-pills .chip{font-size:16px}
+.quiz-wrap{max-width:850px;margin:auto}.qcard{padding:28px}.qnum{font-size:13px;font-weight:900;color:#5b7891}.qtext{font-family:'Baloo 2';font-size:30px;line-height:1.08;margin:8px 0 20px}.quiz-options{display:grid;gap:10px}.quiz-option{padding:15px;border:1px solid rgba(255,255,255,.85);background:rgba(255,255,255,.66);border-radius:17px;cursor:pointer;font-weight:900;text-align:left}.quiz-option:hover{background:#fff}.quiz-option.selected{background:rgba(111,154,244,.22);outline:3px solid rgba(47,128,237,.15)}.quiz-actions{display:flex;justify-content:space-between;align-items:center;margin-top:20px}.quiz-result{padding:28px;text-align:center}.result-score{font-family:'Baloo 2';font-size:70px;line-height:1;color:#2f80ed}.meter{height:12px;background:rgba(255,255,255,.65);border-radius:999px;overflow:hidden;margin:15px 0}.meter i{display:block;height:100%;background:linear-gradient(90deg,#2f80ed,#7c5cff);width:0;transition:width .5s}
+.quick-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.quick{padding:18px 10px;text-align:center;border-radius:20px;background:rgba(255,255,255,.62);cursor:pointer;border:1px solid rgba(255,255,255,.8);font-weight:900}.thumb{font-size:34px}.quick.done{background:rgba(190,245,216,.75)}
+.assignment{display:grid;grid-template-columns:1fr 1fr;gap:16px}.steps{display:grid;gap:10px}.step{padding:14px;border-radius:17px;background:rgba(255,255,255,.55);font-weight:800}.reference{border-left:5px solid #2f80ed;padding-left:15px}.footer{text-align:center;color:#6c8191;padding:35px 0 10px;font-size:14px}.progress{position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:60;background:rgba(255,255,255,.72);backdrop-filter:blur(15px);border:1px solid white;border-radius:999px;padding:8px 12px;box-shadow:var(--shadow);display:flex;align-items:center;gap:8px}.progress button{border:0;background:transparent;font-weight:900;cursor:pointer}.dot{width:8px;height:8px;border-radius:50%;background:#b7c6d2}.dot.active{background:#2f80ed;transform:scale(1.3)}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(17,38,56,.55);display:none;align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-card{max-width:900px;width:100%;max-height:90vh;overflow:auto;padding:20px}.modal-card img{width:100%;max-height:72vh;object-fit:contain;border-radius:18px}.modal-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}.close{border:0;background:rgba(255,255,255,.7);width:40px;height:40px;border-radius:12px;cursor:pointer;font-weight:900}
+@media(max-width:850px){.hero-card,.application,.assignment{grid-template-columns:1fr}.hero-art{min-height:330px}.grid3{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}.choice-row{grid-template-columns:1fr}.quick-grid{grid-template-columns:repeat(2,1fr)}.nav{align-items:flex-start}.brand span{display:none}.tools{margin-left:auto}.hero-card{padding:28px}.section-head{align-items:flex-start;flex-direction:column}.section-head h2{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="topbar"><nav class="nav">
+  <div class="brand"><div class="logo">👨‍👩‍👧</div><span>Teacher Ed • AP 1</span></div>
+  <div class="navlinks" id="navlinks">
+    <button data-section="home" class="active">🏠 Home</button><button data-section="motivation">🎁 Motivation</button><button data-section="observation">👀 Observe</button><button data-section="discussion">📚 Lesson</button><button data-section="activity">🎯 Activity</button><button data-section="needs">🏠 Needs</button><button data-section="application">❤️ Apply</button><button data-section="generalization">💡 Review</button><button data-section="assessment">📝 Quiz</button>
+  </div>
+  <div class="tools"><button class="iconbtn" id="fullscreen" title="Full screen">⛶</button></div>
+</nav></header>
+<main>
+<section id="home" class="section active hero">
+ <div class="glass hero-card">
+  <div>
+   <span class="eyebrow">🇵🇭 ARALING PANLIPUNAN 1 • 60 MINUTES</span>
+   <h1>Ang Laki ng <span>Aking Pamilya</span></h1>
+   <p class="subtitle">Tuklasin natin kung bakit magkakaiba ang laki at uri ng pamilya—at bakit mahalaga ang bawat isa.<span class="translation">Let’s discover why families can have different sizes and types—and why every family matters.</span></p>
+   <div class="hero-actions"><button class="btn primary" onclick="go('motivation')">Simulan ang Aralin ▶</button><button class="btn soft" onclick="showReference()">📖 Sanggunian</button></div>
+   <div class="chips"><span class="chip">Grade 1</span><span class="chip">Family Detective</span><span class="chip">Glassmorphism UI</span></div>
+  </div>
+  <div class="hero-art"><img src="assets/family1.jfif" alt="Family illustration"><div class="floating f1">❤️ Pamilya</div><div class="floating f2">👀 Magmasid!</div><div class="floating f3">⭐ Matuto!</div></div>
+ </div>
+</section>
+
+<section id="motivation" class="section">
+ <div class="section-head"><div><h2>🎁 Motivation: Hulaan Mo ang Pamilya!</h2><p>8 minuto • Observe, describe, and share ideas.<span class="translation">Look closely at the pictures and share what you notice.</span></p></div><div class="time">⏱ 8 min</div></div>
+ <div class="panel glass"><p><strong>Teacher:</strong> “Tingnan nating mabuti ang mga larawan. Sino-sino ang nakikita ninyo? Pare-pareho ba ang bilang ng mga tao?”<span class="translation">Look carefully at the pictures. Who do you see? Do all families have the same number of members?</span></p></div>
+ <div class="grid grid3">
+  <div class="glass motivation-card" onclick="openImage('assets/family1.jfif','Larawan 1')"><img src="assets/family1.jfif" alt="Family in a community"><div class="caption"><strong>Larawan 1</strong><br><small>Malaki ang pamilya?</small></div></div>
+  <div class="glass motivation-card" onclick="openImage('assets/family2.jfif','Larawan 2')"><img src="assets/family2.jfif" alt="Parent and child"><div class="caption"><strong>Larawan 2</strong><br><small>Sino ang magulang?</small></div></div>
+  <div class="glass motivation-card" onclick="openImage('assets/family3.jfif','Larawan 3')"><img src="assets/family3.jfif" alt="Extended family at home"><div class="caption"><strong>Larawan 3</strong><br><small>May ibang kamag-anak?</small></div></div>
+ </div>
+ <div class="question-box"><div class="question">💬 Tanong: Ano ang napapansin mo sa laki ng mga pamilya?</div><div class="teacher-note">Accept different answers. Avoid comparing one child’s family with another.</div><span class="translation">Question: What do you notice about the size of the families? Encourage respectful sharing.</span></div>
+ </div>
+</section>
+
+<section id="observation" class="section">
+ <div class="section-head"><div><h2>👀 Pagmamasid sa Larawan</h2><p>7 minuto • Use the pictures as visual evidence.</p></div><div class="time">⏱ 7 min</div></div>
+ <div class="glass panel"><div class="grid grid3">
+  <div class="motivation-card glass" onclick="openImage('assets/family4.jfif','Larawan 4')"><img src="assets/family4.jfif" alt="Grandparents and children"><div class="caption"><strong>Larawan 4</strong><br><small>May lolo o lola?</small></div></div>
+  <div class="motivation-card glass" onclick="openImage('assets/family5.jfif','Larawan 5')"><img src="assets/family5.jfif" alt="Father with children"><div class="caption"><strong>Larawan 5</strong><br><small>Isang magulang at mga anak</small></div></div>
+  <div class="motivation-card glass" onclick="openImage('assets/family6.jfif','Larawan 6')"><img src="assets/family6.jfif" alt="Large family outdoors"><div class="caption"><strong>Larawan 6</strong><br><small>Maraming kasapi</small></div></div>
+ </div>
+ <div class="question-box"><div class="question">🔎 Family Detective Questions</div><div class="chips"><span class="chip">Sino-sino ang nasa larawan?</span><span class="chip">May nanay ba?</span><span class="chip">May tatay ba?</span><span class="chip">May anak ba?</span><span class="chip">May lolo/lola ba?</span><span class="chip">Pare-pareho ba?</span></div><span class="translation">Who is in the picture? Is there a mother? Father? Child? Grandparent? Are all families the same?</span></div>
+ </div>
+</section>
+
+<section id="discussion" class="section">
+ <div class="section-head"><div><h2>📚 Paglinang at Pagtalakay</h2><p>15 minuto • Tap a card to reveal an example.</p></div><div class="time">⏱ 15 min</div></div>
+ <div class="glass panel"><div class="question-box" style="margin-top:0"><div class="question">👨‍👩‍👧 Ano ang pamilya?</div><p>Ang pamilya ay mga taong <strong>nagmamahalan, nag-aalaga, at nagtutulungan.</strong> Hindi kailangang pare-pareho ang lahat ng pamilya.</p><span class="translation">A family is made up of people who love, care for, and help one another. Families do not have to look the same.</span></div></div>
+ <div class="grid grid3">
+  <div class="glass concept"><div class="emoji">👨‍👩‍👧</div><h3>Two-Parent Family</h3><p>Binubuo ng nanay, tatay, at anak o mga anak.</p><span class="translation">A family with two parents and one or more children.</span><div class="example">👩 + 👨 + 👧 = Two-Parent</div></div>
+  <div class="glass concept"><div class="emoji">👩‍👧</div><h3>Solo-Parent Family</h3><p>Isang magulang ang nag-aalaga at gumagabay sa anak o mga anak.</p><span class="translation">A family where one parent cares for and guides the child or children.</span><div class="example">👩 + 👦 = Solo-Parent</div></div>
+  <div class="glass concept"><div class="emoji">👨‍👩‍👧‍👵</div><h3>Extended Family</h3><p>Maaaring kasama ang lolo, lola, tito, tita, at iba pang kamag-anak.</p><span class="translation">A family that may include grandparents, aunts, uncles, and other relatives.</span><div class="example">👩 + 👨 + 👧 + 👵 = Extended</div></div>
+ </div>
+ <div class="glass panel" style="margin-top:18px"><strong>❤️ Mahalagang Paalala:</strong> Ang solo-parent family ay pamilya rin at mahalaga. Kahit maliit o malaki ang pamilya, mahalaga ang pagmamahalan at pagtutulungan.<span class="translation">A solo-parent family is also a family and is important. Whether a family is small or large, love and cooperation matter.</span></div>
+</section>
+
+<section id="activity" class="section">
+ <div class="section-head"><div><h2>🎯 Interactive Activity: Anong Uri?</h2><p>8 minuto • Students respond with actions, then click the answer.</p></div><div class="time">⏱ 8 min</div></div>
+ <div class="glass activity-stage"><div class="eyebrow">FAMILY DETECTIVE</div><div id="scenario" class="scenario"></div><div id="scenarioEn" class="scenario-en"></div><div class="choice-row"><button class="choice" onclick="answerType('Two-Parent Family')">🙌 Two-Parent<br><small>Dalawang magulang</small></button><button class="choice" onclick="answerType('Solo-Parent Family')">☝️ Solo-Parent<br><small>Isang magulang</small></button><button class="choice" onclick="answerType('Extended Family')">👵 Extended<br><small>May ibang kamag-anak</small></button></div><div id="activityFeedback" class="feedback"></div><div class="activity-controls"><button class="btn soft" onclick="nextScenario()">Susunod ➜</button><span class="score" id="activityScore">Score: 0/4</span></div></div>
+ <div class="glass panel"><strong>Classroom movement cue:</strong> 🙌 dalawang kamay pataas = Two-Parent • ☝️ isang kamay pataas = Solo-Parent • 👵 kamay sa balikat = Extended.<span class="translation">Students can answer using body movements before the teacher reveals the digital answer.</span></div>
+</section>
+
+<section id="needs" class="section">
+ <div class="section-head"><div><h2>🏠 Pangunahing Pangangailangan</h2><p>5 minuto • What does every family need to live well?</p></div><div class="time">⏱ 5 min</div></div>
+ <div class="grid grid3">
+  <div class="glass need"><div class="big">🍚</div><div><h3>Pagkain</h3><p>Upang maging malusog at malakas.</p><span class="translation">Food — to stay healthy and strong.</span></div></div>
+  <div class="glass need"><div class="big">👕</div><div><h3>Damit</h3><p>Upang maprotektahan ang katawan.</p><span class="translation">Clothing — to protect the body.</span></div></div>
+  <div class="glass need"><div class="big">🏠</div><div><h3>Tirahan</h3><p>Upang magkaroon ng ligtas na lugar na matitirhan.</p><span class="translation">Shelter — to have a safe place to live.</span></div></div>
+ </div>
+ <div class="glass panel"><div class="question">🎲 Quick Class Call-out</div><p>Kapag sinabi ko ang isang bagay, sabay-sabay ninyong sabihin: <strong>“Pangangailangan!”</strong> kung kailangan upang mabuhay nang maayos, at <strong>“Hindi pangunahing pangangailangan!”</strong> kung hindi.</p><span class="translation">When I name an item, say “Need!” if it is necessary for living well, or “Not a basic need!” if it is not.</span><div class="chips"><span class="chip">🍚 Kanin</span><span class="chip">👕 Damit</span><span class="chip">🏠 Bahay</span><span class="chip">🧸 Laruan</span><span class="chip">🎮 Video game</span></div></div>
+</section>
+
+<section id="application" class="section">
+ <div class="section-head"><div><h2>❤️ Application: Mahal Ko ang Aking Pamilya</h2><p>5 minuto • Complete the sentence and share.</p></div><div class="time">⏱ 5 min</div></div>
+ <div class="application"><div class="glass heart">❤️</div><div class="glass panel" style="margin:0"><div class="sentence">“Mahal ko ang aking pamilya dahil __________.”</div><span class="translation">“I love my family because __________.”</span><textarea id="familyReason" class="response" placeholder="I-type o sabihin ang iyong sagot... / Type or say your answer..."></textarea><div><button class="btn primary" onclick="saveReason()">💾 Ipakita ang Sagot</button></div><div id="savedReason" class="saved-msg"></div></div></div>
+ <div class="glass panel" style="margin-top:18px"><strong>Teacher reminder:</strong> Walang “maling” anyo ng pamilya. Huwag ikumpara ang pamilya ng isang bata sa iba.<span class="translation">There is no “wrong” family structure. Do not compare one child’s family with another.</span></div>
+</section>
+
+<section id="generalization" class="section">
+ <div class="section-head"><div><h2>💡 Generalization & Quick Check</h2><p>3 minuto • Use thumbs-up for each statement.</p></div><div class="time">⏱ 3 min</div></div>
+ <div class="glass general-card"><div class="eyebrow">THUMBS UP! 👍</div><div class="big-quote">“Ang pamilya ay mga taong nagmamahalan, nag-aalaga at nagtutulungan.”</div><span class="translation">“A family is made up of people who love, care for, and help one another.”</span><div class="quick-grid" style="margin-top:25px"><div class="quick" onclick="this.classList.toggle('done')"><div class="thumb">👍</div>Two-Parent</div><div class="quick" onclick="this.classList.toggle('done')"><div class="thumb">👍</div>Solo-Parent</div><div class="quick" onclick="this.classList.toggle('done')"><div class="thumb">👍</div>Extended</div><div class="quick" onclick="this.classList.toggle('done')"><div class="thumb">👍</div>Pagkain • Damit • Tirahan</div><div class="quick" onclick="this.classList.toggle('done')"><div class="thumb">👍</div>Lahat ng pamilya ay mahalaga</div></div><p style="margin-top:22px;color:var(--muted)">Teacher: “Pare-pareho ba ang laki ng pamilya?” → <strong>Hindi po!</strong> &nbsp; “Mahalaga ba ang bawat pamilya?” → <strong>Opo!</strong></p><span class="translation">Are all families the same size? No! Is every family important? Yes!</span></div>
+</section>
+
+<section id="assessment" class="section">
+ <div class="section-head"><div><h2>📝 Family Detective Quiz</h2><p>10 minuto • 5 questions • Instant feedback.</p></div><div class="time">⏱ 10 min</div></div>
+ <div id="quizBox" class="quiz-wrap"></div>
+</section>
+
+<section id="assignment" class="section">
+ <div class="section-head"><div><h2>🌳 Performance Task: Ang Aking Family Tree</h2><p>Homework / classroom follow-up</p></div></div>
+ <div class="assignment"><div class="glass panel"><h3>Panuto</h3><div class="steps"><div class="step">1️⃣ Gumamit ng bond paper.</div><div class="step">2️⃣ Gumuhit ng puno.</div><div class="step">3️⃣ Idikit ang larawan ng mga kasapi ng iyong pamilya.</div><div class="step">4️⃣ Isulat ang pangalan o tawag sa bawat kasapi.</div><div class="step">5️⃣ Kulayan at pagandahin ang Family Tree.</div><div class="step">6️⃣ Dalhin sa klase sa itinakdang araw.</div></div></div><div class="glass panel"><h3>💛 Reminder</h3><p>“Iba-iba ang pamilya. Huwag ikumpara ang iyong pamilya sa ibang pamilya. Lahat ng pamilya ay mahalaga.”</p><span class="translation">Families are different. Do not compare your family with another family. Every family is important.</span><div class="reference" style="margin-top:20px"><strong>Sanggunian</strong><p>Batayang aklat sa Araling Panlipunan 1 — <strong>Aralin 10, pp. 136–145</strong>.</p><span class="translation">Reference: Araling Panlipunan 1 basic textbook, Lesson 10, pages 136–145.</span></div></div></div>
+</section>
+<div class="footer">Teacher Ed • Araling Panlipunan 1 • Ang Laki ng Aking Pamilya<br>Designed for classroom projection and guided discussion.</div>
+</main>
+<div class="progress" id="progress"></div>
+<div id="modal" class="modal" onclick="if(event.target===this)closeModal()"><div class="glass modal-card"><div class="modal-top"><strong id="modalTitle">Larawan</strong><button class="close" onclick="closeModal()">✕</button></div><img id="modalImg" src="" alt="Expanded family image"></div></div>
+<script>
+const sections=['home','motivation','observation','discussion','activity','needs','application','generalization','assessment','assignment'];
+let current='home';
+function go(id){current=id;document.querySelectorAll('.section').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('.navlinks button').forEach(b=>b.classList.toggle('active',b.dataset.section===id));updateProgress();window.scrollTo({top:0,behavior:'smooth'});}
+document.querySelectorAll('.navlinks button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.section)));
+function updateProgress(){const i=sections.indexOf(current);document.getElementById('progress').innerHTML=`<button onclick="go('${sections[Math.max(0,i-1)]}')">‹</button>${sections.map((s,n)=>`<i class="dot ${n===i?'active':''}" title="${s}"></i>`).join('')}<button onclick="go('${sections[Math.min(sections.length-1,i+1)]}')">›</button>`}
+updateProgress();
+function openImage(src,title){document.getElementById('modalImg').src=src;document.getElementById('modalTitle').textContent=title;document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}
+function showReference(){openImage('assets/family6.jfif','Lesson visual reference — Family')}
+document.getElementById('fullscreen').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()};
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){const i=sections.indexOf(current);go(sections[Math.min(sections.length-1,i+1)])}if(e.key==='ArrowLeft'){const i=sections.indexOf(current);go(sections[Math.max(0,i-1)])}if(e.key==='Escape')closeModal()});
+const scenarios=[
+ ['Si Ana ay nakatira kasama ang kanyang nanay, tatay, at kapatid.','Ana lives with her mother, father, and sibling.','Two-Parent Family'],
+ ['Si Ben ay nakatira kasama ang kanyang nanay.','Ben lives with his mother.','Solo-Parent Family'],
+ ['Kasama nina Carlo ang kanyang nanay, tatay, lola at tito.','Carlo lives with his mother, father, grandmother, and uncle.','Extended Family'],
+ ['Kasama ni Mia ang kanyang tatay at dalawang kapatid.','Mia lives with her father and two siblings.','Solo-Parent Family']
+];let si=0,ascore=0;
+function renderScenario(){const s=scenarios[si];document.getElementById('scenario').textContent=s[0];document.getElementById('scenarioEn').textContent=s[1];document.getElementById('activityFeedback').textContent='';document.querySelectorAll('.choice').forEach(c=>c.classList.remove('correct','wrong'))}
+function answerType(ans){const correct=ans===scenarios[si][2];document.querySelectorAll('.choice').forEach(c=>{if(c.textContent.includes(ans.split(' ')[0]))c.classList.add(correct?'correct':'wrong')});document.getElementById('activityFeedback').textContent=correct?'🎉 Tama! Ang galing, Family Detective!':'💡 Balikan natin ang mga kasapi ng pamilya. Tingnan ang clue sa sitwasyon.';if(correct)ascore=Math.min(ascore+1,4);document.getElementById('activityScore').textContent=`Score: ${ascore}/4`}
+function nextScenario(){si=(si+1)%scenarios.length;renderScenario()};renderScenario();
+function saveReason(){const v=document.getElementById('familyReason').value.trim();document.getElementById('savedReason').textContent=v?`❤️ “${v}”`:'💬 Sabihin muna ang iyong sagot.'}
+const quiz=[
+ ['Ang pamilya nina Ana ay binubuo ng nanay, tatay at dalawang anak. Anong uri ito?','Ana’s family has a mother, father, and two children. What type is it?',['Solo-parent','Two-parent','Extended'],'Two-parent'],
+ ['Si Carlo ay kasama ang kanyang nanay lamang. Anong uri ng pamilya ito?','Carlo lives with his mother only. What type of family is it?',['Solo-parent','Two-parent','Extended'],'Solo-parent'],
+ ['Kasama ni Maria ang kanyang nanay, tatay, lola at tito. Anong uri ito?','Maria lives with her mother, father, grandmother, and uncle. What type is it?',['Solo-parent','Two-parent','Extended'],'Extended'],
+ ['Alin ang pangunahing pangangailangan ng pamilya?','Which is a basic need of a family?',['Pagkain / Food','Laruan / Toy','Video game / Video game'],'Pagkain / Food'],
+ ['Alin ang HINDI pangunahing pangangailangan?','Which is NOT a basic need?',['Damit / Clothing','Tirahan / Shelter','Laruan / Toy'],'Laruan / Toy']
+];let qi=0,answers=[];
+function renderQuiz(){const q=quiz[qi];document.getElementById('quizBox').innerHTML=`<div class="glass qcard"><div class="qnum">TANONG ${qi+1} / ${quiz.length}</div><div class="qtext">${q[0]}<span class="translation">${q[1]}</span></div><div class="quiz-options">${q[2].map(o=>`<button class="quiz-option" onclick="selectQuiz(this,'${o.replace(/'/g,"\\'")}')">${o}</button>`).join('')}</div><div class="quiz-actions"><span id="quizHint" style="color:var(--muted);font-weight:800">Piliin ang sagot.</span><button id="nextQuiz" class="btn primary" disabled onclick="nextQuiz()">${qi===quiz.length-1?'Tingnan ang Resulta':'Susunod ➜'}</button></div></div>`}
+function selectQuiz(btn,val){document.querySelectorAll('.quiz-option').forEach(b=>b.classList.remove('selected'));btn.classList.add('selected');answers[qi]=val;document.getElementById('nextQuiz').disabled=false;document.getElementById('quizHint').textContent=val===quiz[qi][3]?'✓ Mukhang tama!':'✓ Napili na. Tingnan natin ang resulta.'}
+function nextQuiz(){if(qi<quiz.length-1){qi++;renderQuiz()}else showQuizResult()}
+function showQuizResult(){const score=answers.reduce((n,a,i)=>n+(a===quiz[i][3]?1:0),0);const pct=score/quiz.length*100;let msg=pct>=80?'🎉 Nakamit ang layunin!':pct>=60?'👍 Kailangan pa ng kaunting pagsasanay.':'💛 Balikan natin ang aralin gamit ang mga larawan at halimbawa.';document.getElementById('quizBox').innerHTML=`<div class="glass quiz-result"><div class="eyebrow">FAMILY DETECTIVE RESULT</div><div class="result-score">${score}/${quiz.length}</div><div class="meter"><i style="width:${pct}%"></i></div><h2>${msg}</h2><p>${pct>=80?'80% pataas — Mastery target achieved.':pct>=60?'60–79% — Additional practice recommended.':'59% pababa — Remediation using pictures and concrete examples.'}</p><button class="btn soft" onclick="qi=0;answers=[];renderQuiz()">Ulitin ang Quiz ↻</button></div>`}
+renderQuiz();
+</script>
+</body>
+</html>
