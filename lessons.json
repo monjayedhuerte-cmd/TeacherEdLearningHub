@@ -127,7 +127,7 @@
     "file": "lessons/science/grade-1/Science1_Skin_Parts_Interactive/index.html",
     "date": "2026-08-26",
     "featured": false,
-    "icon": "hand"
+    "icon": "user"
   },
   {
     "title": "Taste and Touch Adventure V1",
@@ -167,7 +167,7 @@
     "file": "lessons/araling-panlipunan/grade-1/Aralin_9_Ang_Aking_Pamilya_Interactive/index.html",
     "date": "2026-08-27",
     "featured": false,
-    "icon": "map"
+    "icon": "users"
   },
   {
     "title": "Pagkilala sa Kulturang Pilipino",
@@ -187,7 +187,7 @@
     "file": "https://monjayedhuerte-cmd.github.io/angakingkwentoAP1/",
     "date": "2026-08-18",
     "featured": false,
-    "icon": "map"
+    "icon": "user-check"
   },
   {
     "title": "Ang Laki ng Aking Pamilya",
@@ -197,7 +197,7 @@
     "file": "lessons/araling-panlipunan/grade-1/AP1_Ang_Laki_ng_Aking_Pamilya_Glassmorphism/AP1_Ang_Laki_ng_Aking_Pamilya_Glassmorphism/index.html",
     "date": "2026-08-28",
     "featured": false,
-    "icon": "map"
+    "icon": "users"
   },
   {
     "title": "Mabuting Gawa",
@@ -206,7 +206,7 @@
     "description": "Paggawa ng Mabuti sa Kumunidad.",
     "file": "lessons/filipino/grade-3/MabutingGawa/Filipino3_Mabuting_Gawa_Bilingual_Interactive.html",
     "featured": false,
-    "icon": "book-open"
+    "icon": "user-round"
   }
   
 ]
