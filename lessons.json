@@ -179,6 +179,16 @@
     "icon": "users"
   },
   {
+    "title": "Ang Aking Pamilya (With English Translation)",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 1",
+    "description": "Kilalanin ang mga kasapi ng pamilya, alamin ang kanilang mga tungkulin, at tuklasin kung bakit mahalaga ang bawat isa.",
+    "file": "lessons/araling-panlipunan/grade-1/AP1_Ang_Aking_Pamilya_Interactive_Glassmorphism/AP1_Ang_Aking_Pamilya_Interactive_Glassmorphism/index.html",
+    "date": "2026-08-27",
+    "featured": false,
+    "icon": "users"
+  },
+  {
     "title": "Pagkilala sa Kulturang Pilipino",
     "subject": "Araling Panlipunan",
     "grade": "Grade 3",
