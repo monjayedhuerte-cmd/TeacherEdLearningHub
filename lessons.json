@@ -60,6 +60,15 @@
     "icon": "heart-handshake"
   },
   {
+    "title": "Ako ay Magalang/ I am Respectful",
+    "subject": "ESP",
+    "grade": "Grade 2",
+    "description": "Isang interactive classroom lesson para matutuhan ng mga bata ang magagalang na salita at kilos—sa pamamagitan ng laro, sitwasyon, pagsagot, role-play, at pagtataya.",
+    "file": "lessons/esp/grade-2/Ako_Ay_Magalang_ESP2_Interactive_English_Website/Ako_Ay_Magalang_ESP2_Interactive_English.html",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
     "title": "Wikang Pambansa, Pahalagahan Natin",
     "subject": "Filipino",
     "grade": "Grade 3",
