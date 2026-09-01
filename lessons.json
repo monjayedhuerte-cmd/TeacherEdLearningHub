@@ -229,11 +229,32 @@
     "icon": "users"
   },
   {
+    "title": "Pandiwa at Pang-Ukol",
+    "subject": "Filipino",
+    "grade": "Grade 3",
+    "description": "Pag-aralan ang pandiwa at pang-ukol.",
+    "file": "lessons/filipino/grade-3/Pandiwa_Pang_ukol_Interactive_Website.html",
+    "date": "2026-09-02",
+    "featured": false,
+    "icon": "user-round"
+  },
+  {
+    "title": "Reviewer sa Kasaysayan ng Ating Pamayanan at Pagkilala sa Kulturang Pilipino",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 3",
+    "description": "Balikan ang Kasaysayan ng Ating Pamayanan at Pagkilala sa Kulturang Pilipino sa pamamagitan ng games, practice, clues, at challenge rounds.",
+    "file": "lessons/araling-panlipunan/grade-3/AP3_Two_Lessons_Interactive_Reviewer_FIXED/AP3_Two_Lessons_Reviewer/index.html",
+    "date": "2026-09-02",
+    "featured": false,
+    "icon": "user-round"
+  },
+  {
     "title": "Mabuting Gawa",
     "subject": "Filipino",
     "grade": "Grade 3",
     "description": "Paggawa ng Mabuti sa Kumunidad.",
     "file": "lessons/filipino/grade-3/MabutingGawa/Filipino3_Mabuting_Gawa_Bilingual_Interactive.html",
+    "date": "2026-08-28",
     "featured": false,
     "icon": "user-round"
   }

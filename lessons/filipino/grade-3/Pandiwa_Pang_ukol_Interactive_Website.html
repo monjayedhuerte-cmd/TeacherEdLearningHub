@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pandiwa at Pang-ukol | Teacher Ed</title>
+<style>
+:root{
+  --navy:#183153; --blue:#2563eb; --sky:#eaf4ff; --gold:#f59e0b;
+  --green:#16a34a; --red:#dc2626; --ink:#172033; --white:#fff;
+  --shadow:0 12px 30px rgba(24,49,83,.13); --radius:22px;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef7ff,#fffaf0);color:var(--ink)}
+button,input{font:inherit}
+button{cursor:pointer}
+.app{min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--navy);color:#fff;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px;position:sticky;top:0;z-index:20;box-shadow:0 5px 20px #0002}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:46px;height:46px;border-radius:14px;background:var(--gold);display:grid;place-items:center;font-size:24px}
+.brand h1{font-size:19px;margin:0}.brand small{opacity:.8}
+.controls{display:flex;gap:8px;align-items:center}
+.topbtn{border:1px solid #ffffff44;background:#ffffff12;color:#fff;padding:10px 13px;border-radius:12px;font-weight:700}
+.topbtn:hover{background:#fff;color:var(--navy)}
+.progress{height:6px;background:#dbeafe}.progress div{height:100%;background:var(--gold);transition:.35s}
+main{width:min(1050px,94%);margin:28px auto 100px}
+.slide{display:none;animation:fade .35s ease}.slide.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.hero,.card{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:30px}
+.hero{text-align:center;padding:48px 28px;background:linear-gradient(145deg,#fff,#eef7ff)}
+.emoji{font-size:68px}.hero h2{font-size:clamp(30px,6vw,58px);color:var(--navy);margin:10px 0}
+.subtitle{font-size:20px;color:#52627a}.en{display:block;color:#64748b;font-size:.78em;margin-top:7px}
+h2{color:var(--navy);font-size:32px;margin-top:0} h3{color:var(--navy)}
+.pill{display:inline-block;padding:8px 13px;border-radius:999px;background:#fff3cd;color:#8a5a00;font-weight:800;margin:5px}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid #dce5ef;padding:12px;display:flex;justify-content:center;gap:10px;z-index:30}
+.nav button{border:0;border-radius:13px;padding:12px 22px;font-weight:800}
+.prev{background:#e8eef5;color:var(--navy)}.next{background:var(--blue);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}
+.example{border:2px solid #e5edf7;border-radius:18px;padding:18px;background:#fbfdff}
+.example strong{font-size:21px}.verb{color:#d97706;font-weight:900}.prep{color:#2563eb;font-weight:900}
+.tip{background:#eff6ff;border-left:6px solid var(--blue);padding:17px;border-radius:14px;margin:18px 0}
+.activity{margin-top:20px}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px}
+.choice{border:2px solid #d9e4f1;background:#fff;padding:16px;border-radius:15px;font-weight:800;text-align:left}
+.choice:hover{border-color:var(--blue);transform:translateY(-2px)}
+.choice.correct{border-color:var(--green);background:#ecfdf5}.choice.wrong{border-color:var(--red);background:#fef2f2}
+.feedback{font-weight:800;margin-top:12px;min-height:26px}
+.sortbox{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:20px 0}
+.word{padding:15px 20px;border-radius:14px;background:#f1f5f9;font-weight:900;border:2px solid #dbe4ee}
+.word button{border:0;background:transparent;font-weight:900}
+textarea{width:100%;min-height:110px;border:2px solid #dbe4ee;border-radius:16px;padding:15px;resize:vertical}
+.fill{padding:12px;border:2px dashed #cbd5e1;border-radius:15px;background:#f8fafc;margin:10px 0}
+select{padding:10px;border:2px solid #cbd5e1;border-radius:10px;font-weight:700}
+.score{font-size:30px;font-weight:900;color:var(--navy);text-align:center}
+.bigcheck{font-size:74px;text-align:center}
+.small{font-size:14px;color:#64748b}
+.image-area{border:2px dashed #9db5d0;border-radius:20px;padding:18px;text-align:center;background:#f8fbff}
+.image-area img{max-width:100%;max-height:250px;border-radius:15px;display:none;margin:auto}
+.filebtn{display:inline-block;background:var(--navy);color:#fff;padding:11px 15px;border-radius:12px;font-weight:800;margin-top:10px}
+input[type=file]{display:none}
+@media(max-width:650px){header{padding:10px 12px}.brand h1{font-size:16px}.brand small{display:none}.hero,.card{padding:22px}.nav button{flex:1;padding:11px 8px}main{margin-top:18px}}
+body.fullscreen header{position:fixed;top:0;left:0;right:0} 
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="brand"><div class="logo">📚</div><div><h1>Pandiwa at Pang-ukol</h1><small>Interactive Filipino 3 • Teacher Ed</small></div></div>
+ <div class="controls">
+   <button class="topbtn" onclick="toggleFull()">⛶ Full Screen</button>
+   <button class="topbtn" onclick="showHelp()">?</button>
+ </div>
+</header>
+<div class="progress"><div id="bar"></div></div>
+
+<main>
+<section class="slide active">
+ <div class="hero">
+  <div class="emoji">🕵️‍♀️🔎</div>
+  <h2>Salita Detective!</h2>
+  <p class="subtitle"><b>Pandiwa at Pang-ukol</b><span class="en">Verbs and Prepositions</span></p>
+  <p>Handa ka na bang maging isang language detective?</p>
+  <p class="en">Are you ready to become a language detective?</p>
+  <div><span class="pill">👀 Tumingin</span><span class="pill">🤔 Mag-isip</span><span class="pill">🙋 Sumagot</span></div>
+  <div class="tip"><b>Teacher Guide:</b> Mag-isip muna bago pumili. Tatawag si Teacher Ed ng mag-aaral para magbahagi ng sagot.<span class="en">Think first before choosing. Teacher Ed will call on a learner to share.</span></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🎯 Motivation: Ano ang Ginagawa?</h2>
+  <p>Isipin ang mga batang nasa paaralan. Ano ang ginagawa nila?</p><span class="en">Imagine children at school. What are they doing?</span>
+  <div class="grid">
+   <div class="example">🏃<br><strong>Tumatakbo</strong><span class="en">running</span></div>
+   <div class="example">📖<br><strong>Nagbabasa</strong><span class="en">reading</span></div>
+   <div class="example">✍️<br><strong>Sumusulat</strong><span class="en">writing</span></div>
+   <div class="example">🧹<br><strong>Naglilinis</strong><span class="en">cleaning</span></div>
+  </div>
+  <div class="tip"><b>Tanong:</b> Ano ang pagkakapareho ng mga salitang ito?<span class="en">What do these words have in common?</span><br>💡 Lahat sila ay nagsasaad ng <b>kilos</b>.<span class="en">They all show an action.</span></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🟠 Ano ang Pandiwa?</h2>
+  <div class="tip"><b>Ang pandiwa ay salitang nagsasaad ng kilos o galaw.</b><span class="en">A verb is a word that shows an action or movement.</span></div>
+  <h3>💭 Magic Question: “Ano ang ginagawa?”</h3>
+  <div class="grid">
+   <div class="example">Si Ana ay <span class="verb">tumatakbo</span>.<span class="en">Ana is running.</span><hr>➡️ Pandiwa: <span class="verb">tumatakbo</span></div>
+   <div class="example">Si Ben ay <span class="verb">kumakain</span>.<span class="en">Ben is eating.</span><hr>➡️ Pandiwa: <span class="verb">kumakain</span></div>
+   <div class="example">Si Carlo ay <span class="verb">sumusulat</span>.<span class="en">Carlo is writing.</span><hr>➡️ Pandiwa: <span class="verb">sumusulat</span></div>
+   <div class="example">Ang pusa ay <span class="verb">natutulog</span>.<span class="en">The cat is sleeping.</span><hr>➡️ Pandiwa: <span class="verb">natutulog</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>📚 Maraming Halimbawa ng Pandiwa</h2>
+  <p>Basahin nang sabay-sabay. Teacher calls on learners to use each word in a sentence.</p><span class="en">Read together. Teacher calls on learners to use each word in a sentence.</span>
+  <div class="grid">
+   <div class="example"><span class="verb">tumatakbo</span><span class="en">runs</span></div>
+   <div class="example"><span class="verb">kumakain</span><span class="en">eats</span></div>
+   <div class="example"><span class="verb">sumusulat</span><span class="en">writes</span></div>
+   <div class="example"><span class="verb">nagbabasa</span><span class="en">reads</span></div>
+   <div class="example"><span class="verb">tumatalon</span><span class="en">jumps</span></div>
+   <div class="example"><span class="verb">umaawit</span><span class="en">sings</span></div>
+   <div class="example"><span class="verb">sumasayaw</span><span class="en">dances</span></div>
+   <div class="example"><span class="verb">naglalaro</span><span class="en">plays</span></div>
+   <div class="example"><span class="verb">naglilinis</span><span class="en">cleans</span></div>
+   <div class="example"><span class="verb">naghuhugas</span><span class="en">washes</span></div>
+   <div class="example"><span class="verb">lumilipad</span><span class="en">flies</span></div>
+   <div class="example"><span class="verb">nagluluto</span><span class="en">cooks</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🎮 Pandiwa Challenge</h2>
+  <p><b>Hanapin ang pandiwa.</b><span class="en">Find the verb.</span></p>
+  <div id="verbQuiz"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🔵 Ano ang Pang-ukol?</h2>
+  <div class="tip"><b>Ang pang-ukol ay salitang nag-uugnay sa pangngalan o panghalip sa ibang salita sa pangungusap.</b><span class="en">A preposition connects a noun or pronoun to another word in a sentence.</span></div>
+  <h3>Mga karaniwang pang-ukol:</h3>
+  <div class="grid">
+   <div class="example"><span class="prep">sa</span><span class="en">in / at / to</span><br>sa paaralan</div>
+   <div class="example"><span class="prep">kay</span><span class="en">to / for a person</span><br>kay Maria</div>
+   <div class="example"><span class="prep">para sa</span><span class="en">for</span><br>para sa bata</div>
+   <div class="example"><span class="prep">tungkol sa</span><span class="en">about</span><br>tungkol sa kalinisan</div>
+   <div class="example"><span class="prep">ayon sa</span><span class="en">according to</span><br>ayon sa guro</div>
+   <div class="example"><span class="prep">mula kay</span><span class="en">from a person</span><br>mula kay Ana</div>
+  </div>
+  <div class="tip"><b>Clue:</b> Kapag naghahanap ng pang-ukol, hanapin ang salitang <b>NAG-UUGNAY</b>.<span class="en">Look for the word that CONNECTS.</span></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🧩 Pang-ukol sa Pangungusap</h2>
+  <div class="grid">
+   <div class="example">Pumunta si Ana <span class="prep">sa</span> paaralan.<span class="en">Ana went to school.</span><hr>Pang-ukol: <span class="prep">sa</span></div>
+   <div class="example">Nagbigay ako ng regalo <span class="prep">kay</span> Maria.<span class="en">I gave a gift to Maria.</span><hr>Pang-ukol: <span class="prep">kay</span></div>
+   <div class="example">Ang pagkain ay <span class="prep">para sa</span> mga bata.<span class="en">The food is for the children.</span><hr>Pang-ukol: <span class="prep">para sa</span></div>
+   <div class="example">Nag-usap kami <span class="prep">tungkol sa</span> kalinisan.<span class="en">We talked about cleanliness.</span><hr>Pang-ukol: <span class="prep">tungkol sa</span></div>
+   <div class="example"><span class="prep">Ayon sa</span> guro, may pagsusulit bukas.<span class="en">According to the teacher, there is a test tomorrow.</span><hr>Pang-ukol: <span class="prep">ayon sa</span></div>
+   <div class="example">Ang liham ay <span class="prep">mula kay</span> Ana.<span class="en">The letter is from Ana.</span><hr>Pang-ukol: <span class="prep">mula kay</span></div>
+  </div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🎮 Pang-ukol Challenge</h2>
+  <p><b>Hanapin ang pang-ukol.</b><span class="en">Find the preposition.</span></p>
+  <div id="prepQuiz"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>⭐ Pandiwa + Pang-ukol</h2>
+  <p>Ngayon, hanapin natin ang <b>kilos</b> at ang <b>salitang nag-uugnay</b>.</p><span class="en">Now, find the action and the connecting word.</span>
+  <div class="grid">
+   <div class="example">Si Ana ay <span class="verb">tumutulong</span> <span class="prep">sa</span> kaniyang ina.<span class="en">Ana is helping her mother.</span><hr>🟠 Pandiwa: tumutulong<br>🔵 Pang-ukol: sa</div>
+   <div class="example"><span class="verb">Nagbigay</span> si Ben ng pagkain <span class="prep">kay</span> Carlo.<span class="en">Ben gave food to Carlo.</span><hr>🟠 Pandiwa: nagbigay<br>🔵 Pang-ukol: kay</div>
+   <div class="example"><span class="verb">Naglalaro</span> ang mga bata <span class="prep">sa</span> parke.<span class="en">The children are playing at the park.</span><hr>🟠 Pandiwa: naglalaro<br>🔵 Pang-ukol: sa</div>
+   <div class="example"><span class="verb">Nag-usap</span> sila <span class="prep">tungkol sa</span> kalinisan.<span class="en">They talked about cleanliness.</span><hr>🟠 Pandiwa: nag-usap<br>🔵 Pang-ukol: tungkol sa</div>
+   <div class="example"><span class="verb">Nagluto</span> si Nanay <span class="prep">para sa</span> pamilya.<span class="en">Mother cooked for the family.</span><hr>🟠 Pandiwa: nagluto<br>🔵 Pang-ukol: para sa</div>
+   <div class="example"><span class="verb">Nagbasa</span> kami <span class="prep">tungkol sa</span> mga hayop.<span class="en">We read about animals.</span><hr>🟠 Pandiwa: nagbasa<br>🔵 Pang-ukol: tungkol sa</div>
+  </div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🧠 Mixed Detective</h2>
+  <p>Hanapin ang <b>PANDIWA</b> at <b>PANG-UKOL</b> sa bawat pangungusap.</p><span class="en">Find the VERB and PREPOSITION in each sentence.</span>
+  <div id="mixedQuiz"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🧺 Sorting Game</h2>
+  <p>Ilagay sa tamang kahon: <b>Pandiwa</b> o <b>Pang-ukol</b>.</p><span class="en">Sort each word: Verb or Preposition.</span>
+  <div id="sortGame"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>✏️ Piliin ang Tamang Pang-ukol</h2>
+  <p>Basahin ang pangungusap at piliin ang salitang angkop.</p><span class="en">Read the sentence and choose the correct preposition.</span>
+  <div id="fillQuiz"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>📖 Mini Story: Sa Aming Paaralan</h2>
+  <div class="tip">
+   <p>Si Lina ay <span class="verb">naglilinis</span> <span class="prep">sa</span> silid-aralan. Si Ben ay <span class="verb">nag-aayos</span> ng mga aklat <span class="prep">sa</span> estante. <span class="verb">Nagbigay</span> si Ana ng tubig <span class="prep">kay</span> Ben. Sama-sama silang <span class="verb">tumulong</span> <span class="prep">para sa</span> malinis na paaralan.</p>
+   <span class="en">Lina is cleaning the classroom. Ben is arranging books on the shelf. Ana gave water to Ben. They helped together for a clean school.</span>
+  </div>
+  <h3>🔎 Hanapin sa kuwento:</h3>
+  <p>🟠 Pandiwa: <b>naglilinis, nag-aayos, nagbigay, tumulong</b></p>
+  <p>🔵 Pang-ukol: <b>sa, kay, para sa</b></p>
+  <div class="tip"><b>Teacher Pause:</b> “Mag-isip muna ng isang pandiwa at isang pang-ukol mula sa kuwento. Tatawag ako ng mag-aaral.”<span class="en">Think of one verb and one preposition from the story. I will call on a learner.</span></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🖼️ Optional Picture Corner</h2>
+  <p>Mag-upload ng sariling larawan. Gamitin ito sa oral discussion o sentence-making activity.</p><span class="en">Upload your own picture for discussion or sentence-making.</span>
+  <div class="image-area">
+   <div id="imgPlaceholder" style="font-size:55px">🖼️</div>
+   <img id="lessonImage" alt="Uploaded lesson image">
+   <label class="filebtn" for="imageInput">📷 Palitan ang Larawan / Change Image</label>
+   <input id="imageInput" type="file" accept="image/*" onchange="loadImage(event)">
+   <p class="small">Tip: Maaari kang maglagay ng larawan ng batang tumatakbo, naglilinis, nagbabasa, at iba pa.</p>
+  </div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="card">
+  <h2>🏆 Final Quick Check</h2>
+  <p>10-item assessment. Piliin ang pinakamahusay na sagot.</p><span class="en">10-item assessment. Choose the best answer.</span>
+  <div id="finalQuiz"></div>
+ </div>
+</section>
+
+<section class="slide">
+ <div class="hero">
+  <div class="bigcheck">🎉🏆</div>
+  <h2>Mission Complete!</h2>
+  <p class="subtitle">Salita Detective ka na!</p><span class="en">You are now a Word Detective!</span>
+  <div class="grid">
+   <div class="example"><span class="verb">🟠 PANDIWA</span><br><br>Nagsasaad ng kilos o galaw.<span class="en">Shows an action or movement.</span></div>
+   <div class="example"><span class="prep">🔵 PANG-UKOL</span><br><br>Nag-uugnay ng salita sa ibang bahagi ng pangungusap.<span class="en">Connects a word to another part of the sentence.</span></div>
+  </div>
+  <div class="tip"><b>Detective Strategy:</b><br>1️⃣ “Ano ang ginagawa?” → <b>Pandiwa</b><br>2️⃣ “Ano ang salitang nag-uugnay?” → <b>Pang-ukol</b><br>3️⃣ Basahin muli ang buong pangungusap upang masiguro ang sagot.<span class="en">Read the whole sentence again to check your answer.</span></div>
+  <button class="next" onclick="goTo(0)">🔄 Balikan ang Lesson</button>
+ </div>
+</section>
+</main>
+
+<div class="nav">
+ <button class="prev" onclick="prevSlide()">← Back</button>
+ <button class="next" onclick="nextSlide()">Next →</button>
+</div>
+</div>
+
+<script>
+let current=0;
+const slides=[...document.querySelectorAll('.slide')];
+function update(){
+ slides.forEach((s,i)=>s.classList.toggle('active',i===current));
+ document.getElementById('bar').style.width=((current)/(slides.length-1)*100)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function nextSlide(){if(current<slides.length-1){current++;update()}}
+function prevSlide(){if(current>0){current--;update()}}
+function goTo(n){current=n;update()}
+document.addEventListener('keydown',e=>{
+ if(e.key==='ArrowRight')nextSlide();
+ if(e.key==='ArrowLeft')prevSlide();
+ if(e.key==='f'||e.key==='F')toggleFull();
+});
+function toggleFull(){
+ if(!document.fullscreenElement) document.documentElement.requestFullscreen?.();
+ else document.exitFullscreen?.();
+}
+function showHelp(){alert('Navigation:\\n\\n• Next / Back buttons\\n• Keyboard: ← →\\n• Press F for Full Screen\\n• Teacher guides the discussion and calls on learners.')}
+function loadImage(e){
+ const file=e.target.files[0]; if(!file)return;
+ const img=document.getElementById('lessonImage');
+ img.src=URL.createObjectURL(file); img.style.display='block';
+ document.getElementById('imgPlaceholder').style.display='none';
+}
+
+const verbQs=[
+ ['Si Ana ay ______ sa palaruan.','tumatakbo',['tumatakbo','paaralan','sa']],
+ ['Si Ben ay ______ ng aklat.','nagbabasa',['aklat','nagbabasa','kay']],
+ ['Ang bata ay ______ ng tubig.','umiinom',['tungkol sa','umiinom','paaralan']],
+ ['Si Rosa ay ______.','sumasayaw',['sumasayaw','sa','Maria']],
+ ['Si Tatay ay ______ sa bahay.','naglilinis',['naglilinis','kay','bahay']]
+];
+const prepQs=[
+ ['Pumunta si Ana ___ paaralan.','sa',['sa','tumatakbo','aklat']],
+ ['Nagbigay si Ben ng regalo ___ Maria.','kay',['nagbigay','kay','tumatakbo']],
+ ['Ang pagkain ay ___ mga bata.','para sa',['para sa','kumakain','paaralan']],
+ ['Nag-usap sila ___ kalinisan.','tungkol sa',['tungkol sa','naglalaro','Ben']],
+ ['___ guro, may pagsusulit bukas.','Ayon sa',['Ayon sa','nagbabasa','aklat']]
+];
+const mixedQs=[
+ ['Si Liza ay nagluluto para sa pamilya.','nagluluto','para sa',['nagluluto','pamilya','para sa','Liza']],
+ ['Nagpunta kami sa parke.','nagpunta','sa',['nagpunta','kami','sa','parke']],
+ ['Nagbigay si Carlo ng bulaklak kay Ana.','nagbigay','kay',['nagbigay','bulaklak','kay','Ana']],
+ ['Nagbasa sila tungkol sa mga hayop.','nagbasa','tungkol sa',['nagbasa','tungkol sa','hayop','sila']]
+];
+let verbScore=0,prepScore=0,mixedScore=0;
+
+function renderSingle(id,data,type){
+ const el=document.getElementById(id);
+ el.innerHTML=data.map((q,idx)=>`<div class="example activity">
+ <b>${idx+1}. ${q[0]}</b><span class="en">${type==='verb'?'Choose the verb.':'Choose the preposition.'}</span>
+ <div class="choices">${q[2].map(x=>`<button class="choice" onclick="answerSingle(this,'${escapeQ(q[1])}','${type}',${idx})">${x}</button>`).join('')}</div>
+ <div class="feedback" id="${type}fb${idx}"></div></div>`).join('');
+}
+function escapeQ(s){return s.replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+function answerSingle(btn,ans,type,idx){
+ const parent=btn.parentElement; [...parent.children].forEach(b=>b.disabled=true);
+ const ok=btn.textContent.trim()===ans;
+ btn.classList.add(ok?'correct':'wrong');
+ const fb=document.getElementById(type+'fb'+idx);
+ fb.textContent=ok?'✅ Tama! / Correct!':'❌ Subukan muli. Ang tamang sagot ay: '+ans;
+ if(ok){if(type==='verb')verbScore++;else prepScore++}
+}
+
+function renderMixed(){
+ const el=document.getElementById('mixedQuiz');
+ el.innerHTML=mixedQs.map((q,i)=>`<div class="example activity">
+ <b>${i+1}. ${q[0]}</b><span class="en">Choose the verb and the preposition.</span><br><br>
+ 🟠 Pandiwa: <select id="mv${i}"><option value="">Piliin</option>${q[3].map(x=>`<option>${x}</option>`).join('')}</select>
+ 🔵 Pang-ukol: <select id="mp${i}"><option value="">Piliin</option>${q[3].map(x=>`<option>${x}</option>`).join('')}</select>
+ <button class="next" style="margin-top:10px" onclick="checkMixed(${i})">Check</button>
+ <div class="feedback" id="mfb${i}"></div></div>`).join('');
+}
+function checkMixed(i){
+ const v=document.getElementById('mv'+i).value,p=document.getElementById('mp'+i).value,q=mixedQs[i];
+ const ok=v===q[1]&&p===q[2]; if(ok)mixedScore++;
+ document.getElementById('mfb'+i).textContent=ok?'✅ Parehong tama! / Both are correct!':'❌ Suriin muli. Pandiwa = '+q[1]+'; Pang-ukol = '+q[2];
+}
+
+const sortWords=[['tumatakbo','verb'],['sa','prep'],['nagbabasa','verb'],['kay','prep'],['naglilinis','verb'],['para sa','prep'],['umaawit','verb'],['tungkol sa','prep']];
+function renderSort(){
+ document.getElementById('sortGame').innerHTML=`<div class="sortbox">${sortWords.map((w,i)=>`<div class="word" id="sw${i}">${w[0]}<br>
+ <button onclick="sortWord(${i},'verb')">🟠 Pandiwa</button> <button onclick="sortWord(${i},'prep')">🔵 Pang-ukol</button></div>`).join('')}</div>
+ <div class="feedback" id="sortfb"></div>`;
+}
+let sorted=0;
+function sortWord(i,choice){
+ const el=document.getElementById('sw'+i), correct=sortWords[i][1]===choice;
+ if(el.dataset.done)return;
+ if(correct){el.dataset.done='1';el.style.opacity='.55';sorted++;document.getElementById('sortfb').textContent='✅ Tama! '+sorted+'/'+sortWords.length;}
+ else document.getElementById('sortfb').textContent='❌ Hindi iyon. Tingnan ang kahulugan ng salita.';
+}
+
+const fillQs=[
+ ['Pumunta si Carlo ___ paaralan.','sa',['sa','kay','tungkol sa']],
+ ['Ang regalo ay ___ Maria.','para kay',['para kay','sa','ayon sa']],
+ ['Nag-usap kami ___ kalinisan.','tungkol sa',['kay','tungkol sa','mula kay']],
+ ['___ guro, dapat tayong mag-aral.','Ayon sa',['Ayon sa','Para sa','Kay']]
+];
+function renderFill(){
+ document.getElementById('fillQuiz').innerHTML=fillQs.map((q,i)=>`<div class="fill"><b>${i+1}. ${q[0].replace('___','_____')}</b><br><select id="fq${i}"><option value="">Piliin</option>${q[2].map(x=>`<option>${x}</option>`).join('')}</select>
+ <button class="next" onclick="checkFill(${i})">Check</button><div class="feedback" id="ff${i}"></div></div>`).join('');
+}
+function checkFill(i){
+ const v=document.getElementById('fq'+i).value,q=fillQs[i];
+ document.getElementById('ff'+i).textContent=v===q[1]?'✅ Tama! / Correct!':'❌ Tamang sagot: '+q[1];
+}
+
+const finalQs=[
+ ['Alin ang pandiwa?','naglalaro',['naglalaro','sa','paaralan']],
+ ['Alin ang pang-ukol?','kay',['Ben','kay','nagbigay']],
+ ['Si Ana ay tumatakbo sa parke. Ano ang pandiwa?','tumatakbo',['Ana','tumatakbo','parke']],
+ ['Si Ana ay tumatakbo sa parke. Ano ang pang-ukol?','sa',['tumatakbo','sa','parke']],
+ ['Nagbigay si Ben ng libro kay Carlo. Ano ang pandiwa?','nagbigay',['libro','kay','nagbigay']],
+ ['Nagbigay si Ben ng libro kay Carlo. Ano ang pang-ukol?','kay',['Ben','nagbigay','kay']],
+ ['Nagluto si Nanay para sa pamilya. Ano ang pang-ukol?','para sa',['nagluto','para sa','Nanay']],
+ ['Nag-usap sila tungkol sa kalinisan. Ano ang pandiwa?','nag-usap',['sila','tungkol sa','nag-usap']],
+ ['Ang pusa ay natutulog sa upuan. Ano ang pandiwa?','natutulog',['pusa','natutulog','sa']],
+ ['Ang pusa ay natutulog sa upuan. Ano ang pang-ukol?','sa',['upuan','natutulog','sa']]
+];
+let finalScore=0;
+function renderFinal(){
+ document.getElementById('finalQuiz').innerHTML=finalQs.map((q,i)=>`<div class="example activity"><b>${i+1}. ${q[0]}</b><span class="en">Choose the best answer.</span>
+ <div class="choices">${q[2].map(x=>`<button class="choice" onclick="finalAnswer(this,'${escapeQ(q[1])}',${i})">${x}</button>`).join('')}</div><div class="feedback" id="finalfb${i}"></div></div>`).join('')+
+ '<div class="score" id="finalScore">Score: 0 / 10</div>';
+}
+function finalAnswer(btn,ans,i){
+ if(btn.parentElement.dataset.done)return; btn.parentElement.dataset.done='1';
+ [...btn.parentElement.children].forEach(b=>b.disabled=true);
+ const ok=btn.textContent.trim()===ans;btn.classList.add(ok?'correct':'wrong');
+ if(ok)finalScore++;
+ document.getElementById('finalfb'+i).textContent=ok?'✅ Tama!':'❌ Tamang sagot: '+ans;
+ document.getElementById('finalScore').textContent='Score: '+finalScore+' / 10';
+}
+
+renderSingle('verbQuiz',verbQs,'verb');
+renderSingle('prepQuiz',prepQs,'prep');
+renderMixed();renderSort();renderFill();renderFinal();update();
+</script>
+</body>
+</html>

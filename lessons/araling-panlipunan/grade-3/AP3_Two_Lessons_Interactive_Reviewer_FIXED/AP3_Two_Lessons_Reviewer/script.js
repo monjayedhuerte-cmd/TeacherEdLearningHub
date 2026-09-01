@@ -1,0 +1,158 @@
+const bank={
+pamayanan:[
+['Ano ang pamayanan?','Lugar kung saan naninirahan at namumuhay ang mga tao','Isang uri ng pagkain','Isang kasuotan','Isang sayaw'],
+['Ano ang maaaring mangyari sa pamayanan sa paglipas ng panahon?','Maaari itong magbago at umunlad','Hindi ito kailanman nagbabago','Nawawala agad ang lahat','Pareho lamang palagi'],
+['Alin ang halimbawa ng pagbabagong maaaring makita sa pamayanan?','Pagkakaroon ng bagong gusali o daan','Pagpapanatili ng lumang tradisyon','Pag-alala sa kasaysayan','Paggalang sa matatanda'],
+['Ano ang ibig sabihin ng pagpapatuloy?','May mga bagay o gawain na nananatili sa paglipas ng panahon','Lahat ay biglang nagbabago','Walang nangyayari','Paglipat ng tirahan'],
+['Bakit mahalagang malaman ang kasaysayan ng pamayanan?','Upang maunawaan ang pinagmulan at mga pagbabago nito','Para makalimutan ang nakaraan','Para malaman lamang ang mga pangalan','Para maiwasan ang kultura'],
+['Alin ang maaaring maging bahagi ng kasaysayan ng isang pamayanan?','Mahalagang tao, lugar at pangyayari','Mga random na numero lamang','Mga bagong laro lamang','Mga pribadong password'],
+['Ano ang maaaring makatulong sa pag-unlad ng pamayanan?','Pakikiisa at pagtutulungan ng mga tao','Pag-aaway','Pagsira sa kapaligiran','Pagwawalang-bahala'],
+['Paano nakatutulong ang mga makasaysayang lugar?','Pinapaalala nila ang mahahalagang bahagi ng nakaraan','Wala silang silbi','Ginagawa nilang pareho ang lahat','Pinapalitan nila ang kasaysayan'],
+['Ano ang maaaring makaapekto sa pamumuhay ng isang pamayanan?','Lokasyon at kapaligiran','Kulay ng lapis lamang','Numero ng sapatos','Paboritong laro lamang'],
+['Kapag may bagong paaralan na itinayo, ito ay halimbawa ng…','pagbabago','pagpapatuloy','tradisyon','kaugalian'],
+['Kapag patuloy na ipinagdiriwang ang isang tradisyunal na pista, ito ay halimbawa ng…','pagpapatuloy','pagkawala','pagbabago lamang','paglipat'],
+['Bakit mahalaga ang mga kuwento ng matatanda tungkol sa pamayanan?','Nakatutulong silang mapanatili ang alaala at kasaysayan','Dahil palaging kathang-isip ang mga ito','Para palitan ang mga aklat','Walang dahilan'],
+['Ano ang magandang gawin sa mga pamanang lugar?','Pangalagaan at igalang ang mga ito','Sirain ang mga ito','Sulatan ang mga pader','Iwanang bukas sa panganib'],
+['Ang kasaysayan ay tumutulong sa atin na…','matuto mula sa nakaraan','kalimutan ang nakaraan','iwasan ang pamayanan','burahin ang tradisyon'],
+['Ang pag-unlad ng pamayanan ay mas mainam kung may…','pagtutulungan at pananagutan','pagkakanya-kanya','pagwawalang-bahala','pagsira sa kapaligiran'] ],
+kultura:[
+['Ano ang kultura?','Iba’t ibang bahagi ng buhay ng pangkat ng tao na nagbibigay ng pagkakakilanlan','Isang gusali lamang','Isang mapa','Isang uri ng sasakyan'],
+['Alin ang material na kultura?','Barong Tagalog','Pagmamano','Paggalang','Wika'],
+['Alin ang di-materyal na kultura?','Pagmamano','Bahay Kubo','Barong Tagalog','Kagamitan'],
+['Ang kulturang makikita sa maraming lugar sa buong bansa ay tinatawag na…','pambansang kultura','lokal na kultura','personal na kultura','dayuhang kultura'],
+['Ang kulturang natatangi sa isang lugar o pamayanan ay…','lokal na kultura','pambansang kultura','international culture','personal na kultura'],
+['Alin ang halimbawa ng material na kultura?','Bahay Kubo','Pagpapahalaga','Wika','Tradisyon'],
+['Alin ang halimbawa ng di-materyal na kultura?','Awiting-bayan','Bahay Kubo','Barong Tagalog','Pagkain'],
+['Ang adobo ay maaaring ituring na halimbawa ng…','material na kultura','di-materyal na kultura','kasaysayan lamang','lokasyon'],
+['Ang Sayaw sa Bangko ay halimbawa ng…','di-materyal na kultura','material na kultura','gusali','sagisag lamang'],
+['Ang Pangalay ay katutubong sayaw ng mga…','Tausug','Ilokano','Cebuano','Kapampangan'],
+['Ang Buko Pie ay iniuugnay sa…','Laguna','Sulu','Pangasinan','Davao'],
+['Ang Piaya ay kilala bilang produkto ng…','Negros Occidental','Laguna','Cebu','Samar'],
+['Ang Sinulog ay isang tanyag na pagdiriwang sa…','Cebu','La Union','Bacolod','Pangasinan'],
+['Ang opisyal na awit ng isang lugar ay halimbawa ng…','sagisag ng pagkakakilanlan','material na kultura lamang','likas na yaman','gusali'],
+['Alin ang maaaring makaapekto sa kultura?','Kapaligiran at kasaysayan','Kulay ng damit lamang','Numero ng bahay lamang','Oras ng klase lamang'] ],
+truefalse:[
+['Ang kultura ay bahagi ng pagkakakilanlan ng isang pangkat ng tao.','Tama','Mali'],['Ang Barong Tagalog ay di-materyal na kultura.','Mali','Tama'],['Ang pagmamano ay di-materyal na kultura.','Tama','Mali'],['Ang lokal na kultura ay maaaring natatangi sa isang pamayanan.','Tama','Mali'],['Ang pamayanan ay hindi kailanman nagbabago.','Mali','Tama'],['Ang mga makasaysayang lugar ay maaaring magpaalala ng nakaraan.','Tama','Mali'],['Ang wika ay halimbawa ng di-materyal na kultura.','Tama','Mali'],['Ang bahay kubo ay isang halimbawa ng material na kultura.','Tama','Mali'],['Ang kapaligiran ay maaaring makaapekto sa kultura at pamumuhay.','Tama','Mali'],['Ang tradisyon na patuloy na ginagawa ay halimbawa ng pagpapatuloy.','Tama','Mali'],['Ang Sinulog ay halimbawa ng isang pagdiriwang na may kulturang kaugnay.','Tama','Mali'],['Ang kasaysayan ay walang kabuluhan sa pagkilala sa pamayanan.','Mali','Tama'],['Ang musika ay maaaring maging bahagi ng di-materyal na kultura.','Tama','Mali'],['Ang pagtutulungan ay makatutulong sa pag-unlad ng pamayanan.','Tama','Mali'],['Ang material na kultura ay mga bagay na nakikita at nahahawakan.','Tama','Mali'] ]};
+const mixed=[...bank.pamayanan,...bank.kultura];
+let state={mode:null,items:[],i:0,score:0,answered:0,correct:0};
+let totalScore=Number(localStorage.ap3score||0),answered=Number(localStorage.ap3answered||0),correct=Number(localStorage.ap3correct||0),badges=Number(localStorage.ap3badges||0);
+
+function $(id){return document.getElementById(id)}
+function shuffle(a){return [...a].sort(()=>Math.random()-.5)}
+function scrollToId(id){const el=$(id); if(el) el.scrollIntoView({behavior:'smooth'})}
+function toggleFull(){if(!document.fullscreenElement){document.documentElement.requestFullscreen?.()}else{document.exitFullscreen?.()}}
+function escapeHTML(value){return String(value).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}
+
+function startQuiz(mode){
+  state.mode=mode; state.i=0; state.score=0;
+  const source=mode==='mixed'?mixed:bank[mode];
+  state.items=shuffle(source).slice(0,mode==='mixed'?20:15);
+  $('game').classList.remove('hidden');
+  $('gameTag').textContent=mode==='mixed'?'🔥 MIXED CHALLENGE':mode==='truefalse'?'⚡ TAMA O MALI':mode.toUpperCase();
+  $('gameTitle').textContent=mode==='pamayanan'?'🏘️ Pamayanan Challenge':mode==='kultura'?'🎭 Kultura Challenge':mode==='mixed'?'🔥 Mixed Challenge':'⚡ Tama o Mali';
+  scrollToId('game'); renderQuiz();
+}
+
+function renderQuiz(){
+  const item=state.items[state.i];
+  $('gameProgress').style.width=((state.i)/state.items.length*100)+'%';
+  $('gameScore').textContent=state.score;
+  const opts=shuffle(item.slice(1));
+  $('gameContent').innerHTML=`<div class="question">${state.i+1}. ${escapeHTML(item[0])}</div><div class="options">${opts.map(o=>`<button type="button" class="option">${escapeHTML(o)}</button>`).join('')}</div><div id="feedback" class="feedback hidden"></div>`;
+  document.querySelectorAll('#gameContent .option').forEach(btn=>btn.addEventListener('click',()=>answerQuiz(btn,btn.textContent,item[1]),{once:true}));
+  $('next').classList.add('hidden');
+  $('next').onclick=nextItem;
+}
+
+function answerQuiz(btn,choice,answer){
+  document.querySelectorAll('#gameContent .option').forEach(b=>b.disabled=true);
+  const ok=choice===answer;
+  btn.classList.add(ok?'correct':'wrong');
+  if(!ok) document.querySelectorAll('#gameContent .option').forEach(b=>{if(b.textContent===answer)b.classList.add('correct')});
+  if(ok){state.score++;totalScore++;correct++;toast('🎉 Tama! Ang galing!')}
+  else toast('💡 Good try! Tingnan ang tamang sagot.');
+  answered++; state.answered++;
+  $('gameScore').textContent=state.score;
+  $('feedback').classList.remove('hidden');
+  $('feedback').innerHTML=ok?'🌟 <b>Tama!</b> Keep going!':'🧠 <b>Review muna:</b> Ang tamang sagot ay <b>'+escapeHTML(answer)+'</b>.';
+  $('next').classList.remove('hidden'); saveStats(); updateStats();
+}
+
+function nextItem(){if(state.i<state.items.length-1){state.i++;renderQuiz()}else finishGame()}
+
+function finishGame(){
+  const pct=Math.round(state.score/state.items.length*100);
+  if(pct>=80){badges++;saveStats()}
+  $('gameProgress').style.width='100%';
+  $('gameContent').innerHTML=`<div class="final"><div class="trophy">${pct>=80?'🏆':'🌱'}</div><h2>${pct>=80?'AP 3 Champion!':'Nice effort!'}</h2><p>Score: <b>${state.score}/${state.items.length}</b> • ${pct}%</p><p>${pct>=80?'Excellent! Na-master mo ang round na ito.':'Magaling! Balikan ang Quick Review at subukan muli para mas tumaas ang score.'}</p><button type="button" id="tryAgain" class="btn primary">🔄 Try Again</button></div>`;
+  $('tryAgain').addEventListener('click',()=>startQuiz(state.mode));
+  $('next').classList.add('hidden'); updateStats();
+}
+
+function startSort(){
+  state.mode='sort'; state.i=0; state.score=0;
+  state.items=shuffle([{t:'Barong Tagalog',a:'material'},{t:'Pagmamano',a:'nonmaterial'},{t:'Bahay Kubo',a:'material'},{t:'Wika',a:'nonmaterial'},{t:'Adobo',a:'material'},{t:'Awiting-bayan',a:'nonmaterial'},{t:'Tradisyon',a:'nonmaterial'},{t:'Instrumentong pangmusika',a:'material'},{t:'Pagpapahalaga',a:'nonmaterial'},{t:'Kasuotan',a:'material'}]);
+  $('game').classList.remove('hidden'); $('gameTag').textContent='🧩 SORT IT'; $('gameTitle').textContent='Material o Di-Materyal?'; scrollToId('game'); renderSort();
+}
+
+function renderSort(){
+  const x=state.items[state.i];
+  $('gameProgress').style.width=(state.i/state.items.length*100)+'%'; $('gameScore').textContent=state.score;
+  $('gameContent').innerHTML=`<div class="sort-item"><div class="question">${state.i+1}. Saan kabilang ang <b>${escapeHTML(x.t)}</b>?</div><div class="sort-buttons"><button type="button" data-sort="material">👕 Material</button><button type="button" data-sort="nonmaterial">💛 Di-materyal</button></div><div id="feedback" class="feedback hidden"></div></div>`;
+  document.querySelectorAll('#gameContent [data-sort]').forEach(btn=>btn.addEventListener('click',()=>sortAnswer(btn.dataset.sort),{once:true}));
+  $('next').classList.add('hidden'); $('next').onclick=()=>{if(state.i<state.items.length-1){state.i++;renderSort()}else finishSort()};
+}
+
+function sortAnswer(choice){
+  const x=state.items[state.i]; const ok=choice===x.a;
+  document.querySelectorAll('#gameContent [data-sort]').forEach(b=>b.disabled=true);
+  answered++;
+  if(ok){state.score++;totalScore++;correct++;toast('🎯 Tama!')}else toast('💡 Keep practicing!');
+  $('feedback').classList.remove('hidden'); $('feedback').innerHTML=ok?'🌟 Tama!':'Ang tamang sagot ay <b>'+ (x.a==='material'?'Material':'Di-materyal')+'</b>.';
+  $('next').classList.remove('hidden'); saveStats(); updateStats();
+}
+
+function finishSort(){
+  const pct=Math.round(state.score/state.items.length*100);
+  $('gameProgress').style.width='100%';
+  $('gameContent').innerHTML=`<div class="final"><div class="trophy">${pct>=80?'🏆':'🌱'}</div><h2>Sort It! Finished</h2><p>${state.score}/${state.items.length} correct • ${pct}%</p><button type="button" id="sortAgain" class="btn primary">🔄 Try Again</button></div>`;
+  $('sortAgain').addEventListener('click',startSort); $('next').classList.add('hidden');
+}
+
+const cards=[['Pamayanan','Lugar kung saan naninirahan at namumuhay ang mga tao.'],['Pagbabago','Mga bagay sa pamayanan na nag-iiba sa paglipas ng panahon.'],['Pagpapatuloy','Mga gawain o bagay na nananatili sa paglipas ng panahon.'],['Kultura','Bahagi ng buhay na nagbibigay ng pagkakakilanlan sa pangkat ng tao.'],['Material na kultura','Mga bagay na nakikita at nahahawakan.'],['Di-materyal na kultura','Gawi, tradisyon, wika, musika, pagpapahalaga at paniniwala.'],['Lokal na kultura','Kulturang natatangi sa isang lugar o pamayanan.'],['Pambansang kultura','Kulturang makikita sa maraming lugar sa bansa.'],['Pagmamano','Kaugaliang nagpapakita ng paggalang sa nakatatanda.'],['Sinulog','Isang tanyag na pagdiriwang na kaugnay ng kultura ng Cebu.']];
+
+function startFlash(){state.mode='flash';state.i=0;state.items=shuffle(cards);$('game').classList.remove('hidden');$('gameTag').textContent='🃏 FLASH CARDS';$('gameTitle').textContent='Tap the Card to Reveal';scrollToId('game');renderFlash()}
+function renderFlash(){
+  const c=state.items[state.i];
+  $('gameProgress').style.width=(state.i/state.items.length*100)+'%'; $('gameScore').textContent=state.i;
+  $('gameContent').innerHTML=`<div id="flashCard" class="flash" role="button" tabindex="0"><div><div class="term">${escapeHTML(c[0])}</div><p>👆 Tap to reveal the meaning</p><div id="flashAnswer" class="answer"></div></div></div>`;
+  $('flashCard').addEventListener('click',revealFlash); $('flashCard').addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' ')revealFlash()});
+  $('next').classList.remove('hidden'); $('next').onclick=()=>{if(state.i<state.items.length-1){state.i++;renderFlash()}else finishFlash()};
+}
+function revealFlash(){const c=state.items[state.i];$('flashAnswer').textContent=c[1]}
+function finishFlash(){$('gameProgress').style.width='100%';$('gameContent').innerHTML='<div class="final"><div class="trophy">🌟</div><h2>Flash Cards Complete!</h2><p>Balikan ang cards hanggang kabisado mo na.</p><button type="button" id="flashAgain" class="btn primary">🔄 Review Again</button></div>';$('flashAgain').addEventListener('click',startFlash);$('next').classList.add('hidden')}
+
+function quickFire(){
+  const qs=shuffle(mixed).slice(0,10); let i=0,s=0;
+  function draw(){
+    if(i>=qs.length){$('quickBox').innerHTML=`<div class="quick-result">${s}/10 correct 🎉<br><small>${s>=8?'Champion level!':'Practice pa, kaya mo yan!'}</small></div>`;updateStats();return}
+    const q=qs[i],opts=shuffle(q.slice(1));
+    $('quickBox').innerHTML=`<div><div class="tag">⚡ ${i+1}/10</div><div class="quick-q">${escapeHTML(q[0])}</div><div class="quick-options">${opts.map(o=>`<button type="button" class="q-option">${escapeHTML(o)}</button>`).join('')}</div></div>`;
+    document.querySelectorAll('#quickBox .q-option').forEach(btn=>btn.addEventListener('click',()=>{
+      document.querySelectorAll('#quickBox .q-option').forEach(b=>b.disabled=true);
+      const choice=btn.textContent, ok=choice===q[1];
+      answered++;
+      if(ok){s++;totalScore++;correct++;btn.textContent='✓ '+choice;toast('⚡ Quick! Tama!')}
+      else{btn.textContent='✗ '+choice;document.querySelectorAll('#quickBox .q-option').forEach(b=>{if(b.textContent===q[1])b.textContent='✓ '+b.textContent});toast('💡 Review ang tamang sagot: '+q[1])}
+      saveStats();updateStats();i++;setTimeout(draw,600);
+    },{once:true}));
+  }
+  draw();scrollToId('quickBox');
+}
+
+function backToModes(){scrollToId('practice');$('game').classList.add('hidden')}
+function saveStats(){localStorage.ap3score=totalScore;localStorage.ap3answered=answered;localStorage.ap3correct=correct;localStorage.ap3badges=badges}
+function updateStats(){totalScore=Number(localStorage.ap3score||totalScore);answered=Number(localStorage.ap3answered||answered);correct=Number(localStorage.ap3correct||correct);badges=Number(localStorage.ap3badges||badges);$('totalScore').textContent=totalScore;$('answered').textContent=answered;$('accuracy').textContent=answered?Math.round(correct/answered*100)+'%':'0%';$('badges').textContent=badges}
+function resetAll(){localStorage.removeItem('ap3score');localStorage.removeItem('ap3answered');localStorage.removeItem('ap3correct');localStorage.removeItem('ap3badges');totalScore=answered=correct=badges=0;updateStats();toast('🔄 Reviewer reset! Good luck!');scrollToId('practice')}
+function toast(msg){let t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.tt);window.tt=setTimeout(()=>t.classList.remove('show'),1700)}
+updateStats();
