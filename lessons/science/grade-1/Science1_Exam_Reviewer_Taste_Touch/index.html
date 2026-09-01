@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science 1 Exam Reviewer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800;900&display=swap');
+:root{--navy:#173b62;--blue:#3d91f4;--pink:#ff6797;--green:#45c486;--yellow:#ffd85b;--purple:#8068e8;--red:#ef6878;--ink:#20374e;--muted:#667b8e}
+*{box-sizing:border-box}body{margin:0;font-family:Nunito,sans-serif;color:var(--ink);background:linear-gradient(#eaf8ff,#fff 50%,#eefbf4);min-height:100vh}button{font:inherit;cursor:pointer}.hidden{display:none!important}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid #dceaf4;padding:10px 5%;display:flex;justify-content:space-between;align-items:center}.brand{font:800 26px "Baloo 2";color:var(--navy)}.brand span{color:var(--pink)}.score{background:#fff;border:2px solid #deebf4;border-radius:999px;padding:7px 15px;font-weight:900}
+main{width:min(1050px,92%);margin:auto}.hero{text-align:center;padding:38px 8px 20px}.badge{display:inline-block;background:#fff;border:2px solid #dcebf4;border-radius:999px;padding:8px 14px;color:var(--purple);font-weight:900}.hero h1{font:800 clamp(40px,7vw,68px)/.9 "Baloo 2";color:var(--navy);margin:15px 0}.hero p{max-width:760px;margin:auto;color:var(--muted);font-size:18px;font-weight:700}
+nav{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:20px 0}nav button{border:2px solid #deebf4;background:#fff;border-radius:17px;padding:12px;font-weight:900;color:var(--navy)}nav button.active{background:var(--navy);color:#fff}
+.panel{background:#fff;border:2px solid #dcebf4;border-radius:27px;padding:25px;box-shadow:0 18px 45px #315a7317;margin:18px 0}.panel h2{font:800 34px "Baloo 2";margin:0 0 5px}.sub{color:var(--muted);font-weight:700}
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:18px}.topic{padding:25px;border-radius:25px;color:white;min-height:220px}.taste{background:linear-gradient(135deg,#ff6797,#d95ab8)}.touch{background:linear-gradient(135deg,#3d91f4,#5966dd)}.icon{font-size:55px}.topic h3{font:800 30px "Baloo 2";margin:4px 0}.topic p{line-height:1.5;font-weight:700}.btn{border:0;border-radius:15px;padding:12px 19px;background:var(--navy);color:#fff;font-weight:900}.topic .btn{background:#fff;color:var(--navy)}.btn.alt{background:#edf5fa;color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px}.card{background:#f8fcff;border:2px solid #dfedf4;border-radius:19px;padding:16px}.card .big{font-size:35px}.card b{display:block;font-size:19px;margin:3px 0}.tip{background:#fff8d8;border:2px dashed #e2c23d;border-radius:18px;padding:15px;font-weight:800;margin-top:16px}.safety{background:#fff0f2;border:2px solid #ffc6cf;border-radius:18px;padding:14px;font-weight:800;margin-top:15px}
+.progress{height:12px;background:#e7eff5;border-radius:999px;overflow:hidden;margin:15px 0}.progress i{display:block;width:0;height:100%;background:linear-gradient(90deg,var(--pink),var(--purple),var(--blue));transition:.3s}.question{font-size:23px;font-weight:900;margin:15px 0}.options{display:grid;grid-template-columns:1fr 1fr;gap:11px}.option{border:2px solid #dce9f2;background:#f9fcff;border-radius:17px;padding:15px;text-align:left;font-weight:900}.option:hover{background:#edf8ff;border-color:#86b8df}.option.correct{background:#dcf8e8;border-color:var(--green)}.option.wrong{background:#ffe5e9;border-color:var(--red)}.feedback{min-height:32px;font-weight:900;font-size:17px;margin:12px 0}
+.flash{max-width:620px;margin:20px auto;text-align:center;border:3px solid #dcebf4;border-radius:26px;background:#f9fcff;padding:35px}.flash .big{font-size:75px}.flash h3{font:800 40px "Baloo 2";margin:4px}.flash p{color:var(--muted);font-size:18px;font-weight:800}.center{text-align:center}.result .trophy{font-size:80px}.result h2{font:800 45px "Baloo 2";margin:5px}.final{font:800 60px "Baloo 2";color:var(--purple)}.stars{font-size:35px;letter-spacing:4px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.stat{background:#f8fcff;border:2px solid #dfedf4;border-radius:18px;padding:15px;font-weight:900}.stat span{font-size:25px}footer{text-align:center;padding:25px;color:#71869a;font-weight:800}
+@media(max-width:750px){.topics{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}.options{grid-template-columns:1fr}.stats{grid-template-columns:1fr}nav{grid-template-columns:1fr 1fr}}@media(max-width:480px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="brand">🔬 Science <span>Exam Quest</span></div><div class="score">⭐ <span id="score">0</span> pts</div></header>
+<main>
+<section class="hero"><div class="badge">🧪 GRADE 1 • EXAMINATION REVIEWER</div><h1>Tongue, Taste,<br>Skin & Touch!</h1><p>Review important Science ideas and practice before your examination. Learn, answer, check, and try again!</p></section>
+<nav><button id="nav-home" onclick="show('home')">🏠 Home</button><button id="nav-study" onclick="show('study')">📚 Study</button><button id="nav-quiz" onclick="show('quiz')">🧠 Practice Test</button><button id="nav-result" onclick="show('result')">🏆 My Result</button></nav>
+
+<section id="home">
+<div class="panel"><h2>🎯 Choose a Topic</h2><div class="sub">Start with the Study section if you need a review.</div>
+<div class="topics" style="margin-top:18px">
+<div class="topic taste"><div class="icon">👅🍬</div><h3>Tongue & Sense of Taste</h3><p>Study the tongue, taste buds, and four basic tastes: sweet, sour, salty, and bitter.</p><button class="btn" onclick="show('study');setStudy('taste')">Study Taste →</button></div>
+<div class="topic touch"><div class="icon">🖐️🔎</div><h3>Skin & Sense of Touch</h3><p>Study the skin, important skin parts, and what the skin helps us feel.</p><button class="btn" onclick="show('study');setStudy('touch')">Study Touch →</button></div>
+</div></div>
+<div class="panel"><h2>📋 What to Review</h2><div class="grid">
+<div class="card"><div class="big">👅</div><b>Tongue</b>Helps us taste.</div>
+<div class="card"><div class="big">🧠</div><b>Taste Buds</b>Help detect tastes.</div>
+<div class="card"><div class="big">🍬</div><b>4 Tastes</b>Sweet, sour, salty, bitter.</div>
+<div class="card"><div class="big">🖐️</div><b>Skin</b>Helps us touch and feel.</div>
+<div class="card"><div class="big">🔬</div><b>Epidermis</b>Top layer of skin.</div>
+<div class="card"><div class="big">🧬</div><b>Dermis</b>Layer below epidermis.</div>
+<div class="card"><div class="big">💧</div><b>Pores</b>Tiny skin openings.</div>
+<div class="card"><div class="big">⚡</div><b>Nerve Endings</b>Help sense touch, pain, pressure, temperature.</div>
+</div><div class="tip">🌟 Memory Trick: <b>👅 Tongue → Taste</b> &nbsp; | &nbsp; <b>🖐️ Skin → Touch and Feel</b></div></div>
+</section>
+
+<section id="study" class="hidden"><div class="panel"><h2>📚 Study Lab</h2><div class="sub">Read these simple facts before taking the test.</div><div style="margin:16px 0"><button class="btn" onclick="setStudy('taste')">👅 Taste</button> <button class="btn" onclick="setStudy('touch')">🖐️ Touch</button></div><div id="studyContent"></div></div></section>
+
+<section id="quiz" class="hidden"><div class="panel"><h2>🧠 Practice Examination</h2><div class="sub">20 questions • Choose the best answer.</div><div class="progress"><i id="bar"></i></div><div id="quizBox"></div><div id="feedback" class="feedback"></div><button id="next" class="btn hidden" onclick="nextQuestion()">Next Question →</button></div></section>
+
+<section id="result" class="hidden"><div class="panel result center"><div class="trophy">🏆</div><h2>Science Readiness Report</h2><div class="final"><span id="final">0</span>/20</div><div class="stars" id="stars">☆☆☆☆☆</div><p id="message"></p><div class="stats"><div class="stat">✅ Correct<br><span id="correct">0</span></div><div class="stat">❌ Review Again<br><span id="wrong">0</span></div><div class="stat">📊 Score<br><span id="percent">0%</span></div></div><br><button class="btn" onclick="restart()">🔄 Take Test Again</button> <button class="btn alt" onclick="show('study')">📚 Study Again</button></div></section>
+</main><footer>🔬 Science 1 • Review • Practice • Learn • Be Ready!</footer>
+
+<script>
+const questions=[
+["👅","Which body part helps us taste food?","Tongue","Skin","Ear","Eye","Tongue","The tongue helps us taste food."],
+["🧠","What helps the tongue detect tastes?","Taste buds","Hair","Pores","Bones","Taste buds","Taste buds help detect tastes."],
+["🍬","Which taste is common in candy?","Sweet","Sour","Salty","Bitter","Sweet","Candy is commonly sweet."],
+["🍋","Which taste is common in lemon?","Sour","Sweet","Salty","Bitter","Sour","Lemon is a familiar sour food."],
+["🧂","Which taste comes from salt?","Salty","Sweet","Bitter","Sour","Salty","Salt gives food a salty taste."],
+["🥬","Which taste can bitter gourd have?","Bitter","Sweet","Salty","Sour","Bitter","Bitter gourd is a common example of a bitter food."],
+["🍭","Which food is most likely sweet?","Candy","Lemon","Salt","Bitter gourd","Candy","Candy often contains sugar and tastes sweet."],
+["🍋","Which food is most likely sour?","Lemon","Sugar","Salt","Chocolate","Lemon","Lemon is sour."],
+["🧂","Which food is most likely salty?","Salted chips","Candy","Lemon","Sugar","Salted chips","Salted chips contain salt."],
+["🔬","How many basic tastes are studied in this reviewer?","Four","Two","Three","Five","Four","The four are sweet, sour, salty and bitter."],
+["🖐️","What is the body's largest sense organ?","Skin","Tongue","Ear","Eye","Skin","The skin is the largest sense organ of the body."],
+["🖐️","What sense does the skin help us use?","Touch","Taste","Hearing","Sight","Touch","Skin helps us touch and feel."],
+["🧸","A teddy bear usually feels…","Soft","Hard","Rough","Hot","Soft","A teddy bear is usually soft."],
+["🪨","Sandpaper usually feels…","Rough","Smooth","Soft","Sweet","Rough","Sandpaper has a rough surface."],
+["🥛","A glass surface is usually…","Smooth","Rough","Soft","Bitter","Smooth","Glass commonly feels smooth."],
+["🪵","A wooden block is usually…","Hard","Soft","Sweet","Cold","Hard","Wood is firm and hard."],
+["🧊","What can your skin tell you about an ice cube?","It is cold","It is sweet","It is salty","It is bitter","It is cold","Skin can sense temperature."],
+["💧","What are pores?","Tiny openings in the skin","Bones in the skin","Taste buds","Hairs on the tongue","Tiny openings in the skin","Sweat can come out through pores."],
+["⚡","What do nerve endings help us feel?","Touch, pain, pressure and temperature","Sweet and sour only","Sounds","Colors","Touch, pain, pressure and temperature","Nerve endings help the skin sense different information."],
+["🧴","What helps prevent the skin from drying up?","Oil from oil glands","Taste buds","Eyelashes","Bones","Oil from oil glands","Skin oil helps keep the skin from becoming too dry."]
+];
+let q=0,correct=0,score=0,answered=false,studyTopic='taste';
+
+function show(id){
+ document.querySelectorAll('main section').forEach(s=>s.classList.add('hidden'));
+ document.getElementById(id).classList.remove('hidden');
+ document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+ document.getElementById('nav-'+id).classList.add('active');
+ if(id==='study')renderStudy();
+ if(id==='quiz')renderQuiz();
+ if(id==='result')renderResult();
+ scrollTo({top:0,behavior:'smooth'});
+}
+function setStudy(t){studyTopic=t;renderStudy()}
+function renderStudy(){
+ const taste=studyTopic==='taste';
+ document.getElementById('studyContent').innerHTML=taste?`
+ <div class="tip">👅 <b>Key Idea:</b> The tongue helps us taste. Taste buds help detect tastes.</div>
+ <div class="grid" style="margin-top:16px">
+ <div class="card"><div class="big">🍬</div><b>Sweet</b>Examples: candy, sugar, cake.</div>
+ <div class="card"><div class="big">🍋</div><b>Sour</b>Examples: lemon, calamansi, vinegar.</div>
+ <div class="card"><div class="big">🧂</div><b>Salty</b>Examples: salt and salted chips.</div>
+ <div class="card"><div class="big">🥬</div><b>Bitter</b>Example: bitter gourd and some foods.</div>
+ </div>
+ <div class="safety">🧪 Safety: Never taste an unknown substance. Only taste safe food with trusted adult guidance.</div>`
+ :`
+ <div class="tip">🖐️ <b>Key Idea:</b> The skin is the body's largest sense organ. It helps us touch and feel.</div>
+ <div class="grid" style="margin-top:16px">
+ <div class="card"><div class="big">🔬</div><b>Epidermis</b>The top layer of skin.</div>
+ <div class="card"><div class="big">🧬</div><b>Dermis</b>The layer below the epidermis.</div>
+ <div class="card"><div class="big">💧</div><b>Pores</b>Tiny openings in the skin. Sweat can come out through them.</div>
+ <div class="card"><div class="big">💇</div><b>Hair</b>Grows from the skin and helps protect it.</div>
+ <div class="card"><div class="big">⚡</div><b>Nerve Endings</b>Help us feel touch, pain, pressure and temperature.</div>
+ <div class="card"><div class="big">💦</div><b>Sweat Glands</b>Make sweat.</div>
+ <div class="card"><div class="big">🧴</div><b>Oil Glands</b>Make oil that helps keep skin from drying.</div>
+ <div class="card"><div class="big">🧸</div><b>Touch</b>Soft, hard, smooth, rough, hot and cold.</div>
+ </div>
+ <div class="safety">🔥 Safety: Do not touch dangerous hot objects. Explore only safe objects with adult guidance.</div>`;
+}
+function renderQuiz(){
+ answered=false;const x=questions[q];
+ document.getElementById('bar').style.width=(q/questions.length*100)+'%';
+ document.getElementById('feedback').textContent='';
+ document.getElementById('next').classList.add('hidden');
+ document.getElementById('quizBox').innerHTML=`<div class="question">Question ${q+1} of ${questions.length}<br>${x[0]} ${x[1]}</div>
+ <div class="options">${[x[2],x[3],x[4],x[5]].map(o=>`<button class="option" onclick="answer(this,${JSON.stringify(o)})">${o}</button>`).join('')}</div>`;
+}
+function answer(btn,a){
+ if(answered)return;answered=true;const x=questions[q];
+ document.querySelectorAll('.option').forEach(b=>{if(b.textContent===x[6])b.classList.add('correct')});
+ if(a===x[6]){score++;correct++;btn.classList.add('correct');document.getElementById('feedback').textContent='🎉 Correct! '+x[7]}
+ else{btn.classList.add('wrong');document.getElementById('feedback').textContent='🔎 Review: '+x[7]}
+ document.getElementById('score').textContent=score;
+ document.getElementById('next').classList.remove('hidden');
+}
+function nextQuestion(){if(q<questions.length-1){q++;renderQuiz()}else{show('result')}}
+function renderResult(){
+ const p=correct/20*100;
+ document.getElementById('final').textContent=correct;document.getElementById('correct').textContent=correct;
+ document.getElementById('wrong').textContent=20-correct;document.getElementById('percent').textContent=p+'%';
+ document.getElementById('stars').textContent=correct>=18?'★★★★★':correct>=15?'★★★★☆':correct>=11?'★★★☆☆':correct>=7?'★★☆☆☆':'★☆☆☆☆';
+ document.getElementById('message').textContent=correct>=18?'🌟 Excellent! You are very ready for the Science examination!':correct>=15?'👏 Great job! Review a few key points and keep practicing.':correct>=11?'👍 Good work! Study again and try the test one more time.':'🔬 Keep exploring! Study carefully, then take the practice test again.';
+}
+function restart(){q=0;correct=0;score=0;document.getElementById('score').textContent=0;show('quiz')}
+show('home');
+</script>
+</body>
+</html>

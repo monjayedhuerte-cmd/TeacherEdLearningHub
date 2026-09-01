@@ -148,13 +148,23 @@
     "featured": false,
     "icon": "hand"
   },
-   {
+  {
     "title": "Taste and Touch Adventure V2",
     "subject": "Science",
     "grade": "Grade 1",
     "description": "Your Reviewer Mission.",
     "file": "lessons/science/grade-1/Science1_Taste_Touch_Science_Quest_V2/index.html",
     "date": "2026-08-26",
+    "featured": false,
+    "icon": "hand"
+  },
+   {
+    "title": "Reviewer in Sense of Taste and Touch",
+    "subject": "Science",
+    "grade": "Grade 1",
+    "description": "Your Reviewer Mission.",
+    "file": "lessons/science/grade-1/Science1_Exam_Reviewer_Taste_Touch/index.html",
+    "date": "2026-09-01",
     "featured": false,
     "icon": "hand"
   },
