@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Math World Quest | Roman Numerals & Estimating Sums</title>
+<style>
+:root{--navy:#081f3d;--blue:#1769aa;--sky:#55b9f3;--gold:#ffd45a;--cream:#fffaf0;--green:#27ae70;--red:#df5050;--ink:#18324f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#eef7ff,#fff9e8);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:linear-gradient(135deg,var(--navy),#114c80);color:#fff;padding:15px 5%;box-shadow:0 5px 25px #0003}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:15px}.logo{font-size:clamp(22px,3vw,34px);font-weight:900;letter-spacing:.5px}.sub{opacity:.8;font-size:13px;margin-top:3px}
+.stats{display:flex;gap:8px;align-items:center}.pill{padding:9px 14px;border-radius:30px;background:#ffffff15;border:1px solid #ffffff2e;font-weight:bold}.xp{background:var(--gold);color:var(--navy)}
+.progress{height:8px;background:#ffffff2b;border-radius:8px;margin-top:12px}.bar{height:100%;width:0;background:var(--gold);border-radius:8px;transition:.4s}
+main{max-width:1150px;margin:auto;padding:25px 18px 80px}.hero,.panel{background:#fff;border:1px solid #d9e6f2;border-radius:26px;box-shadow:0 10px 35px #0b315018;margin-bottom:22px;padding:28px}
+.hero{background:radial-gradient(circle at 85% 15%,#ffe69a 0 8%,transparent 9%),linear-gradient(135deg,#fff,#eaf5ff);overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:180px;height:180px;border-radius:50%;right:-70px;bottom:-80px;background:#55b9f322}
+h1,h2,h3{color:var(--navy)}.hero h1{font-size:clamp(32px,6vw,62px);margin:8px 0}.hero p{font-size:19px;line-height:1.65;max-width:800px}.tag{display:inline-block;padding:7px 12px;border-radius:30px;background:#eaf3ff;color:#1764ad;font-weight:800;font-size:12px;letter-spacing:.5px}
+.btn{border:0;border-radius:13px;padding:12px 18px;background:var(--blue);color:#fff;font-weight:800;cursor:pointer;font-size:15px}.btn:hover{transform:translateY(-1px);filter:brightness(.96)}.btn.gold{background:var(--gold);color:var(--navy)}.btn.dark{background:var(--navy)}.btn:disabled{opacity:.55;cursor:not-allowed}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:13px}.mission{padding:18px;border-radius:18px;background:#f5f9fd;border:1px solid #dce7f1}.mission b{display:block;margin-bottom:6px;color:var(--navy)}
+.lesson-strip{margin-top:20px;background:var(--navy);color:#fff;border-radius:20px;padding:22px}.lesson-strip h3{color:#fff;margin-top:0}.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.step{padding:13px;border-radius:13px;background:#ffffff10;border:1px solid #ffffff20}.step strong{color:var(--gold)}
+.fullscreen{position:fixed;inset:0;z-index:100;background:linear-gradient(135deg,#071a32,#0e568c);color:#fff;display:none;overflow:auto;padding:30px 6%}.fullscreen.show{display:block}.fsclose{position:fixed;right:25px;top:20px;z-index:105}.fsinner{max-width:1000px;margin:45px auto}.fsinner h1,.fsinner h2{color:#fff}.fsinner h1{font-size:clamp(35px,6vw,65px)}.fsbox{background:#fff;color:var(--ink);border-radius:22px;padding:25px;margin:20px 0}.fsbox h2,.fsbox h3{color:var(--navy)}.fsbox p,.fsbox li{font-size:19px;line-height:1.6}.rule{background:#fff7d5;border-left:7px solid var(--gold);padding:18px;border-radius:14px;line-height:1.6}
+.symbols{display:grid;grid-template-columns:repeat(7,1fr);gap:9px}.symbol{padding:14px;text-align:center;border:2px solid #dce6ef;border-radius:13px;background:#f7fbff}.symbol b{display:block;font-size:27px;color:var(--blue)}.symbol small{font-weight:bold}
+.example{background:#ebf8f1;border-left:7px solid var(--green);padding:17px;border-radius:13px}
+.question{padding:18px;border-radius:17px;border:1px solid #dbe7f1;background:#fbfdff;margin:12px 0}.question strong{font-size:17px}.choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:9px;margin-top:12px}.choice{border:2px solid #d7e3ee;background:#fff;color:var(--ink);border-radius:11px;padding:11px;font-weight:bold;cursor:pointer}.choice.correct{background:#e8f8ef;border-color:var(--green)}.choice.wrong{background:#fff0f0;border-color:var(--red)}.feedback{min-height:22px;margin-top:8px;font-weight:bold}.inputrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}.inputrow input{padding:12px;border:2px solid #ccd9e8;border-radius:11px;font-size:16px;width:220px}
+.vault{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}.flip{height:120px;perspective:800px;cursor:pointer}.flipin{height:100%;position:relative;transition:.55s;transform-style:preserve-3d}.flip.open .flipin{transform:rotateY(180deg)}.face{position:absolute;inset:0;display:grid;place-items:center;backface-visibility:hidden;border-radius:17px;border:2px solid #d9e5ef;background:#f7fbff;font-size:34px;font-weight:900}.back{transform:rotateY(180deg);background:#eaf8f1;color:#177248}
+.challenge{background:linear-gradient(135deg,#102b4b,#1769aa);color:#fff}.challenge h2{color:#fff}.challenge .question{color:var(--ink)}
+.complete{display:none;background:#e9f8f0;color:#14613d;border-radius:18px;padding:22px;text-align:center;font-size:21px;font-weight:bold;margin-top:15px}
+footer{text-align:center;padding:25px;color:#6b7e91}.tiny{font-size:13px;color:#65788b}
+@media(max-width:650px){header{padding:13px}.stats .pill:first-child{display:none}.hero,.panel{padding:20px}.symbols{grid-template-columns:repeat(4,1fr)}.fullscreen{padding:20px 16px}.fsclose{right:15px;top:12px}}
+</style>
+</head>
+<body>
+<header>
+<div class="nav">
+ <div><div class="logo">MATH WORLD QUEST</div><div class="sub">Roman Numerals • Estimating Sums</div></div>
+ <div class="stats"><div class="pill">Progress <span id="pct">0%</span></div><div class="pill xp">XP <span id="xp">0</span></div></div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+</header>
+
+<div class="fullscreen" id="fs">
+<button class="btn gold fsclose" onclick="closeFS()">EXIT FULL SCREEN</button>
+<div class="fsinner">
+ <span class="tag">INTERACTIVE LESSON MODE</span>
+ <h1>Math World Lesson</h1>
+ <p style="font-size:20px;line-height:1.6">Welcome, Math Explorer! Learn the two skills before entering the practice stations.</p>
+ <div class="fsbox">
+  <h2>WORLD 1: ROMAN NUMERALS</h2>
+  <p>These are the seven basic Roman numeral symbols:</p>
+  <div class="symbols">
+   <div class="symbol"><b>I</b>1</div><div class="symbol"><b>V</b>5</div><div class="symbol"><b>X</b>10</div><div class="symbol"><b>L</b>50</div><div class="symbol"><b>C</b>100</div><div class="symbol"><b>D</b>500</div><div class="symbol"><b>M</b>1,000</div>
+  </div>
+  <h3>4-Digit Roman Numerals</h3>
+  <p>For this reviewer, 4-digit Roman numerals are numbers from <strong>1,000 to 3,999</strong>.</p>
+  <div class="example">
+   <strong>1,000 = M</strong><br><strong>1,245 = MCCXLV</strong><br><strong>2,024 = MMXXIV</strong><br><strong>3,999 = MMMCMXCIX</strong>
+  </div>
+  <p>Build the number by representing the thousands, hundreds, tens, and ones.</p>
+ </div>
+ <div class="fsbox">
+  <h2>WORLD 2: ESTIMATING SUMS</h2>
+  <div class="rule"><strong>THE GOLDEN RULE:</strong> Round <strong>each addend</strong> to its <strong>highest place value</strong> before adding.</div>
+  <h3>Example: 1,245 + 2,331</h3>
+  <p>1,245 → 1,000 because it is a 4-digit number.</p>
+  <p>2,331 → 2,000 because it is a 4-digit number.</p>
+  <div class="example"><strong>1,000 + 2,000 = 3,000</strong></div>
+  <p><strong>3-digit:</strong> hundreds &nbsp; | &nbsp; <strong>4-digit:</strong> thousands &nbsp; | &nbsp; <strong>5-digit:</strong> ten-thousands &nbsp; | &nbsp; <strong>6-digit:</strong> hundred-thousands</p>
+ </div>
+ <div class="fsbox">
+  <h2>READY?</h2>
+  <p>Remember: <strong>Highest place value first!</strong> Then use your rounding rule and add.</p>
+  <button class="btn" onclick="closeFS();document.getElementById('vault').scrollIntoView({behavior:'smooth'})">START PRACTICE</button>
+ </div>
+</div>
+</div>
+
+<main>
+<section class="hero">
+<span class="tag">WELCOME TO THE ADVENTURE</span>
+<h1>Become a Math World Hero!</h1>
+<p>The Math World shop has lost its number labels. Some are written in Roman numerals, and the shopkeeper needs quick estimates of large totals. Explore, solve, earn XP, and complete the final mission.</p>
+<div class="hero-actions">
+<button class="btn gold" onclick="openFS()">OPEN FULL-SCREEN LESSON</button>
+<button class="btn dark" onclick="document.getElementById('vault').scrollIntoView({behavior:'smooth'})">START QUEST</button>
+</div>
+<div class="grid" style="margin-top:22px">
+<div class="mission"><b>Roman Numeral Mastery</b>Identify symbols and build 4-digit Roman numerals.</div>
+<div class="mission"><b>Estimation Power</b>Round each addend to its highest place value.</div>
+<div class="mission"><b>Final Mission</b>Show that you can use both skills independently.</div>
+</div>
+<div class="lesson-strip">
+<h3>5-Step Estimation Power</h3>
+<div class="steps">
+<div class="step"><strong>1. FIND</strong><br>Highest place value</div>
+<div class="step"><strong>2. LOOK</strong><br>Look one digit right</div>
+<div class="step"><strong>3. ROUND</strong><br>5 or more rounds up</div>
+<div class="step"><strong>4. ROUND</strong><br>4 or less stays</div>
+<div class="step"><strong>5. ADD</strong><br>Add estimates</div>
+</div>
+</div>
+</section>
+
+<section class="panel" id="vault">
+<span class="tag">STATION 1 • DISCOVER</span><h2>Roman Numeral Vault</h2><p>Tap a symbol. Can you remember its value?</p>
+<div class="vault" id="vaultCards"></div>
+</section>
+
+<section class="panel">
+<span class="tag">STATION 2 • BUILD</span><h2>4-Digit Roman Numeral Builder</h2>
+<p>Translate each 4-digit number into Roman numerals.</p><div id="builder"></div>
+</section>
+
+<section class="panel">
+<span class="tag">STATION 3 • DETECT</span><h2>Roman Detective</h2>
+<p>Choose the correct value or Roman numeral.</p><div id="detective"></div>
+</section>
+
+<section class="panel">
+<span class="tag">STATION 4 • LEARN</span><h2>Estimating Sum Lab</h2>
+<div class="rule"><strong>REMEMBER:</strong> The sum is estimated by rounding the addends to their <strong>highest place value</strong>.</div>
+<div class="example" style="margin-top:14px"><strong>Example:</strong> 348 + 251 → 300 + 300 = <strong>600</strong></div>
+</section>
+
+<section class="panel">
+<span class="tag">STATION 5 • PRACTICE</span><h2>Estimate It!</h2><p class="tiny">Every item below uses the highest place value.</p><div id="estimate"></div>
+</section>
+
+<section class="panel challenge">
+<span class="tag" style="background:#ffffff18;color:#fff">STATION 6 • CHALLENGE</span><h2>Beat the Clock Challenge</h2><p>Choose the best estimated sum.</p><div id="challenge"></div>
+</section>
+
+<section class="panel">
+<span class="tag">FINAL STATION • MASTER</span><h2>Math World Final Mission</h2><p>Answer all 6 questions correctly to unlock your Math Hero result.</p><div id="final"></div>
+<h3 id="finalScore">Final Score: 0 / 6</h3>
+<button class="btn gold" id="finish" onclick="finish()">FINISH MISSION</button>
+<div class="complete" id="complete">MISSION COMPLETE! You finished the Math World Quest. Excellent work!</div>
+</section>
+</main>
+<footer>Math World Quest • Learn • Explore • Practice • Challenge • Master</footer>
+
+<script>
+let xp=0,doneStations=0,totalStations=7,finalScore=0;
+function addXP(n){xp+=n;document.getElementById('xp').textContent=xp}
+function progress(){let p=Math.min(100,Math.round(doneStations/totalStations*100));document.getElementById('bar').style.width=p+'%';document.getElementById('pct').textContent=p+'%'}
+function openFS(){document.getElementById('fs').classList.add('show');document.body.style.overflow='hidden'}
+function closeFS(){document.getElementById('fs').classList.remove('show');document.body.style.overflow='auto'}
+function norm(x){return String(x).toUpperCase().replace(/\s/g,'')}
+const symbols=[['I','1'],['V','5'],['X','10'],['L','50'],['C','100'],['D','500'],['M','1,000']];
+document.getElementById('vaultCards').innerHTML=symbols.map(s=>`<div class="flip" onclick="this.classList.toggle('open')"><div class="flipin"><div class="face">${s[0]}</div><div class="face back">${s[1]}</div></div></div>`).join('');
+
+function roman(n){let a=[[1000,'M'],[900,'CM'],[500,'D'],[400,'CD'],[100,'C'],[90,'XC'],[50,'L'],[40,'XL'],[10,'X'],[9,'IX'],[5,'V'],[4,'IV'],[1,'I']],s='';for(let [v,r] of a){while(n>=v){s+=r;n-=v}}return s}
+const nums=[1000,1245,2024,2499,3000,3999];
+document.getElementById('builder').innerHTML=nums.map((n,i)=>`<div class="question"><strong>${n.toLocaleString()}</strong><div class="inputrow"><input id="b${i}" placeholder="Type Roman numeral"><button class="btn" onclick="checkB(${i})">CHECK</button></div><div class="feedback" id="bf${i}"></div></div>`).join('');
+function checkB(i){let x=document.getElementById('b'+i),f=document.getElementById('bf'+i),a=roman(nums[i]);if(x.dataset.ok)return;if(norm(x.value)===a){x.dataset.ok=1;x.disabled=true;f.textContent='Correct!';f.style.color='var(--green)';addXP(15)}else{f.textContent='Try again. Answer: '+a;f.style.color='var(--red)'}if(nums.every((n,j)=>document.getElementById('b'+j).dataset.ok)){doneStations++;progress()}}
+
+const dq=[
+['MCCXLV','1,245',['1,145','1,245','1,425']],
+['MMXXIV','2,024',['2,014','2,024','2,204']],
+['MMMCMXCIX','3,999',['3,899','3,999','4,999']],
+['1,500','MD',['MD','DM','MCD']],
+['2,000','MM',['MM','DD','MC']]
+];
+document.getElementById('detective').innerHTML=dq.map((q,i)=>`<div class="question"><strong>${q[0]} = ?</strong><div class="choices">${q[2].map(o=>`<button class="choice" onclick="choose(this,${i},'${o}','${q[1]}')">${o}</button>`).join('')}</div><div class="feedback" id="df${i}"></div></div>`).join('');
+function choose(el,i,v,a){let box=el.parentElement;if(box.dataset.done)return;box.dataset.done=1;box.querySelectorAll('button').forEach(b=>b.disabled=true);let f=document.getElementById('df'+i);if(v===a){el.classList.add('correct');f.textContent='Correct!';addXP(10)}else{el.classList.add('wrong');f.textContent='Correct answer: '+a}if(i===dq.length-1){doneStations++;progress()}}
+
+const eq=[[348,251,600],[1245,2331,3000],[12481,23219,30000],[124321,213112,300000],[5678,3211,9000]];
+document.getElementById('estimate').innerHTML=eq.map((q,i)=>`<div class="question"><strong>${q[0].toLocaleString()} + ${q[1].toLocaleString()}</strong><div class="inputrow"><input id="e${i}" type="number" placeholder="Estimated sum"><button class="btn" onclick="checkE(${i})">CHECK</button></div><div class="feedback" id="ef${i}"></div></div>`).join('');
+function high(n){let p=10**(String(n).length-1);return Math.round(n/p)*p}
+function checkE(i){let x=document.getElementById('e'+i),f=document.getElementById('ef'+i),a=eq[i][2];if(x.dataset.ok)return;if(Number(x.value)===a){x.dataset.ok=1;x.disabled=true;f.textContent='Correct! Highest place value used.';f.style.color='var(--green)';addXP(15)}else{f.textContent='Try again. Estimated sum: '+a.toLocaleString()+'. Round each addend to its highest place value.';f.style.color='var(--red)'}if(eq.every((q,j)=>document.getElementById('e'+j).dataset.ok)){doneStations++;progress()}}
+
+const cq=[
+['6,421 + 2,318','9,000',['8,000','9,000','10,000']],
+['45,210 + 21,890','70,000',['60,000','70,000','80,000']],
+['245,100 + 321,800','600,000',['500,000','600,000','700,000']],
+['1,999 + 2,222','3,000',['2,000','3,000','4,000']]
+];
+document.getElementById('challenge').innerHTML=cq.map((q,i)=>`<div class="question"><strong>${q[0]}</strong><div class="choices">${q[2].map(o=>`<button class="choice" onclick="cchoose(this,${i},'${o}','${q[1]}')">${o}</button>`).join('')}</div><div class="feedback" id="cf${i}"></div></div>`).join('');
+function cchoose(el,i,v,a){let box=el.parentElement;if(box.dataset.done)return;box.dataset.done=1;box.querySelectorAll('button').forEach(b=>b.disabled=true);let f=document.getElementById('cf'+i);if(v===a){el.classList.add('correct');f.textContent='Correct!';addXP(15)}else{el.classList.add('wrong');f.textContent='Correct answer: '+a+'. Highest place value!'}if(i===cq.length-1){doneStations++;progress()}}
+
+const fq=[
+['What is 1,245 in Roman numerals?','MCCXLV',['MCCXLV','MCCXV','MCXLV']],
+['What is 2,024 in Roman numerals?','MMXXIV',['MMXXIV','MMXIV','MXXIV']],
+['What is the value of M?','1,000',['100','500','1,000']],
+['Estimate 348 + 251.','600',['500','600','700']],
+['Estimate 12,481 + 23,219.','30,000',['30,000','35,000','40,000']],
+['Estimate 124,321 + 213,112.','300,000',['300,000','337,000','400,000']]
+];
+document.getElementById('final').innerHTML=fq.map((q,i)=>`<div class="question"><strong>${q[0]}</strong><div class="choices">${q[2].map(o=>`<button class="choice" onclick="fchoose(this,${i},'${o}','${q[1]}')">${o}</button>`).join('')}</div><div class="feedback" id="ff${i}"></div></div>`).join('');
+function fchoose(el,i,v,a){let box=el.parentElement;if(box.dataset.done)return;box.dataset.done=1;box.querySelectorAll('button').forEach(b=>b.disabled=true);let f=document.getElementById('ff'+i);if(v===a){el.classList.add('correct');f.textContent='Correct!';finalScore++;addXP(20)}else{el.classList.add('wrong');f.textContent='Correct answer: '+a}document.getElementById('finalScore').textContent='Final Score: '+finalScore+' / 6'}
+function finish(){if(finalScore<6){alert('Complete all 6 final questions correctly first.');return}document.getElementById('finish').disabled=true;document.getElementById('complete').style.display='block';addXP(50);document.getElementById('complete').scrollIntoView({behavior:'smooth'})}
+progress();
+</script>
+</body>
+</html>

@@ -20,6 +20,16 @@
     "icon": "calculator"
   },
   {
+    "title": "Reviewer for Roman Numerals and Estimating Sums",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "The Math World shop has lost its number labels. Some are written in Roman numerals, and the shopkeeper needs quick estimates of large totals. Explore, solve, earn XP, and complete the final mission.",
+    "file": "lessons/mathematics/grade-2/Math_World_Quest_Interactive_Fullscreen_4Digit_Roman_Estimating_Sums/index.html",
+    "date": "2026-09-02",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
     "title": "Estimating Sum",
     "subject": "Mathematics",
     "grade": "Grade 2",
