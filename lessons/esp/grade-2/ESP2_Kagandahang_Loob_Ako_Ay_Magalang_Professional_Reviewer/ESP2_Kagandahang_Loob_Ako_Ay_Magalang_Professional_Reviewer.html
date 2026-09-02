@@ -1,0 +1,160 @@
+<!doctype html><html lang="fil"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ESP 2 Interactive Reviewer</title>
+<style>
+*{box-sizing:border-box}
+:root{
+ --navy:#102a43;--blue:#1769aa;--blue2:#2f80ed;--gold:#f4b942;
+ --ink:#172033;--muted:#64748b;--bg:#f5f7fb;--surface:#fff;
+ --line:#e7edf5;--success:#198754;--danger:#dc3545;
+}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+button{font:inherit}
+main{width:100%;max-width:1440px;margin:auto;padding:24px 32px 50px}
+.tools{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+.tools button{border:1px solid var(--line);background:var(--surface);color:var(--navy);padding:10px 15px;border-radius:12px;font-weight:800;box-shadow:0 3px 12px #102a4310;transition:.2s}
+.tools button:hover{transform:translateY(-1px);box-shadow:0 7px 20px #102a4318}
+.topnav{position:sticky;top:10px;z-index:20;display:flex;align-items:center;gap:6px;overflow-x:auto;white-space:nowrap;padding:8px;background:#fffffff2;border:1px solid var(--line);border-radius:16px;margin-bottom:22px;box-shadow:0 8px 28px #102a4310;backdrop-filter:blur(12px)}
+.topnav::-webkit-scrollbar{height:0}
+.topnav button{border:0;background:transparent;color:var(--muted);padding:10px 14px;border-radius:10px;font-weight:800;cursor:pointer;transition:.2s}
+.topnav button:hover{background:#eef5ff;color:var(--blue)}
+.topnav button.active{background:var(--navy);color:#fff}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--navy) 0%,#174f82 55%,var(--blue2) 100%);color:#fff;padding:42px;border-radius:28px;box-shadow:0 18px 45px #102a4330}
+.hero:before{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-100px;background:#ffffff12}
+.hero:after{content:"★";position:absolute;right:48px;bottom:-38px;font-size:170px;line-height:1;color:#ffffff0d}
+.hero h1{position:relative;margin:0 0 8px;font-size:clamp(34px,5vw,58px);line-height:1.08;letter-spacing:-1.5px}
+.hero p{position:relative;max-width:850px;font-size:17px;margin:0;opacity:.94}
+.en{display:block;font-size:.84em;color:var(--muted);font-style:italic;margin-top:4px}
+.hero .en{color:#ffffffb8}
+.progress{position:relative;height:10px;background:#ffffff25;border-radius:99px;overflow:hidden;margin-top:28px}
+.bar{height:100%;width:0;background:linear-gradient(90deg,var(--gold),#ffd978);transition:.5s}
+.stats{position:relative;display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.pill{background:#ffffff16;border:1px solid #ffffff22;padding:7px 12px;border-radius:999px;font-size:14px}
+.section{display:none;margin-top:22px;animation:fade .25s ease}.section.show{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.card{background:var(--surface);padding:27px;border:1px solid var(--line);border-radius:22px;margin-bottom:18px;box-shadow:0 8px 30px #102a4310}
+.card h2{margin:0 0 12px;color:var(--navy);letter-spacing:-.3px}
+.card h3{color:var(--navy)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.topic{background:linear-gradient(180deg,#fff,#fbfcfe);border:1px solid var(--line);border-radius:17px;padding:19px;transition:.2s}
+.topic:hover{transform:translateY(-3px);box-shadow:0 10px 24px #102a4312;border-color:#cddcf0}
+.icon{font-size:36px;margin-bottom:6px}
+.fact{padding:16px 18px;border-left:5px solid var(--gold);background:#fff9e8;border-radius:12px;margin:16px 0}
+.choice{width:100%;display:block;text-align:left;margin:9px 0;padding:15px 16px;border:2px solid #e3eaf3;border-radius:13px;background:#f8fafc;color:var(--ink);font-weight:750;cursor:pointer;transition:.18s}
+.choice:hover:not(:disabled){border-color:#8cb9ea;background:#f1f7ff;transform:translateX(2px)}
+.choice:disabled{cursor:default}
+.choice.correct{background:#e8f7ef;border-color:#63c18c;color:#146c43}
+.choice.wrong{background:#fff0f0;border-color:#e58a8a;color:#a61e2b}
+.feedback{font-weight:800;min-height:25px;margin-top:12px}
+.next{padding:11px 16px;border:0;border-radius:12px;background:var(--navy);color:#fff;font-weight:800;cursor:pointer}
+.yellow{background:var(--gold);color:var(--ink)}
+textarea{width:100%;min-height:150px;padding:16px;border:2px solid var(--line);border-radius:14px;resize:vertical;font:inherit;outline:none}
+textarea:focus{border-color:#8cb9ea;box-shadow:0 0 0 4px #2f80ed12}
+.score{text-align:center;font-size:64px;font-weight:950;color:var(--navy);line-height:1.1}
+.badge{text-align:center;font-size:70px}
+@media(max-width:760px){
+ main{padding:10px 10px 35px}
+ .tools{position:sticky;top:0;z-index:30;padding:8px 0;margin-bottom:7px;background:#f5f7fbeF}
+ .tools button{padding:10px 12px}
+ .topnav{top:57px;margin-bottom:15px;border-radius:13px}
+ .topnav button{padding:10px 12px}
+ .hero{padding:27px 20px;border-radius:21px}
+ .hero h1{font-size:34px}
+ .hero:after{font-size:110px;right:12px}
+ .card{padding:19px;border-radius:18px}
+ .grid{grid-template-columns:1fr}
+}
+@media(min-width:761px){.hero{min-height:280px;display:flex;flex-direction:column;justify-content:center}}
+@media print{.tools,.topnav{display:none!important}main{margin:0;padding:0}.card{box-shadow:none;break-inside:avoid}.section{display:block!important}}
+</style></head><body>
+
+<main><div class="tools">
+<button id="fullBtn" onclick="full()">⛶ Fullscreen View</button>
+<button onclick="window.print()">🖨 Print</button>
+</div><div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 2px 10px"><div><strong style="color:#102a43">ESP 2 • Interactive Learning</strong><span class="en" style="display:inline;margin-left:8px">Reviewer Adventure</span></div><div style="font-size:12px;color:#64748b">Kagandahang-loob + Ako ay Magalang</div></div><div class="topnav">
+<button class="active" onclick="show('home',this)">🏠 Home</button>
+<button onclick="show('kind',this)">💛 Kagandahang-loob</button>
+<button onclick="show('respect',this)">🤝 Ako ay Magalang</button>
+<button onclick="show('practice',this)">🎮 Practice</button>
+<button onclick="show('challenge',this)">🏆 Challenge</button>
+<button onclick="show('promise',this)">💌 Pangako</button>
+</div>
+<section id="home" class="section show"><div class="hero">
+<h1>🌟 Maging Mabuti, Maging Magalang!</h1>
+<p>Interactive reviewer para sa <b>Kagandahang-loob</b> at <b>Ako ay Magalang</b>.
+<span class="en">Interactive reviewer for Kindness and I Am Respectful.</span></p>
+<div class="progress"><div id="bar" class="bar"></div></div>
+<div class="stats"><span class="pill">⭐ Points: <b id="points">0</b></span><span class="pill">📈 Progress: <b id="percent">0%</b></span></div>
+</div><div class="card"><h2>🎯 Mission</h2><div class="grid">
+<div class="topic"><div class="icon">📖</div><b>Review</b><span class="en">Balikan ang lesson.</span></div>
+<div class="topic"><div class="icon">🎮</div><b>Practice</b><span class="en">Magsanay sa sitwasyon.</span></div>
+<div class="topic"><div class="icon">⭐</div><b>Earn Points</b><span class="en">Kumita ng stars sa tamang sagot.</span></div>
+<div class="topic"><div class="icon">🏆</div><b>Master Challenge</b><span class="en">Tapusin ang final quiz.</span></div>
+</div></div></section>
+
+<section id="kind" class="section"><div class="card"><h2>💛 Kagandahang-loob <span class="en">Kindness / Goodness</span></h2>
+<p>Ang kagandahang-loob ay pagpapakita ng kabutihan, malasakit, pagtulong, at mabuting pakikitungo sa kapwa.</p>
+<p class="en">Kindness means showing goodness, care, helpfulness, and good treatment toward others.</p>
+<div class="fact">💡 <b>Tandaan:</b> Ang mabuting puso ay nakikita sa mabubuting salita at gawa.
+<span class="en">Remember: A kind heart is shown through kind words and actions.</span></div>
+<div class="grid"><div class="topic">❤️ <b>Pagmamalasakit</b><span class="en">Showing care</span></div><div class="topic">🤲 <b>Pagtulong</b><span class="en">Helping</span></div><div class="topic">😊 <b>Mabuting salita</b><span class="en">Kind words</span></div><div class="topic">🎁 <b>Pagbabahagi</b><span class="en">Sharing</span></div></div></div>
+<div class="card"><h2>🧠 Quick Check</h2><p><b>Alin ang nagpapakita ng kagandahang-loob?</b><span class="en">Which shows kindness?</span></p>
+<div id="kq"></div></div></section>
+
+<section id="respect" class="section"><div class="card"><h2>🤝 Ako ay Magalang <span class="en">I Am Respectful</span></h2>
+<p>Ang pagiging magalang ay ipinapakita sa paggamit ng magagalang na salita at mabubuting kilos.</p><p class="en">Being respectful is shown through polite words and respectful actions.</p>
+<h3>🗣️ Magagalang na Salita <span class="en">Polite Expressions</span></h3><div class="grid">
+<div class="topic">🙏 <b>Salamat</b><span class="en">Thank you</span></div><div class="topic">🙋 <b>Mawalang-galang na po</b><span class="en">Excuse me / Pardon me</span></div><div class="topic">💗 <b>Patawad</b><span class="en">I’m sorry / Forgive me</span></div><div class="topic">🙋‍♀️ <b>Maaari po ba?</b><span class="en">May I?</span></div></div>
+<h3>🌟 Magandang Kilos <span class="en">Respectful Actions</span></h3><div class="grid">
+<div class="topic">👋 <b>Pagbati</b><span class="en">Greeting</span></div><div class="topic">🤝 <b>Pakikipagkamay</b><span class="en">Handshaking</span></div><div class="topic">🤲 <b>Pagtulong</b><span class="en">Helping</span></div><div class="topic">😌 <b>Pagiging mahinahon</b><span class="en">Staying calm</span></div></div></div>
+<div class="card"><h2>🎯 Sitwasyon</h2><p><b>May ibinigay sa iyo ang iyong guro. Ano ang sasabihin mo?</b><span class="en">Your teacher gave you something. What should you say?</span></p>
+<div id="rq"></div></div></section>
+
+<section id="practice" class="section"><div class="card"><h2>🎮 Practice Zone</h2><p>Piliin ang pinakamabuting sagot. <span class="en">Choose the best answer.</span></p><div id="practiceBox"></div></div></section>
+
+<section id="challenge" class="section"><div class="card"><h2>🏆 Master Challenge</h2><p>5 questions. Kaya mo bang maging <b>Respect & Kindness Master</b>?</p><div id="quiz"></div><div id="result"></div></div></section>
+
+<section id="promise" class="section"><div class="card"><h2>💌 Ang Aking Pangako <span class="en">My Promise</span></h2>
+<p>Sumulat ng isang pangako tungkol sa pagiging mabuti at magalang.</p><p class="en">Write one promise about being kind and respectful.</p>
+<textarea id="promiseText" placeholder="Pangako kong..."></textarea><br><button class="next yellow" onclick="save()">💾 I-save</button><p id="saved" class="feedback"></p></div></section>
+</main>
+<script>
+let pts=+localStorage.getItem('espPts')||0,done=+localStorage.getItem('espDone')||0;
+function upd(){document.getElementById('points').textContent=pts;let p=Math.min(100,done*5);document.getElementById('percent').textContent=p+'%';document.getElementById('bar').style.width=p+'%';localStorage.setItem('espPts',pts);localStorage.setItem('espDone',done)}
+function show(id,b){document.querySelectorAll('.section').forEach(x=>x.classList.remove('show'));document.getElementById(id).classList.add('show');document.querySelectorAll('.nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');scrollTo(0,0)}
+function choices(el,correct){el.parentElement.querySelectorAll('.choice').forEach(x=>x.disabled=true);el.classList.add(correct?'correct':'wrong');let f=el.parentElement.querySelector('.feedback');f.textContent=correct?'Tama! ⭐ +10':'Subukan muli.';if(correct){pts+=10;done++;upd()}}
+function setup(id,arr){document.getElementById(id).innerHTML=arr.map((x,i)=>'<button class="choice" onclick="choices(this,'+(i===arr.answer)+')">'+String.fromCharCode(65+i)+'. '+x+'</button>').join('')+'<div class="feedback"></div>'}
+let k=['Tumulong sa kaklaseng nangangailangan.','Tawanan ang kaklaseng nagkamali.','Mang-asar ng iba.'];k.answer=0;setup('kq',k);
+let r=['Salamat po!','Patawad po!','Maaari po ba?'];r.answer=0;setup('rq',r);
+
+const practice=[
+['May nahulog na lapis ang kaklase mo. Ano ang gagawin mo?',['Tulungan siyang pulutin ito.','Itago ito.','Tawanan siya.'],0],
+['Gusto mong gamitin ang gamit ng iyong kapatid.',['Maaari po ba?','Salamat po.','Patawad po.'],0],
+['Nakita mo ang iyong guro.',['Pagbati.','Pagsigaw.','Pang-aasar.'],0],
+['Nagalit ka. Ano ang dapat gawin?',['Sumigaw.','Maging mahinahon.','Manakit.'],1]
+];let pi=0;
+function renderP(){if(pi>=practice.length){document.getElementById('practiceBox').innerHTML='<h2>🎉 Practice Complete!</h2><p>Handa ka na sa Master Challenge!</p>';return}let x=practice[pi];document.getElementById('practiceBox').innerHTML='<h3>'+x[0]+'</h3>'+x[1].map((a,i)=>'<button class="choice" onclick="pa(this,'+(i===x[2])+')">'+String.fromCharCode(65+i)+'. '+a+'</button>').join('')+'<div class="feedback"></div>'}
+function pa(el,c){el.parentElement.querySelectorAll('.choice').forEach(x=>x.disabled=true);el.classList.add(c?'correct':'wrong');let f=el.parentElement.querySelector('.feedback');if(c){pts+=10;done++;f.textContent='Tama! ⭐';upd();pi++;setTimeout(renderP,500)}else f.textContent='Hindi iyon ang pinakamabuting sagot.'}renderP();
+
+const quiz=[
+['Alin ang nagpapakita ng kagandahang-loob?',['Pagtulong','Panunukso','Pananakit'],0],
+['Ano ang sasabihin kapag may tumulong sa iyo?',['Patawad po','Salamat po','Maaari po ba?'],1],
+['Ano ang magalang na salita bago humingi ng pahintulot?',['Mawalang-galang na po','Salamat po','Maaari po ba?'],2],
+['Alin ang magandang kilos?',['Pagsigaw','Pagiging mahinahon','Pang-aasar'],1],
+['Nakasakit ka ng damdamin. Ano ang sasabihin?',['Patawad','Salamat','Maaari po ba?'],0]
+];let qi=0,sc=0;
+function renderQ(){if(qi>=quiz.length){document.getElementById('quiz').innerHTML='';document.getElementById('result').innerHTML='<div class="badge">'+(sc>=4?'🏆':sc>=3?'🌟':'💪')+'</div><div class="score">'+sc+'/5</div><h2 style="text-align:center">'+(sc>=4?'Respect & Kindness Master!':'Magaling! Review and try again!')+'</h2><button class="next yellow" onclick="resetQ()">🔄 Try Again</button>';return}let x=quiz[qi];document.getElementById('quiz').innerHTML='<p><b>Question '+(qi+1)+' of 5</b></p><h3>'+x[0]+'</h3>'+x[1].map((a,i)=>'<button class="choice" onclick="qa(this,'+(i===x[2])+')">'+String.fromCharCode(65+i)+'. '+a+'</button>').join('')+'<div class="feedback"></div>'}
+function qa(el,c){el.parentElement.querySelectorAll('.choice').forEach(x=>x.disabled=true);el.classList.add(c?'correct':'wrong');el.parentElement.querySelector('.feedback').textContent=c?'Tama! ⭐':'Subukan muli.';if(c){sc++;pts+=10;done++;upd()}qi++;setTimeout(renderQ,550)}function resetQ(){qi=0;sc=0;document.getElementById('result').innerHTML='';renderQ()}renderQ();
+document.getElementById('promiseText').value=localStorage.getItem('espPromise')||'';function save(){localStorage.setItem('espPromise',document.getElementById('promiseText').value);document.getElementById('saved').textContent='💖 Naka-save ang iyong pangako!';done++;upd()}function full(){
+ if(!document.fullscreenElement){
+   let p=document.documentElement.requestFullscreen();
+   if(p) p.catch(()=>{});
+ }else{document.exitFullscreen()}
+}
+document.addEventListener('fullscreenchange',()=>{
+ const b=document.getElementById('fullBtn');
+ if(b) b.textContent=document.fullscreenElement?'⛶ Exit Fullscreen':'⛶ Fullscreen View';
+});
+upd();
+</script></body></html>
