@@ -123,17 +123,32 @@ function renderFilters() {
 
 function getFilteredLessons() {
   return LESSONS
-    .filter(lesson => state.subject === "all" || lesson.subject === state.subject)
-    .filter(lesson => state.grade === "all" || lesson.grade === state.grade)
+    .filter(lesson =>
+      state.subject === "all" ||
+      lesson.subject === state.subject
+    )
+    .filter(lesson =>
+      state.grade === "all" ||
+      lesson.grade === state.grade
+    )
     .filter(lesson => {
       const query = state.search.toLowerCase().trim();
+
       if (!query) return true;
-      return [lesson.title, lesson.subject, lesson.grade, lesson.description]
+
+      return [
+        lesson.title || "",
+        lesson.subject || "",
+        lesson.grade || "",
+        lesson.description || ""
+      ]
         .join(" ")
         .toLowerCase()
         .includes(query);
     })
-    .sort((a, b) => b.date.localeCompare(a.date));
+    .sort((a, b) =>
+      (b.date || "").localeCompare(a.date || "")
+    );
 }
 
 function renderLessons() {
