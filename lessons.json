@@ -75,6 +75,7 @@
     "grade": "Grade 2",
     "description": "Isang interactive classroom lesson para matutuhan ng mga bata ang magagalang na salita at kilos—sa pamamagitan ng laro, sitwasyon, pagsagot, role-play, at pagtataya.",
     "file": "lessons/esp/grade-2/Ako_Ay_Magalang_ESP2_Interactive_English_Website/Ako_Ay_Magalang_ESP2_Interactive_English.html",
+    "date": "2026-08-25",
     "featured": false,
     "icon": "heart-handshake"
   },
@@ -96,7 +97,7 @@
     "file": "lessons/araling-panlipunan/grade-1/AP1_Examination_Reviewer_Aking_Kwento_at_Aking_Pamilya/index.html",
     "date": "2026-09-02",
     "featured": false,
-    "icon": "languages"
+    "icon": "user"
   },
   {
     "title": "Starting Up the Computer",
