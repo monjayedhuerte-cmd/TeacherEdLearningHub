@@ -2031,10 +2031,10 @@ body.dark .footer-bottom {
   color: #7b879a;
 
   display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-
-  overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    overflow: hidden;
 }
 
 
