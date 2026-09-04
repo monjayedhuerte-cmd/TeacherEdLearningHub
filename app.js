@@ -156,27 +156,61 @@ function renderLessons() {
   const lessons = getFilteredLessons();
 
   grid.innerHTML = lessons.map(lesson => `
-    <article class="lesson-card">
-      <div class="lesson-cover">
-        <div class="lesson-cover-icon">${icon(lesson.icon || "book-open", 20)}</div>
-        ${lesson.featured ? `<span class="badge">FEATURED</span>` : ""}
+    <article class="lesson-list-item">
+
+      <div class="lesson-list-icon">
+        ${icon(lesson.icon || "book-open", 22)}
       </div>
-      <div class="lesson-body">
-        <div class="lesson-subject">${escapeHTML(lesson.subject)}</div>
-        <h3>${escapeHTML(lesson.title)}</h3>
-        <p>${escapeHTML(lesson.description)}</p>
-        <div class="lesson-bottom">
-          <span class="lesson-grade">${icon("graduation-cap", 13)} ${escapeHTML(lesson.grade)}</span>
-          <a class="lesson-start" href="${escapeHTML(lesson.file)}">
-            Start Lesson ${icon("arrow-right", 14)}
-          </a>
+
+      <div class="lesson-list-main">
+
+        <div class="lesson-list-meta">
+          <span class="lesson-list-subject">
+            ${escapeHTML(lesson.subject)}
+          </span>
+
+          ${lesson.featured
+            ? `<span class="lesson-list-featured">FEATURED</span>`
+            : ""
+          }
         </div>
+
+        <h3>
+          ${escapeHTML(lesson.title)}
+        </h3>
+
+        <p>
+          ${escapeHTML(lesson.description)}
+        </p>
+
       </div>
+
+      <div class="lesson-list-grade">
+        ${icon("graduation-cap", 14)}
+        ${escapeHTML(lesson.grade)}
+      </div>
+
+      <a
+        class="lesson-list-start"
+        href="${escapeHTML(lesson.file)}"
+      >
+        <span>Open Lesson</span>
+        ${icon("arrow-right", 16)}
+      </a>
+
     </article>
   `).join("");
 
-  $("#emptyState").classList.toggle("hidden", lessons.length !== 0);
-  grid.classList.toggle("hidden", lessons.length === 0);
+  $("#emptyState").classList.toggle(
+    "hidden",
+    lessons.length !== 0
+  );
+
+  grid.classList.toggle(
+    "hidden",
+    lessons.length === 0
+  );
+
   refreshIcons();
 }
 
