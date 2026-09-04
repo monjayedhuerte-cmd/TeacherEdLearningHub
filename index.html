@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#f8fafc">
   <meta name="description" content="Teacher Ed Learning Hub — interactive lessons, activities, and learning materials.">
   <title>Teacher Ed | Learning Hub</title>
+  <link rel="icon" type="image/png" href="My Logo.png">
 
   <!-- Lucide: clean, modern, consistent icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -21,9 +22,9 @@
     <div class="nav-inner">
       <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
         <span class="brand-mark">
-         <img src="My Logo.png" alt="EDJAY Learning Hub Logo">
+         <img src="My Logo.png" alt="TEACHER ED Learning Hub Logo">
         </span>
-          <strong>EDJAY</strong>
+          <strong>TEACHER ED</strong>
           <small>Learning Hub</small>
         </span>
       </a>
@@ -33,6 +34,8 @@
         <a href="#subjects" class="nav-link">Subjects</a>
         <a href="#lessons" class="nav-link">Lessons</a>
         <a href="#about" class="nav-link">About</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="terms.html" class="nav-link">Terms</a>
       </nav>
 
       <div class="nav-actions">
@@ -50,6 +53,8 @@
       <a href="#subjects">Subjects</a>
       <a href="#lessons">Lessons</a>
       <a href="#about">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
     </div>
   </header>
 
@@ -367,18 +372,41 @@
 
   </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <span class="brand-mark"><i data-lucide="graduation-cap"></i></span>
-        <div>
-          <strong>EDJAY Learning Hub</strong>
-          <small>Learn • Explore • Grow</small>
+
+        <!-- Brand -->
+        <div class="footer-brand">
+            <div class="footer-logo">
+                <img src="My Logo.png" alt="TEACHER ED Learning Hub Logo">
+            </div>
+
+            <div class="footer-brand-text">
+                <strong>TEACHER ED Learning Hub</strong>
+                <span>Learn • Explore • Grow</span>
+            </div>
         </div>
-      </div>
-      <p>Created for learning with Teacher Ed.</p>
+
+        <!-- Footer Links -->
+        <nav class="footer-links" aria-label="Footer Navigation">
+            <a href="privacy.html">Privacy Policy</a>
+            <span>•</span>
+            <a href="terms.html">Terms of Use</a>
+            <span>•</span>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <!-- Copyright / Credit -->
+        <div class="footer-credit">
+            Created for learning with <strong>Teacher Ed.</strong>
+        </div>
+
     </div>
-  </footer>
+
+    <div class="footer-bottom">
+        © 2026 TEACHER ED Learning Hub. All rights reserved.
+    </div>
+</footer>
 
   <script src="app.js"></script>
   <script>

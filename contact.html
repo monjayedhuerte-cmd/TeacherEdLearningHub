@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | TEACHER ED Learning Hub</title>
+
+    <!-- Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="My Logo.png">
+
+    <!-- Main Website CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css">
+
+    <!-- Lucide Icons -->
+    <script
+        src="https://unpkg.com/lucide@latest">
+    </script>
+
+
+    <!-- =========================================
+         CONTACT PAGE DESIGN
+         ========================================= -->
+
+    <style>
+
+        /* -----------------------------------------
+           PAGE
+           ----------------------------------------- */
+
+        .contact-page {
+            min-height: 100vh;
+
+            padding-top: 105px;
+            padding-bottom: 40px;
+
+            background:
+                radial-gradient(
+                    circle at 10% 5%,
+                    rgba(69, 99, 255, 0.08),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 5%,
+                    rgba(212, 175, 55, 0.07),
+                    transparent 35%
+                );
+        }
+
+
+        /* -----------------------------------------
+           CONTAINER
+           ----------------------------------------- */
+
+        .contact-container {
+            width: min(1200px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+
+        /* -----------------------------------------
+           PAGE HEADER
+           ----------------------------------------- */
+
+        .contact-header {
+            margin-bottom: 32px;
+        }
+
+
+        .contact-kicker {
+            margin-bottom: 18px;
+
+            color: #315bea;
+
+            font-size: 13px;
+            font-weight: 800;
+
+            letter-spacing: 0.12em;
+
+            text-transform: uppercase;
+        }
+
+
+        .contact-title {
+            margin: 0 0 22px;
+
+            color: #182238;
+
+            font-size: clamp(
+                36px,
+                5vw,
+                48px
+            );
+
+            line-height: 1.1;
+
+            font-weight: 750;
+
+            letter-spacing: -0.03em;
+        }
+
+
+        .contact-description {
+            max-width: 850px;
+
+            margin: 0;
+
+            color: #687792;
+
+            font-size: 17px;
+
+            line-height: 1.7;
+        }
+
+
+        /* -----------------------------------------
+           INFORMATION CARD
+           ----------------------------------------- */
+
+        .contact-card {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 28px;
+
+            margin-bottom: 22px;
+
+            padding: 42px;
+
+            background: rgba(
+                255,
+                255,
+                255,
+                0.90
+            );
+
+            border: 1px solid
+                rgba(
+                    220,
+                    227,
+                    238,
+                    0.95
+                );
+
+            border-radius: 28px;
+
+            box-shadow:
+                0 12px 35px
+                rgba(
+                    31,
+                    45,
+                    75,
+                    0.055
+                );
+
+            backdrop-filter: blur(10px);
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease;
+        }
+
+
+        .contact-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 18px 40px
+                rgba(
+                    31,
+                    45,
+                    75,
+                    0.08
+                );
+        }
+
+
+        /* -----------------------------------------
+           ICON
+           ----------------------------------------- */
+
+        .contact-icon {
+
+            width: 72px;
+            height: 72px;
+
+            min-width: 72px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 22px;
+
+            background:
+                rgba(
+                    78,
+                    112,
+                    255,
+                    0.10
+                );
+
+            color: #315bea;
+        }
+
+
+        .contact-icon svg {
+
+            width: 30px;
+            height: 30px;
+
+            stroke-width: 2;
+        }
+
+
+        /* -----------------------------------------
+           CARD CONTENT
+           ----------------------------------------- */
+
+        .contact-card-content {
+            flex: 1;
+        }
+
+
+        .contact-card-title {
+
+            margin: 5px 0 15px;
+
+            color: #182238;
+
+            font-size: 27px;
+
+            line-height: 1.25;
+
+            font-weight: 750;
+
+            letter-spacing: -0.02em;
+        }
+
+
+        .contact-card-content p {
+
+            max-width: 900px;
+
+            margin: 0 0 16px;
+
+            color: #687792;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        .contact-card-content p:last-child {
+            margin-bottom: 0;
+        }
+
+
+        /* -----------------------------------------
+           EMAIL BUTTON
+           ----------------------------------------- */
+
+        .contact-email {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 9px;
+
+            margin-top: 8px;
+
+            padding: 12px 18px;
+
+            border-radius: 12px;
+
+            background: #315bea;
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 650;
+
+            box-shadow:
+                0 7px 18px
+                rgba(
+                    49,
+                    91,
+                    234,
+                    0.20
+                );
+
+            transition:
+                transform 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+        }
+
+
+        .contact-email:hover {
+
+            transform: translateY(-1px);
+
+            background: #264bd0;
+
+            box-shadow:
+                0 10px 22px
+                rgba(
+                    49,
+                    91,
+                    234,
+                    0.25
+                );
+        }
+
+
+        .contact-email svg {
+
+            width: 17px;
+            height: 17px;
+        }
+
+
+        /* -----------------------------------------
+           FOOTER
+           ----------------------------------------- */
+
+        .contact-footer {
+
+            margin-top: 75px;
+
+            padding:
+                0 24px 22px;
+
+            border-top:
+                1px solid
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                );
+
+            background:
+                radial-gradient(
+                    circle at 50% 0%,
+                    rgba(
+                        212,
+                        175,
+                        55,
+                        0.06
+                    ),
+                    transparent 45%
+                );
+        }
+
+
+        .contact-footer-inner {
+
+            width: min(
+                1200px,
+                calc(100% - 48px)
+            );
+
+            min-height: 105px;
+
+            margin: 0 auto;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr auto 1fr;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+
+        /* FOOTER BRAND */
+
+        .contact-footer-brand {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .contact-footer-logo {
+
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            border-radius: 12px;
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.90
+                );
+
+            border:
+                1px solid
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.08
+                );
+
+            box-shadow:
+                0 5px 18px
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.06
+                );
+        }
+
+
+        .contact-footer-logo img {
+
+            width: 31px;
+            height: 31px;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        .contact-footer-brand-text {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 3px;
+        }
+
+
+        .contact-footer-brand-text strong {
+
+            color: #16233b;
+
+            font-size: 15px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.04em;
+        }
+
+
+        .contact-footer-brand-text span {
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        /* FOOTER LINKS */
+
+        .contact-footer-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            white-space: nowrap;
+        }
+
+
+        .contact-footer-links a {
+
+            color: #334155;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition:
+                color 0.2s ease;
+        }
+
+
+        .contact-footer-links a:hover {
+
+            color: #b08a1e;
+        }
+
+
+        .contact-footer-links span {
+
+            color: #c5a84e;
+
+            font-size: 13px;
+        }
+
+
+        /* FOOTER CREDIT */
+
+        .contact-footer-credit {
+
+            text-align: right;
+
+            color: #64748b;
+
+            font-size: 13px;
+        }
+
+
+        .contact-footer-credit strong {
+
+            color: #334155;
+
+            font-weight: 600;
+        }
+
+
+        /* FOOTER BOTTOM */
+
+        .contact-footer-bottom {
+
+            width: min(
+                1200px,
+                calc(100% - 48px)
+            );
+
+            margin: 0 auto;
+
+            padding-top: 16px;
+
+            border-top:
+                1px solid
+                rgba(
+                    15,
+                    23,
+                    42,
+                    0.06
+                );
+
+            text-align: center;
+
+            color: #94a3b8;
+
+            font-size: 12px;
+        }
+
+
+        /* -----------------------------------------
+           DARK MODE
+           ----------------------------------------- */
+
+        body.dark .contact-page {
+
+            background:
+                radial-gradient(
+                    circle at 10% 5%,
+                    rgba(
+                        69,
+                        99,
+                        255,
+                        0.10
+                    ),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 90% 5%,
+                    rgba(
+                        212,
+                        175,
+                        55,
+                        0.07
+                    ),
+                    transparent 35%
+                );
+        }
+
+
+        body.dark .contact-title,
+        body.dark .contact-card-title {
+
+            color: #f1f5f9;
+        }
+
+
+        body.dark .contact-description,
+        body.dark .contact-card-content p {
+
+            color: #94a3b8;
+        }
+
+
+        body.dark .contact-card {
+
+            background:
+                rgba(
+                    20,
+                    28,
+                    45,
+                    0.88
+                );
+
+            border-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+
+            box-shadow:
+                0 12px 35px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.20
+                );
+        }
+
+
+        body.dark .contact-footer {
+
+            border-top-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+        }
+
+
+        body.dark .contact-footer-logo {
+
+            background:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.05
+                );
+
+            border-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.08
+                );
+        }
+
+
+        body.dark
+        .contact-footer-brand-text strong {
+
+            color: #f1f5f9;
+        }
+
+
+        body.dark
+        .contact-footer-brand-text span,
+        body.dark
+        .contact-footer-credit {
+
+            color: #94a3b8;
+        }
+
+
+        body.dark
+        .contact-footer-credit strong {
+
+            color: #e2e8f0;
+        }
+
+
+        body.dark
+        .contact-footer-links a {
+
+            color: #cbd5e1;
+        }
+
+
+        body.dark
+        .contact-footer-links a:hover {
+
+            color: #d4af37;
+        }
+
+
+        body.dark
+        .contact-footer-bottom {
+
+            border-top-color:
+                rgba(
+                    255,
+                    255,
+                    255,
+                    0.06
+                );
+
+            color: #64748b;
+        }
+
+
+        /* -----------------------------------------
+           MOBILE
+           ----------------------------------------- */
+
+        @media (max-width: 800px) {
+
+            .contact-page {
+
+                padding-top: 70px;
+            }
+
+
+            .contact-container {
+
+                width:
+                    calc(100% - 32px);
+            }
+
+
+            .contact-title {
+
+                font-size: 38px;
+            }
+
+
+            .contact-description {
+
+                font-size: 15px;
+            }
+
+
+            .contact-card {
+
+                flex-direction: column;
+
+                gap: 20px;
+
+                padding: 28px 24px;
+
+                border-radius: 22px;
+            }
+
+
+            .contact-icon {
+
+                width: 60px;
+                height: 60px;
+
+                min-width: 60px;
+
+                border-radius: 18px;
+            }
+
+
+            .contact-card-title {
+
+                font-size: 23px;
+            }
+
+
+            .contact-card-content p {
+
+                font-size: 15px;
+
+                line-height: 1.7;
+            }
+
+
+            .contact-footer {
+
+                padding:
+                    30px 16px 20px;
+            }
+
+
+            .contact-footer-inner {
+
+                width: 100%;
+
+                grid-template-columns: 1fr;
+
+                gap: 22px;
+
+                text-align: center;
+            }
+
+
+            .contact-footer-brand {
+
+                justify-content: center;
+            }
+
+
+            .contact-footer-links {
+
+                flex-wrap: wrap;
+
+                white-space: normal;
+            }
+
+
+            .contact-footer-credit {
+
+                text-align: center;
+            }
+
+
+            .contact-footer-bottom {
+
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+
+    <header class="navbar">
+
+        <div class="nav-inner">
+
+
+            <!-- BRAND -->
+
+            <a
+                href="index.html"
+                class="brand">
+
+                <div class="brand-mark">
+
+                    <img
+                        src="My Logo.png"
+                        alt="TEACHER ED Learning Hub Logo">
+
+                </div>
+
+
+                <div class="brand-text">
+
+                    <strong>TEACHER ED</strong>
+
+                    <span>
+                        Learning Hub
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- NAVIGATION -->
+
+            <nav class="desktop-nav">
+
+                <a
+                    href="index.html"
+                    class="nav-link">
+
+                    Home
+
+                </a>
+
+
+                <a
+                    href="index.html#subjects"
+                    class="nav-link">
+
+                    Subjects
+
+                </a>
+
+
+                <a
+                    href="index.html#lessons"
+                    class="nav-link">
+
+                    Lessons
+
+                </a>
+
+
+                <a
+                    href="index.html#about"
+                    class="nav-link">
+
+                    About
+
+                </a>
+
+
+                <a
+                    href="contact.html"
+                    class="nav-link active">
+
+                    Contact
+
+                </a>
+
+            </nav>
+
+
+            <!-- DARK MODE -->
+
+            <button
+                class="theme-toggle"
+                id="themeToggle"
+                type="button"
+                aria-label="Toggle dark mode">
+
+                <i
+                    data-lucide="circle-half">
+                </i>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+         ========================================= -->
+
+    <main class="contact-page">
+
+        <div class="contact-container">
+
+
+            <!-- PAGE HEADER -->
+
+            <div class="contact-header">
+
+                <div class="contact-kicker">
+
+                    WEBSITE INFORMATION
+
+                </div>
+
+
+                <h1 class="contact-title">
+
+                    Contact
+
+                </h1>
+
+
+                <p class="contact-description">
+
+                    Have a question, suggestion, or concern?
+                    We'd love to hear from you.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- =================================
+                 CARD 1
+                 ================================= -->
+
+            <section class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i data-lucide="mail"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <h2 class="contact-card-title">
+
+                        Get in Touch
+
+                    </h2>
+
+
+                    <p>
+
+                        If you have questions about
+                        TEACHER ED Learning Hub, our lessons,
+                        activities, or educational resources,
+                        you may contact Teacher Ed.
+
+                    </p>
+
+
+                    <p>
+
+                        You may also send suggestions or
+                        report an issue with any content
+                        found on the website.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CARD 2
+                 ================================= -->
+
+            <section class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i data-lucide="message-circle"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <h2 class="contact-card-title">
+
+                        Questions & Suggestions
+
+                    </h2>
+
+
+                    <p>
+
+                        Your feedback can help improve
+                        TEACHER ED Learning Hub.
+
+                    </p>
+
+
+                    <p>
+
+                        If you have a suggestion for a
+                        lesson, activity, educational
+                        resource, or website feature,
+                        feel free to reach out.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CARD 3
+                 ================================= -->
+
+            <section class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i data-lucide="book-open"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <h2 class="contact-card-title">
+
+                        Lesson & Content Concerns
+
+                    </h2>
+
+
+                    <p>
+
+                        If you notice an error, outdated
+                        information, broken activity, or
+                        other concern involving educational
+                        content, please let us know.
+
+                    </p>
+
+
+                    <p>
+
+                        Constructive feedback helps make
+                        learning resources clearer,
+                        more accurate, and more useful
+                        for learners and teachers.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CARD 4
+                 ================================= -->
+
+            <section class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i data-lucide="send"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <h2 class="contact-card-title">
+
+                        Email Teacher Ed
+
+                    </h2>
+
+
+                    <p>
+
+                        For direct inquiries, you may
+                        contact Teacher Ed through email.
+
+                    </p>
+
+
+                    <a
+                        href="mailto:monjayed.huerte@gmail.com"
+                        class="contact-email">
+
+                        <i data-lucide="mail"></i>
+
+                        Contact Teacher Ed
+
+                    </a>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================
+                 CARD 5
+                 ================================= -->
+
+            <section class="contact-card">
+
+
+                <div class="contact-icon">
+
+                    <i data-lucide="clock-3"></i>
+
+                </div>
+
+
+                <div class="contact-card-content">
+
+                    <h2 class="contact-card-title">
+
+                        Response Time
+
+                    </h2>
+
+
+                    <p>
+
+                        Messages may not receive an
+                        immediate response.
+
+                        Please allow reasonable time
+                        for Teacher Ed to review and
+                        respond to your inquiry.
+
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="contact-footer">
+
+        <div class="contact-footer-inner">
+
+
+            <!-- FOOTER BRAND -->
+
+            <div class="contact-footer-brand">
+
+                <div class="contact-footer-logo">
+
+                    <img
+                        src="My Logo.png"
+                        alt="TEACHER ED Learning Hub Logo">
+
+                </div>
+
+
+                <div class="contact-footer-brand-text">
+
+                    <strong>
+                        TEACHER ED Learning Hub
+                    </strong>
+
+                    <span>
+                        Learn • Explore • Grow
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER LINKS -->
+
+            <nav
+                class="contact-footer-links"
+                aria-label="Footer Navigation">
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+
+                <span>•</span>
+
+
+                <a href="terms.html">
+                    Terms of Use
+                </a>
+
+
+                <span>•</span>
+
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </nav>
+
+
+
+            <!-- CREDIT -->
+
+            <div class="contact-footer-credit">
+
+                Created for learning with
+                <strong>Teacher Ed.</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="contact-footer-bottom">
+
+            © 2026 TEACHER ED Learning Hub.
+            All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script>
+
+        /* -----------------------------------------
+           LUCIDE ICONS
+           ----------------------------------------- */
+
+        lucide.createIcons();
+
+
+
+        /* -----------------------------------------
+           DARK MODE
+           ----------------------------------------- */
+
+        const themeToggle =
+            document.getElementById(
+                "themeToggle"
+            );
+
+
+        themeToggle.addEventListener(
+            "click",
+            function () {
+
+                document.body.classList.toggle(
+                    "dark"
+                );
+
+
+                const isDark =
+                    document.body.classList.contains(
+                        "dark"
+                    );
+
+
+                localStorage.setItem(
+                    "theme",
+                    isDark
+                        ? "dark"
+                        : "light"
+                );
+
+            }
+        );
+
+
+
+        /* -----------------------------------------
+           LOAD SAVED THEME
+           ----------------------------------------- */
+
+        const savedTheme =
+            localStorage.getItem(
+                "theme"
+            );
+
+
+        if (savedTheme === "dark") {
+
+            document.body.classList.add(
+                "dark"
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

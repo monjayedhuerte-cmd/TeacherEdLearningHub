@@ -1693,3 +1693,228 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; }
         max-width: 215px;
     }
 }
+
+.brand-mark img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================
+   TEACHER ED LEARNING HUB FOOTER
+   ========================================= */
+
+.site-footer {
+    margin-top: 80px;
+    padding: 0 24px 22px;
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(212, 175, 55, 0.06),
+            transparent 45%
+        ),
+        var(--bg, #f8fafc);
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 105px;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 30px;
+}
+
+/* BRAND */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.footer-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.06);
+
+    flex-shrink: 0;
+}
+
+.footer-logo img {
+    width: 31px;
+    height: 31px;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.footer-brand-text strong {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #16233b;
+}
+
+.footer-brand-text span {
+    font-size: 13px;
+    color: #64748b;
+}
+
+/* LINKS */
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+
+    white-space: nowrap;
+}
+
+.footer-links a {
+    color: #334155;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: #b08a1e;
+    transform: translateY(-1px);
+}
+
+.footer-links span {
+    color: #c5a84e;
+    font-size: 13px;
+}
+
+/* CREDIT */
+
+.footer-credit {
+    text-align: right;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.footer-credit strong {
+    color: #334155;
+    font-weight: 600;
+}
+
+/* BOTTOM */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 16px;
+
+    border-top: 1px solid rgba(15, 23, 42, 0.06);
+
+    text-align: center;
+
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+/* =========================================
+   DARK MODE
+   ========================================= */
+
+body.dark .site-footer {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(212, 175, 55, 0.08),
+            transparent 45%
+        );
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .footer-logo {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .footer-brand-text strong {
+    color: #f1f5f9;
+}
+
+body.dark .footer-brand-text span,
+body.dark .footer-credit {
+    color: #94a3b8;
+}
+
+body.dark .footer-credit strong {
+    color: #e2e8f0;
+}
+
+body.dark .footer-links a {
+    color: #cbd5e1;
+}
+
+body.dark .footer-links a:hover {
+    color: #d4af37;
+}
+
+body.dark .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.06);
+    color: #64748b;
+}
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .site-footer {
+        margin-top: 60px;
+        padding: 30px 20px 20px;
+    }
+
+    .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        text-align: center;
+    }
+
+    .footer-brand {
+        justify-content: center;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+        white-space: normal;
+    }
+
+    .footer-credit {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        margin-top: 5px;
+    }
+}
