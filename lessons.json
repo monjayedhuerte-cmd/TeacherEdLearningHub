@@ -288,6 +288,16 @@
     "date": "2026-08-28",
     "featured": false,
     "icon": "user-round"
+  },
+  {
+    "title": "Teacher Tools",
+    "subject": "Teacher Tools",
+    "grade": "Teacher Tools",
+    "description": "Make your classroom more engaging.",
+    "file": "lessons/TeacherTools/index.html",
+    "date": "2026-08-28",
+    "featured": false,
+    "icon": "user-round"
   }
   
 ]
