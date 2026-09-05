@@ -129,12 +129,22 @@
     "featured": false,
     "icon": "monitor"
   },
-   {
+  {
     "title": "Reviewer in Becoming an Output Explorer and Starting Up the Computer",
     "subject": "Computer",
     "grade": "Grade 2",
     "description": "Review Becoming an Output Explorer and Starting Up the Computer through simple explanations, visual activities, and a step-by-step computer startup simulation.",
     "file": "lessons/computer/grade-2/Computer2_Exam_Interactive_Reviewer/index.html",
+    "date": "2026-09-05",
+    "featured": false,
+    "icon": "monitor"
+  },
+  {
+    "title": "Chapter 2 Algorithm | Algorithm Definition and Examples",
+    "subject": "Computer",
+    "grade": "Grade 7",
+    "description": "Before a computer can solve a problem, someone must give it a clear plan. That plan is called an algorithm.",
+    "file": "lessons/computer/grade-7/Grade7_Algorithms_Interactive_Lesson/index.html",
     "date": "2026-09-05",
     "featured": false,
     "icon": "monitor"

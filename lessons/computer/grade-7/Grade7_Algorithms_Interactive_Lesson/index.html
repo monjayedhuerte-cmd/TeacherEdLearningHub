@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b4f71">
+  <title>Grade 7 ICT | Algorithms</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">A</div>
+    <div><strong>Teacher Ed</strong><span>Grade 7 Computer • Chapter 2</span></div>
+  </div>
+  <div class="top-actions">
+    <button id="themeBtn" class="icon-btn" title="Toggle theme">☾</button>
+    <button id="resetBtn" class="outline-btn">Reset Progress</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="course-card">
+      <span class="eyebrow">INTERACTIVE LESSON</span>
+      <h2>Algorithms</h2>
+      <p>Lesson 1: Algorithm Definition</p>
+      <div class="progress-wrap"><div id="progressBar"></div></div>
+      <small id="progressText">0% complete</small>
+    </div>
+    <nav id="nav">
+      <button class="nav-item active" data-target="home"><span>🚀</span> Mission Start</button>
+      <button class="nav-item" data-target="objectives"><span>🎯</span> Learning Targets</button>
+      <button class="nav-item" data-target="discover"><span>🔎</span> Discover</button>
+      <button class="nav-item" data-target="concepts"><span>🧠</span> Core Concepts</button>
+      <button class="nav-item" data-target="building"><span>🧩</span> 3 Building Blocks</button>
+      <button class="nav-item" data-target="pseudocode"><span>⌨️</span> Pseudocode</button>
+      <button class="nav-item" data-target="uses"><span>🌐</span> Uses & Importance</button>
+      <button class="nav-item" data-target="characteristics"><span>✅</span> Characteristics</button>
+      <button class="nav-item" data-target="practice"><span>🎮</span> Practice Lab</button>
+      <button class="nav-item" data-target="assessment"><span>🏆</span> Assessment</button>
+      <button class="nav-item" data-target="summary"><span>📌</span> Exit Ticket</button>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <section id="home" class="section active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="pill">CHAPTER 2 • ALGORITHMS</span>
+          <h1>Think Like a Computer.<br><em>Step by Step.</em></h1>
+          <p class="lead">Before a computer can solve a problem, someone must give it a clear plan. That plan is called an <strong>algorithm</strong>.</p>
+          <button class="primary-btn" data-go="discover">Start the Mission →</button>
+        </div>
+        <div class="robot-card">
+          <div class="robot">🤖</div>
+          <div class="screen-text">READY<br><span>FOR INSTRUCTIONS</span></div>
+        </div>
+      </div>
+
+      <div class="motivation">
+        <div class="mot-icon">⚡</div>
+        <div>
+          <h3>Motivation Challenge: Can You Outsmart the Robot?</h3>
+          <p>The robot can follow instructions perfectly—but it cannot guess what you mean. Give it unclear instructions and it may fail. Your challenge is to turn a messy task into a precise sequence of steps.</p>
+        </div>
+      </div>
+
+      <div class="challenge-grid">
+        <article class="challenge-card">
+          <span>01</span><h3>Make a Sandwich</h3>
+          <p>Which instruction is better?</p>
+          <div class="choice-row">
+            <button class="choice" onclick="checkChoice(this,true,'Great! A good algorithm gives clear, usable steps.')">A. Put peanut butter on bread, place another slice on top.</button>
+            <button class="choice" onclick="checkChoice(this,false,'Too vague! A computer needs more precise actions.')">B. Make a sandwich somehow.</button>
+          </div>
+          <div class="feedback"></div>
+        </article>
+        <article class="challenge-card">
+          <span>02</span><h3>Find a Number</h3>
+          <p>You have 5 cards: 7, 2, 9, 4, 6. How could you find 4?</p>
+          <button class="secondary-btn" data-go="practice">Try the Search Lab →</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="objectives" class="section">
+      <div class="section-heading"><span class="kicker">🎯 LEARNING TARGETS</span><h2>What you should be able to do</h2><p>By the end of this lesson, you can explain algorithms in your own words and design simple ones.</p></div>
+      <div class="objective-grid">
+        <div class="objective"><b>1</b><h3>Define</h3><p>Define an algorithm as a clear, ordered set of steps for solving a problem or producing an output.</p></div>
+        <div class="objective"><b>2</b><h3>Explain</h3><p>Explain why algorithms are important in everyday life, mathematics, programming, AI, and digital services.</p></div>
+        <div class="objective"><b>3</b><h3>Identify</h3><p>Identify sequencing, selection, and iteration in familiar processes.</p></div>
+        <div class="objective"><b>4</b><h3>Differentiate</h3><p>Distinguish an algorithm, pseudocode, and an actual program.</p></div>
+        <div class="objective"><b>5</b><h3>Evaluate</h3><p>Check whether an algorithm is clear, finite, feasible, effective, and has suitable input/output.</p></div>
+        <div class="objective"><b>6</b><h3>Create</h3><p>Write simple pseudocode and trace a basic linear-search process.</p></div>
+      </div>
+      <div class="success-box"><strong>Success looks like:</strong> “I can explain the steps, predict the result, and find a mistake in an algorithm.”</div>
+    </section>
+
+    <section id="discover" class="section">
+      <div class="section-heading"><span class="kicker">🔎 DISCOVER</span><h2>What is an algorithm?</h2></div>
+      <div class="definition-card">
+        <div class="flow"><div>INPUT</div><i>→</i><div class="algorithm-node">ALGORITHM<br><small>clear rules + steps</small></div><i>→</i><div>OUTPUT</div></div>
+        <p><strong>Student-friendly definition:</strong> An algorithm is a <mark>finite, ordered, and clear set of instructions</mark> used to solve a problem, complete a task, or produce an output.</p>
+      </div>
+      <div class="everyday">
+        <h3>Algorithms are not only for computers.</h3>
+        <div class="example-strip">
+          <div>🍳<strong>Cooking</strong><small>follow a recipe</small></div>
+          <div>🪥<strong>Brushing</strong><small>repeat a routine</small></div>
+          <div>🧮<strong>Math</strong><small>follow calculation steps</small></div>
+          <div>🧭<strong>Navigation</strong><small>choose a route</small></div>
+          <div>🎵<strong>Practice</strong><small>repeat and improve</small></div>
+        </div>
+      </div>
+      <div class="mini-task">
+        <h3>Think-Pair-Share</h3>
+        <p>Choose one daily activity. Write 4–6 steps that someone else could follow without asking you what you meant.</p>
+        <textarea id="dailyAlgo" placeholder="Example: How to prepare my school bag..."></textarea>
+        <button class="primary-btn" onclick="saveReflection('dailyAlgo','dailySaved')">Save My Idea</button>
+        <span id="dailySaved" class="saved-msg"></span>
+      </div>
+    </section>
+
+    <section id="concepts" class="section">
+      <div class="section-heading"><span class="kicker">🧠 CORE CONCEPTS</span><h2>Build the mental model</h2></div>
+      <div class="tabs">
+        <button class="tab active" data-tab="algorithm">Algorithm</button>
+        <button class="tab" data-tab="pseudo">Pseudocode</button>
+        <button class="tab" data-tab="program">Program</button>
+      </div>
+      <div class="tab-panel active" id="algorithm">
+        <h3>Algorithm = the plan</h3><p>A logical, ordered procedure that describes how to solve a problem. It can be written in natural language, a flowchart, or another representation.</p>
+        <div class="analogy"><b>Think:</b> A recipe is a plan. It tells you what to do and in what order.</div>
+      </div>
+      <div class="tab-panel" id="pseudo">
+        <h3>Pseudocode = the draft</h3><p>A simplified, human-readable description of program logic. It resembles programming structures but does not follow the exact syntax of one programming language and cannot normally be executed directly.</p>
+        <div class="analogy"><b>Think:</b> Pseudocode is the rough blueprint you prepare before writing real code.</div>
+      </div>
+      <div class="tab-panel" id="program">
+        <h3>Program = the working code</h3><p>An implementation written using the rules and syntax of a programming language so a computer can process it with the appropriate compiler or interpreter.</p>
+        <div class="analogy"><b>Think:</b> The blueprint becomes the actual building.</div>
+      </div>
+      <div class="compare-table">
+        <div><strong>Algorithm</strong><span>Solution plan</span></div><div><strong>Pseudocode</strong><span>Plain-language code-like draft</span></div><div><strong>Program</strong><span>Actual executable implementation</span></div>
+      </div>
+    </section>
+
+    <section id="building" class="section">
+      <div class="section-heading"><span class="kicker">🧩 BUILDING BLOCKS</span><h2>The 3 structures of an algorithm</h2><p>Most algorithms combine these three ideas.</p></div>
+      <div class="blocks">
+        <article class="block-card sequence"><div class="big-num">01</div><h3>Sequencing</h3><p>Steps are performed in a specific order, normally once.</p><div class="block-example"><b>Example: Convert pounds to kilograms</b><ol><li>Read the weight in pounds.</li><li>Divide pounds by 2.2046.</li><li>Display the kilogram value.</li></ol></div></article>
+        <article class="block-card selection"><div class="big-num">02</div><h3>Selection</h3><p>A condition determines which action happens.</p><div class="block-example"><b>Example: Compare two numbers</b><pre>IF A &gt; B THEN
+  display A
+ELSE
+  display B</pre></div></article>
+        <article class="block-card iteration"><div class="big-num">03</div><h3>Iteration</h3><p>A set of steps is repeated a number of times or until a condition is met.</p><div class="block-example"><b>Example: Practice a difficult music section</b><ol><li>Practice the section.</li><li>Check for mistakes.</li><li>Repeat until accurate.</li></ol></div></article>
+      </div>
+      <div class="sorting-game">
+        <h3>🎮 Quick Sort: Which structure is it?</h3>
+        <p>Read each situation and choose the building block.</p>
+        <div id="structureQuestion"></div>
+        <div class="structure-buttons"><button onclick="answerStructure('Sequencing')">Sequencing</button><button onclick="answerStructure('Selection')">Selection</button><button onclick="answerStructure('Iteration')">Iteration</button></div>
+        <div id="structureFeedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="pseudocode" class="section">
+      <div class="section-heading"><span class="kicker">⌨️ PSEUDOCODE LAB</span><h2>From idea → pseudocode → program</h2></div>
+      <div class="search-demo">
+        <div>
+          <h3>Linear Search</h3>
+          <p>Suppose the list is <strong>[7, 2, 9, 4, 6]</strong> and the target is <strong>4</strong>. A linear search checks items one by one from the beginning until it finds the target.</p>
+          <div class="search-row" id="searchRow"></div>
+          <button class="primary-btn" id="searchBtn">Run Linear Search</button>
+          <div id="searchStatus" class="status"></div>
+        </div>
+        <div class="code-card">
+          <span>PSEUDOCODE</span>
+          <pre>FUNCTION linearSearch(list, target)
+  FOR each item from first to last
+    IF item == target THEN
+      RETURN position
+    ENDIF
+  ENDLOOP
+  RETURN -1
+END FUNCTION</pre>
+        </div>
+      </div>
+      <div class="code-explainer">
+        <h3>How to read it</h3>
+        <div class="explain-grid"><div><b>FUNCTION</b><span>names the task</span></div><div><b>FOR</b><span>repeats through items</span></div><div><b>IF</b><span>checks a condition</span></div><div><b>RETURN</b><span>gives the result</span></div></div>
+      </div>
+      <div class="pseudocode-builder">
+        <h3>Build a simple algorithm</h3>
+        <p>Arrange these steps to create a correct algorithm for finding the average of two numbers.</p>
+        <div id="dragItems" class="drag-items"></div>
+        <button class="secondary-btn" onclick="checkOrder()">Check My Order</button>
+        <div id="orderFeedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="uses" class="section">
+      <div class="section-heading"><span class="kicker">🌐 REAL WORLD</span><h2>Where are algorithms used?</h2></div>
+      <div class="use-grid">
+        <div class="use-card">💻<h3>Computer Science</h3><p>Algorithms are the foundation for solving programming and computing problems.</p></div>
+        <div class="use-card">📐<h3>Mathematics & Science</h3><p>Step-by-step methods can calculate values, find patterns, and solve complex problems.</p></div>
+        <div class="use-card">🚚<h3>Operations Research</h3><p>Algorithms help optimize routes, logistics, transportation, and resource allocation.</p></div>
+        <div class="use-card">🤖<h3>Artificial Intelligence</h3><p>Algorithms support language processing, image recognition, predictions, and decision-making.</p></div>
+        <div class="use-card">📊<h3>Data Science</h3><p>Algorithms analyze and process large amounts of data to find useful insights.</p></div>
+        <div class="use-card">📱<h3>Social Media</h3><p>Algorithms help filter, rank, recommend, and personalize content shown to users.</p></div>
+      </div>
+      <div class="warning-card"><strong>Remember:</strong> An algorithm is powerful, but it does not automatically guarantee a correct result. Poor data, an unsuitable method, or unclear rules can produce poor outcomes.</div>
+    </section>
+
+    <section id="characteristics" class="section">
+      <div class="section-heading"><span class="kicker">✅ QUALITY CHECK</span><h2>What makes an algorithm good?</h2></div>
+      <div class="character-grid">
+        <div><b>Input-specified</b><p>Clearly identifies the information the algorithm accepts.</p></div>
+        <div><b>Output-specified</b><p>Produces at least one well-defined result.</p></div>
+        <div><b>Clear & unambiguous</b><p>Each step has one clear meaning.</p></div>
+        <div><b>Feasible</b><p>Can actually be carried out using available resources.</p></div>
+        <div><b>Language-independent</b><p>The logic is not tied to one programming language.</p></div>
+        <div><b>Finite</b><p>Stops after a limited number of steps/time.</p></div>
+        <div><b>Effective</b><p>Uses basic, practical operations that can be followed or traced.</p></div>
+        <div><b>Deterministic</b><p>For the same input, it should give the same expected result when deterministic behavior is intended.</p></div>
+      </div>
+      <div class="quality-check">
+        <h3>🕵️ Algorithm Detective</h3>
+        <p>“Do something until it looks right.” Is this a strong algorithm instruction?</p>
+        <button class="choice" onclick="detective(false)">Yes, because it is short.</button>
+        <button class="choice" onclick="detective(true)">No, because “looks right” is ambiguous.</button>
+        <div id="detectiveFeedback" class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="practice" class="section">
+      <div class="section-heading"><span class="kicker">🎮 PRACTICE LAB</span><h2>Train your algorithmic thinking</h2></div>
+      <div class="lab-card">
+        <h3>Level 1 • Sequence Challenge</h3>
+        <p>Put the steps for <strong>“Turn on a computer”</strong> in a logical order.</p>
+        <div id="sequenceGame" class="sequence-game"></div>
+        <button class="secondary-btn" onclick="checkSequence()">Check Sequence</button>
+        <button class="outline-btn" onclick="shuffleSequence()">Shuffle</button>
+        <div id="sequenceFeedback" class="feedback"></div>
+      </div>
+      <div class="lab-card">
+        <h3>Level 2 • Selection Challenge</h3>
+        <p>A student wants to decide whether a number is even or odd. Which condition should be used?</p>
+        <div class="choice-grid">
+          <button class="choice" onclick="mcq(this,false,'Not quite. Try thinking about divisibility by 2.')">If number &gt; 10</button>
+          <button class="choice" onclick="mcq(this,true,'Correct! A remainder of 0 after division by 2 means the number is even.')">If number MOD 2 = 0</button>
+          <button class="choice" onclick="mcq(this,false,'That condition does not tell us whether the number is even.')">If number &lt; 2</button>
+        </div><div class="feedback"></div>
+      </div>
+      <div class="lab-card">
+        <h3>Level 3 • Iteration Challenge</h3>
+        <p>Which situation clearly uses repetition?</p>
+        <div class="choice-grid">
+          <button class="choice" onclick="mcq(this,false,'That is mainly a sequence.')">Read → calculate → display.</button>
+          <button class="choice" onclick="mcq(this,true,'Correct! The action repeats until the condition is satisfied.')">Keep practicing until you can play without mistakes.</button>
+          <button class="choice" onclick="mcq(this,false,'That is a decision, not repetition.')">If the answer is correct, celebrate; otherwise retry.</button>
+        </div><div class="feedback"></div>
+      </div>
+    </section>
+
+    <section id="assessment" class="section">
+      <div class="section-heading"><span class="kicker">🏆 CHECKPOINT</span><h2>20-Item Assessment</h2><p>Choose the best answer. Your score appears at the end.</p></div>
+      <form id="quizForm"></form>
+      <button class="primary-btn" onclick="gradeQuiz()">Submit Assessment</button>
+      <div id="quizResult" class="quiz-result"></div>
+    </section>
+
+    <section id="summary" class="section">
+      <div class="section-heading"><span class="kicker">📌 EXIT TICKET</span><h2>Show what you learned</h2></div>
+      <div class="exit-grid">
+        <div class="exit-card"><span>01</span><h3>In one sentence</h3><p>What is an algorithm?</p><textarea id="exit1"></textarea></div>
+        <div class="exit-card"><span>02</span><h3>Three words</h3><p>Name the 3 building blocks.</p><textarea id="exit2"></textarea></div>
+        <div class="exit-card"><span>03</span><h3>One example</h3><p>Give one real-life use of an algorithm.</p><textarea id="exit3"></textarea></div>
+      </div>
+      <button class="primary-btn" onclick="finishLesson()">Finish Lesson</button>
+      <div id="finishMessage" class="finish-message"></div>
+      <div class="teacher-note"><strong>Teacher Ed’s Reminder:</strong> Good programmers do not start by typing random code. They first understand the problem, design the steps, test the logic, and then implement it.</div>
+    </section>
+  </main>
+</div>
+
+<footer>Teacher Ed • Grade 7 Computer • Algorithms • Interactive Learning Hub</footer>
+<script src="script.js"></script>
+</body>
+</html>
