@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Grade 7 Integers</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav">
+    <a href="#home" class="brand">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <span><strong>Teacher Ed</strong><small>Grade 7 Mathematics • Integers</small></span>
+    </a>
+    <div class="nav-tools">
+      <button id="fullscreenBtn" class="tool-btn">⛶ <span>Full Screen</span></button>
+      <button id="menuBtn" class="menu-btn">☰</button>
+    </div>
+    <nav id="navLinks">
+      <a href="#overview">Overview</a>
+      <a href="#ilaw">ILAW</a>
+      <a href="#lesson">5-Day Lesson</a>
+      <a href="#challenge">Challenge</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow">GRADE 7 • NUMBER AND ALGEBRA</span>
+      <h1>Where Does the Number <span>Go?</span></h1>
+      <p class="hero-lead">A student-friendly journey into locating integers on the number line, comparing them correctly, and ordering them from least to greatest or greatest to least.</p>
+      <div class="hero-actions">
+        <a href="#lesson" class="btn primary">Start Learning →</a>
+        <a href="#challenge" class="btn ghost">Try a Challenge</a>
+      </div>
+      <div class="quick-facts">
+        <div><b>5</b><span>Learning Days</span></div>
+        <div><b>∞</b><span>Integers continue</span></div>
+        <div><b>→</b><span>Right = Greater</span></div>
+      </div>
+    </div>
+    <div class="hero-numberline">
+      <div class="line"><span>-6</span><span>-5</span><span>-4</span><span>-3</span><span>-2</span><span>-1</span><span class="zero">0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      <div class="arrow left">← smaller</div><div class="arrow right">greater →</div>
+      <div class="hero-card"><b>KEY IDEA</b><br>Numbers farther right are greater. Numbers farther left are smaller.</div>
+    </div>
+  </div>
+</section>
+
+<section id="overview" class="section">
+<div class="container">
+  <div class="section-title"><span class="eyebrow">DEPED ALIGNMENT</span><h2>Learning Target</h2><p>By the end of this one-week lesson, you should be able to place integers accurately on a number line and compare and order integers with confidence.</p></div>
+  <div class="standards">
+    <article><span class="icon">📘</span><h3>Content Standard</h3><p>The learner demonstrates understanding of the set of integers and their relationships, including position and order on the number line.</p></article>
+    <article><span class="icon">🎯</span><h3>Performance Standard</h3><p>The learner uses integers and number-line representations to communicate and solve mathematical and real-life situations involving order and comparison.</p></article>
+    <article><span class="icon">✅</span><h3>Learning Competency</h3><p><b>Locate integers on the number line.</b><br><b>Compare and order integers.</b></p></article>
+  </div>
+</div>
+</section>
+
+<section id="ilaw" class="section dark">
+<div class="container">
+ <div class="section-title"><span class="eyebrow">ILAW TEACHING STRATEGY</span><h2>Our 4-Step Learning Path</h2><p>Each day uses a simple cycle: connect, understand, use, and reflect.</p></div>
+ <div class="ilaw-grid">
+   <article><div class="letter">I</div><h3>Introduce</h3><p>Start with a situation students can imagine: floors, temperature, scores, distance, and directions.</p></article>
+   <article><div class="letter">L</div><h3>Learn</h3><p>Build understanding through number lines, visual models, rules, examples, and guided thinking.</p></article>
+   <article><div class="letter">A</div><h3>Apply</h3><p>Use the skill in interactive questions, comparisons, ordering tasks, and real-life problems.</p></article>
+   <article><div class="letter">W</div><h3>Wrap-Up</h3><p>Check what you know, explain your thinking, fix mistakes, and prepare for the next step.</p></article>
+ </div>
+</div>
+</section>
+
+<section id="lesson" class="section">
+<div class="container">
+  <div class="section-title"><span class="eyebrow">ONE-WEEK INTERACTIVE LESSON</span><h2>Five Days to Master Integers</h2><p>Do not rush. Read the lesson explanation, study the examples, then answer the activities.</p></div>
+  <div class="day-tabs">
+    <button class="day-tab active" data-day="1">DAY 1<small>Meet the Number Line</small></button>
+    <button class="day-tab" data-day="2">DAY 2<small>Locate Integers</small></button>
+    <button class="day-tab" data-day="3">DAY 3<small>Compare Integers</small></button>
+    <button class="day-tab" data-day="4">DAY 4<small>Order Integers</small></button>
+    <button class="day-tab" data-day="5">DAY 5<small>Real-Life + Review</small></button>
+  </div>
+  <div id="lessonArea"></div>
+</div>
+</section>
+
+<section id="challenge" class="section dark">
+<div class="container">
+ <div class="section-title"><span class="eyebrow">FINAL MASTERY</span><h2>Integer Navigator Challenge</h2><p>Complete all 12 questions. Try to explain your thinking before checking your score.</p></div>
+ <div id="quiz"></div>
+</div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer">
+   <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"><div><b>Teacher Ed Learning Hub</b><span>Learn • Practice • Master</span></div></div>
+   <div>Grade 7 Mathematics • Number and Algebra</div>
+   <div>© 2026 Teacher Ed</div>
+ </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

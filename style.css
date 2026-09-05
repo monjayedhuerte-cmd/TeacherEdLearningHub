@@ -370,1338 +370,6 @@ footer { border-top: 1px solid var(--line); padding: 30px 0; }
 }
 
 /* =========================================
-   SUPPORT THE LEARNING HUB
-========================================= */
-
-.support-section {
-    position: relative;
-    padding: 100px 20px;
-    background: linear-gradient(
-        135deg,
-        #f8fbff,
-        #eef5ff
-    );
-    overflow: hidden;
-}
-
-.support-section::before {
-    content: "";
-    position: absolute;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background: rgba(37, 99, 235, 0.08);
-    top: -150px;
-    right: -100px;
-}
-
-.support-section::after {
-    content: "";
-    position: absolute;
-    width: 250px;
-    height: 250px;
-    border-radius: 50%;
-    background: rgba(59, 130, 246, 0.06);
-    bottom: -120px;
-    left: -80px;
-}
-
-.support-container {
-    position: relative;
-    z-index: 2;
-
-    max-width: 1050px;
-    margin: auto;
-
-    display: flex;
-    align-items: center;
-    gap: 60px;
-
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255,255,255,0.8);
-
-    border-radius: 30px;
-
-    padding: 55px;
-
-    box-shadow:
-        0 20px 60px rgba(15, 23, 42, 0.10);
-}
-
-
-/* ICON */
-
-.support-icon {
-    min-width: 130px;
-    height: 130px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-size: 55px;
-
-    border-radius: 35px;
-
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #3b82f6
-    );
-
-    box-shadow:
-        0 15px 35px rgba(37, 99, 235, 0.25);
-
-    animation: supportFloat 3s ease-in-out infinite;
-}
-
-
-/* CONTENT */
-
-.support-content {
-    flex: 1;
-}
-
-.support-label {
-    display: inline-block;
-
-    font-size: 12px;
-    font-weight: 800;
-
-    letter-spacing: 2px;
-
-    color: #2563eb;
-
-    margin-bottom: 10px;
-}
-
-.support-content h2 {
-    margin: 0 0 15px;
-
-    font-size: clamp(30px, 5vw, 48px);
-
-    color: #0f172a;
-
-    line-height: 1.1;
-}
-
-.support-intro {
-    font-size: 19px;
-    font-weight: 600;
-
-    color: #334155;
-
-    line-height: 1.6;
-
-    margin-bottom: 10px;
-}
-
-.support-content p {
-    color: #64748b;
-
-    line-height: 1.7;
-
-    margin-bottom: 25px;
-}
-
-
-/* FEATURES */
-
-.support-features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-
-    margin: 25px 0 30px;
-}
-
-.support-feature {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    background: #f8fafc;
-
-    padding: 12px 15px;
-
-    border-radius: 15px;
-
-    border: 1px solid #e2e8f0;
-}
-
-.support-feature > span {
-    font-size: 22px;
-}
-
-.support-feature strong {
-    display: block;
-
-    color: #1e293b;
-
-    font-size: 14px;
-}
-
-.support-feature small {
-    color: #64748b;
-
-    font-size: 11px;
-}
-
-
-/* BUTTON */
-
-.support-btn {
-    border: none;
-
-    padding: 16px 26px;
-
-    border-radius: 15px;
-
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #1d4ed8
-    );
-
-    color: white;
-
-    font-size: 15px;
-    font-weight: 700;
-
-    cursor: pointer;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-
-    box-shadow:
-        0 10px 25px rgba(37, 99, 235, 0.25);
-
-    transition: all 0.3s ease;
-}
-
-.support-btn:hover {
-    transform: translateY(-3px);
-
-    box-shadow:
-        0 15px 35px rgba(37, 99, 235, 0.35);
-}
-
-.support-btn:active {
-    transform: scale(0.97);
-}
-
-
-/* NOTE */
-
-.support-note {
-    margin-top: 15px !important;
-
-    font-size: 12px !important;
-
-    color: #64748b !important;
-}
-
-
-/* =========================================
-   SUPPORT MODAL
-========================================= */
-
-.support-modal {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(15, 23, 42, 0.65);
-
-    backdrop-filter: blur(8px);
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    z-index: 9999;
-}
-
-.support-modal.active {
-    display: flex;
-
-    animation: modalFade 0.3s ease;
-}
-
-.support-modal-box {
-    position: relative;
-
-    width: 100%;
-    max-width: 480px;
-
-    background: white;
-
-    border-radius: 25px;
-
-    padding: 40px;
-
-    text-align: center;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,0.25);
-
-    animation: modalSlide 0.35s ease;
-}
-
-.close-support {
-    position: absolute;
-
-    top: 15px;
-    right: 18px;
-
-    width: 35px;
-    height: 35px;
-
-    border: none;
-
-    background: #f1f5f9;
-
-    border-radius: 50%;
-
-    font-size: 25px;
-
-    cursor: pointer;
-
-    color: #475569;
-}
-
-.modal-heart {
-    font-size: 50px;
-
-    margin-bottom: 10px;
-}
-
-.support-modal-box h3 {
-    color: #0f172a;
-
-    font-size: 25px;
-
-    margin-bottom: 10px;
-}
-
-.support-modal-box > p {
-    color: #64748b;
-
-    line-height: 1.6;
-
-    margin-bottom: 25px;
-}
-
-
-/* PAYMENT OPTIONS */
-
-.support-options {
-    display: grid;
-
-    gap: 12px;
-
-    margin-bottom: 20px;
-}
-
-.payment-option {
-    width: 100%;
-
-    border: 1px solid #e2e8f0;
-
-    background: #f8fafc;
-
-    border-radius: 15px;
-
-    padding: 16px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 15px;
-
-    text-align: left;
-
-    cursor: pointer;
-
-    transition: all 0.25s ease;
-}
-
-.payment-option:hover {
-    background: #eff6ff;
-
-    border-color: #93c5fd;
-
-    transform: translateY(-2px);
-}
-
-.payment-option > span {
-    font-size: 28px;
-}
-
-.payment-option strong {
-    display: block;
-
-    color: #1e293b;
-
-    font-size: 15px;
-}
-
-.payment-option small {
-    color: #64748b;
-
-    font-size: 12px;
-}
-
-
-/* TRANSPARENCY */
-
-.transparency-box {
-    background: #f8fafc;
-
-    border-radius: 15px;
-
-    padding: 15px;
-
-    text-align: left;
-}
-
-.transparency-box strong {
-    color: #334155;
-
-    font-size: 13px;
-}
-
-.transparency-box p {
-    margin: 6px 0 0;
-
-    font-size: 11px;
-
-    line-height: 1.6;
-
-    color: #64748b;
-}
-
-
-/* =========================================
-   ANIMATIONS
-========================================= */
-
-@keyframes supportFloat {
-
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-}
-
-@keyframes modalFade {
-
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes modalSlide {
-
-    from {
-        transform: translateY(30px) scale(0.95);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-}
-
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 768px) {
-
-    .support-section {
-        padding: 70px 15px;
-    }
-
-    .support-container {
-        flex-direction: column;
-
-        text-align: center;
-
-        padding: 35px 25px;
-
-        gap: 30px;
-    }
-
-    .support-icon {
-        min-width: 100px;
-        width: 100px;
-        height: 100px;
-
-        font-size: 42px;
-    }
-
-    .support-features {
-        justify-content: center;
-    }
-
-    .support-btn {
-        width: 100%;
-
-        justify-content: center;
-    }
-
-    .support-modal-box {
-        padding: 35px 22px;
-    }
-
-}
-
-.qr-container {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
-
-.support-qr {
-    display: block;
-    width: min(280px, 100%);
-    height: auto;
-    margin: 0 auto 15px;
-    border-radius: 12px;
-}
-
-.qr-instruction {
-    margin: 0 !important;
-    color: #475569 !important;
-    font-size: 13px !important;
-}
-
-/* =========================================
-   RESPONSIVE SUPPORT QR
-========================================= */
-
-.qr-container {
-    width: 100%;
-    max-width: 340px;
-    margin: 0 auto 20px;
-
-    padding: 20px;
-
-    background: #f8fafc;
-
-    border: 1px solid #e2e8f0;
-
-    border-radius: 20px;
-
-    box-sizing: border-box;
-
-    text-align: center;
-}
-
-.support-qr {
-    display: block;
-
-    width: min(280px, 100%);
-    max-width: 100%;
-    height: auto;
-
-    aspect-ratio: 1 / 1;
-
-    object-fit: contain;
-
-    margin: 0 auto 15px;
-
-    border-radius: 12px;
-
-    /* Prevents the QR from becoming blurry */
-    image-rendering: auto;
-}
-
-.qr-instruction {
-    margin: 0 !important;
-
-    color: #475569 !important;
-
-    font-size: 13px !important;
-
-    line-height: 1.5 !important;
-}
-
-
-/* =========================================
-   MOBILE QR
-========================================= */
-
-@media (max-width: 600px) {
-
-    .support-modal {
-        padding: 12px;
-    }
-
-    .support-modal-box {
-        width: 100%;
-        max-width: 420px;
-
-        max-height: 92vh;
-
-        overflow-y: auto;
-
-        padding: 30px 18px;
-
-        border-radius: 22px;
-    }
-
-    .qr-container {
-        width: 100%;
-
-        max-width: 300px;
-
-        padding: 15px;
-
-        margin-left: auto;
-        margin-right: auto;
-
-        border-radius: 18px;
-    }
-
-    .support-qr {
-        width: min(250px, 100%);
-
-        margin-bottom: 12px;
-    }
-
-    .qr-instruction {
-        font-size: 12px !important;
-    }
-
-}
-
-
-/* =========================================
-   VERY SMALL PHONES
-========================================= */
-
-@media (max-width: 380px) {
-
-    .support-modal {
-        padding: 8px;
-    }
-
-    .support-modal-box {
-        padding: 25px 14px;
-
-        border-radius: 18px;
-    }
-
-    .qr-container {
-        max-width: 260px;
-
-        padding: 12px;
-    }
-
-    .support-qr {
-        width: min(220px, 100%);
-    }
-
-    .modal-heart {
-        font-size: 40px;
-    }
-
-    .support-modal-box h3 {
-        font-size: 21px;
-    }
-
-}
-
-.qr-container {
-    width: 100%;
-    max-width: 340px;
-    margin: 0 auto 20px;
-    padding: 20px;
-
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 20px;
-
-    box-sizing: border-box;
-    text-align: center;
-}
-
-/* QR CROPPING WINDOW */
-.qr-crop {
-    width: 250px;
-    height: 250px;
-
-    margin: 0 auto 18px;
-
-    overflow: hidden;
-
-    border-radius: 12px;
-
-    position: relative;
-
-    background: white;
-}
-
-/* ENLARGE THE ORIGINAL GCASH IMAGE */
-.support-qr {
-    position: absolute;
-
-    width: 620px;
-    max-width: none;
-
-    height: auto;
-
-    left: 50%;
-    top: 50%;
-
-    transform: translate(-50%, -50%);
-}
-
-/* TEXT */
-
-.qr-instruction {
-    margin: 0 !important;
-
-    font-size: 13px !important;
-    line-height: 1.5 !important;
-
-    color: #475569 !important;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 600px) {
-
-    .qr-container {
-        max-width: 310px;
-        padding: 15px;
-    }
-
-    .qr-crop {
-        width: 230px;
-        height: 230px;
-    }
-
-    .support-qr {
-        width: 570px;
-    }
-
-}
-
-
-/* SMALL PHONES */
-
-@media (max-width: 380px) {
-
-    .qr-container {
-        max-width: 280px;
-    }
-
-    .qr-crop {
-        width: 210px;
-        height: 210px;
-    }
-
-    .support-qr {
-        width: 520px;
-    }
-
-}
-
-/* =========================================================
-   SUPPORT THE PROJECT — FULL RESPONSIVE DESIGN
-========================================================= */
-
-/* MAIN SUPPORT SECTION */
-
-.support-section {
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.support-container {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-
-/* =========================================================
-   TABLET
-========================================================= */
-
-@media (max-width: 900px) {
-
-    .support-section {
-        padding: 70px 20px;
-    }
-
-    .support-container {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-        padding: 45px 35px;
-    }
-
-    .support-icon {
-        width: 105px;
-        min-width: 105px;
-        height: 105px;
-        margin: 0 auto;
-    }
-
-    .support-content {
-        width: 100%;
-    }
-
-    .support-content h2 {
-        font-size: 38px;
-    }
-
-    .support-intro {
-        font-size: 17px;
-    }
-
-    .support-features {
-        justify-content: center;
-    }
-
-    .support-btn {
-        margin: 0 auto;
-    }
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .support-section {
-        width: 100%;
-        min-height: auto;
-
-        padding: 55px 12px;
-
-        box-sizing: border-box;
-    }
-
-    .support-container {
-
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        padding: 32px 18px;
-
-        gap: 25px;
-
-        border-radius: 24px;
-
-        box-sizing: border-box;
-
-        overflow: hidden;
-    }
-
-
-    /* ICON */
-
-    .support-icon {
-
-        width: 85px;
-        min-width: 85px;
-
-        height: 85px;
-
-        font-size: 38px;
-
-        border-radius: 25px;
-
-        margin: 0 auto;
-    }
-
-
-    /* CONTENT */
-
-    .support-content {
-
-        width: 100%;
-
-        min-width: 0;
-
-        box-sizing: border-box;
-    }
-
-    .support-label {
-
-        font-size: 10px;
-
-        letter-spacing: 1.5px;
-
-        margin-bottom: 8px;
-    }
-
-    .support-content h2 {
-
-        font-size: 30px;
-
-        line-height: 1.15;
-
-        margin-bottom: 15px;
-    }
-
-    .support-content p {
-
-        font-size: 14px;
-
-        line-height: 1.65;
-
-        margin-bottom: 18px;
-    }
-
-    .support-intro {
-
-        font-size: 16px !important;
-
-        line-height: 1.55 !important;
-    }
-
-
-    /* FEATURES */
-
-    .support-features {
-
-        width: 100%;
-
-        display: grid;
-
-        grid-template-columns: 1fr;
-
-        gap: 10px;
-
-        margin: 20px 0 25px;
-    }
-
-    .support-feature {
-
-        width: 100%;
-
-        box-sizing: border-box;
-
-        padding: 11px 13px;
-
-        border-radius: 13px;
-
-        text-align: left;
-    }
-
-
-    /* SUPPORT BUTTON */
-
-    .support-btn {
-
-        width: 100%;
-
-        min-height: 52px;
-
-        padding: 14px 18px;
-
-        justify-content: center;
-
-        text-align: center;
-
-        font-size: 14px;
-
-        border-radius: 14px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* NOTE */
-
-    .support-note {
-
-        font-size: 11px !important;
-
-        line-height: 1.5 !important;
-
-        margin-top: 12px !important;
-    }
-}
-
-
-/* =========================================================
-   SUPPORT MODAL — MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    .support-modal {
-
-        position: fixed;
-
-        inset: 0;
-
-        width: 100%;
-        height: 100%;
-
-        padding: 10px;
-
-        display: none;
-
-        align-items: center;
-        justify-content: center;
-
-        box-sizing: border-box;
-
-        overflow-y: auto;
-    }
-
-    .support-modal.active {
-
-        display: flex;
-    }
-
-
-    .support-modal-box {
-
-        width: 100%;
-
-        max-width: 420px;
-
-        max-height: calc(100vh - 20px);
-
-        margin: auto;
-
-        padding: 28px 18px;
-
-        box-sizing: border-box;
-
-        border-radius: 22px;
-
-        overflow-y: auto;
-
-        overflow-x: hidden;
-    }
-
-
-    /* CLOSE BUTTON */
-
-    .close-support {
-
-        top: 10px;
-        right: 10px;
-
-        width: 34px;
-        height: 34px;
-
-        font-size: 23px;
-
-        z-index: 5;
-    }
-
-
-    /* MODAL ICON */
-
-    .modal-heart {
-
-        font-size: 40px;
-
-        margin-bottom: 5px;
-    }
-
-
-    /* MODAL TITLE */
-
-    .support-modal-box h3 {
-
-        width: 100%;
-
-        font-size: 23px;
-
-        line-height: 1.25;
-
-        margin: 0 auto 12px;
-
-        padding: 0 20px;
-
-        box-sizing: border-box;
-    }
-
-
-    /* MODAL DESCRIPTION */
-
-    .support-modal-box > p {
-
-        font-size: 14px;
-
-        line-height: 1.6;
-
-        margin-bottom: 20px;
-    }
-
-
-    /* =====================================================
-       QR CONTAINER
-    ===================================================== */
-
-    .qr-container {
-
-        width: 100%;
-
-        max-width: 300px;
-
-        margin: 0 auto 18px;
-
-        padding: 14px;
-
-        box-sizing: border-box;
-
-        border-radius: 18px;
-    }
-
-
-    /* QR IMAGE */
-
-    .support-qr {
-
-        display: block;
-
-        width: 100%;
-
-        max-width: 260px;
-
-        height: auto;
-
-        margin: 0 auto 12px;
-
-        object-fit: contain;
-    }
-
-
-    /* QR TEXT */
-
-    .qr-instruction {
-
-        width: 100%;
-
-        font-size: 12px !important;
-
-        line-height: 1.5 !important;
-
-        text-align: center;
-
-        margin: 0 !important;
-    }
-
-
-    /* =====================================================
-       TRANSPARENCY BOX
-    ===================================================== */
-
-    .transparency-box {
-
-        width: 100%;
-
-        box-sizing: border-box;
-
-        padding: 13px;
-
-        border-radius: 13px;
-
-        text-align: left;
-    }
-
-    .transparency-box strong {
-
-        font-size: 12px;
-    }
-
-    .transparency-box p {
-
-        font-size: 10px !important;
-
-        line-height: 1.55 !important;
-
-        margin: 5px 0 0 !important;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES — 380px AND BELOW
-========================================================= */
-
-@media (max-width: 380px) {
-
-    .support-section {
-
-        padding: 40px 8px;
-    }
-
-    .support-container {
-
-        padding: 28px 14px;
-
-        border-radius: 20px;
-    }
-
-
-    .support-icon {
-
-        width: 75px;
-        min-width: 75px;
-
-        height: 75px;
-
-        font-size: 32px;
-
-        border-radius: 22px;
-    }
-
-
-    .support-content h2 {
-
-        font-size: 26px;
-    }
-
-    .support-intro {
-
-        font-size: 15px !important;
-    }
-
-    .support-content p {
-
-        font-size: 13px;
-    }
-
-
-    /* MODAL */
-
-    .support-modal {
-
-        padding: 7px;
-    }
-
-    .support-modal-box {
-
-        max-height: calc(100vh - 14px);
-
-        padding: 25px 13px;
-
-        border-radius: 19px;
-    }
-
-    .support-modal-box h3 {
-
-        font-size: 20px;
-
-        padding: 0 15px;
-    }
-
-
-    /* QR */
-
-    .qr-container {
-
-        max-width: 270px;
-
-        padding: 12px;
-    }
-
-    .support-qr {
-
-        max-width: 235px;
-    }
-
-    .qr-instruction {
-
-        font-size: 11px !important;
-    }
-}
-
-
-/* =========================================================
-   EXTRA SMALL PHONES — 320px AND BELOW
-========================================================= */
-
-@media (max-width: 320px) {
-
-    .support-section {
-
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-
-    .support-container {
-
-        padding: 24px 12px;
-    }
-
-    .support-content h2 {
-
-        font-size: 23px;
-    }
-
-    .support-btn {
-
-        font-size: 13px;
-
-        padding: 13px 10px;
-    }
-
-    .support-modal-box {
-
-        padding: 22px 10px;
-    }
-
-    .qr-container {
-
-        max-width: 245px;
-
-        padding: 10px;
-    }
-
-    .support-qr {
-
-        max-width: 215px;
-    }
-}
-
-.brand-mark img {
-    width: 32px;
-    height: 32px;
-    object-fit: contain;
-    display: block;
-}
-
-/* =========================================
    TEACHER ED LEARNING HUB FOOTER
    ========================================= */
 
@@ -3432,4 +2100,698 @@ body.dark .footer-bottom {
         font-size: 19px;
     }
 
+}
+/* =========================================================
+   TEACHER ED LEARNING HUB
+   SUPPORT SECTION
+   ========================================================= */
+
+.support-section {
+  position: relative;
+  width: 100%;
+  max-width: none !important;
+  padding: 24px 0 70px;
+  background: linear-gradient(
+    135deg,
+    #eef3ff 0%,
+    #f7f9fc 50%,
+    #ffffff 100%
+  );
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.support-section *,
+.support-section *::before,
+.support-section *::after {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.support-container {
+  width: min(944px, calc(100% - 32px)) !important;
+  max-width: 944px !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+}
+
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.support-main-card {
+  position: relative;
+
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: 96px minmax(0, 1fr) 216px !important;
+
+  align-items: center;
+
+  gap: 28px;
+
+  min-height: 425px;
+
+  padding: 48px 38px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3ef;
+  border-radius: 20px;
+
+  box-shadow:
+    0 18px 45px rgba(32, 54, 95, 0.08);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   DECORATIONS
+   ========================================================= */
+
+.support-decoration {
+  position: absolute;
+
+  border-radius: 50%;
+
+  background: #f2f5fb;
+
+  pointer-events: none;
+
+  z-index: 0;
+}
+
+.support-decoration-top {
+  width: 180px;
+  height: 180px;
+
+  right: -72px;
+  top: -72px;
+}
+
+.support-decoration-bottom {
+  width: 150px;
+  height: 150px;
+
+  left: -60px;
+  bottom: -65px;
+}
+
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.support-icon-box {
+  position: relative;
+  z-index: 2;
+
+  width: 84px !important;
+  height: 84px !important;
+
+  min-width: 84px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: linear-gradient(
+    145deg,
+    #4167ee,
+    #2f5bea
+  );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 15px 28px rgba(49, 91, 234, 0.22);
+}
+
+.support-icon-box svg {
+  width: 39px;
+  height: 39px;
+  stroke-width: 1.8;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.support-content {
+  position: relative;
+  z-index: 2;
+
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+}
+
+.support-kicker,
+.thank-kicker,
+.qr-kicker {
+  display: block;
+
+  color: #315bea;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+.support-content h2 {
+  margin: 9px 0 10px;
+
+  color: #17223a;
+
+  font-size: 37px;
+  line-height: 1.08;
+
+  letter-spacing: -0.035em;
+
+  max-width: 100% !important;
+}
+
+
+.support-intro {
+  max-width: 600px !important;
+
+  margin: 0 0 18px;
+
+  color: #5e6f8d;
+
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+
+.support-description {
+  max-width: 600px !important;
+
+  margin: 0 0 19px;
+
+  color: #64748b;
+
+  font-size: 11px;
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FEATURE CARDS
+   ========================================================= */
+
+.support-features {
+  display: flex !important;
+  flex-wrap: wrap;
+
+  gap: 8px;
+
+  width: 100%;
+
+  margin: 0 0 18px;
+}
+
+
+.support-feature {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  min-width: 112px;
+
+  padding: 8px 10px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce4f0;
+
+  border-radius: 9px;
+}
+
+
+.support-feature-icon {
+  width: 25px;
+  height: 25px;
+
+  min-width: 25px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #eef3ff;
+
+  color: #315bea;
+}
+
+
+.support-feature-icon svg {
+  width: 13px;
+  height: 13px;
+}
+
+
+.support-feature strong {
+  display: block;
+
+  color: #26334b;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  line-height: 1.2;
+}
+
+
+.support-feature span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #8995aa;
+
+  font-size: 7px;
+
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   BUTTON
+   ========================================================= */
+
+.support-button {
+  display: inline-flex !important;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  width: auto !important;
+
+  padding: 10px 14px;
+
+  background: #315bea;
+
+  color: #ffffff !important;
+
+  border-radius: 8px;
+
+  text-decoration: none;
+
+  font-size: 10px;
+  font-weight: 750;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.support-button:hover {
+  background: #254bc7;
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 8px 18px rgba(49, 91, 234, 0.20);
+}
+
+.support-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+
+/* =========================================================
+   NOTE
+   ========================================================= */
+
+.support-note {
+  margin: 12px 0 0;
+
+  color: #718099;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   QR CARD
+   ========================================================= */
+
+.support-qr-card {
+  position: relative;
+  z-index: 3;
+
+  width: 216px !important;
+  max-width: 216px !important;
+  min-width: 216px !important;
+
+  padding: 20px 15px;
+
+  text-align: center;
+
+  background: #fbfcff;
+
+  border: 1px solid #d9e1ef;
+
+  border-radius: 15px;
+}
+
+
+.qr-kicker {
+  font-size: 7px;
+
+  letter-spacing: 0.13em;
+}
+
+
+.support-qr-card h3 {
+  margin: 8px 0 13px;
+
+  color: #16223a;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   QR IMAGE
+   ========================================================= */
+
+.qr-image-box {
+  width: 152px !important;
+  height: 152px !important;
+
+  margin: 0 auto 12px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 9px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce4ef;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 5px 15px rgba(30, 50, 90, 0.06);
+}
+
+
+.qr-image-box img {
+  display: block;
+
+  width: 100% !important;
+  height: 100% !important;
+
+  max-width: none !important;
+
+  object-fit: contain;
+}
+
+
+.qr-description {
+  max-width: 175px !important;
+
+  margin: 0 auto;
+
+  color: #687893;
+
+  font-size: 8px;
+  line-height: 1.55;
+}
+
+
+.qr-thank-you {
+  max-width: 175px !important;
+
+  margin: 9px auto 0;
+
+  color: #315bea;
+
+  font-size: 8px;
+  font-weight: 700;
+
+  line-height: 1.45;
+}
+
+
+/* =========================================================
+   THANK YOU CARD
+   ========================================================= */
+
+.support-thank-card {
+  width: 100% !important;
+  max-width: none !important;
+
+  margin-top: 17px;
+
+  padding: 23px 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dce3ef;
+
+  border-radius: 15px;
+
+  box-shadow:
+    0 8px 24px rgba(30, 50, 90, 0.04);
+}
+
+
+.support-thank-card h3 {
+  margin: 0 0 8px;
+
+  color: #17223a;
+
+  font-size: 14px;
+  font-weight: 800;
+}
+
+
+.support-thank-card p {
+  max-width: 750px !important;
+
+  margin: 0;
+
+  color: #687893;
+
+  font-size: 9px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .support-main-card {
+    grid-template-columns: 76px minmax(0, 1fr) !important;
+
+    gap: 22px;
+
+    padding: 38px 30px;
+  }
+
+  .support-qr-card {
+    grid-column: 1 / -1;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    display: grid;
+
+    grid-template-columns: 1fr 160px 1fr;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: left;
+  }
+
+  .support-qr-card .qr-image-box {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+
+    margin: 0 auto;
+  }
+
+  .support-qr-card h3 {
+    margin: 6px 0;
+  }
+
+  .qr-description {
+    grid-column: 3;
+    grid-row: 2;
+
+    max-width: 100% !important;
+  }
+
+  .qr-thank-you {
+    grid-column: 3;
+    grid-row: 3;
+
+    max-width: 100% !important;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .support-section {
+    padding: 15px 0 45px;
+  }
+
+  .support-container {
+    width: calc(100% - 22px) !important;
+    max-width: 560px !important;
+  }
+
+  .support-main-card {
+    display: flex !important;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 20px;
+
+    width: 100% !important;
+
+    padding: 28px 20px;
+
+    border-radius: 18px;
+  }
+
+  .support-icon-box {
+    width: 62px !important;
+    height: 62px !important;
+
+    min-width: 62px;
+  }
+
+  .support-icon-box svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .support-content h2 {
+    font-size: 29px;
+  }
+
+  .support-intro {
+    font-size: 12px;
+  }
+
+  .support-description {
+    font-size: 10px;
+  }
+
+  .support-features {
+    display: grid !important;
+
+    grid-template-columns: 1fr;
+
+    gap: 7px;
+  }
+
+  .support-feature {
+    width: 100%;
+  }
+
+  .support-button {
+    width: 100% !important;
+  }
+
+  .support-qr-card {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+
+    text-align: center;
+
+    padding: 20px 15px;
+  }
+
+  .qr-image-box {
+    width: 165px !important;
+    height: 165px !important;
+
+    margin: 13px auto;
+  }
+
+  .qr-description,
+  .qr-thank-you {
+    max-width: 260px !important;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .support-thank-card {
+    width: 100% !important;
+
+    padding: 20px 16px;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .support-content h2 {
+    font-size: 25px;
+  }
+
+  .support-main-card {
+    padding: 24px 16px;
+  }
+
+  .qr-image-box {
+    width: 145px !important;
+    height: 145px !important;
+  }
 }

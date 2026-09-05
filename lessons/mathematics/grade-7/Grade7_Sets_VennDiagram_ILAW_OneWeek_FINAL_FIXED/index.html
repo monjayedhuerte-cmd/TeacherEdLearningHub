@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082c52">
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <title>Teacher Ed | Sets & Venn Diagrams</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home">
+        <span class="brand-mark"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"></span>
+        <span class="brand-text"><strong>Teacher Ed</strong><small>Learning Hub • Grade 7 Mathematics</small></span>
+      </a>
+      <div class="nav-actions">
+        <button class="icon-btn" id="fullscreenBtn" title="Full screen" aria-label="Enter full screen">⛶ <span>Full Screen</span></button>
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#week">1-Week Plan</a><a href="#ilaw">ILAW</a>
+        <a href="#learn">Learn</a><a href="#activities">Activities</a><a href="#mastery">Mastery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-bg orb one"></div><div class="hero-bg orb two"></div>
+      <div class="hero-content">
+        <span class="eyebrow">GRADE 7 • SECOND TERM • WEEK 5</span>
+        <a class="topic-title-link" href="#learn" aria-label="Open the lesson topic: Sets, Subsets, Union and Intersection"><h1>Sets, Subsets, Union &amp; Intersection</h1></a>
+        <p class="hero-lead">Think like a mathematician: sort, compare, connect, and explain how groups of objects are related.</p>
+        <div class="hero-badges">
+          <span>🔵 Sets</span><span>🟣 Subsets</span><span>🟠 Union</span><span>🟢 Intersection</span>
+        </div>
+        <div class="hero-buttons">
+          <a class="primary-btn" href="#ilaw">🚀 Start the Week</a>
+          <button class="secondary-btn" id="quickChallenge">🎯 Quick Challenge</button>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="floating-card card-top"><b>A ∪ B</b><span>Everything in A or B</span></div>
+        <div class="venn hero-venn">
+          <div class="circle a">A</div><div class="circle b">B</div>
+          <div class="overlap-label">A ∩ B</div>
+        </div>
+        <div class="floating-card card-bottom"><b>A ⊆ B</b><span>A is contained in B</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="week">
+      <div class="section-heading">
+        <span class="section-kicker">ONE-WEEK LEARNING JOURNEY</span>
+        <h2>Your 5-Day Mission</h2>
+        <p>Each day moves from discovery to understanding, application, and mastery.</p>
+      </div>
+      <div class="day-grid">
+        <a class="day-card" href="#introduce"><span class="day-num">01</span><h3>Discover Sets</h3><p>Identify sets, elements, and ways to describe sets.</p><span class="tag">I • Introduce</span><span class="day-open">Open Day 1 →</span></a>
+        <a class="day-card" href="#learn-panel"><span class="day-num">02</span><h3>Subsets</h3><p>Explore when one set is contained inside another.</p><span class="tag">L • Learn</span><span class="day-open">Open Day 2 →</span></a>
+        <a class="day-card" href="#venn"><span class="day-num">03</span><h3>Union &amp; Intersection</h3><p>Use Venn diagrams to model set relationships.</p><span class="tag">L • Learn</span><span class="day-open">Open Day 3 →</span></a>
+        <a class="day-card" href="#activities"><span class="day-num">04</span><h3>Apply It</h3><p>Solve real-life sorting and survey problems.</p><span class="tag">A • Apply</span><span class="day-open">Open Day 4 →</span></a>
+        <a class="day-card" href="#mastery"><span class="day-num">05</span><h3>Master It</h3><p>Complete the challenge, exit ticket, and reflection.</p><span class="tag">W • Wrap-Up</span><span class="day-open">Open Day 5 →</span></a>
+      </div>
+    </section>
+
+    <section class="ilaw-section" id="ilaw">
+      <div class="section-heading light">
+        <span class="section-kicker">DEPED-ALIGNED TEACHING FLOW</span>
+        <h2>ILAW: Learn by Doing</h2>
+        <p>Introduce → Learn → Apply → Wrap-Up</p>
+      </div>
+      <div class="ilaw-grid">
+        <button class="ilaw-card active" data-panel="introduce"><b>I</b><span>Introduce</span><small>Get curious</small></button>
+        <button class="ilaw-card" data-panel="learn-panel"><b>L</b><span>Learn</span><small>Build meaning</small></button>
+        <button class="ilaw-card" data-panel="apply-panel"><b>A</b><span>Apply</span><small>Use the idea</small></button>
+        <button class="ilaw-card" data-panel="wrap-panel"><b>W</b><span>Wrap-Up</span><small>Show mastery</small></button>
+      </div>
+      <div class="ilaw-panel active" id="introduce">
+        <div><span class="panel-label">DAY 1 • INTRODUCE</span><h3>The Mystery Sorting Game</h3>
+        <p>Imagine a class survey: some learners like basketball, some like chess, and some like both. How can we organize the information so that everyone can see the relationships?</p>
+        <p class="teacher-note">Teacher prompt: “If two groups have members in common, what could we draw to show that?”</p></div>
+        <div class="mini-demo"><div class="mini-circle left">Sports</div><div class="mini-circle right">Games</div><div class="mini-overlap">Both!</div></div>
+      </div>
+      <div class="ilaw-panel" id="learn-panel">
+        <div><span class="panel-label">DAYS 2–3 • LEARN</span><h3>Build the Language of Sets</h3>
+        <p>Learn elements, subsets, universal sets, union (∪), intersection (∩), and how Venn diagrams make relationships visible.</p>
+        <div class="formula-row"><span>A ∪ B</span><span>A ∩ B</span><span>A ⊆ B</span></div></div>
+        <div class="mini-demo"><div class="stack-card">SET A<br><strong>{1, 2, 3}</strong></div><div class="stack-card">SET B<br><strong>{1, 2, 3, 4}</strong></div><div class="relation">A ⊆ B ✓</div></div>
+      </div>
+      <div class="ilaw-panel" id="apply-panel">
+        <div><span class="panel-label">DAY 4 • APPLY</span><h3>Use Sets to Solve Problems</h3>
+        <p>Model class surveys, hobbies, sports, and number groups. Select elements and decide whether they belong in the union, intersection, or neither.</p>
+        <button class="small-btn" onclick="scrollToSection('activities')">Go to Activities →</button></div>
+        <div class="score-preview">A ∪ B<br><strong>Combine</strong><br><small>without repeating</small></div>
+      </div>
+      <div class="ilaw-panel" id="wrap-panel">
+        <div><span class="panel-label">DAY 5 • WRAP-UP</span><h3>Explain, Check, Reflect</h3>
+        <p>Complete the mastery challenge and exit ticket. Your goal is not only to get answers—it is to explain why the answers are correct.</p>
+        <button class="small-btn" onclick="scrollToSection('mastery')">Show Mastery →</button></div>
+        <div class="trophy">🏆</div>
+      </div>
+    </section>
+
+    <section class="section" id="learn">
+      <div class="section-heading">
+        <span class="section-kicker">CORE LESSON</span><h2>Understand the Big Ideas</h2>
+        <p>Tap a card to explore each concept.</p>
+      </div>
+      <div class="concept-grid">
+        <button class="concept-card active" data-concept="set"><span>01</span><h3>What is a Set?</h3><p>A well-defined collection of objects.</p></button>
+        <button class="concept-card" data-concept="subset"><span>02</span><h3>Subset</h3><p>Every element of A is also in B.</p></button>
+        <button class="concept-card" data-concept="union"><span>03</span><h3>Union</h3><p>All elements in A or B, without repeats.</p></button>
+        <button class="concept-card" data-concept="intersection"><span>04</span><h3>Intersection</h3><p>Elements common to both A and B.</p></button>
+      </div>
+      <div class="concept-explainer" id="conceptExplainer">
+        <div class="explain-copy"><span class="panel-label">CONCEPT 01</span><h3>Set &amp; Elements</h3>
+          <p>A set is a well-defined collection. The objects inside it are called <strong>elements</strong> or <strong>members</strong>.</p>
+          <div class="math-example">A = {2, 4, 6, 8}</div>
+          <p>Here, 2, 4, 6, and 8 are elements of A. We can write <strong>4 ∈ A</strong>, meaning “4 belongs to A.”</p>
+        </div>
+        <div class="example-board" id="exampleBoard"><span>2</span><span>4</span><span>6</span><span>8</span></div>
+      </div>
+    </section>
+
+    <section class="diagram-section" id="venn">
+      <div class="section-heading light"><span class="section-kicker">VISUAL THINKING</span><h2>Master the Venn Diagram</h2><p>Drag your eyes from the whole to the shared part.</p></div>
+      <div class="diagram-wrap">
+        <div class="universal-label">Universal Set U</div>
+        <div class="venn large">
+          <div class="circle big-a"><span>A</span><small id="aOnly">A only</small></div>
+          <div class="circle big-b"><span>B</span><small id="bOnly">B only</small></div>
+          <div class="intersection" id="intersectionText">A ∩ B</div>
+          <div class="element e1">1</div><div class="element e2">2</div><div class="element e3">3</div><div class="element e4">4</div><div class="element e5">5</div>
+        </div>
+        <div class="diagram-legend">
+          <div><b>∪ Union</b><span>Everything inside A or B.</span></div>
+          <div><b>∩ Intersection</b><span>Only what A and B share.</span></div>
+          <div><b>⊆ Subset</b><span>One set is completely contained in another.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="activities">
+      <div class="section-heading"><span class="section-kicker">INTERACTIVE PRACTICE</span><h2>Mission Center</h2><p>Complete each activity and collect stars.</p></div>
+
+      <article class="activity-card">
+        <div class="activity-head"><span class="mission">MISSION 1</span><h3>Set Sorter</h3><span class="points">+2 ⭐</span></div>
+        <p>Which numbers belong to the set <strong>A = {even numbers less than 10}</strong>? Select all correct answers.</p>
+        <div class="choice-grid multi" id="sortChoices">
+          <button data-correct="true">2</button><button data-correct="false">3</button><button data-correct="true">4</button>
+          <button data-correct="false">5</button><button data-correct="true">6</button><button data-correct="false">7</button>
+          <button data-correct="true">8</button><button data-correct="false">9</button>
+        </div>
+        <button class="check-btn" id="checkSort">Check Set →</button><div class="feedback" id="sortFeedback"></div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-head"><span class="mission">MISSION 2</span><h3>Subset Detective</h3><span class="points">+2 ⭐</span></div>
+        <p>Is <strong>A = {2, 4}</strong> a subset of <strong>B = {1, 2, 3, 4, 5}</strong>?</p>
+        <div class="choice-grid two" id="subsetChoices"><button data-answer="yes">YES, A ⊆ B</button><button data-answer="no">NO</button></div>
+        <div class="feedback" id="subsetFeedback"></div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-head"><span class="mission">MISSION 3</span><h3>Union or Intersection?</h3><span class="points">+3 ⭐</span></div>
+        <p>A = {1, 2, 3, 4} and B = {3, 4, 5, 6}. What is <strong>A ∩ B</strong>?</p>
+        <div class="choice-grid two" id="intersectionChoices">
+          <button data-answer="1,2,3,4,5,6">{1, 2, 3, 4, 5, 6}</button>
+          <button data-answer="3,4">{3, 4}</button>
+          <button data-answer="1,2">{1, 2}</button>
+          <button data-answer="5,6">{5, 6}</button>
+        </div><div class="feedback" id="intersectionFeedback"></div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-head"><span class="mission">MISSION 4</span><h3>Build the Venn Diagram</h3><span class="points">+4 ⭐</span></div>
+        <p>For A = {1, 2, 3, 4} and B = {3, 4, 5}, place each number in the correct region.</p>
+        <div class="drag-zone">
+          <div class="number-bank" id="numberBank">
+            <button draggable="true" data-region="a">1</button><button draggable="true" data-region="a">2</button>
+            <button draggable="true" data-region="both">3</button><button draggable="true" data-region="both">4</button>
+            <button draggable="true" data-region="b">5</button>
+          </div>
+          <div class="drop-venn">
+            <div class="drop-circle drop-a" data-drop="a"><strong>A only</strong><div class="dropped"></div></div>
+            <div class="drop-circle drop-b" data-drop="b"><strong>B only</strong><div class="dropped"></div></div>
+            <div class="drop-both" data-drop="both"><strong>Both</strong><div class="dropped"></div></div>
+          </div>
+        </div>
+        <button class="check-btn" id="checkVenn">Check Diagram →</button><button class="reset-btn" id="resetVenn">Reset</button>
+        <div class="feedback" id="vennFeedback"></div>
+      </article>
+
+      <article class="activity-card">
+        <div class="activity-head"><span class="mission">MISSION 5</span><h3>Real-Life Survey</h3><span class="points">+3 ⭐</span></div>
+        <p>In a class survey, 12 learners like basketball, 10 like volleyball, and 4 like both. What does the “4” represent?</p>
+        <div class="choice-grid two" id="surveyChoices">
+          <button data-answer="intersection">Learners in the intersection</button>
+          <button data-answer="union">All learners who like either sport</button>
+          <button data-answer="a-only">Basketball only</button>
+          <button data-answer="b-only">Volleyball only</button>
+        </div><div class="feedback" id="surveyFeedback"></div>
+      </article>
+    </section>
+
+    <section class="mastery-section" id="mastery">
+      <div class="section-heading light"><span class="section-kicker">DAY 5 • MASTERY</span><h2>Set Mastery Challenge</h2><p>Answer 5 questions. Aim for 4/5 or better.</p></div>
+      <div class="mastery-box">
+        <div class="mastery-top"><span id="masteryProgress">Question 1 of 5</span><span id="masteryScore">Score: 0</span></div>
+        <div class="progress"><span id="progressBar"></span></div>
+        <div id="masteryQuestion"></div>
+        <div id="masteryChoices" class="choice-grid"></div>
+        <button class="check-btn" id="nextMastery" disabled>Choose an answer</button>
+        <div class="feedback" id="masteryFeedback"></div>
+      </div>
+    </section>
+
+    <section class="reflection section">
+      <div class="section-heading"><span class="section-kicker">WRAP-UP</span><h2>Exit Ticket &amp; Reflection</h2><p>Finish the week by explaining your thinking.</p></div>
+      <div class="reflection-grid">
+        <div class="exit-card"><h3>✏️ Complete the sentence</h3><p>“The union combines ________, while the intersection shows ________.”</p>
+          <div class="word-bank"><button>everything in either set</button><button>only the common elements</button></div>
+          <div class="feedback" id="exitFeedback"></div>
+        </div>
+        <div class="exit-card"><h3>💡 Think Like a Teacher</h3><p>Why is a Venn diagram useful when comparing two groups?</p>
+          <textarea id="reflectionText" placeholder="Write 1–3 sentences..."></textarea>
+          <button class="check-btn" id="saveReflection">Save Reflection</button><div class="feedback" id="reflectionFeedback"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"><div><strong>Teacher Ed Learning Hub</strong><span>Learn • Practice • Master</span></div></div>
+      <div class="footer-links"><a href="#home">Home</a><a href="#week">Weekly Plan</a><a href="#activities">Activities</a><a href="#mastery">Mastery</a></div>
+      <div class="footer-note">Grade 7 Mathematics • Sets &amp; Venn Diagrams</div>
+    </div>
+    <div class="copyright">© <span id="year"></span> Teacher Ed Learning Hub • Interactive Learning Resource</div>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

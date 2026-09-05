@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10233f">
+<meta name="description" content="Teacher Ed Learning Hub — Grade 7 Measurement and Geometry interactive ILAW lesson.">
+<title>Teacher Ed | Grade 7 Mathematics</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="apple-touch-icon" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scroll-progress"><span id="scrollBar"></span></div>
+
+<header class="header">
+  <nav class="nav container">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+      <span class="brand-logo"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo"></span>
+      <span><b>Teacher Ed</b><small>Learning Hub • Grade 7 Math</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a><a href="#ilaw">ILAW</a><a href="#learn">Learn</a>
+      <a href="#practice">Practice</a><a href="#challenge">Challenge</a><a href="#mastery">Mastery</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-shape s1"></div><div class="hero-shape s2"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill">📏 SECOND TERM • WEEKS 1–2</span>
+      <h1>Measurement <em>Mission</em></h1>
+      <p class="lead">Welcome, Grade 7! Become a <strong>Unit Master</strong> by learning how measurements change from one unit to another — without changing the actual quantity.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#ilaw">🚀 Start Learning</a>
+        <button class="btn outline" id="openQuick">⚡ Quick Warm-Up</button>
+      </div>
+      <div class="stats">
+        <div><b id="starCount">0</b><span>Stars</span></div>
+        <div><b id="percentCount">0%</b><span>Progress</span></div>
+        <div><b>4</b><span>ILAW Stages</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="Measurement illustration">
+      <div class="ruler"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span></div>
+      <div class="measure-box">
+        <div class="unit">1 km</div><strong>→</strong><div class="unit cyan">1,000 m</div>
+      </div>
+      <div class="measure-box small">
+        <div class="unit">1 m</div><strong>→</strong><div class="unit yellow">100 cm</div>
+      </div>
+      <div class="visual-note">💡 The quantity stays the same. Only the unit changes.</div>
+    </div>
+  </div>
+</section>
+
+<section class="curriculum section container">
+  <div class="heading">
+    <span class="eyebrow">CURRICULUM CONNECTION</span>
+    <h2>What are we learning?</h2>
+    <p>Based on the Grade 7 Second Term content standard and learning competency you provided.</p>
+  </div>
+  <div class="cards three">
+    <article class="card"><div class="icon">🎯</div><h3>Learning Competency</h3><p>Convert units of measure within the International System of Units (SI) and across different systems of measure.</p></article>
+    <article class="card"><div class="icon">🧠</div><h3>Knowledge & Understanding</h3><p>Recognize common units, conversion relationships, and the meaning of a measurement with its unit.</p></article>
+    <article class="card"><div class="icon">🏆</div><h3>Performance Goal</h3><p>Select appropriate units, convert accurately, solve real-life measurement situations, and check if answers are reasonable.</p></article>
+  </div>
+</section>
+
+<section class="ilaw section-dark" id="ilaw">
+<div class="container">
+  <div class="heading light"><span class="eyebrow">YOUR LEARNING JOURNEY</span><h2>ILAW Mission Map</h2><p>Move from curiosity to understanding, application, and mastery.</p></div>
+  <div class="ilaw-map">
+    <a href="#introduce" class="ilaw-card"><span>I</span><div><b>INTRODUCE</b><small>Connect & wonder</small></div></a>
+    <a href="#learn" class="ilaw-card"><span>L</span><div><b>LEARN</b><small>Build the concept</small></div></a>
+    <a href="#practice" class="ilaw-card"><span>A</span><div><b>APPLY</b><small>Practice & solve</small></div></a>
+    <a href="#wrapup" class="ilaw-card"><span>W</span><div><b>WRAP-UP</b><small>Reflect & master</small></div></a>
+  </div>
+</div>
+</section>
+
+<section class="section container" id="introduce">
+  <div class="heading">
+    <span class="stage">I • INTRODUCE</span>
+    <h2>🕵️ The Missing Unit Mystery</h2>
+    <p>Suppose someone tells you, “The table is 2 long.” Is that enough information? What is missing?</p>
+  </div>
+  <div class="story">
+    <div class="story-emoji">🔎</div>
+    <div>
+      <h3>Agent Ed needs your help!</h3>
+      <p>The Measurement Lab received these labels: <b>5 meters of wire</b>, <b>2 kilograms of rice</b>, and <b>3 of liquid</b>. Which labels communicate a complete measurement?</p>
+      <button class="reveal" id="revealWhy">💡 Reveal the clue</button>
+      <p class="reveal-text" id="whyText"></p>
+    </div>
+  </div>
+  <div class="choice-grid">
+    <button class="choice" data-good="true">📏 5 meters of wire</button>
+    <button class="choice" data-good="true">⚖️ 2 kilograms of rice</button>
+    <button class="choice" data-good="false">❓ 3 of liquid</button>
+  </div>
+  <div class="feedback" id="introFeedback" role="status"></div>
+</section>
+
+<section class="section learn section-blue" id="learn">
+<div class="container">
+  <div class="heading light"><span class="stage">L • LEARN</span><h2>🧰 Build Your Conversion Toolkit</h2><p>Learn the relationships first. Then let the interactive machines do the checking.</p></div>
+
+  <div class="concept-box">
+    <h3>1. What is a unit?</h3>
+    <p>A <strong>unit</strong> is a standard amount used to describe a measurement. Examples include meter (m), centimeter (cm), kilogram (kg), liter (L), and second (s).</p>
+    <div class="formula"><span>Measurement = Number + Unit</span><b>Example: 4.5 km</b></div>
+  </div>
+
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-topic="length">📏 Length</button>
+    <button class="tab" data-topic="mass">⚖️ Mass</button>
+    <button class="tab" data-topic="capacity">🧪 Capacity</button>
+    <button class="tab" data-topic="temperature">🌡️ Temperature</button>
+  </div>
+  <div class="toolbox">
+    <div class="tool-head"><div><span class="mini-label">TOOLKIT</span><h3 id="topicTitle">Length: Metric Ladder</h3><p id="topicText"></p></div></div>
+    <div class="ladder" id="ladder"></div>
+    <div class="rule" id="topicRule"></div>
+  </div>
+
+  <div class="lesson-grid">
+    <article class="lesson-card"><h3>🔢 Metric Prefixes</h3><div class="prefixes">
+      <span><b>kilo</b><small>1,000</small></span><span><b>hecto</b><small>100</small></span><span><b>deka</b><small>10</small></span><span><b>base</b><small>1</small></span><span><b>deci</b><small>0.1</small></span><span><b>centi</b><small>0.01</small></span><span><b>milli</b><small>0.001</small></span>
+    </div></article>
+    <article class="lesson-card"><h3>🧭 The Direction Rule</h3><p>Going to a <strong>smaller unit</strong> means more units are needed, so the number gets larger. Going to a <strong>larger unit</strong> means fewer units are needed, so the number gets smaller.</p><div class="example">2 m → 200 cm <b>×100</b></div><div class="example">2,000 g → 2 kg <b>÷1,000</b></div></article>
+    <article class="lesson-card"><h3>🌎 Across Systems</h3><p>Some problems use customary units. Use the conversion factor provided and keep units visible in your solution.</p><div class="example">1 in = 2.54 cm <b>exact</b></div><div class="example">1 ft = 30.48 cm <b>exact</b></div></article>
+  </div>
+
+  <div class="converter">
+    <div><span class="mini-label">INTERACTIVE LAB</span><h3>🔄 Conversion Machine</h3><p>Type a value, choose the units, and click Convert.</p></div>
+    <div class="converter-row">
+      <input id="convertValue" type="number" value="5" step="any" min="0" aria-label="Value to convert">
+      <select id="fromUnit" aria-label="From unit"></select>
+      <span>→</span>
+      <select id="toUnit" aria-label="To unit"></select>
+      <button class="btn primary" id="convertBtn">Convert</button>
+    </div>
+    <div class="result" id="conversionResult">Your converted answer will appear here.</div>
+  </div>
+
+  <div class="worked">
+    <h3>👨‍🏫 Teacher's Worked Example</h3>
+    <p><strong>Convert 4.5 km to m.</strong></p>
+    <ol><li>Start with the given: 4.5 km.</li><li>Know the relationship: 1 km = 1,000 m.</li><li>Because km → m, multiply by 1,000.</li><li>4.5 × 1,000 = <strong>4,500 m</strong>.</li></ol>
+  </div>
+</div>
+</section>
+
+<section class="section container" id="practice">
+  <div class="heading"><span class="stage">A • APPLY</span><h2>🎮 Mission Practice</h2><p>Choose an answer. Read the feedback and fix your thinking if needed.</p></div>
+  <div class="practice-grid">
+    <article class="question card" data-answer="2">
+      <span class="qnum">MISSION 01</span><h3>Convert 4.5 km to meters.</h3>
+      <div class="options"><button data-index="0">450 m</button><button data-index="1">45 m</button><button data-index="2">4,500 m</button><button data-index="3">45,000 m</button></div><p class="qfeedback"></p>
+    </article>
+    <article class="question card" data-answer="1">
+      <span class="qnum">MISSION 02</span><h3>Convert 3,200 g to kilograms.</h3>
+      <div class="options"><button data-index="0">32 kg</button><button data-index="1">3.2 kg</button><button data-index="2">320 kg</button><button data-index="3">0.32 kg</button></div><p class="qfeedback"></p>
+    </article>
+    <article class="question card" data-answer="2">
+      <span class="qnum">MISSION 03</span><h3>12 inches is how many centimeters? (1 in = 2.54 cm)</h3>
+      <div class="options"><button data-index="0">24.38 cm</button><button data-index="1">12.54 cm</button><button data-index="2">30.48 cm</button><button data-index="3">36 cm</button></div><p class="qfeedback"></p>
+    </article>
+    <article class="question card" data-answer="2">
+      <span class="qnum">MISSION 04</span><h3>Convert 2.5 L to milliliters.</h3>
+      <div class="options"><button data-index="0">250 mL</button><button data-index="1">25 mL</button><button data-index="2">2,500 mL</button><button data-index="3">25,000 mL</button></div><p class="qfeedback"></p>
+    </article>
+    <article class="question card" data-answer="0">
+      <span class="qnum">MISSION 05</span><h3>Which is the same length as 3 m?</h3>
+      <div class="options"><button data-index="0">300 cm</button><button data-index="1">30 cm</button><button data-index="2">3,000 cm</button><button data-index="3">0.3 cm</button></div><p class="qfeedback"></p>
+    </article>
+    <article class="question card" data-answer="3">
+      <span class="qnum">MISSION 06</span><h3>20°C is equal to which temperature?</h3>
+      <div class="options"><button data-index="0">52°F</button><button data-index="1">60°F</button><button data-index="2">72°F</button><button data-index="3">68°F</button></div><p class="qfeedback"></p>
+    </article>
+  </div>
+
+  <div class="real-life card">
+    <div class="big-icon">🛒</div><div><span class="qnum">REAL-LIFE MISSION</span><h3>Sports Drink Station</h3>
+    <p>A school sports event has 18 bottles. Each bottle contains 750 mL. How many liters of drink are there altogether?</p>
+    <div class="answer-row"><input id="wordAnswer" type="number" step="any" placeholder="Answer in liters"><button class="btn primary" id="checkWord">Check Answer</button></div><p class="feedback" id="wordFeedback"></p></div>
+  </div>
+</section>
+
+<section class="challenge section-dark" id="challenge">
+<div class="container">
+  <div class="heading light"><span class="stage">⚡ BOSS CHALLENGE</span><h2>Beat the Unit Boss!</h2><p>Five questions. Thirty seconds. Can you reach 80%?</p></div>
+  <div class="boss">
+    <div class="timer" id="timer">30</div>
+    <div class="boss-q" id="bossQuestion">Click START when you are ready.</div>
+    <div class="boss-options" id="bossOptions"></div>
+    <button class="btn primary" id="startBoss">🚀 START CHALLENGE</button>
+    <p id="bossResult"></p>
+  </div>
+</div>
+</section>
+
+<section class="section container" id="wrapup">
+  <div class="heading"><span class="stage">W • WRAP-UP</span><h2>🧠 Think Like a Measurement Expert</h2><p>Select the statements you can now explain to someone else.</p></div>
+  <div class="reflection-grid">
+    <button class="reflection">🎯 I can identify an appropriate unit.</button>
+    <button class="reflection">🔄 I can convert within SI units.</button>
+    <button class="reflection">🌎 I can use a conversion factor across systems.</button>
+    <button class="reflection">✅ I can check whether my answer is reasonable.</button>
+  </div>
+  <div class="reflection-box" id="reflectionBox">Your reflection will appear here.</div>
+</section>
+
+<section class="mastery" id="mastery">
+  <div class="container mastery-card">
+    <div class="medal">🏆</div>
+    <div class="mastery-content"><span class="stage">MASTERy CHECK</span><h2>Are you a Measurement Master?</h2><p>Complete the activities and aim for at least <strong>80% mission progress</strong>.</p><div class="bar"><span id="masterBar"></span></div><b id="masterText">0% complete</b></div>
+    <button class="btn primary" id="masterBtn">Check Mastery</button>
+  </div>
+  <div class="container mastery-message" id="masterMessage"></div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-logo"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo"></span>
+      <div><b>Teacher Ed Learning Hub</b><small>Grade 7 Mathematics • Measurement & Geometry</small></div>
+    </div>
+    <div class="footer-nav"><a href="#home">Home</a><a href="#ilaw">ILAW</a><a href="#learn">Learn</a><a href="#mastery">Mastery</a></div>
+    <p>© <span id="year"></span> Teacher Ed Learning Hub • Interactive Learning Resource</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="quickModal" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" id="closeQuick">×</button>
+    <span class="stage">⚡ QUICK WARM-UP</span><h2>Which is greater?</h2>
+    <p>Compare <strong>2.5 m</strong> and <strong>250 cm</strong>.</p>
+    <div class="quick-options"><button data-correct="true">They are equal.</button><button data-correct="false">2.5 m is greater.</button><button data-correct="false">250 cm is greater.</button></div>
+    <p id="quickFeedback"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

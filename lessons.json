@@ -318,6 +318,76 @@
     "date": "2026-08-28",
     "featured": false,
     "icon": "user-round"
+  },
+  {
+    "title": "Shapes are Everywhere!",
+    "subject": "Mathematics",
+    "grade": "Grade 1",
+    "description": "Become a Shape Explorer! Learn to identify triangles, squares, and rectangles, compare their sides and corners, and compose shapes to make new designs.",
+    "file": "lessons/mathematics/grade-1/Grade1_Measurement_Geometry_ILAW_Interactive/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Measurement",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "Become a Unit Master by learning how measurements change from one unit to another — without changing the actual quantity.",
+    "file": "lessons/mathematics/grade-7/Grade7_Measurement_ILAW_Interactive/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Volume of Cylinder",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "This week, you will discover where the cylinder formula comes from, connect it to the area of a circle, and become confident solving real-life volume problems.",
+    "file": "lessons/mathematics/grade-7/Grade7_Cylinder_Volume_ILAW_OneWeek/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Volume of a Pyramid",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "Grade 7, this week you will discover how the volume of a square or rectangular pyramid comes from the volume of a rectangular prism — then use the formula to solve real problems.",
+    "file": "lessons/mathematics/grade-7/Grade7_Pyramids_Volume_ILAW_FIXED/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Set, Subset, Union, and Intersection",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "Think like a mathematician: sort, compare, connect, and explain how groups of objects are related.",
+    "file": "lessons/mathematics/grade-7/Grade7_Sets_VennDiagram_ILAW_OneWeek_FINAL_FIXED/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Subsets of Real Numbers",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "Discover how natural, whole, integer, rational, irrational, and real numbers are connected through subsets.",
+    "file": "lessons/mathematics/grade-7/Grade7_Real_Number_Subsets_ILAW_2Day/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Orgnized the Data and Represent and Interpret the Data",
+    "subject": "Mathematics",
+    "grade": "Grade 7",
+    "description": "Learn how to organize data, choose the right graph, and explain what the data tells you.",
+    "file": "lessons/mathematics/grade-7/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks_Expanded/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
   }
   
 ]

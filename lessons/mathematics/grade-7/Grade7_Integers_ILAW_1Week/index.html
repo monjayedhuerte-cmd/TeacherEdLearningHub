@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Grade 7 Integers</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav container">
+    <a class="brand" href="#home">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"></span>
+      <span><strong>Teacher Ed</strong><small>Grade 7 Mathematics • Integers</small></span>
+    </a>
+    <div class="nav-actions">
+      <button id="fullscreenBtn" class="icon-btn" title="Full Screen">⛶ <span>Full Screen</span></button>
+      <button id="menuBtn" class="menu-btn">☰</button>
+    </div>
+    <nav id="navLinks">
+      <a href="#overview">Overview</a><a href="#ilaw">ILAW</a><a href="#days">5-Day Lesson</a><a href="#mastery">Mastery</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <span class="badge">GRADE 7 • NUMBER AND ALGEBRA</span>
+   <h1>Mastering <span>Integers</span></h1>
+   <p class="lead">Learn how positive and negative numbers describe directions, opposites, changes, gains, losses, temperature, elevation, and many real-life situations.</p>
+   <div class="hero-buttons"><a class="primary" href="#days">Start the 5-Day Journey →</a><a class="secondary" href="#ilaw">See the ILAW Path</a></div>
+   <div class="stats"><div><b>5</b><span>Learning Days</span></div><div><b>4</b><span>Real-Life Models</span></div><div><b>15+</b><span>Practice Tasks</span></div></div>
+  </div>
+  <div class="number-visual">
+    <div class="orbit"></div><div class="zero">0</div><div class="num n1">+6</div><div class="num n2">−4</div><div class="num n3">+2</div><div class="num n4">−8</div>
+    <p>Positive ↔ Zero ↔ Negative</p>
+  </div>
+ </div>
+</section>
+
+<section id="overview" class="section">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">DEPED ALIGNMENT</span><h2>What You Will Learn</h2></div>
+  <div class="standards">
+   <article><h3>Content Standard</h3><p>The learner demonstrates understanding of sets of integers and their use in describing real-life situations involving opposites and directions.</p></article>
+   <article><h3>Performance Standard</h3><p>The learner is able to represent, describe, and communicate real-life situations using positive and negative numbers accurately.</p></article>
+   <article><h3>Learning Competency</h3><p><b>Describe the set of integers.</b><br><b>Use positive and negative numbers to describe directions or opposites in real-life situations.</b></p></article>
+  </div>
+ </div>
+</section>
+
+<section id="ilaw" class="section dark">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">ILAW TEACHING STRATEGY</span><h2>Learn the ILAW Way</h2><p>Every day moves from an engaging introduction to understanding, application, and a clear wrap-up.</p></div>
+  <div class="ilaw-grid">
+   <div><span>I</span><h3>Introduce</h3><p>Connect integers to experiences students already know.</p></div>
+   <div><span>L</span><h3>Learn</h3><p>Build the concept using number lines, models, examples, and guided explanations.</p></div>
+   <div><span>A</span><h3>Apply</h3><p>Use integers to solve situations and explain your reasoning.</p></div>
+   <div><span>W</span><h3>Wrap-Up</h3><p>Check understanding, correct misconceptions, and reflect.</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="days" class="section">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">ONE-WEEK LEARNING JOURNEY</span><h2>Five Days to Become an Integer Expert</h2><p>Choose a day. Read the explanation first, study the examples, then complete the interactive exercises.</p></div>
+  <div class="day-tabs">
+   <button class="day-tab active" data-day="1">Day 1<br><small>Meet Integers</small></button>
+   <button class="day-tab" data-day="2">Day 2<br><small>Number Line</small></button>
+   <button class="day-tab" data-day="3">Day 3<br><small>Opposites</small></button>
+   <button class="day-tab" data-day="4">Day 4<br><small>Real Life</small></button>
+   <button class="day-tab" data-day="5">Day 5<br><small>Mastery</small></button>
+  </div>
+  <div id="lessonArea"></div>
+ </div>
+</section>
+
+<section id="mastery" class="section dark">
+ <div class="container">
+  <div class="section-head"><span class="eyebrow">FINAL CHECK</span><h2>Integer Mastery Challenge</h2><p>Complete the 10-item challenge after finishing the five learning days.</p></div>
+  <div id="quiz"></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-grid">
+  <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed Logo"><div><b>Teacher Ed Learning Hub</b><span>Learn • Practice • Master</span></div></div>
+  <p>Grade 7 Mathematics • Number and Algebra • Integers</p>
+  <p>© 2026 Teacher Ed Learning Hub</p>
+ </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

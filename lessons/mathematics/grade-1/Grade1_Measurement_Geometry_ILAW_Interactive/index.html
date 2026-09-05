@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#4f8cff">
+<title>Math with Teacher Ed | Grade 1 Shapes</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="navbar container">
+    <a class="brand" href="#home" aria-label="Math with Teacher Ed Home">
+      <span class="brand-mark">
+        <img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo">
+      </span>
+      <span><strong>Math with Teacher Ed</strong><small>Grade 1 • Measurement & Geometry</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#ilaw">ILAW</a><a href="#learn">Learn</a><a href="#apply">Apply</a>
+      <a href="#build">Build</a><a href="#mastery">Mastery</a>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">⭐ GRADE 1 MATHEMATICS</span>
+      <h1>Shapes Are <span>Everywhere!</span></h1>
+      <p>Become a Shape Explorer! Learn to identify triangles, squares, and rectangles, compare their sides and corners, and compose shapes to make new designs.</p>
+      <div class="hero-actions">
+        <button class="btn primary" data-scroll="#motivation">🚀 Start Exploring</button>
+        <button class="btn secondary" data-scroll="#learn">📚 Learn Shapes</button>
+      </div>
+      <div class="hero-pills"><span>🔺 Triangle</span><span>🟦 Square</span><span>▭ Rectangle</span></div>
+    </div>
+    <div class="hero-art" aria-label="Decorative shapes">
+      <div class="shape-art circle-art">○</div>
+      <div class="shape-art square-art">□</div>
+      <div class="triangle-art"></div>
+      <div class="cloud cloud-a"></div><div class="cloud cloud-b"></div>
+      <div class="sparkle s1">✦</div><div class="sparkle s2">✦</div>
+    </div>
+  </div>
+</section>
+
+<section class="section ilaw-section" id="ilaw">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">OUR LEARNING JOURNEY</span><h2>🌟 ILAW Learning Flow</h2><p>We learn step by step: connect, discover, use, and reflect.</p></div>
+  <div class="ilaw-grid">
+    <article class="ilaw-card i"><div class="letter">I</div><h3>Introduce</h3><p>Connect shapes to familiar objects and activate what learners already know.</p></article>
+    <article class="ilaw-card l"><div class="letter">L</div><h3>Learn</h3><p>Discover shape names, sides, corners, size, and orientation.</p></article>
+    <article class="ilaw-card a"><div class="letter">A</div><h3>Apply</h3><p>Identify, compare, sort, rotate, compose, and decompose shapes.</p></article>
+    <article class="ilaw-card w"><div class="letter">W</div><h3>Wrap Up</h3><p>Check understanding, reflect, celebrate progress, and identify next steps.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="section motivation" id="motivation">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">I — INTRODUCE</span><h2>🔍 Shape Hunt!</h2><p>Look around you. Shapes are hiding in everyday objects.</p></div>
+  <div class="story-card">
+    <div class="teacher-avatar">🧑‍🏫</div>
+    <div>
+      <h3>Teacher Ed's Classroom Shape Hunt</h3>
+      <p>Teacher Ed looks around the classroom. The <b>window</b> looks like a rectangle. A <b>floor tile</b> can look like a square. A <b>party flag</b> can look like a triangle.</p>
+      <p class="challenge">👀 <b>Your turn!</b> Find one triangle, one square, and one rectangle near you.</p>
+      <button class="btn primary small" id="foundShapesBtn">✅ I Found Shapes!</button>
+      <div class="success-message" id="foundMessage" hidden>🎉 Wonderful! You are ready to become a Shape Explorer!</div>
+    </div>
+  </div>
+  <div class="real-life-grid">
+    <button class="object-card" data-object="Triangle"><span>🚩</span><b>Party Flag</b><small>Triangle</small></button>
+    <button class="object-card" data-object="Square"><span>🧊</span><b>Tile</b><small>Square</small></button>
+    <button class="object-card" data-object="Rectangle"><span>📖</span><b>Book</b><small>Rectangle</small></button>
+  </div>
+</div>
+</section>
+
+<section class="section targets">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">LEARNING TARGETS</span><h2>🎯 Today I Can...</h2></div>
+  <div class="target-grid">
+    <article><span>🔺</span><h3>Identify</h3><p>I can identify triangles, squares, and rectangles even when they are different sizes or turned around.</p></article>
+    <article><span>🔎</span><h3>Compare</h3><p>I can compare shapes by looking at their sides and corners.</p></article>
+    <article><span>🧩</span><h3>Compose & Decompose</h3><p>I can put shapes together and take them apart to make triangles, squares, and rectangles.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="section learn" id="learn">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">L — LEARN</span><h2>📚 Meet the Shapes</h2><p>Click each shape to hear what makes it special.</p></div>
+  <div class="shape-cards">
+    <button class="shape-card triangle-card" data-shape="triangle"><div class="visual"><div class="triangle"></div></div><h3>Triangle</h3><div class="features"><span>3 sides</span><span>3 corners</span></div></button>
+    <button class="shape-card square-card" data-shape="square"><div class="visual"><div class="square"></div></div><h3>Square</h3><div class="features"><span>4 sides</span><span>4 corners</span></div></button>
+    <button class="shape-card rectangle-card" data-shape="rectangle"><div class="visual"><div class="rectangle"></div></div><h3>Rectangle</h3><div class="features"><span>4 sides</span><span>4 corners</span></div></button>
+  </div>
+  <div class="shape-info" id="shapeInfo" aria-live="polite">
+    <div class="info-icon">💡</div><div><h3>Choose a shape!</h3><p>Click Triangle, Square, or Rectangle to explore its features.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="section orientation">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">LEARN • ORIENTATION</span><h2>🔄 Turn the Shape!</h2><p>A shape can turn. Its name does not change.</p></div>
+  <div class="orientation-card">
+    <div class="orientation-stage"><div class="rotating-square" id="rotatingSquare"></div></div>
+    <div class="orientation-controls">
+      <button class="btn secondary small" id="leftRotate">↩ Turn Left</button>
+      <button class="btn primary small" id="rightRotate">Turn Right ↪</button>
+      <button class="btn ghost small" id="resetRotate">↺ Reset</button>
+    </div>
+    <p class="orientation-answer" id="orientationAnswer">Is it still a square? 🤔</p>
+  </div>
+</div>
+</section>
+
+<section class="section compare">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">L — LEARN</span><h2>🔎 Compare the Shapes</h2><p>Count the sides and corners. What is the same? What is different?</p></div>
+  <div class="compare-table">
+    <div class="compare-head"><span>Shape</span><span>Sides</span><span>Corners</span><span>Key idea</span></div>
+    <div class="compare-row"><div><span class="mini-shape mini-triangle"></span>Triangle</div><b>3</b><b>3</b><span>3 straight sides</span></div>
+    <div class="compare-row"><div><span class="mini-shape mini-square"></span>Square</div><b>4</b><b>4</b><span>4 equal sides</span></div>
+    <div class="compare-row"><div><span class="mini-shape mini-rectangle"></span>Rectangle</div><b>4</b><b>4</b><span>4 sides; opposite sides equal</span></div>
+  </div>
+  <div class="compare-question">
+    <h3>🤔 Think!</h3><p>Which two shapes both have 4 sides and 4 corners?</p>
+    <div class="choice-row" id="compareChoices">
+      <button data-answer="wrong">Triangle & Square</button><button data-answer="correct">Square & Rectangle</button><button data-answer="wrong">Triangle & Rectangle</button>
+    </div>
+    <div class="feedback" id="compareFeedback"></div>
+  </div>
+</div>
+</section>
+
+<section class="section apply" id="apply">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">A — APPLY</span><h2>🎮 Shape Detective</h2><p>Choose the best answer. You can try again!</p></div>
+  <div class="quiz-card">
+    <div class="quiz-top"><span id="quizNumber">QUESTION 1 OF 8</span><span id="quizScore">⭐ 0</span></div>
+    <div class="quiz-progress"><span id="quizProgress"></span></div>
+    <div class="quiz-visual" id="quizVisual"></div>
+    <h3 class="quiz-question" id="quizQuestion"></h3>
+    <div class="quiz-answers" id="quizAnswers"></div>
+    <div class="feedback" id="quizFeedback"></div>
+    <button class="btn primary next-btn" id="nextQuestion" hidden>Next Question →</button>
+  </div>
+</div>
+</section>
+
+<section class="section sort-section">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">A — APPLY</span><h2>🧺 Shape Sorter</h2><p>Click a shape, then choose the correct basket.</p></div>
+  <div class="sort-game">
+    <div class="sort-shape-area" id="sortShapeArea"></div>
+    <div class="baskets">
+      <button class="basket triangle-basket" data-basket="triangle">🔺 Triangle</button>
+      <button class="basket square-basket" data-basket="square">🟦 Square</button>
+      <button class="basket rectangle-basket" data-basket="rectangle">▭ Rectangle</button>
+    </div>
+    <p class="sort-feedback" id="sortFeedback">Ready? Identify the shape!</p>
+    <div class="sort-score">Correct: <b id="sortScore">0</b> / <b id="sortTotal">0</b></div>
+  </div>
+</div>
+</section>
+
+<section class="section build" id="build">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">A — APPLY</span><h2>🧩 Shape Builder</h2><p>Compose and decompose shapes by adding pieces to the work area.</p></div>
+  <div class="builder-card">
+    <div class="builder-instructions"><span>1</span><p>Choose a piece.</p><span>2</span><p>Add more pieces.</p><span>3</span><p>Make a picture or shape.</p></div>
+    <div class="builder-area" id="builderArea"><p>🧩 Your pieces will appear here.</p></div>
+    <div class="piece-palette">
+      <button class="piece-button" data-piece="triangle"><span class="palette-triangle"></span><b>Triangle</b></button>
+      <button class="piece-button" data-piece="square"><span class="palette-square"></span><b>Square</b></button>
+      <button class="piece-button" data-piece="rectangle"><span class="palette-rectangle"></span><b>Rectangle</b></button>
+    </div>
+    <div class="builder-tools"><button class="btn primary small" id="checkBuild">✨ Check My Build</button><button class="btn ghost small" id="clearBuild">🗑 Clear</button></div>
+    <div class="builder-message" id="builderMessage">What can you create?</div>
+  </div>
+</div>
+</section>
+
+<section class="section decompose">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">A — APPLY</span><h2>✂️ Decompose the Shape</h2><p>Some shapes can be broken into smaller shapes.</p></div>
+  <div class="decompose-card">
+    <div class="big-square"><span class="diagonal"></span><span class="line-label">square</span></div>
+    <div class="decompose-text">
+      <h3>One Square → Two Triangles</h3>
+      <p>A square can be divided from one corner to the opposite corner. What shapes do you see?</p>
+      <div class="decompose-buttons"><button data-decomp="triangle">🔺 Two triangles</button><button data-decomp="square">🟦 Two squares</button><button data-decomp="rectangle">▭ Two rectangles</button></div>
+      <div class="feedback" id="decomposeFeedback"></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="section wrap-up" id="mastery">
+<div class="container">
+  <div class="section-heading"><span class="eyebrow">W — WRAP UP</span><h2>🏆 Shape Mastery</h2><p>Let's celebrate what you learned!</p></div>
+  <div class="mastery-card">
+    <div class="score-circle"><strong id="finalScore">0%</strong><span>Quiz Mastery</span></div>
+    <div class="stars" id="stars">☆☆☆☆☆</div>
+    <h3 id="masteryTitle">Complete the Shape Detective</h3>
+    <p id="masteryMessage">Finish the quiz to see your mastery result.</p>
+    <div class="reflection">
+      <h3>💭 My Reflection</h3>
+      <p>I can identify shapes.</p><div class="rating-row" data-reflection="identify"><button>⭐</button><button>⭐⭐</button><button>⭐⭐⭐</button></div>
+      <p>I can compare shapes.</p><div class="rating-row" data-reflection="compare"><button>⭐</button><button>⭐⭐</button><button>⭐⭐⭐</button></div>
+      <p>I can compose shapes.</p><div class="rating-row" data-reflection="compose"><button>⭐</button><button>⭐⭐</button><button>⭐⭐⭐</button></div>
+    </div>
+    <button class="btn primary" id="restartQuiz">🔄 Try Quiz Again</button>
+  </div>
+</div>
+</section>
+</main>
+
+<div class="progress-widget">
+  <button id="progressToggle" aria-label="Show progress">⭐</button>
+  <div class="progress-panel" id="progressPanel">
+    <b>Learning Progress</b><div class="progress-bar"><span id="overallProgress"></span></div>
+    <small id="overallText">0% completed</small>
+    <div class="progress-items"><span id="pLearn">○ Learn</span><span id="pApply">○ Apply</span><span id="pMaster">○ Mastery</span></div>
+  </div>
+</div>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-box"><button class="modal-close" id="modalClose">×</button><div id="modalContent"></div></div>
+</div>
+
+<footer>
+  
+  <div class="container footer-inner"><div><h2>Math with Teacher Ed</h2><p>Grade 1 Mathematics • Measurement and Geometry</p></div><div><p>Learn • Explore • Apply • Master</p><small>Interactive learning resource</small></div></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

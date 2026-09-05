@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2345">
+<meta name="description" content="Teacher Ed Learning Hub - Grade 7 Mathematics: Volume of a Cylinder, one-week ILAW interactive lesson.">
+<title>Teacher Ed | Grade 7 Math • Volume of a Cylinder</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="apple-touch-icon" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="progress-line"><span id="scrollProgress"></span></div>
+
+<header class="site-header">
+  <nav class="nav container">
+    <a href="#home" class="brand" aria-label="Teacher Ed Learning Hub home">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <span><strong>Teacher Ed</strong><small>Learning Hub • Grade 7 Mathematics</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#week">1-Week Plan</a>
+      <a href="#ilaw">ILAW</a>
+      <a href="#learn">Learn</a>
+      <a href="#practice">Practice</a>
+      <a href="#mastery">Mastery</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-bg orb-a"></div><div class="hero-bg orb-b"></div>
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">📘 SECOND TERM • WEEK 3 • MEASUREMENT & GEOMETRY</span>
+      <h1>Unlock the <span>Volume</span> of a Cylinder!</h1>
+      <p class="hero-text">Welcome, Grade 7! This week, you will discover where the cylinder formula comes from, connect it to the area of a circle, and become confident solving real-life volume problems.</p>
+      <div class="hero-buttons">
+        <a class="btn primary" href="#ilaw">🚀 Begin Mission</a>
+        <button class="btn glass" id="quickStart">⚡ Quick Challenge</button>
+      </div>
+      <div class="hero-stats">
+        <div><b id="starCount">0</b><small>Stars</small></div>
+        <div><b id="progressText">0%</b><small>Mission Progress</small></div>
+        <div><b>5</b><small>Learning Days</small></div>
+      </div>
+    </div>
+    <div class="cylinder-stage">
+      <div class="cylinder-3d">
+        <div class="cyl-top"></div>
+        <div class="cyl-body"><span>r</span><i>h</i></div>
+        <div class="cyl-bottom"></div>
+      </div>
+      <div class="formula-card">
+        <span>VOLUME</span>
+        <strong>V = πr²h</strong>
+        <small>base area × height</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="week">
+<div class="container">
+  <div class="section-title"><span class="eyebrow">ONE-WEEK LEARNING MAP</span><h2>Your 5-Day Volume Quest</h2><p>Each day builds the idea until you can explain, calculate, and apply the formula.</p></div>
+  <div class="days">
+    <article class="day active"><span>DAY 1</span><h3>🔎 Discover</h3><p>What is volume? Explore the cylinder and its circular bases.</p></article>
+    <article class="day"><span>DAY 2</span><h3>🧠 Derive</h3><p>Connect the area of a circle to the volume formula.</p></article>
+    <article class="day"><span>DAY 3</span><h3>🧮 Calculate</h3><p>Find volume when radius and height are known.</p></article>
+    <article class="day"><span>DAY 4</span><h3>🌎 Apply</h3><p>Solve word problems and interpret cubic units.</p></article>
+    <article class="day"><span>DAY 5</span><h3>🏆 Master</h3><p>Complete the challenge, explain your reasoning, and reflect.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="dark-section" id="ilaw">
+<div class="container">
+  <div class="section-title light"><span class="eyebrow">DEPED ILAW TEACHING STRATEGY</span><h2>Follow the ILAW Path</h2><p>Introduce → Learn → Apply → Wrap-Up</p></div>
+  <div class="ilaw-grid">
+    <a href="#introduce"><b>I</b><span>INTRODUCE</span><small>Activate prior knowledge & curiosity</small></a>
+    <a href="#learn"><b>L</b><span>LEARN</span><small>Discover and explain the concept</small></a>
+    <a href="#practice"><b>A</b><span>APPLY</span><small>Practice, solve, and reason</small></a>
+    <a href="#wrapup"><b>W</b><span>WRAP-UP</span><small>Check, reflect, and master</small></a>
+  </div>
+</div>
+</section>
+
+<section class="section" id="introduce">
+<div class="container">
+  <div class="section-title"><span class="stage">I • INTRODUCE</span><h2>🥫 The Can Mystery</h2><p>Before we memorize anything, let's investigate.</p></div>
+  <div class="story-card">
+    <div class="story-icon">🥫</div>
+    <div>
+      <h3>Which can holds more?</h3>
+      <p>Two cans have the same height. Can A has a radius of 3 cm. Can B has a radius of 6 cm. Which can has the greater volume?</p>
+      <div class="story-actions">
+        <button class="choice-btn" data-intro="a">Can A</button>
+        <button class="choice-btn" data-intro="b">Can B</button>
+        <button class="choice-btn" data-intro="same">They hold the same.</button>
+      </div>
+      <p class="feedback" id="introFeedback"></p>
+    </div>
+  </div>
+  <div class="thinking-box">
+    <span>💭 THINK</span>
+    <p>What happens to the circular base when the radius becomes twice as large? We will discover why this matters for volume.</p>
+  </div>
+</div>
+</section>
+
+<section class="learn-section" id="learn">
+<div class="container">
+  <div class="section-title light"><span class="stage">L • LEARN</span><h2>🧠 Discover Where V = πr²h Comes From</h2><p>Don't just memorize the formula — understand the idea behind it.</p></div>
+
+  <div class="concept-flow">
+    <div class="concept"><span>1</span><div class="mini-cylinder"></div><h3>Start with the cylinder</h3><p>A cylinder has two congruent circular bases and a height <strong>h</strong>.</p></div>
+    <div class="arrow">→</div>
+    <div class="concept"><span>2</span><div class="circle-demo"><i>r</i></div><h3>Find the base area</h3><p>The area of one circular base is <strong>A = πr²</strong>.</p></div>
+    <div class="arrow">→</div>
+    <div class="concept"><span>3</span><div class="stack-demo">▰<br>▰<br>▰</div><h3>Multiply by height</h3><p>Think of the cylinder as layers of the same circular area stacked through height <strong>h</strong>.</p></div>
+  </div>
+
+  <div class="derivation">
+    <div class="derive-left"><span class="eyebrow">INDUCTIVE DISCOVERY</span><h3>From what we know to what we can conclude</h3>
+      <div class="derive-row"><span>Area of circle</span><b>πr²</b></div>
+      <div class="derive-row"><span>Height of cylinder</span><b>h</b></div>
+      <div class="derive-row highlight"><span>Volume</span><b>πr² × h = πr²h</b></div>
+    </div>
+    <div class="derive-right">
+      <div class="big-formula">V = πr²h</div>
+      <p><strong>Meaning:</strong> volume is the area of the circular base multiplied by the perpendicular height.</p>
+      <div class="units-note">📦 Volume is measured in <strong>cubic units</strong>: cm³, m³, in³, and so on.</div>
+    </div>
+  </div>
+
+  <div class="interactive-lab">
+    <div class="lab-head"><span class="eyebrow">INTERACTIVE LAB</span><h3>🎛️ Change r and h</h3><p>Move the sliders and watch the volume change.</p></div>
+    <div class="lab-grid">
+      <div class="sliders">
+        <label>Radius: <strong id="rVal">3</strong> cm <input id="rSlider" type="range" min="1" max="10" value="3"></label>
+        <label>Height: <strong id="hVal">8</strong> cm <input id="hSlider" type="range" min="1" max="20" value="8"></label>
+        <div class="calc-line">V = π × <span id="rSq">9</span> × <span id="hNum">8</span></div>
+        <div class="live-result"><span>Volume</span><strong id="liveVolume">226.19 cm³</strong></div>
+      </div>
+      <div class="visual-lab"><div class="lab-cylinder"><div class="lab-top"></div><div class="lab-side"><span id="labRadius">r = 3</span><i id="labHeight">h = 8</i></div><div class="lab-base"></div></div></div>
+    </div>
+  </div>
+
+  <div class="formula-guide">
+    <h3>🧭 The 4-Step Formula Routine</h3>
+    <div class="routine"><span><b>1</b> Identify r and h</span><span><b>2</b> Substitute</span><span><b>3</b> Calculate</span><span><b>4</b> Add cubic units</span></div>
+    <div class="example-box"><strong>Example:</strong> r = 4 cm, h = 10 cm<br>V = π(4²)(10) = 160π ≈ <strong>502.65 cm³</strong>.</div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="practice">
+<div class="container">
+  <div class="section-title"><span class="stage">A • APPLY</span><h2>🎮 Volume Training Arena</h2><p>Show what you know. Each correct mission earns a star.</p></div>
+  <div class="quiz-grid">
+    <article class="quiz-card" data-answer="2">
+      <span class="mission">MISSION 1</span><h3>Find the volume of a cylinder with r = 3 cm and h = 5 cm. Use π ≈ 3.14.</h3>
+      <div class="answers"><button data-i="0">47.1 cm³</button><button data-i="1">94.2 cm³</button><button data-i="2">141.3 cm³</button><button data-i="3">282.6 cm³</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz-card" data-answer="1">
+      <span class="mission">MISSION 2</span><h3>Which expression represents the volume when r = 7 m and h = 4 m?</h3>
+      <div class="answers"><button data-i="0">π(7)(4)</button><button data-i="1">π(7²)(4)</button><button data-i="2">π(7 + 4)²</button><button data-i="3">2π(7²)(4)</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz-card" data-answer="3">
+      <span class="mission">MISSION 3</span><h3>If the radius is doubled while height stays the same, what happens to the volume?</h3>
+      <div class="answers"><button data-i="0">It doubles.</button><button data-i="1">It triples.</button><button data-i="2">It becomes four times smaller.</button><button data-i="3">It becomes four times as large.</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz-card" data-answer="0">
+      <span class="mission">MISSION 4</span><h3>A cylinder has diameter 10 cm and height 6 cm. What radius should you use?</h3>
+      <div class="answers"><button data-i="0">5 cm</button><button data-i="1">10 cm</button><button data-i="2">3 cm</button><button data-i="3">16 cm</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz-card" data-answer="2">
+      <span class="mission">MISSION 5</span><h3>What unit is appropriate for the volume of a rectangular classroom-sized object?</h3>
+      <div class="answers"><button data-i="0">m</button><button data-i="1">m²</button><button data-i="2">m³</button><button data-i="3">kg</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz-card" data-answer="1">
+      <span class="mission">MISSION 6</span><h3>Using π ≈ 3.14, find V when r = 2 cm and h = 10 cm.</h3>
+      <div class="answers"><button data-i="0">31.4 cm³</button><button data-i="1">125.6 cm³</button><button data-i="2">62.8 cm³</button><button data-i="3">251.2 cm³</button></div><p class="quiz-feedback"></p>
+    </article>
+  </div>
+
+  <div class="word-problem">
+    <div class="word-icon">🥤</div>
+    <div><span class="mission">REAL-LIFE MISSION</span><h3>The Giant Drink Container</h3>
+      <p>A cylindrical container has a radius of <strong>5 cm</strong> and a height of <strong>20 cm</strong>. Using π ≈ 3.14, what is its volume?</p>
+      <div class="answer-row"><input id="wordAnswer" type="number" step="0.01" placeholder="Enter cm³"><button class="btn primary" id="checkWord">Check Answer</button></div>
+      <p class="feedback" id="wordFeedback"></p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section class="challenge-section">
+<div class="container">
+  <div class="section-title light"><span class="stage">⚡ APPLY • BOSS ROUND</span><h2>Beat the Cylinder Boss!</h2><p>Five questions. One timer. Think before you click.</p></div>
+  <div class="boss-card">
+    <div class="boss-top"><div class="boss-icon">🛢️</div><div><span>CYLINDER BOSS</span><p id="bossStatus">Ready?</p></div><div class="timer" id="timer">40</div></div>
+    <div class="boss-question" id="bossQuestion">Press START to enter the boss round.</div>
+    <div class="boss-options" id="bossOptions"></div>
+    <button class="btn primary" id="startBoss">🚀 START BOSS ROUND</button>
+    <p class="boss-result" id="bossResult"></p>
+  </div>
+</div>
+</section>
+
+<section class="section" id="wrapup">
+<div class="container">
+  <div class="section-title"><span class="stage">W • WRAP-UP</span><h2>🧠 Explain It Like a Teacher</h2><p>Choose the ideas you can now explain clearly.</p></div>
+  <div class="reflection-grid">
+    <button class="reflection">I can explain why the base area is πr².</button>
+    <button class="reflection">I can explain why volume uses base area × height.</button>
+    <button class="reflection">I can calculate V = πr²h correctly.</button>
+    <button class="reflection">I can use cubic units and solve word problems.</button>
+  </div>
+  <div class="reflection-panel" id="reflectionPanel">Select a statement to record your learning reflection.</div>
+
+  <div class="exit-ticket">
+    <div><span class="eyebrow">EXIT TICKET</span><h3>What is the most important idea?</h3><p>Choose the best explanation.</p></div>
+    <div class="exit-options">
+      <button data-correct="false">A cylinder's volume is only πr².</button>
+      <button data-correct="true">A cylinder's volume is the area of its circular base multiplied by its height.</button>
+      <button data-correct="false">A cylinder's volume is 2πr²h.</button>
+    </div>
+    <p class="feedback" id="exitFeedback"></p>
+  </div>
+</div>
+</section>
+
+<section class="mastery-section" id="mastery">
+<div class="container mastery-card">
+  <div class="trophy">🏆</div>
+  <div class="mastery-content"><span class="stage">WEEK 3 MASTERy CHECK</span><h2>Are you a Cylinder Master?</h2><p>Aim for <strong>80% or higher</strong> mission progress.</p><div class="master-bar"><span id="masterBar"></span></div><strong id="masterPercent">0% complete</strong></div>
+  <button class="btn primary" id="masterBtn">Check My Mastery</button>
+</div>
+<p class="master-message" id="masterMessage"></p>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <div><strong>Teacher Ed Learning Hub</strong><small>Grade 7 Mathematics • Volume of a Cylinder</small></div>
+    </div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#week">Week Plan</a><a href="#learn">Learn</a><a href="#practice">Practice</a><a href="#mastery">Mastery</a></div>
+    <p>© <span id="year"></span> Teacher Ed Learning Hub • Interactive Learning Resource</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="quickModal">
+  <div class="modal-card">
+    <button class="close" id="closeQuick">×</button>
+    <span class="stage">⚡ QUICK CHALLENGE</span><h2>Radius vs. Diameter</h2>
+    <p>A cylinder has a diameter of <strong>12 cm</strong>. What is its radius?</p>
+    <div class="quick-options"><button data-ok="false">24 cm</button><button data-ok="true">6 cm</button><button data-ok="false">12 cm</button></div>
+    <p class="feedback" id="quickFeedback"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

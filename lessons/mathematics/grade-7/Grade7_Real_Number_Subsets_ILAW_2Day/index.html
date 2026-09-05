@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Real Number Subsets</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="navbar">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub Home">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <span class="brand-copy">
+        <strong>Teacher Ed</strong>
+        <small>Learning Hub • Grade 7 Mathematics</small>
+      </span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#ilaw">ILAW</a>
+      <a href="#day1">Day 1</a>
+      <a href="#day2">Day 2</a>
+      <a href="#practice">Practice</a>
+      <button class="fullscreen-btn" id="fullscreenBtn" type="button">⛶ <span>Full Screen</span></button>
+    </div>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-orb orb1"></div><div class="hero-orb orb2"></div>
+  <div class="hero-content">
+    <div class="eyebrow">GRADE 7 • NUMBER AND ALGEBRA • 2-DAY LESSON</div>
+    <h1>Meet the <span>Real Number Family!</span></h1>
+    <p class="hero-text">Discover how natural, whole, integer, rational, irrational, and real numbers are connected through subsets.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#ilaw">Start the Mission 🚀</a>
+      <button class="btn secondary" id="quickChallenge" type="button">Quick Challenge 🎯</button>
+    </div>
+    <div class="hero-stats">
+      <div><b>2</b><span>Days</span></div>
+      <div><b>6</b><span>Number Sets</span></div>
+      <div><b>⭐</b><span>Earn Stars</span></div>
+    </div>
+  </div>
+  <div class="number-universe" aria-label="Number family illustration">
+    <div class="orbit orbit-a"><span>ℕ</span></div>
+    <div class="orbit orbit-b"><span>𝕎</span></div>
+    <div class="orbit orbit-c"><span>ℤ</span></div>
+    <div class="orbit orbit-d"><span>ℚ</span></div>
+    <div class="real-core"><span>ℝ</span><small>REAL<br>NUMBERS</small></div>
+    <div class="float-number n1">√2</div><div class="float-number n2">−7</div>
+    <div class="float-number n3">0.75</div><div class="float-number n4">π</div>
+  </div>
+</section>
+
+<section class="standards section">
+  <div class="section-heading">
+    <span class="kicker">DEPED ALIGNMENT</span>
+    <h2>What are we learning?</h2>
+  </div>
+  <div class="standards-grid">
+    <article class="standard-card">
+      <span class="card-icon">📘</span>
+      <h3>Content Standard</h3>
+      <p>The learner demonstrates understanding of sets of numbers and the relationships among the different subsets of real numbers.</p>
+    </article>
+    <article class="standard-card">
+      <span class="card-icon">🎯</span>
+      <h3>Learning Competency</h3>
+      <p><strong>Illustrate the different subsets of real numbers.</strong></p>
+    </article>
+    <article class="standard-card">
+      <span class="card-icon">🏆</span>
+      <h3>Success Target</h3>
+      <p>By the end of two days, you can identify, classify, and illustrate the hierarchy of real-number subsets.</p>
+    </article>
+  </div>
+</section>
+
+<section id="ilaw" class="section ilaw-section">
+  <div class="section-heading center">
+    <span class="kicker">THE LEARNING PATH</span>
+    <h2>Learn with <span>ILAW</span></h2>
+    <p>Each stage gives you a job to do. Click a stage to jump to it.</p>
+  </div>
+  <div class="ilaw-grid">
+    <button class="ilaw-card i" data-target="#introduce" type="button"><b>I</b><strong>Introduce</strong><span>Wake up your mathematical thinking.</span></button>
+    <button class="ilaw-card l" data-target="#learn" type="button"><b>L</b><strong>Learn</strong><span>Build the concepts and relationships.</span></button>
+    <button class="ilaw-card a" data-target="#apply" type="button"><b>A</b><strong>Apply</strong><span>Use the ideas in challenges.</span></button>
+    <button class="ilaw-card w" data-target="#wrapup" type="button"><b>W</b><strong>Wrap-Up</strong><span>Check, explain, and reflect.</span></button>
+  </div>
+</section>
+
+<section id="introduce" class="section stage stage-introduce">
+  <div class="stage-label"><span>I</span> INTRODUCE</div>
+  <div class="two-col">
+    <div>
+      <h2>🕵️ The Number Detective Mission</h2>
+      <p>Numbers can belong to more than one group. Your mission is to discover <em>which number family</em> each number belongs to.</p>
+      <div class="mission-box">
+        <div class="mystery-number" id="mysteryNumber">−8</div>
+        <p id="mysteryHint">Is this number natural, whole, integer, rational, irrational, or real?</p>
+        <div class="choice-row" id="mysteryChoices">
+          <button data-answer="integer" type="button">Integer</button>
+          <button data-answer="rational" type="button">Rational</button>
+          <button data-answer="irrational" type="button">Irrational</button>
+          <button data-answer="real" type="button">Real</button>
+        </div>
+        <div class="feedback" id="mysteryFeedback" aria-live="polite"></div>
+        <button class="btn primary small" id="nextMystery" type="button">Next Number →</button>
+      </div>
+    </div>
+    <div class="concept-art">
+      <div class="family-card"><span>ℕ</span><small>Natural</small></div>
+      <div class="family-card"><span>𝕎</span><small>Whole</small></div>
+      <div class="family-card"><span>ℤ</span><small>Integers</small></div>
+      <div class="family-card"><span>ℚ</span><small>Rational</small></div>
+      <div class="family-card"><span>𝕀</span><small>Irrational</small></div>
+      <div class="family-card"><span>ℝ</span><small>Real</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="learn" class="section">
+  <div class="stage-label"><span>L</span> LEARN</div>
+  <div class="section-heading">
+    <h2>The Real Number Family Tree 🌳</h2>
+    <p>Think of real numbers as a big family. Smaller number sets live inside larger sets.</p>
+  </div>
+  <div class="family-tree">
+    <div class="set-box real"><div class="set-title">REAL NUMBERS ℝ</div><p>All numbers that can be located on the number line.</p>
+      <div class="set-box rational"><div class="set-title">RATIONAL NUMBERS ℚ</div><p>Numbers that can be written as <strong>a/b</strong>, where a and b are integers and b ≠ 0.</p>
+        <div class="set-box integers"><div class="set-title">INTEGERS ℤ</div><p>Negative numbers, zero, and positive counting numbers.</p>
+          <div class="set-box whole"><div class="set-title">WHOLE NUMBERS 𝕎</div><p>0 and the positive counting numbers.</p>
+            <div class="set-box natural"><div class="set-title">NATURAL NUMBERS ℕ</div><p>1, 2, 3, 4, …</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="irrational-pill"><strong>IRRATIONAL NUMBERS 𝕀</strong><span>Cannot be written as a ratio of two integers. Examples: √2, π.</span></div>
+    </div>
+  </div>
+
+  <div class="number-cards">
+    <button class="number-card" data-number="7" data-types="natural,whole,integer,rational,real" type="button"><strong>7</strong><span>Click to classify</span></button>
+    <button class="number-card" data-number="0" data-types="whole,integer,rational,real" type="button"><strong>0</strong><span>Click to classify</span></button>
+    <button class="number-card" data-number="-4" data-types="integer,rational,real" type="button"><strong>−4</strong><span>Click to classify</span></button>
+    <button class="number-card" data-number="3/5" data-types="rational,real" type="button"><strong>3/5</strong><span>Click to classify</span></button>
+    <button class="number-card" data-number="√2" data-types="irrational,real" type="button"><strong>√2</strong><span>Click to classify</span></button>
+    <button class="number-card" data-number="π" data-types="irrational,real" type="button"><strong>π</strong><span>Click to classify</span></button>
+  </div>
+  <div class="classification-output" id="classificationOutput">Choose a number above to see its family memberships.</div>
+</section>
+
+<section id="day1" class="section day-section">
+  <div class="day-banner"><span>DAY 1</span><h2>From Natural Numbers to Rational Numbers</h2></div>
+  <div class="lesson-grid">
+    <article class="lesson-card">
+      <div class="lesson-icon">1️⃣</div><h3>Natural Numbers</h3>
+      <p>Counting numbers: <strong>1, 2, 3, 4, …</strong></p>
+      <div class="example">Example: 12 ∈ ℕ</div>
+    </article>
+    <article class="lesson-card">
+      <div class="lesson-icon">2️⃣</div><h3>Whole Numbers</h3>
+      <p>Natural numbers together with <strong>0</strong>.</p>
+      <div class="example">Example: 0 ∈ 𝕎</div>
+    </article>
+    <article class="lesson-card">
+      <div class="lesson-icon">3️⃣</div><h3>Integers</h3>
+      <p>Negative whole numbers, zero, and positive whole numbers.</p>
+      <div class="example">Example: −9 ∈ ℤ</div>
+    </article>
+    <article class="lesson-card">
+      <div class="lesson-icon">4️⃣</div><h3>Rational Numbers</h3>
+      <p>Can be written as a fraction <strong>a/b</strong>, b ≠ 0.</p>
+      <div class="example">Examples: 1/2, −4, 0.75</div>
+    </article>
+  </div>
+  <div class="mini-activity">
+    <h3>⚡ Day 1 Sort-It Challenge</h3>
+    <p>Click the smallest set named in which each number belongs.</p>
+    <div class="sort-question"><span id="sortNum">−3</span><div id="sortButtons">
+      <button data-set="natural" type="button">Natural</button><button data-set="whole" type="button">Whole</button>
+      <button data-set="integer" type="button">Integer</button><button data-set="rational" type="button">Rational</button>
+    </div></div>
+    <p class="feedback" id="sortFeedback"></p>
+  </div>
+</section>
+
+<section id="day2" class="section day-section alt">
+  <div class="day-banner"><span>DAY 2</span><h2>Rational, Irrational, and Real Numbers</h2></div>
+  <div class="two-col">
+    <div class="lesson-copy">
+      <h3>🔢 Rational vs. Irrational</h3>
+      <p><strong>Rational numbers</strong> can be expressed as a quotient of two integers. Their decimal forms either terminate or repeat.</p>
+      <ul class="check-list">
+        <li>1/4 = 0.25 → terminates → rational</li>
+        <li>2/3 = 0.666… → repeats → rational</li>
+        <li>√2 = 1.414213… → non-terminating and non-repeating → irrational</li>
+        <li>π = 3.14159… → non-terminating and non-repeating → irrational</li>
+      </ul>
+    </div>
+    <div class="irrational-lab">
+      <h3>🧪 Irrational Number Lab</h3>
+      <p>Tap a number and predict its type.</p>
+      <div class="lab-buttons">
+        <button data-lab="0.333..." type="button">0.333…</button>
+        <button data-lab="√5" type="button">√5</button>
+        <button data-lab="2.5" type="button">2.5</button>
+        <button data-lab="π" type="button">π</button>
+      </div>
+      <div id="labResult" class="lab-result">Your result will appear here.</div>
+    </div>
+  </div>
+</section>
+
+<section id="apply" class="section">
+  <div class="stage-label"><span>A</span> APPLY</div>
+  <div class="section-heading"><h2>Show What You Can Do 💪</h2><p>Use the family relationships to solve each challenge.</p></div>
+  <div class="quiz-card" id="quizCard">
+    <div class="quiz-top"><span id="quizProgress">Question 1 of 8</span><span id="quizScore">⭐ 0</span></div>
+    <h3 id="quizQuestion">Loading question...</h3>
+    <div id="quizOptions" class="quiz-options"></div>
+    <div id="quizFeedback" class="feedback" aria-live="polite"></div>
+    <button class="btn primary small" id="nextQuiz" type="button" disabled>Next →</button>
+  </div>
+
+  <div id="practice" class="practice-lab">
+    <h3>🧩 Build the Number Family</h3>
+    <p>Click the set labels that contain the number. Start with the smallest set and move outward.</p>
+    <div class="builder-number" id="builderNumber">−6</div>
+    <div class="set-choice-grid" id="setChoiceGrid">
+      <button data-set="natural" type="button">ℕ Natural</button>
+      <button data-set="whole" type="button">𝕎 Whole</button>
+      <button data-set="integer" type="button">ℤ Integer</button>
+      <button data-set="rational" type="button">ℚ Rational</button>
+      <button data-set="irrational" type="button">𝕀 Irrational</button>
+      <button data-set="real" type="button">ℝ Real</button>
+    </div>
+    <button class="btn secondary small" id="checkBuilder" type="button">Check My Family</button>
+    <button class="btn ghost small" id="newBuilder" type="button">New Number</button>
+    <div class="feedback" id="builderFeedback"></div>
+  </div>
+</section>
+
+<section id="wrapup" class="section wrapup">
+  <div class="stage-label"><span>W</span> WRAP-UP</div>
+  <div class="section-heading center"><h2>🏆 Mastery Check</h2><p>Finish strong! Get at least 5 out of 6.</p></div>
+  <div class="mastery-card">
+    <div class="mastery-progress"><div id="masteryBar"></div></div>
+    <div id="masteryQuestion"></div>
+    <div id="masteryOptions" class="quiz-options"></div>
+    <div class="feedback" id="masteryFeedback"></div>
+    <button class="btn primary small" id="nextMastery" type="button" disabled>Next →</button>
+    <div id="masteryResult" class="result-panel hidden"></div>
+  </div>
+  <div class="reflection">
+    <h3>💭 Exit Reflection</h3>
+    <p>Complete this sentence:</p>
+    <p class="reflection-prompt">“I can illustrate the subsets of real numbers because…”</p>
+    <textarea id="reflectionText" maxlength="250" placeholder="Type your reflection here..."></textarea>
+    <button class="btn primary small" id="saveReflection" type="button">Save Reflection ⭐</button>
+    <div id="reflectionSaved" class="saved-message"></div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+      <div><strong>Teacher Ed Learning Hub</strong><span>Learn • Practice • Master</span></div>
+    </div>
+    <div class="footer-info">
+      <span>Grade 7 Mathematics</span><span>Number and Algebra</span><span>2-Day ILAW Lesson</span>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Teacher Ed Learning Hub • Interactive Mathematics Learning</div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

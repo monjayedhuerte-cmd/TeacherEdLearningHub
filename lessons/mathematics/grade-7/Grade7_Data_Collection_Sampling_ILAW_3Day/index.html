@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Ed | Data Collection & Sampling</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="progress-line"><span id="progressBar"></span></div>
+
+  <header class="site-header">
+    <nav class="navbar">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home">
+        <span class="brand-mark"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"></span>
+        <span class="brand-text"><strong>Teacher Ed</strong><small>Learning Hub • Grade 7 Math</small></span>
+      </a>
+      <div class="nav-actions">
+        <button class="icon-btn" id="fullscreenBtn" type="button" title="Full screen">⛶ <span>Full Screen</span></button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">☰</button>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#ilaw">ILAW</a>
+        <a href="#day1">Day 1</a>
+        <a href="#day2">Day 2</a>
+        <a href="#day3">Day 3</a>
+        <a href="#mastery">Mastery</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">GRADE 7 • DATA AND PROBABILITY</span>
+        <h1>Become a <span>Data Detective!</span> 🔎📊</h1>
+        <p class="hero-lead">Learn how researchers collect information and choose samples that can help us make fair and useful conclusions.</p>
+        <div class="hero-buttons">
+          <a class="btn primary" href="#ilaw">Start the Mission 🚀</a>
+          <a class="btn ghost" href="#day1">Jump to Day 1</a>
+        </div>
+        <div class="hero-stats">
+          <div><b>3</b><span>Learning Days</span></div>
+          <div><b>4</b><span>ILAW Stages</span></div>
+          <div><b>15+</b><span>Interactive Tasks</span></div>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Data detective illustration">
+        <div class="orbit orbit1"></div><div class="orbit orbit2"></div>
+        <div class="floating-card card-a">📋 <b>Survey</b><small>Ask questions</small></div>
+        <div class="floating-card card-b">🎯 <b>Sample</b><small>Choose fairly</small></div>
+        <div class="floating-card card-c">📊 <b>Data</b><small>Find patterns</small></div>
+        <div class="detective">🕵️‍♂️</div>
+        <div class="chart">
+          <div class="bar b1"></div><div class="bar b2"></div><div class="bar b3"></div><div class="bar b4"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="standards section">
+      <div class="section-heading">
+        <span class="section-tag">DEPED ALIGNMENT</span>
+        <h2>Learning Target for the Week</h2>
+        <p>Aligned to the Grade 7 Data and Probability competency shown in your learning standard.</p>
+      </div>
+      <div class="standard-grid">
+        <article class="standard-card">
+          <span class="big-icon">🎯</span>
+          <h3>Learning Competency</h3>
+          <p><strong>Investigate different data collection and sampling techniques.</strong></p>
+        </article>
+        <article class="standard-card">
+          <span class="big-icon">🧠</span>
+          <h3>Content Standard</h3>
+          <p>Learners demonstrate knowledge and understanding of data collection and sampling techniques, and how data can be represented and interpreted appropriately.</p>
+        </article>
+        <article class="standard-card">
+          <span class="big-icon">🏆</span>
+          <h3>Success Criteria</h3>
+          <p>I can identify collection methods, distinguish population from sample, compare sampling techniques, and select an appropriate method for a real situation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="ilaw" class="section ilaw-section">
+      <div class="section-heading">
+        <span class="section-tag">THE ILAW TEACHING STRATEGY</span>
+        <h2>Learn the way a Data Detective works</h2>
+        <p>Each day follows a predictable ILAW flow: connect, understand, use, and reflect.</p>
+      </div>
+      <div class="ilaw-grid">
+        <button class="ilaw-card i" data-target="day1" type="button"><span>I</span><h3>Introduce</h3><p>Connect the lesson to a real-life mystery.</p></button>
+        <button class="ilaw-card l" data-target="learn-zone" type="button"><span>L</span><h3>Learn</h3><p>Build concepts through examples and mini lessons.</p></button>
+        <button class="ilaw-card a" data-target="apply-zone" type="button"><span>A</span><h3>Apply</h3><p>Use the ideas in interactive investigations.</p></button>
+        <button class="ilaw-card w" data-target="wrap-zone" type="button"><span>W</span><h3>Wrap-Up</h3><p>Check understanding and explain your thinking.</p></button>
+      </div>
+    </section>
+
+    <section id="day1" class="day-section section">
+      <div class="day-banner">
+        <div><span>DAY 1</span><h2>How Do We Collect Data?</h2></div>
+        <div class="day-pill">I • L • A • W</div>
+      </div>
+
+      <div class="ilaw-stage intro-stage">
+        <div class="stage-label"><b>I</b> INTRODUCE</div>
+        <div class="mission">
+          <div class="mission-icon">🕵️</div>
+          <div>
+            <h3>The School Snack Mystery</h3>
+            <p>The school wants to know which snack Grade 7 learners like best. Should the teacher ask <em>everyone</em>, observe choices, or use a questionnaire?</p>
+            <p class="question">Think: <strong>What information do we need, and how can we collect it?</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="learn-zone" class="ilaw-stage">
+        <div class="stage-label"><b>L</b> LEARN</div>
+        <div class="lesson-grid">
+          <article class="concept-card">
+            <span>📝</span><h3>Survey / Questionnaire</h3>
+            <p>People answer prepared questions. It is useful for preferences, opinions, habits, and experiences.</p>
+            <div class="example">Example: “Which school snack do you prefer?”</div>
+          </article>
+          <article class="concept-card">
+            <span>👀</span><h3>Observation</h3>
+            <p>The researcher watches and records what happens without relying only on what people say.</p>
+            <div class="example">Example: Counting how many learners choose each snack.</div>
+          </article>
+          <article class="concept-card">
+            <span>🧪</span><h3>Experiment</h3>
+            <p>The researcher changes a condition and observes the result under planned conditions.</p>
+            <div class="example">Example: Testing which paper airplane design flies farther.</div>
+          </article>
+          <article class="concept-card">
+            <span>💬</span><h3>Interview</h3>
+            <p>The researcher asks questions directly and may ask follow-up questions for deeper answers.</p>
+            <div class="example">Example: Interviewing learners about study habits.</div>
+          </article>
+        </div>
+        <div class="info-box">
+          <strong>Remember:</strong> A good data collection method should match the question you want to answer.
+        </div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>A</b> APPLY</div>
+        <h3 class="activity-title">Method Match Challenge 🎯</h3>
+        <p>Choose the best data collection technique for each situation.</p>
+        <div id="methodQuiz" class="quiz-list"></div>
+        <button class="btn primary" id="checkMethods" type="button">Check Answers</button>
+        <div id="methodResult" class="result-box" aria-live="polite"></div>
+      </div>
+
+      <div id="wrap-zone" class="ilaw-stage">
+        <div class="stage-label"><b>W</b> WRAP-UP</div>
+        <div class="reflection">
+          <h3>🧠 Exit Ticket</h3>
+          <p>Finish this sentence:</p>
+          <p class="sentence">“The best way to collect data depends on __________ because __________.”</p>
+          <textarea id="day1Reflection" placeholder="Type your own explanation here..."></textarea>
+          <button class="btn secondary" type="button" data-save="day1Reflection">Save Reflection ✓</button>
+          <span class="save-note" id="day1ReflectionNote"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="day2" class="day-section section alt-section">
+      <div class="day-banner">
+        <div><span>DAY 2</span><h2>Population, Sample & Sampling Techniques</h2></div>
+        <div class="day-pill">I • L • A • W</div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>I</b> INTRODUCE</div>
+        <div class="mission">
+          <div class="mission-icon">🍲</div>
+          <div>
+            <h3>The Giant Soup Problem</h3>
+            <p>You want to know whether a huge pot of soup tastes good. Do you need to drink the entire pot? No! A carefully chosen spoonful can tell you a lot.</p>
+            <p class="question"><strong>That is the idea behind sampling.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>L</b> LEARN</div>
+        <div class="population-visual">
+          <div class="pop-box">
+            <span class="visual-number">🏫</span>
+            <h3>Population</h3>
+            <p>The <strong>entire group</strong> you want to study.</p>
+            <div class="mini-example">All Grade 7 learners in a school</div>
+          </div>
+          <div class="arrow-big">→</div>
+          <div class="pop-box sample-box">
+            <span class="visual-number">👥</span>
+            <h3>Sample</h3>
+            <p>A <strong>smaller group</strong> selected from the population.</p>
+            <div class="mini-example">80 selected Grade 7 learners</div>
+          </div>
+        </div>
+
+        <div class="sampling-grid">
+          <article class="sampling-card"><span>🎲</span><h3>Simple Random</h3><p>Every member has an equal chance of being selected.</p><div class="formula-chip">Fair chance for all</div></article>
+          <article class="sampling-card"><span>📏</span><h3>Systematic</h3><p>Select members using a regular interval, such as every 5th person.</p><div class="formula-chip">Every kth member</div></article>
+          <article class="sampling-card"><span>👨‍👩‍👧‍👦</span><h3>Stratified</h3><p>Divide the population into groups, then sample from each group.</p><div class="formula-chip">Represent each group</div></article>
+          <article class="sampling-card"><span>🏘️</span><h3>Cluster</h3><p>Divide into natural groups and select whole groups or clusters.</p><div class="formula-chip">Select groups</div></article>
+        </div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>A</b> APPLY</div>
+        <h3 class="activity-title">Sampling Strategy Lab 🔬</h3>
+        <p>Read each situation and choose the sampling technique that best fits.</p>
+        <div id="samplingQuiz" class="quiz-list"></div>
+        <button class="btn primary" id="checkSampling" type="button">Check Sampling Lab</button>
+        <div id="samplingResult" class="result-box" aria-live="polite"></div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>W</b> WRAP-UP</div>
+        <div class="two-column">
+          <div>
+            <h3>Quick Sort: Population or Sample?</h3>
+            <p>Click a card to reveal the answer.</p>
+            <div id="popCards" class="flip-grid"></div>
+          </div>
+          <div>
+            <h3>Think Like a Researcher</h3>
+            <textarea id="day2Reflection" placeholder="Why might a researcher use a sample instead of studying every member?"></textarea>
+            <button class="btn secondary" type="button" data-save="day2Reflection">Save Reflection ✓</button>
+            <span class="save-note" id="day2ReflectionNote"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="day3" class="day-section section">
+      <div class="day-banner">
+        <div><span>DAY 3</span><h2>Investigate, Compare & Choose</h2></div>
+        <div class="day-pill">I • L • A • W</div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>I</b> INTRODUCE</div>
+        <div class="challenge-banner">
+          <span>🏆</span>
+          <div><h3>Final Mission: Build a Fair Survey!</h3><p>You are now the lead data detective. Your job is to plan a data collection investigation that gives useful and fair information.</p></div>
+        </div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>L</b> LEARN</div>
+        <h3>What makes a sampling plan strong?</h3>
+        <div class="principles">
+          <div><b>1</b><span><strong>Clear population</strong><small>Know exactly who or what you are studying.</small></span></div>
+          <div><b>2</b><span><strong>Appropriate sample</strong><small>Choose a sample that can represent the population.</small></span></div>
+          <div><b>3</b><span><strong>Fair selection</strong><small>Avoid selecting only people who are easiest to reach.</small></span></div>
+          <div><b>4</b><span><strong>Clear questions</strong><small>Avoid confusing or leading questions.</small></span></div>
+        </div>
+        <div class="warning-box">⚠️ <strong>Watch for bias:</strong> If your method consistently leaves out certain members, your results may not represent the whole population well.</div>
+      </div>
+
+      <div id="apply-zone" class="ilaw-stage">
+        <div class="stage-label"><b>A</b> APPLY</div>
+        <h3 class="activity-title">Sampling Simulator 🎮</h3>
+        <p>Choose a population, then select a technique. The simulator will show how your plan works.</p>
+
+        <div class="sim-controls">
+          <label>Population
+            <select id="populationSelect">
+              <option value="school">All 1,000 learners in a school</option>
+              <option value="grade7">All 240 Grade 7 learners</option>
+              <option value="clubs">Students in 8 school clubs</option>
+            </select>
+          </label>
+          <label>Technique
+            <select id="techniqueSelect">
+              <option value="random">Simple Random</option>
+              <option value="systematic">Systematic</option>
+              <option value="stratified">Stratified</option>
+              <option value="cluster">Cluster</option>
+            </select>
+          </label>
+          <button class="btn primary" id="runSimulator" type="button">Run Investigation 🔎</button>
+        </div>
+        <div id="simulatorOutput" class="sim-output">
+          <div class="sim-placeholder">Your investigation results will appear here.</div>
+        </div>
+
+        <div class="scenario-builder">
+          <h3>Build Your Own Sampling Plan</h3>
+          <div class="builder-grid">
+            <label>Research question
+              <input id="researchQuestion" type="text" placeholder="e.g., What school activity do learners prefer?">
+            </label>
+            <label>Population
+              <input id="researchPopulation" type="text" placeholder="e.g., All Grade 7 learners">
+            </label>
+            <label>Technique
+              <select id="researchTechnique">
+                <option>Simple Random</option><option>Systematic</option><option>Stratified</option><option>Cluster</option>
+              </select>
+            </label>
+          </div>
+          <button class="btn secondary" id="buildPlan" type="button">Generate My Plan ✨</button>
+          <div id="planOutput" class="plan-output"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-stage">
+        <div class="stage-label"><b>W</b> WRAP-UP</div>
+        <h3>3-Day Detective Reflection</h3>
+        <div class="reflection-grid">
+          <div class="mini-reflect"><b>📌 I learned...</b><textarea id="r1" placeholder="One important idea..."></textarea></div>
+          <div class="mini-reflect"><b>💡 I can...</b><textarea id="r2" placeholder="One skill I can now do..."></textarea></div>
+          <div class="mini-reflect"><b>🔎 I still wonder...</b><textarea id="r3" placeholder="One question I still have..."></textarea></div>
+        </div>
+        <button class="btn secondary" id="saveFinalReflection" type="button">Save My Reflection ✓</button>
+        <span class="save-note" id="finalNote"></span>
+      </div>
+    </section>
+
+    <section id="mastery" class="section mastery-section">
+      <div class="section-heading">
+        <span class="section-tag">FINAL CHECK</span>
+        <h2>Data Detective Mastery Mission 🏆</h2>
+        <p>Show what you learned across all three days.</p>
+      </div>
+      <div id="masteryQuiz" class="mastery-quiz"></div>
+      <button class="btn primary large" id="checkMastery" type="button">Submit Mastery Mission 🚀</button>
+      <div id="masteryResult" class="mastery-result" aria-live="polite"></div>
+    </section>
+
+    <section class="section celebration">
+      <div class="celebration-card">
+        <div class="trophy">🏆</div>
+        <div><h2>Keep thinking like a mathematician!</h2><p>Good data begins with good questions and fair ways of collecting information.</p></div>
+        <a href="#home" class="btn light">Back to Top ↑</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo">
+        <div><strong>Teacher Ed</strong><span>Learning Hub</span></div>
+      </div>
+      <div><p><strong>Grade 7 Mathematics</strong><br>Data and Probability • Data Collection & Sampling</p></div>
+      <div class="footer-links"><a href="#day1">Day 1</a><a href="#day2">Day 2</a><a href="#day3">Day 3</a><a href="#mastery">Mastery</a></div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Teacher Ed Learning Hub • Learn • Explore • Apply • Grow</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

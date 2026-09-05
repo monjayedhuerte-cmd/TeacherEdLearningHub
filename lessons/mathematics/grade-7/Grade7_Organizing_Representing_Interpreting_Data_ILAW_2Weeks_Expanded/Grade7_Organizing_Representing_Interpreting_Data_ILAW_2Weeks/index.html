@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Ed | Organizing, Representing & Interpreting Data</title>
+  <meta name="description" content="Grade 7 Mathematics interactive two-week lesson on frequency tables, graphs, stem-and-leaf plots, and interpretation of statistical graphs.">
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="progressBar"></div>
+
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub Home">
+        <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+        <span class="brand-text"><strong>Teacher Ed</strong><small>Learning Hub • Grade 7 Mathematics</small></span>
+      </a>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="fullscreenBtn" type="button" title="Full screen">⛶ <span>Full Screen</span></button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-label="Open navigation">☰</button>
+      </div>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#overview">Targets</a>
+        <a href="#week1">Week 1</a>
+        <a href="#week2">Week 2</a>
+        <a href="#practice">Practice</a>
+        <a href="#mastery">Mastery</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">GRADE 7 • DATA AND PROBABILITY</span>
+          <h1>Turn <span>Data</span> into a Story!</h1>
+          <p class="lead">Learn how to organize data, choose the right graph, and explain what the data tells you.</p>
+          <div class="hero-buttons">
+            <a class="btn primary" href="#overview">Start the 2-Week Journey →</a>
+            <button class="btn ghost" id="quickChallenge" type="button">⚡ Quick Challenge</button>
+          </div>
+          <div class="hero-stats">
+            <div><b>2</b><span>Weeks</span></div>
+            <div><b>10</b><span>Learning Days</span></div>
+            <div><b>4</b><span>Graph Types</span></div>
+            <div><b>1</b><span>Final Mission</span></div>
+          </div>
+        </div>
+
+        <div class="data-visual" aria-label="Decorative data visualization">
+          <div class="chart-card">
+            <div class="chart-title">CLASS DATA</div>
+            <div class="bars">
+              <i style="height:42%"></i><i style="height:68%"></i><i style="height:52%"></i>
+              <i style="height:86%"></i><i style="height:61%"></i><i style="height:74%"></i>
+            </div>
+            <div class="axis"><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span></div>
+          </div>
+          <div class="floating-card"><strong>DATA → GRAPH</strong><span>Make information easier to see.</span></div>
+          <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="overview">
+      <div class="section-heading">
+        <span class="section-kicker">YOUR LEARNING MAP</span>
+        <h2>What will you master?</h2>
+        <p>Aligned to the Grade 7 Data and Probability competency shown in your curriculum: organize statistical data in frequency tables, use appropriate graphs, and interpret statistical graphs.</p>
+      </div>
+
+      <div class="standard-grid">
+        <article class="standard-card">
+          <span class="card-icon">📋</span><h3>Organize</h3>
+          <p>Arrange raw data into a clear frequency distribution table.</p>
+        </article>
+        <article class="standard-card">
+          <span class="card-icon">📊</span><h3>Represent</h3>
+          <p>Use bar graphs, line graphs, pie graphs, and stem-and-leaf plots appropriately.</p>
+        </article>
+        <article class="standard-card">
+          <span class="card-icon">🔎</span><h3>Interpret</h3>
+          <p>Read titles, labels, scales, patterns, comparisons, and meaningful conclusions.</p>
+        </article>
+        <article class="standard-card">
+          <span class="card-icon">🧠</span><h3>Reason</h3>
+          <p>Choose a representation that matches the kind of data and question being asked.</p>
+        </article>
+      </div>
+
+      <div class="ilaw-strip">
+        <div><b>I</b><span>INTRODUCE</span><small>Connect to real-life data</small></div>
+        <div><b>L</b><span>LEARN</span><small>Build concepts and skills</small></div>
+        <div><b>A</b><span>APPLY</span><small>Use the skill in challenges</small></div>
+        <div><b>W</b><span>WRAP-UP</span><small>Reflect and check mastery</small></div>
+      </div>
+    </section>
+
+    <section class="section tinted" id="week1">
+      <div class="week-header">
+        <div><span class="week-badge">WEEK 1</span><h2>Organize the Data</h2><p>Days 1–5 • From raw numbers to frequency distributions and useful representations.</p></div>
+        <div class="day-progress"><span id="week1Progress">0 / 5 days</span><div><i id="week1Bar"></i></div></div>
+      </div>
+
+      <div class="day-tabs" role="tablist">
+        <button class="day-tab active" data-day="1" type="button">Day 1<span>Introduce</span></button>
+        <button class="day-tab" data-day="2" type="button">Day 2<span>Learn</span></button>
+        <button class="day-tab" data-day="3" type="button">Day 3<span>Learn</span></button>
+        <button class="day-tab" data-day="4" type="button">Day 4<span>Apply</span></button>
+        <button class="day-tab" data-day="5" type="button">Day 5<span>Wrap-Up</span></button>
+      </div>
+
+      <div id="week1Lessons"></div>
+    </section>
+
+    <section class="section" id="week2">
+      <div class="week-header">
+        <div><span class="week-badge gold">WEEK 2</span><h2>Represent & Interpret</h2><p>Days 6–10 • Select graphs, build representations, and explain what they reveal.</p></div>
+        <div class="day-progress"><span id="week2Progress">0 / 5 days</span><div><i id="week2Bar"></i></div></div>
+      </div>
+
+      <div class="day-tabs" role="tablist">
+        <button class="day-tab active" data-day="6" type="button">Day 6<span>Introduce</span></button>
+        <button class="day-tab" data-day="7" type="button">Day 7<span>Learn</span></button>
+        <button class="day-tab" data-day="8" type="button">Day 8<span>Apply</span></button>
+        <button class="day-tab" data-day="9" type="button">Day 9<span>Apply</span></button>
+        <button class="day-tab" data-day="10" type="button">Day 10<span>Wrap-Up</span></button>
+      </div>
+
+      <div id="week2Lessons"></div>
+    </section>
+
+    <section class="section tinted" id="practice">
+      <div class="section-heading">
+        <span class="section-kicker">INTERACTIVE LAB</span>
+        <h2>Data Detective Practice</h2>
+        <p>Try the tools below. Your goal is not just to get an answer—it is to explain why your answer makes sense.</p>
+      </div>
+
+      <div class="lab-grid">
+        <article class="lab-card">
+          <div class="lab-head"><span>01</span><h3>Frequency Table Builder</h3></div>
+          <p>Enter a small set of scores. The website counts each value and builds the frequency table.</p>
+          <textarea id="rawData" aria-label="Raw data" placeholder="Example: 4, 5, 4, 7, 6, 5, 4, 8, 6, 5"></textarea>
+          <button class="btn primary" id="buildFrequency" type="button">Build Table</button>
+          <div id="frequencyOutput" class="output"></div>
+        </article>
+
+        <article class="lab-card">
+          <div class="lab-head"><span>02</span><h3>Choose the Best Graph</h3></div>
+          <p>Match the situation with the most appropriate representation.</p>
+          <div class="choice-question" id="graphChoice">
+            <h4>Situation: “How many students chose each favorite school club?”</h4>
+            <div class="choice-grid">
+              <button type="button" data-answer="bar">Bar graph</button>
+              <button type="button" data-answer="line">Line graph</button>
+              <button type="button" data-answer="pie">Pie graph</button>
+              <button type="button" data-answer="stem">Stem-and-leaf</button>
+            </div>
+            <p class="feedback" id="graphFeedback"></p>
+          </div>
+        </article>
+
+        <article class="lab-card wide">
+          <div class="lab-head"><span>03</span><h3>Interactive Graph Reader</h3></div>
+          <p>Use the graph to answer questions. Click a bar to inspect its value.</p>
+          <div class="mini-chart">
+            <div class="mini-y"><span>20</span><span>15</span><span>10</span><span>5</span><span>0</span></div>
+            <div class="mini-bars" id="miniBars">
+              <button data-value="12" style="height:60%"><b>12</b><span>Math</span></button>
+              <button data-value="17" style="height:85%"><b>17</b><span>Science</span></button>
+              <button data-value="9" style="height:45%"><b>9</b><span>English</span></button>
+              <button data-value="14" style="height:70%"><b>14</b><span>AP</span></button>
+              <button data-value="7" style="height:35%"><b>7</b><span>Arts</span></button>
+            </div>
+          </div>
+          <div id="barReadout" class="readout">Click a bar to read its value.</div>
+        </article>
+
+        <article class="lab-card wide">
+          <div class="lab-head"><span>04</span><h3>Stem-and-Leaf Decoder</h3></div>
+          <div class="stem-box">
+            <pre>1 | 2 4 5 8
+2 | 0 1 3 3 7
+3 | 1 4 6</pre>
+            <div>
+              <p><strong>Key:</strong> 2 | 3 means 23.</p>
+              <button class="btn secondary" id="stemQuestion" type="button">What's the mode?</button>
+              <p class="feedback" id="stemFeedback"></p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="mastery">
+      <div class="section-heading">
+        <span class="section-kicker">FINAL MISSION</span>
+        <h2>Data Analyst Mastery Check</h2>
+        <p>Answer all 12 questions. You can retry the test anytime.</p>
+      </div>
+      <div class="quiz-card">
+        <div class="quiz-top"><span id="quizCount">Question 1 of 12</span><span id="quizScore">Score: 0</span></div>
+        <div class="quiz-progress"><i id="quizBar"></i></div>
+        <div id="quizArea"></div>
+        <div class="quiz-controls">
+          <button class="btn secondary" id="prevQ" type="button">← Previous</button>
+          <button class="btn primary" id="nextQ" type="button">Next →</button>
+        </div>
+      </div>
+      <div id="masteryResult" class="mastery-result hidden"></div>
+    </section>
+
+    <section class="section reflection tinted">
+      <div class="section-heading">
+        <span class="section-kicker">W • WRAP-UP</span>
+        <h2>Exit Ticket</h2>
+        <p>Complete the sentence starters to show what you understand.</p>
+      </div>
+      <div class="reflection-grid">
+        <label>One thing I learned:
+          <textarea id="reflect1" placeholder="I learned that..."></textarea>
+        </label>
+        <label>A graph I can explain:
+          <textarea id="reflect2" placeholder="I can explain a..."></textarea>
+        </label>
+        <label>One question I still have:
+          <textarea id="reflect3" placeholder="I still wonder..."></textarea>
+        </label>
+      </div>
+      <button class="btn primary" id="saveReflection" type="button">Save My Reflection</button>
+      <p class="saved" id="reflectionSaved"></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+        <div><strong>Teacher Ed</strong><span>Learning Hub</span></div>
+      </div>
+      <div><p><strong>Grade 7 Mathematics</strong><br>Data and Probability • 2-Week ILAW Interactive Lesson</p></div>
+      <div><p>Organize • Represent • Interpret • Think</p></div>
+    </div>
+    <div class="footer-bottom">© <span id="year"></span> Teacher Ed Learning Hub • Learn with purpose. Think with data.</div>
+  </footer>
+
+  <div class="modal hidden" id="challengeModal" role="dialog" aria-modal="true" aria-labelledby="challengeTitle">
+    <div class="modal-box">
+      <button class="close-modal" id="closeModal" type="button" aria-label="Close">×</button>
+      <span class="section-kicker">⚡ QUICK CHALLENGE</span>
+      <h2 id="challengeTitle">Data Detective</h2>
+      <p>A class survey gives these results: <strong>8, 10, 8, 12, 10, 8, 15</strong>. What is the frequency of 8?</p>
+      <div class="choice-grid">
+        <button type="button" data-quick="2">2</button>
+        <button type="button" data-quick="3">3</button>
+        <button type="button" data-quick="4">4</button>
+        <button type="button" data-quick="5">5</button>
+      </div>
+      <p id="quickFeedback" class="feedback"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

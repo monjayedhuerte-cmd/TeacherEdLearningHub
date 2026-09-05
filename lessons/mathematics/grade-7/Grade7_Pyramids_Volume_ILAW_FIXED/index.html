@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#092449">
+<meta name="description" content="Teacher Ed Learning Hub Grade 7 Mathematics — Volumes of Square and Rectangular Pyramids. One-week ILAW interactive lesson.">
+<title>Teacher Ed | Grade 7 Math • Volumes of Pyramids</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="apple-touch-icon" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="top-progress"><span id="scrollProgress"></span></div>
+
+<header class="site-header">
+  <nav class="container nav">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <span><strong>Teacher Ed</strong><small>Learning Hub • Grade 7 Mathematics</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#week">Week Plan</a>
+      <a href="#ilaw">ILAW</a>
+      <a href="#derive">Derivation</a>
+      <a href="#practice">Practice</a>
+      <a href="#mastery">Mastery</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-shape hero-shape-one"></div><div class="hero-shape hero-shape-two"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="pill">SECOND TERM • WEEK 4 • MEASUREMENT & GEOMETRY</span>
+      <h1>Become a <span>Pyramid</span> Volume Master!</h1>
+      <p>Grade 7, this week you will discover how the volume of a square or rectangular pyramid comes from the volume of a rectangular prism — then use the formula to solve real problems.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#ilaw">🚀 Start the Week</a>
+        <button class="btn outline" id="quickChallenge">⚡ Quick Challenge</button>
+      </div>
+      <div class="stats">
+        <div><b id="stars">0</b><small>Stars</small></div>
+        <div><b id="progressText">0%</b><small>Progress</small></div>
+        <div><b>5</b><small>Learning Days</small></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="pyramid-3d">
+        <div class="py-base"></div>
+        <div class="py-face f1"></div><div class="py-face f2"></div><div class="py-face f3"></div><div class="py-face f4"></div>
+        <span class="label-height">h</span><span class="label-base">B</span>
+      </div>
+      <div class="formula-float"><small>PYRAMID VOLUME</small><strong>V = ⅓Bh</strong><em>base area × height ÷ 3</em></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="week">
+<div class="container">
+  <div class="section-head"><span class="eyebrow">ONE-WEEK LEARNING MAP</span><h2>Your 5-Day Pyramid Quest</h2><p>A clear sequence from discovery to mastery.</p></div>
+  <div class="day-grid">
+    <article class="day-card active"><span>DAY 1</span><h3>🔎 Introduce</h3><p>Recognize pyramids, prisms, bases, and height.</p></article>
+    <article class="day-card"><span>DAY 2</span><h3>🧠 Learn</h3><p>Compare a pyramid with a rectangular prism.</p></article>
+    <article class="day-card"><span>DAY 3</span><h3>📐 Derive</h3><p>Inductively develop V = ⅓Bh.</p></article>
+    <article class="day-card"><span>DAY 4</span><h3>🎯 Apply</h3><p>Estimate and calculate square/rectangular pyramid volumes.</p></article>
+    <article class="day-card"><span>DAY 5</span><h3>🏆 Wrap-Up</h3><p>Solve problems, explain the formula, and check mastery.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="ilaw-section" id="ilaw">
+<div class="container">
+  <div class="section-head light"><span class="eyebrow">DEPED ILAW TEACHING STRATEGY</span><h2>Follow the ILAW Path</h2><p>Introduce → Learn → Apply → Wrap-Up</p></div>
+  <div class="ilaw-grid">
+    <a href="#introduce"><b>I</b><strong>INTRODUCE</strong><small>Activate prior knowledge and curiosity</small></a>
+    <a href="#learn"><b>L</b><strong>LEARN</strong><small>Explore the concept and make meaning</small></a>
+    <a href="#practice"><b>A</b><strong>APPLY</strong><small>Estimate, calculate, and solve</small></a>
+    <a href="#wrapup"><b>W</b><strong>WRAP-UP</strong><small>Reflect, assess, and master</small></a>
+  </div>
+</div>
+</section>
+
+<section class="section" id="introduce">
+<div class="container">
+  <div class="section-head"><span class="stage">I • INTRODUCE</span><h2>🏛️ The Pyramid & Prism Mystery</h2><p>Start with what you already know.</p></div>
+  <div class="mystery">
+    <div class="mystery-art">
+      <div class="mini-prism"><span>Rectangular Prism</span></div>
+      <div class="mini-pyramid"><span>Pyramid</span></div>
+    </div>
+    <div>
+      <h3>Which one would hold more?</h3>
+      <p>Imagine a rectangular prism and a rectangular pyramid with the <strong>same base area</strong> and the <strong>same perpendicular height</strong>. What do you predict about their volumes?</p>
+      <div class="choice-row">
+        <button class="choice" data-answer="three">The prism holds about 3 times as much.</button>
+        <button class="choice" data-answer="same">They hold the same amount.</button>
+        <button class="choice" data-answer="half">The prism holds about 2 times as much.</button>
+      </div>
+      <p class="feedback" id="mysteryFeedback"></p>
+    </div>
+  </div>
+  <div class="think-card"><span>💭 THINK</span><p>What if the pyramid is only one “share” of a larger solid? Keep this idea in mind as we derive the formula.</p></div>
+</div>
+</section>
+
+<section class="dark-learn" id="learn">
+<div class="container">
+  <div class="section-head light"><span class="stage">L • LEARN</span><h2>🧠 Know the Parts Before the Formula</h2><p>The formula becomes easier when every symbol has meaning.</p></div>
+  <div class="parts-grid">
+    <article><div class="part-icon">▱</div><h3>Base</h3><p>The polygon at the bottom. For this lesson, it is a rectangle or square.</p><strong>B = base area</strong></article>
+    <article><div class="part-icon">↕</div><h3>Perpendicular Height</h3><p>The shortest distance from the base to the apex, measured at a right angle to the base.</p><strong>h = height</strong></article>
+    <article><div class="part-icon">▲</div><h3>Apex</h3><p>The point where the triangular side faces meet.</p><strong>Not the slant height</strong></article>
+  </div>
+
+  <div class="formula-meaning">
+    <div><span class="eyebrow">KEY IDEA</span><h3>Volume measures the space inside a solid.</h3><p>For a rectangular prism, volume is:</p><div class="equation">V<sub>prism</sub> = lwh = Bh</div><p>because the base area of the rectangle is <strong>B = lw</strong>.</p></div>
+    <div class="compare-visual"><div class="prism-graphic"></div><div class="compare-arrow">same B<br>same h<br>↓</div><div class="pyramid-graphic"></div></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="derive">
+<div class="container">
+  <div class="section-head"><span class="stage">L • INDUCTIVE DERIVATION</span><h2>📐 Discover the Pyramid Formula</h2><p>Move from a familiar prism to a new rule.</p></div>
+
+  <div class="derivation-box">
+    <div class="derive-step">
+      <div class="step-number">1</div>
+      <h3>Start with a rectangular prism</h3>
+      <p>Suppose the prism has base area <strong>B</strong> and perpendicular height <strong>h</strong>.</p>
+      <div class="formula-chip">V<sub>prism</sub> = Bh</div>
+    </div>
+    <div class="derive-step">
+      <div class="step-number">2</div>
+      <h3>Compare equal base and height</h3>
+      <p>A pyramid with the <strong>same base area B</strong> and <strong>same height h</strong> occupies one-third of the prism's volume.</p>
+      <div class="three-stack">
+        <div class="stack-prism"></div><span>≈</span><div class="three-pyramids"><i></i><i></i><i></i></div>
+      </div>
+      <button class="small-btn" id="animateDerivation">▶ Show the ⅓ Relationship</button>
+    </div>
+    <div class="derive-step final-step">
+      <div class="step-number">3</div>
+      <h3>Generalize the pattern</h3>
+      <p>One-third of the prism volume gives the pyramid volume:</p>
+      <div class="big-equation">V<sub>pyramid</sub> = <span>⅓</span>Bh</div>
+      <p class="note">This is the volume formula for a square or rectangular pyramid.</p>
+    </div>
+  </div>
+
+  <div class="derivation-summary">
+    <div><b>Rectangular prism</b><span>V = Bh</span></div>
+    <div class="minus">÷ 3</div>
+    <div><b>Square/rectangular pyramid</b><span>V = ⅓Bh</span></div>
+  </div>
+
+  <div class="special-formulas">
+    <h3>🔑 Put in the Base Area</h3>
+    <div class="formula-cards">
+      <article><span>RECTANGULAR PYRAMID</span><strong>B = lw</strong><b>V = ⅓lwh</b><small>l = length, w = width, h = perpendicular height</small></article>
+      <article><span>SQUARE PYRAMID</span><strong>B = s²</strong><b>V = ⅓s²h</b><small>s = side length, h = perpendicular height</small></article>
+    </div>
+  </div>
+
+  <div class="worked-example">
+    <div><span class="eyebrow">WORKED EXAMPLE</span><h3>Rectangular Pyramid</h3><p>Length = 6 cm, Width = 4 cm, Height = 9 cm</p></div>
+    <div class="work-steps"><div>B = lw = 6(4) = <b>24 cm²</b></div><div>V = ⅓Bh = ⅓(24)(9)</div><div class="answer">V = <b>72 cm³</b></div></div>
+  </div>
+</div>
+</section>
+
+<section class="lab-section">
+<div class="container">
+  <div class="section-head light"><span class="stage">INTERACTIVE DISCOVERY LAB</span><h2>🎛️ Build a Pyramid</h2><p>Change the dimensions and watch the formula update.</p></div>
+  <div class="lab">
+    <div class="lab-controls">
+      <label>Length: <b id="lenValue">6</b> cm<input id="lenSlider" type="range" min="1" max="15" value="6"></label>
+      <label>Width: <b id="widValue">4</b> cm<input id="widSlider" type="range" min="1" max="12" value="4"></label>
+      <label>Height: <b id="heiValue">9</b> cm<input id="heiSlider" type="range" min="1" max="15" value="9"></label>
+      <div class="lab-equation">B = <span id="baseCalc">24</span> cm²</div>
+      <div class="lab-result"><span>Pyramid Volume</span><strong id="volumeResult">72.00 cm³</strong></div>
+    </div>
+    <div class="lab-visual"><div class="interactive-pyramid"><div class="ip-base"></div><div class="ip-left"></div><div class="ip-right"></div><div class="ip-front"></div><div class="ip-back"></div><span id="hLabel">h = 9</span></div></div>
+  </div>
+</div>
+</section>
+
+<section class="section" id="practice">
+<div class="container">
+  <div class="section-head"><span class="stage">A • APPLY</span><h2>🎮 Pyramid Training Arena</h2><p>Estimate first, calculate carefully, and use cubic units.</p></div>
+  <div class="quiz-grid">
+    <article class="quiz" data-answer="1">
+      <span>MISSION 1</span><h3>Which formula finds the volume of a rectangular pyramid?</h3>
+      <div class="options"><button data-i="0">V = lwh</button><button data-i="1">V = ⅓lwh</button><button data-i="2">V = 2lwh</button><button data-i="3">V = lw + h</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz" data-answer="2">
+      <span>MISSION 2</span><h3>A square pyramid has side 6 cm and height 10 cm. What is its volume?</h3>
+      <div class="options"><button data-i="0">60 cm³</button><button data-i="1">90 cm³</button><button data-i="2">120 cm³</button><button data-i="3">240 cm³</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz" data-answer="0">
+      <span>MISSION 3</span><h3>A rectangular pyramid has l = 8 m, w = 5 m, h = 6 m. Find V.</h3>
+      <div class="options"><button data-i="0">80 m³</button><button data-i="1">240 m³</button><button data-i="2">19 m³</button><button data-i="3">120 m³</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz" data-answer="3">
+      <span>MISSION 4</span><h3>If the base area is 45 cm² and h = 8 cm, what is V?</h3>
+      <div class="options"><button data-i="0">360 cm³</button><button data-i="1">90 cm³</button><button data-i="2">45 cm³</button><button data-i="3">120 cm³</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz" data-answer="1">
+      <span>MISSION 5</span><h3>Which measurement is the perpendicular height?</h3>
+      <div class="options"><button data-i="0">The edge from base corner to apex</button><button data-i="1">The right-angle distance from base to apex</button><button data-i="2">The base perimeter</button><button data-i="3">The slant edge only</button></div><p class="quiz-feedback"></p>
+    </article>
+    <article class="quiz" data-answer="2">
+      <span>MISSION 6</span><h3>A square pyramid has s = 9 cm and h = 4 cm. Find V.</h3>
+      <div class="options"><button data-i="0">54 cm³</button><button data-i="1">81 cm³</button><button data-i="2">108 cm³</button><button data-i="3">216 cm³</button></div><p class="quiz-feedback"></p>
+    </article>
+  </div>
+
+  <div class="estimate-card">
+    <div class="estimate-icon">📦</div><div><span class="eyebrow">ESTIMATION MISSION</span><h3>A pyramid has B = 60 cm² and h = 10 cm.</h3><p>Without doing the full calculation, should its volume be closer to 20, 200, or 600 cm³?</p>
+      <div class="estimate-buttons"><button data-est="20">20</button><button data-est="200">200</button><button data-est="600">600</button></div><p class="feedback" id="estimateFeedback"></p>
+    </div>
+  </div>
+
+  <div class="word-problem">
+    <span class="mission">REAL-LIFE MISSION</span><h3>🏠 Roof-top Pyramid</h3><p>A decorative square pyramid has a base side of 12 m and a perpendicular height of 8 m. What is its volume?</p>
+    <div class="answer-line"><input id="wordAnswer" type="number" step="0.01" placeholder="Enter m³"><button class="btn primary" id="checkWord">Check</button></div>
+    <p class="feedback" id="wordFeedback"></p>
+  </div>
+</div>
+</section>
+
+<section class="boss-section">
+<div class="container">
+  <div class="section-head light"><span class="stage">⚡ APPLY • BOSS ROUND</span><h2>Beat the Pyramid Boss!</h2><p>Five questions. 45 seconds. Show your mastery.</p></div>
+  <div class="boss-card">
+    <div class="boss-head"><div class="boss-icon">🔺</div><div><b>PYRAMID BOSS</b><small id="bossStatus">Ready?</small></div><div class="timer" id="timer">45</div></div>
+    <div class="boss-question" id="bossQuestion">Press START to begin.</div>
+    <div class="boss-options" id="bossOptions"></div>
+    <button class="btn primary" id="startBoss">🚀 START BOSS ROUND</button>
+    <p class="boss-result" id="bossResult"></p>
+  </div>
+</div>
+</section>
+
+<section class="section" id="wrapup">
+<div class="container">
+  <div class="section-head"><span class="stage">W • WRAP-UP</span><h2>🧠 Teach the Formula Back</h2><p>Select the statements you can now explain.</p></div>
+  <div class="reflection-grid">
+    <button class="reflection">I can identify the base area and perpendicular height.</button>
+    <button class="reflection">I can explain why the pyramid uses one-third of Bh.</button>
+    <button class="reflection">I can use V = ⅓Bh for square and rectangular pyramids.</button>
+    <button class="reflection">I can solve real-life pyramid volume problems.</button>
+  </div>
+  <div class="reflection-output" id="reflectionOutput">Choose a statement above to reflect on your learning.</div>
+
+  <div class="exit-ticket">
+    <div><span class="eyebrow">EXIT TICKET</span><h3>Why is there a ⅓ in the formula?</h3><p>Choose the best explanation.</p></div>
+    <div class="exit-options">
+      <button data-correct="false">Because a pyramid has three bases.</button>
+      <button data-correct="true">A pyramid with the same base area and height has one-third the volume of the corresponding prism.</button>
+      <button data-correct="false">Because the height must always be divided by 3.</button>
+    </div>
+    <p class="feedback" id="exitFeedback"></p>
+  </div>
+</div>
+</section>
+
+<section class="mastery" id="mastery">
+<div class="container">
+  <div class="mastery-card">
+    <div class="trophy">🏆</div><div class="mastery-main"><span class="stage">WEEK 4 MASTERY CHECK</span><h2>Pyramid Volume Master?</h2><p>Target: <strong>80% or higher</strong>.</p><div class="master-bar"><span id="masterBar"></span></div><strong id="masterPercent">0% complete</strong></div>
+    <button class="btn primary" id="masterBtn">Check My Mastery</button>
+  </div>
+  <p class="master-message" id="masterMessage"></p>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <div><strong>Teacher Ed Learning Hub</strong><small>Grade 7 Mathematics • Volumes of Square & Rectangular Pyramids</small></div>
+    </div>
+    <div class="footer-links"><a href="#home">Home</a><a href="#week">Week Plan</a><a href="#derive">Derivation</a><a href="#practice">Practice</a><a href="#mastery">Mastery</a></div>
+    <p>© <span id="year"></span> Teacher Ed Learning Hub • Interactive Learning Resource</p>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+<div class="modal" id="quickModal">
+  <div class="modal-card"><button class="close" id="closeQuick">×</button><span class="stage">⚡ QUICK CHALLENGE</span><h2>Prism or Pyramid?</h2><p>A rectangular prism and pyramid have the same base area and height. The pyramid's volume is:</p>
+    <div class="quick-options"><button data-ok="false">The same as the prism</button><button data-ok="true">⅓ of the prism</button><button data-ok="false">3 times the prism</button></div><p class="feedback" id="quickFeedback"></p>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
