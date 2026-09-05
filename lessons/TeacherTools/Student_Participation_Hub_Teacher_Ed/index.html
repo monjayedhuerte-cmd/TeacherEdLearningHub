@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101936">
+  <title>Student Participation Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="stars"></div>
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">🎯</div>
+      <div>
+        <div class="brand-kicker">TEACHER ED • CLASSROOM TOOL</div>
+        <h1>Student Participation Hub</h1>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="top-btn" id="soundBtn">🔊 Sound On</button>
+      <button class="top-btn" id="fullscreenBtn">⛶ Fullscreen</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="hero-card">
+      <div class="hero-copy">
+        <span class="live-pill"><i></i> CLASSROOM PICKER</span>
+        <h2>Who will be<br><span>today's star?</span></h2>
+        <p>Make participation fair, exciting, and unpredictable. Let the class watch the system make the pick.</p>
+      </div>
+
+      <div class="mode-tabs">
+        <button class="mode active" data-mode="wheel">🎡 Wheel</button>
+        <button class="mode" data-mode="cards">🎴 Mystery Cards</button>
+        <button class="mode" data-mode="quick">⚡ Quick Pick</button>
+      </div>
+
+      <div id="wheelMode" class="mode-content">
+        <div class="wheel-stage">
+          <div class="pointer">▼</div>
+          <canvas id="wheel" width="680" height="680"></canvas>
+          <div class="wheel-center">
+            <span>READY?</span>
+            <strong>SPIN</strong>
+          </div>
+        </div>
+        <div class="winner-preview">
+          <div class="preview-label" id="statusLabel">READY TO PICK</div>
+          <div class="preview-name" id="previewName">Add your students</div>
+        </div>
+        <button class="main-action" id="spinBtn">🎯 SPIN THE WHEEL</button>
+      </div>
+
+      <div id="cardsMode" class="mode-content hidden">
+        <div class="card-arena">
+          <div class="mystery-card" id="mysteryCard">
+            <div class="card-front">?</div>
+            <div class="card-label">MYSTERY STUDENT</div>
+            <div class="card-hint">Click to reveal</div>
+          </div>
+        </div>
+        <button class="main-action" id="revealBtn">🎴 REVEAL A STUDENT</button>
+      </div>
+
+      <div id="quickMode" class="mode-content hidden">
+        <div class="quick-stage">
+          <div class="quick-orbit">⚡</div>
+          <div class="quick-name" id="quickName">?</div>
+          <p>Instant fair selection</p>
+        </div>
+        <button class="main-action" id="quickBtn">⚡ PICK A STUDENT</button>
+      </div>
+
+      <div class="settings-row">
+        <label class="switch-label">
+          <input type="checkbox" id="removeAfter" checked>
+          <span class="switch"></span>
+          Remove picked student
+        </label>
+        <div class="remaining-pill">👥 <b id="remainingCount">0</b> remaining</div>
+      </div>
+    </section>
+
+    <aside class="control-panel">
+      <div class="panel-title">
+        <div>
+          <span class="mini-kicker">CLASS SETUP</span>
+          <h3>👩‍🎓 Student List</h3>
+        </div>
+        <button class="small-btn" id="shuffleBtn">🔀 Shuffle</button>
+      </div>
+
+      <p class="helper">Enter one student per line. Names stay in this browser only.</p>
+      <textarea id="studentInput" spellcheck="false" placeholder="Ana&#10;Ben&#10;Carlo&#10;Diana&#10;Ethan"></textarea>
+
+      <div class="panel-actions">
+        <button class="dark-btn" id="loadBtn">📥 Load Class</button>
+        <button class="light-btn" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="stats">
+        <div><strong id="totalCount">0</strong><span>Total</span></div>
+        <div><strong id="pickedCount">0</strong><span>Picked</span></div>
+        <div><strong id="leftCount">0</strong><span>Left</span></div>
+      </div>
+
+      <div class="fairness">
+        <div class="fairness-head">
+          <span>⚖️ Participation Fairness</span>
+          <b id="fairnessText">Ready</b>
+        </div>
+        <div class="progress"><i id="fairnessBar"></i></div>
+        <small>The goal is to give everyone a chance.</small>
+      </div>
+
+      <div class="history">
+        <div class="history-head">
+          <h3>🏆 Pick History</h3>
+          <button class="text-btn" id="resetBtn">Reset</button>
+        </div>
+        <div id="historyList" class="history-list">
+          <div class="empty">No students picked yet.</div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <div class="modal hidden" id="winnerModal">
+    <div class="modal-card">
+      <div class="burst">✦ ✧ ✦ ✧ ✦</div>
+      <div class="modal-kicker">THE CLASSROOM PICK IS...</div>
+      <div class="winner-name" id="winnerName">Student</div>
+      <div class="winner-message" id="winnerMessage">You're today's classroom star! 🌟</div>
+      <div class="modal-buttons">
+        <button class="main-action compact" id="closeModal">Awesome! 🎯</button>
+        <button class="light-btn compact" id="pickAgain">Pick Again</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>Student Participation Hub • Teacher Ed • Built for engaging classroom discussion</footer>
+  <script src="script.js"></script>
+</body>
+</html>
