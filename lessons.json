@@ -560,11 +560,21 @@
     "icon": "calculator"
   },
   {
-    "title": "Sample Space & Fundamental Counting Principle | Week 9, 3rd Term",
+    "title": "Theoretical Probability of a Single Event | Week 9, 3rd Term",
     "subject": "Mathematics",
     "grade": "Grade 8",
-    "description": "Welcome, mathematicians! This week you will learn how to describe all possible outcomes of an experiment and use the Fundamental Counting Principle to count multi-stage outcomes efficiently.",
-    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week8_SampleSpace_FCP_ILAW_Elaborated/index.html",
+    "description": "This classroom-ready interactive lesson develops the exact Week 9 competencies from the Grade 8 Mathematics Budget of Work: calculate the theoretical probability of a single event by listing all possible outcomes, and describe probability as a measure of the chance of an event occurring.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week9_TheoreticalProbability_ILAW/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Simple Combined Events: Listing, Possibility Diagrams, and Tree Diagrams | Week 10, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "This week extends the Week 9 work on theoretical probability. Learners calculate the probability of simple combined events by listing outcomes or organizing them with possibility and tree diagrams.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week10_CombinedProbability_ILAW/index.html",
     "date": "2026-09-07",
     "featured": false,
     "icon": "calculator"
