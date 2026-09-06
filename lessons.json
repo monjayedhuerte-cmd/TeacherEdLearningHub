@@ -320,7 +320,7 @@
     "icon": "user-round"
   },
   {
-    "title": "Shapes are Everywhere!",
+    "title": "Shapes are Everywhere! | Week 1, 1st Term",
     "subject": "Mathematics",
     "grade": "Grade 1",
     "description": "Become a Shape Explorer! Learn to identify triangles, squares, and rectangles, compare their sides and corners, and compose shapes to make new designs.",
@@ -330,17 +330,17 @@
     "icon": "calculator"
   },
   {
-    "title": "Measurement",
+    "title": "Measurement | Week 1-2, 2nd Term",
     "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "Become a Unit Master by learning how measurements change from one unit to another — without changing the actual quantity.",
-    "file": "lessons/mathematics/grade-7/Grade7_Measurement_ILAW_Interactive/index.html",
+    "file": "lessons/mathematics/grade-7/Grade7_Measurement_Geometry_ILAW_v2/index.html",
     "date": "2026-09-06",
     "featured": false,
     "icon": "calculator"
   },
   {
-    "title": "Volume of Cylinder",
+    "title": "Volume of Cylinder | Week 3, 2nd Term",
     "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "This week, you will discover where the cylinder formula comes from, connect it to the area of a circle, and become confident solving real-life volume problems.",
@@ -350,7 +350,7 @@
     "icon": "calculator"
   },
   {
-    "title": "Volume of a Pyramid",
+    "title": "Volume of a Pyramid | Week 4, 2nd Term",
     "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "Grade 7, this week you will discover how the volume of a square or rectangular pyramid comes from the volume of a rectangular prism — then use the formula to solve real problems.",
@@ -360,7 +360,7 @@
     "icon": "calculator"
   },
   {
-    "title": "Set, Subset, Union, and Intersection",
+    "title": "Set, Subset, Union, and Intersection | Week 5, 2nd Term",
     "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "Think like a mathematician: sort, compare, connect, and explain how groups of objects are related.",
@@ -370,7 +370,7 @@
     "icon": "calculator"
   },
   {
-    "title": "Subsets of Real Numbers",
+    "title": "Subsets of Real Numbers | Week 6, 2nd Term",
     "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "Discover how natural, whole, integer, rational, irrational, and real numbers are connected through subsets.",
@@ -381,13 +381,50 @@
   },
   {
     "title": "Orgnized the Data and Represent and Interpret the Data",
-    "subject": "Mathematics",
+    "subject": "Mathematics | Week 7-8, 2nd Term",
     "grade": "Grade 7",
     "description": "Learn how to organize data, choose the right graph, and explain what the data tells you.",
     "file": "lessons/mathematics/grade-7/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks_Expanded/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks/index.html",
     "date": "2026-09-06",
     "featured": false,
     "icon": "calculator"
+  },
+  {
+    "title": "Integers: Positive, Negative & Real-Life Directions | Week 9, 2nd Term",
+    "grade": "Grade 7",
+    "description": "A 5-day interactive classroom presentation. Learn what integers are and use positive and negative numbers to describe opposites, directions, gains, losses, temperature, elevation, and movement.",
+    "file": "lessons/mathematics/grade-7/Grade7_Week9_Integers_ILAW_Interactive/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Where Does the Number Go? | Week 10, 2nd Term",
+    "grade": "Grade 7",
+    "description": "A student-friendly journey into locating integers on the number line, comparing them correctly, and ordering them from least to greatest or greatest to least.",
+    "file": "lessons/mathematics/grade-7/Grade7_Locating_Comparing_Ordering_Integers_ILAW_1Week/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Volume of Pyramids | Week 1, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Explore how the volume of pyramids other than square and rectangular pyramids can be discovered, derive the formula, and solve volume problems step by step.",
+    "file": "lessons/mathematics/grade-8/Grade8_Volume_of_Pyramids_ILAW_Week1/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  }, 
+  {
+    "title": "Volume of Cones and Spheres | Week 2, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "A one-week, presentation-style interactive lesson. Teach it like a classroom slideshow: explain, ask, reveal, discuss, and let learners answer before moving on.",
+    "file": "lessons/mathematics/grade-8/Grade8_Cones_Spheres_ILAW_Week2_Presentation/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
   }
-  
 ]

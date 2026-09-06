@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Grade 8 Mathematics | Cones & Spheres</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="#top" aria-label="Teacher Ed Learning Hub">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"></span>
+      <span class="brand-copy">
+        <strong>Math with Teacher Ed</strong>
+        <small>Grade 8 • Measurement & Geometry</small>
+      </span>
+    </a>
+    <div class="header-actions">
+      <span class="week-badge">WEEK 2</span>
+      <button id="fullscreenBtn" class="tool-btn" type="button">⛶ <span>Full Screen</span></button>
+      <button id="menuBtn" class="tool-btn menu-btn" type="button" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+  <nav id="mainNav" class="main-nav">
+    <a href="#overview">Overview</a>
+    <a href="#presentation">Class Presentation</a>
+    <a href="#formulaLab">Formula Lab</a>
+    <a href="#assessment">20-Item Assessment</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero" id="overview">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">DEPED • GRADE 8 • MEASUREMENT AND GEOMETRY • WEEK 2</div>
+      <h1>Cones & Spheres<br><span>Volume Explorers</span></h1>
+      <p class="hero-lead">
+        A one-week, presentation-style interactive lesson. Teach it like a classroom slideshow:
+        explain, ask, reveal, discuss, and let learners answer before moving on.
+      </p>
+      <div class="hero-buttons">
+        <a class="primary-btn" href="#presentation">▶ Start Class Presentation</a>
+        <a class="secondary-btn" href="#formulaLab">🧪 Open Formula Lab</a>
+      </div>
+      <div class="hero-note">⏱️ 5 class days • 50 minutes per day • ILAW: Introduce • Learn • Apply • Wrap-Up</div>
+    </div>
+    <div class="hero-art">
+      <div class="shape-card cone-card">
+        <div class="cone-visual"></div>
+        <b>CONE</b>
+        <small>V = ⅓πr²h</small>
+      </div>
+      <div class="shape-card sphere-card">
+        <div class="sphere-visual"></div>
+        <b>SPHERE</b>
+        <small>V = ⁴⁄₃πr³</small>
+      </div>
+      <div class="spark sp1">✦</div><div class="spark sp2">✦</div><div class="spark sp3">✦</div>
+    </div>
+  </div>
+</section>
+
+<section class="section standards">
+  <div class="section-heading">
+    <span>🎯</span>
+    <div><p class="kicker">DEPED ALIGNMENT</p><h2>Content & Performance Standards</h2></div>
+  </div>
+  <div class="standards-grid">
+    <article class="standard-card">
+      <h3>Content Standard</h3>
+      <p>The learners should have knowledge and understanding of:</p>
+      <ul>
+        <li>volume of pyramids, cones, and spheres;</li>
+        <li>relationships among dimensions and volume of solid figures;</li>
+        <li>formulas and appropriate units for volume;</li>
+        <li>mathematical reasoning in real-life measurement situations.</li>
+      </ul>
+    </article>
+    <article class="standard-card">
+      <h3>Performance Standard</h3>
+      <p>By the end of the term, the learners are able to:</p>
+      <ul>
+        <li>explore inductively the volumes of cones and spheres;</li>
+        <li>find the volumes of cones and spheres;</li>
+        <li>explain how the formulas are connected to known solids;</li>
+        <li>solve contextual problems involving volumes of cones and spheres.</li>
+      </ul>
+    </article>
+  </div>
+  <div class="competency">
+    <b>Week 2 Learning Competency:</b>
+    Explore inductively the volumes of cones and spheres, leading to their formulas;
+    find the volumes of cones and spheres; and solve problems involving their volumes.
+  </div>
+</section>
+
+<section class="section ilaw">
+  <div class="section-heading">
+    <span>💡</span>
+    <div><p class="kicker">TEACHING STRATEGY</p><h2>ILAW Presentation Flow</h2></div>
+  </div>
+  <div class="ilaw-grid">
+    <article><span>I</span><h3>Introduce</h3><p>Connect the topic to familiar objects and activate prior knowledge.</p></article>
+    <article><span>L</span><h3>Learn</h3><p>Explain the concept, investigate patterns, and derive the formula.</p></article>
+    <article><span>A</span><h3>Apply</h3><p>Let learners answer, calculate, explain, and solve authentic problems.</p></article>
+    <article><span>W</span><h3>Wrap-Up</h3><p>Check understanding, summarize the key idea, and reflect.</p></article>
+  </div>
+</section>
+
+<section class="section presentation-section" id="presentation">
+  <div class="section-heading">
+    <span>🖥️</span>
+    <div>
+      <p class="kicker">CLASSROOM PRESENTATION MODE</p>
+      <h2>Week 2 • 5-Day Interactive Lesson</h2>
+      <p>Choose a day, then use the slide controls. Each slide is designed for teacher-led class discussion.</p>
+    </div>
+  </div>
+
+  <div class="day-picker" id="dayPicker"></div>
+
+  <div class="presentation-shell">
+    <div class="slide-topbar">
+      <div>
+        <span id="slideWeek" class="pill">WEEK 2</span>
+        <span id="slideDay" class="pill">DAY 1</span>
+        <span id="slideILAW" class="pill">I — INTRODUCE</span>
+      </div>
+      <div class="slide-counter"><span id="slideNumber">1</span> / <span id="slideTotal">1</span></div>
+    </div>
+
+    <div id="slideArea" class="slide-area"></div>
+
+    <div class="slide-controls">
+      <button id="prevSlide" class="secondary-btn" type="button">← Previous</button>
+      <button id="nextSlide" class="primary-btn" type="button">Next →</button>
+    </div>
+    <div class="progress-track"><div id="slideProgress" class="progress-fill"></div></div>
+  </div>
+</section>
+
+<section class="section formula-section" id="formulaLab">
+  <div class="section-heading">
+    <span>🧪</span>
+    <div><p class="kicker">INTERACTIVE EXPLORATION</p><h2>Formula Lab</h2><p>Change the dimensions and immediately see how volume changes.</p></div>
+  </div>
+
+  <div class="lab-grid">
+    <article class="lab-card">
+      <div class="lab-title"><span class="mini-cone"></span><div><h3>Cone Explorer</h3><small>V = ⅓πr²h</small></div></div>
+      <label>Radius: <output id="coneROut">4</output> cm</label>
+      <input id="coneR" type="range" min="1" max="12" value="4">
+      <label>Height: <output id="coneHOut">9</output> cm</label>
+      <input id="coneH" type="range" min="1" max="18" value="9">
+      <div class="formula-display">V = ⅓πr²h</div>
+      <div id="coneLabResult" class="result-big">150.80 cm³</div>
+      <p class="lab-note">Compare this with a cylinder having the same radius and height. The cone should have <b>one-third</b> of the cylinder's volume.</p>
+    </article>
+
+    <article class="lab-card">
+      <div class="lab-title"><span class="mini-sphere"></span><div><h3>Sphere Explorer</h3><small>V = ⁴⁄₃πr³</small></div></div>
+      <label>Radius: <output id="sphereROut">5</output> cm</label>
+      <input id="sphereR" type="range" min="1" max="12" value="5">
+      <div class="formula-display">V = ⁴⁄₃πr³</div>
+      <div id="sphereLabResult" class="result-big">523.60 cm³</div>
+      <p class="lab-note">The sphere is related to a cylinder of radius r and height 2r. The sphere occupies <b>two-thirds</b> of that cylinder's volume.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section assessment-section" id="assessment">
+  <div class="assessment-head">
+    <div>
+      <p class="kicker">WEEK 2 MASTER CHECK</p>
+      <h2>20-Item Assessment</h2>
+      <p>Includes concepts, formula recognition, computation, derivation, and problem solving.</p>
+    </div>
+    <div class="score-box"><span id="score">0</span><small>/ 20</small><b id="scoreMessage">Ready?</b></div>
+  </div>
+
+  <form id="assessmentForm"></form>
+  <div class="assessment-actions">
+    <button class="primary-btn" type="button" id="submitAssessment">Submit Assessment</button>
+    <button class="secondary-btn" type="button" id="resetAssessment">Reset</button>
+  </div>
+  <div id="assessmentFeedback" class="assessment-feedback"></div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo">
+      <div><strong>TEACHER ED Learning Hub</strong><small>Learn • Practice • Master</small></div>
+    </div>
+    <div><b>Grade 8 Mathematics</b><p>Measurement & Geometry<br>Cones and Spheres • Week 2</p></div>
+    <div><b>ILAW</b><p>Introduce • Learn • Apply • Wrap-Up</p></div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Teacher Ed Learning Hub • Interactive classroom presentation</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

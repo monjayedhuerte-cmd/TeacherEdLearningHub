@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082b57">
+  <title>Teacher Ed | Grade 7 Mathematics | Week 9 Integers</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+      <div><strong>Teacher Ed</strong><span>Learning Hub • Mathematics</span></div>
+    </div>
+    <div class="header-tools">
+      <span class="week-badge">WEEK 9</span>
+      <button id="fsBtn" class="tool-btn" type="button">⛶ Full Screen</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">GRADE 7 • SECOND TERM • NUMBER & ALGEBRA</p>
+        <h1>Integers: Positive, Negative & Real-Life Directions</h1>
+        <p class="hero-copy">A 5-day interactive classroom presentation. Learn what integers are and use positive and negative numbers to describe opposites, directions, gains, losses, temperature, elevation, and movement.</p>
+        <div class="standard-card">
+          <b>Learning Competencies</b>
+          <ul>
+            <li>Describe the set of integers.</li>
+            <li>Use positive and negative numbers to describe directions or opposites in real-life situations.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="number-orbit">−5 −4 −3 −2 −1 <span>0</span> +1 +2 +3 +4 +5</div>
+        <div class="hero-number">−</div>
+        <div class="hero-label">Opposites<br><small>have the same distance from 0</small></div>
+      </div>
+    </section>
+
+    <section class="standards">
+      <div><b>Content Standard</b><p>The learners demonstrate understanding of the set of integers and how positive and negative numbers represent opposites in real-life situations.</p></div>
+      <div><b>Performance Standard</b><p>The learners use integers to describe, represent, compare, and explain directions or opposite situations accurately.</p></div>
+    </section>
+
+    <section class="day-nav-wrap">
+      <div class="section-title"><span>YOUR 1-WEEK CLASS JOURNEY</span><small>Each day is designed for a 50-minute class discussion.</small></div>
+      <div class="day-nav" id="dayNav">
+        <button class="day-btn active" data-day="1">DAY 1<small>Meet the Integers</small></button>
+        <button class="day-btn" data-day="2">DAY 2<small>Number Line & Opposites</small></button>
+        <button class="day-btn" data-day="3">DAY 3<small>Real-Life Directions</small></button>
+        <button class="day-btn" data-day="4">DAY 4<small>Compare & Order</small></button>
+        <button class="day-btn" data-day="5">DAY 5<small>Review & Mastery</small></button>
+      </div>
+    </section>
+
+    <section class="presentation" id="lesson"></section>
+
+    <section class="assessment" id="assessment">
+      <div class="section-title"><span>20-ITEM MASTERY ASSESSMENT</span><small>Answer every item. Your score appears after submission.</small></div>
+      <div id="quiz"></div>
+      <button id="submitQuiz" class="primary-btn" type="button">Submit Assessment</button>
+      <div id="quizResult" class="quiz-result"></div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+    <div><strong>Teacher Ed Learning Hub</strong><span>Grade 7 Mathematics • Week 9 • Integers</span></div>
+    <button class="footer-top" id="topBtn" type="button">↑ Back to Top</button>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

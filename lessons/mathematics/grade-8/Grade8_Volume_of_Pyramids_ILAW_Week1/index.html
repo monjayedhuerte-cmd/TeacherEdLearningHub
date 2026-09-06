@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Grade 8 | Week 1 | Volume of Pyramids</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+ <div class="container nav">
+  <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub Home">
+   <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+   <span><strong>Teacher Ed Learning Hub</strong><small>Grade 8 Mathematics • Week 1</small></span>
+  </a>
+  <div class="nav-tools">
+   <button id="fullscreenBtn" class="tool-btn" type="button">⛶ <span>Full Screen</span></button>
+   <button id="menuBtn" class="menu-btn" type="button">☰</button>
+  </div>
+  <nav id="navLinks">
+   <a href="#overview">Week 1</a><a href="#ilaw">ILAW</a><a href="#lesson">Lessons</a><a href="#formula">Formula Lab</a><a href="#mastery">Mastery</a>
+  </nav>
+ </div>
+</header>
+
+<main id="home">
+<section class="hero">
+ <div class="container hero-grid">
+  <div>
+   <div class="week-badge">📅 WEEK 1 • MEASUREMENT AND GEOMETRY</div>
+   <h1>Volume of <span>Pyramids</span></h1>
+   <p class="lead">Explore how the volume of pyramids other than square and rectangular pyramids can be discovered, derive the formula, and solve volume problems step by step.</p>
+   <div class="actions"><a class="btn primary" href="#lesson">Start Week 1 →</a><a class="btn ghost" href="#formula">Derive the Formula</a></div>
+   <div class="hero-points"><span>🔺 Triangular</span><span>⬟ Pentagonal</span><span>🔷 Other bases</span></div>
+  </div>
+  <div class="pyramid-stage">
+   <div class="pyramid">
+    <div class="face front"></div><div class="face left"></div><div class="face right"></div><div class="face back"></div>
+    <div class="base-shape"></div><div class="vertex"></div>
+   </div>
+   <div class="formula-card"><small>PYRAMID VOLUME</small><b>V = ⅓Bh</b><span>Base Area × Height ÷ 3</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="overview" class="section">
+ <div class="container">
+  <div class="section-title"><span class="eyebrow">WEEK 1 • CURRICULUM ALIGNMENT</span><h2>What You Are Expected to Learn</h2></div>
+  <div class="standards">
+   <article><b class="tag">CONTENT STANDARD</b><h3>Understanding</h3><p>The learner demonstrates understanding of the volume of pyramids other than square and rectangular pyramids, including the relationship between a pyramid, its base area, and its height.</p></article>
+   <article><b class="tag">PERFORMANCE STANDARD</b><h3>Application</h3><p>The learner finds the volume of pyramids and uses the appropriate formula to solve mathematical and real-life problems involving volume.</p></article>
+   <article><b class="tag">LEARNING COMPETENCY</b><h3>Week 1 Target</h3><p>Explore inductively the volume of pyramids other than square and rectangular pyramids; find their volume; and solve problems involving their volumes.</p></article>
+  </div>
+  <div class="targets">
+   <div>🎯 <b>By the end of Week 1, you can:</b></div>
+   <ul><li>identify the base and perpendicular height of a pyramid;</li><li>explain why the volume is one-third of a matching prism's volume;</li><li>derive and use <b>V = ⅓Bh</b>;</li><li>find base area for different polygonal bases;</li><li>solve routine and real-life volume problems with correct units.</li></ul>
+  </div>
+ </div>
+</section>
+
+<section id="ilaw" class="section dark">
+ <div class="container">
+  <div class="section-title"><span class="eyebrow">DEPED ILAW TEACHING STRATEGY</span><h2>Your Week 1 Learning Path</h2><p>The website follows an Introduce–Learn–Apply–Wrap-Up cycle every day.</p></div>
+  <div class="ilaw-grid">
+   <article><div class="letter">I</div><h3>Introduce</h3><p>Connect pyramids to objects, containers, roofs, monuments, and packaging.</p></article>
+   <article><div class="letter">L</div><h3>Learn</h3><p>Study the parts of a pyramid, base area, height, and the reasoning behind the formula.</p></article>
+   <article><div class="letter">A</div><h3>Apply</h3><p>Calculate, compare, classify, and solve increasingly challenging volume problems.</p></article>
+   <article><div class="letter">W</div><h3>Wrap-Up</h3><p>Explain the rule, check units, correct mistakes, and complete mastery practice.</p></article>
+  </div>
+ </div>
+</section>
+
+<section id="lesson" class="section">
+ <div class="container">
+  <div class="section-title"><span class="eyebrow">ONE-WEEK PLAN • WEEK 1</span><h2>Five Detailed Learning Days</h2><p>Work through the days in order. Each day contains explanations, examples, and interactive exercises.</p></div>
+  <div class="day-tabs">
+   <button class="day-tab active" data-day="1">DAY 1<small>Meet the Pyramid</small></button>
+   <button class="day-tab" data-day="2">DAY 2<small>Discover the Formula</small></button>
+   <button class="day-tab" data-day="3">DAY 3<small>Find Base Area</small></button>
+   <button class="day-tab" data-day="4">DAY 4<small>Find Volume</small></button>
+   <button class="day-tab" data-day="5">DAY 5<small>Problem Solving</small></button>
+  </div>
+  <div id="lessonArea"></div>
+ </div>
+</section>
+
+<section id="formula" class="section formula-section">
+ <div class="container">
+  <div class="section-title"><span class="eyebrow">FORMULA LAB</span><h2>Derive the Pyramid Volume Formula</h2><p>Do not memorize first. Understand where the one-third comes from.</p></div>
+  <div class="derivation">
+   <div class="derive-step"><span>1</span><h3>Start with a prism</h3><p>A prism with the same base area <b>B</b> and perpendicular height <b>h</b> has volume:</p><div class="big-math">V<sub>prism</sub> = Bh</div></div>
+   <div class="derive-arrow">↓</div>
+   <div class="derive-step"><span>2</span><h3>Compare three equal-height pyramids</h3><p>When a prism is decomposed into three pyramidal regions with the same base area and height relationship, the pyramid occupies one-third of the prism's volume.</p><div class="big-math">V<sub>pyramid</sub> = ⅓V<sub>prism</sub></div></div>
+   <div class="derive-arrow">↓</div>
+   <div class="derive-step"><span>3</span><h3>Substitute the prism volume</h3><p>Since the prism volume is <b>Bh</b>, replace it in the relationship:</p><div class="big-math">V = ⅓(Bh)</div></div>
+   <div class="derive-arrow">↓</div>
+   <div class="derive-step final"><span>✓</span><h3>Final formula</h3><div class="big-math">V = ⅓Bh</div><p><b>B</b> = area of the base &nbsp; • &nbsp; <b>h</b> = perpendicular height</p></div>
+  </div>
+  <div class="important"><b>⚠️ Height reminder:</b> In the formula, <b>h</b> is the perpendicular height from the apex straight down to the base. It is not automatically the slant height.</div>
+ </div>
+</section>
+
+<section id="mastery" class="section dark">
+ <div class="container">
+  <div class="section-title"><span class="eyebrow">WEEK 1 MASTERY</span><h2>Pyramid Master Challenge</h2><p>12 questions covering concepts, formula, base area, computation, and applications.</p></div>
+  <div id="quiz"></div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer">
+  <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"><div><b>Teacher Ed Learning Hub</b><span>Learn • Practice • Master</span></div></div>
+  <div>Grade 8 Mathematics • Week 1 • Measurement and Geometry</div>
+  <div>© 2026 Teacher Ed</div>
+ </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
