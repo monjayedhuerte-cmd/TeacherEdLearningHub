@@ -380,8 +380,8 @@
     "icon": "calculator"
   },
   {
-    "title": "Orgnized the Data and Represent and Interpret the Data",
-    "subject": "Mathematics | Week 7-8, 2nd Term",
+    "title": "Orgnized the Data and Represent and Interpret the Data | Week 7-8, 2nd Term",
+    "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "Learn how to organize data, choose the right graph, and explain what the data tells you.",
     "file": "lessons/mathematics/grade-7/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks_Expanded/Grade7_Organizing_Representing_Interpreting_Data_ILAW_2Weeks/index.html",
@@ -391,6 +391,7 @@
   },
   {
     "title": "Integers: Positive, Negative & Real-Life Directions | Week 9, 2nd Term",
+    "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "A 5-day interactive classroom presentation. Learn what integers are and use positive and negative numbers to describe opposites, directions, gains, losses, temperature, elevation, and movement.",
     "file": "lessons/mathematics/grade-7/Grade7_Week9_Integers_ILAW_Interactive/index.html",
@@ -400,6 +401,7 @@
   },
   {
     "title": "Where Does the Number Go? | Week 10, 2nd Term",
+    "subject": "Mathematics",
     "grade": "Grade 7",
     "description": "A student-friendly journey into locating integers on the number line, comparing them correctly, and ordering them from least to greatest or greatest to least.",
     "file": "lessons/mathematics/grade-7/Grade7_Locating_Comparing_Ordering_Integers_ILAW_1Week/index.html",
