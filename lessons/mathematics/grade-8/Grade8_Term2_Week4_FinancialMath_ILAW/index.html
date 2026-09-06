@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#092b52">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Teacher Ed | Grade 8 Mathematics — Week 4</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="apple-touch-icon" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub Home">
+        <span class="brand-logo"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub"></span>
+        <span class="brand-text"><strong>Teacher Ed</strong><small>Learning Hub • Grade 8 Mathematics</small></span>
+      </a>
+      <div class="top-actions">
+        <span class="week-badge">WEEK 4 • TERM 2</span>
+        <button id="fullscreenBtn" class="icon-btn" type="button" title="Full screen">⛶ <span>Full Screen</span></button>
+      </div>
+    </div>
+    <nav class="lesson-nav" aria-label="Lesson navigation">
+      <a href="#home" class="nav-link active" data-target="home">Home</a>
+      <a href="#day1" class="nav-link" data-target="day1">Day 1</a>
+      <a href="#day2" class="nav-link" data-target="day2">Day 2</a>
+      <a href="#day3" class="nav-link" data-target="day3">Day 3</a>
+      <a href="#day4" class="nav-link" data-target="day4">Day 4</a>
+      <a href="#day5" class="nav-link" data-target="day5">Day 5</a>
+      <a href="#assessment" class="nav-link" data-target="assessment">20-Item Assessment</a>
+    </nav>
+  </header>
+
+  <main id="app">
+    <section id="home" class="slide hero-slide">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">SECOND TERM • WEEK 4 • NUMBER AND ALGEBRA</div>
+          <h1>Money Math Mission 💰</h1>
+          <p class="hero-lead">Earn it. Compare it. Protect it. Plan it.</p>
+          <p>Welcome, Grade 8 mathematicians! This week, you will use mathematics to solve real-life money situations involving <strong>earning money, profit and loss, best buys, and buying on terms (instalment plans)</strong>.</p>
+          <div class="hero-actions">
+            <button class="primary-btn" data-jump="day1">Start Day 1 →</button>
+            <button class="secondary-btn" data-jump="assessment">Preview Assessment</button>
+          </div>
+        </div>
+        <div class="mission-card">
+          <div class="coin">₱</div>
+          <h3>Your Weekly Mission</h3>
+          <p>Become a smart money mathematician who can explain not only <em>what</em> the answer is, but <em>why</em> it is correct.</p>
+          <div class="mini-stats">
+            <div><b>5</b><span>Class Days</span></div>
+            <div><b>50</b><span>Min/Day</span></div>
+            <div><b>20+</b><span>Assessment</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="standards-card">
+        <h2>Learning Targets</h2>
+        <p><strong>By the end of the week, I can…</strong></p>
+        <div class="target-grid">
+          <div>💵 solve problems involving earning money;</div>
+          <div>📈 determine profit or loss in a transaction;</div>
+          <div>🛒 compare choices and identify the best value (“best buy”);</div>
+          <div>🧾 understand and solve buying-on-terms / instalment-plan problems.</div>
+        </div>
+        <p class="source-note">These targets follow the Grade 8 Second Term Week 4 competency in the uploaded Budget of Work.</p>
+      </div>
+
+      <div class="ilaw-map">
+        <div class="ilaw i">I <span>Introduce</span><small>Connect math to life.</small></div>
+        <div class="ilaw l">L <span>Learn</span><small>See the idea and examples.</small></div>
+        <div class="ilaw a">A <span>Apply</span><small>Try it yourself.</small></div>
+        <div class="ilaw w">W <span>Wrap Up</span><small>Explain and check.</small></div>
+      </div>
+    </section>
+
+    <section id="day1" class="slide lesson-slide">
+      <div class="day-head"><span>DAY 1</span><h2>Earning Money: “How Much Did I Really Earn?”</h2><p>50-minute interactive class</p></div>
+      <div class="timebar"><span>⏱ 0–8 min</span><span>⏱ 8–23 min</span><span>⏱ 23–43 min</span><span>⏱ 43–50 min</span></div>
+
+      <div class="ilaw-block introduce">
+        <div class="stage">I — INTRODUCE</div>
+        <h3>Warm-Up: The Weekend Job</h3>
+        <p>You help at a small school event and receive <strong>₱450</strong> for 5 hours of work. What does that mean?</p>
+        <div class="choice-row" data-quiz="d1warm">
+          <button data-answer="wrong">₱450 per hour</button>
+          <button data-answer="correct">₱90 per hour</button>
+          <button data-answer="wrong">₱45 per hour</button>
+        </div>
+        <div class="feedback" id="d1warm-feedback"></div>
+      </div>
+
+      <div class="ilaw-block learn">
+        <div class="stage">L — LEARN</div>
+        <h3>1. Earnings and Rate of Pay</h3>
+        <p><strong>Earnings</strong> are the money received from work or a service. If pay is based on time, we often use:</p>
+        <div class="formula">Total Earnings = Rate × Time</div>
+        <div class="example-grid">
+          <div class="example-card"><b>Example A</b><p>₱80/hour × 6 hours = <strong>₱480</strong>.</p></div>
+          <div class="example-card"><b>Example B</b><p>₱650 for 5 days = <strong>₱130/day</strong>.</p><small>650 ÷ 5 = 130</small></div>
+          <div class="example-card"><b>Example C</b><p>₱120/hour for 7.5 hours = <strong>₱900</strong>.</p><small>120 × 7.5 = 900</small></div>
+        </div>
+        <div class="teacher-tip"><strong>Think:</strong> What quantity is missing? Rate, time, or total earnings? Choose the operation that connects the three.</div>
+      </div>
+
+      <div class="ilaw-block apply">
+        <div class="stage">A — APPLY</div>
+        <h3>Mission 1: Calculate the Earnings</h3>
+        <div class="question-card">
+          <p><strong>Q1.</strong> Ana earns ₱95 per hour and works 6 hours. How much does she earn?</p>
+          <div class="input-line"><input id="d1q1" type="number" inputmode="decimal" placeholder="Your answer in pesos"><button onclick="checkInput('d1q1',570,'d1q1fb')">Check</button></div>
+          <div id="d1q1fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q2.</strong> Ben earned ₱840 in 7 hours. What was his hourly rate?</p>
+          <div class="input-line"><input id="d1q2" type="number" inputmode="decimal" placeholder="₱ per hour"><button onclick="checkInput('d1q2',120,'d1q2fb')">Check</button></div>
+          <div id="d1q2fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q3.</strong> A student earns ₱75/hour. How many hours are needed to earn ₱600?</p>
+          <div class="input-line"><input id="d1q3" type="number" inputmode="decimal" placeholder="Hours"><button onclick="checkInput('d1q3',8,'d1q3fb')">Check</button></div>
+          <div id="d1q3fb" class="feedback"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block wrap">
+        <div class="stage">W — WRAP UP</div>
+        <h3>Exit Ticket</h3>
+        <p>Complete: “If I know the rate and the time, I can find earnings by ______.”</p>
+        <div class="choice-row" data-quiz="d1exit">
+          <button data-answer="wrong">adding</button>
+          <button data-answer="correct">multiplying</button>
+          <button data-answer="wrong">subtracting</button>
+        </div>
+        <div class="feedback" id="d1exit-feedback"></div>
+      </div>
+    </section>
+
+    <section id="day2" class="slide lesson-slide">
+      <div class="day-head"><span>DAY 2</span><h2>Profit and Loss: “Did the Seller Win or Lose?”</h2><p>50-minute interactive class</p></div>
+      <div class="timebar"><span>⏱ 0–7 min</span><span>⏱ 7–23 min</span><span>⏱ 23–43 min</span><span>⏱ 43–50 min</span></div>
+
+      <div class="ilaw-block introduce">
+        <div class="stage">I — INTRODUCE</div>
+        <h3>Market Challenge</h3>
+        <p>A seller buys a notebook for ₱45 and sells it for ₱60. Is that a profit or a loss?</p>
+        <div class="choice-row" data-quiz="d2warm">
+          <button data-answer="correct">Profit of ₱15</button>
+          <button data-answer="wrong">Loss of ₱15</button>
+          <button data-answer="wrong">No profit or loss</button>
+        </div>
+        <div class="feedback" id="d2warm-feedback"></div>
+      </div>
+
+      <div class="ilaw-block learn">
+        <div class="stage">L — LEARN</div>
+        <h3>Cost Price, Selling Price, Profit, and Loss</h3>
+        <div class="formula">Profit = Selling Price − Cost Price</div>
+        <div class="formula">Loss = Cost Price − Selling Price</div>
+        <div class="example-grid">
+          <div class="example-card"><b>Profit Example</b><p>CP = ₱250, SP = ₱310</p><p>₱310 − ₱250 = <strong>₱60 profit</strong></p></div>
+          <div class="example-card"><b>Loss Example</b><p>CP = ₱500, SP = ₱430</p><p>₱500 − ₱430 = <strong>₱70 loss</strong></p></div>
+        </div>
+        <div class="step-list"><span>1</span> Identify CP and SP. <span>2</span> Compare them. <span>3</span> Subtract the smaller amount from the larger. <span>4</span> Label the result profit or loss.</div>
+      </div>
+
+      <div class="ilaw-block apply">
+        <div class="stage">A — APPLY</div>
+        <h3>Profit-or-Loss Lab</h3>
+        <div class="question-card">
+          <p><strong>Q1.</strong> CP = ₱780, SP = ₱900. Find the profit.</p>
+          <div class="input-line"><input id="d2q1" type="number" inputmode="decimal"><button onclick="checkInput('d2q1',120,'d2q1fb')">Check</button></div>
+          <div id="d2q1fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q2.</strong> CP = ₱1,250, SP = ₱1,100. Find the loss.</p>
+          <div class="input-line"><input id="d2q2" type="number" inputmode="decimal"><button onclick="checkInput('d2q2',150,'d2q2fb')">Check</button></div>
+          <div id="d2q2fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q3.</strong> A seller buys a bag for ₱640 and wants a ₱160 profit. What should the selling price be?</p>
+          <div class="input-line"><input id="d2q3" type="number" inputmode="decimal"><button onclick="checkInput('d2q3',800,'d2q3fb')">Check</button></div>
+          <div id="d2q3fb" class="feedback"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block wrap">
+        <div class="stage">W — WRAP UP</div>
+        <h3>Fast Check</h3>
+        <p>If SP is greater than CP, the transaction has a ______.</p>
+        <div class="choice-row" data-quiz="d2exit">
+          <button data-answer="wrong">loss</button>
+          <button data-answer="correct">profit</button>
+          <button data-answer="wrong">zero result</button>
+        </div>
+        <div class="feedback" id="d2exit-feedback"></div>
+      </div>
+    </section>
+
+    <section id="day3" class="slide lesson-slide">
+      <div class="day-head"><span>DAY 3</span><h2>Best Buys: “Which Deal Gives More Value?”</h2><p>50-minute interactive class</p></div>
+      <div class="timebar"><span>⏱ 0–8 min</span><span>⏱ 8–25 min</span><span>⏱ 25–43 min</span><span>⏱ 43–50 min</span></div>
+
+      <div class="ilaw-block introduce">
+        <div class="stage">I — INTRODUCE</div>
+        <h3>Same Product, Different Package</h3>
+        <p>Store A sells 3 notebooks for ₱ ninety (₱90). Store B sells 5 notebooks for ₱140. Which is cheaper per notebook?</p>
+        <div class="choice-row" data-quiz="d3warm">
+          <button data-answer="correct">Store A: ₱30 each</button>
+          <button data-answer="wrong">Store B: ₱28 each</button>
+          <button data-answer="wrong">They cost the same</button>
+        </div>
+        <div class="feedback" id="d3warm-feedback"></div>
+      </div>
+
+      <div class="ilaw-block learn">
+        <div class="stage">L — LEARN</div>
+        <h3>Unit Price: The Secret of a Best Buy</h3>
+        <p>When packages have different sizes, compare the <strong>cost per 1 unit</strong>.</p>
+        <div class="formula">Unit Price = Total Price ÷ Number of Units</div>
+        <div class="example-grid">
+          <div class="example-card"><b>Deal A</b><p>6 pens = ₱72</p><strong>₱72 ÷ 6 = ₱12/pen</strong></div>
+          <div class="example-card"><b>Deal B</b><p>10 pens = ₱110</p><strong>₱110 ÷ 10 = ₱11/pen</strong></div>
+        </div>
+        <p>Deal B is the better buy because each pen costs ₱11 instead of ₱12.</p>
+        <div class="teacher-tip"><strong>Important:</strong> A bigger package is not automatically the best buy. Always compare unit prices.</div>
+      </div>
+
+      <div class="ilaw-block apply">
+        <div class="stage">A — APPLY</div>
+        <h3>Best-Buy Battle</h3>
+        <div class="compare-table">
+          <div><b>Choice</b></div><div><b>Package</b></div><div><b>Price</b></div><div><b>Unit Price</b></div>
+          <div>A</div><div>4 notebooks</div><div>₱100</div><div>₱25</div>
+          <div>B</div><div>7 notebooks</div><div>₱161</div><div>₱23</div>
+          <div>C</div><div>10 notebooks</div><div>₱270</div><div>₱27</div>
+        </div>
+        <div class="choice-row" data-quiz="d3best">
+          <button data-answer="wrong">A</button><button data-answer="correct">B</button><button data-answer="wrong">C</button>
+        </div>
+        <div class="feedback" id="d3best-feedback"></div>
+
+        <div class="question-card">
+          <p><strong>Q2.</strong> Which has the lower unit price: 8 juice boxes for ₱120 or 12 juice boxes for ₱168?</p>
+          <div class="choice-row" data-quiz="d3q2">
+            <button data-answer="wrong">8 for ₱120</button><button data-answer="correct">12 for ₱168</button><button data-answer="wrong">Same price</button>
+          </div>
+          <div class="feedback" id="d3q2-feedback"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block wrap">
+        <div class="stage">W — WRAP UP</div>
+        <h3>Explain Your Choice</h3>
+        <p>Complete the sentence: “A best buy is determined by comparing ______.”</p>
+        <div class="choice-row" data-quiz="d3exit">
+          <button data-answer="wrong">package color</button><button data-answer="correct">unit prices</button><button data-answer="wrong">package size only</button>
+        </div>
+        <div class="feedback" id="d3exit-feedback"></div>
+      </div>
+    </section>
+
+    <section id="day4" class="slide lesson-slide">
+      <div class="day-head"><span>DAY 4</span><h2>Buying on Terms: “Cash or Instalment?”</h2><p>50-minute interactive class</p></div>
+      <div class="timebar"><span>⏱ 0–8 min</span><span>⏱ 8–25 min</span><span>⏱ 25–43 min</span><span>⏱ 43–50 min</span></div>
+
+      <div class="ilaw-block introduce">
+        <div class="stage">I — INTRODUCE</div>
+        <h3>The Phone Deal</h3>
+        <p>A phone costs ₱12,000 cash. Another offer is ₱2,500 down payment plus 5 monthly payments of ₱2,100. Which question should a smart buyer ask first?</p>
+        <div class="choice-row" data-quiz="d4warm">
+          <button data-answer="correct">“What is the total amount I will pay?”</button>
+          <button data-answer="wrong">“What color is the phone?”</button>
+          <button data-answer="wrong">“Is the monthly payment small?”</button>
+        </div>
+        <div class="feedback" id="d4warm-feedback"></div>
+      </div>
+
+      <div class="ilaw-block learn">
+        <div class="stage">L — LEARN</div>
+        <h3>Buying on Terms / Instalment Plan</h3>
+        <p>In an instalment plan, the price is paid in parts. To compare it fairly with the cash price, find the <strong>total amount paid</strong>.</p>
+        <div class="formula">Total Instalment Cost = Down Payment + (Number of Payments × Payment per Period)</div>
+        <div class="example-card wide"><b>Worked Example</b>
+          <p>Cash price = ₱12,000</p><p>Down payment = ₱2,500</p><p>5 payments × ₱2,100 = ₱10,500</p>
+          <p>Total = ₱2,500 + ₱10,500 = <strong>₱13,000</strong></p>
+          <p>Compared with cash, the instalment plan costs <strong>₱1,000 more</strong>.</p>
+        </div>
+        <div class="teacher-tip"><strong>Smart-buyer rule:</strong> Never judge a deal from the monthly payment alone. Calculate the whole cost.</div>
+      </div>
+
+      <div class="ilaw-block apply">
+        <div class="stage">A — APPLY</div>
+        <h3>Instalment Investigator</h3>
+        <div class="question-card">
+          <p><strong>Q1.</strong> A laptop has a ₱3,000 down payment and 8 monthly payments of ₱1,500. What is the total instalment cost?</p>
+          <div class="input-line"><input id="d4q1" type="number" inputmode="decimal"><button onclick="checkInput('d4q1',15000,'d4q1fb')">Check</button></div>
+          <div id="d4q1fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q2.</strong> The cash price is ₱14,000. If total instalment cost is ₱15,200, how much more is paid through instalment?</p>
+          <div class="input-line"><input id="d4q2" type="number" inputmode="decimal"><button onclick="checkInput('d4q2',1200,'d4q2fb')">Check</button></div>
+          <div id="d4q2fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p><strong>Q3.</strong> A bicycle costs ₱9,500 cash or ₱1,500 down + 4 payments of ₱2,100. Which is cheaper?</p>
+          <div class="choice-row" data-quiz="d4q3"><button data-answer="correct">Cash</button><button data-answer="wrong">Instalment</button><button data-answer="wrong">Same cost</button></div>
+          <div class="feedback" id="d4q3-feedback"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block wrap">
+        <div class="stage">W — WRAP UP</div>
+        <h3>One-Sentence Wisdom</h3>
+        <p>Before buying on terms, I should calculate the ______.</p>
+        <div class="choice-row" data-quiz="d4exit"><button data-answer="wrong">monthly payment only</button><button data-answer="correct">total amount paid</button><button data-answer="wrong">down payment only</button></div>
+        <div class="feedback" id="d4exit-feedback"></div>
+      </div>
+    </section>
+
+    <section id="day5" class="slide lesson-slide">
+      <div class="day-head"><span>DAY 5</span><h2>Smart Money Challenge: Put It All Together!</h2><p>50-minute review + performance task</p></div>
+      <div class="timebar"><span>⏱ 0–8 min</span><span>⏱ 8–18 min</span><span>⏱ 18–43 min</span><span>⏱ 43–50 min</span></div>
+
+      <div class="ilaw-block introduce">
+        <div class="stage">I — INTRODUCE</div>
+        <h3>Four Skills, One Smart Decision</h3>
+        <div class="skill-grid">
+          <div>💵 <b>Earning</b><small>How much money is received?</small></div>
+          <div>📈 <b>Profit/Loss</b><small>Did SP exceed or fall below CP?</small></div>
+          <div>🛒 <b>Best Buy</b><small>Which has the lower unit price?</small></div>
+          <div>🧾 <b>Instalment</b><small>What is the total amount paid?</small></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block learn">
+        <div class="stage">L — LEARN</div>
+        <h3>Decision Checklist</h3>
+        <ol class="checklist">
+          <li>Underline the important numbers and units.</li>
+          <li>Identify what the question asks.</li>
+          <li>Choose the correct relationship or formula.</li>
+          <li>Compute carefully and show the operation.</li>
+          <li>Label the answer and ask: “Does it make sense?”</li>
+        </ol>
+      </div>
+
+      <div class="ilaw-block apply">
+        <div class="stage">A — APPLY</div>
+        <h3>Classroom Performance Challenge</h3>
+        <p><strong>Scenario:</strong> Your group is choosing supplies for a class project.</p>
+        <div class="question-card">
+          <p>Deal A: 5 folders for ₱125. Deal B: 8 folders for ₱184. Which is the best buy?</p>
+          <div class="choice-row" data-quiz="d5q1"><button data-answer="correct">Deal B</button><button data-answer="wrong">Deal A</button><button data-answer="wrong">Same value</button></div>
+          <div class="feedback" id="d5q1-feedback"></div>
+        </div>
+        <div class="question-card">
+          <p>A student earns ₱110/hour for 4 hours. He spends ₱150 on transportation and food. How much money remains?</p>
+          <div class="input-line"><input id="d5q2" type="number" inputmode="decimal"><button onclick="checkInput('d5q2',290,'d5q2fb')">Check</button></div>
+          <div id="d5q2fb" class="feedback"></div>
+        </div>
+        <div class="question-card">
+          <p>A seller bought an item for ₱1,500 and sold it for ₱1,350. Is it profit or loss, and how much?</p>
+          <div class="choice-row" data-quiz="d5q3"><button data-answer="correct">₱150 loss</button><button data-answer="wrong">₱150 profit</button><button data-answer="wrong">₱2,850 profit</button></div>
+          <div class="feedback" id="d5q3-feedback"></div>
+        </div>
+      </div>
+
+      <div class="ilaw-block wrap">
+        <div class="stage">W — WRAP UP</div>
+        <h3>Ready for the 20-Item Mastery Assessment?</h3>
+        <p>Use your formulas, explain your thinking, and don't rush. You can review any day using the top navigation.</p>
+        <button class="primary-btn" data-jump="assessment">Start Mastery Assessment →</button>
+      </div>
+    </section>
+
+    <section id="assessment" class="slide assessment-slide">
+      <div class="day-head"><span>WEEK 4 MASTERY</span><h2>20-Item Interactive Assessment</h2><p>Answer every item, then submit to see your score.</p></div>
+      <div id="assessmentForm" class="assessment-grid"></div>
+      <div class="assessment-actions">
+        <button class="primary-btn" id="submitAssessment">Submit Assessment</button>
+        <button class="secondary-btn" id="resetAssessment">Reset</button>
+      </div>
+      <div id="assessmentResult" class="result-card hidden"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+        <div><strong>TEACHER ED LEARNING HUB</strong><small>Grade 8 Mathematics • Second Term • Week 4</small></div>
+      </div>
+      <p>Learn • Think • Apply • Master</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

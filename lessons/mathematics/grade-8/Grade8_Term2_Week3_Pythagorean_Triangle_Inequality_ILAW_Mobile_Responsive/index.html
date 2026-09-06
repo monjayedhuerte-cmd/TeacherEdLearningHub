@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teacher Ed | Grade 8 Mathematics | Term 2 Week 3</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+    <div><b>Teacher Ed Learning Hub</b><span>Grade 8 Mathematics</span></div>
+  </div>
+  <div class="top-actions">
+    <span class="week-pill">TERM 2 • WEEK 3</span>
+    <button id="fullscreenBtn" class="icon-btn" type="button" title="Full screen" aria-label="Enter full screen">⛶ <span>Full Screen</span></button>
+  </div>
+</header>
+
+<nav class="mobile-day-nav" aria-label="Week 3 lesson navigation">
+  <button class="mobile-day-btn active" data-day="1" type="button">Day 1</button>
+  <button class="mobile-day-btn" data-day="2" type="button">Day 2</button>
+  <button class="mobile-day-btn" data-day="3" type="button">Day 3</button>
+  <button class="mobile-day-btn" data-day="4" type="button">Day 4</button>
+  <button class="mobile-day-btn" data-day="5" type="button">Day 5</button>
+</nav>
+
+<div class="app">
+  <aside class="sidebar">
+    <div class="side-title">THIS WEEK</div>
+    <button class="day-btn active" data-day="1"><strong>DAY 1</strong><span>Right Triangles</span></button>
+    <button class="day-btn" data-day="2"><strong>DAY 2</strong><span>Pythagorean Theorem</span></button>
+    <button class="day-btn" data-day="3"><strong>DAY 3</strong><span>Converse & Classification</span></button>
+    <button class="day-btn" data-day="4"><strong>DAY 4</strong><span>Triangle Inequality</span></button>
+    <button class="day-btn" data-day="5"><strong>DAY 5</strong><span>Mastery & Assessment</span></button>
+    <div class="progress-card">
+      <div class="small">WEEK PROGRESS</div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <b id="progressText">Day 1 of 5</b>
+    </div>
+  </aside>
+
+  <main id="presentation">
+    <section class="hero slide" data-day="1">
+      <div class="hero-copy">
+        <div class="eyebrow">GRADE 8 • MATHEMATICS • SECOND TERM</div>
+        <h1>Triangles Have a Secret!</h1>
+        <p class="lead">Can we use the sides of a triangle to discover a missing length, identify a triangle, and decide whether a triangle can even exist?</p>
+        <div class="hero-tags"><span>📐 Geometry</span><span>🧠 Reasoning</span><span>🎯 Problem Solving</span></div>
+        <button class="start-btn" data-jump="1">Start Week 3 ▶</button>
+      </div>
+      <div class="hero-art">
+        <div class="triangle-art"><div class="side-a">a</div><div class="side-b">b</div><div class="side-c">c</div><div class="right-angle">90°</div></div>
+        <div class="formula-card">a² + b² = c²</div>
+      </div>
+    </section>
+
+    <section class="standard slide">
+      <div class="section-head"><span class="stage">TARGET</span><h2>What are we learning this week?</h2></div>
+      <div class="standard-grid">
+        <article><b>Content Standard</b><p>Learners develop understanding of the Pythagorean Theorem, triangle inequality theorems, and their use in geometry and real-life problems.</p></article>
+        <article><b>Performance Standard</b><p>Learners apply the Pythagorean Theorem and its converse to solve problems and classify triangles, and use triangle inequality to reason about possible side lengths.</p></article>
+      </div>
+      <div class="competency"><b>Learning Competencies • Week 3</b>
+        <ul><li>Apply the Pythagorean Theorem in finding the missing side of a right triangle.</li><li>Use its converse in classifying triangles.</li><li>Apply triangle inequality theorems to establish results for angles and sides in triangles.</li></ul>
+      </div>
+    </section>
+
+    <!-- DAY 1 -->
+    <section class="day-section slide" id="day1">
+      <div class="day-banner"><span>DAY 1</span><div><b>Introduce & Learn</b><small>50 minutes • Right Triangles & the Pythagorean Relationship</small></div></div>
+      <div class="ilaw-row"><span class="ilaw active">I — INTRODUCE</span><span class="ilaw">L — LEARN</span></div>
+      <div class="card">
+        <h3>🎯 Mission: Find the Missing Distance</h3>
+        <p>A ladder reaches a wall. The bottom is 6 m from the wall and the ladder is 10 m long. How high does it reach?</p>
+        <div class="choice-row" data-answer="8">
+          <button>6 m</button><button>8 m</button><button>10 m</button><button>16 m</button>
+        </div><div class="feedback"></div>
+      </div>
+      <div class="card two-col">
+        <div>
+          <h3>1. What makes a right triangle?</h3>
+          <p>A <b>right triangle</b> has one angle measuring exactly <b>90°</b>. The two sides forming the right angle are the <b>legs</b>. The side opposite 90° is the <b>hypotenuse</b>.</p>
+          <div class="mini-diagram"><span>leg</span><span>leg</span><strong>hypotenuse</strong><i>90°</i></div>
+        </div>
+        <div class="tip"><b>Remember:</b><p>The hypotenuse is always the <u>longest side</u> of a right triangle and is always opposite the right angle.</p></div>
+      </div>
+      <div class="card">
+        <h3>2. Discover the relationship</h3>
+        <p>For a right triangle with legs <b>a</b> and <b>b</b>, and hypotenuse <b>c</b>, the areas built on the sides reveal:</p>
+        <div class="big-formula">a² + b² = c²</div>
+        <p class="center">This is the <b>Pythagorean Theorem</b>.</p>
+        <div class="example"><b>Example:</b> If a = 6 and b = 8, then 6² + 8² = c² → 36 + 64 = 100 → c² = 100 → <b>c = 10</b>.</div>
+      </div>
+      <div class="quick-check card">
+        <h3>⚡ Quick Check</h3>
+        <p>Which side must be opposite the 90° angle?</p>
+        <button class="answer" data-correct="true">Hypotenuse</button><button class="answer">A leg</button>
+        <div class="feedback"></div>
+      </div>
+    </section>
+
+    <!-- DAY 2 -->
+    <section class="day-section slide" id="day2">
+      <div class="day-banner"><span>DAY 2</span><div><b>Learn & Apply</b><small>50 minutes • Finding Missing Sides</small></div></div>
+      <div class="card">
+        <h3>📐 The 4-Step Method</h3>
+        <div class="steps"><div><b>1</b><span>Identify the hypotenuse.</span></div><div><b>2</b><span>Write a² + b² = c².</span></div><div><b>3</b><span>Substitute known lengths.</span></div><div><b>4</b><span>Solve and check.</span></div></div>
+      </div>
+      <div class="card">
+        <h3>Worked Example A — Missing Hypotenuse</h3>
+        <p>Legs are 9 cm and 12 cm.</p>
+        <div class="solution"><span>c² = 9² + 12²</span><span>c² = 81 + 144 = 225</span><span>c = √225 = <b>15 cm</b></span></div>
+      </div>
+      <div class="card">
+        <h3>Worked Example B — Missing Leg</h3>
+        <p>Hypotenuse is 13 m and one leg is 5 m. Find the other leg, x.</p>
+        <div class="solution"><span>x² + 5² = 13²</span><span>x² = 169 − 25 = 144</span><span>x = √144 = <b>12 m</b></span></div>
+        <div class="tip"><b>Why subtraction?</b> When the missing value is a leg, rearrange: <b>x² = c² − known leg²</b>.</div>
+      </div>
+      <div class="card interactive">
+        <h3>🎮 Your Turn</h3>
+        <p>A right triangle has legs 7 and 24. What is the hypotenuse?</p>
+        <input type="number" id="q2" placeholder="Type your answer">
+        <button class="check-input" data-input="q2" data-answer="25">Check Answer</button><div class="feedback"></div>
+      </div>
+      <div class="card interactive">
+        <h3>🎮 Challenge</h3>
+        <p>A 15-ft ladder reaches the top of a wall 12 ft high. How far is the foot of the ladder from the wall?</p>
+        <input type="number" id="q2b" placeholder="Distance in feet">
+        <button class="check-input" data-input="q2b" data-answer="9">Check Answer</button><div class="feedback"></div>
+      </div>
+    </section>
+
+    <!-- DAY 3 -->
+    <section class="day-section slide" id="day3">
+      <div class="day-banner"><span>DAY 3</span><div><b>Learn & Apply</b><small>50 minutes • Converse & Classify Triangles</small></div></div>
+      <div class="card">
+        <h3>🔄 The Converse of the Pythagorean Theorem</h3>
+        <p>Normally, we start with a right triangle and find a side. The <b>converse</b> works backward: given three side lengths, we can determine the type of triangle.</p>
+        <div class="rule-box"><b>For sides a ≤ b ≤ c:</b><br>If a² + b² = c² → <strong>RIGHT</strong><br>If a² + b² &gt; c² → <strong>ACUTE</strong><br>If a² + b² &lt; c² → <strong>OBTUSE</strong></div>
+      </div>
+      <div class="card two-col">
+        <div><h3>Example 1</h3><p>3, 4, 5</p><p>3² + 4² = 9 + 16 = 25 = 5²</p><span class="badge good">RIGHT TRIANGLE</span></div>
+        <div><h3>Example 2</h3><p>5, 5, 6</p><p>5² + 5² = 50 &gt; 36 = 6²</p><span class="badge">ACUTE TRIANGLE</span></div>
+      </div>
+      <div class="card">
+        <h3>🧩 Classify It!</h3>
+        <p>What type of triangle has side lengths 6, 8, 10?</p>
+        <div class="choice-row" data-answer="right">
+          <button data-value="acute">Acute</button><button data-value="right">Right</button><button data-value="obtuse">Obtuse</button>
+        </div><div class="feedback"></div>
+      </div>
+      <div class="card">
+        <h3>🧠 Think Before You Answer</h3>
+        <p>For 4, 5, 6: 4² + 5² = 41, while 6² = 36. Since 41 &gt; 36, the triangle is...</p>
+        <div class="choice-row" data-answer="acute"><button data-value="right">Right</button><button data-value="acute">Acute</button><button data-value="obtuse">Obtuse</button></div>
+        <div class="feedback"></div>
+      </div>
+      <div class="card">
+        <h3>🚀 Exit Ticket</h3>
+        <p>Can 2, 3, 7 form a triangle? Use triangle inequality from tomorrow's lesson to explain why.</p>
+        <button class="reveal-btn">Reveal Hint</button>
+        <p class="hidden-answer">No. The two shorter sides must add to more than the longest side: 2 + 3 = 5, and 5 is not greater than 7.</p>
+      </div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section class="day-section slide" id="day4">
+      <div class="day-banner"><span>DAY 4</span><div><b>Learn & Apply</b><small>50 minutes • Triangle Inequality Theorem</small></div></div>
+      <div class="card">
+        <h3>📏 Can These Three Lengths Make a Triangle?</h3>
+        <p>Not every three positive lengths can form a triangle. The key rule is:</p>
+        <div class="big-formula">a + b &gt; c</div>
+        <p>when <b>c</b> is the longest side. In fact, each pair of sides must have a sum greater than the third side.</p>
+      </div>
+      <div class="card">
+        <h3>Example: 5, 7, 10</h3>
+        <p>Check the largest side: 5 + 7 = 12 &gt; 10. Also, 5 + 10 &gt; 7 and 7 + 10 &gt; 5. Therefore, <b>yes</b>, a triangle is possible.</p>
+      </div>
+      <div class="card">
+        <h3>Example: 3, 4, 8</h3>
+        <p>Check: 3 + 4 = 7, and 7 is <b>not greater than 8</b>. Therefore, <b>no triangle</b> can be formed.</p>
+      </div>
+      <div class="card interactive">
+        <h3>🎯 Try It: 6, 9, 14</h3>
+        <p>Can these lengths form a triangle?</p>
+        <button class="answer" data-correct="true">Yes</button><button class="answer">No</button><div class="feedback"></div>
+      </div>
+      <div class="card interactive">
+        <h3>🔍 Find the Possible Range</h3>
+        <p>Two sides are 8 cm and 11 cm. What values could the third side x have?</p>
+        <p class="formula-line">|11 − 8| &lt; x &lt; 11 + 8 → <b>3 &lt; x &lt; 19</b></p>
+        <input type="number" id="q4" placeholder="Give an integer x">
+        <button class="check-input" data-input="q4" data-answer="10">Check with example x = 10</button><div class="feedback"></div>
+      </div>
+      <div class="card">
+        <h3>💡 Connection</h3>
+        <p>Triangle inequality is useful in construction, map reading, design, surveying, and checking whether measured lengths are physically possible.</p>
+      </div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section class="day-section slide" id="day5">
+      <div class="day-banner"><span>DAY 5</span><div><b>Wrap-Up & Mastery</b><small>50 minutes • Review + 20-Item Assessment</small></div></div>
+      <div class="card recap">
+        <h3>🧠 One-Week Memory Map</h3>
+        <div class="memory-grid"><div><b>Right Triangle</b><span>One 90° angle</span></div><div><b>Pythagorean</b><span>a² + b² = c²</span></div><div><b>Converse</b><span>Compare a²+b² with c²</span></div><div><b>Triangle Inequality</b><span>sum of two sides &gt; third</span></div></div>
+      </div>
+      <div id="assessment" class="assessment card">
+        <div class="assessment-head"><div><span class="stage">MASTERY</span><h3>🏆 20-Item Assessment</h3></div><div id="scoreBox">0 / 20</div></div>
+        <div id="quiz"></div>
+        <button id="submitQuiz" class="start-btn">Submit Assessment</button>
+        <div id="quizResult"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="mobile-pager" aria-label="Previous and next lesson day">
+  <button id="prevDay" type="button">‹ Previous</button>
+  <span id="mobileDayLabel">Day 1 of 5</span>
+  <button id="nextDay" type="button">Next ›</button>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub"><div><b>Teacher Ed Learning Hub</b><small>Learn • Practice • Think • Master</small></div></div>
+  <div>Grade 8 Mathematics • Second Term • <b>Week 3</b></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

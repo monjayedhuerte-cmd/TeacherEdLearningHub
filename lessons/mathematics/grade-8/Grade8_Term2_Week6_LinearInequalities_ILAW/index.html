@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#082b52">
+<meta name="description" content="Teacher Ed Learning Hub - Grade 8 Mathematics Second Term Week 6: Linear Inequalities in One Variable">
+<title>Teacher Ed | Learning Hub — Grade 8 Week 6</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="apple-touch-icon" href="BrandLogo.png">
+<link rel="shortcut icon" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+
+<header class="top-header">
+  <div class="brand-wrap">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+      <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+      <span class="brand-text"><strong>TEACHER ED</strong><small>LEARNING HUB</small></span>
+    </a>
+    <div class="lesson-id"><span>GRADE 8 MATHEMATICS</span><b>TERM 2 • WEEK 6</b></div>
+  </div>
+  <div class="header-actions">
+    <button class="top-btn" id="fullscreenBtn" type="button">⛶ <span>Full Screen</span></button>
+    <button class="top-btn" id="homeBtn" type="button">⌂ <span>Home</span></button>
+  </div>
+</header>
+
+<nav class="top-nav" aria-label="Lesson navigation">
+  <button class="nav-item active" data-target="home">Overview</button>
+  <button class="nav-item" data-target="day1">Day 1</button>
+  <button class="nav-item" data-target="day2">Day 2</button>
+  <button class="nav-item" data-target="day3">Day 3</button>
+  <button class="nav-item" data-target="day4">Day 4</button>
+  <button class="nav-item" data-target="day5">Day 5</button>
+  <button class="nav-item assessment-tab" data-target="assessment">20-Item Assessment</button>
+</nav>
+
+<main id="home">
+<section class="hero slide-section active-section" id="overview">
+  <div class="hero-copy">
+    <div class="eyebrow">SECOND TERM • WEEK 6 • NUMBER AND ALGEBRA</div>
+    <h1>Cross the Line: <span>Linear Inequalities</span></h1>
+    <p class="hero-lead">A five-day, presentation-style interactive lesson on solving and graphing linear inequalities in one variable.</p>
+    <p class="hero-sub">Your mission: understand inequality symbols, solve inequalities, and show every solution on a number line.</p>
+    <div class="hero-buttons">
+      <button class="primary-btn" onclick="goTo('day1')">▶ Start Day 1</button>
+      <button class="secondary-btn" onclick="goTo('assessment')">Take Assessment</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="numberline-hero">
+      <div class="hero-title">THE BIG IDEA</div>
+      <div class="hero-equation">x &gt; 3</div>
+      <div class="hero-line"><span>0</span><span>1</span><span>2</span><span class="focus">3</span><span class="arrow">→</span></div>
+      <p>More than 3 means every number <strong>to the right</strong> of 3.</p>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="standard-grid">
+    <article class="info-card">
+      <div class="card-label">CONTENT STANDARD</div>
+      <h2>What are we learning?</h2>
+      <p>The Second Term develops knowledge and understanding of <strong>linear inequalities in one variable and their graphs</strong>.</p>
+    </article>
+    <article class="info-card">
+      <div class="card-label">PERFORMANCE STANDARD</div>
+      <h2>What should you be able to do?</h2>
+      <p>By the end of the term, learners should be able to <strong>solve linear equations and linear inequalities in one variable</strong> and graph linear inequalities in one variable.</p>
+    </article>
+  </div>
+
+  <div class="competency-box">
+    <div class="card-label">WEEK 6 TARGET LEARNING COMPETENCIES</div>
+    <h2>Linear Inequalities in One Variable</h2>
+    <ul>
+      <li><strong>Solve linear inequalities in one variable.</strong></li>
+      <li><strong>Graph on a number line the solution of linear inequalities in one variable.</strong></li>
+    </ul>
+    <p class="source-note">Budget of Work: Grade 8 Mathematics • Second Term • Week 6</p>
+  </div>
+
+  <div class="ilaw-grid">
+    <div class="ilaw i"><strong>I</strong><span>INTRODUCE</span><small>Connect inequalities to real-life limits.</small></div>
+    <div class="ilaw l"><strong>L</strong><span>LEARN</span><small>Build meaning and procedures step by step.</small></div>
+    <div class="ilaw a"><strong>A</strong><span>APPLY</span><small>Practice, explain, solve, and graph.</small></div>
+    <div class="ilaw w"><strong>W</strong><span>WRAP UP</span><small>Check understanding and reflect.</small></div>
+  </div>
+
+  <div class="week-map">
+    <h2>🗺️ Week 6 Presentation Map</h2>
+    <div class="day-map">
+      <button onclick="goTo('day1')"><b>DAY 1</b><span>Equality vs. Inequality</span><small>50 min</small></button>
+      <button onclick="goTo('day2')"><b>DAY 2</b><span>Solving Inequalities</span><small>50 min</small></button>
+      <button onclick="goTo('day3')"><b>DAY 3</b><span>Number-Line Graphs</span><small>50 min</small></button>
+      <button onclick="goTo('day4')"><b>DAY 4</b><span>Compound Practice</span><small>50 min</small></button>
+      <button onclick="goTo('day5')"><b>DAY 5</b><span>Problem Solving & Review</span><small>50 min</small></button>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="lesson-day slide-section" id="day1">
+<div class="day-header"><span class="day-badge">DAY 1 • 50 MIN</span><h2>Introduce & Learn: What Is an Inequality?</h2><p>Goal: distinguish equations from inequalities and understand the four inequality symbols.</p></div>
+<div class="deck" id="deck-day1">
+  <article class="lesson-slide active">
+    <div class="slide-kicker">I — INTRODUCE • 5 MIN</div><h1>🚦 The “At Least / At Most” Challenge</h1>
+    <p>Imagine a school activity says: <strong>“You must be at least 13 years old.”</strong> Does a 13-year-old qualify? What about 14? 12?</p>
+    <div class="challenge-box"><div class="big-symbol">AGE ≥ 13</div><p>This is not saying there is only one answer. It describes a <strong>range of possible answers</strong>.</p></div>
+    <div class="prompt"><b>Turn & Talk:</b> Give one real-life rule that uses “more than,” “less than,” “at least,” or “at most.”</div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 10 MIN</div><h1>⚖️ Equation vs. Inequality</h1>
+    <div class="two-col">
+      <div class="mini-card"><h3>Equation</h3><p>Uses <strong>=</strong> and says two quantities are exactly equal.</p><div class="formula">x + 4 = 10</div><p>There is one exact value: <strong>x = 6</strong>.</p></div>
+      <div class="mini-card"><h3>Inequality</h3><p>Uses &lt;, &gt;, ≤, or ≥ and compares quantities.</p><div class="formula">x + 4 &gt; 10</div><p>Many values can work: <strong>x &gt; 6</strong>.</p></div>
+    </div>
+    <p class="teacher-tip">Key idea: an inequality often has <strong>many solutions</strong>, not just one.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 10 MIN</div><h1>🔑 Four Symbols You Must Know</h1>
+    <div class="symbol-grid">
+      <div><b>&lt;</b><span>less than</span><small>x &lt; 5 → numbers smaller than 5</small></div>
+      <div><b>&gt;</b><span>greater than</span><small>x &gt; 5 → numbers bigger than 5</small></div>
+      <div><b>≤</b><span>less than or equal to</span><small>x ≤ 5 → 5 is included</small></div>
+      <div><b>≥</b><span>greater than or equal to</span><small>x ≥ 5 → 5 is included</small></div>
+    </div>
+    <p><strong>Memory trick:</strong> the wider/open side faces the greater quantity. The symbol points toward the smaller quantity.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 15 MIN</div><h1>🎯 Quick-Choice Challenge</h1>
+    <div class="question-box"><p><strong>1.</strong> Which means “a number is less than 9”?</p>
+      <div class="choices"><button onclick="choice(this,true,'d1q1')">x &lt; 9</button><button onclick="choice(this,false,'d1q1')">x &gt; 9</button><button onclick="choice(this,false,'d1q1')">x ≥ 9</button><button onclick="choice(this,false,'d1q1')">x = 9</button></div><div id="d1q1-feedback" class="feedback"></div>
+    </div>
+    <div class="question-box"><p><strong>2.</strong> “At most 20” means:</p>
+      <div class="choices"><button onclick="choice(this,false,'d1q2')">x &gt; 20</button><button onclick="choice(this,true,'d1q2')">x ≤ 20</button><button onclick="choice(this,false,'d1q2')">x ≥ 20</button><button onclick="choice(this,false,'d1q2')">x &lt; 20</button></div><div id="d1q2-feedback" class="feedback"></div>
+    </div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 5 MIN</div><h1>🧠 Check the Statement</h1>
+    <p>Is <strong>x = 7</strong> a solution of <strong>x + 2 &gt; 8</strong>?</p>
+    <p>Substitute 7: <strong>7 + 2 = 9</strong>. Is 9 greater than 8?</p>
+    <div class="choices"><button onclick="choice(this,true,'d1q3')">YES — it is a solution</button><button onclick="choice(this,false,'d1q3')">NO — it is not</button></div>
+    <div id="d1q3-feedback" class="feedback"></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">W — WRAP UP • 5 MIN</div><h1>📝 Exit Ticket</h1>
+    <p>Complete these statements orally or in your notebook:</p>
+    <ol><li>An inequality compares ________.</li><li>“At least” means ________.</li><li>One difference between an equation and an inequality is ________.</li></ol>
+    <div class="reflection"><textarea id="d1reflect" placeholder="Write one thing you learned today..."></textarea><button class="primary-btn" onclick="saveReflection('d1reflect','d1reflect-feedback')">Submit Reflection</button><div id="d1reflect-feedback" class="feedback"></div></div>
+  </article>
+</div>
+<div class="deck-controls"><button onclick="prevSlide('day1')">← Previous</button><span id="counter-day1"></span><button onclick="nextSlide('day1')">Next →</button></div>
+</section>
+
+<section class="lesson-day slide-section" id="day2">
+<div class="day-header"><span class="day-badge">DAY 2 • 50 MIN</span><h2>Learn & Apply: Solving Linear Inequalities</h2><p>Goal: solve one-variable linear inequalities using inverse operations and preserve the correct inequality direction.</p></div>
+<div class="deck" id="deck-day2">
+  <article class="lesson-slide active">
+    <div class="slide-kicker">I — INTRODUCE • 5 MIN</div><h1>🎟️ The Budget Rule</h1>
+    <p>You have <strong>₱100</strong>. A snack costs <strong>₱25</strong>. You want to know how much money you can spend on another item without going over your budget.</p>
+    <div class="challenge-box"><div class="big-symbol">x + 25 ≤ 100</div><p>The symbol ≤ matters because spending exactly ₱100 is still allowed.</p></div>
+    <p><strong>Question:</strong> What operation will help us isolate x?</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 12 MIN</div><h1>🪜 Solve Like an Equation</h1>
+    <p>Use inverse operations to isolate the variable. Whatever you do to one side, do to the other.</p>
+    <div class="worked"><div>Example 1</div><strong>x + 7 &lt; 15</strong><p>Subtract 7 from both sides.</p><strong>x &lt; 8</strong><hr><div>Check: choose x = 5 → 5 + 7 = 12 &lt; 15 ✓</div></div>
+    <div class="worked"><div>Example 2</div><strong>3x − 4 ≥ 11</strong><p>Add 4: 3x ≥ 15</p><p>Divide by 3: <strong>x ≥ 5</strong></p></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 8 MIN</div><h1>⚠️ The Special Rule: Negative Multiplication or Division</h1>
+    <div class="warning-box"><strong>When you multiply or divide both sides by a negative number, REVERSE the inequality symbol.</strong></div>
+    <div class="worked"><strong>−2x &gt; 10</strong><p>Divide by −2 and reverse &gt; to &lt;.</p><strong>x &lt; −5</strong></div>
+    <p>Why? Multiplying a number line by a negative reverses its direction. This rule protects the truth of the comparison.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 15 MIN</div><h1>🎯 Solve It!</h1>
+    <div class="question-box"><p><strong>1.</strong> Solve: x − 6 ≤ 10</p><input id="d2a1" type="number" placeholder="Enter the boundary value"><button onclick="numberCheck('d2a1',16,'d2a1fb','Correct! x ≤ 16.')">Check</button><div id="d2a1fb" class="feedback"></div></div>
+    <div class="question-box"><p><strong>2.</strong> Solve: 4x &gt; 28</p><input id="d2a2" type="number" placeholder="Enter the boundary value"><button onclick="numberCheck('d2a2',7,'d2a2fb','Correct! x &gt; 7.')">Check</button><div id="d2a2fb" class="feedback"></div></div>
+    <div class="question-box"><p><strong>3.</strong> Solve: −3x ≤ 18</p><input id="d2a3" type="number" placeholder="Enter the boundary value"><button onclick="numberCheck('d2a3',-6,'d2a3fb','Correct! x ≥ −6 because we divided by a negative.')">Check</button><div id="d2a3fb" class="feedback"></div></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 5 MIN</div><h1>🔍 Catch the Mistake</h1>
+    <p>A learner solves: <strong>−5x &gt; 20 → x &gt; −4</strong>.</p>
+    <p>What is wrong?</p>
+    <div class="choices"><button onclick="choice(this,true,'d2q')">The symbol should reverse: x &lt; −4.</button><button onclick="choice(this,false,'d2q')">Nothing is wrong.</button><button onclick="choice(this,false,'d2q')">The answer should be x = −4.</button></div>
+    <div id="d2q-feedback" class="feedback"></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">W — WRAP UP • 5 MIN</div><h1>⭐ 3-Step Self Check</h1>
+    <ol class="steps"><li><b>Isolate</b> the variable using inverse operations.</li><li><b>Reverse</b> the inequality if you multiply/divide by a negative.</li><li><b>Check</b> with a test value.</li></ol>
+    <p class="prompt">Explain to a partner: Why does a negative division reverse the symbol?</p>
+  </article>
+</div>
+<div class="deck-controls"><button onclick="prevSlide('day2')">← Previous</button><span id="counter-day2"></span><button onclick="nextSlide('day2')">Next →</button></div>
+</section>
+
+<section class="lesson-day slide-section" id="day3">
+<div class="day-header"><span class="day-badge">DAY 3 • 50 MIN</span><h2>Learn & Apply: Graphing Inequalities on a Number Line</h2><p>Goal: represent solutions correctly using an open/closed point and shading or arrows.</p></div>
+<div class="deck" id="deck-day3">
+  <article class="lesson-slide active">
+    <div class="slide-kicker">I — INTRODUCE • 5 MIN</div><h1>📍 Where Do the Solutions Live?</h1>
+    <p>Suppose the solution is <strong>x &gt; 2</strong>. Which numbers work? 3? 10? 2? 1?</p>
+    <div class="choices"><button onclick="choice(this,true,'d3q1')">3 and 10 work; 2 and 1 do not.</button><button onclick="choice(this,false,'d3q1')">Only 2 works.</button><button onclick="choice(this,false,'d3q1')">1 and 2 work.</button></div>
+    <div id="d3q1-feedback" class="feedback"></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 12 MIN</div><h1>⭕ Open or Closed?</h1>
+    <div class="two-col">
+      <div class="mini-card"><div class="point open"></div><h3>Open Circle ○</h3><p>Use for <strong>&lt;</strong> or <strong>&gt;</strong>. The boundary number is <strong>not included</strong>.</p><p>Example: x &gt; 4</p></div>
+      <div class="mini-card"><div class="point closed"></div><h3>Closed Circle ●</h3><p>Use for <strong>≤</strong> or <strong>≥</strong>. The boundary number <strong>is included</strong>.</p><p>Example: x ≥ 4</p></div>
+    </div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 8 MIN</div><h1>➡️ Which Direction?</h1>
+    <div class="graph-demo"><div class="numberline"><span>−2</span><span>−1</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div><div class="graph-answer">x &gt; 1 → open at 1, shade RIGHT</div></div>
+    <div class="graph-demo"><div class="numberline"><span>−2</span><span>−1</span><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span></div><div class="graph-answer">x ≤ 1 → closed at 1, shade LEFT</div></div>
+    <p><strong>Shortcut:</strong> “greater” points right; “less” points left.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 15 MIN</div><h1>🎨 Graph Detective</h1>
+    <div class="question-box"><p><strong>1.</strong> For x ≤ −2, choose the correct description.</p><div class="choices"><button onclick="choice(this,true,'d3q2')">Closed circle at −2; shade left.</button><button onclick="choice(this,false,'d3q2')">Open circle at −2; shade left.</button><button onclick="choice(this,false,'d3q2')">Closed circle at −2; shade right.</button></div><div id="d3q2-feedback" class="feedback"></div></div>
+    <div class="question-box"><p><strong>2.</strong> For x &gt; 5, choose the correct description.</p><div class="choices"><button onclick="choice(this,false,'d3q3')">Closed circle at 5; shade right.</button><button onclick="choice(this,true,'d3q3')">Open circle at 5; shade right.</button><button onclick="choice(this,false,'d3q3')">Open circle at 5; shade left.</button></div><div id="d3q3-feedback" class="feedback"></div></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 5 MIN</div><h1>🧪 Test a Point</h1>
+    <p>Is <strong>−3</strong> a solution of <strong>x ≤ −2</strong>?</p>
+    <div class="choices"><button onclick="choice(this,true,'d3q4')">Yes, because −3 ≤ −2.</button><button onclick="choice(this,false,'d3q4')">No, because −3 is greater than −2.</button></div>
+    <div id="d3q4-feedback" class="feedback"></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">W — WRAP UP • 5 MIN</div><h1>🎯 Graphing Checklist</h1>
+    <ul class="steps"><li>Find the boundary value.</li><li>Choose <b>open</b> for &lt; or &gt;, <b>closed</b> for ≤ or ≥.</li><li>Shade <b>left</b> for less; shade <b>right</b> for greater.</li></ul>
+    <div class="prompt">Quick oral check: What does a closed circle tell you?</div>
+  </article>
+</div>
+<div class="deck-controls"><button onclick="prevSlide('day3')">← Previous</button><span id="counter-day3"></span><button onclick="nextSlide('day3')">Next →</button></div>
+</section>
+
+<section class="lesson-day slide-section" id="day4">
+<div class="day-header"><span class="day-badge">DAY 4 • 50 MIN</span><h2>Apply: Multi-Step Inequalities</h2><p>Goal: solve inequalities with variables on one or both sides and communicate the solution clearly.</p></div>
+<div class="deck" id="deck-day4">
+  <article class="lesson-slide active">
+    <div class="slide-kicker">I — INTRODUCE • 5 MIN</div><h1>🏁 Two Paths, One Finish</h1>
+    <p>Sometimes an inequality has x on both sides. The goal is still the same: <strong>get x alone</strong>.</p>
+    <div class="challenge-box"><div class="big-symbol">5x − 3 &gt; 2x + 12</div><p>We can subtract 2x from both sides first.</p></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 12 MIN</div><h1>🪜 Worked Example: Variable on Both Sides</h1>
+    <div class="worked"><strong>5x − 3 &gt; 2x + 12</strong><p>Subtract 2x: 3x − 3 &gt; 12</p><p>Add 3: 3x &gt; 15</p><p>Divide by 3: <strong>x &gt; 5</strong></p></div>
+    <p>Notice: we divided by a positive number, so the symbol stayed the same.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 8 MIN</div><h1>🧩 Another Example</h1>
+    <div class="worked"><strong>2(x − 3) ≤ 10</strong><p>Distribute: 2x − 6 ≤ 10</p><p>Add 6: 2x ≤ 16</p><p>Divide by 2: <strong>x ≤ 8</strong></p></div>
+    <p><strong>Important:</strong> distributing is a useful first step when parentheses appear.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 15 MIN</div><h1>🎮 Solve & Reveal</h1>
+    <div class="question-box"><p><strong>1.</strong> Solve: 3x + 4 &lt; 19</p><input id="d4a1" type="number" placeholder="Boundary value"><button onclick="numberCheck('d4a1',5,'d4a1fb','Correct! x &lt; 5.')">Check</button><div id="d4a1fb" class="feedback"></div></div>
+    <div class="question-box"><p><strong>2.</strong> Solve: 4x − 6 ≥ 10</p><input id="d4a2" type="number" placeholder="Boundary value"><button onclick="numberCheck('d4a2',4,'d4a2fb','Correct! x ≥ 4.')">Check</button><div id="d4a2fb" class="feedback"></div></div>
+    <div class="question-box"><p><strong>3.</strong> Solve: 7x + 2 ≤ 3x + 18</p><input id="d4a3" type="number" placeholder="Boundary value"><button onclick="numberCheck('d4a3',4,'d4a3fb','Correct! x ≤ 4.')">Check</button><div id="d4a3fb" class="feedback"></div></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 5 MIN</div><h1>🔎 Check the Solution</h1>
+    <p>A learner says <strong>x ≥ 4</strong> solves <strong>2x − 1 ≥ 7</strong>. Is the answer correct?</p>
+    <div class="choices"><button onclick="choice(this,true,'d4q')">Yes. 2x ≥ 8, so x ≥ 4.</button><button onclick="choice(this,false,'d4q')">No. It should be x ≤ 4.</button></div>
+    <div id="d4q-feedback" class="feedback"></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">W — WRAP UP • 5 MIN</div><h1>💡 Explain Your Thinking</h1>
+    <p>Complete: “When solving an inequality, I should ________. If I divide or multiply by a negative number, I must ________.”</p>
+    <div class="reflection"><textarea id="d4reflect" placeholder="Explain in your own words..."></textarea><button class="primary-btn" onclick="saveReflection('d4reflect','d4reflect-feedback')">Submit</button><div id="d4reflect-feedback" class="feedback"></div></div>
+  </article>
+</div>
+<div class="deck-controls"><button onclick="prevSlide('day4')">← Previous</button><span id="counter-day4"></span><button onclick="nextSlide('day4')">Next →</button></div>
+</section>
+
+<section class="lesson-day slide-section" id="day5">
+<div class="day-header"><span class="day-badge">DAY 5 • 50 MIN</span><h2>Apply & Wrap Up: Real-Life Inequality Problems</h2><p>Goal: translate situations into inequalities, solve them, graph solutions, and interpret the answer.</p></div>
+<div class="deck" id="deck-day5">
+  <article class="lesson-slide active">
+    <div class="slide-kicker">I — INTRODUCE • 5 MIN</div><h1>🌟 Inequalities in Real Life</h1>
+    <p>Inequalities appear when there is a <strong>limit, minimum, maximum, capacity, requirement, or range</strong>.</p>
+    <div class="two-col"><div class="mini-card"><h3>At least</h3><p>minimum</p><div class="formula">x ≥ 10</div></div><div class="mini-card"><h3>At most</h3><p>maximum</p><div class="formula">x ≤ 10</div></div></div>
+    <p>Words give clues, but always ask: <strong>Is the boundary included?</strong></p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 10 MIN</div><h1>🧠 Word-Problem Method</h1>
+    <ol class="steps"><li><b>Define</b> the unknown.</li><li><b>Translate</b> the words into an inequality.</li><li><b>Solve</b> using inverse operations.</li><li><b>Graph</b> the solution.</li><li><b>Interpret</b> the answer in context.</li></ol>
+    <div class="worked"><strong>Example:</strong> A student needs at least 80 points. She already has 56. How many more points x are needed?<p>56 + x ≥ 80</p><p>x ≥ 24</p><p><strong>Interpretation:</strong> She needs at least 24 more points.</p></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">L — LEARN • 10 MIN</div><h1>📐 Geometry Example</h1>
+    <p>A rectangle has width 6 cm and length x cm. Its perimeter is <strong>at most 40 cm</strong>.</p>
+    <div class="worked"><p>Perimeter: 2x + 2(6) ≤ 40</p><p>2x + 12 ≤ 40</p><p>2x ≤ 28</p><p><strong>x ≤ 14</strong></p></div>
+    <p>Because a length cannot be negative, the meaningful dimensions satisfy <strong>0 &lt; x ≤ 14</strong>.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 10 MIN</div><h1>💰 Money Mission</h1>
+    <p>You have ₱500. You plan to buy a notebook for ₱85 and several identical pens costing ₱35 each. What is the greatest number of pens you can buy?</p>
+    <div class="choices"><button onclick="choice(this,false,'d5q')">x ≤ 10</button><button onclick="choice(this,true,'d5q')">x ≤ 11</button><button onclick="choice(this,false,'d5q')">x ≥ 11</button><button onclick="choice(this,false,'d5q')">x &lt; 11</button></div>
+    <div id="d5q-feedback" class="feedback"></div>
+    <p class="small-note">Model: 85 + 35x ≤ 500 → 35x ≤ 415 → x ≤ 11.857... Since pens are whole items, the greatest possible number is 11.</p>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">A — APPLY • 5 MIN</div><h1>🏆 Final Practice Before the Assessment</h1>
+    <div class="question-box"><p><strong>A.</strong> Solve: −4x &lt; 20</p><input id="d5a1" type="number" placeholder="Boundary value"><button onclick="numberCheck('d5a1',-5,'d5a1fb','Correct! x &gt; −5 because the sign reverses.')">Check</button><div id="d5a1fb" class="feedback"></div></div>
+    <div class="question-box"><p><strong>B.</strong> For x ≥ −3, should the boundary point be open or closed?</p><div class="choices"><button onclick="choice(this,false,'d5q2')">Open</button><button onclick="choice(this,true,'d5q2')">Closed</button></div><div id="d5q2-feedback" class="feedback"></div></div>
+  </article>
+  <article class="lesson-slide">
+    <div class="slide-kicker">W — WRAP UP • 10 MIN</div><h1>🎉 Week 6 Mastery Check</h1>
+    <div class="mastery-card"><h3>Can I…?</h3><label>☐ identify the four inequality symbols?</label><label>☐ solve a linear inequality?</label><label>☐ reverse the sign when dividing/multiplying by a negative?</label><label>☐ graph a solution on a number line?</label><label>☐ translate and solve a real-life inequality?</label></div>
+    <button class="primary-btn" onclick="goTo('assessment')">🚀 Start the 20-Item Assessment</button>
+  </article>
+</div>
+<div class="deck-controls"><button onclick="prevSlide('day5')">← Previous</button><span id="counter-day5"></span><button onclick="nextSlide('day5')">Next →</button></div>
+</section>
+
+<section class="assessment-section slide-section" id="assessment">
+<div class="day-header"><span class="day-badge">WEEK 6 • MASTERY ASSESSMENT</span><h2>🧠 20-Item Interactive Assessment</h2><p>Answer every item. Choose the best answer, then press <strong>Submit Assessment</strong>. Suggested mastery: <strong>80%</strong>.</p></div>
+<div id="assessmentForm" class="assessment-form"></div>
+<div class="assessment-actions"><button class="primary-btn" onclick="submitAssessment()">Submit Assessment</button><button class="secondary-btn" onclick="resetAssessment()">Reset</button></div>
+<div id="assessmentResult" class="assessment-result"></div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"><div><strong>TEACHER ED • LEARNING HUB</strong><span>Grade 8 Mathematics • Second Term • Week 6</span></div></div>
+  <div class="footer-note">Interactive learning resource • ILAW: Introduce • Learn • Apply • Wrap Up</div>
+</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

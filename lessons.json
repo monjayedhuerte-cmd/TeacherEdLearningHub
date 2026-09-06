@@ -428,5 +428,95 @@
     "date": "2026-09-06",
     "featured": false,
     "icon": "calculator"
+  },
+  {
+    "title": "Triangles | Week 3, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Can we use the sides of a triangle to discover a missing length, identify a triangle, and decide whether a triangle can even exist?",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week3_Pythagorean_Triangle_Inequality_ILAW_Mobile_Responsive/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Money Math Mission| Week 4, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Welcome, Grade 8 mathematicians! This week, you will use mathematics to solve real-life money situations involving earning money, profit and loss, best buys, and buying on terms (instalment plans).",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week4_FinancialMath_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Linear Equations in One Variable| Week 5, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Your mission: learn how to keep an equation balanced, solve for an unknown, and use equations to solve number, geometry, and money problems.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week5_LinearEquations_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Linear Inequalities| Week 6, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Your mission: learn how to keep an equation balanced, solve for an unknown, and use equations to solve number, geometry, and money problems.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week6_LinearInequalities_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Two Variables, One Relationship | Week 7, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Today we discover how a linear equation in two variables describes a relationship between two quantities—and how its solutions can be written as ordered pairs.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week7_LinearEquations2Var_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Two Variables, One Relationship | Week 8-9, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Define and determine the slope and intercepts of a line; find the equation of a line given two points, the slope and a point, the slope and y-intercept, and the x- and y-intercepts.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week8-9_Slope_Intercepts_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Cartesian Coordinate Plane | Week 10, 2nd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Plot points, read coordinates, find distance, and determine the midpoint of a line segment—step by step.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term2_Week10_Cartesian_Coordinate_Plane_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "System of Linear Equations in Two Variables | Week 1, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "This week, you will learn how two linear equations can work together to describe a situation—and how graphing can help you find their common solution.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week1_SystemsLinearEquations_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Systems of Linear Equations: From Types to Algebraic Solutions| Week 2-4, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "This learning deck follows the uploaded Budget of Work. Weeks 2–4 continue the Week 1 idea: understand systems, classify them by their number of solutions, solve them algebraically, and use them to solve real problems.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Weeks2-4_SystemsLinearEquations_ILAW/index.html",
+    "date": "2026-09-06",
+    "featured": false,
+    "icon": "calculator"
   }
 ]

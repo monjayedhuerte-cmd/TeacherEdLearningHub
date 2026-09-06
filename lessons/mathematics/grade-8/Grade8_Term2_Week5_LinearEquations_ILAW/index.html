@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0b2d52">
+  <meta name="description" content="Teacher Ed Learning Hub - Grade 8 Mathematics Term 2 Week 5: Linear Equations in One Variable">
+  <title>Teacher Ed | Learning Hub — Grade 8 Week 5</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="apple-touch-icon" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app" id="app">
+  <header class="top-header">
+    <div class="brand-wrap">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+        <span class="brand-mark"><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"></span>
+        <span class="brand-text">
+          <strong>TEACHER ED</strong>
+          <small>LEARNING HUB</small>
+        </span>
+      </a>
+      <div class="lesson-id">
+        <span>GRADE 8 MATHEMATICS</span>
+        <b>TERM 2 • WEEK 5</b>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="top-btn" id="fullscreenBtn" type="button" title="Full screen">⛶ <span>Full Screen</span></button>
+      <button class="top-btn" id="homeBtn" type="button">⌂ <span>Home</span></button>
+    </div>
+  </header>
+
+  <nav class="top-nav" aria-label="Lesson navigation">
+    <button class="nav-item active" data-target="home">Overview</button>
+    <button class="nav-item" data-target="day1">Day 1</button>
+    <button class="nav-item" data-target="day2">Day 2</button>
+    <button class="nav-item" data-target="day3">Day 3</button>
+    <button class="nav-item" data-target="day4">Day 4</button>
+    <button class="nav-item" data-target="day5">Day 5</button>
+    <button class="nav-item assessment-tab" data-target="assessment">20-Item Assessment</button>
+  </nav>
+
+  <main id="home">
+    <section class="hero slide-section active-section" id="overview">
+      <div class="hero-copy">
+        <div class="eyebrow">SECOND TERM • WEEK 5 • NUMBER AND ALGEBRA</div>
+        <h1>Unlock the Mystery of <span>x</span>!</h1>
+        <p class="hero-lead">A presentation-style, interactive week on <strong>linear equations in one variable</strong>.</p>
+        <p class="hero-sub">Your mission: learn how to keep an equation balanced, solve for an unknown, and use equations to solve number, geometry, and money problems.</p>
+        <div class="hero-buttons">
+          <button class="primary-btn" onclick="goTo('day1')">▶ Start Day 1</button>
+          <button class="secondary-btn" onclick="goTo('assessment')">Take Assessment</button>
+        </div>
+      </div>
+      <div class="equation-hero" aria-label="Balance illustration">
+        <div class="balance-card">
+          <div class="balance-title">THE GOLDEN RULE</div>
+          <div class="balance-line"><span>LEFT</span><b>=</b><span>RIGHT</span></div>
+          <div class="balance-equation">3x + 5 = 20</div>
+          <div class="balance-answer">x = 5</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="standard-grid">
+        <article class="info-card">
+          <div class="card-label">CONTENT STANDARD</div>
+          <h2>What are we learning?</h2>
+          <p>The term develops understanding of algebraic ideas, including linear equations in one variable.</p>
+        </article>
+        <article class="info-card">
+          <div class="card-label">PERFORMANCE STANDARD</div>
+          <h2>What should you be able to do?</h2>
+          <p>By the end of the term, learners should be able to solve linear equations and apply them in mathematical and real-life situations.</p>
+        </article>
+      </div>
+
+      <div class="competency-box">
+        <div class="card-label">WEEK 5 TARGET LEARNING COMPETENCY</div>
+        <h2>Linear Equations in One Variable</h2>
+        <ul>
+          <li>Solve linear equations in one variable.</li>
+          <li>Solve problems involving number, geometry, and money situations using linear equations in one variable.</li>
+        </ul>
+      </div>
+
+      <div class="ilaw-grid">
+        <div class="ilaw i"><strong>I</strong><span>INTRODUCE</span><small>Connect the mystery to real life.</small></div>
+        <div class="ilaw l"><strong>L</strong><span>LEARN</span><small>Build the idea step by step.</small></div>
+        <div class="ilaw a"><strong>A</strong><span>APPLY</span><small>Answer, explain, and practice.</small></div>
+        <div class="ilaw w"><strong>W</strong><span>WRAP UP</span><small>Check, reflect, and master.</small></div>
+      </div>
+
+      <div class="week-map">
+        <h2>🗺️ Week Map</h2>
+        <div class="day-map">
+          <button onclick="goTo('day1')"><b>DAY 1</b><span>Equation & Equality</span><small>50 min</small></button>
+          <button onclick="goTo('day2')"><b>DAY 2</b><span>One-Step & Two-Step</span><small>50 min</small></button>
+          <button onclick="goTo('day3')"><b>DAY 3</b><span>Multi-Step Equations</span><small>50 min</small></button>
+          <button onclick="goTo('day4')"><b>DAY 4</b><span>Number & Geometry Problems</span><small>50 min</small></button>
+          <button onclick="goTo('day5')"><b>DAY 5</b><span>Money Problems + Mastery</span><small>50 min</small></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DAY 1 -->
+    <section class="lesson-day slide-section" id="day1">
+      <div class="day-head"><span>DAY 1</span><h2>Meet the Equation: Keep It Balanced</h2><p>50-minute interactive class • ILAW</p></div>
+      <div class="slide-counter" id="counter-day1">Slide 1 of 7</div>
+      <div class="slide-deck" id="deck-day1">
+        <article class="lesson-slide active">
+          <div class="timing">0–7 min • I — INTRODUCE</div>
+          <h3>🎒 The Mystery Backpack</h3>
+          <p>Imagine a backpack has an unknown number of notebooks. Your teacher adds 3 more notebooks, and now there are 10.</p>
+          <div class="big-equation">x + 3 = 10</div>
+          <p class="question-prompt">🤔 What number must <b>x</b> be?</p>
+          <div class="choice-row" data-quiz="d1q1">
+            <button onclick="choice(this,true,'d1q1')">7</button><button onclick="choice(this,false,'d1q1')">13</button><button onclick="choice(this,false,'d1q1')">3</button>
+          </div>
+          <div class="feedback" id="d1q1-feedback"></div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">7–15 min • L — LEARN</div>
+          <h3>⚖️ What Is an Equation?</h3>
+          <p>An <b>equation</b> is a mathematical statement saying that two expressions have the same value. The symbol <b>=</b> means “is equal to.”</p>
+          <div class="two-col">
+            <div class="concept"><b>Expression</b><span>3x + 5</span><small>No equal sign is required.</small></div>
+            <div class="concept"><b>Equation</b><span>3x + 5 = 20</span><small>Two sides are equal.</small></div>
+          </div>
+          <div class="note">Think of the equal sign as a <b>balance point</b>. Whatever you do to one side must also be done to the other side.</div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">15–23 min • L — LEARN</div>
+          <h3>🔑 Vocabulary You Need</h3>
+          <div class="vocab-grid">
+            <div><b>Variable</b><span>A letter representing an unknown value.</span><em>x</em></div>
+            <div><b>Constant</b><span>A number without a variable.</span><em>7</em></div>
+            <div><b>Coefficient</b><span>The number multiplying a variable.</span><em>4 in 4x</em></div>
+            <div><b>Solution</b><span>A value that makes the equation true.</span><em>x = 3</em></div>
+          </div>
+          <p class="question-prompt">Quick check: In <b>6x + 4 = 22</b>, what is the coefficient of x?</p>
+          <div class="choice-row"><button onclick="mark(this, true, 'Correct! 6 is multiplying x.')">6</button><button onclick="mark(this,false,'Look at the number attached to x.')">4</button><button onclick="mark(this,false,'22 is on the other side.')">22</button></div>
+          <div class="feedback"></div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">23–31 min • L — LEARN</div>
+          <h3>⚖️ The Properties of Equality</h3>
+          <p>The equation stays true when we perform the <b>same operation on both sides</b>.</p>
+          <div class="rule-cards">
+            <div><b>Add</b><span>If a = b, then a + c = b + c.</span></div>
+            <div><b>Subtract</b><span>If a = b, then a − c = b − c.</span></div>
+            <div><b>Multiply</b><span>If a = b, then ac = bc.</span></div>
+            <div><b>Divide</b><span>If a = b, then a/c = b/c, c ≠ 0.</span></div>
+          </div>
+          <div class="balance-demo"><span> x + 4 </span><b>=</b><span>12</span><i>Subtract 4 from BOTH sides</i><span>x</span><b>=</b><span>8</span></div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">31–40 min • A — APPLY</div>
+          <h3>🎯 Your Turn: Solve x + 6 = 14</h3>
+          <p>Choose the operation that isolates x.</p>
+          <div class="choice-row" data-quiz="d1q2">
+            <button onclick="choice(this,false,'d1q2')">Add 6 to both sides</button>
+            <button onclick="choice(this,true,'d1q2')">Subtract 6 from both sides</button>
+            <button onclick="choice(this,false,'d1q2')">Multiply both sides by 6</button>
+          </div>
+          <div class="feedback" id="d1q2-feedback"></div>
+          <div class="mini-practice">
+            <p>Then, what is x?</p>
+            <input type="number" id="d1input" placeholder="Enter x">
+            <button class="small-btn" onclick="numberCheck('d1input',8,'d1inputFeedback','x = 8. Great!')">Check</button>
+            <div class="feedback" id="d1inputFeedback"></div>
+          </div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">40–47 min • A — APPLY</div>
+          <h3>🧠 Equation Detective</h3>
+          <p>Solve each equation mentally. Ask yourself: “What operation undoes the operation next to x?”</p>
+          <div class="detective-list">
+            <label>1. x − 9 = 5 <input id="det1" type="number"></label>
+            <label>2. x + 12 = 20 <input id="det2" type="number"></label>
+            <label>3. 3x = 21 <input id="det3" type="number"></label>
+          </div>
+          <button class="primary-btn" onclick="checkMany([['det1',14],['det2',8],['det3',7]],'detectiveFeedback')">Check Answers</button>
+          <div class="feedback" id="detectiveFeedback"></div>
+        </article>
+
+        <article class="lesson-slide">
+          <div class="timing">47–50 min • W — WRAP UP</div>
+          <h3>🎟️ Exit Ticket</h3>
+          <p>Explain in one sentence: <b>Why must we perform the same operation on both sides of an equation?</b></p>
+          <textarea id="d1exit" placeholder="Type your explanation..."></textarea>
+          <button class="secondary-btn" onclick="saveReflection('d1exit','d1exitFeedback')">Submit Reflection</button>
+          <div class="feedback" id="d1exitFeedback"></div>
+          <div class="mastery-tip">⭐ Remember: An equation is a balance. Keep both sides equal.</div>
+        </article>
+      </div>
+      <div class="deck-controls"><button onclick="prevSlide('day1')">← Back</button><button onclick="nextSlide('day1')">Next →</button></div>
+    </section>
+
+    <!-- DAY 2 -->
+    <section class="lesson-day slide-section" id="day2">
+      <div class="day-head"><span>DAY 2</span><h2>One-Step & Two-Step Equations</h2><p>50-minute interactive class • ILAW</p></div>
+      <div class="slide-counter" id="counter-day2">Slide 1 of 7</div>
+      <div class="slide-deck" id="deck-day2">
+        <article class="lesson-slide active">
+          <div class="timing">0–7 min • I — INTRODUCE</div>
+          <h3>🏆 Warm-Up Challenge</h3>
+          <p>You earned 5 points in a game, then your total became 17. What was your score before the 5 points?</p>
+          <div class="big-equation">x + 5 = 17</div>
+          <div class="choice-row"><button onclick="mark(this,true,'Yes! 12 + 5 = 17.')">12</button><button onclick="mark(this,false,'Try undoing +5.')">22</button><button onclick="mark(this,false,'Check the total.')">5</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">7–16 min • L — LEARN</div>
+          <h3>🧩 One-Step Equations</h3>
+          <p>A one-step equation needs one inverse operation.</p>
+          <div class="worked">
+            <div>7x = 42</div><div class="arrow">÷ 7</div><div>x = 6</div>
+            <small>Multiplication is undone by division.</small>
+          </div>
+          <div class="worked">
+            <div>x − 8 = 15</div><div class="arrow">+ 8</div><div>x = 23</div>
+            <small>Subtraction is undone by addition.</small>
+          </div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">16–24 min • L — LEARN</div>
+          <h3>🔄 Inverse Operations</h3>
+          <div class="inverse-grid">
+            <div>+ ↔ −</div><div>× ↔ ÷</div>
+          </div>
+          <p>To solve, identify what is being done to x and use the inverse operation to undo it.</p>
+          <div class="question-prompt">Which operation undoes <b>− 13</b>?</div>
+          <div class="choice-row"><button onclick="mark(this,false,'Multiplication is not the inverse.')">×13</button><button onclick="mark(this,true,'Correct! Addition undoes subtraction.')">+13</button><button onclick="mark(this,false,'Division is not the inverse.')">÷13</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">24–32 min • L — LEARN</div>
+          <h3>🪜 Two-Step Equations</h3>
+          <p>Example: <b>2x + 5 = 17</b></p>
+          <div class="steps-big">
+            <div><b>Step 1:</b> Subtract 5 → 2x = 12</div>
+            <div><b>Step 2:</b> Divide by 2 → x = 6</div>
+            <div><b>Check:</b> 2(6) + 5 = 17 ✓</div>
+          </div>
+          <div class="note">💡 Undo operations in the reverse order. First undo addition/subtraction, then multiplication/division.</div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">32–41 min • A — APPLY</div>
+          <h3>🎮 Choose the Solution</h3>
+          <p>Solve <b>3x − 4 = 20</b>.</p>
+          <div class="choice-row"><button onclick="mark(this,false,'First undo −4 by adding 4.')">x = 4</button><button onclick="mark(this,true,'Excellent! 3x = 24, so x = 8.')">x = 8</button><button onclick="mark(this,false,'Substitute to check.')">x = 12</button></div><div class="feedback"></div>
+          <p class="question-prompt">Now solve <b>5x + 10 = 35</b>:</p>
+          <input type="number" id="d2input" placeholder="x = ?"><button class="small-btn" onclick="numberCheck('d2input',5,'d2feedback','Correct! 5(5)+10=35.')">Check</button><div class="feedback" id="d2feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">41–47 min • A — APPLY</div>
+          <h3>⚡ Speed Round</h3>
+          <div class="speed-grid">
+            <div><b>x + 18 = 31</b><input id="s1" type="number"></div>
+            <div><b>4x = 36</b><input id="s2" type="number"></div>
+            <div><b>2x + 3 = 15</b><input id="s3" type="number"></div>
+            <div><b>7x − 6 = 29</b><input id="s4" type="number"></div>
+          </div>
+          <button class="primary-btn" onclick="checkMany([['s1',13],['s2',9],['s3',6],['s4',5]],'speedFeedback')">Check Round</button>
+          <div class="feedback" id="speedFeedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">47–50 min • W — WRAP UP</div>
+          <h3>🧠 Explain It!</h3>
+          <p>Complete: “I solve a two-step equation by first ________, then ________.”</p>
+          <textarea id="d2exit" placeholder="Your own words..."></textarea>
+          <button class="secondary-btn" onclick="saveReflection('d2exit','d2exitFeedback')">Submit</button><div class="feedback" id="d2exitFeedback"></div>
+        </article>
+      </div>
+      <div class="deck-controls"><button onclick="prevSlide('day2')">← Back</button><button onclick="nextSlide('day2')">Next →</button></div>
+    </section>
+
+    <!-- DAY 3 -->
+    <section class="lesson-day slide-section" id="day3">
+      <div class="day-head"><span>DAY 3</span><h2>Multi-Step Equations & Checking</h2><p>50-minute interactive class • ILAW</p></div>
+      <div class="slide-counter" id="counter-day3">Slide 1 of 7</div>
+      <div class="slide-deck" id="deck-day3">
+        <article class="lesson-slide active">
+          <div class="timing">0–7 min • I — INTRODUCE</div>
+          <h3>🕵️ Find the Hidden Number</h3>
+          <p>Think of a number. Double it, add 7, and the result is 25. What is the number?</p>
+          <div class="big-equation">2x + 7 = 25</div>
+          <div class="choice-row"><button onclick="mark(this,false,'Try undoing +7 first.')">7</button><button onclick="mark(this,true,'Yes! 2(9)+7=25.')">9</button><button onclick="mark(this,false,'Check 2x + 7.')">16</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">7–16 min • L — LEARN</div>
+          <h3>🧱 Simplify Before Solving</h3>
+          <p>Some equations have like terms or variables on both sides.</p>
+          <div class="worked-wide">
+            <b>3x + 4 + 2x = 29</b>
+            <span>Combine like terms → 5x + 4 = 29</span>
+            <span>Subtract 4 → 5x = 25</span>
+            <span>Divide 5 → x = 5</span>
+          </div>
+          <p>Like terms have the same variable part. For example, <b>3x</b> and <b>2x</b> are like terms.</p>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">16–24 min • L — LEARN</div>
+          <h3>↔ Variables on Both Sides</h3>
+          <p>Example: <b>5x + 2 = 2x + 17</b></p>
+          <div class="steps-big">
+            <div>Subtract 2x → 3x + 2 = 17</div>
+            <div>Subtract 2 → 3x = 15</div>
+            <div>Divide 3 → x = 5</div>
+          </div>
+          <div class="note">🎯 Goal: collect variable terms on one side and constants on the other.</div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">24–32 min • L — LEARN</div>
+          <h3>✅ Always Check Your Answer</h3>
+          <p>Substitute your answer into the original equation.</p>
+          <div class="check-box">
+            <b>Equation:</b> 4x + 3 = 27<br>
+            <b>Solution:</b> x = 6<br>
+            <b>Check:</b> 4(6) + 3 = 24 + 3 = 27 ✓
+          </div>
+          <p class="question-prompt">Why is checking useful?</p>
+          <div class="choice-row"><button onclick="mark(this,true,'Exactly! Checking helps catch errors.')">It verifies the solution.</button><button onclick="mark(this,false,'That is not the main purpose.')">It changes the equation.</button><button onclick="mark(this,false,'No.')">It removes x.</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">32–41 min • A — APPLY</div>
+          <h3>🎯 Multi-Step Mission</h3>
+          <p>Solve <b>4x + 6 = 2x + 20</b>.</p>
+          <div class="choice-row"><button onclick="mark(this,false,'Move 2x first.')">x = 4</button><button onclick="mark(this,true,'Correct! 2x=14, so x=7.')">x = 7</button><button onclick="mark(this,false,'Substitute to test.')">x = 10</button></div><div class="feedback"></div>
+          <p class="question-prompt">Try <b>6x − 4 = 3x + 17</b>.</p>
+          <input type="number" id="d3input" placeholder="x = ?"><button class="small-btn" onclick="numberCheck('d3input',7,'d3feedback','Correct! 3x=21, so x=7.')">Check</button><div class="feedback" id="d3feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">41–47 min • A — APPLY</div>
+          <h3>🧩 Error Detective</h3>
+          <p>A learner solved <b>3x + 8 = 20</b> as follows:</p>
+          <div class="error-box">3x + 8 = 20<br>3x = 28<br>x = 28/3</div>
+          <p>What was the mistake?</p>
+          <div class="choice-row"><button onclick="mark(this,true,'Correct. 8 should be subtracted, not added.')">They should subtract 8 from 20.</button><button onclick="mark(this,false,'The division is fine after isolating 3x.')">They should multiply by 3.</button><button onclick="mark(this,false,'The variable is correct.')">They should remove x first.</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">47–50 min • W — WRAP UP</div>
+          <h3>🎟️ Three-Step Exit Ticket</h3>
+          <p>Name the three habits of a careful equation solver.</p>
+          <textarea id="d3exit" placeholder="Example: simplify, solve, check..."></textarea>
+          <button class="secondary-btn" onclick="saveReflection('d3exit','d3exitFeedback')">Submit</button><div class="feedback" id="d3exitFeedback"></div>
+        </article>
+      </div>
+      <div class="deck-controls"><button onclick="prevSlide('day3')">← Back</button><button onclick="nextSlide('day3')">Next →</button></div>
+    </section>
+
+    <!-- DAY 4 -->
+    <section class="lesson-day slide-section" id="day4">
+      <div class="day-head"><span>DAY 4</span><h2>Word Problems: Number & Geometry</h2><p>50-minute interactive class • ILAW</p></div>
+      <div class="slide-counter" id="counter-day4">Slide 1 of 7</div>
+      <div class="slide-deck" id="deck-day4">
+        <article class="lesson-slide active">
+          <div class="timing">0–7 min • I — INTRODUCE</div>
+          <h3>📖 Words Can Become Equations</h3>
+          <p>“A number increased by 8 is 21.”</p>
+          <div class="big-equation">x + 8 = 21</div>
+          <p>Translation turns a real situation into a mathematical model.</p>
+          <div class="choice-row"><button onclick="mark(this,true,'Yes! x + 8 = 21.')">Correct model</button><button onclick="mark(this,false,'The 8 is being added.')">x − 8 = 21</button><button onclick="mark(this,false,'We need x as the unknown.')">8x = 21</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">7–16 min • L — LEARN</div>
+          <h3>🧭 Four-Step Problem Solver</h3>
+          <div class="problem-steps">
+            <div><b>1. Understand</b><span>What is unknown? What information is given?</span></div>
+            <div><b>2. Plan</b><span>Choose x and write an equation.</span></div>
+            <div><b>3. Solve</b><span>Use inverse operations and show steps.</span></div>
+            <div><b>4. Check & Interpret</b><span>Does the answer make sense in the situation?</span></div>
+          </div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">16–24 min • L — LEARN</div>
+          <h3>🔢 Number Problem Example</h3>
+          <p>The sum of a number and 14 is 39. Find the number.</p>
+          <div class="worked-wide">
+            <span>Let x = the number.</span>
+            <span>x + 14 = 39</span>
+            <span>x = 39 − 14 = 25</span>
+            <span>Check: 25 + 14 = 39 ✓</span>
+          </div>
+          <div class="question-prompt">What should you write first in a word problem?</div>
+          <div class="choice-row"><button onclick="mark(this,true,'Correct. Define the unknown first.')">Define the variable.</button><button onclick="mark(this,false,'The equation comes after identifying the unknown.')">Write the answer only.</button><button onclick="mark(this,false,'Units and context matter.')">Ignore the situation.</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">24–32 min • L — LEARN</div>
+          <h3>📐 Geometry Example</h3>
+          <p>A rectangle has a width of 7 cm and a length of <b>x</b> cm. Its perimeter is 30 cm.</p>
+          <div class="formula-card">P = 2l + 2w</div>
+          <div class="worked-wide">
+            <span>30 = 2x + 2(7)</span>
+            <span>30 = 2x + 14</span>
+            <span>16 = 2x</span>
+            <span>x = 8 cm</span>
+          </div>
+          <p>Always attach the correct unit to a measured quantity.</p>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">32–41 min • A — APPLY</div>
+          <h3>🎯 Geometry Challenge</h3>
+          <p>A rectangle has perimeter 44 cm and width 8 cm. What is its length?</p>
+          <div class="choice-row"><button onclick="mark(this,false,'Try P=2l+2w.')">12 cm</button><button onclick="mark(this,true,'Correct! 44=2l+16, so l=14.')">14 cm</button><button onclick="mark(this,false,'Check the perimeter formula.')">18 cm</button></div><div class="feedback"></div>
+          <p class="question-prompt">Now solve: A square has perimeter 36 cm. What is one side?</p>
+          <input type="number" id="d4input" placeholder="side in cm"><button class="small-btn" onclick="numberCheck('d4input',9,'d4feedback','Correct! 36 ÷ 4 = 9 cm.')">Check</button><div class="feedback" id="d4feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">41–47 min • A — APPLY</div>
+          <h3>🧠 Translate It!</h3>
+          <p>Choose the equation for: “Five more than twice a number is 23.”</p>
+          <div class="choice-row"><button onclick="mark(this,false,'The 5 is added after 2x.')">5x + 2 = 23</button><button onclick="mark(this,true,'Correct: 2x + 5 = 23.')">2x + 5 = 23</button><button onclick="mark(this,false,'This reverses the relationship.')">2(x + 5) = 23</button></div><div class="feedback"></div>
+          <p class="question-prompt">What is x?</p>
+          <input type="number" id="d4x" placeholder="x"><button class="small-btn" onclick="numberCheck('d4x',9,'d4xFeedback','Yes! 2(9)+5=23.')">Check</button><div class="feedback" id="d4xFeedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">47–50 min • W — WRAP UP</div>
+          <h3>💡 Problem-Solving Reflection</h3>
+          <p>Finish this sentence: “A word problem becomes easier when I first ______.”</p>
+          <textarea id="d4exit" placeholder="Your strategy..."></textarea>
+          <button class="secondary-btn" onclick="saveReflection('d4exit','d4exitFeedback')">Submit</button><div class="feedback" id="d4exitFeedback"></div>
+        </article>
+      </div>
+      <div class="deck-controls"><button onclick="prevSlide('day4')">← Back</button><button onclick="nextSlide('day4')">Next →</button></div>
+    </section>
+
+    <!-- DAY 5 -->
+    <section class="lesson-day slide-section" id="day5">
+      <div class="day-head"><span>DAY 5</span><h2>Money Problems + Week Mastery</h2><p>50-minute interactive class • ILAW</p></div>
+      <div class="slide-counter" id="counter-day5">Slide 1 of 7</div>
+      <div class="slide-deck" id="deck-day5">
+        <article class="lesson-slide active">
+          <div class="timing">0–7 min • I — INTRODUCE</div>
+          <h3>💰 The School Store</h3>
+          <p>A student has ₱50 and wants to buy a notebook. After buying it, ₱18 remains. How much did the notebook cost?</p>
+          <div class="big-equation">50 − x = 18</div>
+          <div class="choice-row"><button onclick="mark(this,true,'Correct! x = 32.')">₱32</button><button onclick="mark(this,false,'That is the amount left.')">₱18</button><button onclick="mark(this,false,'Check 50 − x = 18.')">₱68</button></div><div class="feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">7–16 min • L — LEARN</div>
+          <h3>🛒 Money Situations as Equations</h3>
+          <p>Common relationships can be modeled with equations.</p>
+          <div class="money-grid">
+            <div><b>Total cost</b><span>price × quantity</span></div>
+            <div><b>Remaining money</b><span>budget − spending</span></div>
+            <div><b>Equal shares</b><span>total ÷ number of people</span></div>
+            <div><b>Change</b><span>amount paid − cost</span></div>
+          </div>
+          <p>Always identify what <b>x</b> represents before writing the equation.</p>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">16–24 min • L — LEARN</div>
+          <h3>💵 Worked Money Example</h3>
+          <p>A school club sells 3 identical notebooks plus a ₱15 membership fee for ₱105. What is the price of one notebook?</p>
+          <div class="worked-wide">
+            <span>Let x = price of one notebook.</span>
+            <span>3x + 15 = 105</span>
+            <span>3x = 90</span>
+            <span>x = ₱30</span>
+            <span>Check: 3(30)+15 = 105 ✓</span>
+          </div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">24–32 min • L — LEARN</div>
+          <h3>🧠 Choose the Best Model</h3>
+          <p>“A taxi charges ₱60 plus ₱12 per kilometer. The fare is ₱156. How many kilometers were traveled?”</p>
+          <div class="choice-row"><button onclick="mark(this,true,'Correct: 60 + 12x = 156.')">60 + 12x = 156</button><button onclick="mark(this,false,'The fixed fee is 60.')">12 + 60x = 156</button><button onclick="mark(this,false,'The rate is multiplied by x.')">60x + 12 = 156</button></div><div class="feedback"></div>
+          <p class="question-prompt">Solve for x.</p>
+          <input type="number" id="d5input" placeholder="km"><button class="small-btn" onclick="numberCheck('d5input',8,'d5feedback','Correct! 12x=96, so x=8 km.')">Check</button><div class="feedback" id="d5feedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">32–41 min • A — APPLY</div>
+          <h3>🏁 Final Practice Relay</h3>
+          <div class="speed-grid">
+            <div><b>2x + 9 = 25</b><input id="r1" type="number"></div>
+            <div><b>7x − 5 = 30</b><input id="r2" type="number"></div>
+            <div><b>4x + 8 = 2x + 22</b><input id="r3" type="number"></div>
+            <div><b>3x + 12 = 57</b><input id="r4" type="number"></div>
+          </div>
+          <button class="primary-btn" onclick="checkMany([['r1',8],['r2',5],['r3',7],['r4',15]],'relayFeedback')">Check Relay</button>
+          <div class="feedback" id="relayFeedback"></div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">41–47 min • A — APPLY</div>
+          <h3>🔥 Mastery Warm-Up</h3>
+          <p>A number is decreased by 11 and the result is 24. What is the number?</p>
+          <input type="number" id="warmMastery" placeholder="answer"><button class="small-btn" onclick="numberCheck('warmMastery',35,'warmMasteryFeedback','Correct! x − 11 = 24, so x = 35.')">Check</button><div class="feedback" id="warmMasteryFeedback"></div>
+          <div class="note">You are ready for the 20-item assessment. Read carefully, model the situation, solve, and check.</div>
+        </article>
+        <article class="lesson-slide">
+          <div class="timing">47–50 min • W — WRAP UP</div>
+          <h3>🎓 Week 5 Mission Complete!</h3>
+          <p>Before the assessment, say the strategy aloud:</p>
+          <div class="strategy-banner">DEFINE → WRITE → SOLVE → CHECK → INTERPRET</div>
+          <button class="primary-btn" onclick="goTo('assessment')">🚀 Start 20-Item Assessment</button>
+          <div class="mastery-tip">⭐ Your goal is not just to get x. Your goal is to understand why the solution works.</div>
+        </article>
+      </div>
+      <div class="deck-controls"><button onclick="prevSlide('day5')">← Back</button><button onclick="nextSlide('day5')">Next →</button></div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section class="assessment-section slide-section" id="assessment">
+      <div class="day-head"><span>WEEK 5 ASSESSMENT</span><h2>20-Item Linear Equations Mastery Check</h2><p>Answer every item. Read each problem carefully.</p></div>
+      <div class="assessment-info">
+        <div><b>Competencies assessed</b><span>Solving linear equations in one variable + number, geometry, and money problems.</span></div>
+        <div><b>Suggested mastery</b><span>80% or higher</span></div>
+      </div>
+      <form id="assessmentForm" class="assessment-grid"></form>
+      <div class="assessment-submit">
+        <button class="primary-btn" type="button" onclick="submitAssessment()">📊 Submit Assessment</button>
+        <button class="secondary-btn" type="button" onclick="resetAssessment()">Reset</button>
+      </div>
+      <div id="assessmentResult" class="assessment-result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+      <div><strong>TEACHER ED LEARNING HUB</strong><span>Grade 8 Mathematics • Term 2 • Week 5</span></div>
+    </div>
+    <div class="footer-note">Interactive learning presentation • ILAW Strategy • Designed for classroom discussion and learner participation</div>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

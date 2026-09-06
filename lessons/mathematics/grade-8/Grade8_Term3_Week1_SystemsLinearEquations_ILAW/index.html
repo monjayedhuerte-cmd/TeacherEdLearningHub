@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f3a">
+<title>Grade 8 Mathematics • Term 3 Week 1 • Systems of Linear Equations</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo">
+    <div><strong>TEACHER ED</strong><span>LEARNING HUB</span></div>
+  </div>
+  <div class="header-title">
+    <b>GRADE 8 MATHEMATICS</b>
+    <small>TERM 3 • WEEK 1</small>
+  </div>
+  <button class="fullscreen" id="fullscreenBtn">⛶ Full Screen</button>
+</header>
+
+<nav class="day-nav" aria-label="Lesson days">
+  <button class="active" data-day="0">DAY 1</button>
+  <button data-day="1">DAY 2</button>
+  <button data-day="2">DAY 3</button>
+  <button data-day="3">DAY 4</button>
+  <button data-day="4">DAY 5</button>
+  <button data-day="5">ASSESSMENT</button>
+</nav>
+
+<div class="progress-wrap"><div id="progress"></div></div>
+
+<main>
+<section class="slide active" id="day0">
+  <div class="kicker">WEEK 1 • NUMBER & ALGEBRA • 50 MINUTES</div>
+  <h1>Systems of Linear Equations in Two Variables</h1>
+  <p class="lead">This week, you will learn how two linear equations can work together to describe a situation—and how graphing can help you find their common solution.</p>
+  <div class="hero-grid">
+    <div class="card hero-card">
+      <div class="big-icon">📈➕📈</div>
+      <h2>Your Week 1 Mission</h2>
+      <p>By the end of the week, you should be able to:</p>
+      <ul>
+        <li>define and illustrate a <b>system of linear equations in two variables</b>;</li>
+        <li>recognize that a solution to a system must satisfy <b>both equations</b>;</li>
+        <li>solve systems with integer solutions <b>by graphing</b>; and</li>
+        <li>explain what the intersection of two lines means.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>🎯 Learning Competencies</h2>
+      <div class="competency">1. Define and illustrate a system of linear equations in two variables.</div>
+      <div class="competency">2. Solve a system of linear equations (with integer solutions) by graphing.</div>
+      <div class="source-note">Source: Grade 8 Mathematics Three-Term Budget of Work • Third Term • Week 1.</div>
+    </div>
+  </div>
+  <div class="ilaw">
+    <span><b>I</b> Introduce</span><span><b>L</b> Learn</span><span><b>A</b> Apply</span><span><b>W</b> Wrap-Up</span>
+  </div>
+  <button class="primary" onclick="go(1)">START DAY 1 →</button>
+</section>
+
+<section class="slide" id="day1">
+  <div class="day-head"><span>DAY 1 • ILAW</span><b>INTRODUCE + LEARN</b><em>50 min</em></div>
+  <h1>What Is a System of Linear Equations?</h1>
+  <div class="timing">⏱ Suggested flow: 5 min hook • 10 min discussion • 15 min guided examples • 15 min interactive practice • 5 min exit check</div>
+  <div class="card hook">
+    <h2>🚕 Hook: Two Clues, One Answer</h2>
+    <p>A school fair sells regular tickets for ₱40 and student tickets for ₱25. A group buys <b>10 tickets</b> for a total of <b>₱310</b>.</p>
+    <p><b>Question:</b> Could you determine how many of each type were bought? What two facts could become equations?</p>
+    <div class="choice-grid" data-question="d1hook">
+      <button onclick="mc(this,false)">Only the total number of tickets</button>
+      <button onclick="mc(this,true)">The number of tickets AND the total cost</button>
+      <button onclick="mc(this,false)">Only the total cost</button>
+    </div><div class="feedback"></div>
+  </div>
+  <div class="card">
+    <h2>📘 Learn: The Big Idea</h2>
+    <p>A <b>system of linear equations in two variables</b> is a set of two or more linear equations involving the same variables. In this week, we focus on systems of <b>two equations in two variables</b>.</p>
+    <div class="formula"><span>x + y = 10</span><span>40x + 25y = 310</span></div>
+    <p>Both equations describe the same situation. A solution must make <b>both equations true at the same time</b>.</p>
+    <div class="note"><b>Remember:</b> “System” means we consider the equations together—not separately.</div>
+  </div>
+  <div class="card">
+    <h2>🔎 What Does a Solution Mean?</h2>
+    <p>An ordered pair <b>(x, y)</b> is a solution of the system if it satisfies <b>every equation in the system</b>.</p>
+    <div class="example-row">
+      <div><b>Example</b><br>x + y = 10<br>x − y = 2</div>
+      <div><b>Try (6, 4)</b><br>6 + 4 = 10 ✓<br>6 − 4 = 2 ✓</div>
+      <div><b>Therefore</b><br>(6, 4) is the solution.</div>
+    </div>
+  </div>
+  <div class="card mini-check">
+    <h2>⚡ Check Your Understanding</h2>
+    <p>Which statement is true?</p>
+    <div class="choice-grid"><button onclick="mc(this,true)">A solution must satisfy both equations.</button><button onclick="mc(this,false)">A solution only needs to satisfy one equation.</button><button onclick="mc(this,false)">Any ordered pair is automatically a solution.</button></div><div class="feedback"></div>
+  </div>
+  <button class="primary" onclick="go(2)">DAY 2 →</button>
+</section>
+
+<section class="slide" id="day2">
+  <div class="day-head"><span>DAY 2 • ILAW</span><b>LEARN + APPLY</b><em>50 min</em></div>
+  <h1>Illustrating a System as Two Lines</h1>
+  <div class="timing">⏱ Suggested flow: 5 min review • 10 min concept • 15 min table/graph construction • 15 min guided practice • 5 min exit check</div>
+  <div class="card">
+    <h2>🔗 Connect Equations to Graphs</h2>
+    <p>Each linear equation can be represented by a straight line. When two equations are graphed on the <b>same coordinate plane</b>, we can look for a common point.</p>
+    <div class="formula"><span>y = x + 1</span><span>y = −x + 5</span></div>
+    <p>Make a value table for each equation, plot the points, then draw the lines. The point where the two lines meet is the candidate for the system's solution.</p>
+  </div>
+  <div class="card">
+    <h2>🧩 Guided Example</h2>
+    <p>For <b>y = x + 1</b>, when x = 0, y = 1. When x = 2, y = 3.</p>
+    <p>For <b>y = −x + 5</b>, when x = 0, y = 5. When x = 2, y = 3.</p>
+    <div class="big-answer">Both lines contain <b>(2, 3)</b> → the system's solution is <b>(2, 3)</b>.</div>
+  </div>
+  <div class="card">
+    <h2>🎯 Interactive: Find the Common Point</h2>
+    <p>System: <b>y = x + 2</b> and <b>y = −x + 6</b>. What ordered pair lies on both lines?</p>
+    <div class="choice-grid"><button onclick="mc(this,false)">(1, 3)</button><button onclick="mc(this,true)">(2, 4)</button><button onclick="mc(this,false)">(3, 5)</button><button onclick="mc(this,false)">(4, 2)</button></div><div class="feedback"></div>
+    <p class="explain">💡 Substitute the x-value into both equations. For x = 2, both give y = 4.</p>
+  </div>
+  <div class="card">
+    <h2>🧠 Think Like a Mathematician</h2>
+    <p>Why is the intersection important? <b>Write or say your answer:</b> “The intersection represents __________ because __________.”</p>
+    <textarea placeholder="Your explanation..."></textarea>
+  </div>
+  <button class="primary" onclick="go(3)">DAY 3 →</button>
+</section>
+
+<section class="slide" id="day3">
+  <div class="day-head"><span>DAY 3 • ILAW</span><b>APPLY</b><em>50 min</em></div>
+  <h1>Solve a System by Graphing</h1>
+  <div class="timing">⏱ Suggested flow: 5 min warm-up • 10 min teacher model • 15 min guided graphing • 15 min independent interactive practice • 5 min exit ticket</div>
+  <div class="card">
+    <h2>🪜 The 5-Step Graphing Method</h2>
+    <ol class="steps">
+      <li><b>Write</b> both equations clearly.</li>
+      <li><b>Make a table</b> of convenient x-values and find y-values.</li>
+      <li><b>Plot</b> at least two points for each line.</li>
+      <li><b>Draw</b> each straight line.</li>
+      <li><b>Read the intersection</b> as the ordered-pair solution.</li>
+    </ol>
+  </div>
+  <div class="card">
+    <h2>🧮 Worked Example</h2>
+    <p>Solve by graphing:</p>
+    <div class="formula"><span>y = x + 1</span><span>y = −x + 5</span></div>
+    <div class="solution-box">
+      <p><b>Line 1:</b> points can include (0,1) and (2,3).</p>
+      <p><b>Line 2:</b> points can include (0,5) and (2,3).</p>
+      <p>Both lines pass through <b>(2,3)</b>.</p>
+      <p class="big-answer">✅ Solution: <b>(2, 3)</b></p>
+    </div>
+  </div>
+  <div class="card">
+    <h2>🎮 Practice Round</h2>
+    <p>Which point is the solution of <b>y = 2x + 1</b> and <b>y = −x + 7</b>?</p>
+    <div class="choice-grid"><button onclick="mc(this,false)">(1, 3)</button><button onclick="mc(this,true)">(2, 5)</button><button onclick="mc(this,false)">(3, 7)</button><button onclick="mc(this,false)">(4, 9)</button></div><div class="feedback"></div>
+    <p class="explain">⚠️ Notice the choices carefully: verify by substitution. For (2,5), first equation gives 5 and second gives 5.</p>
+  </div>
+  <div class="card">
+    <h2>🔍 Verification Challenge</h2>
+    <p>Is <b>(3,4)</b> a solution of the system <b>y = x + 1</b> and <b>y = −x + 7</b>?</p>
+    <div class="choice-grid"><button onclick="mc(this,true)">Yes. It makes both equations true.</button><button onclick="mc(this,false)">No. It makes only one equation true.</button></div><div class="feedback"></div>
+  </div>
+  <button class="primary" onclick="go(4)">DAY 4 →</button>
+</section>
+
+<section class="slide" id="day4">
+  <div class="day-head"><span>DAY 4 • ILAW</span><b>APPLY + WRAP-UP</b><em>50 min</em></div>
+  <h1>Use Systems to Describe Real Situations</h1>
+  <div class="timing">⏱ Suggested flow: 5 min review • 10 min problem setup • 15 min graph interpretation • 15 min problem-solving • 5 min reflection</div>
+  <div class="card">
+    <h2>🏫 Real-Life Problem</h2>
+    <p>A school club sells adult passes for ₱50 and student passes for ₱30. They sell <b>12 passes</b> and collect <b>₱480</b>.</p>
+    <p>Let <b>x</b> = adult passes and <b>y</b> = student passes.</p>
+    <div class="formula"><span>x + y = 12</span><span>50x + 30y = 480</span></div>
+    <p>Graphing the two equations lets us find the pair that satisfies both facts.</p>
+  </div>
+  <div class="card">
+    <h2>🎯 Choose the Meaning of the Solution</h2>
+    <p>If the graph shows the intersection <b>(3, 9)</b>, what does it mean?</p>
+    <div class="choice-grid"><button onclick="mc(this,true)">3 adult passes and 9 student passes</button><button onclick="mc(this,false)">9 adult passes and 3 student passes</button><button onclick="mc(this,false)">3 passes total</button></div><div class="feedback"></div>
+  </div>
+  <div class="card">
+    <h2>🧠 Error Detective</h2>
+    <p>A learner says: “The point (4,2) is the solution because it is on the first line.” What is wrong?</p>
+    <div class="choice-grid"><button onclick="mc(this,true)">A system solution must be on both lines.</button><button onclick="mc(this,false)">A system solution must always have x = y.</button><button onclick="mc(this,false)">Graphing cannot be used for systems.</button></div><div class="feedback"></div>
+  </div>
+  <div class="card">
+    <h2>✍️ Wrap-Up: Teach It Back</h2>
+    <p>Complete this sentence aloud or in writing:</p>
+    <div class="big-answer">“To solve a system by graphing, I __________. The solution is __________ because __________.”</div>
+    <textarea placeholder="My explanation..."></textarea>
+  </div>
+  <button class="primary" onclick="go(5)">DAY 5: MASTER IT →</button>
+</section>
+
+<section class="slide" id="day5">
+  <div class="day-head"><span>DAY 5 • ILAW</span><b>MASTER CHALLENGE</b><em>50 min</em></div>
+  <h1>Master the Week 1 Competency</h1>
+  <div class="timing">⏱ Suggested flow: 5 min review • 10 min strategy recap • 25 min assessment • 5 min checking • 5 min reflection</div>
+  <div class="card">
+    <h2>🚀 Before You Begin</h2>
+    <p>Use this quick checklist:</p>
+    <ul><li>Do I know what a system is?</li><li>Can I identify two equations describing the same situation?</li><li>Can I graph each line?</li><li>Can I read the intersection?</li><li>Can I verify that the ordered pair works in both equations?</li></ul>
+  </div>
+  <button class="primary" onclick="go(6)">OPEN 20-ITEM ASSESSMENT →</button>
+</section>
+
+<section class="slide" id="assessment">
+  <div class="day-head"><span>WEEK 1 • ASSESSMENT</span><b>20 ITEMS</b><em>Suggested: 25 min</em></div>
+  <h1>Week 1 Mastery Assessment</h1>
+  <p class="lead">Answer every item. Choose carefully, then check your work. Your score is shown after submission.</p>
+  <div id="quiz"></div>
+  <button class="primary" onclick="submitQuiz()">SUBMIT ASSESSMENT</button>
+  <div id="result" class="result"></div>
+  <button class="secondary" onclick="go(0)">↺ REVIEW WEEK 1</button>
+</section>
+</main>
+
+<div class="pager">
+  <button id="prevBtn" onclick="prev()">← Previous</button>
+  <span id="slideLabel">DAY 1</span>
+  <button id="nextBtn" onclick="next()">Next →</button>
+</div>
+
+<footer>
+  <img src="BrandLogo.png" alt="TEACHER ED Learning Hub">
+  <div><b>TEACHER ED LEARNING HUB</b><br>Grade 8 Mathematics • Term 3 • Week 1<br><small>Interactive ILAW Learning Website</small></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

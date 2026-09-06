@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b1f3a">
+<title>Grade 8 Mathematics • Term 3 • Weeks 2–4 • Systems of Linear Equations</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+ <div class="brand"><img src="BrandLogo.png" alt="TEACHER ED Learning Hub Logo"><div><b>TEACHER ED</b><small>LEARNING HUB</small></div></div>
+ <div class="headtitle"><b>GRADE 8 MATHEMATICS</b><span>TERM 3 • WEEKS 2–4</span></div>
+ <button id="fullBtn">⛶ Full Screen</button>
+</header>
+<nav class="week-nav">
+ <button class="active" data-target="0">WEEKS 2–4</button>
+ <button data-target="1">WEEK 2</button><button data-target="6">WEEK 3</button><button data-target="11">WEEK 4</button><button data-target="16">ASSESSMENT</button>
+</nav>
+<div class="progress"><div id="bar"></div></div>
+<main>
+<section class="slide active" id="s0">
+ <div class="tag">GRADE 8 • MATHEMATICS • TERM 3 • BOW WEEKS 2–4</div>
+ <h1>Systems of Linear Equations:<br>From Types to Algebraic Solutions</h1>
+ <p class="lead">This learning deck follows the uploaded Budget of Work. Weeks 2–4 continue the Week 1 idea: understand systems, classify them by their number of solutions, solve them algebraically, and use them to solve real problems.</p>
+ <div class="grid2">
+  <div class="card accent"><h2>🎯 Target Competencies</h2>
+   <ul><li><b>Classify the types of systems of linear equations based on the number of solutions.</b></li><li><b>Solve algebraically a system of linear equations in two variables.</b></li><li><b>Solve problems involving systems of linear equations in two variables.</b></li></ul>
+   <p class="source">Source: Uploaded Grade 8 Mathematics Three-Term Budget of Work, Third Term, Weeks 2–4.</p>
+  </div>
+  <div class="card"><h2>🧭 Our ILAW Journey</h2><div class="ilaw"><b>I</b> Introduce</div><div class="ilaw"><b>L</b> Learn</div><div class="ilaw"><b>A</b> Apply</div><div class="ilaw"><b>W</b> Wrap-Up</div><p>Each day is planned for about <b>50 minutes</b>, with teacher discussion, guided examples, learner questions, and interactive checks.</p></div>
+ </div>
+ <div class="card"><h2>🗺️ PowerPoint-Style Road Map</h2><div class="road"><span>W2<br>Classify systems</span><span>W3<br>Algebraic methods</span><span>W4<br>Problem solving</span><span>20-item<br>Mastery</span></div></div>
+ <button class="primary" onclick="go(1)">START WEEK 2 →</button>
+</section>
+
+<section class="slide" id="s1"><day>WEEK 2 • DAY 1 • ILAW: INTRODUCE + LEARN • 50 MIN</day><h1>Three Questions About Two Lines</h1>
+<div class="time">5 min hook • 10 min concept • 15 min examples • 15 min interaction • 5 min exit</div>
+<div class="card"><h2>🚦 Hook: What Can Two Lines Do?</h2><p>Imagine two roads drawn on the same map. They may meet once, never meet, or lie on top of each other. Linear systems behave similarly.</p><div class="choice"><button onclick="mc(this,true)">They can have one, no, or infinitely many common solutions.</button><button onclick="mc(this,false)">They always have exactly two solutions.</button><button onclick="mc(this,false)">They can never have a common point.</button></div><div class="fb"></div></div>
+<div class="card"><h2>📘 Learn</h2><p>A system of two linear equations can be classified by the <b>number of solutions</b>. When represented as lines, focus on their relationship.</p><div class="three"><div><b>One solution</b><br>Lines intersect once.<br>1 common ordered pair.</div><div><b>No solution</b><br>Distinct parallel lines.<br>0 common ordered pairs.</div><div><b>Infinitely many</b><br>Same line.<br>Infinitely many common ordered pairs.</div></div></div>
+<div class="card"><h2>🧠 Say It</h2><p>Complete: “The solution of a system is a point that __________.”</p><input class="answer" placeholder="Type your idea here"><p class="hint">Expected idea: satisfies both equations.</p></div>
+<button class="primary" onclick="go(2)">DAY 2 →</button></section>
+
+<section class="slide" id="s2"><day>WEEK 2 • DAY 2 • ILAW: LEARN • 50 MIN</day><h1>One Solution: Lines Meet Once</h1>
+<div class="time">5 min review • 10 min model • 15 min guided graph reading • 15 min practice • 5 min wrap-up</div>
+<div class="card"><h2>📈 The Picture</h2><p>Consider <b>y = x + 1</b> and <b>y = −x + 5</b>. Their slopes are different, so the lines meet at one point.</p><div class="formula">y = x + 1 &nbsp;&nbsp; | &nbsp;&nbsp; y = −x + 5</div><p>Set the y-values equal: x + 1 = −x + 5 → 2x = 4 → x = 2. Then y = 3.</p><div class="big">✅ One solution: <b>(2, 3)</b></div></div>
+<div class="card"><h2>🎯 Check</h2><p>If two lines intersect at exactly one point, how many solutions does the system have?</p><div class="choice"><button onclick="mc(this,true)">Exactly one</button><button onclick="mc(this,false)">Zero</button><button onclick="mc(this,false)">Infinitely many</button></div><div class="fb"></div></div>
+<div class="card"><h2>🔎 Verify</h2><p>Does (2,3) satisfy both equations above?</p><div class="choice"><button onclick="mc(this,true)">Yes: both equations give y = 3 when x = 2.</button><button onclick="mc(this,false)">No: it works only in the first.</button></div><div class="fb"></div></div>
+<button class="primary" onclick="go(3)">DAY 3 →</button></section>
+
+<section class="slide" id="s3"><day>WEEK 2 • DAY 3 • ILAW: LEARN + APPLY • 50 MIN</day><h1>No Solution: Parallel Lines</h1>
+<div class="time">5 min warm-up • 10 min concept • 15 min examples • 15 min interactive sorting • 5 min exit</div>
+<div class="card"><h2>🚫 What Does “No Solution” Mean?</h2><p>Two distinct parallel lines never meet. Therefore there is <b>no ordered pair</b> that makes both equations true.</p><div class="formula">y = 2x + 1 &nbsp;&nbsp; | &nbsp;&nbsp; y = 2x − 4</div><p>Both have slope 2, but different y-intercepts. Same slope + different intercepts → parallel distinct lines.</p><div class="big">❌ Number of solutions: <b>0</b></div></div>
+<div class="card"><h2>🎮 Sort It</h2><p>System: y = 3x + 2 and y = 3x + 2. Is it no solution?</p><div class="choice"><button onclick="mc(this,false)">Yes, because the slopes are equal.</button><button onclick="mc(this,true)">No. They are the same line, so there are infinitely many solutions.</button></div><div class="fb"></div></div>
+<div class="card"><h2>💡 Key Distinction</h2><div class="three"><div><b>Same slope + different intercept</b><br>Parallel → no solution.</div><div><b>Same equation</b><br>Same line → infinitely many.</div><div><b>Different slopes</b><br>Meet once → one solution.</div></div></div>
+<button class="primary" onclick="go(4)">DAY 4 →</button></section>
+
+<section class="slide" id="s4"><day>WEEK 2 • DAY 4 • ILAW: APPLY • 50 MIN</day><h1>Classify the System</h1>
+<div class="time">5 min review • 10 min strategy • 20 min classification practice • 10 min explain answers • 5 min exit</div>
+<div class="card"><h2>🧩 Classification Challenge</h2><p>Classify each system by its number of solutions.</p>
+<div class="classify"><div><b>A</b><br>y = x + 2<br>y = −x + 4<br><button onclick="pickClass(this,'one')">One</button><button onclick="pickClass(this,'none')">None</button><button onclick="pickClass(this,'inf')">Infinite</button><small></small></div>
+<div><b>B</b><br>y = 2x + 1<br>y = 2x − 5<br><button onclick="pickClass(this,'none')">None</button><button onclick="pickClass(this,'one')">One</button><button onclick="pickClass(this,'inf')">Infinite</button><small></small></div>
+<div><b>C</b><br>y = −3x + 4<br>3y = −9x + 12<br><button onclick="pickClass(this,'inf')">Infinite</button><button onclick="pickClass(this,'none')">None</button><button onclick="pickClass(this,'one')">One</button><small></small></div></div></div>
+<div class="card"><h2>🗣️ Explain Your Evidence</h2><p>For one system above, explain how slopes and intercepts helped you classify it.</p><textarea placeholder="My mathematical explanation..."></textarea></div>
+<button class="primary" onclick="go(5)">DAY 5 →</button></section>
+
+<section class="slide" id="s5"><day>WEEK 2 • DAY 5 • ILAW: WRAP-UP • 50 MIN</day><h1>Week 2 Mastery: Number of Solutions</h1>
+<div class="time">10 min recap • 15 min guided review • 15 min learner challenge • 10 min reflection</div>
+<div class="card"><h2>🧠 Three-Box Memory Tool</h2><div class="three"><div>🔵 <b>1 solution</b><br>Lines intersect once.</div><div>🟠 <b>0 solutions</b><br>Distinct parallel lines.</div><div>🟢 <b>Infinitely many</b><br>Same line.</div></div></div>
+<div class="card"><h2>🎯 Exit Challenge</h2><p>What type is this? <b>y = 4x + 1</b> and <b>y = 4x + 1</b></p><div class="choice"><button onclick="mc(this,false)">One solution</button><button onclick="mc(this,false)">No solution</button><button onclick="mc(this,true)">Infinitely many solutions</button></div><div class="fb"></div></div>
+<div class="card"><h2>✍️ Wrap-Up</h2><p>Write one rule you will remember when classifying systems.</p><textarea placeholder="My rule..."></textarea></div>
+<button class="primary" onclick="go(6)">START WEEK 3 →</button></section>
+
+<section class="slide" id="s6"><day>WEEK 3 • DAY 1 • ILAW: INTRODUCE + LEARN • 50 MIN</day><h1>Why Solve Algebraically?</h1>
+<div class="time">5 min hook • 10 min concept • 15 min model • 15 min guided practice • 5 min exit</div>
+<div class="card"><h2>🔍 From Graph to Algebra</h2><p>Graphing gives a visual answer. Algebraic methods let us find the exact solution using equations and operations.</p><p>Example: <b>x + y = 7</b> and <b>x − y = 1</b>. If we add the equations, y disappears:</p><div class="formula">2x = 8 → x = 4 → y = 3</div><div class="big">Solution: <b>(4,3)</b></div></div>
+<div class="card"><h2>🧠 The Strategy</h2><ol><li>Choose a variable to eliminate or isolate.</li><li>Perform the same valid operation to both sides.</li><li>Solve for one variable.</li><li>Substitute to find the other.</li><li>Check both equations.</li></ol></div>
+<button class="primary" onclick="go(7)">DAY 2 →</button></section>
+
+<section class="slide" id="s7"><day>WEEK 3 • DAY 2 • ILAW: LEARN • 50 MIN</day><h1>Substitution Method</h1>
+<div class="time">5 min review • 10 min method • 15 min worked example • 15 min practice • 5 min wrap-up</div>
+<div class="card"><h2>🪜 Step-by-Step</h2><p>Solve: <b>y = x + 2</b> and <b>x + y = 8</b>.</p><ol><li>Substitute y = x + 2 into x + y = 8.</li><li>x + (x + 2) = 8</li><li>2x + 2 = 8 → 2x = 6 → x = 3</li><li>y = 3 + 2 = 5</li></ol><div class="big">✅ (3,5)</div></div>
+<div class="card"><h2>🎯 Your Turn</h2><p>Using y = x + 1 and x + y = 7, what is x?</p><div class="choice"><button onclick="mc(this,false)">2</button><button onclick="mc(this,true)">3</button><button onclick="mc(this,false)">4</button><button onclick="mc(this,false)">6</button></div><div class="fb"></div></div>
+<div class="card"><h2>💡 Why Substitute?</h2><p>Substitution replaces one variable with an equivalent expression, allowing the system to become an equation with one variable.</p></div>
+<button class="primary" onclick="go(8)">DAY 3 →</button></section>
+
+<section class="slide" id="s8"><day>WEEK 3 • DAY 3 • ILAW: LEARN + APPLY • 50 MIN</day><h1>Elimination by Addition</h1>
+<div class="time">5 min warm-up • 10 min concept • 15 min model • 15 min practice • 5 min exit</div>
+<div class="card"><h2>➕ Make a Variable Disappear</h2><p>Solve: <b>x + y = 10</b> and <b>x − y = 2</b>.</p><p>Add the equations:</p><div class="formula">x+y + x−y = 10+2 → 2x = 12 → x = 6</div><p>Then substitute x = 6 into x + y = 10 → y = 4.</p><div class="big">Solution: <b>(6,4)</b></div></div>
+<div class="card"><h2>🎮 Practice</h2><p>What disappears when you add the equations above?</p><div class="choice"><button onclick="mc(this,true)">y and −y</button><button onclick="mc(this,false)">x and x</button><button onclick="mc(this,false)">10 and 2</button></div><div class="fb"></div></div>
+<div class="card"><h2>⚠️ Accuracy Tip</h2><p>Line up like terms. Add constants carefully. After finding one variable, always substitute to find the other.</p></div>
+<button class="primary" onclick="go(9)">DAY 4 →</button></section>
+
+<section class="slide" id="s9"><day>WEEK 3 • DAY 4 • ILAW: APPLY • 50 MIN</day><h1>Elimination with Multiplication</h1>
+<div class="time">5 min review • 10 min setup • 15 min teacher model • 15 min learner practice • 5 min check</div>
+<div class="card"><h2>🔧 When Coefficients Do Not Match</h2><p>Consider <b>2x + y = 7</b> and <b>x − y = 2</b>. The y terms already have opposite coefficients, so addition works immediately:</p><div class="formula">3x = 9 → x = 3 → y = 1</div><div class="big">Solution: <b>(3,1)</b></div></div>
+<div class="card"><h2>🎯 Challenge</h2><p>Which operation would be useful if you had <b>2x + 3y = 12</b> and <b>4x + 3y = 18</b>?</p><div class="choice"><button onclick="mc(this,true)">Subtract the equations.</button><button onclick="mc(this,false)">Add without changing anything.</button><button onclick="mc(this,false)">Divide the first equation by zero.</button></div><div class="fb"></div></div>
+<div class="card"><h2>🧠 Explain</h2><textarea placeholder="Why can subtraction eliminate 3y?"></textarea></div>
+<button class="primary" onclick="go(10)">DAY 5 →</button></section>
+
+<section class="slide" id="s10"><day>WEEK 3 • DAY 5 • ILAW: WRAP-UP • 50 MIN</day><h1>Choose the Best Algebraic Method</h1>
+<div class="time">10 min review • 15 min method matching • 15 min solve • 10 min reflection</div>
+<div class="card"><h2>🧭 Method Matcher</h2><div class="three"><div><b>Substitution</b><br>Useful when one variable is already isolated or easy to isolate.</div><div><b>Elimination</b><br>Useful when coefficients are equal/opposites or can be made so.</div><div><b>Either</b><br>Choose the method that makes your work simpler and clearer.</div></div></div>
+<div class="card"><h2>🎯 Quick Solve</h2><p>x + y = 9 and x − y = 3. What is x?</p><div class="choice"><button onclick="mc(this,false)">3</button><button onclick="mc(this,true)">6</button><button onclick="mc(this,false)">9</button><button onclick="mc(this,false)">12</button></div><div class="fb"></div></div>
+<div class="card"><h2>✍️ Wrap-Up</h2><p>Finish: “After I find x, I still need to ______ to complete the ordered pair.”</p><input class="answer" placeholder="Your answer"><p class="hint">Expected: substitute/find y and verify.</p></div>
+<button class="primary" onclick="go(11)">START WEEK 4 →</button></section>
+
+<section class="slide" id="s11"><day>WEEK 4 • DAY 1 • ILAW: INTRODUCE + LEARN • 50 MIN</day><h1>Systems in Real-Life Situations</h1>
+<div class="time">5 min hook • 10 min modeling • 15 min translating • 15 min practice • 5 min exit</div>
+<div class="card"><h2>🛍️ Hook: Two Kinds of Tickets</h2><p>A school event sells adult tickets for ₱60 and student tickets for ₱40. A total of 10 tickets earns ₱480.</p><p>Let x = adult tickets, y = student tickets.</p><div class="formula">x + y = 10<br>60x + 40y = 480</div><p>The first equation represents the <b>number of tickets</b>; the second represents the <b>total money</b>.</p></div>
+<div class="card"><h2>🎯 Identify the Meaning</h2><p>What does x represent?</p><div class="choice"><button onclick="mc(this,true)">Number of adult tickets</button><button onclick="mc(this,false)">Total money</button><button onclick="mc(this,false)">Number of student tickets</button></div><div class="fb"></div></div>
+<button class="primary" onclick="go(12)">DAY 2 →</button></section>
+
+<section class="slide" id="s12"><day>WEEK 4 • DAY 2 • ILAW: LEARN + APPLY • 50 MIN</day><h1>Translate Words into Equations</h1>
+<div class="time">5 min review • 10 min vocabulary • 15 min model • 15 min translation practice • 5 min exit</div>
+<div class="card"><h2>🔤 Translation Guide</h2><div class="three"><div><b>total</b><br>often means add</div><div><b>per / each</b><br>often means multiply</div><div><b>difference</b><br>often means subtract</div></div><p>Always define your variables before writing equations.</p></div>
+<div class="card"><h2>🧩 Practice</h2><p>A number and another number have a sum of 20. Their difference is 4. Which system models this?</p><div class="choice"><button onclick="mc(this,true)">x+y=20 and x−y=4</button><button onclick="mc(this,false)">xy=20 and x+y=4</button><button onclick="mc(this,false)">x+y=4 and x−y=20</button></div><div class="fb"></div></div>
+<div class="card"><h2>🗣️ Explain Your Variables</h2><textarea placeholder="Let x = ______ and y = ______ because..."></textarea></div>
+<button class="primary" onclick="go(13)">DAY 3 →</button></section>
+
+<section class="slide" id="s13"><day>WEEK 4 • DAY 3 • ILAW: APPLY • 50 MIN</day><h1>Solve and Interpret a Word Problem</h1>
+<div class="time">5 min warm-up • 10 min plan • 15 min algebra • 15 min interpretation • 5 min exit</div>
+<div class="card"><h2>🍎 Example</h2><p>A fruit stand sells apples at ₱20 each and oranges at ₱15 each. A customer buys 8 fruits for ₱140. How many apples and oranges?</p><p>Let x = apples, y = oranges.</p><div class="formula">x+y=8<br>20x+15y=140</div><p>Multiply the first equation by 15: 15x+15y=120. Subtract from the second: 5x=20, so x=4. Then y=4.</p><div class="big">✅ 4 apples and 4 oranges.</div></div>
+<div class="card"><h2>🎯 Interpretation Check</h2><p>Why must we reject an algebraic answer if it gives a negative number of tickets?</p><div class="choice"><button onclick="mc(this,true)">Because the variable represents a real quantity that cannot be negative in that context.</button><button onclick="mc(this,false)">Because negative numbers never exist.</button><button onclick="mc(this,false)">Because equations cannot have negative values.</button></div><div class="fb"></div></div>
+<button class="primary" onclick="go(14)">DAY 4 →</button></section>
+
+<section class="slide" id="s14"><day>WEEK 4 • DAY 4 • ILAW: APPLY + WRAP-UP • 50 MIN</day><h1>Money, Number, and Geometry Problems</h1>
+<div class="time">5 min review • 10 min problem types • 20 min guided solving • 10 min learner challenge • 5 min reflection</div>
+<div class="card"><h2>💰 Money Problems</h2><p>Define variables, write a quantity equation and a value equation, solve, then state the answer with units.</p><h2>🔢 Number Problems</h2><p>Translate relationships such as sum/difference into equations.</p><h2>📐 Geometry Problems</h2><p>Use formulas or relationships to express two facts with two variables.</p></div>
+<div class="card"><h2>🧠 Problem-Solving Routine</h2><ol><li><b>Understand:</b> What is known and unknown?</li><li><b>Define:</b> What do x and y mean?</li><li><b>Model:</b> Write two equations.</li><li><b>Solve:</b> Use substitution or elimination.</li><li><b>Interpret:</b> Answer the actual question.</li><li><b>Check:</b> Does the answer make sense?</li></ol></div>
+<div class="card"><h2>🎯 Final Practice</h2><p>If x+y=12 and x−y=4, which ordered pair solves the system?</p><div class="choice"><button onclick="mc(this,false)">(4,8)</button><button onclick="mc(this,true)">(8,4)</button><button onclick="mc(this,false)">(6,6)</button><button onclick="mc(this,false)">(12,4)</button></div><div class="fb"></div></div>
+<button class="primary" onclick="go(15)">DAY 5 →</button></section>
+
+<section class="slide" id="s15"><day>WEEK 4 • DAY 5 • ILAW: WRAP-UP • 50 MIN</day><h1>Capstone: Build, Solve, Explain</h1>
+<div class="time">5 min recap • 15 min planning • 15 min solving • 10 min sharing • 5 min reflection</div>
+<div class="card"><h2>🏆 Your Capstone Task</h2><p>Create a simple real-life situation involving two unknown quantities. Write two equations, solve the system, and explain what the ordered pair means.</p><textarea placeholder="Situation:\nLet x = ...\nLet y = ...\nEquation 1: ...\nEquation 2: ...\nSolution: ...\nMeaning: ..."></textarea></div>
+<div class="card"><h2>🎤 Share Your Reasoning</h2><p>When presenting, explain <b>why</b> your equations represent the situation—not only the final answer.</p><div class="choice"><button onclick="mc(this,true)">Model → Solve → Verify → Interpret</button><button onclick="mc(this,false)">Guess → Answer → Stop</button></div><div class="fb"></div></div>
+<button class="primary" onclick="go(16)">OPEN 20-ITEM ASSESSMENT →</button></section>
+
+<section class="slide" id="s16"><day>WEEKS 2–4 • 20-ITEM MASTER ASSESSMENT • 50 MIN</day><h1>Mastery Assessment</h1>
+<p class="lead">Answer all 20 items. Read every equation carefully. Submit only after checking your work.</p>
+<div id="quiz"></div><button class="primary" onclick="submitQuiz()">SUBMIT MY ANSWERS</button><div id="result"></div><button class="secondary" onclick="go(0)">↺ REVIEW WEEKS 2–4</button>
+</section>
+</main>
+<div class="pager"><button id="prev" onclick="prev()">← Previous</button><b id="label">WEEKS 2–4</b><button id="next" onclick="next()">Next →</button></div>
+<footer><img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo"><div><b>TEACHER ED LEARNING HUB</b><br>Grade 8 Mathematics • Term 3 • Weeks 2–4<br><small>Interactive ILAW Learning Website</small></div></footer>
+<script src="script.js"></script>
+</body></html>
