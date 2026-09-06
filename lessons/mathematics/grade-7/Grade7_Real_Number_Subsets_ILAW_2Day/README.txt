@@ -17,12 +17,12 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Branding:
-- BrandLogo.png is used in the header and footer.
-- BrandLogo.png is also the browser-tab favicon through:
-  <link rel="icon" type="image/png" href="BrandLogo.png">
+- /TeacherEdFavicon.png is used in the header and footer.
+- /TeacherEdFavicon.png is also the browser-tab favicon through:
+  <link rel="icon" type="image/png" href="/TeacherEdFavicon.png">
 
 Features:
 - Fully clickable navigation and ILAW stage cards

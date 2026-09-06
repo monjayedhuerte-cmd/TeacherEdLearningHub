@@ -5,7 +5,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Topic:
 Number and Algebra — Integers
@@ -39,4 +39,4 @@ Each day is structured for a 50-minute class:
 The website includes a 20-item automatically scored assessment and a working browser Full Screen button.
 
 Branding:
-Keep BrandLogo.png in the same folder as index.html. It is used in the header, footer, and browser-tab favicon.
+Keep /TeacherEdFavicon.png in the same folder as index.html. It is used in the header, footer, and browser-tab favicon.

@@ -8,7 +8,7 @@ FILES
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 HOW TO USE
 1. Keep all four files in the same folder.

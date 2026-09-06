@@ -31,6 +31,6 @@ Included:
 • Working Full Screen button
 • 20-item automatic assessment
 • Teacher Ed logo in header and footer
-• BrandLogo.png favicon/browser-tab icon
+• /TeacherEdFavicon.png favicon/browser-tab icon
 • Mobile-friendly touch controls
 • Keyboard presentation controls: Left/Right arrows and F

@@ -15,17 +15,17 @@ W — Wrap-Up: reflection and mastery check
 
 BRANDING:
 The browser tab, header, and footer all use:
-<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="icon" type="image/png" href="/TeacherEdFavicon.png">
 
-A working default BrandLogo.png is included so the favicon works immediately.
-IMPORTANT: Replace the included BrandLogo.png with your actual Teacher Ed Learning Hub logo.
+A working default /TeacherEdFavicon.png is included so the favicon works immediately.
+IMPORTANT: Replace the included /TeacherEdFavicon.png with your actual Teacher Ed Learning Hub logo.
 Keep the same filename and the website will automatically use your real logo.
 
 FILES:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 README.txt
 
 RUN:

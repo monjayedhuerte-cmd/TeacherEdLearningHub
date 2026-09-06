@@ -6,7 +6,7 @@ FILES:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 HOW TO USE:
 1. Keep all files in the same folder.
@@ -27,4 +27,4 @@ A — Apply
 W — Wrap-Up
 
 BRANDING:
-BrandLogo.png is used in the header, footer, and browser tab favicon.
+/TeacherEdFavicon.png is used in the header, footer, and browser tab favicon.

@@ -15,6 +15,6 @@ Includes:
 • Local progress saving
 • Working Full Screen button
 • Teacher Ed logo in header and footer
-• BrandLogo.png used as browser favicon
+• /TeacherEdFavicon.png used as browser favicon
 
 Keep all files in the same folder and open index.html in a modern browser.

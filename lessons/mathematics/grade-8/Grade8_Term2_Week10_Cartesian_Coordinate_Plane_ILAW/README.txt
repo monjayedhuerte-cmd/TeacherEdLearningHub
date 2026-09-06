@@ -17,12 +17,12 @@ Included:
 - 20-item assessment with automatic scoring
 - Full-screen/presentation mode with fallback
 - Mobile-responsive layout
-- BrandLogo.png used in header, footer, and favicon
+- /TeacherEdFavicon.png used in header, footer, and favicon
 
 Files:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 
 Open index.html in a modern browser. No server or Python is required.

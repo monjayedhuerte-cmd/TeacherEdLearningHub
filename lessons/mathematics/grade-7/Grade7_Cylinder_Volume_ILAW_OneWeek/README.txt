@@ -22,19 +22,19 @@ A — Apply
 W — Wrap-Up
 
 BRANDING:
-The exact logo image supplied by the user is saved as BrandLogo.png and is used in:
+The exact logo image supplied by the user is saved as /TeacherEdFavicon.png and is used in:
 • Header
 • Footer
 • Browser tab favicon
 
 The HTML contains:
-<link rel="icon" type="image/png" href="BrandLogo.png">
+<link rel="icon" type="image/png" href="/TeacherEdFavicon.png">
 
 FILES:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 README.txt
 
 RUN:

@@ -28,5 +28,5 @@ Website features:
 • Mobile responsive
 • Day completion saved locally in the browser
 
-Keep index.html, style.css, script.js and BrandLogo.png in the same folder.
+Keep index.html, style.css, script.js and /TeacherEdFavicon.png in the same folder.
 Open index.html with a modern browser.

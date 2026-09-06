@@ -4,7 +4,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 This version expands EVERY learning day with:
 - detailed teacher explanations
@@ -18,4 +18,4 @@ This version expands EVERY learning day with:
 - working full-screen / focus view
 - Teacher Ed branding in header, footer, and browser tab
 
-Open index.html in a modern browser. Keep BrandLogo.png in the same folder.
+Open index.html in a modern browser. Keep /TeacherEdFavicon.png in the same folder.

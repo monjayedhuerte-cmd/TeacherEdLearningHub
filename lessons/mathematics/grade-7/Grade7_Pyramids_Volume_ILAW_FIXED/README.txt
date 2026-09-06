@@ -27,14 +27,14 @@ IMPORTANT:
 Use perpendicular height, not slant height, in the volume formula.
 
 BRANDING:
-BrandLogo.png is the exact logo image supplied by the user. It is used in the header, footer, and browser-tab favicon:
-<link rel="icon" type="image/png" href="BrandLogo.png">
+/TeacherEdFavicon.png is the exact logo image supplied by the user. It is used in the header, footer, and browser-tab favicon:
+<link rel="icon" type="image/png" href="/TeacherEdFavicon.png">
 
 FILES:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 README.txt
 
 RUN:

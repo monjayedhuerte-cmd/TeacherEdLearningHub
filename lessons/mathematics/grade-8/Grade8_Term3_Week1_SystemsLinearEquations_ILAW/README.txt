@@ -6,7 +6,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Source basis:
 Grade 8 Mathematics Three-Term Budget of Work, Third Term, Week 1:

@@ -20,12 +20,12 @@ Website features:
 • Full-screen presentation mode with fallback
 • Mobile responsive design for phones/tablets
 • Teacher Ed branding in header and footer
-• BrandLogo.png used as browser favicon
+• /TeacherEdFavicon.png used as browser favicon
 
 KEEP THESE FILES IN THE SAME FOLDER:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 
 Open index.html in a modern browser.

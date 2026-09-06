@@ -6,7 +6,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Open index.html in a browser. No internet connection is required.
 Features: 5-day 50-minute lesson flow, upper navigation, interactive questions,

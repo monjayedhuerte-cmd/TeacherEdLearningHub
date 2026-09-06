@@ -5,7 +5,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Open index.html in a modern browser. Keep all files in the same folder.
 The logo is used in the header, footer, and browser tab.

@@ -13,4 +13,4 @@ Includes:
 • Full-screen presentation mode with fallback
 • Interactive checks, classification activity, guided algebra, word problems
 • 20-item automatic mastery assessment
-• BrandLogo.png in header, footer, and favicon
+• /TeacherEdFavicon.png in header, footer, and favicon

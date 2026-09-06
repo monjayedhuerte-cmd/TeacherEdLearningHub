@@ -26,6 +26,6 @@ Files:
 index.html
 style.css
 script.js
-BrandLogo.png
+/TeacherEdFavicon.png
 
 Open index.html in a browser. No server or Python is required.

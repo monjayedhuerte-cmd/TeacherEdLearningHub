@@ -5,7 +5,7 @@ Files:
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 Open index.html in a modern browser.
 
@@ -21,11 +21,11 @@ Features:
 - Exit ticket and reflection
 - Full Screen button
 - Teacher Ed branding in header/footer
-- BrandLogo.png browser-tab favicon
+- /TeacherEdFavicon.png browser-tab favicon
 
 Branding:
-The supplied Teacher Ed logo is saved as BrandLogo.png and referenced by:
-<link rel="icon" type="image/png" href="BrandLogo.png">
+The supplied Teacher Ed logo is saved as /TeacherEdFavicon.png and referenced by:
+<link rel="icon" type="image/png" href="/TeacherEdFavicon.png">
 
 Learning competency covered:
 - Describe sets and their subsets, the union of sets, and the intersection of sets.

@@ -5,7 +5,7 @@ FILES
 - index.html
 - style.css
 - script.js
-- BrandLogo.png
+- /TeacherEdFavicon.png
 
 FEATURES
 - One-week classroom presentation (5 days)
@@ -19,7 +19,7 @@ FEATURES
 - Full Screen button
 - Responsive/mobile-friendly layout
 - Teacher Ed branding in header and footer
-- BrandLogo.png used as browser-tab favicon
+- /TeacherEdFavicon.png used as browser-tab favicon
 
 WEEK 2 FLOW
 Day 1 — Discovering the Cone
@@ -38,4 +38,4 @@ HOW TO USE
 7. Use the 20-item assessment at the end.
 
 LOGO
-Keep BrandLogo.png beside index.html so both the header/footer logo and browser-tab favicon work.
+Keep /TeacherEdFavicon.png beside index.html so both the header/footer logo and browser-tab favicon work.
