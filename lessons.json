@@ -518,5 +518,55 @@
     "date": "2026-09-06",
     "featured": false,
     "icon": "calculator"
+  },
+  {
+    "title": "Recognize and solve problems involving linear inequalities in two variables. | Week 5, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Welcome, mathematicians! This week you will learn how inequalities describe limits, choices, and regions of possible solutions.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week5_LinearInequalities2Var_ILAW/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Measures of Variability for Ungrouped Data | Week 6, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "This week you will learn how range, mean deviation, and standard deviation describe the spread of data—and how to use those measures to draw meaningful conclusions.",
+    "file": "http://127.0.0.1:5500/lessons/mathematics/grade-8/Grade8_Term3_Week6_Variability_ILAW/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Reading Data & Discovering Probability | Week 7, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Welcome! This week you will become a data detective. You will investigate graphs from secondary data and compare theoretical and experimental probability.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week7_SecondaryData_Probability_ILAW/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Sample Space & Fundamental Counting Principle | Week 8, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Welcome, mathematicians! This week you will learn how to describe all possible outcomes of an experiment and use the Fundamental Counting Principle to count multi-stage outcomes efficiently.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week8_SampleSpace_FCP_ILAW_Elaborated/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "Sample Space & Fundamental Counting Principle | Week 9, 3rd Term",
+    "subject": "Mathematics",
+    "grade": "Grade 8",
+    "description": "Welcome, mathematicians! This week you will learn how to describe all possible outcomes of an experiment and use the Fundamental Counting Principle to count multi-stage outcomes efficiently.",
+    "file": "lessons/mathematics/grade-8/Grade8_Term3_Week8_SampleSpace_FCP_ILAW_Elaborated/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
   }
 ]

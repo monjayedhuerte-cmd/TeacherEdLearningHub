@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2d5c">
+  <title>Grade 8 – Term 3 – Week 7 | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top-header">
+  <div class="brand">
+    <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+    <div>
+      <div class="brand-name">Teacher Ed Learning Hub</div>
+      <div class="brand-sub">Grade 8 Mathematics • Term 3 • Week 7</div>
+    </div>
+  </div>
+  <button id="fullscreenBtn" class="btn btn-gold" type="button">⛶ FULL SCREEN</button>
+</header>
+
+<nav class="top-nav" aria-label="Main lesson navigation">
+  <div class="nav-inner">
+    <button class="nav-btn active" data-slide="0">Home</button>
+    <button class="nav-btn" data-slide="1">Lesson</button>
+    <button class="nav-btn" data-slide="2">Day 1</button>
+    <button class="nav-btn" data-slide="3">Day 2</button>
+    <button class="nav-btn" data-slide="4">Day 3</button>
+    <button class="nav-btn" data-slide="5">Day 4</button>
+    <button class="nav-btn" data-slide="6">Day 5</button>
+    <button class="nav-btn" data-slide="7">Assessment</button>
+  </div>
+</nav>
+
+<main id="app" class="app-shell">
+  <div class="progress-wrap">
+    <div class="progress-label"><span id="progressText">Slide 1 of 8</span><span id="progressPct">13%</span></div>
+    <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+  </div>
+
+  <section class="slide active" data-slide-index="0">
+    <div class="hero card">
+      <span class="eyebrow">GRADE 8 • TERM 3 • WEEK 7</span>
+      <h1>Reading Data & Discovering Probability</h1>
+      <p class="lead">Welcome! This week you will become a data detective. You will investigate graphs from <strong>secondary data</strong> and compare <strong>theoretical</strong> and <strong>experimental probability</strong>.</p>
+      <div class="hero-actions">
+        <button class="btn btn-primary" data-go="2">Start Day 1 →</button>
+        <button class="btn btn-outline" data-go="1">See the Lesson Map</button>
+      </div>
+      <div class="hero-grid">
+        <div class="mini-card"><span>📊</span><strong>Analyze</strong><small>Read graphs from data gathered by others.</small></div>
+        <div class="mini-card"><span>🎲</span><strong>Experiment</strong><small>Collect outcomes and compare results.</small></div>
+        <div class="mini-card"><span>🧠</span><strong>Explain</strong><small>Use evidence to support your conclusion.</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="1">
+    <div class="card">
+      <span class="eyebrow">GRADE 8 – TERM 3 – WEEK 7</span>
+      <h2>Our Week at a Glance</h2>
+      <p>This week follows the uploaded BOW: first investigate and interpret graphs from secondary data, then investigate the difference between theoretical and experimental probability.</p>
+      <div class="standard-grid">
+        <article><h3>📚 BOW Competencies</h3><ul>
+          <li>Investigate, interpret, and analyze graphs from secondary data.</li>
+          <li>Differentiate theoretical from experimental probability by conducting an experiment or an investigation.</li>
+        </ul></article>
+        <article><h3>🎯 KNOW</h3><p>Know how to identify the source/context of secondary data, read graph features, compare values and recognize patterns, and distinguish theoretical from experimental probability.</p></article>
+        <article><h3>💡 UNDERSTAND</h3><p>Understand that a graph communicates evidence, while probability can be predicted theoretically and estimated experimentally.</p></article>
+        <article><h3>🛠️ DO</h3><p>Investigate, interpret, analyze, conduct a simple probability experiment, calculate experimental probability, and explain differences using evidence.</p></article>
+      </div>
+      <div class="week-map">
+        <div><b>Day 1</b><span>Meet Secondary Data</span></div>
+        <div><b>Day 2</b><span>Interpret & Analyze Graphs</span></div>
+        <div><b>Day 3</b><span>Theoretical vs Experimental Probability</span></div>
+        <div><b>Day 4</b><span>Run a Probability Investigation</span></div>
+        <div><b>Day 5</b><span>Analyze, Explain & Master</span></div>
+      </div>
+      <div class="callout"><strong>Teacher move:</strong> Encourage students to say not only <em>what</em> a graph or probability result says, but also <em>what evidence</em> supports the claim.</div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="2">
+    <div class="day-head card">
+      <div><span class="eyebrow">DAY 1 • MONDAY</span><h2>Secondary Data: Who Collected It?</h2>
+      <div class="meta"><span>📅 Date: __________</span><span>⏱️ 50 minutes</span></div>
+      <p class="target"><strong>Daily Target:</strong> I can identify secondary data and read the basic parts of a graph before making a conclusion.</p></div>
+    </div>
+
+    <div class="activity timing"><span>⏱️ 5 min</span><h3>Motivation — Data Detective</h3>
+      <p>Look at a graph in a newspaper, school report, weather report, or website. Ask: <strong>Who collected the data?</strong> and <strong>Why was it collected?</strong></p>
+      <div class="choice-row" data-q="d1m" data-answer="B">
+        <button class="choice">A. The graph always tells us the collector.</button>
+        <button class="choice">B. The source and context help us understand the data.</button>
+        <button class="choice">C. A graph needs no source.</button>
+        <button class="choice">D. Only the title matters.</button>
+      </div><div class="feedback" id="d1m-feedback"></div>
+    </div>
+
+    <div class="activity ilaw learn"><span class="stage">I — LEARN</span><span class="time">⏱️ 10 min</span>
+      <h3>What is Secondary Data?</h3>
+      <p><strong>Secondary data</strong> is data that has already been collected by another person, group, agency, or organization and is then used for a new analysis.</p>
+      <div class="concept-grid">
+        <div><b>Primary data</b><p>You collect it yourself for your investigation.</p></div>
+        <div><b>Secondary data</b><p>You use data already collected by another source.</p></div>
+      </div>
+      <h4>Graph-reading checklist</h4>
+      <ol class="steps"><li>Read the <strong>title</strong>.</li><li>Identify the <strong>source/context</strong>.</li><li>Check the <strong>categories and labels</strong>.</li><li>Read the <strong>scale and units</strong>.</li><li>Compare values only after checking the scale.</li></ol>
+      <button class="reveal-btn" data-target="d1-reveal">Show an example</button>
+      <div id="d1-reveal" class="reveal"><strong>Example:</strong> A school uses a government report showing annual rainfall in a city. The school did not collect the rainfall measurements, so the report is secondary data for the school's analysis.</div>
+    </div>
+
+    <div class="activity ilaw explore"><span class="stage">L — EXPLORE</span><span class="time">⏱️ 10 min</span>
+      <h3>Read the Graph Before You Judge It</h3>
+      <div class="bar-chart" aria-label="Bar chart of library visits">
+        <div class="bar-item"><span>Mon</span><div class="bar" style="height:45%"><b>18</b></div></div>
+        <div class="bar-item"><span>Tue</span><div class="bar" style="height:70%"><b>28</b></div></div>
+        <div class="bar-item"><span>Wed</span><div class="bar" style="height:55%"><b>22</b></div></div>
+        <div class="bar-item"><span>Thu</span><div class="bar" style="height:90%"><b>36</b></div></div>
+        <div class="bar-item"><span>Fri</span><div class="bar" style="height:62%"><b>25</b></div></div>
+      </div>
+      <p><strong>Think-pair-share:</strong> Which day had the greatest number of visits? Which day had the fewest? What evidence did you use?</p>
+      <div class="choice-row" data-q="d1e" data-answer="C">
+        <button class="choice">A. Monday</button><button class="choice">B. Wednesday</button><button class="choice">C. Thursday</button><button class="choice">D. Friday</button>
+      </div><div class="feedback" id="d1e-feedback"></div>
+    </div>
+
+    <div class="activity ilaw apply"><span class="stage">A — APPLY / PRACTICE-PLAY</span><span class="time">⏱️ 15 min</span>
+      <h3>Graph Detective Challenge</h3>
+      <p>Choose the best interpretation for each statement.</p>
+      <div class="match-grid">
+        <div class="match-card"><b>1. The title says “Students’ Preferred After-School Activities.”</b><div class="choice-row compact" data-q="d1a1" data-answer="A"><button class="choice">A. It tells the topic being displayed.</button><button class="choice">B. It gives the answer automatically.</button><button class="choice">C. It replaces the source.</button><button class="choice">D. It gives the sample size automatically.</button></div><div class="feedback" id="d1a1-feedback"></div></div>
+        <div class="match-card"><b>2. The vertical axis is labeled “Number of students.”</b><div class="choice-row compact" data-q="d1a2" data-answer="D"><button class="choice">A. It is the graph title.</button><button class="choice">B. It is the data source.</button><button class="choice">C. It is the category list.</button><button class="choice">D. It tells what the scale measures.</button></div><div class="feedback" id="d1a2-feedback"></div></div>
+      </div>
+      <button class="btn btn-outline reset-activities" type="button">Reset Day Activities</button>
+    </div>
+
+    <div class="activity ilaw wrap"><span class="stage">W — THINK / CHECK / MASTER</span><span class="time">⏱️ 10 min</span>
+      <h3>Think Like an Analyst</h3>
+      <p>A graph shows that Thursday has 36 library visits and Monday has 18. A student says, “Thursday is exactly twice as busy as Monday.” Is the statement supported by the displayed values?</p>
+      <button class="reveal-btn" data-target="d1-think">Reveal reasoning</button>
+      <div id="d1-think" class="reveal">Yes. 36 ÷ 18 = 2, so the Thursday value is twice the Monday value. The conclusion is supported by the numbers shown in the graph.</div>
+      <h4>Exit Ticket</h4><p>In one sentence: What should you check before interpreting a graph?</p>
+    </div>
+
+    <div class="day-check card"><h3>Day 1 Check — 5 Questions</h3>
+      <div class="choice-row" data-q="d1c1" data-answer="B"><span class="q">1. Which is secondary data?</span><button class="choice">A. You measure your class today.</button><button class="choice">B. You analyze a published survey report.</button><button class="choice">C. You interview your classmates.</button><button class="choice">D. You count your own observations.</button></div><div class="feedback" id="d1c1-feedback"></div>
+      <div class="choice-row" data-q="d1c2" data-answer="C"><span class="q">2. What should you read first?</span><button class="choice">A. A random bar</button><button class="choice">B. The largest number</button><button class="choice">C. The title and context</button><button class="choice">D. The color</button></div><div class="feedback" id="d1c2-feedback"></div>
+      <div class="choice-row" data-q="d1c3" data-answer="A"><span class="q">3. A vertical axis labeled “km” gives the unit of…</span><button class="choice">A. measurement</button><button class="choice">B. source</button><button class="choice">C. title</button><button class="choice">D. category</button></div><div class="feedback" id="d1c3-feedback"></div>
+      <div class="choice-row" data-q="d1c4" data-answer="D"><span class="q">4. Why check the scale?</span><button class="choice">A. To choose colors</button><button class="choice">B. To change the data</button><button class="choice">C. To make a new title</button><button class="choice">D. To read values accurately</button></div><div class="feedback" id="d1c4-feedback"></div>
+      <div class="choice-row" data-q="d1c5" data-answer="B"><span class="q">5. A good conclusion should be based on…</span><button class="choice">A. a guess</button><button class="choice">B. evidence from the data</button><button class="choice">C. a favorite category</button><button class="choice">D. the graph color</button></div><div class="feedback" id="d1c5-feedback"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="3">
+    <div class="day-head card"><span class="eyebrow">DAY 2 • TUESDAY</span><h2>Interpret & Analyze Secondary Graphs</h2><div class="meta"><span>📅 Date: __________</span><span>⏱️ 50 minutes</span></div><p class="target"><strong>Daily Target:</strong> I can compare graph values, identify patterns, and make evidence-based conclusions from secondary data.</p></div>
+    <div class="activity timing"><span>⏱️ 5 min</span><h3>Motivation — Which Claim Is Stronger?</h3><p>Claim A: “Category B is bigger.” Claim B: “Category B is 12 units higher than Category A.” Which claim gives more evidence?</p><div class="choice-row" data-q="d2m" data-answer="B"><button class="choice">A. Claim A</button><button class="choice">B. Claim B</button><button class="choice">C. Both have exactly the same evidence</button><button class="choice">D. Neither can use data</button></div><div class="feedback" id="d2m-feedback"></div></div>
+    <div class="activity ilaw learn"><span class="stage">I — LEARN</span><span class="time">⏱️ 10 min</span><h3>Four Moves for Analysis</h3>
+      <div class="steps-cards"><div><b>1. Describe</b><p>State what the graph shows.</p></div><div><b>2. Compare</b><p>Look for greater, less, equal, or differences.</p></div><div><b>3. Identify patterns</b><p>Notice increases, decreases, clusters, or unusual values.</p></div><div><b>4. Conclude</b><p>Answer the question using evidence.</p></div></div>
+      <div class="worked"><h4>Worked Example</h4><p>A published report gives weekly screen-time totals: Mon 2 h, Tue 3 h, Wed 4 h, Thu 3 h, Fri 5 h.</p><p><strong>Describe:</strong> Friday is highest at 5 h. <strong>Compare:</strong> Friday is 3 h higher than Monday. <strong>Pattern:</strong> Values generally rise, with a drop on Thursday. <strong>Conclude:</strong> The highest recorded day is Friday.</p></div>
+    </div>
+    <div class="activity ilaw explore"><span class="stage">L — EXPLORE</span><span class="time">⏱️ 10 min</span><h3>Find the Evidence</h3>
+      <div class="data-table-wrap"><table><caption>Secondary Data: Monthly Reading Minutes</caption><tr><th>Month</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th></tr><tr><th>Minutes</th><td>120</td><td>150</td><td>135</td><td>180</td><td>165</td></tr></table></div>
+      <p>Which month is highest, and how much greater is it than January?</p>
+      <div class="choice-row" data-q="d2e" data-answer="D"><button class="choice">A. March, 15 minutes</button><button class="choice">B. May, 35 minutes</button><button class="choice">C. February, 20 minutes</button><button class="choice">D. April, 60 minutes</button></div><div class="feedback" id="d2e-feedback"></div>
+    </div>
+    <div class="activity ilaw apply"><span class="stage">A — APPLY / PRACTICE-PLAY</span><span class="time">⏱️ 15 min</span><h3>Claim Checker</h3><p>Decide whether each claim is supported by the table above.</p>
+      <div class="tf" data-q="d2a1" data-answer="true"><b>1.</b> April has the greatest reading time.</div><div class="feedback" id="d2a1-feedback"></div>
+      <div class="tf" data-q="d2a2" data-answer="false"><b>2.</b> January has more reading minutes than April.</div><div class="feedback" id="d2a2-feedback"></div>
+      <div class="tf" data-q="d2a3" data-answer="true"><b>3.</b> May has 15 fewer minutes than April.</div><div class="feedback" id="d2a3-feedback"></div>
+      <div class="tf" data-q="d2a4" data-answer="true"><b>4.</b> March is 15 minutes lower than February.</div><div class="feedback" id="d2a4-feedback"></div>
+      <button class="btn btn-outline reset-activities" type="button">Reset Day Activities</button>
+    </div>
+    <div class="activity ilaw wrap"><span class="stage">W — THINK / CHECK / MASTER</span><span class="time">⏱️ 10 min</span><h3>Think Deeper</h3><p>If the report only showed the five monthly totals, what is one question you <em>cannot</em> answer without additional information?</p><button class="reveal-btn" data-target="d2-think">Reveal sample response</button><div id="d2-think" class="reveal">You cannot confidently explain <em>why</em> April was highest unless the source gives additional context, such as a reading campaign or school event.</div><p class="reflection"><strong>Exit ticket:</strong> “A strong statistical conclusion should include ______ because ______.”</p></div>
+    <div class="day-check card"><h3>Day 2 Check — 5 Questions</h3>
+      <div class="choice-row" data-q="d2c1" data-answer="A"><span class="q">1. Which move comes before a conclusion?</span><button class="choice">A. Use evidence to compare or identify patterns</button><button class="choice">B. Guess a reason</button><button class="choice">C. Ignore the labels</button><button class="choice">D. Change the values</button></div><div class="feedback" id="d2c1-feedback"></div>
+      <div class="choice-row" data-q="d2c2" data-answer="C"><span class="q">2. April exceeds January by…</span><button class="choice">A. 30 min</button><button class="choice">B. 40 min</button><button class="choice">C. 60 min</button><button class="choice">D. 75 min</button></div><div class="feedback" id="d2c2-feedback"></div>
+      <div class="choice-row" data-q="d2c3" data-answer="B"><span class="q">3. What is an evidence-based statement?</span><button class="choice">A. “April is best because I like April.”</button><button class="choice">B. “April is highest at 180 minutes.”</button><button class="choice">C. “April must be popular.”</button><button class="choice">D. “April is probably lucky.”</button></div><div class="feedback" id="d2c3-feedback"></div>
+      <div class="choice-row" data-q="d2c4" data-answer="D"><span class="q">4. A pattern is…</span><button class="choice">A. a graph decoration</button><button class="choice">B. a source name</button><button class="choice">C. an unsupported opinion</button><button class="choice">D. a noticeable trend or relationship in the data</button></div><div class="feedback" id="d2c4-feedback"></div>
+      <div class="choice-row" data-q="d2c5" data-answer="A"><span class="q">5. If a graph lacks a clear scale, your first response should be to…</span><button class="choice">A. find or clarify the scale before comparing values</button><button class="choice">B. invent one</button><button class="choice">C. ignore the graph</button><button class="choice">D. assume each mark equals 1</button></div><div class="feedback" id="d2c5-feedback"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="4">
+    <div class="day-head card"><span class="eyebrow">DAY 3 • WEDNESDAY</span><h2>Theoretical vs Experimental Probability</h2><div class="meta"><span>📅 Date: __________</span><span>⏱️ 50 minutes</span></div><p class="target"><strong>Daily Target:</strong> I can distinguish theoretical probability from experimental probability and explain how they are related.</p></div>
+    <div class="activity timing"><span>⏱️ 5 min</span><h3>Motivation — Before We Toss</h3><p>For a fair six-sided die, what probability do you expect for rolling a 4?</p><div class="choice-row" data-q="d3m" data-answer="C"><button class="choice">A. 0</button><button class="choice">B. 1/2</button><button class="choice">C. 1/6</button><button class="choice">D. 1</button></div><div class="feedback" id="d3m-feedback"></div></div>
+    <div class="activity ilaw learn"><span class="stage">I — LEARN</span><span class="time">⏱️ 10 min</span><h3>Two Ways to Talk About Chance</h3>
+      <div class="prob-grid"><div><h4>Theoretical Probability</h4><p>What should happen based on equally likely possible outcomes.</p><div class="formula">P(E) = favorable outcomes ÷ total possible outcomes</div><p>For a fair die, P(4) = 1 ÷ 6.</p></div><div><h4>Experimental Probability</h4><p>What happened in an actual experiment.</p><div class="formula">P(E) = number of favorable trials ÷ total trials</div><p>If 50 rolls produce twelve 4s, experimental P(4) = 12 ÷ 50 = 0.24.</p></div></div>
+      <div class="callout">As the number of trials becomes large, experimental results often move closer to the theoretical probability, but a short experiment may differ.</div>
+    </div>
+    <div class="activity ilaw explore"><span class="stage">L — EXPLORE</span><span class="time">⏱️ 10 min</span><h3>Predict, Then Observe</h3><p>Suppose a coin is tossed 20 times. Theoretical probability of heads is 1/2. Which result is possible?</p><div class="choice-row" data-q="d3e" data-answer="D"><button class="choice">A. Exactly 20 heads must occur.</button><button class="choice">B. Exactly 10 heads must occur.</button><button class="choice">C. Heads can never be fewer than tails.</button><button class="choice">D. 7 heads and 13 tails can occur.</button></div><div class="feedback" id="d3e-feedback"></div></div>
+    <div class="activity ilaw apply"><span class="stage">A — APPLY / PRACTICE-PLAY</span><span class="time">⏱️ 15 min</span><h3>Probability Sort</h3><p>Click each card to reveal whether it describes theoretical or experimental probability.</p>
+      <div class="flip-grid">
+        <button class="flip-card" data-front="A fair die has six equally likely faces." data-back="THEORETICAL — based on possible outcomes."></button>
+        <button class="flip-card" data-front="In 40 tosses, heads occurred 23 times." data-back="EXPERIMENTAL — based on observed trials."></button>
+        <button class="flip-card" data-front="P(rolling an even number) = 3/6 = 1/2." data-back="THEORETICAL — calculated from the sample space."></button>
+        <button class="flip-card" data-front="A spinner landed blue 18 times in 30 spins." data-back="EXPERIMENTAL — observed frequency."></button>
+      </div>
+      <button class="btn btn-outline reset-flips" type="button">Reset Cards</button>
+    </div>
+    <div class="activity ilaw wrap"><span class="stage">W — THINK / CHECK / MASTER</span><span class="time">⏱️ 10 min</span><h3>Why Aren't They Always Equal?</h3><p>Explain why an experimental probability of 0.45 for heads does not mean the theoretical probability of a fair coin is 0.45.</p><button class="reveal-btn" data-target="d3-think">Reveal reasoning</button><div id="d3-think" class="reveal">Theoretical probability comes from the possible outcomes of a fair coin: 1/2 = 0.50. Experimental probability comes from one set of observed trials, which can vary because of chance.</div><p><strong>Exit ticket:</strong> Complete: “Theoretical probability tells me ______, while experimental probability tells me ______.”</p></div>
+    <div class="day-check card"><h3>Day 3 Check — 5 Questions</h3>
+      <div class="choice-row" data-q="d3c1" data-answer="C"><span class="q">1. Theoretical probability is based on…</span><button class="choice">A. one lucky trial</button><button class="choice">B. a graph color</button><button class="choice">C. possible outcomes and their likelihoods</button><button class="choice">D. an opinion</button></div><div class="feedback" id="d3c1-feedback"></div>
+      <div class="choice-row" data-q="d3c2" data-answer="A"><span class="q">2. 14 successes in 20 trials gives experimental probability…</span><button class="choice">A. 0.70</button><button class="choice">B. 0.20</button><button class="choice">C. 0.14</button><button class="choice">D. 1.40</button></div><div class="feedback" id="d3c2-feedback"></div>
+      <div class="choice-row" data-q="d3c3" data-answer="D"><span class="q">3. A fair die has P(6) =…</span><button class="choice">A. 1/2</button><button class="choice">B. 1/3</button><button class="choice">C. 1/4</button><button class="choice">D. 1/6</button></div><div class="feedback" id="d3c3-feedback"></div>
+      <div class="choice-row" data-q="d3c4" data-answer="B"><span class="q">4. Which is experimental?</span><button class="choice">A. P(even on a fair die)=1/2</button><button class="choice">B. 18 heads in 35 tosses</button><button class="choice">C. P(blue on a fair 4-color spinner)=1/4</button><button class="choice">D. P(ace from a standard deck)=4/52</button></div><div class="feedback" id="d3c4-feedback"></div>
+      <div class="choice-row" data-q="d3c5" data-answer="C"><span class="q">5. With many trials, experimental probability may…</span><button class="choice">A. become impossible to calculate</button><button class="choice">B. always become exactly 1</button><button class="choice">C. get closer to the theoretical value</button><button class="choice">D. remove chance completely</button></div><div class="feedback" id="d3c5-feedback"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="5">
+    <div class="day-head card"><span class="eyebrow">DAY 4 • THURSDAY</span><h2>Run a Probability Investigation</h2><div class="meta"><span>📅 Date: __________</span><span>⏱️ 50 minutes</span></div><p class="target"><strong>Daily Target:</strong> I can conduct a simple probability experiment, record outcomes, calculate experimental probability, and compare it with a theoretical value.</p></div>
+    <div class="activity timing"><span>⏱️ 5 min</span><h3>Motivation — Make a Prediction</h3><p>For a fair coin, predict the number of heads in 30 tosses. Your prediction is a hypothesis, not a guarantee.</p><input id="prediction" class="number-input" type="number" min="0" max="30" placeholder="0–30"><button id="predictionBtn" class="btn btn-primary small-btn">Check Prediction</button><div id="predictionFeedback" class="feedback"></div></div>
+    <div class="activity ilaw learn"><span class="stage">I — LEARN</span><span class="time">⏱️ 10 min</span><h3>How to Conduct the Investigation</h3><ol class="steps"><li>State the experiment and theoretical probability.</li><li>Set a fixed number of trials.</li><li>Record each outcome carefully.</li><li>Count favorable outcomes.</li><li>Calculate experimental probability.</li><li>Compare the experimental and theoretical values.</li><li>Write a conclusion using evidence.</li></ol><div class="formula">Experimental P(E) = favorable outcomes ÷ total trials</div></div>
+    <div class="activity ilaw explore"><span class="stage">L — EXPLORE</span><span class="time">⏱️ 10 min</span><h3>Virtual Coin Experiment</h3><p>Click <strong>Run 30 Tosses</strong>. The website generates a fresh set of simulated coin outcomes. Then compare the result with 0.50.</p>
+      <div class="experiment-controls"><button id="tossBtn" class="btn btn-primary">🎲 Run 30 Tosses</button><button id="resetTossBtn" class="btn btn-outline">Reset</button></div>
+      <div id="tossSummary" class="experiment-summary"><span>Heads: —</span><span>Tails: —</span><span>Experimental P(Heads): —</span><span>Theoretical P(Heads): 0.50</span></div>
+      <div id="tosses" class="tosses" aria-live="polite"></div>
+    </div>
+    <div class="activity ilaw apply"><span class="stage">A — APPLY / PRACTICE-PLAY</span><span class="time">⏱️ 15 min</span><h3>Investigation Lab</h3>
+      <div class="lab-grid">
+        <div><h4>Scenario A</h4><p>A spinner has 4 equal sections: red, blue, green, yellow. In 40 spins, blue appears 13 times.</p><div class="choice-row compact" data-q="d4a1" data-answer="C"><button class="choice">A. Theoretical = 13/40</button><button class="choice">B. Experimental = 1/4</button><button class="choice">C. Experimental = 13/40 = 0.325</button><button class="choice">D. Both values must be 1</button></div><div class="feedback" id="d4a1-feedback"></div></div>
+        <div><h4>Scenario B</h4><p>A fair die is rolled 60 times. A 2 appears 8 times. Theoretical P(2) = 1/6 ≈ 0.167.</p><div class="choice-row compact" data-q="d4a2" data-answer="A"><button class="choice">A. Experimental P(2)=8/60≈0.133</button><button class="choice">B. Experimental P(2)=1/6 exactly</button><button class="choice">C. Experimental P(2)=2/60</button><button class="choice">D. No probability can be found</button></div><div class="feedback" id="d4a2-feedback"></div></div>
+      </div>
+      <button class="btn btn-outline reset-activities" type="button">Reset Day Activities</button>
+    </div>
+    <div class="activity ilaw wrap"><span class="stage">W — THINK / CHECK / MASTER</span><span class="time">⏱️ 10 min</span><h3>Compare & Explain</h3><p>In the die scenario, the experimental value is lower than the theoretical value. Does that prove the die is unfair?</p><button class="reveal-btn" data-target="d4-think">Reveal reasoning</button><div id="d4-think" class="reveal">No. One experiment can differ from the theoretical probability simply because of random variation. More trials and additional evidence would be needed before making a stronger claim.</div><p><strong>Exit ticket:</strong> State the formula for experimental probability in words.</p></div>
+    <div class="day-check card"><h3>Day 4 Check — 5 Questions</h3>
+      <div class="choice-row" data-q="d4c1" data-answer="B"><span class="q">1. 13 blue results in 40 spins gives…</span><button class="choice">A. 0.13</button><button class="choice">B. 0.325</button><button class="choice">C. 0.40</button><button class="choice">D. 3.25</button></div><div class="feedback" id="d4c1-feedback"></div>
+      <div class="choice-row" data-q="d4c2" data-answer="D"><span class="q">2. Theoretical P(2) for a fair die is…</span><button class="choice">A. 1/2</button><button class="choice">B. 1/3</button><button class="choice">C. 1/4</button><button class="choice">D. 1/6</button></div><div class="feedback" id="d4c2-feedback"></div>
+      <div class="choice-row" data-q="d4c3" data-answer="A"><span class="q">3. The first step in an experiment is to…</span><button class="choice">A. state the experiment and expected probability</button><button class="choice">B. calculate the score</button><button class="choice">C. change the outcomes</button><button class="choice">D. choose the conclusion</button></div><div class="feedback" id="d4c3-feedback"></div>
+      <div class="choice-row" data-q="d4c4" data-answer="C"><span class="q">4. 8 favorable outcomes in 60 trials means…</span><button class="choice">A. 8/6</button><button class="choice">B. 60/8</button><button class="choice">C. 8/60</button><button class="choice">D. 52/60</button></div><div class="feedback" id="d4c4-feedback"></div>
+      <div class="choice-row" data-q="d4c5" data-answer="B"><span class="q">5. A difference between experimental and theoretical probability…</span><button class="choice">A. always proves cheating</button><button class="choice">B. can occur because of random variation</button><button class="choice">C. means probability is wrong</button><button class="choice">D. means the sample space changed</button></div><div class="feedback" id="d4c5-feedback"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-slide-index="6">
+    <div class="day-head card"><span class="eyebrow">DAY 5 • FRIDAY</span><h2>Integrate, Analyze & Master</h2><div class="meta"><span>📅 Date: __________</span><span>⏱️ 50 minutes</span></div><p class="target"><strong>Daily Target:</strong> I can use evidence from secondary graphs and probability investigations to explain a clear statistical conclusion.</p></div>
+    <div class="activity timing"><span>⏱️ 5 min</span><h3>Motivation — Evidence Sprint</h3><p>Which statement is strongest?</p><div class="choice-row" data-q="d5m" data-answer="D"><button class="choice">A. “The graph looks nice.”</button><button class="choice">B. “I think Group B won.”</button><button class="choice">C. “Probability is always exact.”</button><button class="choice">D. “The data show Group B had 8 more observations than Group A.”</button></div><div class="feedback" id="d5m-feedback"></div></div>
+    <div class="activity ilaw learn"><span class="stage">I — LEARN</span><span class="time">⏱️ 10 min</span><h3>Build a Strong Data Story</h3><div class="data-story"><div><b>1. Source</b><span>Where did the data come from?</span></div><div><b>2. Evidence</b><span>What values or outcomes do you see?</span></div><div><b>3. Comparison</b><span>How do the values differ?</span></div><div><b>4. Conclusion</b><span>What can you responsibly say?</span></div></div><p>For probability: state the theoretical value, report the experimental value, compare them, then explain that random variation can cause differences.</p></div>
+    <div class="activity ilaw explore"><span class="stage">L — EXPLORE</span><span class="time">⏱️ 10 min</span><h3>Mixed Evidence Challenge</h3><p>A published report shows 240 visitors on Saturday and 180 on Sunday. In a separate fair-coin experiment, heads occurred 47 times in 100 tosses.</p>
+      <div class="choice-row" data-q="d5e1" data-answer="A"><span class="q">1. Saturday exceeded Sunday by…</span><button class="choice">A. 60 visitors</button><button class="choice">B. 40 visitors</button><button class="choice">C. 60%</button><button class="choice">D. 420 visitors</button></div><div class="feedback" id="d5e1-feedback"></div>
+      <div class="choice-row" data-q="d5e2" data-answer="C"><span class="q">2. Experimental P(heads) is…</span><button class="choice">A. 0.47%</button><button class="choice">B. 0.53</button><button class="choice">C. 0.47</button><button class="choice">D. 47</button></div><div class="feedback" id="d5e2-feedback"></div>
+    </div>
+    <div class="activity ilaw apply"><span class="stage">A — APPLY / PRACTICE-PLAY</span><span class="time">⏱️ 15 min</span><h3>Mastery Circuit</h3>
+      <div class="mastery-grid">
+        <div class="master-card"><b>Graph Skill</b><p>A secondary graph reports A=42 and B=56. How much greater is B?</p><div class="choice-row compact" data-q="d5a1" data-answer="B"><button class="choice">A. 12</button><button class="choice">B. 14</button><button class="choice">C. 18</button><button class="choice">D. 98</button></div><div class="feedback" id="d5a1-feedback"></div></div>
+        <div class="master-card"><b>Probability Skill</b><p>A fair 4-color spinner has 1 blue section. In 80 spins, blue occurs 18 times. Which comparison is correct?</p><div class="choice-row compact" data-q="d5a2" data-answer="D"><button class="choice">A. Theory 18/80; experiment 1/4</button><button class="choice">B. Theory 18/80; experiment 1/80</button><button class="choice">C. Theory 80/18; experiment 1/4</button><button class="choice">D. Theory 1/4; experiment 18/80=0.225</button></div><div class="feedback" id="d5a2-feedback"></div></div>
+      </div>
+      <button class="btn btn-outline reset-activities" type="button">Reset Day Activities</button>
+    </div>
+    <div class="activity ilaw wrap"><span class="stage">W — THINK / CHECK / MASTER</span><span class="time">⏱️ 10 min</span><h3>What We Learned This Week</h3>
+      <div class="checklist">
+        <label><input type="checkbox"> I can identify and interpret secondary data shown in graphs.</label>
+        <label><input type="checkbox"> I can compare graph values and support conclusions with evidence.</label>
+        <label><input type="checkbox"> I can explain theoretical probability.</label>
+        <label><input type="checkbox"> I can calculate experimental probability from observed trials.</label>
+        <label><input type="checkbox"> I can compare theoretical and experimental probability and explain differences.</label>
+      </div>
+      <div class="common-mistakes"><h4>Common Mistakes to Avoid</h4><ul><li>Ignoring the graph's title, source, labels, or scale.</li><li>Confusing theoretical probability with what happened in one experiment.</li><li>Writing a conclusion without citing evidence.</li><li>Assuming a small difference automatically proves an experiment is unfair.</li></ul></div>
+      <p class="reflection"><strong>Final reflection:</strong> “The most important evidence I should use when making a conclusion is ______.”</p>
+    </div>
+    <div class="day-check card"><h3>Day 5 Check — 5 Questions</h3>
+      <div class="choice-row" data-q="d5c1" data-answer="C"><span class="q">1. A responsible conclusion uses…</span><button class="choice">A. only an opinion</button><button class="choice">B. only a prediction</button><button class="choice">C. evidence from the data</button><button class="choice">D. graph decorations</button></div><div class="feedback" id="d5c1-feedback"></div>
+      <div class="choice-row" data-q="d5c2" data-answer="A"><span class="q">2. 240 − 180 equals…</span><button class="choice">A. 60</button><button class="choice">B. 40</button><button class="choice">C. 420</button><button class="choice">D. 360</button></div><div class="feedback" id="d5c2-feedback"></div>
+      <div class="choice-row" data-q="d5c3" data-answer="B"><span class="q">3. 47 heads in 100 tosses gives…</span><button class="choice">A. 4.7</button><button class="choice">B. 0.47</button><button class="choice">C. 47%</button><button class="choice">D. 100/47</button></div><div class="feedback" id="d5c3-feedback"></div>
+      <div class="choice-row" data-q="d5c4" data-answer="D"><span class="q">4. For a fair 4-color spinner, theoretical P(blue) is…</span><button class="choice">A. 1/2</button><button class="choice">B. 1/3</button><button class="choice">C. 1/8</button><button class="choice">D. 1/4</button></div><div class="feedback" id="d5c4-feedback"></div>
+      <div class="choice-row" data-q="d5c5" data-answer="A"><span class="q">5. Which statement is safest?</span><button class="choice">A. Experimental results can differ from theoretical probability.</button><button class="choice">B. Experimental results must always equal theory.</button><button class="choice">C. One experiment proves a law.</button><button class="choice">D. Probability removes randomness.</button></div><div class="feedback" id="d5c5-feedback"></div>
+    </div>
+    <div class="card assessment-prep"><h3>Ready for the Week 7 Assessment?</h3><p>Review the graph-reading checklist and the two probability formulas before moving to the assessment.</p><button class="btn btn-primary" data-go="7">Start 25-Item Assessment →</button></div>
+  </section>
+
+  <section class="slide" data-slide-index="7">
+    <div class="card assessment-card">
+      <span class="eyebrow">FINAL ASSESSMENT • GRADE 8 – TERM 3 – WEEK 7</span>
+      <h2>Week 7 Mastery Assessment</h2>
+      <p>25 items covering the two Week 7 BOW competencies. Choose the best answer for each item. Take your time and use evidence.</p>
+      <div id="assessmentForm"></div>
+      <div class="assessment-actions"><button id="submitAssessment" class="btn btn-primary">✓ CHECK ANSWERS</button><button id="resetAssessment" class="btn btn-outline">↺ RESET ASSESSMENT</button></div>
+      <div id="assessmentResult" class="result-box" aria-live="polite"></div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo">
+  <div><strong>Teacher Ed Learning Hub</strong><br><span>Grade 8 Mathematics • Term 3 • Week 7</span></div>
+</footer>
+
+<div class="pager">
+  <button id="prevBtn" class="btn btn-outline">← Previous</button>
+  <span id="pagerLabel">Home</span>
+  <button id="nextBtn" class="btn btn-primary">Next →</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
