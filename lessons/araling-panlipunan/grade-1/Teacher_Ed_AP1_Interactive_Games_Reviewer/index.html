@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123c78">
+  <meta name="description" content="Grade 1 Araling Panlipunan Interactive Games Reviewer">
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <title>Teacher Ed Learning Hub | Grade 1 AP Games Reviewer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="celebrationLayer"></div>
+
+<header class="header">
+  <div class="brand">
+    <img src="BrandLogo.png" alt="Teacher Ed Learning Hub">
+    <div>
+      <strong>TEACHER ED LEARNING HUB</strong>
+      <small>Teacher Ed • Grade 1 Araling Panlipunan</small>
+    </div>
+  </div>
+  <div class="header-tools">
+    <span>⭐ <b id="topStars">0</b></span>
+    <span>🎯 <b id="topScore">0</b></span>
+    <button id="soundToggle" class="round-btn" aria-label="Tunog">🔊</button>
+  </div>
+</header>
+
+<nav class="nav">
+  <button data-page="home">🏠 Home</button>
+  <button data-page="map">🗺️ Game Map</button>
+  <button data-page="rewards">🏆 Rewards</button>
+  <button data-page="progress">📊 Progress</button>
+  <button data-page="about">ℹ️ About</button>
+</nav>
+
+<main>
+<section id="home" class="page active">
+  <div class="hero">
+    <div class="hero-logo"><img src="BrandLogo.png" alt=""></div>
+    <span class="tag">GRADE 1 • ARALING PANLIPUNAN</span>
+    <h1>Ang Aking Kwento<br><span>at ang Aking Pangarap</span></h1>
+    <h2>👨‍👩‍👧‍👦 Ang Aking Pamilya</h2>
+    <p>Isang masayang game adventure para maalala, mapraktis, at mamaster ang iyong aralin!</p>
+    <button id="startAdventure" class="primary large">🚀 SIMULAN ANG REVIEW ADVENTURE</button>
+    <div class="feature-row">
+      <span>⭐ Stars</span><span>🎮 Games</span><span>💡 Hints</span><span>🏆 Badges</span>
+    </div>
+  </div>
+</section>
+
+<section id="mission" class="page">
+  <div class="card narrow center">
+    <div class="big-emoji">🎯</div>
+    <span class="tag">YOUR MISSION</span>
+    <h1>Handa ka na?</h1>
+    <p>Tapusin ang bawat level. Sagutin ang mga hamon. Matuto sa mga pagkakamali. Mangolekta ng stars at maging <b>Lesson Master!</b></p>
+    <div class="mission-list">
+      <div>⭐ Kumpletuhin ang 5 levels.</div>
+      <div>💡 Gumamit ng hint kapag kailangan.</div>
+      <div>🧠 Isipin ang tamang sagot.</div>
+      <div>🏆 Tapusin ang Final Challenge.</div>
+    </div>
+    <button id="beginMission" class="primary">✨ SIMULAN ANG MISYON</button>
+  </div>
+</section>
+
+<section id="map" class="page">
+  <div class="heading"><span class="tag">YOUR ADVENTURE</span><h1>🗺️ GAME MAP</h1><p>Tapusin ang level para mabuksan ang susunod.</p></div>
+  <div id="mapGrid" class="map-grid"></div>
+</section>
+
+<section id="game" class="page">
+  <div class="game-card">
+    <div class="game-head">
+      <div><span id="levelTag" class="tag">LEVEL 1</span><h1 id="gameTitle">Warm-Up</h1></div>
+      <button id="hintButton" class="secondary">💡 Hint</button>
+    </div>
+    <div class="bar-label"><span id="questionCount">Tanong 1</span><span id="percent">0%</span></div>
+    <div class="bar"><div id="barFill"></div></div>
+    <div id="gameArea"></div>
+    <div id="feedback" class="feedback hidden"></div>
+    <div class="game-nav">
+      <button id="gameMapButton" class="secondary">🗺️ Game Map</button>
+      <button id="nextButton" class="primary hidden">➡️ Susunod</button>
+    </div>
+  </div>
+</section>
+
+<section id="results" class="page">
+  <div class="result card center">
+    <div id="resultEmoji" class="big-emoji">🎉</div>
+    <span class="tag">REVIEW COMPLETE</span>
+    <h1 id="resultTitle">Ang Galing!</h1>
+    <div id="resultPercent" class="score-big">0%</div>
+    <p id="resultMessage"></p>
+    <div class="stats-grid">
+      <div><b id="rCorrect">0</b><small>Tama</small></div>
+      <div><b id="rTotal">0</b><small>Tanong</small></div>
+      <div><b id="rStars">0</b><small>Stars</small></div>
+      <div><b id="rAccuracy">0%</b><small>Accuracy</small></div>
+    </div>
+    <div id="resultBadge" class="badge-pill">🏆 LESSON MASTER</div>
+    <div class="result-actions">
+      <button id="againButton" class="primary">🔄 PLAY AGAIN</button>
+      <button id="missedButton" class="secondary">💡 PRACTICE MISSED</button>
+      <button id="resultMapButton" class="secondary">🗺️ GAME MAP</button>
+    </div>
+  </div>
+</section>
+
+<section id="rewards" class="page">
+  <div class="heading"><span class="tag">ACHIEVEMENTS</span><h1>🏆 IYONG REWARDS</h1></div>
+  <div id="rewardGrid" class="reward-grid"></div>
+</section>
+
+<section id="progress" class="page">
+  <div class="heading"><span class="tag">YOUR JOURNEY</span><h1>📊 PROGRESS</h1></div>
+  <div class="progress-stats">
+    <div><b id="bestScore">0</b><small>Best Score</small></div>
+    <div><b id="progressStars">0</b><small>Stars</small></div>
+    <div><b id="levelsDone">0/5</b><small>Levels</small></div>
+    <div><b id="attempts">0</b><small>Reviews</small></div>
+  </div>
+  <div class="card center tips">
+    <h2>🌟 Tandaan</h2>
+    <p>Hindi masama ang magkamali. Ang mahalaga ay natututo ka, nag-iisip, at sumusubok muli!</p>
+    <button id="resetProgress" class="danger">↺ RESET PROGRESS</button>
+  </div>
+</section>
+
+<section id="about" class="page">
+  <div class="card narrow center">
+    <img class="about-logo" src="BrandLogo.png" alt="Teacher Ed Learning Hub">
+    <h1>TEACHER ED LEARNING HUB</h1>
+    <p><b>Teacher Ed</b></p>
+    <p>Grade 1 Araling Panlipunan Interactive Games Reviewer</p>
+    <div class="topic-box">📖 Ang Aking Kwento at ang Aking Pangarap</div>
+    <div class="topic-box">👨‍👩‍👧‍👦 Ang Aking Pamilya</div>
+    <p class="muted">Learn • Practice • Play • Master</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="BrandLogo.png" alt="Teacher Ed Learning Hub">
+  <div><b>TEACHER ED LEARNING HUB</b><br>Learn • Practice • Play • Master<br><small>Teacher Ed • Educational Review Website</small></div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

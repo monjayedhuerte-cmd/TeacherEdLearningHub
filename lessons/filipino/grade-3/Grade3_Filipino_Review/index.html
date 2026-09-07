@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#183153">
+<title>Teacher Ed Learning Hub | Grade 3 Filipino Review</title>
+<link rel="icon" type="image/png" href="BrandLogo.png">
+<style>
+:root{--n:#183153;--b:#2563eb;--g:#f59e0b;--gr:#16a34a;--r:#dc2626;--p:#7c3aed;--ink:#172033;--mut:#64748b;--bg:#eef7ff;--card:#fff}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#eef7ff,#fffdf3,#eefbf5);min-height:100vh;overflow-x:hidden}button{font:inherit;cursor:pointer}
+header{position:sticky;top:0;z-index:20;background:#fffffff2;backdrop-filter:blur(10px);border-bottom:1px solid #dbe5f0}.head{max-width:1150px;margin:auto;padding:8px 14px;display:flex;align-items:center;gap:10px}.logo{width:48px;height:48px;object-fit:contain}.brand{line-height:1.1}.brand b{display:block;color:var(--n);font-size:14px}.brand small{color:var(--mut);font-size:11px}.grow{flex:1}.pill{background:#f1f5f9;border:1px solid #dbe5f0;border-radius:99px;padding:7px 11px;font-weight:900;font-size:12px}.fs{border:0;background:var(--n);color:#fff;border-radius:11px;padding:9px 12px}.bar{height:5px;background:#e2e8f0}.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--b),var(--g),var(--gr));transition:.3s}
+main{max-width:1150px;margin:auto;padding:18px 14px 105px}.screen{display:none;animation:in .3s ease}.screen.on{display:block}@keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.card{background:#fffffff5;border:1px solid #dbe5f0;border-radius:24px;padding:22px;box-shadow:0 12px 30px #18315318}.hero{min-height:calc(100vh - 125px);display:grid;place-items:center}.hero .card{text-align:center;max-width:900px;width:100%;padding:38px 22px}.hero img{width:125px;height:125px;object-fit:contain}.hero h1{font-size:clamp(29px,5vw,55px);line-height:1.02;color:var(--n);margin:12px 0}.hero h1 span{color:var(--g)}h2{color:var(--n);font-size:clamp(24px,4vw,36px);margin:0 0 7px}h3{color:var(--n)}p{color:var(--mut)}.tr{display:block;color:var(--mut);font-size:.82em;font-weight:500;margin-top:3px}.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:18px 0}.chip{background:#eaf4ff;color:var(--n);padding:8px 12px;border-radius:99px;font-weight:850;font-size:13px}
+.btn{border:0;border-radius:14px;padding:12px 17px;min-height:48px;font-weight:900}.primary{background:var(--b);color:#fff}.gold{background:var(--g);color:#172033}.green{background:var(--gr);color:#fff}.dark{background:var(--n);color:#fff}.ghost{background:#f1f5f9;color:var(--n);border:1px solid #dbe5f0}.danger{background:#fee2e2;color:#991b1b}.actions{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:16px}
+.call{background:#fff7d6;border:1px solid #f3d36b;border-radius:15px;padding:12px 15px;margin:17px 0}.call b{color:#8a5b00}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grid5{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.mini,.level,.reward{background:#fff;border:1px solid #dbe5f0;border-radius:18px;padding:16px}.mini{text-align:center}.mini .ico{font-size:30px}.level{text-align:center;min-height:135px}.level.lock{opacity:.45;filter:grayscale(.5)}.level .ico{font-size:35px}.level h3{margin:4px 0}.level small{color:var(--mut)}
+.section{display:flex;justify-content:space-between;align-items:end;gap:10px;flex-wrap:wrap;margin-bottom:14px}.gamebar{display:flex;justify-content:space-between;gap:10px;align-items:center;flex-wrap:wrap}.tag{background:#eaf4ff;color:var(--n);padding:7px 11px;border-radius:99px;font-weight:900}.qbox{background:#f9fcff;border:1px solid #dbe5f0;border-radius:20px;padding:20px;margin-top:14px}.q{font-size:clamp(20px,3vw,28px);font-weight:950;text-align:center;color:var(--n);margin:10px auto 20px;max-width:850px}.opts{display:grid;grid-template-columns:repeat(2,1fr);gap:11px;max-width:800px;margin:auto}.opt{background:#fff;border:2px solid #dbe5f0;border-radius:15px;padding:14px;min-height:60px;font-weight:850}.opt:hover{border-color:#93c5fd}.opt.ok{background:#dcfce7;border-color:var(--gr);color:#166534}.opt.no{background:#fee2e2;border-color:var(--r);color:#991b1b}.feedback{display:none;max-width:800px;margin:14px auto 0;padding:12px 14px;border-radius:14px;font-weight:850}.feedback.show{display:block}.feedback.good{background:#dcfce7;color:#166534}.feedback.try{background:#fff7d6;color:#8a5b00}.hint{display:none;max-width:800px;margin:10px auto;padding:11px 14px;background:#f3e8ff;border:1px solid #ddd6fe;border-radius:14px;color:#5b21b6}.hint.show{display:block}
+.sort{display:grid;grid-template-columns:1fr 1fr;gap:14px}.zone{min-height:170px;border:2px dashed #a9bfd7;border-radius:18px;padding:12px}.zone h3{text-align:center}.items{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}.item{background:#fff;border:1px solid #cbd5e1;border-radius:12px;padding:10px 12px;font-weight:800}.item.sel{outline:3px solid #93c5fd}.item.used{opacity:.35;pointer-events:none}.target{min-height:95px;border:2px dashed #93c5fd;border-radius:13px;padding:8px}
+.mem{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;max-width:750px;margin:15px auto}.mem button{aspect-ratio:1.3;border:0;border-radius:14px;background:var(--n);color:#fff;font-weight:900;padding:7px}.mem button.flip,.mem button.hit{background:#fff;color:var(--n);border:2px solid #93c5fd}
+.result{text-align:center}.big{font-size:clamp(55px,10vw,90px);font-weight:1000;color:var(--b)}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:18px 0}.stat{background:#f8fafc;border-radius:15px;padding:13px}.stat b{display:block;font-size:25px;color:var(--n)}.reward{text-align:center}.reward .ico{font-size:40px}.reward.lock{opacity:.4;filter:grayscale(1)}.reward p{font-size:12px}
+nav{position:fixed;bottom:0;left:0;right:0;z-index:30;background:#fffffff7;border-top:1px solid #dbe5f0;box-shadow:0 -8px 22px #18315312;padding:7px 9px calc(7px + env(safe-area-inset-bottom))}.navin{max-width:850px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:5px}.navin button{border:0;background:transparent;border-radius:11px;padding:7px 3px;color:var(--mut);font-weight:850;font-size:11px}.navin button.active{background:#eaf4ff;color:var(--b)}
+footer{text-align:center;color:var(--mut);padding:28px 10px}.flogo{width:55px;height:55px;object-fit:contain}.ft{font-weight:900;color:var(--n)}
+.toast{position:fixed;right:14px;top:72px;z-index:50;background:var(--n);color:#fff;padding:12px 15px;border-radius:14px;opacity:0;transform:translateY(-10px);transition:.25s;pointer-events:none}.toast.show{opacity:1;transform:none}
+@media(max-width:800px){.grid5{grid-template-columns:repeat(3,1fr)}.grid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:650px){main{padding:12px 9px 100px}.grid3,.sort{grid-template-columns:1fr}.grid5{grid-template-columns:repeat(2,1fr)}.opts{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.mem{grid-template-columns:repeat(3,1fr)}.brand small{display:none}.pill{font-size:10px}.fs{font-size:0}.fs:after{content:"⛶";font-size:17px}}
+@media(max-width:390px){.mem{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="head">
+<img src="BrandLogo.png" class="logo" alt="Teacher Ed Learning Hub logo">
+<div class="brand"><b>TEACHER ED LEARNING HUB</b><small>Grade 3 Filipino • Interactive Review</small></div>
+<div class="grow"></div><div class="pill">⭐ <span id="stars">0</span></div><div class="pill">🎯 <span id="score">0</span></div>
+<button class="fs" onclick="fullscreen()">⛶</button></div><div class="bar"><i id="bar"></i></div></header>
+
+<main>
+<section id="home" class="screen on"><div class="hero"><div class="card">
+<img src="BrandLogo.png" alt="Teacher Ed logo">
+<div class="chip">📚 GRADE 3 • FILIPINO / FILIPINO</div>
+<h1>Wikang Pambansa, Pahalagahan Natin!<br><span>Mabuting Gawa ay Simula ng Pagbabago sa Komunidad</span></h1>
+<p>Interactive Review Adventure<span class="tr">Isang masayang review game para balikan, sanayin, at masterin ang aralin. / A fun review game to recall, practice, and master the lesson.</span></p>
+<div class="chips"><span class="chip">📝 Pandiwa / Verb</span><span class="chip">🔗 Pang-ukol / Preposition</span><span class="chip">🇵🇭 Wikang Pambansa / National Language</span><span class="chip">🤝 Mabuting Gawa / Good Deeds</span></div>
+<button class="btn primary" onclick="show('mission')">🚀 START REVIEW ADVENTURE<span class="tr" style="color:#dbeafe">Simulan ang Review Adventure</span></button>
+<div class="call"><b>👩‍🏫 Teacher Ed Guide:</b> “Handa na ba kayong maglaro at matuto?”<span class="tr">“Are you ready to play and learn?”</span></div>
+</div></div></section>
+
+<section id="mission" class="screen"><div class="section"><div><h2>🎯 Iyong Misyon / Your Mission</h2><p>Maglaro, mag-isip, at maging Lesson Master! / Play, think, and become a Lesson Master!</p></div></div>
+<div class="card"><div class="grid3">
+<div class="mini"><div class="ico">⭐</div><b>Mangolekta ng Stars / Collect Stars</b><span class="tr">Earn stars as you complete activities.</span></div>
+<div class="mini"><div class="ico">🧠</div><b>Palakasin ang Kaalaman / Build Knowledge</b><span class="tr">Review verbs, prepositions, language, and good deeds.</span></div>
+<div class="mini"><div class="ico">🏆</div><b>Tapusin ang Hamon / Finish the Challenge</b><span class="tr">Complete the final challenge and earn a badge.</span></div>
+</div><div class="call"><b>Teacher Guide:</b> “Hindi kailangang bilisan. Mag-isip nang mabuti.”<span class="tr">“You do not need to rush. Think carefully.”</span></div>
+<div class="actions"><button class="btn primary" onclick="show('map')">🗺️ START MISSION / SIMULAN</button></div></div></section>
+
+<section id="map" class="screen"><div class="section"><div><h2>🗺️ Game Map / Mapa ng Laro</h2><p>Tapusin ang bawat level para ma-unlock ang susunod. / Complete each level to unlock the next.</p></div></div>
+<div class="grid5" id="map"></div>
+<div class="card" style="margin-top:14px"><h3>📌 Saklaw ng Review / Review Coverage</h3><div class="chips" style="justify-content:flex-start"><span class="chip">Pandiwa / Verb</span><span class="chip">Pang-ukol / Preposition</span><span class="chip">Wikang Pambansa / National Language</span><span class="chip">Mabuting Gawa / Good Deeds</span><span class="chip">Komunidad / Community</span></div></div></section>
+
+<section id="game" class="screen"><div class="card"><div class="gamebar"><div><span class="tag" id="tag"></span><h2 id="gtitle"></h2><p id="ginstruction"></p></div><b id="count"></b></div><div id="body"></div></div></section>
+
+<section id="final" class="screen"><div class="card"><div class="gamebar"><div><span class="tag">🏆 FINAL BOSS</span><h2>Lesson Master Challenge</h2><p>Pinagsamang hamon sa buong aralin. / A mixed challenge covering the whole review.</p></div><b id="fcount"></b></div><div id="fbody"></div></div></section>
+
+<section id="results" class="screen"><div class="card result">
+<div style="font-size:58px">🎉</div><h2>Review Complete! / Tapos na ang Review!</h2><div id="badge" style="font-weight:1000;font-size:25px;color:var(--n)"></div><div class="big" id="pct">0%</div>
+<div class="stats"><div class="stat"><b id="rc">0</b>Correct / Tama</div><div class="stat"><b id="rw">0</b>Try Again / Balikan</div><div class="stat"><b id="rs">0</b>Stars / Bituin</div><div class="stat"><b id="rl">0</b>Levels / Antas</div></div>
+<div class="call" id="msg"></div><div class="actions"><button class="btn primary" onclick="practice()">🎯 PRACTICE MISSED / BALIKAN</button><button class="btn gold" onclick="restart()">🔄 PLAY AGAIN / ULITIN</button><button class="btn ghost" onclick="show('rewards')">🏆 REWARDS / GANTIMPALA</button></div>
+</div></section>
+
+<section id="rewards" class="screen"><div class="section"><div><h2>🏆 Rewards / Mga Gantimpala</h2><p>Mga badge na makukuha habang natututo. / Badges earned while learning.</p></div></div><div class="card"><div class="grid4" id="rewards"></div><div class="actions"><button class="btn ghost" onclick="show('map')">🗺️ GAME MAP</button><button class="btn danger" onclick="reset()">🗑️ RESET PROGRESS</button></div></div></section>
+
+<section id="about" class="screen"><div class="card"><h2>ℹ️ About / Tungkol sa Review</h2>
+<div class="grid3">
+<div class="mini"><div class="ico">🇵🇭</div><b>Wikang Pambansa / National Language</b><span class="tr">Review why language helps people communicate and connect.</span></div>
+<div class="mini"><div class="ico">📝</div><b>Pandiwa / Verb</b><span class="tr">Salitang nagsasaad ng kilos o galaw. / A word that shows an action.</span></div>
+<div class="mini"><div class="ico">🔗</div><b>Pang-ukol / Preposition</b><span class="tr">Salitang nag-uugnay. / A word that connects words or phrases.</span></div>
+</div><div class="call"><b>Teacher Ed:</b> Maaaring huminto sa bawat level para sa class discussion.<span class="tr">Pause after each level for class discussion.</span></div></div></section>
+
+<footer><img src="BrandLogo.png" class="flogo" alt="Logo"><div class="ft">TEACHER ED LEARNING HUB</div><div>Learn • Practice • Play • Master</div><div>Teacher Ed • Educational Review Website</div></footer>
+</main>
+
+<nav><div class="navin"><button onclick="show('home')">🏠<br>Home</button><button onclick="show('map')">🗺️<br>Map</button><button onclick="show('map')">🎮<br>Games</button><button onclick="show('rewards')">🏆<br>Rewards</button><button onclick="show('about')">ℹ️<br>About</button></div></nav>
+<div class="toast" id="toast"></div>
+
+<script>
+const K="ted_g3_filipino_v2";
+let S=JSON.parse(localStorage.getItem(K)||"null")||{score:0,stars:0,levels:0,badges:[],missed:[]};
+let current=0,finalIndex=0,finalCorrect=0,practiceMode=false,practiceIndex=0;
+const verb=[
+["Alin ang Pandiwa sa “Si Ana ay nagbabasa ng aklat.”",["Ana","nagbabasa","aklat","si"],1],
+["Alin ang salitang nagsasaad ng kilos? “Nagtatanim si Ben ng puno.”",["puno","Ben","nagtatanim","si"],2],
+["“Tumutulong si Mia sa paglilinis.” Ano ang Pandiwa?",["Mia","tumutulong","paglilinis","sa"],1],
+["Alin ang Pandiwa? “Naglalaro ang mga bata.”",["bata","mga","naglalaro","ang"],2],
+["“Nagsusulat si Carlo ng liham.” Alin ang kilos?",["Carlo","liham","nagsusulat","ng"],2],
+["Alin ang Pandiwa sa “Naglilinis kami ng silid-aralan.”?",["kami","silid-aralan","naglilinis","ng"],2],
+["“Umaawit ang pangkat.” Alin ang Pandiwa?",["pangkat","ang","umaawit","sa"],2],
+["Alin ang Pandiwa sa “Nagbabahagi sila ng pagkain.”?",["sila","pagkain","nagbabahagi","ng"],2]
+];
+const prep=[
+["Alin ang Pang-ukol sa “Ang proyekto ay para sa komunidad.”",["proyekto","para sa","komunidad","ay"],1],
+["Alin ang Pang-ukol sa “Ayon sa guro, mahalaga ang pagtutulungan.”",["guro","mahalaga","ayon sa","pagtutulungan"],2],
+["“Nagmula kay Liza ang mungkahi.” Alin ang Pang-ukol?",["nagmula","kay","Liza","mungkahi"],1],
+["Alin ang Pang-ukol sa “Nag-usap kami tungkol sa kalinisan.”",["nag-usap","kami","tungkol sa","kalinisan"],2],
+["“Pumunta si Leo sa paaralan.” Alin ang Pang-ukol?",["Pumunta","Leo","sa","paaralan"],2],
+["Alin ang Pang-ukol sa “Ang sulat ay mula kay Rosa.”",["sulat","mula kay","Rosa","ay"],1]
+];
+const mixed=[
+["“Nagtatanim ang mga bata sa hardin.” Alin ang Pandiwa?",["mga","bata","nagtatanim","sa"],2],
+["“Ang proyekto ay para sa paaralan.” Alin ang Pang-ukol?",["proyekto","ay","para sa","paaralan"],2],
+["“Naglinis ang magkakaibigan para sa barangay.” Alin ang Pandiwa?",["naglinis","magkakaibigan","para sa","barangay"],0],
+["“Ayon sa guro, dapat tayong tumulong.” Alin ang Pang-ukol?",["guro","dapat","ayon sa","tumulong"],2],
+["“Nagbabahagi sila ng gamit sa mga nangangailangan.” Alin ang Pandiwa?",["sila","gamit","sa","nagbabahagi"],3],
+["“Tumutulong si Ana sa komunidad.” Ano ang Pandiwa?",["Ana","tumutulong","sa","komunidad"],1]
+];
+const finalQ=[
+["Alin ang Pandiwa? “Naglilinis ang mga bata.”",["mga","bata","naglilinis","ang"],2],
+["Alin ang Pang-ukol? “Ang gawain ay para sa komunidad.”",["gawain","ay","para sa","komunidad"],2],
+["Ano ang mabuting gawa?",["Pagsira ng gamit","Pagtulong sa nangangailangan","Pang-aasar","Pagtatapon ng basura sa daan"],1],
+["Bakit mahalaga ang Wikang Pambansa?",["Upang mahirapan ang komunikasyon","Upang makatulong sa pagkakaisa at komunikasyon","Upang hindi matuto ng ibang wika","Upang walang makipag-usap"],1],
+["Alin ang nagpapakita ng malasakit sa komunidad?",["Tumulong sa paglilinis","Magtapon ng basura sa kanal","Manira ng halaman","Mang-away"],0],
+["Alin ang Pandiwa at Pang-ukol sa “Nagtatanim si Ben sa hardin.”?",["Ben + hardin","nagtatanim + sa","si + hardin","sa + Ben"],1],
+["Alin ang Pang-ukol sa “Nag-usap sila tungkol sa kalinisan.”?",["nag-usap","sila","tungkol sa","kalinisan"],2],
+["Alin ang kilos na nakatutulong sa komunidad?",["Naglilinis","Nang-aasar","Nananadya","Naninira"],0],
+["Alin ang tamang Pandiwa? “Ang bata ay ____.”",["nagbabasa","aklat","para sa","mabuti"],0],
+["Alin ang tamang Pang-ukol?",["Naglalaro","para sa","masaya","mabuti"],1],
+["Ano ang dapat gawin sa gawaing pangkomunidad?",["Makipagtulungan","Umiwas","Manira","Mang-abala"],0],
+["Alin ang Pandiwa sa “Nagbabahagi si Lino ng pagkain.”?",["Lino","pagkain","ng","nagbabahagi"],3],
+["Alin ang Pang-ukol sa “Mula kay Rosa ang sulat.”?",["Rosa","mula kay","sulat","ang"],1],
+["Alin ang pagpapahalaga sa Wikang Pambansa?",["Gamitin nang maayos at may paggalang ang wika","Iwasang makipag-usap","Manukso gamit ang wika","Sirain ang mga aklat"],0],
+["Kapag tumulong ka sa paglilinis ng inyong lugar, ano ang ipinakita mo?",["Mabuting gawa","Pang-aasar","Pagwawalang-bahala","Pananadya"],0]
+];
+const sortItems=[["Naglilinis ng paligid","good"],["Tumutulong sa nangangailangan","good"],["Nagtatanim ng halaman","good"],["Nagtatapon ng basura kung saan-saan","bad"],["Nanunukso ng kapwa","bad"],["Nanininira ng gamit","bad"]];
+const rewardData=[
+["🌟","Super Learner","Complete Level 1"],["🔗","Word Explorer","Complete Level 2"],["🤝","Community Helper","Complete Level 3"],["🧠","Brain Explorer","Complete Level 4"],["🏆","Lesson Master","Finish the final challenge"],["🎯","Question Crusher","Reach 90%+"],["⭐","Perfect Score","Get 100%"]
+];
+function save(){localStorage.setItem(K,JSON.stringify(S));stats();map();rewards()}
+function stats(){document.getElementById("stars").textContent=S.stars;document.getElementById("score").textContent=S.score}
+function show(id){document.querySelectorAll(".screen").forEach(x=>x.classList.remove("on"));document.getElementById(id).classList.add("on");let pct=id==="home"?4:id==="mission"?8:id==="map"?12:id==="game"?25:id==="final"?88:id==="results"?100:35;document.getElementById("bar").style.width=pct+"%";scrollTo(0,0)}
+function map(){let a=[["⭐","Warm-Up","Balik-Aral / Recall",1],["🔗","Word Quest","Unawain / Understand",2],["🤝","Community Quest","Gamitin / Apply",3],["🧠","Brain Challenge","Mag-isip / Reason",4],["🏆","Master Challenge","Mastery / Kasanayan",5]];document.getElementById("map").innerHTML=a.map(x=>{let lock=x[3]>S.levels+1&&x[3]!==5||x[3]===5&&S.levels<4;return `<button class="level ${lock?"lock":""}" onclick="${lock?"toastMsg('🔒 Tapusin muna ang naunang level. / Complete the previous level first.')":"start("+x[3]+")"}"><div class="ico">${x[0]}</div><b>LEVEL ${x[3]}</b><h3>${x[1]}</h3><small>${x[2]}</small></button>`}).join("")}
+function start(n){if(n<=4){let sets=[verb,prep,sortItems,mixed];if(n===3){sortGame();return}let data=[...sets[n-1]];data.sort(()=>Math.random()-.5);current=0;window.data=data;window.level=n;gameRender()}else{finalIndex=0;finalCorrect=0;finalQ.sort(()=>Math.random()-.5);finalRender();show("final")}}
+function gameRender(){let n=window.level,d=window.data[current];document.getElementById("tag").textContent="LEVEL "+n+(n===1?" • Warm-Up":n===2?" • Word Quest":" • Brain Challenge");document.getElementById("gtitle").textContent=n===1?"⚡ Pandiwa Quick Pick":n===2?"🔗 Pang-ukol Quick Pick":"🧠 Sentence Detective";document.getElementById("ginstruction").innerHTML=n===1?"Hanapin ang salitang nagsasaad ng kilos. / Find the word that shows an action.":n===2?"Hanapin ang salitang nag-uugnay. / Find the connecting word or phrase.":"Tukuyin ang Pandiwa o Pang-ukol. / Identify the verb or preposition.";document.getElementById("count").textContent=(current+1)+" / "+window.data.length;let opts=d[1].map((v,i)=>[v,i]).sort(()=>Math.random()-.5);document.getElementById("body").innerHTML=`<div class="qbox"><div class="q">${d[0]}<span class="tr">Read the question and choose the best answer. / Basahin at piliin ang tamang sagot.</span></div><div class="opts">${opts.map(o=>`<button class="opt" onclick="pick(this,${o[1]},${d[2]},'${escape(d[0])}')">${o[0]}<span class="tr">${eng(o[0])}</span></button>`).join("")}</div><div id="fb" class="feedback"></div><div id="hint" class="hint">💡 ${n===1?"Hanapin ang kilos o ginagawa. / Look for the action.":n===2?"Hanapin ang salitang nag-uugnay. / Look for the connecting word.":"Hanapin muna ang kilos o ang nag-uugnay na salita. / Find the action or connecting word."}</div><div class="actions"><button class="btn ghost" onclick="hint()">💡 HINT / PAHIWATIG</button></div></div>`;show("game")}
+function pick(btn,chosen,correct,q){document.querySelectorAll("#body .opt").forEach(x=>x.disabled=true);let ok=chosen===correct;btn.classList.add(ok?"ok":"no");document.querySelectorAll("#body .opt")[correct].classList.add("ok");let fb=document.getElementById("fb");fb.className="feedback show "+(ok?"good":"try");fb.innerHTML=ok?"🎉 Great job! / Mahusay!<span class='tr'>You found it! / Nahanap mo!</span>":"💡 Not quite. Try again. / Hindi pa. Subukan muli.<span class='tr'>Think about the lesson idea. / Isipin ang konsepto.</span>";if(ok){S.score+=10;S.stars++;toastMsg("⭐ +1 Star!")}else S.missed.push(q);save();setTimeout(()=>{current++;if(current<window.data.length)gameRender();else{S.levels=Math.max(S.levels,window.level);S.badges.push(window.level);save();toastMsg("🏆 Level complete!");show("map")}},650)}
+function hint(){document.getElementById("hint").classList.add("show")}
+function sortGame(){window.sortSel=null;show("game");document.getElementById("tag").textContent="LEVEL 3 • Community Quest";document.getElementById("gtitle").textContent="🤝 Mabuting Gawa: Sort It!";document.getElementById("ginstruction").innerHTML="Ilagay ang bawat gawain sa tamang pangkat. / Place each action in the correct group.";document.getElementById("count").textContent="6 cards";document.getElementById("body").innerHTML=`<div class="call"><b>Teacher Guide:</b> “Paano nakatutulong ang mabuting gawa sa komunidad?”<span class="tr">“How can a good deed help the community?”</span></div><div class="items" id="sortCards">${sortItems.map((x,i)=>`<button class="item" onclick="selSort(this,${i})">${x[0]}</button>`).join("")}</div><div class="sort"><div class="zone"><h3>🌟 Mabuting Gawa / Good Deed</h3><div class="target" id="good" onclick="putSort('good')"></div></div><div class="zone"><h3>💭 Think Again / Pag-isipan</h3><div class="target" id="bad" onclick="putSort('bad')"></div></div></div><div id="sortfb" class="feedback"></div><div class="actions"><button class="btn gold" onclick="checkSort()">✅ CHECK / SURIIN</button><button class="btn ghost" onclick="sortGame()">↻ RESET / ULITIN</button></div>`}
+function selSort(b,i){document.querySelectorAll("#sortCards .item").forEach(x=>x.classList.remove("sel"));b.classList.add("sel");window.sortSel=i}
+function putSort(cat){if(window.sortSel===null||window.sortSel===undefined)return toastMsg("👆 Pumili muna ng card. / Select a card first.");let b=document.querySelectorAll("#sortCards .item")[window.sortSel];if(b.classList.contains("used"))return;let t=document.getElementById(cat);let x=document.createElement("span");x.className="item";x.textContent=b.textContent;x.dataset.i=window.sortSel;t.appendChild(x);b.classList.add("used");window.sortSel=null}
+function checkSort(){let good=[...document.querySelectorAll("#good .item")].map(x=>+x.dataset.i),bad=[...document.querySelectorAll("#bad .item")].map(x=>+x.dataset.i),c=good.filter(i=>sortItems[i][1]==="good").length+bad.filter(i=>sortItems[i][1]==="bad").length;let fb=document.getElementById("sortfb");fb.className="feedback show "+(c===6?"good":"try");fb.innerHTML=(c===6?"🎉 Fantastic! / Napakahusay!":"💡 Mag-isip muli. / Think again.")+`<span class="tr">${c}/6 correct. Mabuting gawa ay nakatutulong sa komunidad. / Good deeds help the community.</span>`;S.score+=c*5;if(c>=4)S.stars++;save();if(c===6){S.levels=Math.max(S.levels,3);S.badges.push(3);save();setTimeout(()=>show("map"),900)}}
+function finalRender(){if(finalIndex>=finalQ.length){finish();return}let d=finalQ[finalIndex],opts=d[1].map((v,i)=>[v,i]).sort(()=>Math.random()-.5);document.getElementById("fcount").textContent=(finalIndex+1)+" / "+finalQ.length;document.getElementById("fbody").innerHTML=`<div class="qbox"><div class="q">${d[0]}<span class="tr">Choose the best answer. / Piliin ang pinakamainam na sagot.</span></div><div class="opts">${opts.map(o=>`<button class="opt" onclick="finalPick(this,${o[1]},${d[2]})">${o[0]}<span class="tr">${eng(o[0])}</span></button>`).join("")}</div><div id="ffb" class="feedback"></div><div id="fhint" class="hint">💡 Balikan ang Pandiwa, Pang-ukol, Wikang Pambansa, at mabuting gawa. / Recall the verb, preposition, national language, and good deeds.</div><div class="actions"><button class="btn ghost" onclick="document.getElementById('fhint').classList.add('show')">💡 HINT / PAHIWATIG</button></div></div>`}
+function finalPick(btn,ch,co){document.querySelectorAll("#fbody .opt").forEach(x=>x.disabled=true);let ok=ch===co;if(ok)finalCorrect++;btn.classList.add(ok?"ok":"no");document.querySelectorAll("#fbody .opt")[co].classList.add("ok");let f=document.getElementById("ffb");f.className="feedback show "+(ok?"good":"try");f.innerHTML=ok?"🎉 You got it! / Nakuha mo!":"💡 Not quite! / Hindi pa!";if(ok){S.score+=10;S.stars++}save();setTimeout(()=>{finalIndex++;finalRender()},650)}
+function finish(){S.levels=5;S.badges.push(5);if(finalCorrect>=14)S.badges.push(6);if(finalCorrect===15)S.badges.push(7);save();results();show("results")}
+function results(){let p=Math.round(finalCorrect/15*100),b=p>=90?"🏆 LESSON MASTER":p>=80?"🌟 SUPER LEARNER":p>=70?"⭐ GREAT PROGRESS":p>=60?"🎯 KEEP PRACTICING":"💡 LEARNING EXPLORER";document.getElementById("pct").textContent=p+"%";document.getElementById("badge").textContent=b;document.getElementById("rc").textContent=finalCorrect;document.getElementById("rw").textContent=15-finalCorrect;document.getElementById("rs").textContent=S.stars;document.getElementById("rl").textContent=S.levels;document.getElementById("msg").innerHTML=(p>=80?"Excellent work! / Napakahusay!":"Great effort! / Magandang pagsisikap!")+"<span class='tr'>Learning mastery comes before the score. / Mas mahalaga ang pagkatuto kaysa sa puntos.</span>"}
+function practice(){if(!S.missed.length)return toastMsg("🌟 Wala kang missed questions! / No missed questions!");practiceMode=true;practiceIndex=0;practiceRender();show("final")}
+function practiceRender(){let q=S.missed[practiceIndex]||"Balikan ang konsepto. / Review the concept.";document.getElementById("fcount").textContent=(practiceIndex+1)+" / "+S.missed.length;document.getElementById("fbody").innerHTML=`<div class="qbox"><div class="q">${q}<span class="tr">Which idea from the lesson does this question practice? / Anong konsepto ang sinusubok?</span></div><div class="opts">${["Pandiwa / Verb","Pang-ukol / Preposition","Mabuting Gawa / Good Deed","Wikang Pambansa / National Language"].sort(()=>Math.random()-.5).map(x=>`<button class="opt" onclick="practicePick(this,'${x}')">${x}</button>`).join("")}</div><div id="pfb" class="feedback"></div></div>`}
+function practicePick(btn,x){let likely=x.startsWith("Pandiwa")||x.startsWith("Pang-ukol")||x.startsWith("Mabuting");document.querySelectorAll("#fbody .opt").forEach(b=>b.disabled=true);btn.classList.add("ok");S.score+=5;S.stars++;save();setTimeout(()=>{practiceIndex++;if(practiceIndex<S.missed.length)practiceRender();else{practiceMode=false;show("results")}},550)}
+function restart(){S={score:0,stars:0,levels:0,badges:[],missed:[]};save();show("map")}
+function reset(){if(confirm("I-reset ang lahat ng progress? / Reset all progress?")){localStorage.removeItem(K);location.reload()}}
+function rewards(){let g=document.getElementById("rewards");if(!g)return;g.innerHTML=rewardData.map((r,i)=>{let u=S.badges.includes(i+1)||S.levels>=i+1;return `<div class="reward ${u?"":"lock"}"><div class="ico">${r[0]}</div><h3>${r[1]}</h3><b>${u?"🔓 UNLOCKED":"🔒 LOCKED"}</b><p>${r[2]}</p></div>`}).join("")}
+function toastMsg(t){let x=document.getElementById("toast");x.textContent=t;x.classList.add("show");clearTimeout(window.tt);window.tt=setTimeout(()=>x.classList.remove("show"),1700)}
+function fullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()}
+function escape(s){return s.replace(/'/g,"&#39;")}
+function eng(s){let m={Ana:"person",nagbabasa:"reading",aklat:"book",si:"marker",puno:"tree",Ben:"person",nagtatanim:"planting",tumutulong:"helping",Mia:"person",paglilinis:"cleaning",naglalaro:"playing",bata:"child",mga:"plural marker",nagsusulat:"writing",Carlo:"person",liham:"letter",kami:"we","silid-aralan":"classroom",naglilinis:"cleaning",umaawit:"singing",pangkat:"group",sila:"they",pagkain:"food",nagbabahagi:"sharing","para sa":"for","ayon sa":"according to",kay:"to/for a person","tungkol sa":"about",sa:"to/in/at","mula kay":"from a person",proyekto:"project",komunidad:"community",guro:"teacher",mahalaga:"important",pagtutulungan:"cooperation",nagmula:"came from",Liza:"person",mungkahi:"suggestion","nag-usap":"talked",kalinisan:"cleanliness",Pumunta:"went",Leo:"person",paaralan:"school",sulat:"letter",Rosa:"person","naglinis":"cleaned",magkakaibigan:"friends",barangay:"community",hardin:"garden"};return m[s]||""}
+stats();map();rewards();
+</script>
+</body></html>

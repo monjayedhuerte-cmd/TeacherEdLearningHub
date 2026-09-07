@@ -578,5 +578,76 @@
     "date": "2026-09-07",
     "featured": false,
     "icon": "calculator"
+  },
+  {
+    "title": "Science 1 Game Reviewer | Taste and Touch Adventure",
+    "subject": "Science",
+    "grade": "Grade 1",
+    "description": "Explore the tongue and sense of taste and the skin and sense of touch. Answer questions, play, earn stars, and prepare for your Science examination.",
+    "file": "lessons/science/grade-1/Science1_Body_Sense_Detective/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "hand"
+  },
+  {
+    "title": "AP 1 Game Reviewer | Ang Aking Kwento at Ang aking Pangarap | Ang Aking Pamilya",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 1",
+    "description": "Isang masayang game adventure para maalala, mapraktis, at mamaster ang iyong aralin!",
+    "file": "lessons/araling-panlipunan/grade-1/Teacher_Ed_AP1_Interactive_Games_Reviewer/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Filipino 3 Game Reviewer| Wikang Pambansa, Pahalagahan Natin, Pandiwa at Pang-Ukol, Mabuting Gawa",
+    "subject": "Filipino",
+    "grade": "Grade 3",
+    "description": "Isang masayang review game para balikan, sanayin, at masterin ang aralin. / A fun review game to recall, practice, and master the lesson.",
+    "file": "lessons/filipino/grade-3/Grade3_Filipino_Review/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "languages"
+  },
+  {
+    "title": "AP 3 Game Reviewer|Kasaysayan ng Ating Pamayanan at Pagkilala sa Kulturang Pilipino",
+    "subject": "Araling Panlipunan",
+    "grade": "Grade 3",
+    "description": "Isang masayang review game para balikan, sanayin, at masterin ang aralin. / A fun review game to recall, practice, and master the lesson.",
+    "file": "lessons/araling-panlipunan/grade-3/AP3_TeacherEd_LearningHub/AP3_TeacherEd_LearningHub/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Math 2 Game Reviewer | Roman Numerals and Estimating Sum",
+    "subject": "Mathematics",
+    "grade": "Grade 2",
+    "description": "Explore Roman numerals, practice estimating sums, collect stars, and become a Lesson Master.",
+    "file": "lessons/mathematics/grade-2/Teacher_Ed_Grade2_Roman_Numerals_Estimating_Sum_Reviewer/Teacher_Ed_Grade2_Roman_Numerals_Estimating_Sum_Reviewer/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "ESP 2 Game Reviewer | Kagandahang Loob and Ako ay Magalang",
+    "subject": "ESP",
+    "grade": "Grade 2",
+    "description": "Kindness / Goodwill and I Am Respectful. Maglaro, magsanay, at ipakita ang mabuti at magalang na kilos!",
+    "file": "lessons/esp/grade-2/ESP2_Kagandahang_Loob_Ako_Ay_Magalang_Interactive_Game/ESP2_Kagandahang_Loob_Ako_Ay_Magalang_Interactive_Game/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
+    "title": "Computer 2 Game Reviewer | Become an Output Explorer and Starting Up the Computer",
+    "subject": "Computer",
+    "grade": "Grade 2",
+    "description": "Kindness / Goodwill and I Am Respectful. Maglaro, magsanay, at ipakita ang mabuti at magalang na kilos!",
+    "file": "lessons/computer/grade-2/Computer2_Interactive_Learning_Website_FIXED/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "heart-handshake"
   }
+
 ]
