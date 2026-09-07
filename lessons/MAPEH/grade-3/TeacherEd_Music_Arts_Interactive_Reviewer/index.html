@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2d5c">
+<title>Teacher Ed Learning Hub | Music & Arts Reviewer</title>
+<link rel="icon" type="image/png" href="6d2df0a2-acc5-482d-b00f-c900f44c9023.png">
+<style>
+:root{
+  --navy:#0b2d5c;--blue:#1557a6;--gold:#f5b928;--sky:#eaf4ff;
+  --ink:#182235;--muted:#617087;--paper:#fff;--bg:#f4f7fb;
+  --success:#147a4b;--danger:#b42318;--shadow:0 14px 35px rgba(11,45,92,.12);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#eef5ff 0,#f8fafc 42%,#eef4fb 100%);line-height:1.55}
+button,input{font:inherit}
+button{cursor:pointer}
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-bottom:1px solid #dbe4ef}
+.brandbar{background:linear-gradient(110deg,var(--navy),#123e79);color:#fff;padding:9px 18px}
+.brand-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:12px}
+.brand-inner img{width:42px;height:42px;object-fit:contain;border-radius:50%;background:#fff}
+.brand-title{font-weight:800;letter-spacing:.2px}
+.brand-sub{font-size:.78rem;opacity:.82}
+.nav-wrap{max-width:1200px;margin:auto;display:flex;align-items:center;gap:10px;padding:9px 14px}
+.nav-links{display:flex;gap:6px;overflow:auto;scrollbar-width:none;flex:1}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-btn,.menu-btn{border:0;background:transparent;color:var(--navy);font-weight:700;padding:9px 11px;border-radius:10px;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:var(--sky);color:var(--blue)}
+.menu-btn{display:none;background:var(--navy);color:#fff}
+main{max-width:1200px;margin:auto;padding:24px 16px 70px}
+.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:stretch}
+.card{background:var(--paper);border:1px solid #e1e8f1;border-radius:var(--radius);box-shadow:var(--shadow)}
+.hero-copy{padding:32px}
+.kicker{display:inline-flex;align-items:center;gap:7px;background:#fff4cf;color:#735300;border-radius:999px;padding:6px 11px;font-size:.82rem;font-weight:800}
+h1{font-size:clamp(2rem,5vw,3.7rem);line-height:1.05;margin:14px 0 12px;color:var(--navy)}
+h2{font-size:clamp(1.45rem,3vw,2.2rem);line-height:1.15;margin:0 0 10px;color:var(--navy)}
+h3{color:var(--navy);margin:0 0 8px}
+.lead{font-size:1.08rem;color:#46566d;max-width:760px}
+.hero-logo{display:flex;align-items:center;justify-content:center;padding:24px;background:radial-gradient(circle at 50% 35%,#fff,#eaf3ff)}
+.hero-logo img{width:min(230px,75%);filter:drop-shadow(0 12px 20px rgba(11,45,92,.18))}
+.meta-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.pill{padding:7px 10px;border-radius:999px;background:#f1f5f9;font-weight:700;font-size:.83rem}
+.progress-card{margin-top:18px;padding:15px 18px}
+.progress-top{display:flex;justify-content:space-between;gap:10px;font-size:.9rem;font-weight:800;color:var(--navy)}
+.progress-track{height:10px;background:#e5edf6;border-radius:99px;overflow:hidden;margin-top:9px}
+.progress-fill{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));transition:width .35s}
+.section{display:none;margin-top:22px}
+.section.active{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.section-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-end;margin:8px 0 16px}
+.section-head p{margin:0;color:var(--muted)}
+.day-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.lesson-card{padding:22px}
+.time{font-size:.8rem;font-weight:900;color:var(--blue);letter-spacing:.4px}
+.target{background:#f0f7ff;border-left:5px solid var(--blue);padding:12px 14px;border-radius:12px;margin:14px 0}
+.ilaw{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.ilaw-card{padding:20px;border-radius:18px;border:1px solid #e1e8f1;background:#fff}
+.ilaw-card .tag{display:inline-block;background:var(--navy);color:#fff;border-radius:999px;padding:5px 9px;font-weight:900;font-size:.78rem;margin-bottom:9px}
+.example{background:#fffdf4;border:1px solid #f2dda0;border-radius:15px;padding:14px;margin:12px 0}
+.callout{padding:14px 16px;border-radius:14px;background:#f7f9fc;border:1px dashed #c9d5e3;margin:12px 0}
+.your-turn{background:linear-gradient(135deg,#0b2d5c,#1557a6);color:#fff;border-radius:17px;padding:18px;margin:14px 0}
+.your-turn h3{color:#fff}
+.choice-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:10px}
+.choice{border:1px solid #cbd7e5;background:#fff;padding:9px 12px;border-radius:10px;font-weight:700;color:var(--ink)}
+.choice:hover{border-color:var(--blue);transform:translateY(-1px)}
+.feedback{margin-top:10px;font-weight:800;min-height:24px}
+.correct{color:var(--success)} .incorrect{color:var(--danger)}
+.reveal{border:0;background:#fff;color:var(--navy);padding:8px 12px;border-radius:9px;font-weight:800}
+.btn{border:0;border-radius:12px;padding:11px 15px;font-weight:800;transition:.18s}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--navy);color:#fff}
+.btn-gold{background:var(--gold);color:#302100}
+.btn-light{background:#edf4fb;color:var(--navy)}
+.nav-controls{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.feature-list{display:grid;gap:10px}
+.feature{display:flex;gap:12px;align-items:flex-start;background:#f8fafc;border-radius:13px;padding:12px}
+.feature b{color:var(--navy)}
+.match-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.match-item{background:#f7f9fc;border:1px solid #dce5ef;padding:12px;border-radius:12px}
+.sort-zone{display:flex;flex-wrap:wrap;gap:8px;min-height:60px;padding:12px;border:2px dashed #c7d4e2;border-radius:14px;background:#fbfdff}
+.sort-chip{background:#fff;border:1px solid #cbd7e5;border-radius:999px;padding:8px 11px;font-weight:800}
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.source-grid figure{margin:0;background:#fff;border:1px solid #e1e8f1;border-radius:16px;padding:9px;box-shadow:0 8px 22px rgba(11,45,92,.08)}
+.source-grid img{width:100%;height:230px;object-fit:cover;border-radius:11px}
+.source-grid figcaption{font-size:.82rem;color:var(--muted);padding:8px 3px 2px}
+.assess-list{display:grid;gap:13px}
+.q{padding:17px;border:1px solid #dfe7f0;border-radius:15px;background:#fff}
+.q-title{font-weight:800;margin-bottom:10px}
+.options{display:grid;gap:8px}
+.options label{display:flex;gap:9px;align-items:flex-start;padding:9px 10px;border-radius:10px;border:1px solid transparent}
+.options label:hover{background:#f4f8fc;border-color:#dbe5ef}
+.result{display:none;margin-top:18px;padding:20px;border-radius:17px;background:#f0f7ff;border:1px solid #cfe2f8}
+.score-big{font-size:2rem;font-weight:900;color:var(--navy)}
+.review-grid{display:grid;gap:8px;margin-top:12px}
+.review-row{display:grid;grid-template-columns:45px 1fr 1fr;gap:8px;padding:9px;border-radius:9px;background:#fff;border:1px solid #e3e9f1;font-size:.9rem}
+footer{background:var(--navy);color:#fff;margin-top:30px}
+.footer-inner{max-width:1200px;margin:auto;padding:28px 16px;display:flex;gap:18px;align-items:center}
+.footer-inner img{width:55px;height:55px;background:#fff;border-radius:50%;padding:4px}
+.footer-note{opacity:.84;font-size:.86rem}
+.fullscreen{position:fixed;right:14px;bottom:14px;z-index:1100}
+.toast{position:fixed;left:50%;bottom:20px;transform:translate(-50%,120px);background:#172b4d;color:#fff;padding:12px 17px;border-radius:12px;box-shadow:var(--shadow);transition:.3s;z-index:1200;font-weight:800}
+.toast.show{transform:translate(-50%,0)}
+.small{font-size:.86rem;color:var(--muted)}
+@media(max-width:900px){
+ .hero{grid-template-columns:1fr}.hero-logo{min-height:190px}
+ .day-grid,.two-col,.ilaw{grid-template-columns:1fr}
+ .source-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:680px){
+ main{padding:16px 10px 60px}.hero-copy{padding:22px}
+ .nav-wrap{position:relative}.menu-btn{display:block}
+ .nav-links{display:none;position:absolute;left:10px;right:10px;top:58px;background:#fff;border:1px solid #dbe4ef;border-radius:14px;padding:8px;box-shadow:var(--shadow);flex-direction:column;max-height:70vh;overflow:auto}
+ .nav-links.open{display:flex}.nav-btn{text-align:left}
+ .source-grid{grid-template-columns:1fr}.source-grid img{height:330px}
+ .match-grid{grid-template-columns:1fr}.footer-inner{align-items:flex-start}
+ .review-row{grid-template-columns:36px 1fr}.review-row .ans{grid-column:2}
+}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brandbar">
+    <div class="brand-inner">
+      <img src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png" alt="Teacher Ed Learning Hub logo">
+      <div><div class="brand-title">Teacher Ed Learning Hub</div><div class="brand-sub">Interactive Classroom Reviewer</div></div>
+    </div>
+  </div>
+  <div class="nav-wrap">
+    <button class="menu-btn" id="menuBtn">☰ Menu</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <button class="nav-btn active" data-section="home">Home</button>
+      <button class="nav-btn" data-section="day1">Day 1</button>
+      <button class="nav-btn" data-section="day2">Day 2</button>
+      <button class="nav-btn" data-section="day3">Day 3</button>
+      <button class="nav-btn" data-section="day4">Day 4</button>
+      <button class="nav-btn" data-section="day5">Day 5</button>
+      <button class="nav-btn" data-section="assessment">Assessment</button>
+      <button class="nav-btn" data-section="sources">Source Visuals</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="section active">
+  <div class="hero">
+    <div class="card hero-copy">
+      <span class="kicker">🎓 Grade 8 • Term 3 • Week 9</span>
+      <h1>Music & Arts Interactive Reviewer</h1>
+      <p class="lead">Explore two connected lessons: <b>Melodic Lines and Direction</b> in Music and <b>Illusion of Space in Drawings</b> in Arts.</p>
+      <div class="meta-row">
+        <span class="pill">🎵 Lesson 6 • Music</span>
+        <span class="pill">🎨 Lesson 5 • Arts</span>
+        <span class="pill">⏱️ 5 classroom days</span>
+        <span class="pill">🧠 ILAW learning flow</span>
+      </div>
+      <div class="target">
+        <b>KNOW • UNDERSTAND • DO</b><br>
+        Know melody, melodic direction, melodic contour, and ways artists create the illusion of space. Understand how notes move and how visual placement/size can suggest distance. Do: identify, explain, apply, and check these ideas through interactive tasks.
+      </div>
+      <div class="feature-list">
+        <div class="feature"><span>🎵</span><div><b>Music</b><br>Pitch + rhythm create melody. Follow notes as they move up, down, step-wise, skip-wise, or repeat.</div></div>
+        <div class="feature"><span>🎨</span><div><b>Arts</b><br>Space is a basic element of art. Explore size difference, overlapping, and placement of objects to create depth.</div></div>
+      </div>
+    </div>
+    <div class="card hero-logo">
+      <img src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png" alt="Teacher Ed Learning Hub">
+    </div>
+  </div>
+  <div class="card progress-card">
+    <div class="progress-top"><span>Your lesson progress</span><span id="progressText">1 of 8 sections</span></div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    <p class="small">Use the top navigation or Previous/Next buttons. Your completed activity checks are saved during this browser session.</p>
+  </div>
+  <div class="two-col" style="margin-top:16px">
+    <div class="card lesson-card">
+      <h3>🎯 Weekly Learning Focus</h3>
+      <p>Connect ideas from sound and visual art: both music and drawing can have a <b>shape or direction</b> that the learner can observe, describe, and use.</p>
+      <button class="btn btn-primary" onclick="go('day1')">Start Day 1 →</button>
+    </div>
+    <div class="card lesson-card">
+      <h3>🧭 How to Use This Reviewer</h3>
+      <ol>
+        <li>Read the short explanation.</li>
+        <li>Try the example before checking the answer.</li>
+        <li>Complete the Your Turn activities.</li>
+        <li>Move through all five days, then take the 25-item assessment.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="day1" class="section">
+  <div class="section-head"><div><span class="kicker">DAY 1 • MUSIC</span><h2>From Pitch & Rhythm to Melody</h2><p>Date: __________ • Estimated time: 50 minutes</p></div></div>
+  <div class="card lesson-card">
+    <div class="target"><b>Daily target:</b> Explain melody and distinguish pitch, rhythm, and melody using simple musical examples.</div>
+    <div class="ilaw">
+      <article class="ilaw-card"><span class="tag">MOTIVATION • 5 min</span><h3>🎂 Happy Birthday Connection</h3><p>Think of a song you can sing without looking at the words. What makes the song recognizable? The lesson source uses <i>Happy Birthday</i> to notice how notes move.</p><div class="your-turn"><h3>Your Turn!</h3><p>Which describes <b>pitch</b>?</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,true)">Highness or lowness of sound</button><button class="choice" onclick="checkChoice(this,false)">Length of sound only</button><button class="choice" onclick="checkChoice(this,false)">Loudness only</button></div><div class="feedback"></div></div></article>
+      <article class="ilaw-card"><span class="tag">I • LEARN • 10 min</span><h3>🎵 Three Key Ideas</h3><p><b>Pitch</b> is the highness or lowness of sound. <b>Rhythm</b> concerns the value/duration of notes and rests—the length of sound or silence. When pitch and rhythm are combined, they create <b>melody</b>.</p><div class="example"><b>Remember:</b> Pitch tells us “how high or low.” Rhythm tells us “how long.” Melody is the tune created when these musical elements work together.</div></article>
+      <article class="ilaw-card"><span class="tag">L • EXPLORE • 10 min</span><h3>🔎 Spot the Difference</h3><p>Imagine four notes with the same duration but different heights. The change in height is a change in <b>pitch</b>. Now imagine notes at the same height but with different durations. That difference belongs to <b>rhythm</b>.</p><button class="btn btn-light" onclick="reveal('r1')">Reveal a quick check</button><div id="r1" class="feedback"></div></article>
+      <article class="ilaw-card"><span class="tag">A • APPLY / PRACTICE-PLAY • 15 min</span><h3>🧩 Melody Builder</h3><p>Put the ideas together. Select the best word.</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,false)">Rhythm</button><button class="choice" onclick="checkChoice(this,true)">Melody</button><button class="choice" onclick="checkChoice(this,false)">Pitch</button></div><p class="small">Prompt: “The tune that you sing” is the ______.</p><div class="feedback"></div></article>
+      <article class="ilaw-card"><span class="tag">W • THINK / CHECK / MASTER • 10 min</span><h3>💡 Explain It</h3><p>Why can two sequences of notes sound different even when their rhythm is similar?</p><button class="btn btn-gold" onclick="reveal('r2')">Show model answer</button><div id="r2" class="feedback"></div></article>
+      <article class="ilaw-card"><span class="tag">EXIT TICKET</span><h3>🎫 5-second recap</h3><p>Complete: “Pitch is ______; rhythm is ______; melody is ______.”</p><button class="btn btn-primary" onclick="markComplete('day1')">✓ Mark Day 1 Complete</button><div id="day1done" class="feedback"></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="day2" class="section">
+  <div class="section-head"><div><span class="kicker">DAY 2 • MUSIC</span><h2>Melodic Direction & Melodic Contour</h2><p>Date: __________ • Estimated time: 50 minutes</p></div></div>
+  <div class="card lesson-card">
+    <div class="target"><b>Daily target:</b> Identify up/down, step-wise/skip-wise, and repeating melodic movement, then describe the overall melodic contour.</div>
+    <div class="ilaw">
+      <article class="ilaw-card"><span class="tag">MOTIVATION • 5 min</span><h3>🐸 Notes Like Hopping Frogs</h3><p>The source compares notes on the staff to frogs that hop in steps and skip on lines and spaces. Look at the “shape” a sequence of notes would make if you connected their note heads.</p><div class="your-turn"><h3>Think About It!</h3><p>If the notes move from low to high, is the direction generally up or down?</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,true)">Up</button><button class="choice" onclick="checkChoice(this,false)">Down</button><button class="choice" onclick="checkChoice(this,false)">Repeating</button></div><div class="feedback"></div></div></article>
+      <article class="ilaw-card"><span class="tag">I • LEARN • 10 min</span><h3>📈 Four Movement Ideas</h3><div class="feature-list"><div class="feature"><b>Up + step-wise</b><span>Notes rise through neighboring line/space positions.</span></div><div class="feature"><b>Down + step-wise</b><span>Notes fall through neighboring positions.</span></div><div class="feature"><b>Up + skip-wise</b><span>Notes rise with a skip between positions.</span></div><div class="feature"><b>Down + skip-wise</b><span>Notes fall with a skip.</span></div><div class="feature"><b>Repeating</b><span>Notes stay on the same line or space.</span></div></div></article>
+      <article class="ilaw-card"><span class="tag">L • EXPLORE • 10 min</span><h3>🔍 Direction Detective</h3><p>Read each pattern conceptually.</p><div class="example"><b>A:</b> low → a little higher → higher → highest = <button class="reveal" onclick="reveal('dirA')">check</button><div id="dirA"></div></div><div class="example"><b>B:</b> high → lower → lower → lowest = <button class="reveal" onclick="reveal('dirB')">check</button><div id="dirB"></div></div><div class="example"><b>C:</b> same → same → same → same = <button class="reveal" onclick="reveal('dirC')">check</button><div id="dirC"></div></div></article>
+      <article class="ilaw-card"><span class="tag">A • APPLY / PRACTICE-PLAY • 15 min</span><h3>🎮 Direction Challenge</h3><p>Choose the description for each sequence.</p><div id="directionGame"></div></article>
+      <article class="ilaw-card"><span class="tag">W • THINK / CHECK / MASTER • 10 min</span><h3>〰️ Melodic Contour</h3><p>The source calls the overall shape of a melody its <b>melodic contour</b>. A contour may look like a cave, a smile, or stairs that go up and down.</p><div class="your-turn"><h3>Challenge Yourself!</h3><p>Why is connecting note heads useful?</p><button class="reveal" onclick="reveal('contour')">Show idea</button><div id="contour"></div></div></article>
+      <article class="ilaw-card"><span class="tag">EXIT TICKET</span><h3>🎫 Describe the Movement</h3><p>What is the difference between <b>step-wise</b> and <b>skip-wise</b> movement?</p><button class="btn btn-primary" onclick="markComplete('day2')">✓ Mark Day 2 Complete</button><div id="day2done" class="feedback"></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="day3" class="section">
+  <div class="section-head"><div><span class="kicker">DAY 3 • ARTS</span><h2>What Is Space in Art?</h2><p>Date: __________ • Estimated time: 50 minutes</p></div></div>
+  <div class="card lesson-card">
+    <div class="target"><b>Daily target:</b> Define space as an element of art and explain how drawings can create an illusion of depth on a 2-D surface.</div>
+    <div class="ilaw">
+      <article class="ilaw-card"><span class="tag">MOTIVATION • 5 min</span><h3>🏝️ Near, Far, Very Far</h3><p>Look at a landscape. A large palm tree appears near, while smaller trees and mountains appear farther away. Ask: “How did the artist make your eyes feel distance?”</p><div class="your-turn"><h3>Your Turn!</h3><p>Which is a basic element of art discussed in this lesson?</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,false)">Melody</button><button class="choice" onclick="checkChoice(this,true)">Space</button><button class="choice" onclick="checkChoice(this,false)">Rhythm</button></div><div class="feedback"></div></div></article>
+      <article class="ilaw-card"><span class="tag">I • LEARN • 10 min</span><h3>🖼️ Definition</h3><p><b>Space</b> refers to the distance or area between, around, above, below, or within objects. It is one of the basic elements of art.</p><p>Artists represent a three-dimensional world on a two-dimensional surface. Techniques can create an <b>illusion of depth</b>, making a drawing look more realistic.</p><div class="example"><b>Key question:</b> “Does the picture make an object look close, far, or very far?”</div></article>
+      <article class="ilaw-card"><span class="tag">L • EXPLORE • 10 min</span><h3>🔎 Look for Depth</h3><p>Study three visual clues: <b>size</b>, <b>overlapping</b>, and <b>placement</b>. Before checking the answer, explain what your eyes notice.</p><div class="feature-list"><div class="feature"><b>Size difference</b><span>Similar objects that appear farther away are represented smaller.</span></div><div class="feature"><b>Overlapping</b><span>An object in front can partially cover another object, making the covered one appear farther back.</span></div><div class="feature"><b>Placement</b><span>Objects positioned higher on the picture plane generally appear farther away; lower objects generally appear closer.</span></div></div></article>
+      <article class="ilaw-card"><span class="tag">A • APPLY / PRACTICE-PLAY • 15 min</span><h3>🎯 Depth Clue Sort</h3><p>Choose the technique shown by the situation.</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,true)">Size difference</button><button class="choice" onclick="checkChoice(this,false)">Melodic contour</button><button class="choice" onclick="checkChoice(this,false)">Rhythm</button></div><p class="small">Situation: “The same kind of tree is drawn large in front and small in the distance.”</p><div class="feedback"></div></article>
+      <article class="ilaw-card"><span class="tag">W • THINK / CHECK / MASTER • 10 min</span><h3>💭 Why Does It Work?</h3><p>Why can changing the size of similar objects create a sense of depth?</p><button class="btn btn-gold" onclick="reveal('spaceWhy')">Show model answer</button><div id="spaceWhy"></div></article>
+      <article class="ilaw-card"><span class="tag">EXIT TICKET</span><h3>🎫 One-Sentence Mastery</h3><p>Define space in art in your own words.</p><button class="btn btn-primary" onclick="markComplete('day3')">✓ Mark Day 3 Complete</button><div id="day3done" class="feedback"></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="day4" class="section">
+  <div class="section-head"><div><span class="kicker">DAY 4 • ARTS + INTEGRATION</span><h2>Creating Depth: Size, Overlap & Placement</h2><p>Date: __________ • Estimated time: 50 minutes</p></div></div>
+  <div class="card lesson-card">
+    <div class="target"><b>Daily target:</b> Select and apply appropriate space/depth techniques, then connect the idea of “shape/direction” in visual art and music.</div>
+    <div class="ilaw">
+      <article class="ilaw-card"><span class="tag">MOTIVATION • 5 min</span><h3>👀 Which Looks Closer?</h3><p>Imagine two similar houses. One is large at the bottom of the picture; the other is smaller and higher. Which appears closer?</p><div class="choice-row"><button class="choice" onclick="checkChoice(this,true)">The larger/lower house</button><button class="choice" onclick="checkChoice(this,false)">The smaller/higher house</button><div class="feedback"></div></div></article>
+      <article class="ilaw-card"><span class="tag">I • LEARN • 10 min</span><h3>📐 Three Techniques</h3><p><b>1. Size Difference:</b> farther similar objects look smaller.</p><p><b>2. Overlapping:</b> a closer object can partially cover a farther object.</p><p><b>3. Placement of Objects:</b> objects higher in the picture plane generally appear farther away, while lower objects generally appear closer.</p></article>
+      <article class="ilaw-card"><span class="tag">L • EXPLORE • 10 min</span><h3>🧠 Technique Match</h3><div class="match-grid"><div class="match-item"><b>Scene A</b><br>A large circle covers part of a smaller circle.</div><div class="match-item"><b>Scene B</b><br>Three similar trees become smaller toward the horizon.</div><div class="match-item"><b>Scene C</b><br>Objects are positioned higher or lower in the picture plane.</div><div class="match-item"><b>Choose:</b><br>Overlapping • Size Difference • Placement</div></div><button class="btn btn-light" style="margin-top:12px" onclick="reveal('matchAnswer')">Check matches</button><div id="matchAnswer"></div></article>
+      <article class="ilaw-card"><span class="tag">A • APPLY / PRACTICE-PLAY • 15 min</span><h3>🎮 Sort the Clues</h3><p>Tap a clue to place it into a category.</p><div class="sort-zone" id="cluePool"><button class="sort-chip" onclick="sortClue(this,'size')">Farther similar objects are smaller</button><button class="sort-chip" onclick="sortClue(this,'overlap')">One object partially covers another</button><button class="sort-chip" onclick="sortClue(this,'placement')">An object is higher on the picture plane</button></div><div class="two-col" style="margin-top:10px"><div><b>Size Difference</b><div class="sort-zone" id="sizeZone"></div></div><div><b>Overlapping</b><div class="sort-zone" id="overlapZone"></div></div><div><b>Placement</b><div class="sort-zone" id="placementZone"></div></div><div><b>Check</b><br><button class="btn btn-primary" onclick="checkSort()">Check Sort</button><div id="sortFeedback" class="feedback"></div></div></div></article>
+      <article class="ilaw-card"><span class="tag">W • THINK / CHECK / MASTER • 10 min</span><h3>🔗 Connect Music & Art</h3><p>In music, connecting note heads can reveal a <b>melodic contour</b>. In art, looking at object size, overlap, and placement helps reveal <b>depth/space</b>. Both ask you to look for a meaningful pattern.</p><div class="your-turn"><h3>Think About It!</h3><p>What do both activities train you to do?</p><button class="reveal" onclick="reveal('integration')">Show answer</button><div id="integration"></div></div></article>
+      <article class="ilaw-card"><span class="tag">EXIT TICKET</span><h3>🎫 Apply</h3><p>Name one technique you would use to make a distant tree look farther away.</p><button class="btn btn-primary" onclick="markComplete('day4')">✓ Mark Day 4 Complete</button><div id="day4done" class="feedback"></div></article>
+    </div>
+  </div>
+</section>
+
+<section id="day5" class="section">
+  <div class="section-head"><div><span class="kicker">DAY 5 • INTEGRATION & MASTERY</span><h2>Review, Explain, and Prepare for Assessment</h2><p>Date: __________ • Estimated time: 50 minutes</p></div></div>
+  <div class="card lesson-card">
+    <div class="target"><b>Daily target:</b> Demonstrate mastery by identifying musical direction/contour and explaining how artists create the illusion of space.</div>
+    <div class="ilaw">
+      <article class="ilaw-card"><span class="tag">MOTIVATION • 5 min</span><h3>⚡ Rapid Recall</h3><p>Answer these without looking back: What is melody? What is melodic direction? What is space in art? Name one depth technique.</p><button class="btn btn-light" onclick="reveal('rapid')">Show key</button><div id="rapid"></div></article>
+      <article class="ilaw-card"><span class="tag">I • LEARN • 10 min</span><h3>📚 Week-at-a-Glance</h3><div class="feature-list"><div class="feature"><b>Music</b><span>Pitch + rhythm → melody. Note movement may be up/down, step-wise/skip-wise, or repeating. The overall shape is melodic contour.</span></div><div class="feature"><b>Arts</b><span>Space is distance/area. Depth can be suggested by size difference, overlapping, and placement.</span></div></div></article>
+      <article class="ilaw-card"><span class="tag">L • EXPLORE • 10 min</span><h3>🧩 Mini Mixed Review</h3><p>1) A sequence goes low → higher → highest. Direction? <button class="reveal" onclick="reveal('mix1')">answer</button></p><div id="mix1"></div><p>2) Similar objects get smaller toward the distance. Technique? <button class="reveal" onclick="reveal('mix2')">answer</button></p><div id="mix2"></div><p>3) Notes stay on the same line/space. Direction? <button class="reveal" onclick="reveal('mix3')">answer</button></p><div id="mix3"></div></article>
+      <article class="ilaw-card"><span class="tag">A • APPLY / PRACTICE-PLAY • 15 min</span><h3>🏆 Mastery Challenge</h3><p>Choose the best answer for each.</p><div id="masteryGame"></div></article>
+      <article class="ilaw-card"><span class="tag">W • THINK / CHECK / MASTER • 10 min</span><h3>🪞 Reflection</h3><p>Finish: “I used to think ______. Now I understand ______.”</p><button class="btn btn-gold" onclick="markComplete('day5')">✓ I Can Explain It</button><div id="day5done" class="feedback"></div></article>
+      <article class="ilaw-card"><span class="tag">WEEKLY SUMMARY</span><h3>🌟 What We Learned This Week</h3><ul><li><b>Melody:</b> the horizontal arrangement of notes in the musical staff; the tune that you sing.</li><li><b>Melodic direction:</b> the step or skip movement between two notes.</li><li><b>Melodic contour:</b> the overall shape of a melody.</li><li><b>Space:</b> distance/area between, around, above, below, or within objects.</li><li><b>Depth techniques:</b> size difference, overlapping, placement of objects.</li></ul><div class="target"><b>Competency checklist</b><br>☐ I can explain melody. ☐ I can identify melodic direction. ☐ I can describe melodic contour. ☐ I can define space in art. ☐ I can explain size difference, overlapping, and placement.</div></article>
+    </div>
+  </div>
+</section>
+
+<section id="assessment" class="section">
+  <div class="section-head"><div><span class="kicker">FINAL ASSESSMENT • 25 ITEMS</span><h2>Music & Arts Mastery Check</h2><p>Answer all items, then press Submit / Check Answers.</p></div></div>
+  <div class="card lesson-card">
+    <div id="assessmentList" class="assess-list"></div>
+    <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn btn-primary" onclick="submitAssessment()">✓ Submit / Check Answers</button>
+      <button class="btn btn-light" onclick="resetAssessment()">↻ Reset</button>
+    </div>
+    <div id="assessmentResult" class="result"></div>
+  </div>
+</section>
+
+<section id="sources" class="section">
+  <div class="section-head"><div><span class="kicker">SOURCE VISUALS</span><h2>Lesson Page References</h2><p>These are the user-provided lesson pages used as the content basis for this reviewer.</p></div></div>
+  <div class="source-grid">
+    <figure><img src="source-music-1.jpg" alt="Music lesson page"><figcaption>Music Lesson 6: objectives and Happy Birthday recall.</figcaption></figure>
+    <figure><img src="source-music-2.jpg" alt="Music lesson page"><figcaption>Music Lesson 6: melody, pitch, rhythm, and melodic direction.</figcaption></figure>
+    <figure><img src="source-music-3.jpg" alt="Music lesson page"><figcaption>Music Lesson 6: melodic contour examples.</figcaption></figure>
+    <figure><img src="source-music-4.jpg" alt="Music lesson page"><figcaption>Music Lesson 6: Achieve—identify melodic direction.</figcaption></figure>
+    <figure><img src="source-arts-1.jpg" alt="Arts lesson page"><figcaption>Arts Lesson 5: objectives and recall on near/far space.</figcaption></figure>
+    <figure><img src="source-arts-2.jpg" alt="Arts lesson page"><figcaption>Arts Lesson 5: definition of space and size difference.</figcaption></figure>
+    <figure><img src="source-arts-3.jpg" alt="Arts lesson page"><figcaption>Arts Lesson 5: overlapping and placement of objects.</figcaption></figure>
+  </div>
+</section>
+
+<div class="nav-controls">
+  <button class="btn btn-light" id="prevBtn">← Previous</button>
+  <button class="btn btn-primary" id="nextBtn">Next →</button>
+</div>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <img src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png" alt="Teacher Ed Learning Hub logo">
+    <div><b>Teacher Ed Learning Hub</b><br><span class="footer-note">Interactive Music & Arts Reviewer • Grade 8 • Term 3 • Week 9</span></div>
+  </div>
+</footer>
+<button class="btn btn-gold fullscreen" id="fullBtn">⛶ FULL SCREEN</button>
+<div class="toast" id="toast"></div>
+
+<script>
+const sections=['home','day1','day2','day3','day4','day5','assessment','sources'];
+let current=0;
+
+function go(id){
+  const idx=sections.indexOf(id);
+  if(idx<0)return;
+  current=idx;
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.toggle('active',b.dataset.section===id));
+  document.getElementById('progressFill').style.width=((current+1)/sections.length*100)+'%';
+  document.getElementById('progressText').textContent=(current+1)+' of '+sections.length+' sections';
+  document.getElementById('navLinks').classList.remove('open');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('prevBtn').disabled=current===0;
+  document.getElementById('nextBtn').textContent=current===sections.length-1?'Finish':'Next →';
+}
+function next(){if(current<sections.length-1)go(sections[current+1]);}
+function prev(){if(current>0)go(sections[current-1]);}
+document.querySelectorAll('.nav-btn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.section)));
+document.getElementById('nextBtn').addEventListener('click',next);
+document.getElementById('prevBtn').addEventListener('click',prev);
+document.getElementById('menuBtn').addEventListener('click',()=>document.getElementById('navLinks').classList.toggle('open'));
+
+function checkChoice(btn,correct){
+  const box=btn.parentElement.parentElement;
+  const fb=box.querySelector('.feedback');
+  if(correct){fb.textContent='✅ Correct! Great thinking!';fb.className='feedback correct';showToast('Correct! Great thinking!');}
+  else{fb.textContent="❌ Not quite. Let's review the idea and try again.";fb.className='feedback incorrect';showToast('Try again — review the example.');}
+}
+function reveal(id){
+ const el=document.getElementById(id); if(!el)return;
+ const answers={
+  r1:'Rhythm is about duration/value of notes and rests; pitch is about highness or lowness.',
+  r2:'Because changing pitch changes the tune/melodic shape even when the timing pattern is similar.',
+  dirA:'Upward direction.',
+  dirB:'Downward direction.',
+  dirC:'Repeating.',
+  contour:'Connecting note heads lets you see the overall shape or contour of the melody.',
+  spaceWhy:'Because similar objects are perceived as farther away when represented smaller, creating a sense of depth.',
+  matchAnswer:'A = Overlapping; B = Size Difference; C = Placement of Objects.',
+  integration:'Both train you to observe patterns, relationships, and visual/auditory direction instead of looking at isolated parts only.',
+  rapid:'Melody = tune; melodic direction = movement between notes; space = distance/area around or between objects; depth clues = size difference, overlapping, placement.',
+  mix1:'Up.',
+  mix2:'Size difference.',
+  mix3:'Repeating.'
+ };
+ el.innerHTML='<div class="callout">💡 '+(answers[id]||'Review the example and explain what you notice.')+'</div>';
+}
+function markComplete(day){
+ const el=document.getElementById(day+'done');
+ el.textContent='✅ Completed! Nice work. Keep going!';
+ el.className='feedback correct';
+ localStorage.setItem(day+'Done','1');
+ showToast(day.toUpperCase()+' completed');
+}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),1800);}
+
+const directionItems=[
+ {q:'low → higher → highest',a:'Up',opts:['Up','Down','Repeating']},
+ {q:'high → lower → lowest',a:'Down',opts:['Up','Down','Repeating']},
+ {q:'same line → same line → same line',a:'Repeating',opts:['Up','Down','Repeating']},
+ {q:'low → skip higher → higher',a:'Up and skip-wise',opts:['Up and step-wise','Up and skip-wise','Down and step-wise']},
+];
+const masteryItems=[
+ {q:'The overall shape of a melody is called…',a:'Melodic contour',opts:['Melodic contour','Space','Rhythm']},
+ {q:'A distant similar object is usually represented…',a:'Smaller',opts:['Smaller','Larger','With no size']},
+ {q:'One object partially covering another suggests…',a:'Overlapping',opts:['Overlapping','Repeating','Pitch']},
+];
+function buildMiniGames(){
+ const d=document.getElementById('directionGame');
+ directionItems.forEach((it,i)=>{
+  const wrap=document.createElement('div');wrap.className='example';
+  wrap.innerHTML='<b>'+it.q+'</b><div class="choice-row"></div><div class="feedback"></div>';
+  const row=wrap.querySelector('.choice-row');
+  it.opts.forEach(o=>{const b=document.createElement('button');b.className='choice';b.textContent=o;b.onclick=()=>{const fb=wrap.querySelector('.feedback');if(o===it.a){fb.textContent='✅ Correct!';fb.className='feedback correct'}else{fb.textContent='❌ Try again.';fb.className='feedback incorrect'}};row.appendChild(b)});
+  d.appendChild(wrap);
+ });
+ const m=document.getElementById('masteryGame');
+ masteryItems.forEach(it=>{
+  const wrap=document.createElement('div');wrap.className='example';
+  wrap.innerHTML='<b>'+it.q+'</b><div class="choice-row"></div><div class="feedback"></div>';
+  const row=wrap.querySelector('.choice-row');
+  it.opts.forEach(o=>{const b=document.createElement('button');b.className='choice';b.textContent=o;b.onclick=()=>{const fb=wrap.querySelector('.feedback');if(o===it.a){fb.textContent='✅ Correct!';fb.className='feedback correct'}else{fb.textContent='❌ Not quite.';fb.className='feedback incorrect'}};row.appendChild(b)});
+  m.appendChild(wrap);
+ });
+}
+function sortClue(btn,cat){
+ document.getElementById(cat+'Zone').appendChild(btn);
+ btn.dataset.category=cat;
+}
+function checkSort(){
+ let total=0,correct=0;
+ ['size','overlap','placement'].forEach(cat=>{
+  document.getElementById(cat+'Zone').querySelectorAll('.sort-chip').forEach(x=>{total++;if(x.dataset.category===cat)correct++});
+ });
+ const fb=document.getElementById('sortFeedback');
+ if(total===3&&correct===3){fb.textContent='✅ Perfect sort! You identified all three depth clues.';fb.className='feedback correct'}
+ else{fb.textContent='❌ Not yet. Each clue belongs to the technique it describes.';fb.className='feedback incorrect'}
+}
+
+const assessment=[
+['MC','What is pitch?',['The highness or lowness of sound','The length of silence only','The arrangement of colors','The size of an object'],0],
+['MC','What is rhythm concerned with?',['The height of mountains','The duration/value of notes and rests','The size of drawings','The color of a painting'],1],
+['MC','When pitch and rhythm are combined, they create…',['Space','Melody','Placement','Overlapping'],1],
+['MC','Melody is described in the lesson as…',['The tune that you sing','Only the loudness of sound','A drawing technique','The distance between objects'],0],
+['MC','The step or skip movement between two notes is called…',['Melodic direction','Melodic color','Visual space','Object placement'],0],
+['MC','A sequence that moves from low to high generally has what direction?',['Down','Up','Repeating','None'],1],
+['MC','A sequence that stays on the same line or space is…',['Repeating','Down and skip-wise','Up and step-wise','Overlapping'],0],
+['MC','The overall shape of a melody is called…',['Melodic contour','Size difference','Placement','Rhythm'],0],
+['MC','Which is an example of up and step-wise movement?',['Neighboring notes rising one position at a time','Notes staying on one line','Notes falling with skips','Objects getting smaller'],0],
+['MC','Which is an example of down and skip-wise movement?',['Notes rise by neighboring positions','Notes fall with a skip between positions','Notes repeat','Objects overlap'],1],
+['MC','What is space in art?',['Distance or area between, around, above, below, or within objects','Only an empty white background','A type of musical rhythm','The loudness of a sound'],0],
+['MC','Space is one of the basic…',['elements of art','types of rests','musical notes','weather patterns'],0],
+['MC','Artists create an illusion of depth to make a 2-D drawing appear more…',['realistic','silent','musical','flat'],0],
+['MC','Which technique uses different sizes of similar objects to suggest distance?',['Size difference','Melodic contour','Rhythm','Pitch'],0],
+['MC','According to the lesson, the farther a similar object is, the…',['smaller it appears','larger it appears','louder it becomes','faster it moves'],0],
+['MC','Which technique makes a farther object seem behind by having a closer object partly cover it?',['Overlapping','Pitch','Repeating','Step-wise movement'],0],
+['MC','In placement of objects, objects positioned higher within the picture plane generally appear…',['farther away','closer','larger automatically','musical'],0],
+['MC','Objects positioned lower on the picture plane generally appear…',['closer','farther away','silent','repeating'],0],
+['MC','Which set contains the three depth techniques discussed?',['Size difference, overlapping, placement','Pitch, rhythm, melody','Line, pitch, contour','Tempo, rest, melody'],0],
+['MC','If three similar trees become smaller toward the horizon, the main clue is…',['size difference','overlapping','repeating','rhythm'],0],
+['MC','If a nearer object partially covers a farther object, the clue is…',['overlapping','size difference','pitch','step-wise movement'],0],
+['MC','Connecting note heads helps a learner notice the…',['melodic contour','object placement','size difference','picture plane'],0],
+['MC','Which statement best compares the two lessons?',['Both use observable relationships/patterns to understand a whole','Both are only about color','Both teach musical rhythm only','Both avoid visual or auditory patterns'],0],
+['MC','A melody shaped like stairs that go up and down is an example of noticing its…',['melodic contour','space only','size difference','overlapping'],0],
+['MC','Which is the best way to demonstrate mastery of these lessons?',['Identify the concept, explain the clue, and apply it to a new example','Memorize words without examples','Skip all practice and guess','Look only at decorations'],0]
+];
+
+function buildAssessment(){
+ const box=document.getElementById('assessmentList');
+ assessment.forEach((item,i)=>{
+  const [type,q,opts,ans]=item;
+  const div=document.createElement('div');div.className='q';div.dataset.answer=ans;
+  div.innerHTML='<div class="q-title">'+(i+1)+'. '+q+'</div><div class="options"></div>';
+  const options=div.querySelector('.options');
+  opts.forEach((o,j)=>{
+   const label=document.createElement('label');
+   label.innerHTML='<input type="radio" name="q'+i+'" value="'+j+'"> <span><b>'+String.fromCharCode(65+j)+'.</b> '+o+'</span>';
+   options.appendChild(label);
+  });
+  box.appendChild(div);
+ });
+}
+function submitAssessment(){
+ let score=0,answered=0;
+ document.querySelectorAll('#assessmentList .q').forEach((q,i)=>{
+  const chosen=q.querySelector('input:checked');
+  q.style.borderColor='#dfe7f0';
+  if(chosen){answered++;if(Number(chosen.value)===Number(q.dataset.answer)){score++;q.style.borderColor='#9bd7bb'}else{q.style.borderColor='#f1b6b0'}}
+ });
+ const pct=Math.round(score/assessment.length*100);
+ const result=document.getElementById('assessmentResult');
+ let msg=pct>=90?'🌟 Excellent! You demonstrated strong mastery.':pct>=75?'👏 Great job! You demonstrated good understanding.':pct>=60?'👍 Good effort! Review the sections connected to the items you missed.':'💪 Keep practicing! Review the daily lessons, then try the assessment again.';
+ result.style.display='block';
+ result.innerHTML='<div class="score-big">'+score+'/'+assessment.length+' • '+pct+'%</div><p><b>'+answered+'/'+assessment.length+'</b> questions answered.</p><p>'+msg+'</p><div class="callout"><b>Suggested review:</b> Music items focus on pitch, rhythm, melody, melodic direction, and contour. Arts items focus on space, size difference, overlapping, and placement.</div><div class="review-grid" id="reviewGrid"></div>';
+ const rg=document.getElementById('reviewGrid');
+ assessment.forEach((item,i)=>{
+  const chosen=document.querySelector('input[name="q'+i+'"]:checked');
+  if(!chosen || Number(chosen.value)!==Number(item[3])){
+   const row=document.createElement('div');row.className='review-row';
+   row.innerHTML='<b>#'+(i+1)+'</b><span>Your answer: '+(chosen?item[2][Number(chosen.value)]:'Not answered')+'</span><span class="ans"><b>Correct:</b> '+item[2][item[3]]+'</span>';
+   rg.appendChild(row);
+  }
+ });
+ localStorage.setItem('lastScore',pct);
+ showToast('Assessment scored: '+score+'/'+assessment.length);
+ result.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function resetAssessment(){
+ document.querySelectorAll('#assessmentList input').forEach(x=>x.checked=false);
+ document.querySelectorAll('#assessmentList .q').forEach(q=>q.style.borderColor='#dfe7f0');
+ document.getElementById('assessmentResult').style.display='none';
+ showToast('Assessment reset');
+}
+document.getElementById('fullBtn').addEventListener('click',async()=>{
+ try{
+  if(!document.fullscreenElement){await document.documentElement.requestFullscreen();document.getElementById('fullBtn').textContent='⛶ EXIT FULL SCREEN'}
+  else{await document.exitFullscreen();document.getElementById('fullBtn').textContent='⛶ FULL SCREEN'}
+ }catch(e){showToast('Full-screen is not available in this browser.')}
+});
+document.addEventListener('fullscreenchange',()=>{if(!document.fullscreenElement)document.getElementById('fullBtn').textContent='⛶ FULL SCREEN'});
+
+buildMiniGames();buildAssessment();go('home');
+</script>
+</body>
+</html>

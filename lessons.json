@@ -628,6 +628,26 @@
     "date": "2026-09-07",
     "featured": false,
     "icon": "heart-handshake"
+  },
+  {
+    "title": "Addition and Subtraction Mastery Quest | Interactive Reviewer",
+    "subject": "Mathematics",
+    "grade": "Grade 3",
+    "description": "Explore six lessons through a clear Learn → Explore → Practice-Play → Think → Check → Master sequence. Designed for young learners: short chunks, visual cues, worked examples, predictable navigation, instant feedback, and repeated practice.",
+    "file": "lessons/mathematics/grade-3/Teacher_Ed_Math_Addition_Subtraction_Elaborated_Interactive_Reviewer/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "calculator"
+  },
+  {
+    "title": "MAPEH Grade 3 Music & Arts Interactive Reviewer",
+    "subject": "MAPEH",
+    "grade": "Grade 3",
+    "description": "Explore two connected lessons: Melodic Lines and Direction in Music and Illusion of Space in Drawings in Arts.",
+    "file": "lessons/MAPEH/grade-3/TeacherEd_Music_Arts_Interactive_Reviewer/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "music-note"
   }
 
 ]
