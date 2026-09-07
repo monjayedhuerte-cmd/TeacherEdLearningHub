@@ -648,6 +648,17 @@
     "date": "2026-09-07",
     "featured": false,
     "icon": "music-note"
+  },
+  {
+    "title": "ESP Grade 3 Maayos na Pakikipag-usap at Pagdamay at Pagmamalasakit",
+    "subject": "ESP",
+    "grade": "Grade 3",
+    "description": "Welcome, learner! This reviewer helps you practice the two lessons from your book through short explanations, examples, games, and a final challenge.",
+    "file": "lessons/esp/grade-3/ESP3_Aralin5_6_Interactive_Reviewer_FIXED_v2/index.html",
+    "date": "2026-09-07",
+    "featured": false,
+    "icon": "music-note"
   }
+
 
 ]

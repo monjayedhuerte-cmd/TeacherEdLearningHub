@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123d7a">
+  <title>Teacher Ed Learning Hub | ESP 3 – Maayos na Pakikipag-usap at Pagdamay</title>
+  <link rel="icon" type="image/jpeg" href="BrandLogo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="brand">
+        <img src="BrandLogo.jpg" alt="Teacher Ed Learning Hub logo">
+        <div>
+          <div class="brand-name">Teacher Ed Learning Hub</div>
+          <div class="brand-sub">Edukasyon sa Pagpapakatao 3 • Interactive Reviewer</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn" id="fullscreenBtn" type="button" title="Full screen">⛶ <span>Full Screen</span></button>
+        <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="mainNav">☰</button>
+      </div>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <button data-section="home">Home</button>
+        <button data-section="lesson5">Aralin 5</button>
+        <button data-section="lesson6">Aralin 6</button>
+        <button data-section="assessment">Assessment</button>
+        <button data-section="results">Results</button>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="section active">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">GRADE 3 • ESP</span>
+            <h1>Maayos na Pakikipag-usap<br><span>at</span> Pagdamay at Pagmamalasakit</h1>
+            <p class="subtitle">Good Communication • Sympathy and Compassion</p>
+            <p>Welcome, learner! This reviewer helps you practice the two lessons from your book through short explanations, examples, games, and a final challenge.</p>
+            <div class="book-note">
+              <strong>📖 Book Connection</strong>
+              <span>Aralin 5: pages 30–35 • Aralin 6: pages 37–38</span>
+            </div>
+            <div class="hero-actions">
+              <button class="primary" data-go="lesson5">Start Aralin 5</button>
+              <button class="secondary" data-go="lesson6">Go to Aralin 6</button>
+            </div>
+          </div>
+          <div class="hero-card">
+            <img src="BrandLogo.jpg" alt="Teacher Ed Learning Hub">
+            <div class="hero-badge">🌟 Learn • Practice • Master</div>
+          </div>
+        </div>
+
+        <div class="lesson-map">
+          <h2>Reviewer Map</h2>
+          <div class="map-grid">
+            <button class="map-card" data-go="lesson5">
+              <span class="map-number">5</span>
+              <div><h3>Maayos na Pakikipag-usap</h3><p>Polite and respectful words in everyday conversations.</p></div>
+              <span>→</span>
+            </button>
+            <button class="map-card" data-go="lesson6">
+              <span class="map-number">6</span>
+              <div><h3>Pagdamay at Pagmamalasakit</h3><p>Understanding others and showing care through appropriate actions.</p></div>
+              <span>→</span>
+            </button>
+            <button class="map-card" data-go="assessment">
+              <span class="map-number">20</span>
+              <div><h3>Final Challenge</h3><p>20 questions covering both lessons.</p></div>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="lesson5" class="section lesson-section">
+        <div class="lesson-head">
+          <div>
+            <span class="eyebrow">ARALIN 5 • PAGES 30–35</span>
+            <h2>Maayos na Pakikipag-usap</h2>
+            <p class="subtitle">Good Communication</p>
+          </div>
+          <div class="progress-wrap">
+            <span id="progress5Text">Step 1 of 6</span>
+            <div class="progress"><span id="progress5Bar"></span></div>
+          </div>
+        </div>
+
+        <div class="stepper" data-lesson="5">
+          <button class="step active" data-step="0">I • Learn</button>
+          <button class="step" data-step="1">L • Explore</button>
+          <button class="step" data-step="2">A • Practice</button>
+          <button class="step" data-step="3">W • Think</button>
+          <button class="step" data-step="4">Check</button>
+          <button class="step" data-step="5">Master</button>
+        </div>
+
+        <div class="lesson-panel" data-panel="5-0">
+          <div class="book-callout"><strong>📖 Open your book to pages 30–32.</strong><br>Look at the lesson title and the discussion about <b>paggalang</b> and <b>pagpapakumbaba</b>.</div>
+          <h3>Today, I can…</h3>
+          <div class="objective-grid">
+            <div>🎯 Nakabubuo ako ng pangungusap gamit ang mga natatanging salita.<small>I can make sentences using special/polite words.</small></div>
+            <div>💬 Naipaliliwanag ko ang mga natatanging salita na ginagamit sa pakikipag-ugnayan.<small>I can explain special words used when interacting with others.</small></div>
+          </div>
+          <h3>What are respectful words?</h3>
+          <p>The lesson explains that words such as <b>“Maaari/Maari ba,” “Pakiusap,” “Paumanhin,” “Pasensiya na,”</b> and <b>“Salamat”</b> help create positive relationships with others.</p>
+          <div class="two-col">
+            <article class="concept-card"><h4>Paggalang <span>Respect</span></h4><p>Pagrespeto at pagmamahal sa kapwa, kalikasan, hayop at iba pa.</p></article>
+            <article class="concept-card"><h4>Pagpapakumbaba <span>Humility</span></h4><p>Pagiging mababa ang loob at hindi pagiging mayabang, lalo na sa mga laro.</p></article>
+          </div>
+          <button class="primary next-btn" data-next="5-1">I'm Ready! →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="5-1">
+          <div class="book-callout"><strong>📖 Explore the examples on pages 32–33.</strong><br>Notice how the polite word changes the tone of a conversation.</div>
+          <h3>Flip the cards</h3>
+          <p>Tap each card to see a simple meaning and an example.</p>
+          <div class="flash-grid">
+            <button class="flash" data-front="Maaari ba?" data-back="May I? / Is it possible?"><span>Maaari ba?</span><small>Tap to reveal</small></button>
+            <button class="flash" data-front="Pakiusap" data-back="Please / A polite request"><span>Pakiusap</span><small>Tap to reveal</small></button>
+            <button class="flash" data-front="Paumanhin" data-back="Excuse me / A polite apology"><span>Paumanhin</span><small>Tap to reveal</small></button>
+            <button class="flash" data-front="Pasensiya na" data-back="I'm sorry / Please forgive me"><span>Pasensiya na</span><small>Tap to reveal</small></button>
+            <button class="flash" data-front="Salamat" data-back="Thank you / Showing gratitude"><span>Salamat</span><small>Tap to reveal</small></button>
+          </div>
+          <div class="mini-question">
+            <h4>Which word is best when asking for help?</h4>
+            <div class="choice-row" data-q="explore1">
+              <button data-answer="Pakiusap">Pakiusap</button>
+              <button data-answer="Salamat">Salamat</button>
+              <button data-answer="Paumanhin">Paumanhin</button>
+            </div>
+            <div class="feedback" id="explore1Feedback"></div>
+          </div>
+          <button class="primary next-btn" data-next="5-2">Continue →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="5-2">
+          <h3>🎮 Practice-Play: Polite Word Picker</h3>
+          <p>Read the situation. Choose the most respectful expression.</p>
+          <div class="scenario-card">
+            <div class="scenario-number" id="s5Num">1</div>
+            <p id="s5Scenario">You want to ask your classmate to lend you a pencil.</p>
+            <div id="s5Choices" class="choice-stack"></div>
+            <div id="s5Feedback" class="feedback"></div>
+            <button id="s5Next" class="secondary hidden">Next Situation →</button>
+          </div>
+          <div class="score-chip" id="s5Score">Score: 0 / 5</div>
+          <button class="primary next-btn hidden" id="s5Continue" data-next="5-3">Continue →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="5-3">
+          <h3>🤔 Think About It</h3>
+          <p>The book asks you to identify statements that show <b>paggalang</b> and <b>pagpapakumbaba</b>.</p>
+          <div class="sort-board">
+            <div><h4>✓ Nagpapakita ng paggalang / pagpapakumbaba</h4><div id="respectDrop" class="drop-zone"></div></div>
+            <div><h4>✗ Hindi nagpapakita</h4><div id="notRespectDrop" class="drop-zone"></div></div>
+          </div>
+          <p class="small">Tap a statement to place it. You may move it again if you change your mind.</p>
+          <div id="sortItems" class="sort-items"></div>
+          <div id="sortFeedback" class="feedback"></div>
+          <button class="primary next-btn" data-next="5-4">Check My Thinking →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="5-4">
+          <h3>✅ Check Your Learning</h3>
+          <p>Choose the best answer. This quick check focuses on the lesson ideas.</p>
+          <div id="check5"></div>
+          <button type="button" class="primary" id="check5Btn">Check Answers</button>
+          <div id="check5Result" class="result-box"></div>
+          <button type="button" class="secondary next-btn" data-next="5-5">Go to Mastery →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="5-5">
+          <div class="mastery">
+            <div class="mastery-icon">⭐</div>
+            <h3>Mastery Challenge</h3>
+            <p>Complete this sentence in your own words:</p>
+            <div class="sentence-builder">
+              <span>Kapag nakikipag-usap ako sa iba, nagpapakita ako ng paggalang sa pamamagitan ng</span>
+              <input id="master5Input" aria-label="Your answer">
+              <span>.</span>
+            </div>
+            <button type="button" class="primary" id="master5Btn">Submit Reflection</button>
+            <div id="master5Feedback" class="feedback"></div>
+          </div>
+          <button class="secondary next-btn" data-next="5-0" data-complete="5">↻ Review Aralin 5</button>
+          <button class="primary" data-go="lesson6">Next: Aralin 6 →</button>
+        </div>
+      </section>
+
+      <section id="lesson6" class="section lesson-section">
+        <div class="lesson-head">
+          <div>
+            <span class="eyebrow">ARALIN 6 • PAGES 37–38</span>
+            <h2>Pagdamay at Pagmamalasakit</h2>
+            <p class="subtitle">Sympathy and Compassion</p>
+          </div>
+          <div class="progress-wrap">
+            <span id="progress6Text">Step 1 of 6</span>
+            <div class="progress"><span id="progress6Bar"></span></div>
+          </div>
+        </div>
+
+        <div class="stepper" data-lesson="6">
+          <button class="step active" data-step="0">I • Learn</button>
+          <button class="step" data-step="1">L • Explore</button>
+          <button class="step" data-step="2">A • Practice</button>
+          <button class="step" data-step="3">W • Think</button>
+          <button class="step" data-step="4">Check</button>
+          <button class="step" data-step="5">Master</button>
+        </div>
+
+        <div class="lesson-panel" data-panel="6-0">
+          <div class="book-callout"><strong>📖 Open your book to pages 37–38.</strong><br>Read the definition of <b>pagdamay o pakikiramay</b> and the five important reminders.</div>
+          <h3>Today, I can…</h3>
+          <div class="objective-grid">
+            <div>💗 Nalalaman ko ang ibig ipakahulugan ng pagdamay at pagmamalasakit.<small>I can explain the meaning of sympathy and compassion.</small></div>
+            <div>🤝 Nakapagbibigay ako ng halimbawa ng pagdamay at pagmamalasakit.<small>I can give examples that show sympathy and compassion.</small></div>
+          </div>
+          <h3>What is Pagdamay?</h3>
+          <p><b>Pagdamay o Pakikiramay</b> ay nangangahulugan ng pag-unawa sa damdamin ng ibang tao o sa paglalagay ng sarili sa katayuan ng iba.</p>
+          <div class="reminder-list">
+            <div><b>1.</b> Maunawaan na ang bawat isa ay nakararanas o dumaraan sa mahihirap na sitwasyon sa buhay.</div>
+            <div><b>2.</b> Maaaring makasakit ang isang tao dahil lahat ay may limitasyon at kahinaan.</div>
+            <div><b>3.</b> Alagaan ang kalusugan at ang sarili upang higit na makatugon sa pangangailangan ng kapwa.</div>
+            <div><b>4.</b> Ang pag-unawa sa kalagayan ng ibang tao ay tanda ng pagmamalasakit.</div>
+            <div><b>5.</b> Huwag agad humusga; unawain muna ang sitwasyon upang makagawa ng angkop na aksiyon.</div>
+          </div>
+          <button class="primary next-btn" data-next="6-1">I'm Ready! →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="6-1">
+          <h3>💡 Explore: What Would You Do?</h3>
+          <p>Tap a situation, then choose the response that best shows pagdamay at pagmamalasakit.</p>
+          <div class="situation-tabs">
+            <button class="situation-tab active" data-sit="0">A</button>
+            <button class="situation-tab" data-sit="1">B</button>
+            <button class="situation-tab" data-sit="2">C</button>
+          </div>
+          <div id="sitContent" class="scenario-card"></div>
+          <div id="sitFeedback" class="feedback"></div>
+          <button class="primary next-btn" data-next="6-2">Continue →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="6-2">
+          <h3>🎮 Practice-Play: Care or Judge?</h3>
+          <p>Decide whether the action shows <b>pagdamay/pagmamalasakit</b> or <b>mabilis na paghuhusga</b>.</p>
+          <div id="careGame"></div>
+          <div class="score-chip" id="careScore">Score: 0 / 5</div>
+          <button class="primary next-btn hidden" id="careContinue" data-next="6-3">Continue →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="6-3">
+          <h3>🧠 Think: Put Yourself in Their Place</h3>
+          <div class="empathy-card">
+            <p id="empathyPrompt">Your classmate is quiet because something difficult happened at home.</p>
+            <div class="choice-stack" id="empathyChoices"></div>
+            <div id="empathyFeedback" class="feedback"></div>
+          </div>
+          <div class="teacher-tip"><b>Teacher Tip:</b> Before judging someone, try to understand what they may be experiencing. Understanding can help you choose an appropriate action.</div>
+          <button class="primary next-btn" data-next="6-4">Check My Thinking →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="6-4">
+          <h3>✅ Check Your Learning</h3>
+          <div id="check6"></div>
+          <button type="button" class="primary" id="check6Btn">Check Answers</button>
+          <div id="check6Result" class="result-box"></div>
+          <button class="secondary next-btn" data-next="6-5">Go to Mastery →</button>
+        </div>
+
+        <div class="lesson-panel hidden" data-panel="6-5">
+          <div class="mastery">
+            <div class="mastery-icon">💗</div>
+            <h3>Mastery Challenge</h3>
+            <p>Write one caring action you can do for someone who is having a difficult time.</p>
+            <textarea id="master6Input" rows="3" placeholder="I can..."></textarea>
+            <button type="button" class="primary" id="master6Btn">Submit Reflection</button>
+            <div id="master6Feedback" class="feedback"></div>
+          </div>
+          <button class="secondary next-btn" data-next="6-0">↻ Review Aralin 6</button>
+          <button class="primary" data-go="assessment">Take Final Challenge →</button>
+        </div>
+      </section>
+
+      <section id="assessment" class="section">
+        <div class="assessment-head">
+          <span class="eyebrow">FINAL CHALLENGE • 20 ITEMS</span>
+          <h2>Show What You Know!</h2>
+          <p class="subtitle">Maayos na Pakikipag-usap + Pagdamay at Pagmamalasakit</p>
+          <div class="assessment-progress"><span id="assessProgress"></span></div>
+        </div>
+        <form id="assessmentForm">
+          <div id="assessmentQuestions"></div>
+          <button class="primary submit-assess" type="submit">Submit Final Challenge</button>
+        </form>
+      </section>
+
+      <section id="results" class="section">
+        <div class="results-card">
+          <span class="eyebrow">YOUR RESULTS</span>
+          <div class="result-trophy">🏆</div>
+          <h2 id="finalMessage">Great work!</h2>
+          <div class="big-score" id="finalScore">0 / 20</div>
+          <p id="finalPercent">0%</p>
+          <div class="stats">
+            <div><strong id="correctCount">0</strong><span>Correct</span></div>
+            <div><strong id="wrongCount">0</strong><span>Needs Review</span></div>
+            <div><strong id="masteryLevel">Beginning</strong><span>Mastery</span></div>
+          </div>
+          <div id="resultAdvice" class="result-advice"></div>
+          <div class="hero-actions">
+            <button class="primary" data-go="assessment">Try Again</button>
+            <button class="secondary" data-go="home">Back Home</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="BrandLogo.jpg" alt="Teacher Ed Learning Hub logo">
+      <div><strong>Teacher Ed Learning Hub</strong><br>Grade 3 • Edukasyon sa Pagpapakatao • Interactive Reviewer</div>
+      <div class="footer-source">Source lesson: Gabatbat, Ma. Emperatriz C. (2016), Edukasyon sa Pagpapakatao 3, Phoenix Publishing House, Aralin 5 pp. 30–35; Aralin 6 pp. 37–38.</div>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
