@@ -640,7 +640,7 @@
     "icon": "calculator"
   },
   {
-    "title": "MAPEH Grade 3 Music & Arts Interactive Reviewer",
+    "title": "MAPEH Grade 3 Music & Arts Interactive Reviewer | Melodic Lines and Direction in Music and Illusion of Space in Drawings in Arts.",
     "subject": "MAPEH",
     "grade": "Grade 3",
     "description": "Explore two connected lessons: Melodic Lines and Direction in Music and Illusion of Space in Drawings in Arts.",
@@ -688,5 +688,35 @@
     "date": "2026-09-07",
     "featured": false,
     "icon": "user-round"
+  },
+  {
+    "title": "ESP 2 | Aralin 8: Ako ay Palakaibigan",
+    "subject": "ESP", 
+    "grade": "Grade 2",
+    "description": "Matutuhan natin kung bakit mahalaga ang pagkakaroon ng kaibigan at kung paano tayo magiging mabuting kaibigan.",
+    "file": "lessons/esp/grade-2/Ako_Ay_Palakaibigan_Grade2_Interactive_Website/index.html",
+    "date": "2026-09-08",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
+    "title": "ESP 2 | Aralin 9: Ako ay Matapat",
+    "subject": "ESP", 
+    "grade": "Grade 2",
+    "description": "Isang interactive learning experience tungkol sa pagiging tapat, patas, at makatotohanan sa ating mga salita at kilos.",
+    "file": "lessons/esp/grade-2/Ako_Ay_Matapat_Grade2_Interactive_Website/index.html",
+    "date": "2026-09-08",
+    "featured": false,
+    "icon": "heart-handshake"
+  },
+  {
+    "title": "ESP 2 | Aralin 10: Alam Ko ang Aking mga Karapatan Bilang Bata",
+    "subject": "ESP", 
+    "grade": "Grade 2",
+    "description": "Isang interactive learning experience tungkol sa pagiging tapat, patas, at makatotohanan sa ating mga salita at kilos.",
+    "file": "lessons/esp/grade-2/ESP2_Aralin10_Karapatan_Grade2_Interactive_Website/index.html",
+    "date": "2026-09-08",
+    "featured": false,
+    "icon": "heart-handshake"
   }
 ]
