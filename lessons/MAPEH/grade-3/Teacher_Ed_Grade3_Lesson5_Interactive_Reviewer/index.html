@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2a5b">
+  <meta name="description" content="Teacher Ed Learning Hub - Grade 3 Lesson 5 Interactive Reviewer">
+  <title>Grade 3 Lesson 5 Reviewer | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/jpeg" href="assets/TeacherEdLearningHubLogo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/TeacherEdLearningHubLogo.jpg" alt="Teacher Ed Learning Hub logo">
+      <div>
+        <div class="brand-name">TEACHER ED LEARNING HUB</div>
+        <div class="brand-sub">Grade 3 • Learn • Practice • Play • Master</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">🔊 Sound On</button>
+      <button id="resetBtn" class="icon-btn" aria-label="Reset progress">↻ Reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">GRADE 3 INTERACTIVE REVIEWER</span>
+        <h1>Lesson 5 Learning Adventure</h1>
+        <p>Move, think, choose, practice, and show what you know!</p>
+      </div>
+      <div class="progress-card">
+        <div class="progress-label"><span>Your Progress</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <div class="stats"><span>⭐ <b id="stars">0</b></span><span>🏆 <b id="badges">0</b></span><span>Level <b id="level">1</b></span></div>
+      </div>
+    </section>
+
+    <nav class="lesson-tabs" aria-label="Lesson selector">
+      <button class="tab active" data-lesson="pe">🏃 PE: Move Forward, Backward, and Sideward</button>
+      <button class="tab" data-lesson="health">❤️ Health: Ways to Be Healthy</button>
+    </nav>
+
+    <section id="peLesson" class="lesson-panel active">
+      <div class="map" id="peMap"></div>
+
+      <section class="card" id="pe-connect">
+        <div class="section-tag">PHASE 1 • CONNECT</div>
+        <h2>👀 What do you already know?</h2>
+        <p>Look at the arrows. Think about where your body can move.</p>
+        <div class="arrow-grid">
+          <div class="direction"><span class="big-arrow">➡️</span><b>Forward</b><small>Move ahead.</small></div>
+          <div class="direction"><span class="big-arrow">⬅️</span><b>Backward</b><small>Move behind.</small></div>
+          <div class="direction"><span class="big-arrow">⬆️</span><b>Up</b><small>Move higher.</small></div>
+          <div class="direction"><span class="big-arrow">⬇️</span><b>Down</b><small>Move lower.</small></div>
+          <div class="direction"><span class="big-arrow">↺</span><b>Counterclockwise</b><small>Turn this way.</small></div>
+          <div class="direction"><span class="big-arrow">↻</span><b>Clockwise</b><small>Turn this way.</small></div>
+        </div>
+        <div class="check-box">
+          <h3>Quick Check</h3>
+          <p>Which direction means moving ahead?</p>
+          <div class="choice-row" data-q="pe-q1">
+            <button class="choice" data-answer="true">Forward ➡️</button>
+            <button class="choice" data-answer="false">Backward ⬅️</button>
+            <button class="choice" data-answer="false">Down ⬇️</button>
+          </div>
+          <div class="feedback" id="pe-q1-feedback"></div>
+        </div>
+      </section>
+
+      <section class="card" id="pe-teach">
+        <div class="section-tag">PHASE 2 • TEACH</div>
+        <h2>📖 Let's Learn</h2>
+        <p>Your body can move in different ways. Games and sports often give directions so you know exactly where to move.</p>
+        <div class="concept-grid">
+          <article><span>➡️</span><h3>Move Forward</h3><p>Go ahead from where you are.</p></article>
+          <article><span>⬅️</span><h3>Move Backward</h3><p>Go behind from where you are.</p></article>
+          <article><span>⬆️</span><h3>Move Up</h3><p>Move toward a higher level.</p></article>
+          <article><span>⬇️</span><h3>Move Down</h3><p>Move toward a lower level.</p></article>
+          <article><span>↺</span><h3>Counterclockwise</h3><p>Move around in the counterclockwise direction.</p></article>
+          <article><span>↻</span><h3>Clockwise</h3><p>Move around in the clockwise direction.</p></article>
+        </div>
+        <div class="teacher-tip">👩‍🏫 <b>Teacher Tip:</b> Stand safely in your space. Follow one direction at a time.</div>
+      </section>
+
+      <section class="card" id="pe-model">
+        <div class="section-tag">PHASE 3 • MODEL</div>
+        <h2>👩‍🏫 Watch Me</h2>
+        <p>Tap each step to see how to follow a movement direction.</p>
+        <div class="model-steps">
+          <button class="model-step active" data-step="0"><b>1</b> Start</button>
+          <button class="model-step" data-step="1"><b>2</b> Forward</button>
+          <button class="model-step" data-step="2"><b>3</b> Backward</button>
+          <button class="model-step" data-step="3"><b>4</b> Sideward</button>
+        </div>
+        <div class="model-stage" id="modelStage">
+          <div class="person">🧍</div>
+          <div class="model-caption">Start in your own safe space.</div>
+        </div>
+      </section>
+
+      <section class="card" id="pe-guided">
+        <div class="section-tag">PHASE 4 • GUIDED PRACTICE</div>
+        <h2>🤝 Let's Do It Together</h2>
+        <p>Choose the movement that matches the direction.</p>
+        <div class="guided-question">
+          <div class="prompt-icon">➡️</div>
+          <h3>Move in the direction shown.</h3>
+          <div class="choice-row" data-q="pe-q2">
+            <button class="choice" data-answer="true">Forward</button>
+            <button class="choice" data-answer="false">Backward</button>
+            <button class="choice" data-answer="false">Down</button>
+          </div>
+          <div class="feedback" id="pe-q2-feedback"></div>
+        </div>
+        <div class="guided-question">
+          <div class="prompt-icon">⬅️</div>
+          <h3>Which movement matches?</h3>
+          <div class="choice-row" data-q="pe-q3">
+            <button class="choice" data-answer="false">Forward</button>
+            <button class="choice" data-answer="true">Backward</button>
+            <button class="choice" data-answer="false">Up</button>
+          </div>
+          <div class="feedback" id="pe-q3-feedback"></div>
+        </div>
+      </section>
+
+      <section class="card" id="pe-independent">
+        <div class="section-tag">PHASE 5 • INDEPENDENT PRACTICE</div>
+        <h2>🎯 Your Turn</h2>
+        <p>Answer by yourself. You can use a hint if you need one.</p>
+        <div id="pePractice"></div>
+      </section>
+
+      <section class="card" id="pe-games">
+        <div class="section-tag">PHASE 6 • GAME PRACTICE</div>
+        <h2>🎮 Game Zone</h2>
+        <div class="game-grid">
+          <button class="game-card" data-game="direction"><span>🎯</span><b>Direction Dash</b><small>Choose the direction.</small></button>
+          <button class="game-card" data-game="match"><span>🧠</span><b>Memory Match</b><small>Match direction and meaning.</small></button>
+          <button class="game-card" data-game="scenario"><span>🏠</span><b>Move Mission</b><small>Apply directions in situations.</small></button>
+        </div>
+        <div id="peGameArea" class="game-area hidden"></div>
+      </section>
+
+      <section class="card" id="pe-spiral">
+        <div class="section-tag">PHASE 7 • SPIRAL REVIEW</div>
+        <h2>🧠 Brain Mix</h2>
+        <p>Mix old and new ideas. Take your time.</p>
+        <div id="peSpiral"></div>
+      </section>
+
+      <section class="card" id="pe-apply">
+        <div class="section-tag">PHASE 8 • APPLICATION</div>
+        <h2>🌟 Use It in Real Life</h2>
+        <p>A coach says, “Move backward two steps, then forward two steps.” What should you do first?</p>
+        <div class="choice-row" data-q="pe-q4">
+          <button class="choice" data-answer="true">Move backward.</button>
+          <button class="choice" data-answer="false">Move forward.</button>
+          <button class="choice" data-answer="false">Move up.</button>
+        </div>
+        <div class="feedback" id="pe-q4-feedback"></div>
+      </section>
+
+      <section class="card" id="pe-mastery">
+        <div class="section-tag">PHASE 9 • MASTERY CHECK</div>
+        <h2>🏆 Final Challenge</h2>
+        <div id="peFinal"></div>
+      </section>
+    </section>
+
+    <section id="healthLesson" class="lesson-panel">
+      <div class="map" id="healthMap"></div>
+
+      <section class="card" id="health-connect">
+        <div class="section-tag">PHASE 1 • CONNECT</div>
+        <h2>❤️ Think About Your Health</h2>
+        <p>Which child is doing something that supports good health?</p>
+        <div class="picture-choices">
+          <button class="picture-choice" data-q="h-q1" data-answer="true"><span>⚽</span><b>Playing actively</b><small>Moving and exercising</small></button>
+          <button class="picture-choice" data-q="h-q1" data-answer="false"><span>🤒</span><b>Feeling sick</b><small>Needs care and rest</small></button>
+        </div>
+        <div class="feedback" id="h-q1-feedback"></div>
+      </section>
+
+      <section class="card" id="health-teach">
+        <div class="section-tag">PHASE 2 • TEACH</div>
+        <h2>📖 What Is a Healthy Person?</h2>
+        <p>The book explains that health is valuable and that we should take good care of ourselves, especially our health.</p>
+        <div class="health-facts">
+          <div>🥗 <b>Eat a balanced diet</b><small>Choose a variety of foods.</small></div>
+          <div>🧼 <b>Practice proper hygiene</b><small>Keep yourself clean.</small></div>
+          <div>🏃 <b>Be active, alert, and enthusiastic</b><small>Take part in healthy activities.</small></div>
+          <div>🧠 <b>Concentrate well</b><small>Be able to focus when doing things.</small></div>
+          <div>😊 <b>Have a positive outlook</b><small>Look at life positively.</small></div>
+          <div>🤝 <b>Respect yourself and others</b><small>Show respect in your relationships.</small></div>
+        </div>
+        <div class="teacher-tip">👩‍🏫 <b>Remember:</b> The source says a healthy person can be free from sickness, active and alert, able to concentrate, socializes well, eats a balanced diet, practices proper hygiene, and respects self and others.</div>
+      </section>
+
+      <section class="card" id="health-model">
+        <div class="section-tag">PHASE 3 • MODEL</div>
+        <h2>👩‍🏫 Watch Me: Healthy Choice</h2>
+        <p>Let's model how to decide whether a habit supports good health.</p>
+        <div class="model-health">
+          <div class="habit-card" id="habitCard">🧼 Washing hands</div>
+          <div class="model-controls">
+            <button id="healthyHabitBtn">✓ Healthy choice</button>
+            <button id="notHealthyHabitBtn">✗ Not a healthy choice</button>
+          </div>
+          <div id="habitFeedback" class="feedback"></div>
+        </div>
+      </section>
+
+      <section class="card" id="health-guided">
+        <div class="section-tag">PHASE 4 • GUIDED PRACTICE</div>
+        <h2>🤝 Let's Do It Together</h2>
+        <p>Choose the statement that describes a healthy person.</p>
+        <div class="choice-stack" data-q="h-q2">
+          <button class="choice" data-answer="true">A person who practices proper hygiene.</button>
+          <button class="choice" data-answer="false">A person who ignores good health habits.</button>
+          <button class="choice" data-answer="false">A person who never takes care of health.</button>
+        </div>
+        <div class="feedback" id="h-q2-feedback"></div>
+      </section>
+
+      <section class="card" id="health-independent">
+        <div class="section-tag">PHASE 5 • INDEPENDENT PRACTICE</div>
+        <h2>🎯 Your Turn</h2>
+        <p>Remember the characteristics from the book. Select the best answer.</p>
+        <div id="healthPractice"></div>
+      </section>
+
+      <section class="card" id="health-games">
+        <div class="section-tag">PHASE 6 • GAME PRACTICE</div>
+        <h2>🎮 Health Game Zone</h2>
+        <div class="game-grid">
+          <button class="game-card" data-game="healthySort"><span>🗂️</span><b>Healthy or Not?</b><small>Sort the choices.</small></button>
+          <button class="game-card" data-game="healthMatch"><span>🧠</span><b>Health Match</b><small>Match habit and idea.</small></button>
+          <button class="game-card" data-game="healthAdventure"><span>🏠</span><b>Healthy Day</b><small>Make good choices.</small></button>
+        </div>
+        <div id="healthGameArea" class="game-area hidden"></div>
+      </section>
+
+      <section class="card" id="health-spiral">
+        <div class="section-tag">PHASE 7 • SPIRAL REVIEW</div>
+        <h2>🧠 Brain Mix</h2>
+        <div id="healthSpiral"></div>
+      </section>
+
+      <section class="card" id="health-apply">
+        <div class="section-tag">PHASE 8 • APPLICATION</div>
+        <h2>🌟 Healthy Choice Mission</h2>
+        <p>You want to take care of yourself. Which pair is supported by the lesson?</p>
+        <div class="choice-row" data-q="h-q3">
+          <button class="choice" data-answer="true">Eat a balanced diet + practice proper hygiene</button>
+          <button class="choice" data-answer="false">Ignore hygiene + avoid healthy habits</button>
+          <button class="choice" data-answer="false">Never care for your health</button>
+        </div>
+        <div class="feedback" id="h-q3-feedback"></div>
+      </section>
+
+      <section class="card" id="health-mastery">
+        <div class="section-tag">PHASE 9 • MASTERY CHECK</div>
+        <h2>🏆 Final Challenge</h2>
+        <div id="healthFinal"></div>
+      </section>
+    </section>
+
+    <section class="completion card" id="completion">
+      <div class="trophy">🏆</div>
+      <h2>🎉 You Did It!</h2>
+      <p>Learning grows when you practice. Great job!</p>
+      <div class="result-grid">
+        <div><span>⭐</span><b id="finalStars">0</b><small>Stars</small></div>
+        <div><span>🏆</span><b id="finalBadges">0</b><small>Badges</small></div>
+        <div><span>📈</span><b id="finalProgress">0%</b><small>Progress</small></div>
+      </div>
+      <div class="completion-actions">
+        <button class="primary" onclick="scrollToTop()">↟ Back to Learning</button>
+        <button class="secondary" onclick="showMistakes()">🔄 Practice My Mistakes</button>
+      </div>
+      <div id="mistakesArea"></div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/TeacherEdLearningHubLogo.jpg" alt="Teacher Ed Learning Hub">
+    <div><strong>Teacher Ed Learning Hub</strong><br>Learn • Practice • Play • Master<br><span>Teacher Ed • Educational Learning Website</span></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
