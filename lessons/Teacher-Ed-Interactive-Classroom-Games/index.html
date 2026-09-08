@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2d5c">
+  <title>Teacher Ed | Interactive Classroom Games</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toastContainer" class="toast-container"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" data-page="home" aria-label="Teacher Ed Home">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <span><strong>Teacher Ed</strong><small>Interactive Classroom Games</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+    <nav id="mainNav">
+      <a href="#home" data-page="home">🏠 Home</a>
+      <a href="#games" data-page="games">🎮 Games</a>
+      <a href="#quick" data-page="quick">⚡ Quick Start</a>
+      <a href="#scores" data-page="scores">🏆 Scoreboard</a>
+      <a href="#tips" data-page="tips">💡 Teacher Tips</a>
+      <a href="#settings" data-page="settings">⚙ Settings</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="soundBtn" title="Toggle sound">🔇</button>
+      <button class="icon-btn" id="fullscreenBtn" title="Fullscreen">⛶</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HOME -->
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">MOTIVATION • ENGAGEMENT • PARTICIPATION</span>
+          <h1>Turn Motivation Time<br><span>Into Game Time!</span></h1>
+          <p>Quick, engaging classroom games designed to spark curiosity, activate prior knowledge, and prepare learners for the lesson.</p>
+          <div class="hero-buttons">
+            <button class="btn primary" id="heroStart">🎮 Start a Game</button>
+            <button class="btn secondary" id="heroExplore">Explore Games</button>
+          </div>
+          <div class="quick-stats">
+            <div><strong>15</strong><span>Games</span></div>
+            <div><strong>3–15</strong><span>Minutes</span></div>
+            <div><strong>G1–G6</strong><span>Elementary</span></div>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="floating-card fc1">🧠 <b>Think</b></div>
+          <div class="floating-card fc2">🎯 <b>Participate</b></div>
+          <div class="floating-card fc3">🚀 <b>Get Curious</b></div>
+          <img src="BrandLogo.png" alt="Teacher Ed logo">
+        </div>
+      </div>
+
+      <div class="section-head">
+        <div><span class="eyebrow">WHY IT WORKS</span><h2>Make the first minutes count.</h2></div>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><div class="feature-icon">🎯</div><h3>Capture Attention</h3><p>Start with a challenge that makes students want to know what comes next.</p></article>
+        <article class="feature-card"><div class="feature-icon">🧠</div><h3>Activate Prior Knowledge</h3><p>Help learners recall what they already know before new learning begins.</p></article>
+        <article class="feature-card"><div class="feature-icon">🙋</div><h3>Increase Participation</h3><p>Give every learner a simple, purposeful way to join the activity.</p></article>
+        <article class="feature-card"><div class="feature-icon">🚀</div><h3>Build Excitement</h3><p>Use game energy to create a natural bridge into your lesson.</p></article>
+      </div>
+
+      <div class="today-card">
+        <div><span class="eyebrow">TODAY'S QUICK GAME</span><h2 id="dailyGameName">Mystery Box</h2><p id="dailyGamePurpose">Create curiosity about the upcoming lesson.</p></div>
+        <button class="btn primary" id="dailyPlay">Play Now →</button>
+      </div>
+    </section>
+
+    <!-- GAMES -->
+    <section id="gamesPage" class="page">
+      <div class="page-title"><span class="eyebrow">GAME LIBRARY</span><h1>Choose Your Classroom Game</h1><p>Filter the library or search for the perfect motivation activity.</p></div>
+      <div class="filters">
+        <div class="search-wrap"><span>🔎</span><input id="gameSearch" type="search" placeholder="Search games..."></div>
+        <select id="gradeFilter"><option value="all">All Grades</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option></select>
+        <select id="subjectFilter"><option value="all">All Subjects</option><option>English</option><option>Filipino</option><option>Mathematics</option><option>Science</option><option>Araling Panlipunan</option><option>ESP/GMRC</option><option>MAPEH</option><option>General</option></select>
+        <select id="durationFilter"><option value="all">Any Duration</option><option value="3–5 minutes">3–5 minutes</option><option value="5–10 minutes">5–10 minutes</option><option value="10–15 minutes">10–15 minutes</option></select>
+        <select id="energyFilter"><option value="all">Any Energy</option><option>Calm</option><option>Moderate</option><option>High Energy</option></select>
+        <button class="btn filter-reset" id="resetFilters" type="button">↻ Reset</button>
+      </div>
+      <div class="library-note"><span>🎯</span><strong id="gameCount">15</strong><span>games ready for your classroom</span><span class="library-note-spacer"></span><span>Tip: Choose a game that matches your lesson goal.</span></div>
+      <div id="gameGrid" class="game-grid"></div>
+    </section>
+
+    <!-- QUICK START -->
+    <section id="quickPage" class="page">
+      <div class="page-title"><span class="eyebrow">QUICK START</span><h1>What do you need right now?</h1><p>Choose your classroom goal and let Teacher Ed recommend a game.</p></div>
+      <div class="need-grid">
+        <button class="need-card" data-need="quick"><span>⚡</span><b>I Need a Quick Game</b><small>3–5 minutes</small></button>
+        <button class="need-card" data-need="thinking"><span>🧠</span><b>I Need a Thinking Game</b><small>Prediction & reasoning</small></button>
+        <button class="need-card" data-need="review"><span>🎯</span><b>I Need a Review Game</b><small>Recall & retrieval</small></button>
+        <button class="need-card" data-need="participate"><span>🙋</span><b>I Need Everyone to Participate</b><small>Whole-class response</small></button>
+        <button class="need-card" data-need="energy"><span>🔥</span><b>I Need an Energy Booster</b><small>Movement & excitement</small></button>
+        <button class="need-card" data-need="topic"><span>🔍</span><b>I Want to Introduce My Topic</b><small>Curiosity & prediction</small></button>
+      </div>
+      <div id="recommendations" class="recommendations hidden"></div>
+    </section>
+
+    <!-- SCORES -->
+    <section id="scoresPage" class="page">
+      <div class="page-title"><span class="eyebrow">CLASSROOM SCOREBOARD</span><h1>🏆 Team Scores</h1><p>Use this simple scoreboard for any team-based game.</p></div>
+      <div class="score-setup card">
+        <div class="field"><label>Team 1</label><input id="team1Name" value="Team A"></div>
+        <div class="field"><label>Team 2</label><input id="team2Name" value="Team B"></div>
+        <div class="field"><label>Team 3</label><input id="team3Name" value="Team C"></div>
+        <div class="field"><label>Team 4</label><input id="team4Name" value="Team D"></div>
+        <button class="btn primary" id="saveTeams">Set Teams</button>
+      </div>
+      <div id="scoreboard" class="scoreboard"></div>
+    </section>
+
+    <!-- TIPS -->
+    <section id="tipsPage" class="page">
+      <div class="page-title"><span class="eyebrow">TEACHER SUPPORT</span><h1>💡 Motivation Teaching Tips</h1><p>Use the game as a bridge to learning—not as entertainment alone.</p></div>
+      <div class="tips-grid">
+        <article class="tip-card"><b>1. ATTENTION</b><p>Start with: “Look at this!” or “I have a challenge for you.”</p></article>
+        <article class="tip-card"><b>2. PARTICIPATION</b><p>Give students a clear response method: raise a hand, vote, move, discuss, or answer.</p></article>
+        <article class="tip-card"><b>3. THINKING</b><p>Ask students to explain why they chose an answer—not only whether it is correct.</p></article>
+        <article class="tip-card"><b>4. DISCUSSION</b><p>Invite different answers and let students compare their ideas.</p></article>
+        <article class="tip-card"><b>5. CONNECTION</b><p>Connect their responses directly to the learning target or topic.</p></article>
+        <article class="tip-card"><b>6. TRANSITION</b><p>Finish with: “Now let’s discover why…” and begin the lesson.</p></article>
+      </div>
+      <div class="transition-card"><span>🎤</span><div><b>Universal transition prompt</b><p>“You made some great observations! Now let’s discover how your ideas connect to today’s lesson.”</p></div></div>
+      <button class="btn secondary" id="printTips">🖨 Print Teacher Guide</button>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="settingsPage" class="page">
+      <div class="page-title"><span class="eyebrow">SETTINGS</span><h1>⚙ Classroom Controls</h1><p>Customize your game experience on this device.</p></div>
+      <div class="settings-card card">
+        <label class="switch-row"><span>🔊 Sound Effects</span><input id="soundSetting" type="checkbox"><i></i></label>
+        <label class="switch-row"><span>✨ Animations</span><input id="animationSetting" type="checkbox" checked><i></i></label>
+        <label class="switch-row"><span>⏰ Timer Sound</span><input id="timerSoundSetting" type="checkbox"><i></i></label>
+        <label class="switch-row"><span>🌙 Dark Mode</span><input id="darkSetting" type="checkbox"><i></i></label>
+        <label class="switch-row"><span>♿ Reduced Motion</span><input id="motionSetting" type="checkbox"><i></i></label>
+        <button class="btn secondary" id="fullscreenSetting">⛶ Enter Fullscreen</button>
+        <button class="btn danger" id="resetSettings">Reset All Settings</button>
+      </div>
+      <div class="my-games card">
+        <div class="section-head"><div><span class="eyebrow">LOCAL STORAGE</span><h2>My Saved Games</h2></div></div>
+        <div id="savedGames"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- GAME MODAL -->
+  <div id="gameModal" class="modal" aria-hidden="true">
+    <div class="modal-panel game-panel">
+      <button class="modal-close" id="closeGame" aria-label="Close">×</button>
+      <div id="gameContent"></div>
+    </div>
+  </div>
+
+  <!-- SETUP MODAL -->
+  <div id="setupModal" class="modal" aria-hidden="true">
+    <div class="modal-panel">
+      <button class="modal-close" id="closeSetup">×</button>
+      <span class="eyebrow">GAME SETUP</span>
+      <h2 id="setupTitle">Prepare Your Game</h2>
+      <div class="setup-grid">
+        <div class="field"><label>Grade Level</label><select id="setupGrade"><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option></select></div>
+        <div class="field"><label>Subject</label><select id="setupSubject"><option>General</option><option>English</option><option>Filipino</option><option>Mathematics</option><option>Science</option><option>Araling Panlipunan</option><option>ESP/GMRC</option><option>MAPEH</option></select></div>
+        <div class="field full"><label>Lesson Topic</label><input id="setupTopic" placeholder="e.g., Parts of a Plant"></div>
+        <div class="field"><label>Teams</label><select id="setupTeams"><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select></div>
+        <div class="field"><label>Timer</label><select id="setupTimer"><option value="0">No Timer</option><option value="15">15 sec</option><option value="30">30 sec</option><option value="45">45 sec</option><option value="60">60 sec</option><option value="90">90 sec</option></select></div>
+        <div class="field"><label>Difficulty</label><select id="setupDifficulty"><option>Easy</option><option>Medium</option><option>Challenge</option></select></div>
+        <div class="field"><label>Participation</label><select id="setupParticipation"><option>Whole Class</option><option>Teams</option><option>Pairs</option><option>Individual</option><option>Movement</option></select></div>
+      </div>
+      <div id="customFields"></div>
+      <button class="btn primary wide" id="startConfiguredGame">START GAME 🚀</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-brand"><img src="BrandLogo.png" alt="Teacher Ed logo"><div><strong>Teacher Ed Learning Hub</strong><span>Play. Participate. Learn.</span></div></div>
+    <div class="footer-center"><strong>Play. Participate. Learn.</strong><span>Motivating learners for a brighter tomorrow.</span></div>
+    <p>© 2026 Teacher Ed Learning Hub • Interactive Classroom Games</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
