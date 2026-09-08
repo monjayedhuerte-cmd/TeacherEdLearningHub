@@ -25,6 +25,14 @@
       "file": "TeacherTools/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "TOS Generator",
+      "title": "Table of Specifications Builder",
+      "description": "Create a balanced examination blueprint automatically.",
+      "file": "TOS%20Generator/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }

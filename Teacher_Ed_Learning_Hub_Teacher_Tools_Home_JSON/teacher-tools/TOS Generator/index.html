@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="TeacherEdFavicon.png">
+    <title>Teacher Ed | TOS Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+
+        <div class="brand-logo">
+            <img
+                src="TeacherEdFavicon.png"
+                alt="Teacher Ed Learning Hub Logo"
+            >
+        </div>
+
+        <div>
+            <h2>Teacher Ed</h2>
+            <span>Assessment Tools</span>
+        </div>
+
+        </div>
+
+        <nav>
+            <a href="/index.html">Home</a>
+            <a class="active" href="#setup">📋 TOS Generator</a>
+            <a href="#competencies">🎯 Competencies</a>
+            <a href="#cognitive">🧠 Cognitive Levels</a>
+            <a href="#tos">📊 TOS Preview</a>
+            
+        </nav>
+
+        <div class="sidebar-footer">
+            <strong>Version 1.0</strong>
+            <span>Table of Specifications</span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <span class="eyebrow">TEACHER ASSESSMENT SYSTEM</span>
+                <h1>Table of Specifications</h1>
+                <p>Create a balanced examination blueprint automatically.</p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="btn secondary" onclick="resetAll()">
+                   ↻ Reset
+                </button>
+
+                <button class="btn excel-btn" onclick="downloadExcel() ">
+                  📊 Download Excel
+                </button>
+
+                <button class="btn primary" onclick="printTOS()">
+                 🖨 Print TOS
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- DASHBOARD CARDS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+
+                <div>
+                    <span>Total Items</span>
+                    <strong id="statItems">40</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🎯</div>
+
+                <div>
+                    <span>Competencies</span>
+                    <strong id="statCompetencies">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+
+                <div>
+                    <span>Teaching Days</span>
+                    <strong id="statDays">0</strong>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🧠</div>
+
+                <div>
+                    <span>Cognitive Levels</span>
+                    <strong>6</strong>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SETUP -->
+        <section class="panel" id="setup">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="section-label">STEP 01</span>
+                    <h2>Exam Setup</h2>
+                    <p>Enter the basic information about your examination.</p>
+                </div>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label>Grade Level</label>
+
+                    <select id="gradeLevel" onchange="applyGradePreset()">
+
+                        <option value="K">Kindergarten</option>
+                        <option value="1">Grade 1</option>
+                        <option value="2">Grade 2</option>
+                        <option value="3">Grade 3</option>
+                        <option value="4" selected>Grade 4</option>
+                        <option value="5">Grade 5</option>
+                        <option value="6">Grade 6</option>
+
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Subject</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="e.g. Mathematics"
+                        value="Mathematics"
+                    >
+                </div>
+
+
+                <div class="form-group">
+                    <label>Term / Quarter</label>
+
+                    <select id="term">
+
+                        <option>First Term</option>
+                        <option>Second Term</option>
+                        <option>Third Term</option>
+
+                        <option>First Long Test (Term 1)</option>
+                        <option>Second Long Test (Term 1)</option>
+                        <option>First Long Test (Term 2)</option>
+                        <option>Second Long Test (Term 2)</option>
+                        <option>First Long Test (Term 3)</option>
+                        <option>Second Long Test (Term 3)</option>
+
+                    </select>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Total Test Items</label>
+
+                    <input
+                        type="number"
+                        id="totalItems"
+                        value="40"
+                        min="5"
+                        max="200"
+                        onchange="calculateTOS()"
+                    >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPETENCIES -->
+        <section class="panel" id="competencies">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="section-label">STEP 02</span>
+
+                    <h2>Learning Competencies</h2>
+
+                    <p>
+                        Add the competencies or topics that will be included
+                        in the examination.
+                    </p>
+                </div>
+
+                <button class="btn primary" onclick="addCompetency()">
+                    + Add Competency
+                </button>
+
+            </div>
+
+
+            <div class="table-wrapper">
+
+                <table class="input-table">
+
+                    <thead>
+
+                        <tr>
+                            <th>#</th>
+                            <th>Learning Competency / Topic</th>
+                            <th>Teaching Days</th>
+                            <th>Weight</th>
+                            <th>Items</th>
+                            <th></th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="competencyBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- COGNITIVE LEVELS -->
+        <section class="panel" id="cognitive">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="section-label">STEP 03</span>
+
+                    <h2>Cognitive Level Distribution</h2>
+
+                    <p>
+                        The percentages are automatically adjusted according
+                        to the selected grade level.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="cognitive-grid">
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">1</div>
+
+                        <div>
+                            <strong>Remembering</strong>
+                            <small>Recall facts and information</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="remembering"
+                        value="20"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">2</div>
+
+                        <div>
+                            <strong>Understanding</strong>
+                            <small>Explain and interpret ideas</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="understanding"
+                        value="30"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">3</div>
+
+                        <div>
+                            <strong>Applying</strong>
+                            <small>Use knowledge in situations</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="applying"
+                        value="30"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">4</div>
+
+                        <div>
+                            <strong>Analyzing</strong>
+                            <small>Examine relationships</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="analyzing"
+                        value="15"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">5</div>
+
+                        <div>
+                            <strong>Evaluating</strong>
+                            <small>Make judgments</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="evaluating"
+                        value="5"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+
+                <div class="cognitive-card">
+
+                    <div class="cognitive-top">
+                        <div class="cognitive-number">6</div>
+
+                        <div>
+                            <strong>Creating</strong>
+                            <small>Produce something new</small>
+                        </div>
+                    </div>
+
+                    <input
+                        type="number"
+                        id="creating"
+                        value="0"
+                        min="0"
+                        max="100"
+                        onchange="calculateTOS()"
+                    >
+
+                    <span>%</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="percentage-status">
+
+                <span>Total Cognitive Distribution</span>
+
+                <strong id="cognitiveTotal">100%</strong>
+
+            </div>
+
+        </section>
+
+
+        <!-- TOS -->
+        <section class="panel tos-panel" id="tos">
+
+            <div class="panel-heading">
+
+                <div>
+                    <span class="section-label">STEP 04</span>
+
+                    <h2>Generated Table of Specifications</h2>
+
+                    <p>
+                        Your examination blueprint will appear here.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="tosHeader" class="tos-header"></div>
+
+
+            <div class="table-wrapper">
+
+                <table class="tos-table">
+
+                    <thead>
+
+                        <tr>
+                            <th rowspan="2">Learning Competency</th>
+                            <th rowspan="2">Days</th>
+                            <th rowspan="2">%</th>
+
+                            <th colspan="6">Cognitive Level</th>
+
+                            <th rowspan="2">Total</th>
+                            <th rowspan="2">Item Numbers</th>
+                        </tr>
+
+                        <tr>
+
+                            <th>R</th>
+                            <th>U</th>
+                            <th>Ap</th>
+                            <th>An</th>
+                            <th>E</th>
+                            <th>C</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="tosBody">
+
+                    </tbody>
+
+                    <tfoot id="tosFooter">
+
+                    </tfoot>
+
+                </table>
+
+            </div>
+
+
+            <div class="legend">
+
+                <span><b>R</b> Remembering</span>
+                <span><b>U</b> Understanding</span>
+                <span><b>Ap</b> Applying</span>
+                <span><b>An</b> Analyzing</span>
+                <span><b>E</b> Evaluating</span>
+                <span><b>C</b> Creating</span>
+
+            </div>
+
+        </section>
+
+
+        <footer>
+
+            <strong>Teacher Ed</strong>
+
+            <span>
+                Table of Specifications Generator • Version 1.0
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
