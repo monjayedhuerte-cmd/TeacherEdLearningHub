@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Teacher Ed Learning Hub - Teacher Tools"
+    >
+
+    <meta
+        name="theme-color"
+        content="#123d8d"
+    >
+
+    <title>Teacher Tools | Teacher Ed Learning Hub</title>
+
+    <!-- Teacher Ed Learning Hub Favicon -->
+    <link
+        rel="icon"
+        type="image/png"
+        href="assets/teacher-ed-logo.png"
+    >
+
+    <!-- Main Teacher Tools CSS -->
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+    <!-- Lucide Icons -->
+    <script
+        src="https://unpkg.com/lucide@latest"
+        defer>
+    </script>
+</head>
+
+<body>
+
+    <!-- ============================= -->
+    <!-- HEADER -->
+    <!-- ============================= -->
+
+    <header class="site-header">
+
+        <div class="container header-inner">
+
+            <!-- LOGO / BRAND -->
+            <a
+                href="/index.html"
+                class="brand"
+                aria-label="Teacher Ed Learning Hub Home"
+            >
+
+                <img
+                    src="assets/teacher-ed-logo.png"
+                    alt="Teacher Ed Learning Hub Logo"
+                    class="brand-logo"
+                >
+
+                <div class="brand-text">
+                    <strong>Teacher Ed</strong>
+                    <span>Learning Hub</span>
+                </div>
+
+            </a>
+
+
+            <!-- ONLY NAVIGATION: HOME -->
+            <nav class="main-navigation">
+
+                <a
+                    href="/index.html"
+                    class="nav-home"
+                >
+                    <i data-lucide="home"></i>
+                    <span>Home</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ============================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ============================= -->
+
+    <main>
+
+        <!-- HERO -->
+        <section class="tools-hero">
+
+            <div class="container">
+
+                <div class="tools-hero-content">
+
+                    <div class="hero-logo">
+
+                        <img
+                            src="assets/teacher-ed-logo.png"
+                            alt="Teacher Ed Learning Hub Logo"
+                        >
+
+                    </div>
+
+                    <div>
+
+                        <span class="eyebrow">
+                            TEACHER RESOURCES
+                        </span>
+
+                        <h1>
+                            Teacher Tools
+                        </h1>
+
+                        <p>
+                            Practical tools and resources designed
+                            to make classroom work easier.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- TEACHER TOOLS -->
+        <!-- ============================= -->
+
+        <section
+            class="tools-section"
+            id="teacher-tools"
+        >
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">
+                        TEACHER RESOURCES
+                    </span>
+
+                    <h2>
+                        Teacher Tools
+                    </h2>
+
+                    <p>
+                        Practical tools and resources designed
+                        to make classroom work easier.
+                    </p>
+
+                </div>
+
+
+                <!-- IMPORTANT:
+                     app.js will automatically insert
+                     the tools from teacher-tools.json here.
+                -->
+
+                <div
+                    id="toolsGrid"
+                    class="tools-grid"
+                >
+
+                    <div class="tools-loading">
+
+                        <div class="loading-spinner"></div>
+
+                        <p>
+                            Loading Teacher Tools...
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================= -->
+    <!-- FOOTER -->
+    <!-- ============================= -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-inner">
+
+            <div class="footer-brand">
+
+                <img
+                    src="assets/teacher-ed-logo.png"
+                    alt="Teacher Ed Learning Hub Logo"
+                    class="footer-logo"
+                >
+
+                <div>
+
+                    <strong>
+                        Teacher Ed Learning Hub
+                    </strong>
+
+                    <p>
+                        Learn beyond the classroom.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-right">
+
+                <p>
+                    Teacher resources and learning materials
+                    prepared by Teacher Ed.
+                </p>
+
+                <small>
+                    © 2026 Teacher Ed Learning Hub.
+                    All rights reserved.
+                </small>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================= -->
+
+    <script
+        src="app.js"
+        defer>
+    </script>
+
+</body>
+</html>

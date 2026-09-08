@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "title": "Teacher Ed Learning Hub Teacher Tools",
+  "tools": [
+    {
+      "id": "E-Class Record",
+      "title": "E-Class Record",
+      "description": "Download the ready-to-use Excel E-Class Record prepared for teachers. No online formatting or setup is required.",
+      "file": "Teacher_Ed_E_Class_Record_Ready_to_Download/Teacher_Ed_E_Class_Record_Download/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
+    },
+    {
+      "id": "Motivation and Engagement Strategies",
+      "title": "Motivational Turn to Games",
+      "description": "Quick, engaging classroom games designed to spark curiosity, activate prior knowledge, and prepare learners for the lesson.",
+      "file": "Teacher-Ed-Interactive-Classroom-Games/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
+    },
+    {
+      "id": "Classroom Command Center",
+      "title": "Attention Grabber: Classroom Command Center",
+      "description": "Quick, engaging classroom games designed to spark curiosity, activate prior knowledge, and prepare learners for the lesson.",
+      "file": "TeacherTools/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
+    }
+  ]
+}

@@ -290,16 +290,6 @@
     "icon": "user-round"
   },
   {
-    "title": "Classroom Command Center",
-    "subject": "Teacher Tools",
-    "grade": "Teacher Tools",
-    "description": "Make your classroom more engaging.",
-    "file": "lessons/TeacherTools/index.html",
-    "date": "2026-08-28",
-    "featured": false,
-    "icon": "user-round"
-  },
-  {
     "title": "Shapes are Everywhere! | Week 1, 1st Term",
     "subject": "Mathematics",
     "grade": "Grade 1",
@@ -718,15 +708,5 @@
     "date": "2026-09-08",
     "featured": false,
     "icon": "heart-handshake"
-  },
-  {
-    "title": "Turn Motivation Time into A Game! | Interactive Game for Teachers",
-    "subject": "Teacher Tools", 
-    "grade": "Teacher Tools",
-    "description": "Quick, engaging classroom games designed to spark curiosity, activate prior knowledge, and prepare learners for the lesson.",
-    "file": "lessons/Teacher-Ed-Interactive-Classroom-Games/index.html",
-    "date": "2026-09-08",
-    "featured": false,
-    "icon": "users"
   }
 ]

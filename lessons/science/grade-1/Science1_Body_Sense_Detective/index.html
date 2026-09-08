@@ -1,146 +1,1010 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#0b3d91">
-<title>Science 1 | Body Sense Detective</title>
-<link rel="icon" type="image/png" href="TeacherEdLogo.png">
-<style>
-:root{--n:#0b3d91;--b:#1565c0;--g:#f7b500;--ink:#17324d;--ok:#299653;--bad:#d9534f}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);background:linear-gradient(#f3faff,#fffdf0,#f3faff)}
-button{font:inherit}.top{background:var(--n);color:white;padding:9px 5%;display:flex;justify-content:space-between;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:10;background:#ffffffee;border-bottom:3px solid var(--g);backdrop-filter:blur(8px)}
-nav{max-width:1200px;margin:auto;padding:9px 4%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--n)}.brand img{width:52px;height:52px;object-fit:contain}.brand small{display:block;color:#617487}
-nav button,.sound{border:0;border-radius:99px;padding:9px 13px;background:#edf6ff;color:var(--n);font-weight:800;cursor:pointer}
-.hero,.wrap{max-width:1200px;margin:auto;padding:28px 5%}.hero{display:grid;grid-template-columns:1.35fr .65fr;gap:22px;align-items:center}
-.heroCard{background:linear-gradient(135deg,#0b3d91,#1565c0);color:white;border-radius:28px;padding:34px;box-shadow:0 12px 30px #0b3d9124}
-.heroCard h1{font-size:clamp(2.1rem,5vw,4rem);line-height:1;margin:8px 0}.heroCard p{font-size:1.1rem;line-height:1.6}.eyebrow{color:#ffd54a;font-weight:900;letter-spacing:1px}
-.logoCard{background:white;border-radius:28px;padding:28px;min-height:260px;display:grid;place-items:center;box-shadow:0 12px 30px #0b3d9124}.logoCard img{max-width:220px;width:75%}
-.cta{border:0;background:#ffd54a;color:#17324d;padding:14px 20px;border-radius:15px;font-weight:900;cursor:pointer;box-shadow:0 5px #d5a900}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:white;border-radius:18px;padding:14px;text-align:center;box-shadow:0 8px 25px #0b3d9115}.stat b{display:block;font-size:1.7rem;color:var(--n)}
-section{margin:28px 0}h2{color:var(--n);font-size:2rem}.intro{color:#617487}
-.missions{display:grid;grid-template-columns:1fr 1fr;gap:18px}.mission,.box,.activity,.card{background:white;border-radius:22px;padding:22px;box-shadow:0 8px 25px #0b3d9115}
-.mission{border-top:7px solid var(--g)}.icon{font-size:3rem}.mission h3{color:var(--n)}
-.action{border:0;background:var(--n);color:white;padding:11px 15px;border-radius:12px;font-weight:800;cursor:pointer}
-.flashgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.flash{min-height:140px;text-align:center;border:0;cursor:pointer}.flash .emoji{font-size:2.2rem}
-.activities{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.qnum{color:#617487;font-weight:800}.bar{height:11px;background:#e4edf5;border-radius:99px;overflow:hidden;margin:13px 0}.fill{height:100%;width:0;background:linear-gradient(90deg,var(--b),var(--g));transition:.3s}
-.question{font-size:1.35rem;font-weight:900;line-height:1.45}.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:16px}
-.choice{border:3px solid #dbe8f4;background:#f9fcff;border-radius:16px;padding:15px;text-align:left;font-weight:800;cursor:pointer}.choice.correct{background:#e9f8ee;border-color:var(--ok)}.choice.wrong{background:#fff0f0;border-color:var(--bad)}
-.feedback{min-height:45px;margin-top:14px;padding:11px;border-radius:12px;font-weight:800}.ok{background:#e9f8ee;color:#176b39}.no{background:#fff0f0;color:#a53131}
-.next{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.hidden{display:none!important}
-.badges{display:flex;flex-wrap:wrap;gap:10px}.badge{background:white;border-radius:15px;padding:13px 16px;box-shadow:0 8px 25px #0b3d9115;font-weight:900}
-footer{background:#092f70;color:white;padding:30px 5%;margin-top:25px}.foot{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:20px}.footbrand{display:flex;align-items:center;gap:13px}.footbrand img{width:68px;height:68px;background:white;border-radius:50%;padding:3px;object-fit:contain}
-.modal{position:fixed;inset:0;background:#051933aa;display:none;place-items:center;padding:20px;z-index:50}.modal.show{display:grid}.modalbox{background:white;border-radius:24px;padding:28px;text-align:center;max-width:600px;width:100%}.big{font-size:3.5rem;color:var(--n);font-weight:900}
-@media(max-width:850px){.hero,.missions{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.flashgrid{grid-template-columns:repeat(2,1fr)}.activities{grid-template-columns:1fr}.choices{grid-template-columns:1fr}.foot{flex-direction:column;text-align:center}}
-@media(max-width:500px){.flashgrid{grid-template-columns:1fr}.heroCard{padding:25px 20px}}
-</style>
-</head>
-<body>
-<div class="top"><span>🔬 SCIENCE 1 • Interactive Game Reviewer</span><span>Learn • Play • Review • Master</span></div>
-<header><nav>
-<div class="brand"><img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo"><div>Teacher Ed Learning Hub<small>Science 1 • Body Sense Detective</small></div></div>
-<div><button onclick="scrollToId('missions')">🎮 Missions</button><button onclick="scrollToId('review')">📚 Review</button><button onclick="scrollToId('challenge')">🏆 Challenge</button><button class="sound" id="sound" onclick="toggleSound()">🔊 Sound On</button></div>
-</nav></header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b3d91" />
+    <title>Science 1 | Body Sense Detective</title>
+    <link rel="icon" type="image/png" href="TeacherEdLogo.png" />
+    <style>
+      :root {
+        --n: #0b3d91;
+        --b: #1565c0;
+        --g: #f7b500;
+        --ink: #17324d;
+        --ok: #299653;
+        --bad: #d9534f;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(#f3faff, #fffdf0, #f3faff);
+      }
+      button {
+        font: inherit;
+      }
+      .top {
+        background: var(--n);
+        color: white;
+        padding: 9px 5%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: #ffffffee;
+        border-bottom: 3px solid var(--g);
+        backdrop-filter: blur(8px);
+      }
+      nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 9px 4%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+        color: var(--n);
+      }
+      .brand img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+      }
+      .brand small {
+        display: block;
+        color: #617487;
+      }
+      nav button,
+      .sound {
+        border: 0;
+        border-radius: 99px;
+        padding: 9px 13px;
+        background: #edf6ff;
+        color: var(--n);
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .hero,
+      .wrap {
+        max-width: 1200px;
+        margin: auto;
+        padding: 28px 5%;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 22px;
+        align-items: center;
+      }
+      .heroCard {
+        background: linear-gradient(135deg, #0b3d91, #1565c0);
+        color: white;
+        border-radius: 28px;
+        padding: 34px;
+        box-shadow: 0 12px 30px #0b3d9124;
+      }
+      .heroCard h1 {
+        font-size: clamp(2.1rem, 5vw, 4rem);
+        line-height: 1;
+        margin: 8px 0;
+      }
+      .heroCard p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+      .eyebrow {
+        color: #ffd54a;
+        font-weight: 900;
+        letter-spacing: 1px;
+      }
+      .logoCard {
+        background: white;
+        border-radius: 28px;
+        padding: 28px;
+        min-height: 260px;
+        display: grid;
+        place-items: center;
+        box-shadow: 0 12px 30px #0b3d9124;
+      }
+      .logoCard img {
+        max-width: 220px;
+        width: 75%;
+      }
+      .cta {
+        border: 0;
+        background: #ffd54a;
+        color: #17324d;
+        padding: 14px 20px;
+        border-radius: 15px;
+        font-weight: 900;
+        cursor: pointer;
+        box-shadow: 0 5px #d5a900;
+      }
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .stat {
+        background: white;
+        border-radius: 18px;
+        padding: 14px;
+        text-align: center;
+        box-shadow: 0 8px 25px #0b3d9115;
+      }
+      .stat b {
+        display: block;
+        font-size: 1.7rem;
+        color: var(--n);
+      }
+      section {
+        margin: 28px 0;
+      }
+      h2 {
+        color: var(--n);
+        font-size: 2rem;
+      }
+      .intro {
+        color: #617487;
+      }
+      .missions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .mission,
+      .box,
+      .activity,
+      .card {
+        background: white;
+        border-radius: 22px;
+        padding: 22px;
+        box-shadow: 0 8px 25px #0b3d9115;
+      }
+      .mission {
+        border-top: 7px solid var(--g);
+      }
+      .icon {
+        font-size: 3rem;
+      }
+      .mission h3 {
+        color: var(--n);
+      }
+      .action {
+        border: 0;
+        background: var(--n);
+        color: white;
+        padding: 11px 15px;
+        border-radius: 12px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .flashgrid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .flash {
+        min-height: 140px;
+        text-align: center;
+        border: 0;
+        cursor: pointer;
+      }
+      .flash .emoji {
+        font-size: 2.2rem;
+      }
+      .activities {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .qnum {
+        color: #617487;
+        font-weight: 800;
+      }
+      .bar {
+        height: 11px;
+        background: #e4edf5;
+        border-radius: 99px;
+        overflow: hidden;
+        margin: 13px 0;
+      }
+      .fill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--b), var(--g));
+        transition: 0.3s;
+      }
+      .question {
+        font-size: 1.35rem;
+        font-weight: 900;
+        line-height: 1.45;
+      }
+      .choices {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 16px;
+      }
+      .choice {
+        border: 3px solid #dbe8f4;
+        background: #f9fcff;
+        border-radius: 16px;
+        padding: 15px;
+        text-align: left;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .choice.correct {
+        background: #e9f8ee;
+        border-color: var(--ok);
+      }
+      .choice.wrong {
+        background: #fff0f0;
+        border-color: var(--bad);
+      }
+      .feedback {
+        min-height: 45px;
+        margin-top: 14px;
+        padding: 11px;
+        border-radius: 12px;
+        font-weight: 800;
+      }
+      .ok {
+        background: #e9f8ee;
+        color: #176b39;
+      }
+      .no {
+        background: #fff0f0;
+        color: #a53131;
+      }
+      .next {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 14px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .badge {
+        background: white;
+        border-radius: 15px;
+        padding: 13px 16px;
+        box-shadow: 0 8px 25px #0b3d9115;
+        font-weight: 900;
+      }
+      footer {
+        background: #092f70;
+        color: white;
+        padding: 30px 5%;
+        margin-top: 25px;
+      }
+      .foot {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .footbrand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+      }
+      .footbrand img {
+        width: 68px;
+        height: 68px;
+        background: white;
+        border-radius: 50%;
+        padding: 3px;
+        object-fit: contain;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: #051933aa;
+        display: none;
+        place-items: center;
+        padding: 20px;
+        z-index: 50;
+      }
+      .modal.show {
+        display: grid;
+      }
+      .modalbox {
+        background: white;
+        border-radius: 24px;
+        padding: 28px;
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+      }
+      .big {
+        font-size: 3.5rem;
+        color: var(--n);
+        font-weight: 900;
+      }
+      @media (max-width: 850px) {
+        .hero,
+        .missions {
+          grid-template-columns: 1fr;
+        }
+        .stats {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .flashgrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .activities {
+          grid-template-columns: 1fr;
+        }
+        .choices {
+          grid-template-columns: 1fr;
+        }
+        .foot {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      @media (max-width: 500px) {
+        .flashgrid {
+          grid-template-columns: 1fr;
+        }
+        .heroCard {
+          padding: 25px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <span>🔬 SCIENCE 1 • Interactive Game Reviewer</span
+      ><span>Learn • Play • Review • Master</span>
+    </div>
+    <header>
+      <nav>
+        <div class="brand">
+          <img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo" />
+          <div>
+            Teacher Ed Learning Hub<small
+              >Science 1 • Body Sense Detective</small
+            >
+          </div>
+        </div>
+        <div>
+          <button onclick="scrollToId('missions')">🎮 Missions</button
+          ><button onclick="scrollToId('review')">📚 Review</button
+          ><button onclick="scrollToId('challenge')">🏆 Challenge</button
+          ><button class="sound" id="sound" onclick="toggleSound()">
+            🔊 Sound On
+          </button>
+        </div>
+      </nav>
+    </header>
 
-<div class="hero">
-<div class="heroCard"><div class="eyebrow">SCIENCE 1 GAME REVIEWER</div><h1>Body Sense Detective 🕵️</h1>
-<p>Explore the <b>tongue and sense of taste</b> and the <b>skin and sense of touch</b>. Answer questions, play, earn stars, and prepare for your Science examination.</p>
-<button class="cta" onclick="startQuiz()">🚀 Start the 30-Item Challenge</button></div>
-<div class="logoCard"><img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub"></div>
-</div>
+    <div class="hero">
+      <div class="heroCard">
+        <div class="eyebrow">SCIENCE 1 GAME REVIEWER</div>
+        <h1>Body Sense Detective 🕵️</h1>
+        <p>
+          Explore the <b>tongue and sense of taste</b> and the
+          <b>skin and sense of touch</b>. Answer questions, play, earn stars,
+          and prepare for your Science examination.
+        </p>
+        <button class="cta" onclick="startQuiz()">
+          🚀 Start the 30-Item Challenge
+        </button>
+      </div>
+      <div class="logoCard">
+        <img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub" />
+      </div>
+    </div>
 
-<main class="wrap">
-<div class="stats"><div class="stat"><b id="score">0</b>Points</div><div class="stat"><b id="stars">0</b>Stars</div><div class="stat"><b id="answered">0/30</b>Challenge</div><div class="stat"><b id="best">0</b>Best Score</div></div>
+    <main class="wrap">
+      <div class="stats">
+        <div class="stat"><b id="score">0</b>Points</div>
+        <div class="stat"><b id="stars">0</b>Stars</div>
+        <div class="stat"><b id="answered">0/30</b>Challenge</div>
+        <div class="stat"><b id="best">0</b>Best Score</div>
+      </div>
 
-<section id="missions"><h2>🎮 Choose Your Mission</h2><p class="intro">Practice the key ideas from your Grade 1 Science lesson.</p>
-<div class="missions">
-<div class="mission"><div class="icon">👅</div><h3>Mission 1: Taste Detective</h3><p>Review the tongue, taste buds, and the four tastes: <b>sweet, sour, salty, and bitter.</b></p><button class="action" onclick="startTopic('taste')">Enter Taste Mission →</button></div>
-<div class="mission"><div class="icon">🖐️</div><h3>Mission 2: Touch Detective</h3><p>Review the skin, sense of touch, and <b>epidermis, dermis, pores, hair, sweat glands, and nerve endings.</b></p><button class="action" onclick="startTopic('touch')">Enter Touch Mission →</button></div>
-</div></section>
+      <section id="missions">
+        <h2>🎮 Choose Your Mission</h2>
+        <p class="intro">
+          Practice the key ideas from your Grade 1 Science lesson.
+        </p>
+        <div class="missions">
+          <div class="mission">
+            <div class="icon">👅</div>
+            <h3>Mission 1: Taste Detective</h3>
+            <p>
+              Review the tongue, taste buds, and the four tastes:
+              <b>sweet, sour, salty, and bitter.</b>
+            </p>
+            <button class="action" onclick="startTopic('taste')">
+              Enter Taste Mission →
+            </button>
+          </div>
+          <div class="mission">
+            <div class="icon">🖐️</div>
+            <h3>Mission 2: Touch Detective</h3>
+            <p>
+              Review the skin, sense of touch, and
+              <b
+                >epidermis, dermis, pores, hair, sweat glands, and nerve
+                endings.</b
+              >
+            </p>
+            <button class="action" onclick="startTopic('touch')">
+              Enter Touch Mission →
+            </button>
+          </div>
+        </div>
+      </section>
 
-<section id="review"><h2>📚 Quick Review Cards</h2><p class="intro">Tap a card to reveal the meaning.</p><div class="flashgrid" id="flashgrid"></div></section>
+      <section id="review">
+        <h2>📚 Quick Review Cards</h2>
+        <p class="intro">Tap a card to reveal the meaning.</p>
+        <div class="flashgrid" id="flashgrid"></div>
+      </section>
 
-<section><h2>🧩 Mini-Games</h2><div class="activities">
-<div class="activity"><h3>👅 Taste Sorter</h3><p>Think of the taste, then reveal it.</p><button class="action" onclick="tasteSorter()">Try It</button><div id="tasteResult"></div></div>
-<div class="activity"><h3>🖐️ Feel It!</h3><p>Match an object with a touch sensation.</p><button class="action" onclick="feelIt()">Try It</button><div id="feelResult"></div></div>
-<div class="activity"><h3>🔎 Skin Part Detective</h3><p>Reveal a clue about a skin part.</p><button class="action" onclick="skinClue()">Reveal Clue</button><div id="skinResult"></div></div>
-</div></section>
+      <section>
+        <h2>🧩 Mini-Games</h2>
+        <div class="activities">
+          <div class="activity">
+            <h3>👅 Taste Sorter</h3>
+            <p>Think of the taste, then reveal it.</p>
+            <button class="action" onclick="tasteSorter()">Try It</button>
+            <div id="tasteResult"></div>
+          </div>
+          <div class="activity">
+            <h3>🖐️ Feel It!</h3>
+            <p>Match an object with a touch sensation.</p>
+            <button class="action" onclick="feelIt()">Try It</button>
+            <div id="feelResult"></div>
+          </div>
+          <div class="activity">
+            <h3>🔎 Skin Part Detective</h3>
+            <p>Reveal a clue about a skin part.</p>
+            <button class="action" onclick="skinClue()">Reveal Clue</button>
+            <div id="skinResult"></div>
+          </div>
+        </div>
+      </section>
 
-<section id="challenge"><h2>🏆 30-Item Science Challenge</h2><p class="intro">Three choices per question. Read carefully!</p>
-<div class="box" id="quizBox"><div id="intro" style="text-align:center;padding:18px"><div style="font-size:4rem">🎯</div><h3>Ready, Science Detective?</h3><p>30 questions • 3 choices each • 10 points per correct answer</p><button class="cta" onclick="startQuiz()">Start Challenge</button></div>
-<div id="quiz" class="hidden"><div class="qnum" id="qnum"></div><div class="bar"><div class="fill" id="fill"></div></div><div class="question" id="question"></div><div class="choices" id="choices"></div><div id="feedback" class="feedback"></div><div class="next"><span id="tag"></span><button class="action hidden" id="next" onclick="nextQ()">Next →</button></div></div></div>
-</section>
+      <section id="challenge">
+        <h2>🏆 30-Item Science Challenge</h2>
+        <p class="intro">Three choices per question. Read carefully!</p>
+        <div class="box" id="quizBox">
+          <div id="intro" style="text-align: center; padding: 18px">
+            <div style="font-size: 4rem">🎯</div>
+            <h3>Ready, Science Detective?</h3>
+            <p>30 questions • 3 choices each • 10 points per correct answer</p>
+            <button class="cta" onclick="startQuiz()">Start Challenge</button>
+          </div>
+          <div id="quiz" class="hidden">
+            <div class="qnum" id="qnum"></div>
+            <div class="bar"><div class="fill" id="fill"></div></div>
+            <div class="question" id="question"></div>
+            <div class="choices" id="choices"></div>
+            <div id="feedback" class="feedback"></div>
+            <div class="next">
+              <span id="tag"></span
+              ><button class="action hidden" id="next" onclick="nextQ()">
+                Next →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section><h2>⭐ Achievements</h2><div class="badges" id="badges"><div class="badge">🔒 Taste Explorer</div><div class="badge">🔒 Touch Explorer</div><div class="badge">🔒 Science Star</div><div class="badge">🔒 Body Sense Master</div></div></section>
-</main>
+      <section>
+        <h2>⭐ Achievements</h2>
+        <div class="badges" id="badges">
+          <div class="badge">🔒 Taste Explorer</div>
+          <div class="badge">🔒 Touch Explorer</div>
+          <div class="badge">🔒 Science Star</div>
+          <div class="badge">🔒 Body Sense Master</div>
+        </div>
+      </section>
+    </main>
 
-<footer><div class="foot"><div class="footbrand"><img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo"><div><b>Teacher Ed Learning Hub</b><br>Science 1 • Body Sense Detective<br>Explore • Learn • Play • Grow</div></div><div>© <span id="year"></span> Teacher Ed Learning Hub<br>Interactive learning resource</div></div></footer>
+    <footer>
+      <div class="foot">
+        <div class="footbrand">
+          <img src="TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo" />
+          <div>
+            <b>Teacher Ed Learning Hub</b><br />Science 1 • Body Sense
+            Detective<br />Explore • Learn • Play • Grow
+          </div>
+        </div>
+        <div>
+          © <span id="year"></span> Teacher Ed Learning Hub<br />Interactive
+          learning resource
+        </div>
+      </div>
+    </footer>
 
-<div class="modal" id="modal"><div class="modalbox"><div style="font-size:3rem">🏆</div><h2>Challenge Complete!</h2><div class="big" id="final"></div><p id="message"></p><button class="cta" onclick="closeModal();startQuiz()">🔄 Play Again</button></div></div>
+    <div class="modal" id="modal">
+      <div class="modalbox">
+        <div style="font-size: 3rem">🏆</div>
+        <h2>Challenge Complete!</h2>
+        <div class="big" id="final"></div>
+        <p id="message"></p>
+        <button
+          class="cta"
+          onclick="
+            closeModal();
+            startQuiz();
+          "
+        >
+          🔄 Play Again
+        </button>
+      </div>
+    </div>
 
-<script>
-const qs=[
-['taste','What body part helps you taste food?',['Tongue','Ear','Eye'],0,'The tongue helps us taste food.'],
-['taste','What tiny parts on the tongue help detect tastes?',['Taste buds','Pores','Hair'],0,'Taste buds help detect tastes.'],
-['taste','Which taste does candy usually have?',['Sweet','Sour','Bitter'],0,'Candy and sugar are examples of sweet tastes.'],
-['taste','Which taste does a lemon usually have?',['Salty','Sour','Sweet'],1,'Lemon and calamansi are examples of sour tastes.'],
-['taste','Which taste can you get from salt?',['Bitter','Sweet','Salty'],2,'Salt gives a salty taste.'],
-['taste','Which taste is commonly associated with bitter gourd?',['Bitter','Sweet','Sour'],0,'Bitter gourd is an example of a bitter food.'],
-['taste','Which is one of the four basic tastes in this lesson?',['Sweet','Spicy','Crunchy'],0,'The four tastes reviewed are sweet, sour, salty, and bitter.'],
-['taste','If you taste calamansi, what taste do you expect?',['Sour','Sweet','Salty'],0,'Calamansi has a sour taste.'],
-['taste','If you taste sugar, what taste do you expect?',['Bitter','Sweet','Salty'],1,'Sugar tastes sweet.'],
-['taste','What taste do you expect from food with added salt?',['Salty','Sour','Sweet'],0,'Salt makes food taste salty.'],
-['taste','What does the tongue help us identify?',['Tastes of food','Sounds','Colors'],0,'The tongue helps us identify tastes.'],
-['taste','Which food is a good example of a sour taste?',['Lemon','Sugar','Salt'],0,'Lemon is a familiar sour food.'],
-['taste','Which food is a good example of a sweet taste?',['Candy','Bitter gourd','Lemon'],0,'Candy is commonly sweet.'],
-['taste','Which word names a taste?',['Bitter','Smooth','Cold'],0,'Bitter is a taste. Smooth and cold describe touch sensations.'],
-['taste','How do taste buds help us?',['They help detect tastes','They make hair grow','They make us hear'],0,'Taste buds help us detect different tastes.'],
-['touch','What is the sense related to the skin?',['Touch','Taste','Hearing'],0,'The skin is the sense organ for touch.'],
-['touch','What is the largest sense organ of the body?',['Skin','Tongue','Eye'],0,'Skin is the largest sense organ.'],
-['touch','What does the skin cover and protect?',['Our body','Only our hair','Only our teeth'],0,'Skin covers and helps protect our body.'],
-['touch','Which sensation tells you something is very warm?',['Hot','Smooth','Sweet'],0,'Hot is a sensation detected through touch.'],
-['touch','Which sensation is the opposite of hot?',['Cold','Bitter','Salty'],0,'Cold is the opposite of hot.'],
-['touch','Which word describes a pillow or cotton?',['Soft','Salty','Sour'],0,'A pillow or cotton can feel soft.'],
-['touch','Which word describes sandpaper?',['Rough','Sweet','Cold'],0,'Sandpaper feels rough.'],
-['touch','Which word describes glass that feels even?',['Smooth','Bitter','Salty'],0,'Smooth describes an even surface.'],
-['touch','Which skin layer is the top layer?',['Epidermis','Dermis','Nerve endings'],0,'The epidermis is the top layer of the skin.'],
-['touch','Which skin layer is below the epidermis?',['Dermis','Hair','Pores'],0,'The dermis is below the epidermis.'],
-['touch','What are tiny openings in the skin called?',['Pores','Taste buds','Hair'],0,'Pores are tiny openings in the skin.'],
-['touch','Which part grows from the skin?',['Hair','Dermis','Epidermis'],0,'Hair grows from the skin.'],
-['touch','Which part produces sweat?',['Sweat gland','Nerve ending','Hair'],0,'Sweat glands produce sweat.'],
-['touch','Which parts help you feel touch, pain, pressure, and temperature?',['Nerve endings','Hair','Pores'],0,'Nerve endings help us sense touch and other sensations.'],
-['touch','If you touch an ice cube, which sense helps you notice that it is cold?',['Touch','Taste','Smell'],0,'Your skin helps you feel that the ice cube is cold.']
-];
-let set=qs,current=0,score=0,answered=0,sound=true,best=+localStorage.getItem('science1best')||0;
-const $=id=>document.getElementById(id);
-$('best').textContent=best;$('year').textContent=new Date().getFullYear();
-function scrollToId(id){$(id).scrollIntoView({behavior:'smooth'})}
-function stats(){$('score').textContent=score;$('stars').textContent=Math.floor(score/30);$('answered').textContent=answered+'/30';$('best').textContent=best}
-function toggleSound(){sound=!sound;$('sound').textContent=sound?'🔊 Sound On':'🔇 Sound Off'}
-function beep(ok){if(!sound)return;try{let c=new AudioContext(),o=c.createOscillator(),g=c.createGain();o.frequency.value=ok?660:220;g.gain.value=.03;o.connect(g);g.connect(c.destination);o.start();o.stop(c.currentTime+.12)}catch(e){}}
-function startTopic(t){set=qs.filter(q=>q[0]===t);current=score=answered=0;$('intro').classList.add('hidden');$('quiz').classList.remove('hidden');scrollToId('challenge');render()}
-function startQuiz(){set=[...qs];current=score=answered=0;$('intro').classList.add('hidden');$('quiz').classList.remove('hidden');scrollToId('challenge');render()}
-function render(){
- if(current>=set.length){finish();return}let q=set[current];$('qnum').textContent='Question '+(current+1)+' of '+set.length;$('fill').style.width=(current/set.length*100)+'%';$('question').textContent=q[1];$('tag').textContent=q[0]==='taste'?'👅 Taste Mission':'🖐️ Touch Mission';$('feedback').className='feedback';$('feedback').textContent='';$('next').classList.add('hidden');
- $('choices').innerHTML=q[2].map((x,i)=>'<button class="choice" onclick="answer('+i+',this)">'+String.fromCharCode(65+i)+'. '+x+'</button>').join('');stats()
-}
-function answer(i,btn){let q=set[current];document.querySelectorAll('.choice').forEach(b=>b.disabled=true);document.querySelectorAll('.choice')[q[3]].classList.add('correct');let f=$('feedback');if(i===q[3]){score+=10;btn.classList.add('correct');f.className='feedback ok';f.textContent='✅ Correct! '+q[4];beep(true)}else{btn.classList.add('wrong');f.className='feedback no';f.textContent='💡 Not quite. '+q[4];beep(false)}answered++;$('next').classList.remove('hidden');stats();badges()}
-function nextQ(){current++;render()}
-function finish(){if(score>best){best=score;localStorage.setItem('science1best',best)}stats();$('final').textContent=score+' points';$('message').textContent=score>=270?'🌟 Amazing! You are a Body Sense Master!':score>=210?'👏 Great work! Keep reviewing!':'💪 Good try! Review the cards and play again to improve.';$('modal').classList.add('show');badges()}
-function closeModal(){$('modal').classList.remove('show')}
-function badges(){let b=document.querySelectorAll('.badge');if(answered>0)b[0].textContent='🔓 Taste Explorer';if(answered>15)b[1].textContent='🔓 Touch Explorer';if(score>=150)b[2].textContent='🔓 Science Star';if(score>=270)b[3].textContent='🔓 Body Sense Master'}
-const cards=[['👅','Tongue','Helps us taste food.'],['🔬','Taste Buds','Help detect tastes.'],['🍬','Sweet','Sugar and candy are examples.'],['🍋','Sour','Lemon and calamansi are examples.'],['🧂','Salty','Salt gives a salty taste.'],['🥒','Bitter','Bitter gourd is an example.'],['🖐️','Skin','The sense organ for touch.'],['⬆️','Epidermis','Top layer of skin.'],['⬇️','Dermis','Layer below the epidermis.'],['⭕','Pores','Tiny openings in the skin.'],['🧑‍🦱','Hair','Grows from the skin.'],['💧','Sweat Gland','Produces sweat.'],['⚡','Nerve Endings','Help us feel touch, pain, pressure, and temperature.'],['🧊','Cold','A touch sensation.'],['🧸','Soft','Cotton can feel soft.'],['🪵','Rough','Sandpaper can feel rough.']];
-$('flashgrid').innerHTML=cards.map((c,i)=>'<button class="flash card" onclick="flip(this,'+i+')"><div class="emoji">'+c[0]+'</div><b>'+c[1]+'</b><small>Tap to reveal</small></button>').join('');
-function flip(el,i){let c=cards[i];if(el.dataset.open){el.innerHTML='<div class="emoji">'+c[0]+'</div><b>'+c[1]+'</b><small>Tap to reveal</small>';delete el.dataset.open}else{el.innerHTML='<div class="emoji">💡</div><b>'+c[2]+'</b><small>Tap to hide</small>';el.dataset.open=1}}
-const tastes=[['🍬 Candy','Sweet'],['🍋 Lemon','Sour'],['🧂 Salt','Salty'],['🥒 Bitter gourd','Bitter']];let ti=0;
-function tasteSorter(){let x=tastes[ti++%4];$('tasteResult').innerHTML='<p><b>'+x[0]+'</b> → Think... → <b>'+x[1]+'!</b></p>'}
-const feels=[['🧊 Ice cube','Cold'],['🧸 Cotton','Soft'],['🪵 Sandpaper','Rough'],['🪟 Glass','Smooth']];let fi=0;
-function feelIt(){let x=feels[fi++%4];$('feelResult').innerHTML='<p><b>'+x[0]+'</b> → <b>'+x[1]+'</b></p>'}
-const clues=['Top layer → Epidermis','Below epidermis → Dermis','Tiny openings → Pores','Grows from skin → Hair','Produces sweat → Sweat gland','Helps feel touch and pain → Nerve endings'];let ci=0;
-function skinClue(){$('skinResult').innerHTML='<p>🔎 '+clues[ci++%6]+'</p>'}
-</script>
-</body>
+    <script>
+      const qs = [
+        [
+          "taste",
+          "What body part helps you taste food?",
+          ["Tongue", "Ear", "Eye"],
+          0,
+          "The tongue helps us taste food.",
+        ],
+        [
+          "taste",
+          "What tiny parts on the tongue help detect tastes?",
+          ["Taste buds", "Pores", "Hair"],
+          0,
+          "Taste buds help detect tastes.",
+        ],
+        [
+          "taste",
+          "Which taste does candy usually have?",
+          ["Sweet", "Sour", "Bitter"],
+          0,
+          "Candy and sugar are examples of sweet tastes.",
+        ],
+        [
+          "taste",
+          "Which taste does a lemon usually have?",
+          ["Salty", "Sour", "Sweet"],
+          1,
+          "Lemon and calamansi are examples of sour tastes.",
+        ],
+        [
+          "taste",
+          "Which taste can you get from salt?",
+          ["Bitter", "Sweet", "Salty"],
+          2,
+          "Salt gives a salty taste.",
+        ],
+        [
+          "taste",
+          "Which taste is commonly associated with bitter gourd?",
+          ["Bitter", "Sweet", "Sour"],
+          0,
+          "Bitter gourd is an example of a bitter food.",
+        ],
+        [
+          "taste",
+          "Which is one of the four basic tastes in this lesson?",
+          ["Sweet", "Spicy", "Crunchy"],
+          0,
+          "The four tastes reviewed are sweet, sour, salty, and bitter.",
+        ],
+        [
+          "taste",
+          "If you taste calamansi, what taste do you expect?",
+          ["Sour", "Sweet", "Salty"],
+          0,
+          "Calamansi has a sour taste.",
+        ],
+        [
+          "taste",
+          "If you taste sugar, what taste do you expect?",
+          ["Bitter", "Sweet", "Salty"],
+          1,
+          "Sugar tastes sweet.",
+        ],
+        [
+          "taste",
+          "What taste do you expect from food with added salt?",
+          ["Salty", "Sour", "Sweet"],
+          0,
+          "Salt makes food taste salty.",
+        ],
+        [
+          "taste",
+          "What does the tongue help us identify?",
+          ["Tastes of food", "Sounds", "Colors"],
+          0,
+          "The tongue helps us identify tastes.",
+        ],
+        [
+          "taste",
+          "Which food is a good example of a sour taste?",
+          ["Lemon", "Sugar", "Salt"],
+          0,
+          "Lemon is a familiar sour food.",
+        ],
+        [
+          "taste",
+          "Which food is a good example of a sweet taste?",
+          ["Candy", "Bitter gourd", "Lemon"],
+          0,
+          "Candy is commonly sweet.",
+        ],
+        [
+          "taste",
+          "Which word names a taste?",
+          ["Bitter", "Smooth", "Cold"],
+          0,
+          "Bitter is a taste. Smooth and cold describe touch sensations.",
+        ],
+        [
+          "taste",
+          "How do taste buds help us?",
+          [
+            "They help detect tastes",
+            "They make hair grow",
+            "They make us hear",
+          ],
+          0,
+          "Taste buds help us detect different tastes.",
+        ],
+        [
+          "touch",
+          "What is the sense related to the skin?",
+          ["Touch", "Taste", "Hearing"],
+          0,
+          "The skin is the sense organ for touch.",
+        ],
+        [
+          "touch",
+          "What is the largest sense organ of the body?",
+          ["Skin", "Tongue", "Eye"],
+          0,
+          "Skin is the largest sense organ.",
+        ],
+        [
+          "touch",
+          "What does the skin cover and protect?",
+          ["Our body", "Only our hair", "Only our teeth"],
+          0,
+          "Skin covers and helps protect our body.",
+        ],
+        [
+          "touch",
+          "Which sensation tells you something is very warm?",
+          ["Hot", "Smooth", "Sweet"],
+          0,
+          "Hot is a sensation detected through touch.",
+        ],
+        [
+          "touch",
+          "Which sensation is the opposite of hot?",
+          ["Cold", "Bitter", "Salty"],
+          0,
+          "Cold is the opposite of hot.",
+        ],
+        [
+          "touch",
+          "Which word describes a pillow or cotton?",
+          ["Soft", "Salty", "Sour"],
+          0,
+          "A pillow or cotton can feel soft.",
+        ],
+        [
+          "touch",
+          "Which word describes sandpaper?",
+          ["Rough", "Sweet", "Cold"],
+          0,
+          "Sandpaper feels rough.",
+        ],
+        [
+          "touch",
+          "Which word describes glass that feels even?",
+          ["Smooth", "Bitter", "Salty"],
+          0,
+          "Smooth describes an even surface.",
+        ],
+        [
+          "touch",
+          "Which skin layer is the top layer?",
+          ["Epidermis", "Dermis", "Nerve endings"],
+          0,
+          "The epidermis is the top layer of the skin.",
+        ],
+        [
+          "touch",
+          "Which skin layer is below the epidermis?",
+          ["Dermis", "Hair", "Pores"],
+          0,
+          "The dermis is below the epidermis.",
+        ],
+        [
+          "touch",
+          "What are tiny openings in the skin called?",
+          ["Pores", "Taste buds", "Hair"],
+          0,
+          "Pores are tiny openings in the skin.",
+        ],
+        [
+          "touch",
+          "Which part grows from the skin?",
+          ["Hair", "Dermis", "Epidermis"],
+          0,
+          "Hair grows from the skin.",
+        ],
+        [
+          "touch",
+          "Which part produces sweat?",
+          ["Sweat gland", "Nerve ending", "Hair"],
+          0,
+          "Sweat glands produce sweat.",
+        ],
+        [
+          "touch",
+          "Which parts help you feel touch, pain, pressure, and temperature?",
+          ["Nerve endings", "Hair", "Pores"],
+          0,
+          "Nerve endings help us sense touch and other sensations.",
+        ],
+        [
+          "touch",
+          "If you touch an ice cube, which sense helps you notice that it is cold?",
+          ["Touch", "Taste", "Smell"],
+          0,
+          "Your skin helps you feel that the ice cube is cold.",
+        ],
+      ];
+      let set = qs,
+        current = 0,
+        score = 0,
+        answered = 0,
+        sound = true,
+        best = +localStorage.getItem("science1best") || 0;
+      const $ = (id) => document.getElementById(id);
+      $("best").textContent = best;
+      $("year").textContent = new Date().getFullYear();
+      function scrollToId(id) {
+        $(id).scrollIntoView({ behavior: "smooth" });
+      }
+      function stats() {
+        $("score").textContent = score;
+        $("stars").textContent = Math.floor(score / 30);
+        $("answered").textContent = answered + "/30";
+        $("best").textContent = best;
+      }
+      function toggleSound() {
+        sound = !sound;
+        $("sound").textContent = sound ? "🔊 Sound On" : "🔇 Sound Off";
+      }
+      function beep(ok) {
+        if (!sound) return;
+        try {
+          let c = new AudioContext(),
+            o = c.createOscillator(),
+            g = c.createGain();
+          o.frequency.value = ok ? 660 : 220;
+          g.gain.value = 0.03;
+          o.connect(g);
+          g.connect(c.destination);
+          o.start();
+          o.stop(c.currentTime + 0.12);
+        } catch (e) {}
+      }
+      function startTopic(t) {
+        set = qs.filter((q) => q[0] === t);
+        current = score = answered = 0;
+        $("intro").classList.add("hidden");
+        $("quiz").classList.remove("hidden");
+        scrollToId("challenge");
+        render();
+      }
+      function startQuiz() {
+        set = [...qs];
+        current = score = answered = 0;
+        $("intro").classList.add("hidden");
+        $("quiz").classList.remove("hidden");
+        scrollToId("challenge");
+        render();
+      }
+      function render() {
+        if (current >= set.length) {
+          finish();
+          return;
+        }
+        let q = set[current];
+        $("qnum").textContent =
+          "Question " + (current + 1) + " of " + set.length;
+        $("fill").style.width = (current / set.length) * 100 + "%";
+        $("question").textContent = q[1];
+        $("tag").textContent =
+          q[0] === "taste" ? "👅 Taste Mission" : "🖐️ Touch Mission";
+        $("feedback").className = "feedback";
+        $("feedback").textContent = "";
+        $("next").classList.add("hidden");
+        $("choices").innerHTML = q[2]
+          .map(
+            (x, i) =>
+              '<button class="choice" onclick="answer(' +
+              i +
+              ',this)">' +
+              String.fromCharCode(65 + i) +
+              ". " +
+              x +
+              "</button>",
+          )
+          .join("");
+        stats();
+      }
+      function answer(i, btn) {
+        let q = set[current];
+        document
+          .querySelectorAll(".choice")
+          .forEach((b) => (b.disabled = true));
+        document.querySelectorAll(".choice")[q[3]].classList.add("correct");
+        let f = $("feedback");
+        if (i === q[3]) {
+          score += 10;
+          btn.classList.add("correct");
+          f.className = "feedback ok";
+          f.textContent = "✅ Correct! " + q[4];
+          beep(true);
+        } else {
+          btn.classList.add("wrong");
+          f.className = "feedback no";
+          f.textContent = "💡 Not quite. " + q[4];
+          beep(false);
+        }
+        answered++;
+        $("next").classList.remove("hidden");
+        stats();
+        badges();
+      }
+      function nextQ() {
+        current++;
+        render();
+      }
+      function finish() {
+        if (score > best) {
+          best = score;
+          localStorage.setItem("science1best", best);
+        }
+        stats();
+        $("final").textContent = score + " points";
+        $("message").textContent =
+          score >= 270
+            ? "🌟 Amazing! You are a Body Sense Master!"
+            : score >= 210
+              ? "👏 Great work! Keep reviewing!"
+              : "💪 Good try! Review the cards and play again to improve.";
+        $("modal").classList.add("show");
+        badges();
+      }
+      function closeModal() {
+        $("modal").classList.remove("show");
+      }
+      function badges() {
+        let b = document.querySelectorAll(".badge");
+        if (answered > 0) b[0].textContent = "🔓 Taste Explorer";
+        if (answered > 15) b[1].textContent = "🔓 Touch Explorer";
+        if (score >= 150) b[2].textContent = "🔓 Science Star";
+        if (score >= 270) b[3].textContent = "🔓 Body Sense Master";
+      }
+      const cards = [
+        ["👅", "Tongue", "Helps us taste food."],
+        ["🔬", "Taste Buds", "Help detect tastes."],
+        ["🍬", "Sweet", "Sugar and candy are examples."],
+        ["🍋", "Sour", "Lemon and calamansi are examples."],
+        ["🧂", "Salty", "Salt gives a salty taste."],
+        ["🥒", "Bitter", "Bitter gourd is an example."],
+        ["🖐️", "Skin", "The sense organ for touch."],
+        ["⬆️", "Epidermis", "Top layer of skin."],
+        ["⬇️", "Dermis", "Layer below the epidermis."],
+        ["⭕", "Pores", "Tiny openings in the skin."],
+        ["🧑‍🦱", "Hair", "Grows from the skin."],
+        ["💧", "Sweat Gland", "Produces sweat."],
+        [
+          "⚡",
+          "Nerve Endings",
+          "Help us feel touch, pain, pressure, and temperature.",
+        ],
+        ["🧊", "Cold", "A touch sensation."],
+        ["🧸", "Soft", "Cotton can feel soft."],
+        ["🪵", "Rough", "Sandpaper can feel rough."],
+      ];
+      $("flashgrid").innerHTML = cards
+        .map(
+          (c, i) =>
+            '<button class="flash card" onclick="flip(this,' +
+            i +
+            ')"><div class="emoji">' +
+            c[0] +
+            "</div><b>" +
+            c[1] +
+            "</b><small>Tap to reveal</small></button>",
+        )
+        .join("");
+      function flip(el, i) {
+        let c = cards[i];
+        if (el.dataset.open) {
+          el.innerHTML =
+            '<div class="emoji">' +
+            c[0] +
+            "</div><b>" +
+            c[1] +
+            "</b><small>Tap to reveal</small>";
+          delete el.dataset.open;
+        } else {
+          el.innerHTML =
+            '<div class="emoji">💡</div><b>' +
+            c[2] +
+            "</b><small>Tap to hide</small>";
+          el.dataset.open = 1;
+        }
+      }
+      const tastes = [
+        ["🍬 Candy", "Sweet"],
+        ["🍋 Lemon", "Sour"],
+        ["🧂 Salt", "Salty"],
+        ["🥒 Bitter gourd", "Bitter"],
+      ];
+      let ti = 0;
+      function tasteSorter() {
+        let x = tastes[ti++ % 4];
+        $("tasteResult").innerHTML =
+          "<p><b>" + x[0] + "</b> → Think... → <b>" + x[1] + "!</b></p>";
+      }
+      const feels = [
+        ["🧊 Ice cube", "Cold"],
+        ["🧸 Cotton", "Soft"],
+        ["🪵 Sandpaper", "Rough"],
+        ["🪟 Glass", "Smooth"],
+      ];
+      let fi = 0;
+      function feelIt() {
+        let x = feels[fi++ % 4];
+        $("feelResult").innerHTML =
+          "<p><b>" + x[0] + "</b> → <b>" + x[1] + "</b></p>";
+      }
+      const clues = [
+        "Top layer → Epidermis",
+        "Below epidermis → Dermis",
+        "Tiny openings → Pores",
+        "Grows from skin → Hair",
+        "Produces sweat → Sweat gland",
+        "Helps feel touch and pain → Nerve endings",
+      ];
+      let ci = 0;
+      function skinClue() {
+        $("skinResult").innerHTML = "<p>🔎 " + clues[ci++ % 6] + "</p>";
+      }
+    </script>
+  </body>
 </html>
