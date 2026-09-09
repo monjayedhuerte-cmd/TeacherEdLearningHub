@@ -1,301 +1,1735 @@
 <!doctype html>
 <html lang="fil">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Teacher Ed Learning Hub | ESP 2 – Aralin 10: Karapatan ng Bata</title>
-<link rel="icon" type="image/png" href="assets/BrandLogo.png">
-<meta name="theme-color" content="#0b2d4d">
-<style>
-:root{
- --navy:#0b2d4d;--navy2:#123f63;--gold:#e7a63b;--cream:#fffaf1;--paper:#fff;
- --ink:#1d2b36;--muted:#66727d;--line:#dce5eb;--good:#19734a;--bad:#b33a3a;
- --shadow:0 12px 35px rgba(11,45,77,.10);--radius:20px
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:linear-gradient(180deg,#f4f8fb,#fff);color:var(--ink);line-height:1.55}
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-.header{position:sticky;top:0;z-index:50;background:rgba(11,45,77,.97);color:#fff;box-shadow:0 5px 20px rgba(0,0,0,.12)}
-.header-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:16px;padding:10px 18px}
-.brand{display:flex;align-items:center;gap:10px;min-width:220px}
-.brand img{width:48px;height:48px;object-fit:contain;background:#fff;border-radius:12px;padding:3px}
-.brand strong{font-size:15px;display:block}.brand small{opacity:.78}
-.nav{display:flex;gap:6px;overflow:auto;flex:1;scrollbar-width:none}
-.nav button{border:0;background:transparent;color:#fff;padding:9px 11px;border-radius:10px;white-space:nowrap;font-weight:700;font-size:13px}
-.nav button:hover,.nav button.active{background:rgba(255,255,255,.13)}
-.tools{display:flex;gap:6px}.iconbtn{border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:9px 10px}
-.progressbar{height:4px;background:#082238}.progressbar i{display:block;height:100%;width:0;background:var(--gold);transition:.3s}
-main{max-width:1200px;margin:auto;padding:25px 16px 55px}
-.hero{background:linear-gradient(135deg,var(--navy),#18537d);color:#fff;border-radius:28px;padding:38px;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.hero:after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;right:-90px;top:-100px;background:rgba(231,166,59,.18)}
-.kicker{letter-spacing:.08em;text-transform:uppercase;color:#ffd98a;font-weight:800;font-size:13px}
-h1{font-size:clamp(30px,5vw,52px);line-height:1.08;margin:8px 0 12px}.hero p{max-width:760px;font-size:17px;color:#eaf3f9}
-.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}.badge{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:7px 11px;border-radius:999px;font-size:13px}
-.section{display:none;animation:fade .25s ease}.section.active{display:block}@keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px;margin:18px 0}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.card h2,.card h3{margin-top:0;color:var(--navy)}.en{color:var(--muted);font-size:.92em}
-.callout{background:#fff7e7;border-left:5px solid var(--gold);padding:16px;border-radius:12px}
-.goal{display:flex;gap:12px;align-items:flex-start}.num{flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
-.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:800;background:var(--navy);color:#fff}.btn:hover{filter:brightness(1.08)}.btn.gold{background:var(--gold);color:#1d2b36}.btn.light{background:#eef4f8;color:var(--navy)}.btn.good{background:#dff4e9;color:var(--good)}.btn.bad{background:#fde5e5;color:var(--bad)}
-.btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
-.right-card{border:2px solid #e5edf2;border-radius:18px;padding:18px;background:linear-gradient(180deg,#fff,#f8fbfd);height:100%}
-.right-card .icon{font-size:38px}.right-card h3{margin:8px 0 4px}
-.scenario{border:1px solid var(--line);padding:16px;border-radius:15px;margin:12px 0;background:#fff}
-.choice{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.choice button{background:#f1f6f9;border:1px solid #d6e1e8;color:var(--navy);padding:9px 12px;border-radius:10px;font-weight:700}
-.choice button.selected{outline:3px solid rgba(231,166,59,.35);background:#fff4d9}
-.feedback{margin-top:10px;padding:11px;border-radius:10px;font-weight:700;display:none}.feedback.show{display:block}.feedback.good{background:#e5f6ed;color:var(--good)}.feedback.bad{background:#fde8e8;color:var(--bad)}
-.flashcard{min-height:200px;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#f7fbff,#fff7e7);border-radius:18px;padding:24px;border:1px solid var(--line)}
-.flashcard h3{font-size:28px;margin:0;color:var(--navy)}
-.term{font-size:16px;color:var(--muted);margin-top:6px}
-.match{display:grid;grid-template-columns:1fr 1fr;gap:12px}.match button{text-align:left;border:1px solid var(--line);background:#fff;padding:14px;border-radius:13px;color:var(--ink);font-weight:700}
-.match button.done{background:#e8f7ef;border-color:#a8d7bd}.match button.wrong{background:#fde8e8}
-.quiz-q{padding:18px;border:1px solid var(--line);border-radius:15px;margin:14px 0}.quiz-q h3{font-size:16px;color:var(--ink)}
-.quiz-opt{display:block;width:100%;text-align:left;margin:7px 0;border:1px solid #d9e2e8;background:#f8fbfc;padding:11px 13px;border-radius:11px}
-.quiz-opt.correct{background:#e4f6eb;border-color:#9bd0b1}.quiz-opt.incorrect{background:#fde5e5;border-color:#e1a4a4}
-.result{background:linear-gradient(135deg,#fff7df,#f7fbff);border:2px solid #f0d58f;text-align:center;border-radius:22px;padding:26px}
-.score{font-size:48px;font-weight:900;color:var(--navy)}
-.stars{font-size:28px;letter-spacing:4px}
-.progress-card{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.stat{background:#f7fafc;border:1px solid var(--line);padding:14px;border-radius:14px}.stat strong{font-size:24px;color:var(--navy);display:block}
-textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:13px;padding:13px;resize:vertical}
-.source-img{width:100%;border-radius:15px;border:1px solid var(--line);display:block}
-footer{background:var(--navy);color:#fff;padding:30px 16px}.footer-inner{max-width:1200px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:18px}.footer-brand{display:flex;align-items:center;gap:12px}.footer-brand img{width:52px;height:52px;background:#fff;border-radius:12px;padding:3px}.small{font-size:13px;color:#b9ccda}
-@media(max-width:900px){.header-inner{flex-wrap:wrap}.brand{min-width:auto}.tools{margin-left:auto}.nav{order:3;flex-basis:100%}.grid{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){main{padding:15px 10px 40px}.hero{padding:25px 20px;border-radius:20px}.card{padding:18px;margin:13px 0}.grid,.grid2,.progress-card{grid-template-columns:1fr}.match{grid-template-columns:1fr}.brand img{width:42px;height:42px}.brand strong{font-size:13px}.nav button{font-size:12px;padding:8px 9px}}
-</style>
-</head>
-<body>
-<header class="header">
- <div class="header-inner">
-  <div class="brand"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub"><div><strong>Teacher Ed Learning Hub</strong><small>ESP 2 • Interactive Learning</small></div></div>
-  <nav class="nav" id="nav">
-   <button data-go="home" class="active">Home</button><button data-go="connect">Connect</button><button data-go="teach">Teach</button><button data-go="guided">Guided</button><button data-go="practice">Practice</button><button data-go="game">Game</button><button data-go="apply">Apply</button><button data-go="mastery">Mastery</button><button data-go="remediate">Review</button><button data-go="source">Source</button>
-  </nav>
-  <div class="tools"><button class="iconbtn" id="soundBtn" title="Sound">🔊</button><button class="iconbtn" id="printBtn" title="Print">🖨️</button><button class="iconbtn" id="fullBtn" title="Fullscreen">⛶</button></div>
- </div>
- <div class="progressbar"><i id="prog"></i></div>
-</header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<main>
-<section id="home" class="section active">
- <div class="hero">
-  <div class="kicker">Edukasyon sa Pagpapakatao 2 • Aralin 10</div>
-  <h1>Alam Ko ang Aking mga Karapatan Bilang Bata</h1>
-  <p><b>My Rights as a Child.</b> Alamin ang mahahalagang karapatan ng isang bata at kung paano makikilahok nang tama sa mga bagay na nakaaapekto sa iyong buhay.</p>
-  <div class="badges"><span class="badge">👧 Grade 2</span><span class="badge">📚 Teacher-guided</span><span class="badge">🧩 Interactive</span><span class="badge">📱 Mobile-friendly</span></div>
-  <div class="btnrow"><button class="btn gold" data-go="connect">Simulan ang Aralin →</button><button class="btn light" data-go="teach">Tingnan ang Lesson Map</button></div>
- </div>
- <div class="card">
-  <h2>🎯 Mga Layunin</h2>
-  <div class="grid2">
-   <div class="goal"><span class="num">1</span><div><b>Nalalaman ko ang aking mga karapatan bilang bata.</b><div class="en">I can identify my rights as a child.</div></div></div>
-   <div class="goal"><span class="num">2</span><div><b>Nauunawaan ko ang kahalagahan ng aking mga karapatan.</b><div class="en">I can explain why my rights are important.</div></div></div>
-  </div>
- </div>
- <div class="card">
-  <h2>🗺️ Daloy ng Pagkatuto</h2>
-  <div class="grid">
-   <div class="right-card"><div class="icon">🔗</div><h3>Connect</h3><div class="en">Connect to what you already know.</div></div>
-   <div class="right-card"><div class="icon">💡</div><h3>Teach & Model</h3><div class="en">Learn the meaning and examples.</div></div>
-   <div class="right-card"><div class="icon">🤝</div><h3>Guided Practice</h3><div class="en">Practice with teacher support.</div></div>
-   <div class="right-card"><div class="icon">🎮</div><h3>Game Practice</h3><div class="en">Strengthen learning through play.</div></div>
-   <div class="right-card"><div class="icon">🌱</div><h3>Apply</h3><div class="en">Use the lesson in real life.</div></div>
-   <div class="right-card"><div class="icon">🏆</div><h3>Mastery</h3><div class="en">Check what you learned.</div></div>
-  </div>
- </div>
-</section>
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+    <title>
+      Teacher Ed Learning Hub | ESP 2 – Aralin 10: Karapatan ng Bata
+    </title>
+    <link rel="icon" type="image/png" href="assets/BrandLogo.png" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<section id="connect" class="section">
- <div class="card"><h2>🔗 Connect: Ano ang Karapatan?</h2><p>Isipin: <b>Ano ang isang bagay na dapat mong matanggap, magawa, o maranasan dahil ikaw ay isang bata?</b></p><div class="en">What is something you should receive, do, or experience because you are a child?</div>
- <div class="scenario"><b>Situation:</b> May oras ka para maglaro, matuto, kumain, at magpahinga. Alin dito ang halimbawa ng pangangailangan ng bata?</div>
- <div class="choice"><button onclick="connectAns(this,true)">Pagkain at pahinga</button><button onclick="connectAns(this,false)">Bagong laruan araw-araw</button><button onclick="connectAns(this,false)">Laging manalo sa laro</button></div><div id="connectFb" class="feedback"></div></div>
- <div class="card"><h2>💭 Think-Pair-Share</h2><p>Sabihin sa katabi: <b>“Ang isang karapatan ko bilang bata ay ______ dahil ______.”</b></p><div class="en">Share one right you have and why it matters.</div><button class="btn" data-go="teach">Next: Alamin Natin →</button></div>
-</section>
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+    <meta name="theme-color" content="#0b2d4d" />
+    <style>
+      :root {
+        --navy: #0b2d4d;
+        --navy2: #123f63;
+        --gold: #e7a63b;
+        --cream: #fffaf1;
+        --paper: #fff;
+        --ink: #1d2b36;
+        --muted: #66727d;
+        --line: #dce5eb;
+        --good: #19734a;
+        --bad: #b33a3a;
+        --shadow: 0 12px 35px rgba(11, 45, 77, 0.1);
+        --radius: 20px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Arial,
+          sans-serif;
+        background: linear-gradient(180deg, #f4f8fb, #fff);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(11, 45, 77, 0.97);
+        color: #fff;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+      }
+      .header-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 10px 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 220px;
+      }
+      .brand img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 12px;
+        padding: 3px;
+      }
+      .brand strong {
+        font-size: 15px;
+        display: block;
+      }
+      .brand small {
+        opacity: 0.78;
+      }
+      .nav {
+        display: flex;
+        gap: 6px;
+        overflow: auto;
+        flex: 1;
+        scrollbar-width: none;
+      }
+      .nav button {
+        border: 0;
+        background: transparent;
+        color: #fff;
+        padding: 9px 11px;
+        border-radius: 10px;
+        white-space: nowrap;
+        font-weight: 700;
+        font-size: 13px;
+      }
+      .nav button:hover,
+      .nav button.active {
+        background: rgba(255, 255, 255, 0.13);
+      }
+      .tools {
+        display: flex;
+        gap: 6px;
+      }
+      .iconbtn {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.08);
+        color: #fff;
+        border-radius: 10px;
+        padding: 9px 10px;
+      }
+      .progressbar {
+        height: 4px;
+        background: #082238;
+      }
+      .progressbar i {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: var(--gold);
+        transition: 0.3s;
+      }
+      main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 25px 16px 55px;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--navy), #18537d);
+        color: #fff;
+        border-radius: 28px;
+        padding: 38px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        right: -90px;
+        top: -100px;
+        background: rgba(231, 166, 59, 0.18);
+      }
+      .kicker {
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #ffd98a;
+        font-weight: 800;
+        font-size: 13px;
+      }
+      h1 {
+        font-size: clamp(30px, 5vw, 52px);
+        line-height: 1.08;
+        margin: 8px 0 12px;
+      }
+      .hero p {
+        max-width: 760px;
+        font-size: 17px;
+        color: #eaf3f9;
+      }
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 18px;
+      }
+      .badge {
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        padding: 7px 11px;
+        border-radius: 999px;
+        font-size: 13px;
+      }
+      .section {
+        display: none;
+        animation: fade 0.25s ease;
+      }
+      .section.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.2;
+          transform: translateY(4px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .card {
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 24px;
+        margin: 18px 0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .card h2,
+      .card h3 {
+        margin-top: 0;
+        color: var(--navy);
+      }
+      .en {
+        color: var(--muted);
+        font-size: 0.92em;
+      }
+      .callout {
+        background: #fff7e7;
+        border-left: 5px solid var(--gold);
+        padding: 16px;
+        border-radius: 12px;
+      }
+      .goal {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .num {
+        flex: 0 0 34px;
+        height: 34px;
+        border-radius: 50%;
+        background: var(--navy);
+        color: #fff;
+        display: grid;
+        place-items: center;
+        font-weight: 800;
+      }
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 16px;
+        font-weight: 800;
+        background: var(--navy);
+        color: #fff;
+      }
+      .btn:hover {
+        filter: brightness(1.08);
+      }
+      .btn.gold {
+        background: var(--gold);
+        color: #1d2b36;
+      }
+      .btn.light {
+        background: #eef4f8;
+        color: var(--navy);
+      }
+      .btn.good {
+        background: #dff4e9;
+        color: var(--good);
+      }
+      .btn.bad {
+        background: #fde5e5;
+        color: var(--bad);
+      }
+      .btnrow {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .right-card {
+        border: 2px solid #e5edf2;
+        border-radius: 18px;
+        padding: 18px;
+        background: linear-gradient(180deg, #fff, #f8fbfd);
+        height: 100%;
+      }
+      .right-card .icon {
+        font-size: 38px;
+      }
+      .right-card h3 {
+        margin: 8px 0 4px;
+      }
+      .scenario {
+        border: 1px solid var(--line);
+        padding: 16px;
+        border-radius: 15px;
+        margin: 12px 0;
+        background: #fff;
+      }
+      .choice {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .choice button {
+        background: #f1f6f9;
+        border: 1px solid #d6e1e8;
+        color: var(--navy);
+        padding: 9px 12px;
+        border-radius: 10px;
+        font-weight: 700;
+      }
+      .choice button.selected {
+        outline: 3px solid rgba(231, 166, 59, 0.35);
+        background: #fff4d9;
+      }
+      .feedback {
+        margin-top: 10px;
+        padding: 11px;
+        border-radius: 10px;
+        font-weight: 700;
+        display: none;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .feedback.good {
+        background: #e5f6ed;
+        color: var(--good);
+      }
+      .feedback.bad {
+        background: #fde8e8;
+        color: var(--bad);
+      }
+      .flashcard {
+        min-height: 200px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #f7fbff, #fff7e7);
+        border-radius: 18px;
+        padding: 24px;
+        border: 1px solid var(--line);
+      }
+      .flashcard h3 {
+        font-size: 28px;
+        margin: 0;
+        color: var(--navy);
+      }
+      .term {
+        font-size: 16px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .match {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .match button {
+        text-align: left;
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 14px;
+        border-radius: 13px;
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .match button.done {
+        background: #e8f7ef;
+        border-color: #a8d7bd;
+      }
+      .match button.wrong {
+        background: #fde8e8;
+      }
+      .quiz-q {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        margin: 14px 0;
+      }
+      .quiz-q h3 {
+        font-size: 16px;
+        color: var(--ink);
+      }
+      .quiz-opt {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 7px 0;
+        border: 1px solid #d9e2e8;
+        background: #f8fbfc;
+        padding: 11px 13px;
+        border-radius: 11px;
+      }
+      .quiz-opt.correct {
+        background: #e4f6eb;
+        border-color: #9bd0b1;
+      }
+      .quiz-opt.incorrect {
+        background: #fde5e5;
+        border-color: #e1a4a4;
+      }
+      .result {
+        background: linear-gradient(135deg, #fff7df, #f7fbff);
+        border: 2px solid #f0d58f;
+        text-align: center;
+        border-radius: 22px;
+        padding: 26px;
+      }
+      .score {
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .stars {
+        font-size: 28px;
+        letter-spacing: 4px;
+      }
+      .progress-card {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .stat {
+        background: #f7fafc;
+        border: 1px solid var(--line);
+        padding: 14px;
+        border-radius: 14px;
+      }
+      .stat strong {
+        font-size: 24px;
+        color: var(--navy);
+        display: block;
+      }
+      textarea {
+        width: 100%;
+        min-height: 130px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        padding: 13px;
+        resize: vertical;
+      }
+      .source-img {
+        width: 100%;
+        border-radius: 15px;
+        border: 1px solid var(--line);
+        display: block;
+      }
+      footer {
+        background: var(--navy);
+        color: #fff;
+        padding: 30px 16px;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .footer-brand img {
+        width: 52px;
+        height: 52px;
+        background: #fff;
+        border-radius: 12px;
+        padding: 3px;
+      }
+      .small {
+        font-size: 13px;
+        color: #b9ccda;
+      }
+      @media (max-width: 900px) {
+        .header-inner {
+          flex-wrap: wrap;
+        }
+        .brand {
+          min-width: auto;
+        }
+        .tools {
+          margin-left: auto;
+        }
+        .nav {
+          order: 3;
+          flex-basis: 100%;
+        }
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 620px) {
+        main {
+          padding: 15px 10px 40px;
+        }
+        .hero {
+          padding: 25px 20px;
+          border-radius: 20px;
+        }
+        .card {
+          padding: 18px;
+          margin: 13px 0;
+        }
+        .grid,
+        .grid2,
+        .progress-card {
+          grid-template-columns: 1fr;
+        }
+        .match {
+          grid-template-columns: 1fr;
+        }
+        .brand img {
+          width: 42px;
+          height: 42px;
+        }
+        .brand strong {
+          font-size: 13px;
+        }
+        .nav button {
+          font-size: 12px;
+          padding: 8px 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-inner">
+        <div class="brand">
+          <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub" />
+          <div>
+            <strong>Teacher Ed Learning Hub</strong
+            ><small>ESP 2 • Interactive Learning</small>
+          </div>
+        </div>
+        <nav class="nav" id="nav">
+          <button data-go="home" class="active">Home</button
+          ><button data-go="connect">Connect</button
+          ><button data-go="teach">Teach</button
+          ><button data-go="guided">Guided</button
+          ><button data-go="practice">Practice</button
+          ><button data-go="game">Game</button
+          ><button data-go="apply">Apply</button
+          ><button data-go="mastery">Mastery</button
+          ><button data-go="remediate">Review</button
+          ><button data-go="source">Source</button>
+        </nav>
+        <div class="tools">
+          <button class="iconbtn" id="soundBtn" title="Sound">🔊</button
+          ><button class="iconbtn" id="printBtn" title="Print">🖨️</button
+          ><button class="iconbtn" id="fullBtn" title="Fullscreen">⛶</button>
+        </div>
+      </div>
+      <div class="progressbar"><i id="prog"></i></div>
+    </header>
 
-<section id="teach" class="section">
- <div class="card"><h2>💡 Huminto at Mag-isip: Ano ang Karapatan?</h2><p><b>Ang karapatan</b> ay mga bagay na dapat matanggap at mapangalagaan ng isang bata upang siya ay lumaki nang maayos, ligtas, masaya, at malusog.</p><div class="en">Rights are things children should receive and have protected so they can grow well, safely, happily, and healthily.</div>
- <div class="callout"><b>Batayang ideya:</b> Binibigyang-diin ng aralin ang mga karapatan ng bata at ang tamang pakikilahok sa mga bagay na may epekto sa buhay ng bata.</div></div>
- <div class="card"><h2>🌍 United Nations Convention on the Rights of the Child (UNCRC)</h2><p>Ayon sa sanggunian, ang UNCRC ay isang pandaigdigang kasunduan na nagsasaad ng mga karapatan ng mga batang wala pang 18 taong gulang upang sila ay umunlad at mabuhay nang malusog.</p><div class="en">The lesson introduces the UNCRC as an international agreement recognizing the rights of children under 18.</div></div>
- <div class="grid">
-  <div class="right-card"><div class="icon">🍚</div><h3>1. Karapatang Masuportahan ang mga Pangangailangan</h3><p>May karapatan ang bata sa maayos na pagkain, pahinga, oras para maglaro, damit, edukasyon, at pangangalaga sa kalusugan.</p><div class="en">Right to have basic needs supported.</div></div>
-  <div class="right-card"><div class="icon">🛡️</div><h3>2. Karapatang Mapangalagaan</h3><p>May karapatan ang bata na lumaki nang masaya at malusog. Hindi dapat abusuhin o pabayaan ang bata.</p><div class="en">Right to protection and care.</div></div>
-  <div class="right-card"><div class="icon">🗣️</div><h3>3. Karapatang Makilahok</h3><p>May pagkakataon ang bata na makilahok sa mga pagpapasya tungkol sa mga bagay na maaaring makaapekto sa kaniyang buhay.</p><div class="en">Right to participate in decisions affecting the child.</div></div>
- </div>
- <div class="card"><h2>📌 Tandaan</h2><ul><li>Ang karapatan ay hindi “gantimpala”; ito ay dapat igalang at pangalagaan.</li><li>May karapatan ang bata, at may pananagutan din siyang igalang ang karapatan ng iba.</li><li>Ang pakikilahok ay dapat may wastong paggabay at pakikinig sa payo ng nakatatanda.</li></ul><button class="btn" data-go="guided">Next: Guided Practice →</button></div>
-</section>
+    <main>
+      <section id="home" class="section active">
+        <div class="hero">
+          <div class="kicker">Edukasyon sa Pagpapakatao 2 • Aralin 10</div>
+          <h1>Alam Ko ang Aking mga Karapatan Bilang Bata</h1>
+          <p>
+            <b>My Rights as a Child.</b> Alamin ang mahahalagang karapatan ng
+            isang bata at kung paano makikilahok nang tama sa mga bagay na
+            nakaaapekto sa iyong buhay.
+          </p>
+          <div class="badges">
+            <span class="badge">👧 Grade 2</span
+            ><span class="badge">📚 Teacher-guided</span
+            ><span class="badge">🧩 Interactive</span
+            ><span class="badge">📱 Mobile-friendly</span>
+          </div>
+          <div class="btnrow">
+            <button class="btn gold" data-go="connect">
+              Simulan ang Aralin →</button
+            ><button class="btn light" data-go="teach">
+              Tingnan ang Lesson Map
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <h2>🎯 Mga Layunin</h2>
+          <div class="grid2">
+            <div class="goal">
+              <span class="num">1</span>
+              <div>
+                <b>Nalalaman ko ang aking mga karapatan bilang bata.</b>
+                <div class="en">I can identify my rights as a child.</div>
+              </div>
+            </div>
+            <div class="goal">
+              <span class="num">2</span>
+              <div>
+                <b>Nauunawaan ko ang kahalagahan ng aking mga karapatan.</b>
+                <div class="en">I can explain why my rights are important.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>🗺️ Daloy ng Pagkatuto</h2>
+          <div class="grid">
+            <div class="right-card">
+              <div class="icon">🔗</div>
+              <h3>Connect</h3>
+              <div class="en">Connect to what you already know.</div>
+            </div>
+            <div class="right-card">
+              <div class="icon">💡</div>
+              <h3>Teach & Model</h3>
+              <div class="en">Learn the meaning and examples.</div>
+            </div>
+            <div class="right-card">
+              <div class="icon">🤝</div>
+              <h3>Guided Practice</h3>
+              <div class="en">Practice with teacher support.</div>
+            </div>
+            <div class="right-card">
+              <div class="icon">🎮</div>
+              <h3>Game Practice</h3>
+              <div class="en">Strengthen learning through play.</div>
+            </div>
+            <div class="right-card">
+              <div class="icon">🌱</div>
+              <h3>Apply</h3>
+              <div class="en">Use the lesson in real life.</div>
+            </div>
+            <div class="right-card">
+              <div class="icon">🏆</div>
+              <h3>Mastery</h3>
+              <div class="en">Check what you learned.</div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="guided" class="section">
- <div class="card"><h2>🤝 Guided Practice: Anong Karapatan?</h2><p>Piliin ang karapatang ipinapakita sa bawat sitwasyon. Pagkatapos, basahin ang paliwanag.</p>
-  <div id="guidedBox"></div>
-  <div class="btnrow"><button class="btn light" onclick="guidedPrev()">← Balik</button><button class="btn" onclick="guidedNext()">Susunod →</button></div>
- </div>
-</section>
+      <section id="connect" class="section">
+        <div class="card">
+          <h2>🔗 Connect: Ano ang Karapatan?</h2>
+          <p>
+            Isipin:
+            <b
+              >Ano ang isang bagay na dapat mong matanggap, magawa, o maranasan
+              dahil ikaw ay isang bata?</b
+            >
+          </p>
+          <div class="en">
+            What is something you should receive, do, or experience because you
+            are a child?
+          </div>
+          <div class="scenario">
+            <b>Situation:</b> May oras ka para maglaro, matuto, kumain, at
+            magpahinga. Alin dito ang halimbawa ng pangangailangan ng bata?
+          </div>
+          <div class="choice">
+            <button onclick="connectAns(this, true)">Pagkain at pahinga</button
+            ><button onclick="connectAns(this, false)">
+              Bagong laruan araw-araw</button
+            ><button onclick="connectAns(this, false)">
+              Laging manalo sa laro
+            </button>
+          </div>
+          <div id="connectFb" class="feedback"></div>
+        </div>
+        <div class="card">
+          <h2>💭 Think-Pair-Share</h2>
+          <p>
+            Sabihin sa katabi:
+            <b>“Ang isang karapatan ko bilang bata ay ______ dahil ______.”</b>
+          </p>
+          <div class="en">Share one right you have and why it matters.</div>
+          <button class="btn" data-go="teach">Next: Alamin Natin →</button>
+        </div>
+      </section>
 
-<section id="practice" class="section">
- <div class="card"><h2>✏️ Your Turn: Tama o Hindi?</h2><p>Piliin kung ang kilos ay nagpapakita ng paggalang sa karapatan ng bata.</p>
- <div id="practiceList"></div>
- <button class="btn gold" onclick="checkPractice()">Suriin ang Sagot</button><div id="practiceScore" class="feedback"></div></div>
- <div class="card"><h2>🧠 Quick Recall</h2><div class="flashcard"><div><div class="kicker" style="color:var(--gold)">Three Key Rights</div><h3 id="flashTerm">Karapatang Masuportahan ang mga Pangangailangan</h3><div class="term" id="flashDef">Pagkain, pahinga, laro, damit, edukasyon, at pangangalaga sa kalusugan.</div><div class="btnrow" style="justify-content:center"><button class="btn light" onclick="flashPrev()">←</button><button class="btn" onclick="flashNext()">Next →</button></div></div></div></div>
-</section>
+      <section id="teach" class="section">
+        <div class="card">
+          <h2>💡 Huminto at Mag-isip: Ano ang Karapatan?</h2>
+          <p>
+            <b>Ang karapatan</b> ay mga bagay na dapat matanggap at
+            mapangalagaan ng isang bata upang siya ay lumaki nang maayos,
+            ligtas, masaya, at malusog.
+          </p>
+          <div class="en">
+            Rights are things children should receive and have protected so they
+            can grow well, safely, happily, and healthily.
+          </div>
+          <div class="callout">
+            <b>Batayang ideya:</b> Binibigyang-diin ng aralin ang mga karapatan
+            ng bata at ang tamang pakikilahok sa mga bagay na may epekto sa
+            buhay ng bata.
+          </div>
+        </div>
+        <div class="card">
+          <h2>
+            🌍 United Nations Convention on the Rights of the Child (UNCRC)
+          </h2>
+          <p>
+            Ayon sa sanggunian, ang UNCRC ay isang pandaigdigang kasunduan na
+            nagsasaad ng mga karapatan ng mga batang wala pang 18 taong gulang
+            upang sila ay umunlad at mabuhay nang malusog.
+          </p>
+          <div class="en">
+            The lesson introduces the UNCRC as an international agreement
+            recognizing the rights of children under 18.
+          </div>
+        </div>
+        <div class="grid">
+          <div class="right-card">
+            <div class="icon">🍚</div>
+            <h3>1. Karapatang Masuportahan ang mga Pangangailangan</h3>
+            <p>
+              May karapatan ang bata sa maayos na pagkain, pahinga, oras para
+              maglaro, damit, edukasyon, at pangangalaga sa kalusugan.
+            </p>
+            <div class="en">Right to have basic needs supported.</div>
+          </div>
+          <div class="right-card">
+            <div class="icon">🛡️</div>
+            <h3>2. Karapatang Mapangalagaan</h3>
+            <p>
+              May karapatan ang bata na lumaki nang masaya at malusog. Hindi
+              dapat abusuhin o pabayaan ang bata.
+            </p>
+            <div class="en">Right to protection and care.</div>
+          </div>
+          <div class="right-card">
+            <div class="icon">🗣️</div>
+            <h3>3. Karapatang Makilahok</h3>
+            <p>
+              May pagkakataon ang bata na makilahok sa mga pagpapasya tungkol sa
+              mga bagay na maaaring makaapekto sa kaniyang buhay.
+            </p>
+            <div class="en">
+              Right to participate in decisions affecting the child.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <h2>📌 Tandaan</h2>
+          <ul>
+            <li>
+              Ang karapatan ay hindi “gantimpala”; ito ay dapat igalang at
+              pangalagaan.
+            </li>
+            <li>
+              May karapatan ang bata, at may pananagutan din siyang igalang ang
+              karapatan ng iba.
+            </li>
+            <li>
+              Ang pakikilahok ay dapat may wastong paggabay at pakikinig sa payo
+              ng nakatatanda.
+            </li>
+          </ul>
+          <button class="btn" data-go="guided">Next: Guided Practice →</button>
+        </div>
+      </section>
 
-<section id="game" class="section">
- <div class="card"><h2>🎮 Game Zone: Rights Rescue!</h2><p>Tulungan ang batang tauhan na piliin ang tamang karapatan. May 8 rounds.</p><div class="progress-card"><div class="stat"><span>Round</span><strong id="gameRound">1/8</strong></div><div class="stat"><span>Score</span><strong id="gameScore">0</strong></div><div class="stat"><span>Stars</span><strong id="gameStars">0</strong></div><div class="stat"><span>Goal</span><strong>8</strong></div></div><div id="gameBox"></div></div>
- <div class="card"><h2>🃏 Memory Match: Right + Example</h2><p>I-click ang dalawang card na magkapares.</p><div class="match" id="memory"></div><div id="memoryFb" class="feedback"></div></div>
-</section>
+      <section id="guided" class="section">
+        <div class="card">
+          <h2>🤝 Guided Practice: Anong Karapatan?</h2>
+          <p>
+            Piliin ang karapatang ipinapakita sa bawat sitwasyon. Pagkatapos,
+            basahin ang paliwanag.
+          </p>
+          <div id="guidedBox"></div>
+          <div class="btnrow">
+            <button class="btn light" onclick="guidedPrev()">← Balik</button
+            ><button class="btn" onclick="guidedNext()">Susunod →</button>
+          </div>
+        </div>
+      </section>
 
-<section id="apply" class="section">
- <div class="card"><h2>🌱 Application: Karapatan at Pananagutan</h2><p>Ang pagkilala sa karapatan ay may kasamang paggalang sa karapatan ng iba. Piliin ang pinakamainam na kilos.</p>
- <div id="applyList"></div>
- </div>
- <div class="card"><h2>📝 Aking Pangako</h2><p>Tapusin: <b>“Iginagalang ko ang aking mga karapatan at karapatan ng iba sa pamamagitan ng…”</b></p><textarea id="promise" placeholder="Isulat ang iyong pangako..."></textarea><div class="btnrow"><button class="btn" onclick="savePromise()">💾 Save Promise</button></div><div id="promiseFb" class="feedback"></div></div>
-</section>
+      <section id="practice" class="section">
+        <div class="card">
+          <h2>✏️ Your Turn: Tama o Hindi?</h2>
+          <p>
+            Piliin kung ang kilos ay nagpapakita ng paggalang sa karapatan ng
+            bata.
+          </p>
+          <div id="practiceList"></div>
+          <button class="btn gold" onclick="checkPractice()">
+            Suriin ang Sagot
+          </button>
+          <div id="practiceScore" class="feedback"></div>
+        </div>
+        <div class="card">
+          <h2>🧠 Quick Recall</h2>
+          <div class="flashcard">
+            <div>
+              <div class="kicker" style="color: var(--gold)">
+                Three Key Rights
+              </div>
+              <h3 id="flashTerm">
+                Karapatang Masuportahan ang mga Pangangailangan
+              </h3>
+              <div class="term" id="flashDef">
+                Pagkain, pahinga, laro, damit, edukasyon, at pangangalaga sa
+                kalusugan.
+              </div>
+              <div class="btnrow" style="justify-content: center">
+                <button class="btn light" onclick="flashPrev()">←</button
+                ><button class="btn" onclick="flashNext()">Next →</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<section id="mastery" class="section">
- <div class="card"><h2>🏆 Mastery Check</h2><p>25 items. Piliin ang pinakamahusay na sagot. <b>Tip:</b> Basahin muna nang mabuti ang sitwasyon.</p><div id="quiz"></div><div class="btnrow"><button class="btn gold" onclick="gradeQuiz()">I-submit ang 25-Item Mastery Check</button><button class="btn light" onclick="resetQuiz()">Reset</button></div></div>
- <div id="quizResult"></div>
-</section>
+      <section id="game" class="section">
+        <div class="card">
+          <h2>🎮 Game Zone: Rights Rescue!</h2>
+          <p>
+            Tulungan ang batang tauhan na piliin ang tamang karapatan. May 8
+            rounds.
+          </p>
+          <div class="progress-card">
+            <div class="stat">
+              <span>Round</span><strong id="gameRound">1/8</strong>
+            </div>
+            <div class="stat">
+              <span>Score</span><strong id="gameScore">0</strong>
+            </div>
+            <div class="stat">
+              <span>Stars</span><strong id="gameStars">0</strong>
+            </div>
+            <div class="stat"><span>Goal</span><strong>8</strong></div>
+          </div>
+          <div id="gameBox"></div>
+        </div>
+        <div class="card">
+          <h2>🃏 Memory Match: Right + Example</h2>
+          <p>I-click ang dalawang card na magkapares.</p>
+          <div class="match" id="memory"></div>
+          <div id="memoryFb" class="feedback"></div>
+        </div>
+      </section>
 
-<section id="remediate" class="section">
- <div class="card"><h2>🔁 Practice My Mistakes</h2><p>Kung may maling sagot sa mastery check, dito mo maaaring balikan ang mahahalagang ideya.</p><div id="mistakes"></div></div>
- <div class="card"><h2>🌟 Enrichment</h2><p>Gumawa ng simpleng “My Rights” mini-poster sa papel. Isulat ang tatlong karapatan mula sa aralin at isang halimbawa para sa bawat isa.</p><button class="btn" onclick="speak('Ang aking mga karapatan bilang bata ay dapat igalang at pangalagaan.')">🔊 Basahin ang paalala</button></div>
-</section>
+      <section id="apply" class="section">
+        <div class="card">
+          <h2>🌱 Application: Karapatan at Pananagutan</h2>
+          <p>
+            Ang pagkilala sa karapatan ay may kasamang paggalang sa karapatan ng
+            iba. Piliin ang pinakamainam na kilos.
+          </p>
+          <div id="applyList"></div>
+        </div>
+        <div class="card">
+          <h2>📝 Aking Pangako</h2>
+          <p>
+            Tapusin:
+            <b
+              >“Iginagalang ko ang aking mga karapatan at karapatan ng iba sa
+              pamamagitan ng…”</b
+            >
+          </p>
+          <textarea
+            id="promise"
+            placeholder="Isulat ang iyong pangako..."
+          ></textarea>
+          <div class="btnrow">
+            <button class="btn" onclick="savePromise()">💾 Save Promise</button>
+          </div>
+          <div id="promiseFb" class="feedback"></div>
+        </div>
+      </section>
 
-<section id="source" class="section">
- <div class="card"><h2>📚 Batayan ng Aralin</h2><p>Ang interactive lesson na ito ay binuo mula sa tatlong pahinang larawan na ibinigay para sa Aralin 10: <b>Alam Ko ang Aking mga Karapatan Bilang Bata</b>.</p><p class="en">The source pages are preserved below for teacher reference.</p></div>
- <div class="grid"><div class="card"><h3>Pahina 54</h3><img class="source-img" src="assets/Source_Page_54.jpg" alt="Source page 54"></div><div class="card"><h3>Pahina 55</h3><img class="source-img" src="assets/Source_Page_55.jpg" alt="Source page 55"></div><div class="card"><h3>Pahina 56</h3><img class="source-img" src="assets/Source_Page_56.jpg" alt="Source page 56"></div></div>
-</section>
-</main>
+      <section id="mastery" class="section">
+        <div class="card">
+          <h2>🏆 Mastery Check</h2>
+          <p>
+            25 items. Piliin ang pinakamahusay na sagot. <b>Tip:</b> Basahin
+            muna nang mabuti ang sitwasyon.
+          </p>
+          <div id="quiz"></div>
+          <div class="btnrow">
+            <button class="btn gold" onclick="gradeQuiz()">
+              I-submit ang 25-Item Mastery Check</button
+            ><button class="btn light" onclick="resetQuiz()">Reset</button>
+          </div>
+        </div>
+        <div id="quizResult"></div>
+      </section>
 
-<footer><div class="footer-inner"><div class="footer-brand"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub"><div><b>Teacher Ed Learning Hub</b><div class="small">Edukasyon sa Pagpapakatao 2 • Aralin 10</div></div></div><div class="small">Interactive learning • Responsive • Offline-ready</div></div></footer>
+      <section id="remediate" class="section">
+        <div class="card">
+          <h2>🔁 Practice My Mistakes</h2>
+          <p>
+            Kung may maling sagot sa mastery check, dito mo maaaring balikan ang
+            mahahalagang ideya.
+          </p>
+          <div id="mistakes"></div>
+        </div>
+        <div class="card">
+          <h2>🌟 Enrichment</h2>
+          <p>
+            Gumawa ng simpleng “My Rights” mini-poster sa papel. Isulat ang
+            tatlong karapatan mula sa aralin at isang halimbawa para sa bawat
+            isa.
+          </p>
+          <button
+            class="btn"
+            onclick="
+              speak(
+                'Ang aking mga karapatan bilang bata ay dapat igalang at pangalagaan.',
+              )
+            "
+          >
+            🔊 Basahin ang paalala
+          </button>
+        </div>
+      </section>
 
-<script>
-const sections=[...document.querySelectorAll('.section')];
-const navBtns=[...document.querySelectorAll('[data-go]')];
-const order=['home','connect','teach','guided','practice','game','apply','mastery','remediate','source'];
-let visited=JSON.parse(localStorage.getItem('esp2_rights_visited')||'[]');
-function go(id){
- sections.forEach(s=>s.classList.toggle('active',s.id===id));
- navBtns.forEach(b=>b.classList.toggle('active',b.dataset.go===id));
- if(!visited.includes(id)){visited.push(id);localStorage.setItem('esp2_rights_visited',JSON.stringify(visited))}
- const pct=Math.min(100,Math.round((visited.filter(x=>order.includes(x)).length/order.length)*100)); document.getElementById('prog').style.width=pct+'%';
- window.scrollTo({top:0,behavior:'smooth'});
- if(id==='guided') renderGuided();
- if(id==='practice') renderPractice();
- if(id==='game') renderGame();
- if(id==='apply') renderApply();
- if(id==='mastery') renderQuiz();
- if(id==='remediate') renderMistakes();
-}
-navBtns.forEach(b=>b.addEventListener('click',()=>go(b.dataset.go)));
+      <section id="source" class="section">
+        <div class="card">
+          <h2>📚 Batayan ng Aralin</h2>
+          <p>
+            Ang interactive lesson na ito ay binuo mula sa tatlong pahinang
+            larawan na ibinigay para sa Aralin 10:
+            <b>Alam Ko ang Aking mga Karapatan Bilang Bata</b>.
+          </p>
+          <p class="en">
+            The source pages are preserved below for teacher reference.
+          </p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Pahina 54</h3>
+            <img
+              class="source-img"
+              src="assets/Source_Page_54.jpg"
+              alt="Source page 54"
+            />
+          </div>
+          <div class="card">
+            <h3>Pahina 55</h3>
+            <img
+              class="source-img"
+              src="assets/Source_Page_55.jpg"
+              alt="Source page 55"
+            />
+          </div>
+          <div class="card">
+            <h3>Pahina 56</h3>
+            <img
+              class="source-img"
+              src="assets/Source_Page_56.jpg"
+              alt="Source page 56"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
 
-function connectAns(btn,ok){
- document.querySelectorAll('#connect .choice button').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');
- const fb=document.getElementById('connectFb');fb.className='feedback show '+(ok?'good':'bad');fb.textContent=ok?'Tama! Ang pagkain at pahinga ay kabilang sa mga pangangailangang dapat masuportahan.':'Subukan muli. Isipin ang mga pangunahing pangangailangan ng bata.';speak(ok?'Tama!':'Subukan muli.');
-}
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub" />
+          <div>
+            <b>Teacher Ed Learning Hub</b>
+            <div class="small">Edukasyon sa Pagpapakatao 2 • Aralin 10</div>
+          </div>
+        </div>
+        <div class="small">
+          Interactive learning • Responsive • Offline-ready
+        </div>
+      </div>
+    </footer>
 
-const guided=[
- ['May sapat kang pagkain, oras para magpahinga, at pagkakataong mag-aral.','Karapatang Masuportahan ang mga Pangangailangan','Kasama rito ang pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan.'],
- ['Pinoprotektahan ang isang bata laban sa pang-aabuso at pagpapabaya.','Karapatang Mapangalagaan','Ang bata ay dapat lumaki nang ligtas, masaya, at malusog.'],
- ['Tinanong ka tungkol sa pagpili ng bagay na makaaapekto sa iyong buhay at pinakinggan ang iyong opinyon.','Karapatang Makilahok','May pagkakataon ang bata na makilahok sa mga pagpapasyang may epekto sa kaniyang buhay.'],
- ['Humingi ka ng payo sa pagpili ng damit.','Karapatang Makilahok','Ang pakikilahok ay maaaring may wastong paggabay at paghingi ng payo.']
-];
-let gi=0;
-function renderGuided(){const x=guided[gi];document.getElementById('guidedBox').innerHTML=`<div class="scenario"><b>Situation ${gi+1}</b><p>${x[0]}</p><div class="choice"><button onclick="guidedCheck(this,'${x[1]}')">${x[1]}</button><button onclick="guidedWrong(this)">Karapatang Mapangalagaan</button><button onclick="guidedWrong(this)">Karapatang Masuportahan ang mga Pangangailangan</button></div><div id="gfb" class="feedback"></div></div>`}
-function guidedCheck(btn,ans){document.querySelectorAll('#guidedBox button').forEach(b=>b.disabled=true);const fb=document.getElementById('gfb');fb.className='feedback show good';fb.textContent='Tama! '+guided[gi][2];speak('Tama!')}
-function guidedWrong(btn){const fb=document.getElementById('gfb');fb.className='feedback show bad';fb.textContent='Hindi pa. Balikan ang tatlong pangunahing karapatan.';speak('Hindi pa.')}
-function guidedNext(){gi=(gi+1)%guided.length;renderGuided()} function guidedPrev(){gi=(gi-1+guided.length)%guided.length;renderGuided()}
+    <script>
+      const sections = [...document.querySelectorAll(".section")];
+      const navBtns = [...document.querySelectorAll("[data-go]")];
+      const order = [
+        "home",
+        "connect",
+        "teach",
+        "guided",
+        "practice",
+        "game",
+        "apply",
+        "mastery",
+        "remediate",
+        "source",
+      ];
+      let visited = JSON.parse(
+        localStorage.getItem("esp2_rights_visited") || "[]",
+      );
+      function go(id) {
+        sections.forEach((s) => s.classList.toggle("active", s.id === id));
+        navBtns.forEach((b) =>
+          b.classList.toggle("active", b.dataset.go === id),
+        );
+        if (!visited.includes(id)) {
+          visited.push(id);
+          localStorage.setItem("esp2_rights_visited", JSON.stringify(visited));
+        }
+        const pct = Math.min(
+          100,
+          Math.round(
+            (visited.filter((x) => order.includes(x)).length / order.length) *
+              100,
+          ),
+        );
+        document.getElementById("prog").style.width = pct + "%";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (id === "guided") renderGuided();
+        if (id === "practice") renderPractice();
+        if (id === "game") renderGame();
+        if (id === "apply") renderApply();
+        if (id === "mastery") renderQuiz();
+        if (id === "remediate") renderMistakes();
+      }
+      navBtns.forEach((b) =>
+        b.addEventListener("click", () => go(b.dataset.go)),
+      );
 
-const practice=[
- ['Pinapayagan ang bata na kumain, magpahinga, at mag-aral.',true],
- ['Hindi pinakikinggan ang bata kahit ang usapan ay may epekto sa kaniyang buhay.',false],
- ['Pinoprotektahan ang bata laban sa pang-aabuso at pagpapabaya.',true],
- ['Sinasabi na hindi mahalaga ang kalusugan ng bata.',false],
- ['Humihingi ng payo ang bata sa tamang pagpili ng gamit.',true],
- ['Pinipilit ang bata na manahimik sa lahat ng pagkakataon.',false]
-];
-function renderPractice(){document.getElementById('practiceList').innerHTML=practice.map((p,i)=>`<div class="scenario"><b>${i+1}.</b> ${p[0]}<div class="choice"><button data-i="${i}" data-v="true">Tama</button><button data-i="${i}" data-v="false">Hindi</button></div></div>`).join('');document.querySelectorAll('#practiceList .choice button').forEach(b=>b.onclick=()=>{const i=b.dataset.i;document.querySelectorAll(`#practiceList button[data-i="${i}"]`).forEach(x=>x.classList.remove('selected'));b.classList.add('selected')})}
-function checkPractice(){let score=0;practice.forEach((p,i)=>{const s=document.querySelector(`#practiceList button[data-i="${i}"].selected`);if(s&&String(p[1])===s.dataset.v)score++});const fb=document.getElementById('practiceScore');fb.className='feedback show '+(score>=5?'good':'bad');fb.textContent=`Nakuha mo: ${score}/${practice.length}. ${score>=5?'Mahusay!':'Balikan ang lesson at subukan muli.'}`}
+      function connectAns(btn, ok) {
+        document
+          .querySelectorAll("#connect .choice button")
+          .forEach((x) => x.classList.remove("selected"));
+        btn.classList.add("selected");
+        const fb = document.getElementById("connectFb");
+        fb.className = "feedback show " + (ok ? "good" : "bad");
+        fb.textContent = ok
+          ? "Tama! Ang pagkain at pahinga ay kabilang sa mga pangangailangang dapat masuportahan."
+          : "Subukan muli. Isipin ang mga pangunahing pangangailangan ng bata.";
+        speak(ok ? "Tama!" : "Subukan muli.");
+      }
 
-const flash=[['Karapatang Masuportahan ang mga Pangangailangan','Pagkain, pahinga, laro, damit, edukasyon, at pangangalaga sa kalusugan.'],['Karapatang Mapangalagaan','Ligtas, masaya, at malusog na paglaki; proteksiyon laban sa pang-aabuso at pagpapabaya.'],['Karapatang Makilahok','Pagkakataong makilahok sa mga pagpapasyang may epekto sa buhay ng bata.']];
-let fi=0;function showFlash(){document.getElementById('flashTerm').textContent=flash[fi][0];document.getElementById('flashDef').textContent=flash[fi][1]}function flashNext(){fi=(fi+1)%flash.length;showFlash()}function flashPrev(){fi=(fi-1+flash.length)%flash.length;showFlash()}
+      const guided = [
+        [
+          "May sapat kang pagkain, oras para magpahinga, at pagkakataong mag-aral.",
+          "Karapatang Masuportahan ang mga Pangangailangan",
+          "Kasama rito ang pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan.",
+        ],
+        [
+          "Pinoprotektahan ang isang bata laban sa pang-aabuso at pagpapabaya.",
+          "Karapatang Mapangalagaan",
+          "Ang bata ay dapat lumaki nang ligtas, masaya, at malusog.",
+        ],
+        [
+          "Tinanong ka tungkol sa pagpili ng bagay na makaaapekto sa iyong buhay at pinakinggan ang iyong opinyon.",
+          "Karapatang Makilahok",
+          "May pagkakataon ang bata na makilahok sa mga pagpapasyang may epekto sa kaniyang buhay.",
+        ],
+        [
+          "Humingi ka ng payo sa pagpili ng damit.",
+          "Karapatang Makilahok",
+          "Ang pakikilahok ay maaaring may wastong paggabay at paghingi ng payo.",
+        ],
+      ];
+      let gi = 0;
+      function renderGuided() {
+        const x = guided[gi];
+        document.getElementById("guidedBox").innerHTML =
+          `<div class="scenario"><b>Situation ${gi + 1}</b><p>${x[0]}</p><div class="choice"><button onclick="guidedCheck(this,'${x[1]}')">${x[1]}</button><button onclick="guidedWrong(this)">Karapatang Mapangalagaan</button><button onclick="guidedWrong(this)">Karapatang Masuportahan ang mga Pangangailangan</button></div><div id="gfb" class="feedback"></div></div>`;
+      }
+      function guidedCheck(btn, ans) {
+        document
+          .querySelectorAll("#guidedBox button")
+          .forEach((b) => (b.disabled = true));
+        const fb = document.getElementById("gfb");
+        fb.className = "feedback show good";
+        fb.textContent = "Tama! " + guided[gi][2];
+        speak("Tama!");
+      }
+      function guidedWrong(btn) {
+        const fb = document.getElementById("gfb");
+        fb.className = "feedback show bad";
+        fb.textContent = "Hindi pa. Balikan ang tatlong pangunahing karapatan.";
+        speak("Hindi pa.");
+      }
+      function guidedNext() {
+        gi = (gi + 1) % guided.length;
+        renderGuided();
+      }
+      function guidedPrev() {
+        gi = (gi - 1 + guided.length) % guided.length;
+        renderGuided();
+      }
 
-const gameQs=[
- ['May sapat kang pagkain at oras para magpahinga.','need'],
- ['Pinoprotektahan ang bata laban sa pananakit at pagpapabaya.','protect'],
- ['Pinakinggan ang opinyon ng bata tungkol sa bagay na nakaaapekto sa kaniya.','participate'],
- ['May pagkakataon ang bata na maglaro at magsuot ng angkop na damit.','need'],
- ['Ligtas ang bata at inaalagaan nang maayos.','protect'],
- ['Humingi ng payo ang bata bago pumili ng gamit.','participate'],
- ['May access ang bata sa edukasyon at pangangalaga sa kalusugan.','need'],
- ['Kasama ang bata sa pag-uusap tungkol sa desisyong may epekto sa kaniyang buhay.','participate']
-];
-const labels={need:'Masuportahan ang mga Pangangailangan',protect:'Mapangalagaan',participate:'Makilahok'};
-let gr=0,gs=0,gstars=0;
-function renderGame(){if(gr>=gameQs.length){document.getElementById('gameBox').innerHTML=`<div class="result"><div class="stars">${'⭐'.repeat(Math.max(1,gstars))}</div><h2>Natapos mo ang Rights Rescue!</h2><div class="score">${gs}/${gameQs.length}</div><p>${gs>=6?'Napakahusay!':'Magaling! Balikan ang tatlong karapatan para mas maging mahusay.'}</p><button class="btn" onclick="gr=0;gs=0;gstars=0;renderGame()">Laruin Muli</button></div>`;return}
-const q=gameQs[gr];document.getElementById('gameRound').textContent=`${gr+1}/${gameQs.length}`;document.getElementById('gameScore').textContent=gs;document.getElementById('gameStars').textContent=gstars;
-document.getElementById('gameBox').innerHTML=`<div class="scenario"><h3>${q[0]}</h3><div class="en">Which right is shown?</div><div class="choice">${Object.entries(labels).map(([k,v])=>`<button onclick="gameAnswer('${k}')">${v}</button>`).join('')}</div><div id="gameFb" class="feedback"></div></div>`}
-function gameAnswer(k){const fb=document.getElementById('gameFb');const ok=k===gameQs[gr][1];if(ok){gs++;gstars++;fb.className='feedback show good';fb.textContent='Tama!';speak('Tama!')}else{fb.className='feedback show bad';fb.textContent='Hindi pa. Balikan ang tatlong karapatan.';speak('Subukan muli.')}setTimeout(()=>{gr++;renderGame()},550)}
+      const practice = [
+        ["Pinapayagan ang bata na kumain, magpahinga, at mag-aral.", true],
+        [
+          "Hindi pinakikinggan ang bata kahit ang usapan ay may epekto sa kaniyang buhay.",
+          false,
+        ],
+        ["Pinoprotektahan ang bata laban sa pang-aabuso at pagpapabaya.", true],
+        ["Sinasabi na hindi mahalaga ang kalusugan ng bata.", false],
+        ["Humihingi ng payo ang bata sa tamang pagpili ng gamit.", true],
+        ["Pinipilit ang bata na manahimik sa lahat ng pagkakataon.", false],
+      ];
+      function renderPractice() {
+        document.getElementById("practiceList").innerHTML = practice
+          .map(
+            (p, i) =>
+              `<div class="scenario"><b>${i + 1}.</b> ${p[0]}<div class="choice"><button data-i="${i}" data-v="true">Tama</button><button data-i="${i}" data-v="false">Hindi</button></div></div>`,
+          )
+          .join("");
+        document.querySelectorAll("#practiceList .choice button").forEach(
+          (b) =>
+            (b.onclick = () => {
+              const i = b.dataset.i;
+              document
+                .querySelectorAll(`#practiceList button[data-i="${i}"]`)
+                .forEach((x) => x.classList.remove("selected"));
+              b.classList.add("selected");
+            }),
+        );
+      }
+      function checkPractice() {
+        let score = 0;
+        practice.forEach((p, i) => {
+          const s = document.querySelector(
+            `#practiceList button[data-i="${i}"].selected`,
+          );
+          if (s && String(p[1]) === s.dataset.v) score++;
+        });
+        const fb = document.getElementById("practiceScore");
+        fb.className = "feedback show " + (score >= 5 ? "good" : "bad");
+        fb.textContent = `Nakuha mo: ${score}/${practice.length}. ${score >= 5 ? "Mahusay!" : "Balikan ang lesson at subukan muli."}`;
+      }
 
-let memCards=[['R1','Pangangailangan'],['R1','Pagkain, pahinga, edukasyon'],['R2','Mapangalagaan'],['R2','Ligtas at protektado'],['R3','Makilahok'],['R3','Makibahagi sa pasya']];
-let memOpen=[],memDone=new Set();
-function renderMemory(){const box=document.getElementById('memory');const shuffled=[...memCards].sort(()=>Math.random()-.5);box.innerHTML=shuffled.map((c,i)=>`<button data-key="${c[0]}" data-i="${i}" onclick="memClick(this)">${memDone.has(c[0])?'✓': '❔'}</button>`).join('');box.querySelectorAll('button').forEach(b=>{b.textContent=memDone.has(b.dataset.key)?memCards.find(x=>x[0]===b.dataset.key)[1]:'❔'})}
-function memClick(b){if(memOpen.length>=2||memDone.has(b.dataset.key))return;b.textContent=memCards.find(x=>x[0]===b.dataset.key)[1];memOpen.push(b);if(memOpen.length===2){setTimeout(()=>{if(memOpen[0].dataset.key===memOpen[1].dataset.key){memDone.add(memOpen[0].dataset.key);document.getElementById('memoryFb').className='feedback show good';document.getElementById('memoryFb').textContent='Match!';}else{memOpen.forEach(x=>x.textContent='❔');document.getElementById('memoryFb').className='feedback show bad';document.getElementById('memoryFb').textContent='Hindi match. Subukan muli.'}memOpen=[];renderMemory();if(memDone.size===3){document.getElementById('memoryFb').className='feedback show good';document.getElementById('memoryFb').textContent='Napakahusay! Nahanap mo lahat ng pares.'}},350)}}
-renderMemory();
+      const flash = [
+        [
+          "Karapatang Masuportahan ang mga Pangangailangan",
+          "Pagkain, pahinga, laro, damit, edukasyon, at pangangalaga sa kalusugan.",
+        ],
+        [
+          "Karapatang Mapangalagaan",
+          "Ligtas, masaya, at malusog na paglaki; proteksiyon laban sa pang-aabuso at pagpapabaya.",
+        ],
+        [
+          "Karapatang Makilahok",
+          "Pagkakataong makilahok sa mga pagpapasyang may epekto sa buhay ng bata.",
+        ],
+      ];
+      let fi = 0;
+      function showFlash() {
+        document.getElementById("flashTerm").textContent = flash[fi][0];
+        document.getElementById("flashDef").textContent = flash[fi][1];
+      }
+      function flashNext() {
+        fi = (fi + 1) % flash.length;
+        showFlash();
+      }
+      function flashPrev() {
+        fi = (fi - 1 + flash.length) % flash.length;
+        showFlash();
+      }
 
-const apply=[
- ['May kaibigan kang hindi pa naririnig sa isang usapan tungkol sa isang class activity.','A. Pakinggan at bigyan siya ng pagkakataong magsabi ng opinyon.','B. Sabihing wala siyang karapatang magsalita.','A'],
- ['Pipili kayo ng pagkain para sa isang group activity.','A. Magdesisyon nang mag-isa at huwag makinig sa iba.','B. Magbigay ng mungkahi at makinig sa mga kasama.','B'],
- ['Mamimili ka ng gamit at hindi ka sigurado kung ano ang angkop.','A. Humingi ng payo sa magulang o nakatatanda.','B. Piliin ang kahit ano nang walang pag-iisip.','A']
-];
-function renderApply(){document.getElementById('applyList').innerHTML=apply.map((x,i)=>`<div class="scenario"><b>${i+1}. ${x[0]}</b><div class="choice"><button onclick="applyCheck(this,${i},'A')">${x[1]}</button><button onclick="applyCheck(this,${i},'B')">${x[2]}</button></div><div id="afb${i}" class="feedback"></div></div>`).join('')}
-function applyCheck(btn,i,v){const fb=document.getElementById('afb'+i);const ok=v===apply[i][3];fb.className='feedback show '+(ok?'good':'bad');fb.textContent=ok?'Tama! Ipinapakita nito ang wastong paggamit ng karapatan at paggalang sa iba.':'Subukan muli at isipin kung alin ang may paggalang sa karapatan ng lahat.'}
+      const gameQs = [
+        ["May sapat kang pagkain at oras para magpahinga.", "need"],
+        [
+          "Pinoprotektahan ang bata laban sa pananakit at pagpapabaya.",
+          "protect",
+        ],
+        [
+          "Pinakinggan ang opinyon ng bata tungkol sa bagay na nakaaapekto sa kaniya.",
+          "participate",
+        ],
+        [
+          "May pagkakataon ang bata na maglaro at magsuot ng angkop na damit.",
+          "need",
+        ],
+        ["Ligtas ang bata at inaalagaan nang maayos.", "protect"],
+        ["Humingi ng payo ang bata bago pumili ng gamit.", "participate"],
+        [
+          "May access ang bata sa edukasyon at pangangalaga sa kalusugan.",
+          "need",
+        ],
+        [
+          "Kasama ang bata sa pag-uusap tungkol sa desisyong may epekto sa kaniyang buhay.",
+          "participate",
+        ],
+      ];
+      const labels = {
+        need: "Masuportahan ang mga Pangangailangan",
+        protect: "Mapangalagaan",
+        participate: "Makilahok",
+      };
+      let gr = 0,
+        gs = 0,
+        gstars = 0;
+      function renderGame() {
+        if (gr >= gameQs.length) {
+          document.getElementById("gameBox").innerHTML =
+            `<div class="result"><div class="stars">${"⭐".repeat(Math.max(1, gstars))}</div><h2>Natapos mo ang Rights Rescue!</h2><div class="score">${gs}/${gameQs.length}</div><p>${gs >= 6 ? "Napakahusay!" : "Magaling! Balikan ang tatlong karapatan para mas maging mahusay."}</p><button class="btn" onclick="gr=0;gs=0;gstars=0;renderGame()">Laruin Muli</button></div>`;
+          return;
+        }
+        const q = gameQs[gr];
+        document.getElementById("gameRound").textContent =
+          `${gr + 1}/${gameQs.length}`;
+        document.getElementById("gameScore").textContent = gs;
+        document.getElementById("gameStars").textContent = gstars;
+        document.getElementById("gameBox").innerHTML =
+          `<div class="scenario"><h3>${q[0]}</h3><div class="en">Which right is shown?</div><div class="choice">${Object.entries(
+            labels,
+          )
+            .map(
+              ([k, v]) => `<button onclick="gameAnswer('${k}')">${v}</button>`,
+            )
+            .join("")}</div><div id="gameFb" class="feedback"></div></div>`;
+      }
+      function gameAnswer(k) {
+        const fb = document.getElementById("gameFb");
+        const ok = k === gameQs[gr][1];
+        if (ok) {
+          gs++;
+          gstars++;
+          fb.className = "feedback show good";
+          fb.textContent = "Tama!";
+          speak("Tama!");
+        } else {
+          fb.className = "feedback show bad";
+          fb.textContent = "Hindi pa. Balikan ang tatlong karapatan.";
+          speak("Subukan muli.");
+        }
+        setTimeout(() => {
+          gr++;
+          renderGame();
+        }, 550);
+      }
 
-const qs=[
- ['Ano ang ibig sabihin ng “karapatan”?','Mga bagay na dapat matanggap at mapangalagaan ng bata.',['Isang premyo lamang','Mga bagay na dapat matanggap at mapangalagaan ng bata.','Isang laro lamang','Isang utos lamang'],1],
- ['Alin ang halimbawa ng pangunahing pangangailangan ng bata?',['Pagkain at pahinga','Maraming laruan','Laging bagong sapatos','Palaging manalo'],0],
- ['Anong karapatan ang tumutukoy sa pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan?',['Karapatang Makilahok','Karapatang Mapangalagaan','Karapatang Masuportahan ang mga Pangangailangan','Karapatang Maglaro lamang'],2],
- ['Anong karapatan ang tumutukoy sa proteksiyon laban sa pang-aabuso at pagpapabaya?',['Karapatang Mapangalagaan','Karapatang Makilahok','Karapatang Masuportahan ang mga Pangangailangan','Karapatang Mamili'],0],
- ['Anong karapatan ang nagbibigay ng pagkakataong makilahok sa mga pagpapasyang may epekto sa bata?',['Karapatang Mapangalagaan','Karapatang Makilahok','Karapatang Masuportahan ang mga Pangangailangan','Karapatang Maglaro'],1],
- ['Ano ang layunin ng aralin?',['Makilala ang mga karapatan at kahalagahan ng mga ito.','Matutong manalo sa laro.','Magkaroon ng maraming laruan.','Matutong mamili ng pagkain lamang.'],0],
- ['Sino ang saklaw ng mga karapatang binibigyang-diin sa aralin?',['Mga batang wala pang 18 taong gulang','Mga guro lamang','Mga magulang lamang','Mga manlalaro lamang'],0],
- ['Alin ang nagpapakita ng pagsuporta sa pangangailangan?',['Pagbibigay ng sapat na pahinga at pagkain','Pagbabawal sa lahat ng laro','Hindi pagpapaaral','Hindi pagpapagamot'],0],
- ['Alin ang nagpapakita ng pangangalaga?',['Pabayaan ang bata kapag may problema','Protektahan ang bata laban sa pang-aabuso','Huwag pansinin ang bata','Takutin ang bata'],1],
- ['Alin ang nagpapakita ng pakikilahok?',['Hindi pakikinig sa bata','Pagbibigay ng pagkakataong magsabi ng opinyon','Pagpapasya para sa bata sa lahat ng bagay','Pagbabawal magsalita'],1],
- ['Kapag may bagay na makaaapekto sa iyong buhay, ano ang maaaring gawin?',['Makilahok nang may wastong paggabay','Tumakbo palayo','Huwag makinig kaninuman','Magalit agad'],0],
- ['Bakit mahalaga ang karapatan ng bata?',['Upang lumaki nang maayos, ligtas, masaya, at malusog.','Upang makuha lahat ng gusto.','Upang hindi sumunod sa tuntunin.','Upang laging mauna.'],0],
- ['Alin ang HINDI magandang gawain?',['Paghingi ng payo sa nakatatanda','Pagprotekta sa bata','Pagpapabaya sa bata','Pagbibigay ng pagkakataong makilahok'],2],
- ['May oras si Ana para maglaro at magpahinga. Anong karapatan ito?',['Masuportahan ang mga Pangangailangan','Mapangalagaan','Makilahok','Wala'],0],
- ['Pinoprotektahan si Ben laban sa pananakit. Anong karapatan ito?',['Makilahok','Mapangalagaan','Masuportahan ang mga Pangangailangan','Magpasya'],1],
- ['Tinanong si Carla sa isang desisyong may epekto sa kaniya. Anong karapatan ito?',['Makilahok','Mapangalagaan','Masuportahan ang mga Pangangailangan','Maglaro'],0],
- ['Alin ang wastong paraan ng paggamit ng karapatang makilahok?',['Makinig, magsabi ng opinyon, at tumanggap ng gabay.','Gawin lahat nang walang payo.','Ipilit ang sariling gusto.','Huwag pakinggan ang iba.'],0],
- ['Kapag may karapatan ka, ano ang dapat mong gawin sa karapatan ng iba?',['Igalang din ito.','Balewalain ito.','Agawin ito.','Pigilan ito.'],0],
- ['Alin ang kabilang sa mga pangangailangang binanggit sa aralin?',['Edukasyon','Laging mamahaling gamit','Maraming gadget','Araw-araw na regalo'],0],
- ['Ang pang-aabuso at pagpapabaya ay maaaring magdulot ng ______ sa mga bata.',['masamang epekto','mas maraming laruan','mas magandang marka','mas maraming pagkain'],0],
- ['Alin ang halimbawa ng paghingi ng payo?',['Paghingi ng gabay sa pagpili ng angkop na gamit','Pagpapasya nang walang pakikinig','Pag-iwas sa lahat ng nakatatanda','Pagsigaw sa kasama'],0],
- ['Ano ang magandang asal kapag nakikilahok?',['Makinig at magsalita nang maayos.','Mang-agaw ng salita.','Manigaw.','Mang-insulto.'],0],
- ['Ang UNCRC ay inilalarawan sa aralin bilang ______.',['isang pandaigdigang kasunduan tungkol sa mga karapatan ng bata','isang laro','isang pagkain','isang paaralan'],0],
- ['Alin ang tamang halimbawa ng paggalang sa karapatan ng kaklase?',['Bigyan siya ng pagkakataong magsalita.','Patahimikin siya palagi.','Huwag siyang isali.','Pagtawanan siya.'],0],
- ['Ano ang pinakamahalagang tandaan?',['May karapatan ang bawat bata at dapat igalang ang karapatan ng iba.','Ang karapatan ay para lamang sa matatanda.','Ang karapatan ay gantimpala.','Hindi kailangang pangalagaan ang bata.'],0]
-];
-function renderQuiz(){if(document.getElementById('quiz').dataset.ready)return;document.getElementById('quiz').innerHTML=qs.map((q,i)=>`<div class="quiz-q"><h3>${i+1}. ${q[0]}</h3><div class="en">${englishHint(q[0])}</div>${q[2].map((o,j)=>`<button class="quiz-opt" data-q="${i}" data-a="${j}" onclick="selectQuiz(${i},${j},this)">${String.fromCharCode(65+j)}. ${o}</button>`).join('')}</div>`).join('');document.getElementById('quiz').dataset.ready='1'}
-function englishHint(t){const hints={'Ano ang ibig sabihin ng “karapatan”?':'What does “right” mean?','Alin ang halimbawa ng pangunahing pangangailangan ng bata?':'Which is a basic need of a child?','Anong karapatan ang tumutukoy sa pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan?':'Which right includes food, rest, education, and health care?','Anong karapatan ang tumutukoy sa proteksiyon laban sa pang-aabuso at pagpapabaya?':'Which right is about protection from abuse and neglect?','Anong karapatan ang nagbibigay ng pagkakataong makilahok sa mga pagpapasyang may epekto sa bata?':'Which right allows a child to participate in decisions affecting them?'};return hints[t]||'Choose the best answer.'}
-let answers={};
-function selectQuiz(i,j,b){answers[i]=j;document.querySelectorAll(`.quiz-opt[data-q="${i}"]`).forEach(x=>x.classList.remove('selected'));b.classList.add('selected')}
-function gradeQuiz(){let score=0,miss=[];qs.forEach((q,i)=>{document.querySelectorAll(`.quiz-opt[data-q="${i}"]`).forEach(b=>{b.classList.remove('correct','incorrect');if(Number(b.dataset.a)===q[3])b.classList.add('correct');if(answers[i]!==undefined&&Number(b.dataset.a)===answers[i]&&answers[i]!==q[3])b.classList.add('incorrect')});if(answers[i]===q[3])score++;else miss.push(i)});localStorage.setItem('esp2_rights_quiz',JSON.stringify({score,miss,answers}));const pct=Math.round(score/qs.length*100);const stars=score>=23?'⭐⭐⭐':score>=18?'⭐⭐':'⭐';document.getElementById('quizResult').innerHTML=`<div class="result"><div class="stars">${stars}</div><div class="score">${score}/25</div><h2>${pct}%</h2><p>${score>=23?'Napakahusay! Handa ka na!':score>=18?'Mahusay! Kaunti pang review.':'Magaling sa pagsubok! Balikan ang Review section at subukan muli.'}</p><p><b>${miss.length}</b> item ang kailangan mong balikan.</p><button class="btn" onclick="go('remediate')">Review My Mistakes →</button></div>`;speak(`Ang iyong iskor ay ${score} sa 25.`)}
-function resetQuiz(){answers={};localStorage.removeItem('esp2_rights_quiz');document.getElementById('quiz').removeAttribute('data-ready');document.getElementById('quizResult').innerHTML='';renderQuiz()}
-function renderMistakes(){const data=JSON.parse(localStorage.getItem('esp2_rights_quiz')||'null');const box=document.getElementById('mistakes');if(!data||!data.miss.length){box.innerHTML='<div class="callout"><b>Wala pang mastery result.</b> Sagutan muna ang 25-item Mastery Check.</div>';return}box.innerHTML=data.miss.map(i=>`<div class="scenario"><b>Item ${i+1}</b><p>${qs[i][0]}</p><p><b>Best answer:</b> ${qs[i][2][qs[i][3]]}</p><div class="en">Balikan ang konseptong kaugnay nito at subukang sagutin muli.</div></div>`).join('')}
+      let memCards = [
+        ["R1", "Pangangailangan"],
+        ["R1", "Pagkain, pahinga, edukasyon"],
+        ["R2", "Mapangalagaan"],
+        ["R2", "Ligtas at protektado"],
+        ["R3", "Makilahok"],
+        ["R3", "Makibahagi sa pasya"],
+      ];
+      let memOpen = [],
+        memDone = new Set();
+      function renderMemory() {
+        const box = document.getElementById("memory");
+        const shuffled = [...memCards].sort(() => Math.random() - 0.5);
+        box.innerHTML = shuffled
+          .map(
+            (c, i) =>
+              `<button data-key="${c[0]}" data-i="${i}" onclick="memClick(this)">${memDone.has(c[0]) ? "✓" : "❔"}</button>`,
+          )
+          .join("");
+        box.querySelectorAll("button").forEach((b) => {
+          b.textContent = memDone.has(b.dataset.key)
+            ? memCards.find((x) => x[0] === b.dataset.key)[1]
+            : "❔";
+        });
+      }
+      function memClick(b) {
+        if (memOpen.length >= 2 || memDone.has(b.dataset.key)) return;
+        b.textContent = memCards.find((x) => x[0] === b.dataset.key)[1];
+        memOpen.push(b);
+        if (memOpen.length === 2) {
+          setTimeout(() => {
+            if (memOpen[0].dataset.key === memOpen[1].dataset.key) {
+              memDone.add(memOpen[0].dataset.key);
+              document.getElementById("memoryFb").className =
+                "feedback show good";
+              document.getElementById("memoryFb").textContent = "Match!";
+            } else {
+              memOpen.forEach((x) => (x.textContent = "❔"));
+              document.getElementById("memoryFb").className =
+                "feedback show bad";
+              document.getElementById("memoryFb").textContent =
+                "Hindi match. Subukan muli.";
+            }
+            memOpen = [];
+            renderMemory();
+            if (memDone.size === 3) {
+              document.getElementById("memoryFb").className =
+                "feedback show good";
+              document.getElementById("memoryFb").textContent =
+                "Napakahusay! Nahanap mo lahat ng pares.";
+            }
+          }, 350);
+        }
+      }
+      renderMemory();
 
-function savePromise(){const v=document.getElementById('promise').value.trim();const fb=document.getElementById('promiseFb');if(!v){fb.className='feedback show bad';fb.textContent='Sumulat muna ng iyong pangako.';return}localStorage.setItem('esp2_rights_promise',v);fb.className='feedback show good';fb.textContent='Nai-save ang iyong pangako sa device na ito. 🌟'}
-document.getElementById('promise').value=localStorage.getItem('esp2_rights_promise')||'';
+      const apply = [
+        [
+          "May kaibigan kang hindi pa naririnig sa isang usapan tungkol sa isang class activity.",
+          "A. Pakinggan at bigyan siya ng pagkakataong magsabi ng opinyon.",
+          "B. Sabihing wala siyang karapatang magsalita.",
+          "A",
+        ],
+        [
+          "Pipili kayo ng pagkain para sa isang group activity.",
+          "A. Magdesisyon nang mag-isa at huwag makinig sa iba.",
+          "B. Magbigay ng mungkahi at makinig sa mga kasama.",
+          "B",
+        ],
+        [
+          "Mamimili ka ng gamit at hindi ka sigurado kung ano ang angkop.",
+          "A. Humingi ng payo sa magulang o nakatatanda.",
+          "B. Piliin ang kahit ano nang walang pag-iisip.",
+          "A",
+        ],
+      ];
+      function renderApply() {
+        document.getElementById("applyList").innerHTML = apply
+          .map(
+            (x, i) =>
+              `<div class="scenario"><b>${i + 1}. ${x[0]}</b><div class="choice"><button onclick="applyCheck(this,${i},'A')">${x[1]}</button><button onclick="applyCheck(this,${i},'B')">${x[2]}</button></div><div id="afb${i}" class="feedback"></div></div>`,
+          )
+          .join("");
+      }
+      function applyCheck(btn, i, v) {
+        const fb = document.getElementById("afb" + i);
+        const ok = v === apply[i][3];
+        fb.className = "feedback show " + (ok ? "good" : "bad");
+        fb.textContent = ok
+          ? "Tama! Ipinapakita nito ang wastong paggamit ng karapatan at paggalang sa iba."
+          : "Subukan muli at isipin kung alin ang may paggalang sa karapatan ng lahat.";
+      }
 
-let sound=true;function speak(text){if(!sound||!('speechSynthesis'in window))return;window.speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(text);u.lang='fil-PH';u.rate=.92;window.speechSynthesis.speak(u)}
-document.getElementById('soundBtn').onclick=()=>{sound=!sound;document.getElementById('soundBtn').textContent=sound?'🔊':'🔇'}
-document.getElementById('printBtn').onclick=()=>window.print();
-document.getElementById('fullBtn').onclick=()=>{if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.()};
+      const qs = [
+        [
+          "Ano ang ibig sabihin ng “karapatan”?",
+          "Mga bagay na dapat matanggap at mapangalagaan ng bata.",
+          [
+            "Isang premyo lamang",
+            "Mga bagay na dapat matanggap at mapangalagaan ng bata.",
+            "Isang laro lamang",
+            "Isang utos lamang",
+          ],
+          1,
+        ],
+        [
+          "Alin ang halimbawa ng pangunahing pangangailangan ng bata?",
+          [
+            "Pagkain at pahinga",
+            "Maraming laruan",
+            "Laging bagong sapatos",
+            "Palaging manalo",
+          ],
+          0,
+        ],
+        [
+          "Anong karapatan ang tumutukoy sa pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan?",
+          [
+            "Karapatang Makilahok",
+            "Karapatang Mapangalagaan",
+            "Karapatang Masuportahan ang mga Pangangailangan",
+            "Karapatang Maglaro lamang",
+          ],
+          2,
+        ],
+        [
+          "Anong karapatan ang tumutukoy sa proteksiyon laban sa pang-aabuso at pagpapabaya?",
+          [
+            "Karapatang Mapangalagaan",
+            "Karapatang Makilahok",
+            "Karapatang Masuportahan ang mga Pangangailangan",
+            "Karapatang Mamili",
+          ],
+          0,
+        ],
+        [
+          "Anong karapatan ang nagbibigay ng pagkakataong makilahok sa mga pagpapasyang may epekto sa bata?",
+          [
+            "Karapatang Mapangalagaan",
+            "Karapatang Makilahok",
+            "Karapatang Masuportahan ang mga Pangangailangan",
+            "Karapatang Maglaro",
+          ],
+          1,
+        ],
+        [
+          "Ano ang layunin ng aralin?",
+          [
+            "Makilala ang mga karapatan at kahalagahan ng mga ito.",
+            "Matutong manalo sa laro.",
+            "Magkaroon ng maraming laruan.",
+            "Matutong mamili ng pagkain lamang.",
+          ],
+          0,
+        ],
+        [
+          "Sino ang saklaw ng mga karapatang binibigyang-diin sa aralin?",
+          [
+            "Mga batang wala pang 18 taong gulang",
+            "Mga guro lamang",
+            "Mga magulang lamang",
+            "Mga manlalaro lamang",
+          ],
+          0,
+        ],
+        [
+          "Alin ang nagpapakita ng pagsuporta sa pangangailangan?",
+          [
+            "Pagbibigay ng sapat na pahinga at pagkain",
+            "Pagbabawal sa lahat ng laro",
+            "Hindi pagpapaaral",
+            "Hindi pagpapagamot",
+          ],
+          0,
+        ],
+        [
+          "Alin ang nagpapakita ng pangangalaga?",
+          [
+            "Pabayaan ang bata kapag may problema",
+            "Protektahan ang bata laban sa pang-aabuso",
+            "Huwag pansinin ang bata",
+            "Takutin ang bata",
+          ],
+          1,
+        ],
+        [
+          "Alin ang nagpapakita ng pakikilahok?",
+          [
+            "Hindi pakikinig sa bata",
+            "Pagbibigay ng pagkakataong magsabi ng opinyon",
+            "Pagpapasya para sa bata sa lahat ng bagay",
+            "Pagbabawal magsalita",
+          ],
+          1,
+        ],
+        [
+          "Kapag may bagay na makaaapekto sa iyong buhay, ano ang maaaring gawin?",
+          [
+            "Makilahok nang may wastong paggabay",
+            "Tumakbo palayo",
+            "Huwag makinig kaninuman",
+            "Magalit agad",
+          ],
+          0,
+        ],
+        [
+          "Bakit mahalaga ang karapatan ng bata?",
+          [
+            "Upang lumaki nang maayos, ligtas, masaya, at malusog.",
+            "Upang makuha lahat ng gusto.",
+            "Upang hindi sumunod sa tuntunin.",
+            "Upang laging mauna.",
+          ],
+          0,
+        ],
+        [
+          "Alin ang HINDI magandang gawain?",
+          [
+            "Paghingi ng payo sa nakatatanda",
+            "Pagprotekta sa bata",
+            "Pagpapabaya sa bata",
+            "Pagbibigay ng pagkakataong makilahok",
+          ],
+          2,
+        ],
+        [
+          "May oras si Ana para maglaro at magpahinga. Anong karapatan ito?",
+          [
+            "Masuportahan ang mga Pangangailangan",
+            "Mapangalagaan",
+            "Makilahok",
+            "Wala",
+          ],
+          0,
+        ],
+        [
+          "Pinoprotektahan si Ben laban sa pananakit. Anong karapatan ito?",
+          [
+            "Makilahok",
+            "Mapangalagaan",
+            "Masuportahan ang mga Pangangailangan",
+            "Magpasya",
+          ],
+          1,
+        ],
+        [
+          "Tinanong si Carla sa isang desisyong may epekto sa kaniya. Anong karapatan ito?",
+          [
+            "Makilahok",
+            "Mapangalagaan",
+            "Masuportahan ang mga Pangangailangan",
+            "Maglaro",
+          ],
+          0,
+        ],
+        [
+          "Alin ang wastong paraan ng paggamit ng karapatang makilahok?",
+          [
+            "Makinig, magsabi ng opinyon, at tumanggap ng gabay.",
+            "Gawin lahat nang walang payo.",
+            "Ipilit ang sariling gusto.",
+            "Huwag pakinggan ang iba.",
+          ],
+          0,
+        ],
+        [
+          "Kapag may karapatan ka, ano ang dapat mong gawin sa karapatan ng iba?",
+          [
+            "Igalang din ito.",
+            "Balewalain ito.",
+            "Agawin ito.",
+            "Pigilan ito.",
+          ],
+          0,
+        ],
+        [
+          "Alin ang kabilang sa mga pangangailangang binanggit sa aralin?",
+          [
+            "Edukasyon",
+            "Laging mamahaling gamit",
+            "Maraming gadget",
+            "Araw-araw na regalo",
+          ],
+          0,
+        ],
+        [
+          "Ang pang-aabuso at pagpapabaya ay maaaring magdulot ng ______ sa mga bata.",
+          [
+            "masamang epekto",
+            "mas maraming laruan",
+            "mas magandang marka",
+            "mas maraming pagkain",
+          ],
+          0,
+        ],
+        [
+          "Alin ang halimbawa ng paghingi ng payo?",
+          [
+            "Paghingi ng gabay sa pagpili ng angkop na gamit",
+            "Pagpapasya nang walang pakikinig",
+            "Pag-iwas sa lahat ng nakatatanda",
+            "Pagsigaw sa kasama",
+          ],
+          0,
+        ],
+        [
+          "Ano ang magandang asal kapag nakikilahok?",
+          [
+            "Makinig at magsalita nang maayos.",
+            "Mang-agaw ng salita.",
+            "Manigaw.",
+            "Mang-insulto.",
+          ],
+          0,
+        ],
+        [
+          "Ang UNCRC ay inilalarawan sa aralin bilang ______.",
+          [
+            "isang pandaigdigang kasunduan tungkol sa mga karapatan ng bata",
+            "isang laro",
+            "isang pagkain",
+            "isang paaralan",
+          ],
+          0,
+        ],
+        [
+          "Alin ang tamang halimbawa ng paggalang sa karapatan ng kaklase?",
+          [
+            "Bigyan siya ng pagkakataong magsalita.",
+            "Patahimikin siya palagi.",
+            "Huwag siyang isali.",
+            "Pagtawanan siya.",
+          ],
+          0,
+        ],
+        [
+          "Ano ang pinakamahalagang tandaan?",
+          [
+            "May karapatan ang bawat bata at dapat igalang ang karapatan ng iba.",
+            "Ang karapatan ay para lamang sa matatanda.",
+            "Ang karapatan ay gantimpala.",
+            "Hindi kailangang pangalagaan ang bata.",
+          ],
+          0,
+        ],
+      ];
+      function renderQuiz() {
+        if (document.getElementById("quiz").dataset.ready) return;
+        document.getElementById("quiz").innerHTML = qs
+          .map(
+            (q, i) =>
+              `<div class="quiz-q"><h3>${i + 1}. ${q[0]}</h3><div class="en">${englishHint(q[0])}</div>${q[2].map((o, j) => `<button class="quiz-opt" data-q="${i}" data-a="${j}" onclick="selectQuiz(${i},${j},this)">${String.fromCharCode(65 + j)}. ${o}</button>`).join("")}</div>`,
+          )
+          .join("");
+        document.getElementById("quiz").dataset.ready = "1";
+      }
+      function englishHint(t) {
+        const hints = {
+          "Ano ang ibig sabihin ng “karapatan”?": "What does “right” mean?",
+          "Alin ang halimbawa ng pangunahing pangangailangan ng bata?":
+            "Which is a basic need of a child?",
+          "Anong karapatan ang tumutukoy sa pagkain, pahinga, edukasyon, at pangangalaga sa kalusugan?":
+            "Which right includes food, rest, education, and health care?",
+          "Anong karapatan ang tumutukoy sa proteksiyon laban sa pang-aabuso at pagpapabaya?":
+            "Which right is about protection from abuse and neglect?",
+          "Anong karapatan ang nagbibigay ng pagkakataong makilahok sa mga pagpapasyang may epekto sa bata?":
+            "Which right allows a child to participate in decisions affecting them?",
+        };
+        return hints[t] || "Choose the best answer.";
+      }
+      let answers = {};
+      function selectQuiz(i, j, b) {
+        answers[i] = j;
+        document
+          .querySelectorAll(`.quiz-opt[data-q="${i}"]`)
+          .forEach((x) => x.classList.remove("selected"));
+        b.classList.add("selected");
+      }
+      function gradeQuiz() {
+        let score = 0,
+          miss = [];
+        qs.forEach((q, i) => {
+          document.querySelectorAll(`.quiz-opt[data-q="${i}"]`).forEach((b) => {
+            b.classList.remove("correct", "incorrect");
+            if (Number(b.dataset.a) === q[3]) b.classList.add("correct");
+            if (
+              answers[i] !== undefined &&
+              Number(b.dataset.a) === answers[i] &&
+              answers[i] !== q[3]
+            )
+              b.classList.add("incorrect");
+          });
+          if (answers[i] === q[3]) score++;
+          else miss.push(i);
+        });
+        localStorage.setItem(
+          "esp2_rights_quiz",
+          JSON.stringify({ score, miss, answers }),
+        );
+        const pct = Math.round((score / qs.length) * 100);
+        const stars = score >= 23 ? "⭐⭐⭐" : score >= 18 ? "⭐⭐" : "⭐";
+        document.getElementById("quizResult").innerHTML =
+          `<div class="result"><div class="stars">${stars}</div><div class="score">${score}/25</div><h2>${pct}%</h2><p>${score >= 23 ? "Napakahusay! Handa ka na!" : score >= 18 ? "Mahusay! Kaunti pang review." : "Magaling sa pagsubok! Balikan ang Review section at subukan muli."}</p><p><b>${miss.length}</b> item ang kailangan mong balikan.</p><button class="btn" onclick="go('remediate')">Review My Mistakes →</button></div>`;
+        speak(`Ang iyong iskor ay ${score} sa 25.`);
+      }
+      function resetQuiz() {
+        answers = {};
+        localStorage.removeItem("esp2_rights_quiz");
+        document.getElementById("quiz").removeAttribute("data-ready");
+        document.getElementById("quizResult").innerHTML = "";
+        renderQuiz();
+      }
+      function renderMistakes() {
+        const data = JSON.parse(
+          localStorage.getItem("esp2_rights_quiz") || "null",
+        );
+        const box = document.getElementById("mistakes");
+        if (!data || !data.miss.length) {
+          box.innerHTML =
+            '<div class="callout"><b>Wala pang mastery result.</b> Sagutan muna ang 25-item Mastery Check.</div>';
+          return;
+        }
+        box.innerHTML = data.miss
+          .map(
+            (i) =>
+              `<div class="scenario"><b>Item ${i + 1}</b><p>${qs[i][0]}</p><p><b>Best answer:</b> ${qs[i][2][qs[i][3]]}</p><div class="en">Balikan ang konseptong kaugnay nito at subukang sagutin muli.</div></div>`,
+          )
+          .join("");
+      }
 
-renderPractice();renderApply();renderQuiz();renderGame();showFlash();
-</script>
-</body>
+      function savePromise() {
+        const v = document.getElementById("promise").value.trim();
+        const fb = document.getElementById("promiseFb");
+        if (!v) {
+          fb.className = "feedback show bad";
+          fb.textContent = "Sumulat muna ng iyong pangako.";
+          return;
+        }
+        localStorage.setItem("esp2_rights_promise", v);
+        fb.className = "feedback show good";
+        fb.textContent = "Nai-save ang iyong pangako sa device na ito. 🌟";
+      }
+      document.getElementById("promise").value =
+        localStorage.getItem("esp2_rights_promise") || "";
+
+      let sound = true;
+      function speak(text) {
+        if (!sound || !("speechSynthesis" in window)) return;
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = "fil-PH";
+        u.rate = 0.92;
+        window.speechSynthesis.speak(u);
+      }
+      document.getElementById("soundBtn").onclick = () => {
+        sound = !sound;
+        document.getElementById("soundBtn").textContent = sound ? "🔊" : "🔇";
+      };
+      document.getElementById("printBtn").onclick = () => window.print();
+      document.getElementById("fullBtn").onclick = () => {
+        if (!document.fullscreenElement)
+          document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      };
+
+      renderPractice();
+      renderApply();
+      renderQuiz();
+      renderGame();
+      showFlash();
+    </script>
+  </body>
 </html>

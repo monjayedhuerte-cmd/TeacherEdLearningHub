@@ -1,15 +1,279 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Teacher Ed Learning Hub | Grade 2 Math Review Games</title><link rel="icon" type="image/png" href="BrandLogo.png"><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand"><img src="BrandLogo.png"><div><b>TEACHER ED LEARNING HUB</b><small>Learn • Practice • Play • Master</small></div></div><div class="lesson">GRADE 2 • MATHEMATICS<br><strong>Roman Numerals & Estimating the Sum</strong></div><div class="stats">⭐ <b id="score">0</b> <button id="sound">Sound: Off</button></div></header>
-<nav><button data-s="home">Home</button><button data-s="map">Game Map</button><button data-s="rewards">Rewards</button><button data-s="progress">Progress</button><button data-s="about">About</button></nav>
-<main>
-<section id="home" class="screen active"><div class="hero"><div><label>MATH WORLD ADVENTURE</label><h1>Ready to show what you know?</h1><p>Explore Roman numerals, practice estimating sums, collect stars, and become a Lesson Master.</p><button class="primary" id="start">START REVIEW ADVENTURE</button> <button class="secondary" id="lessonBtn">REVIEW THE LESSON</button><div class="chips"><span>⭐ Collect stars</span><span>🎯 Practice skills</span><span>🏆 Master the lesson</span></div></div><div class="orb"><div class="circle">MMXXIV<small>2,024</small></div><i>I = 1</i><i>V = 5</i><i>X = 10</i><i>300 + 300 = 600</i></div></div><div class="cards"><article><b>Ⅰ</b><h3>Roman Numerals</h3><p>I, V, X, L, C, D, M and numbers up to 3,999.</p></article><article><b>↔</b><h3>Read & Build</h3><p>Match numbers with Roman numeral forms.</p></article><article><b>≈</b><h3>Estimate Sums</h3><p>Round each addend to its highest place value.</p></article></div></section>
-<section id="mission" class="screen"><div class="center"><div class="bigicon">🎯</div><label>YOUR MISSION</label><h2>Become a Math World Lesson Master!</h2><p>Complete the levels, use hints, learn from mistakes, and finish the Master Challenge.</p><ol><li>Recall Roman numeral values.</li><li>Read and build Roman numerals.</li><li>Estimate sums using the highest place value.</li><li>Show what you know in the final challenge.</li></ol><button class="primary" id="missionStart">START MISSION</button></div></section>
-<section id="map" class="screen"><div class="head"><div><label>GAME MAP</label><h2>Your Math World Journey</h2><p>Complete a level to unlock the next one.</p></div><div class="mapmeter"><b id="mapPct">0%</b><div class="bar"><span id="mapBar"></span></div></div></div><div class="levels">
-<button class="level" data-level="1"><em>1</em><strong>⭐</strong><h3>Warm-Up Vault</h3><p>Roman numeral values</p><small>Ready</small></button><button class="level locked" data-level="2"><em>2</em><strong>🔎</strong><h3>Roman Detective</h3><p>Read numerals</p><small>Locked</small></button><button class="level locked" data-level="3"><em>3</em><strong>≈</strong><h3>Estimation Lab</h3><p>Highest place value</p><small>Locked</small></button><button class="level locked" data-level="4"><em>4</em><strong>🧠</strong><h3>Brain Challenge</h3><p>Mixed practice</p><small>Locked</small></button><button class="level locked final" data-level="5"><em>5</em><strong>🏆</strong><h3>Master Challenge</h3><p>12-question final review</p><small>Locked</small></button></div></section>
-<section id="game" class="screen"><div class="game"><div class="gamehead"><button class="secondary" id="back">← Map</button><div><label id="levelName">LEVEL 1</label><h2 id="gameTitle">Warm-Up Vault</h2></div><div><b id="counter"></b><div class="bar"><span id="qbar"></span></div></div></div><div id="gameArea"></div></div></section>
-<section id="results" class="screen"><div class="center"><div id="resultIcon" class="bigicon">🏆</div><label>REVIEW COMPLETE</label><h2 id="resultTitle">Great work!</h2><div class="scorecircle"><b id="pct">0%</b><small>Accuracy</small></div><div class="resultgrid"><div><b id="correct">0</b><small>Correct</small></div><div><b id="wrong">0</b><small>Needs Practice</small></div><div><b id="stars">0</b><small>Stars</small></div><div><b id="badge">Explorer</b><small>Badge</small></div></div><p id="resultMsg"></p><button class="primary" id="again">PLAY AGAIN</button> <button class="secondary" id="missed">PRACTICE MISSED</button> <button class="secondary" id="toMap">GAME MAP</button></div></section>
-<section id="lesson" class="screen"><div class="head"><div><label>QUICK LESSON REVIEW</label><h2>Remember These Ideas</h2></div><button class="secondary" id="lessonBack">Back</button></div><div class="lessongrid"><article><h3>Roman Numeral Symbols</h3><div class="symbols" id="symbols"></div></article><article><h3>Examples</h3><ul><li>8 = <b>VIII</b></li><li>14 = <b>XIV</b></li><li>25 = <b>XXV</b></li><li>40 = <b>XL</b></li><li>50 = <b>L</b></li><li>100 = <b>C</b></li><li>2,024 = <b>MMXXIV</b></li><li>3,999 = <b>MMMCMXCIX</b></li></ul></article><article class="wide"><h3>Estimating the Sum</h3><div class="rule"><b>Round EACH addend to its HIGHEST PLACE VALUE.</b><ol><li>Find the highest place value.</li><li>Look at the digit to its right.</li><li>5 or more → round up.</li><li>4 or less → keep it.</li><li>Add the rounded numbers.</li></ol></div><div class="example">348 + 251 → 300 + 300 → <b>600</b></div></article></div></section>
-<section id="rewards" class="screen"><div class="head"><div><label>REWARDS</label><h2>Achievement Shelf</h2><p>Every badge celebrates progress.</p></div></div><div id="badges" class="badges"></div></section>
-<section id="progress" class="screen"><div class="head"><div><label>PROGRESS</label><h2>Your Learning Progress</h2></div><button class="danger" id="reset">RESET PROGRESS</button></div><div class="dash"><article>⭐<b id="dscore">0</b><small>Points</small></article><article>🎯<b id="dacc">0%</b><small>Accuracy</small></article><article>🏆<b id="dbadge">Explorer</b><small>Badge</small></article><article>🗺️<b id="dlevels">0/5</b><small>Levels</small></article></div><article class="practice"><h3>Practice Needs</h3><p id="practiceText">Complete games to build your practice list.</p></article></section>
-<section id="about" class="screen"><div class="center"><img class="aboutlogo" src="BrandLogo.png"><label>ABOUT</label><h2>Teacher Ed Learning Hub</h2><p>This Grade 2 Mathematics review adventure helps learners practice Roman Numerals and Estimating the Sum after classroom instruction.</p><p><b>Teacher:</b> Teacher Ed</p><p class="muted">HTML5 • CSS3 • Vanilla JavaScript • localStorage</p></div></section>
-</main><footer><img src="BrandLogo.png"><div><b>TEACHER ED LEARNING HUB</b><br><small>Learn • Practice • Play • Master</small></div><small>Teacher Ed • Educational Review Website</small></footer><div id="toast"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Teacher Ed Learning Hub | Grade 2 Math Review Games</title>
+    <link rel="icon" type="image/png" href="BrandLogo.png" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="BrandLogo.png" />
+        <div>
+          <b>TEACHER ED LEARNING HUB</b
+          ><small>Learn • Practice • Play • Master</small>
+        </div>
+      </div>
+      <div class="lesson">
+        GRADE 2 • MATHEMATICS<br /><strong
+          >Roman Numerals & Estimating the Sum</strong
+        >
+      </div>
+      <div class="stats">
+        ⭐ <b id="score">0</b> <button id="sound">Sound: Off</button>
+      </div>
+    </header>
+    <nav>
+      <button data-s="home">Home</button><button data-s="map">Game Map</button
+      ><button data-s="rewards">Rewards</button
+      ><button data-s="progress">Progress</button
+      ><button data-s="about">About</button>
+    </nav>
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero">
+          <div>
+            <label>MATH WORLD ADVENTURE</label>
+            <h1>Ready to show what you know?</h1>
+            <p>
+              Explore Roman numerals, practice estimating sums, collect stars,
+              and become a Lesson Master.
+            </p>
+            <button class="primary" id="start">START REVIEW ADVENTURE</button>
+            <button class="secondary" id="lessonBtn">REVIEW THE LESSON</button>
+            <div class="chips">
+              <span>⭐ Collect stars</span><span>🎯 Practice skills</span
+              ><span>🏆 Master the lesson</span>
+            </div>
+          </div>
+          <div class="orb">
+            <div class="circle">MMXXIV<small>2,024</small></div>
+            <i>I = 1</i><i>V = 5</i><i>X = 10</i><i>300 + 300 = 600</i>
+          </div>
+        </div>
+        <div class="cards">
+          <article>
+            <b>Ⅰ</b>
+            <h3>Roman Numerals</h3>
+            <p>I, V, X, L, C, D, M and numbers up to 3,999.</p>
+          </article>
+          <article>
+            <b>↔</b>
+            <h3>Read & Build</h3>
+            <p>Match numbers with Roman numeral forms.</p>
+          </article>
+          <article>
+            <b>≈</b>
+            <h3>Estimate Sums</h3>
+            <p>Round each addend to its highest place value.</p>
+          </article>
+        </div>
+      </section>
+      <section id="mission" class="screen">
+        <div class="center">
+          <div class="bigicon">🎯</div>
+          <label>YOUR MISSION</label>
+          <h2>Become a Math World Lesson Master!</h2>
+          <p>
+            Complete the levels, use hints, learn from mistakes, and finish the
+            Master Challenge.
+          </p>
+          <ol>
+            <li>Recall Roman numeral values.</li>
+            <li>Read and build Roman numerals.</li>
+            <li>Estimate sums using the highest place value.</li>
+            <li>Show what you know in the final challenge.</li>
+          </ol>
+          <button class="primary" id="missionStart">START MISSION</button>
+        </div>
+      </section>
+      <section id="map" class="screen">
+        <div class="head">
+          <div>
+            <label>GAME MAP</label>
+            <h2>Your Math World Journey</h2>
+            <p>Complete a level to unlock the next one.</p>
+          </div>
+          <div class="mapmeter">
+            <b id="mapPct">0%</b>
+            <div class="bar"><span id="mapBar"></span></div>
+          </div>
+        </div>
+        <div class="levels">
+          <button class="level" data-level="1">
+            <em>1</em><strong>⭐</strong>
+            <h3>Warm-Up Vault</h3>
+            <p>Roman numeral values</p>
+            <small>Ready</small></button
+          ><button class="level locked" data-level="2">
+            <em>2</em><strong>🔎</strong>
+            <h3>Roman Detective</h3>
+            <p>Read numerals</p>
+            <small>Locked</small></button
+          ><button class="level locked" data-level="3">
+            <em>3</em><strong>≈</strong>
+            <h3>Estimation Lab</h3>
+            <p>Highest place value</p>
+            <small>Locked</small></button
+          ><button class="level locked" data-level="4">
+            <em>4</em><strong>🧠</strong>
+            <h3>Brain Challenge</h3>
+            <p>Mixed practice</p>
+            <small>Locked</small></button
+          ><button class="level locked final" data-level="5">
+            <em>5</em><strong>🏆</strong>
+            <h3>Master Challenge</h3>
+            <p>12-question final review</p>
+            <small>Locked</small>
+          </button>
+        </div>
+      </section>
+      <section id="game" class="screen">
+        <div class="game">
+          <div class="gamehead">
+            <button class="secondary" id="back">← Map</button>
+            <div>
+              <label id="levelName">LEVEL 1</label>
+              <h2 id="gameTitle">Warm-Up Vault</h2>
+            </div>
+            <div>
+              <b id="counter"></b>
+              <div class="bar"><span id="qbar"></span></div>
+            </div>
+          </div>
+          <div id="gameArea"></div>
+        </div>
+      </section>
+      <section id="results" class="screen">
+        <div class="center">
+          <div id="resultIcon" class="bigicon">🏆</div>
+          <label>REVIEW COMPLETE</label>
+          <h2 id="resultTitle">Great work!</h2>
+          <div class="scorecircle">
+            <b id="pct">0%</b><small>Accuracy</small>
+          </div>
+          <div class="resultgrid">
+            <div><b id="correct">0</b><small>Correct</small></div>
+            <div><b id="wrong">0</b><small>Needs Practice</small></div>
+            <div><b id="stars">0</b><small>Stars</small></div>
+            <div><b id="badge">Explorer</b><small>Badge</small></div>
+          </div>
+          <p id="resultMsg"></p>
+          <button class="primary" id="again">PLAY AGAIN</button>
+          <button class="secondary" id="missed">PRACTICE MISSED</button>
+          <button class="secondary" id="toMap">GAME MAP</button>
+        </div>
+      </section>
+      <section id="lesson" class="screen">
+        <div class="head">
+          <div>
+            <label>QUICK LESSON REVIEW</label>
+            <h2>Remember These Ideas</h2>
+          </div>
+          <button class="secondary" id="lessonBack">Back</button>
+        </div>
+        <div class="lessongrid">
+          <article>
+            <h3>Roman Numeral Symbols</h3>
+            <div class="symbols" id="symbols"></div>
+          </article>
+          <article>
+            <h3>Examples</h3>
+            <ul>
+              <li>8 = <b>VIII</b></li>
+              <li>14 = <b>XIV</b></li>
+              <li>25 = <b>XXV</b></li>
+              <li>40 = <b>XL</b></li>
+              <li>50 = <b>L</b></li>
+              <li>100 = <b>C</b></li>
+              <li>2,024 = <b>MMXXIV</b></li>
+              <li>3,999 = <b>MMMCMXCIX</b></li>
+            </ul>
+          </article>
+          <article class="wide">
+            <h3>Estimating the Sum</h3>
+            <div class="rule">
+              <b>Round EACH addend to its HIGHEST PLACE VALUE.</b>
+              <ol>
+                <li>Find the highest place value.</li>
+                <li>Look at the digit to its right.</li>
+                <li>5 or more → round up.</li>
+                <li>4 or less → keep it.</li>
+                <li>Add the rounded numbers.</li>
+              </ol>
+            </div>
+            <div class="example">348 + 251 → 300 + 300 → <b>600</b></div>
+          </article>
+        </div>
+      </section>
+      <section id="rewards" class="screen">
+        <div class="head">
+          <div>
+            <label>REWARDS</label>
+            <h2>Achievement Shelf</h2>
+            <p>Every badge celebrates progress.</p>
+          </div>
+        </div>
+        <div id="badges" class="badges"></div>
+      </section>
+      <section id="progress" class="screen">
+        <div class="head">
+          <div>
+            <label>PROGRESS</label>
+            <h2>Your Learning Progress</h2>
+          </div>
+          <button class="danger" id="reset">RESET PROGRESS</button>
+        </div>
+        <div class="dash">
+          <article>⭐<b id="dscore">0</b><small>Points</small></article>
+          <article>🎯<b id="dacc">0%</b><small>Accuracy</small></article>
+          <article>🏆<b id="dbadge">Explorer</b><small>Badge</small></article>
+          <article>🗺️<b id="dlevels">0/5</b><small>Levels</small></article>
+        </div>
+        <article class="practice">
+          <h3>Practice Needs</h3>
+          <p id="practiceText">Complete games to build your practice list.</p>
+        </article>
+      </section>
+      <section id="about" class="screen">
+        <div class="center">
+          <img class="aboutlogo" src="BrandLogo.png" /><label>ABOUT</label>
+          <h2>Teacher Ed Learning Hub</h2>
+          <p>
+            This Grade 2 Mathematics review adventure helps learners practice
+            Roman Numerals and Estimating the Sum after classroom instruction.
+          </p>
+          <p><b>Teacher:</b> Teacher Ed</p>
+          <p class="muted">HTML5 • CSS3 • Vanilla JavaScript • localStorage</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="BrandLogo.png" />
+      <div>
+        <b>TEACHER ED LEARNING HUB</b><br /><small
+          >Learn • Practice • Play • Master</small
+        >
+      </div>
+      <small>Teacher Ed • Educational Review Website</small>
+    </footer>
+    <div id="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

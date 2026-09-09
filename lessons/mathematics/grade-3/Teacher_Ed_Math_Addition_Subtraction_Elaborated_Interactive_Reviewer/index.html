@@ -1,389 +1,2055 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#123b78">
-<title>Teacher Ed Learning Hub | Mathematics Reviewer – Addition & Subtraction</title>
-<link rel="icon" type="image/png" href="6d2df0a2-acc5-482d-b00f-c900f44c9023.png">
-<style>
-:root{
- --navy:#123b78;--blue:#1f66b3;--gold:#f6b900;--cream:#fffaf0;
- --ink:#17324d;--muted:#5d7185;--card:#fff;--line:#dbe5ef;--soft:#eef5fc;
- --good:#168a52;--bad:#c43b3b;--purple:#6b52a3;
-}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);
- background:linear-gradient(180deg,#f5f9ff 0,#eef5fc 45%,#fff 100%);line-height:1.6}
-button,input{font:inherit}button{cursor:pointer}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.97);
- backdrop-filter:blur(12px);border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(18,59,120,.08)}
-.topbar{max-width:1240px;margin:auto;padding:9px 18px;display:flex;align-items:center;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;min-width:250px}.brand img{width:52px;height:52px;object-fit:contain}
-.brand strong{display:block;color:var(--navy)}.brand small{color:var(--muted)}
-.navwrap{flex:1}nav{display:flex;gap:4px;justify-content:flex-end;flex-wrap:wrap}
-nav button,.top-action{border:0;background:transparent;color:var(--navy);font-weight:800;padding:8px 9px;border-radius:10px}
-nav button:hover,.top-action:hover{background:var(--soft)}
-.hamb{display:none;border:0;background:var(--navy);color:#fff;border-radius:10px;padding:10px 13px}
-.hero{max-width:1240px;margin:auto;padding:32px 18px 18px}.hero-card{
- background:linear-gradient(135deg,#123b78,#1f66b3);color:#fff;border-radius:26px;padding:30px;
- box-shadow:0 16px 35px rgba(18,59,120,.2);position:relative;overflow:hidden}
-.hero-card:after{content:"＋ − ×";position:absolute;right:22px;top:-26px;font-size:120px;font-weight:900;color:rgba(255,255,255,.07)}
-.badge{display:inline-block;background:var(--gold);color:#162d49;font-weight:900;padding:6px 12px;border-radius:999px}
-.hero h1{font-size:clamp(1.9rem,4vw,3.2rem);line-height:1.15;margin:13px 0 8px}.hero p{max-width:820px;margin:7px 0}
-.progressbox{margin-top:18px;background:rgba(255,255,255,.14);padding:12px;border-radius:14px}
-.progressline{height:10px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
-.progressfill{height:100%;background:var(--gold);width:0;transition:.3s}
-main{max-width:1240px;margin:auto;padding:0 18px 50px}.section{display:none;animation:fade .3s ease}
-.section.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-.section-title{display:flex;align-items:end;justify-content:space-between;gap:15px;margin:28px 0 14px}
-.section-title h2{margin:0;color:var(--navy);font-size:1.8rem}.section-title p{margin:0;color:var(--muted)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;margin:14px 0;
- box-shadow:0 7px 20px rgba(18,59,120,.06)}
-.source-card{display:flex;gap:16px;align-items:center}.source-card img{width:135px;height:105px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
-.kicker{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);font-weight:900}
-.lesson-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.concept{background:linear-gradient(135deg,#f0f7ff,#fff);border-left:5px solid var(--blue);padding:14px 16px;border-radius:12px;margin:12px 0}
-.warning{background:#fff7e1;border-left:5px solid var(--gold);padding:14px 16px;border-radius:12px;margin:12px 0}
-.success{background:#edf9f2;border-left:5px solid var(--good);padding:14px 16px;border-radius:12px;margin:12px 0}
-.example{background:#fff8dc;border:1px solid #f3d36a;border-radius:14px;padding:15px;margin:12px 0}
-.steps{display:grid;gap:9px;padding:0;margin:10px 0;list-style:none}.steps li{background:var(--soft);padding:11px;border-radius:10px}
-.formula{font-size:1.3rem;font-weight:900;text-align:center;padding:11px;color:var(--navy)}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.activity{border:2px dashed #b8cee5;background:#fbfdff}.prompt{font-size:1.12rem;font-weight:900;margin-bottom:10px}
-.choices{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.choice{border:1px solid #c9d8e7;background:#fff;padding:12px;border-radius:11px;text-align:left;font-weight:800;color:var(--ink)}
-.choice:hover{border-color:var(--blue);background:#f2f8ff}.choice.correct{background:#e7f8ef;border-color:#6bc798;color:#12653e}
-.choice.wrong{background:#fff0f0;border-color:#e49a9a;color:#8f2929}.feedback{margin-top:10px;font-weight:800;min-height:24px}
-.good{color:var(--good)}.bad{color:var(--bad)}.btn{border:0;border-radius:11px;padding:10px 15px;font-weight:900;background:var(--navy);color:#fff;margin:4px}
-.btn.gold{background:var(--gold);color:#17324d}.btn.light{background:var(--soft);color:var(--navy)}
-.answer{display:none;margin-top:10px;background:#eef9f3;border:1px solid #b7dfc9;padding:12px;border-radius:11px}
-.answer.show{display:block}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;margin-top:8px}
-th,td{border:1px solid var(--line);padding:9px;text-align:center}th{background:var(--soft);color:var(--navy)}
-.topic-nav{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.topic-btn{background:#fff;border:1px solid var(--line);padding:16px;border-radius:15px;text-align:left;font-weight:900;color:var(--navy)}
-.topic-btn span{display:block;color:var(--muted);font-size:.86rem;margin-top:4px;font-weight:500}
-.checklist{list-style:none;padding:0;display:grid;gap:9px}.checklist li{background:#f6fafc;padding:11px;border-radius:10px}
-.checklist input{margin-right:9px;transform:scale(1.15)}
-.mastery{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.pill{padding:6px 10px;border-radius:999px;background:#e9f1fb;color:var(--navy);font-weight:800}
-.assessment-grid{display:grid;gap:12px}.qbox{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px}
-.qnum{color:var(--blue);font-weight:900}.qbox label{display:block;padding:8px;border-radius:8px;margin:3px 0}.qbox label:hover{background:var(--soft)}
-.result{display:none;text-align:center;background:linear-gradient(135deg,#eef8ff,#fff8dc);border:2px solid #c6dced;border-radius:18px;padding:22px;margin-top:16px}
-.result.show{display:block}.scorebig{font-size:2.7rem;font-weight:900;color:var(--navy)}
-footer{background:#102f60;color:#fff;margin-top:40px}.footer-inner{max-width:1240px;margin:auto;padding:26px 18px;display:flex;align-items:center;gap:14px}
-.footer-inner img{width:58px;height:58px;object-fit:contain}.footer-inner small{color:#dbe8f6}
-@media(max-width:900px){.brand{min-width:0}.brand div{display:none}.hamb{display:block;margin-left:auto}
- nav{display:none;position:absolute;left:12px;right:12px;top:70px;background:#fff;border:1px solid var(--line);padding:10px;border-radius:14px;box-shadow:0 12px 25px rgba(0,0,0,.12);flex-direction:column}
- nav.open{display:flex}nav button{text-align:left}.lesson-grid,.two-col{grid-template-columns:1fr}.topic-nav{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.topbar{padding:8px 12px}.hero{padding:22px 12px 14px}main{padding:0 12px 35px}.hero-card{padding:22px 18px}
- .choices,.topic-nav{grid-template-columns:1fr}.source-card{align-items:flex-start}.source-card img{width:92px;height:80px}.section-title{display:block}.section-title p{margin-top:5px}}
-</style>
-</head>
-<body>
-<header>
- <div class="topbar">
-  <div class="brand"><img src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png" alt="Teacher Ed Learning Hub logo">
-   <div><strong>Teacher Ed Learning Hub</strong><small>Mathematics Interactive Reviewer</small></div></div>
-  <div class="navwrap"><nav id="mainNav">
-   <button onclick="showSection('home')">Home</button>
-   <button onclick="showSection('t1')">Lesson 1</button><button onclick="showSection('t2')">Lesson 2</button>
-   <button onclick="showSection('t3')">Lesson 3</button><button onclick="showSection('t4')">Lesson 4</button>
-   <button onclick="showSection('t5')">Lesson 5</button><button onclick="showSection('t6')">Lesson 6</button>
-   <button onclick="showSection('assessment')">Final Assessment</button>
-  </nav></div>
-  <button class="hamb" onclick="toggleNav()">☰</button><button class="top-action" onclick="toggleFullscreen()">⛶</button>
- </div>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<section class="hero"><div class="hero-card">
- <span class="badge">PRIMARY MATHEMATICS • INTERACTIVE REVIEWER</span>
- <h1>Addition & Subtraction Mastery Quest</h1>
- <p>Explore six lessons through a clear <b>Learn → Explore → Practice-Play → Think → Check → Master</b> sequence.</p>
- <p>Designed for young learners: short chunks, visual cues, worked examples, predictable navigation, instant feedback, and repeated practice.</p>
- <div class="progressbox"><div style="display:flex;justify-content:space-between;margin-bottom:7px"><b>Review Progress</b><span id="progressText">0%</span></div>
-  <div class="progressline"><div class="progressfill" id="progressFill"></div></div></div>
-</div></section>
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+    <meta name="theme-color" content="#123b78" />
+    <title>
+      Teacher Ed Learning Hub | Mathematics Reviewer – Addition & Subtraction
+    </title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="6d2df0a2-acc5-482d-b00f-c900f44c9023.png"
+    />
+    <style>
+      :root {
+        --navy: #123b78;
+        --blue: #1f66b3;
+        --gold: #f6b900;
+        --cream: #fffaf0;
+        --ink: #17324d;
+        --muted: #5d7185;
+        --card: #fff;
+        --line: #dbe5ef;
+        --soft: #eef5fc;
+        --good: #168a52;
+        --bad: #c43b3b;
+        --purple: #6b52a3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #f5f9ff 0, #eef5fc 45%, #fff 100%);
+        line-height: 1.6;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 4px 18px rgba(18, 59, 120, 0.08);
+      }
+      .topbar {
+        max-width: 1240px;
+        margin: auto;
+        padding: 9px 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 250px;
+      }
+      .brand img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+      }
+      .brand strong {
+        display: block;
+        color: var(--navy);
+      }
+      .brand small {
+        color: var(--muted);
+      }
+      .navwrap {
+        flex: 1;
+      }
+      nav {
+        display: flex;
+        gap: 4px;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+      nav button,
+      .top-action {
+        border: 0;
+        background: transparent;
+        color: var(--navy);
+        font-weight: 800;
+        padding: 8px 9px;
+        border-radius: 10px;
+      }
+      nav button:hover,
+      .top-action:hover {
+        background: var(--soft);
+      }
+      .hamb {
+        display: none;
+        border: 0;
+        background: var(--navy);
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px 13px;
+      }
+      .hero {
+        max-width: 1240px;
+        margin: auto;
+        padding: 32px 18px 18px;
+      }
+      .hero-card {
+        background: linear-gradient(135deg, #123b78, #1f66b3);
+        color: #fff;
+        border-radius: 26px;
+        padding: 30px;
+        box-shadow: 0 16px 35px rgba(18, 59, 120, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-card:after {
+        content: "＋ − ×";
+        position: absolute;
+        right: 22px;
+        top: -26px;
+        font-size: 120px;
+        font-weight: 900;
+        color: rgba(255, 255, 255, 0.07);
+      }
+      .badge {
+        display: inline-block;
+        background: var(--gold);
+        color: #162d49;
+        font-weight: 900;
+        padding: 6px 12px;
+        border-radius: 999px;
+      }
+      .hero h1 {
+        font-size: clamp(1.9rem, 4vw, 3.2rem);
+        line-height: 1.15;
+        margin: 13px 0 8px;
+      }
+      .hero p {
+        max-width: 820px;
+        margin: 7px 0;
+      }
+      .progressbox {
+        margin-top: 18px;
+        background: rgba(255, 255, 255, 0.14);
+        padding: 12px;
+        border-radius: 14px;
+      }
+      .progressline {
+        height: 10px;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .progressfill {
+        height: 100%;
+        background: var(--gold);
+        width: 0;
+        transition: 0.3s;
+      }
+      main {
+        max-width: 1240px;
+        margin: auto;
+        padding: 0 18px 50px;
+      }
+      .section {
+        display: none;
+        animation: fade 0.3s ease;
+      }
+      .section.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(6px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .section-title {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 15px;
+        margin: 28px 0 14px;
+      }
+      .section-title h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.8rem;
+      }
+      .section-title p {
+        margin: 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 20px;
+        margin: 14px 0;
+        box-shadow: 0 7px 20px rgba(18, 59, 120, 0.06);
+      }
+      .source-card {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .source-card img {
+        width: 135px;
+        height: 105px;
+        object-fit: cover;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+      }
+      .kicker {
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--blue);
+        font-weight: 900;
+      }
+      .lesson-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .concept {
+        background: linear-gradient(135deg, #f0f7ff, #fff);
+        border-left: 5px solid var(--blue);
+        padding: 14px 16px;
+        border-radius: 12px;
+        margin: 12px 0;
+      }
+      .warning {
+        background: #fff7e1;
+        border-left: 5px solid var(--gold);
+        padding: 14px 16px;
+        border-radius: 12px;
+        margin: 12px 0;
+      }
+      .success {
+        background: #edf9f2;
+        border-left: 5px solid var(--good);
+        padding: 14px 16px;
+        border-radius: 12px;
+        margin: 12px 0;
+      }
+      .example {
+        background: #fff8dc;
+        border: 1px solid #f3d36a;
+        border-radius: 14px;
+        padding: 15px;
+        margin: 12px 0;
+      }
+      .steps {
+        display: grid;
+        gap: 9px;
+        padding: 0;
+        margin: 10px 0;
+        list-style: none;
+      }
+      .steps li {
+        background: var(--soft);
+        padding: 11px;
+        border-radius: 10px;
+      }
+      .formula {
+        font-size: 1.3rem;
+        font-weight: 900;
+        text-align: center;
+        padding: 11px;
+        color: var(--navy);
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .activity {
+        border: 2px dashed #b8cee5;
+        background: #fbfdff;
+      }
+      .prompt {
+        font-size: 1.12rem;
+        font-weight: 900;
+        margin-bottom: 10px;
+      }
+      .choices {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .choice {
+        border: 1px solid #c9d8e7;
+        background: #fff;
+        padding: 12px;
+        border-radius: 11px;
+        text-align: left;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .choice:hover {
+        border-color: var(--blue);
+        background: #f2f8ff;
+      }
+      .choice.correct {
+        background: #e7f8ef;
+        border-color: #6bc798;
+        color: #12653e;
+      }
+      .choice.wrong {
+        background: #fff0f0;
+        border-color: #e49a9a;
+        color: #8f2929;
+      }
+      .feedback {
+        margin-top: 10px;
+        font-weight: 800;
+        min-height: 24px;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      .btn {
+        border: 0;
+        border-radius: 11px;
+        padding: 10px 15px;
+        font-weight: 900;
+        background: var(--navy);
+        color: #fff;
+        margin: 4px;
+      }
+      .btn.gold {
+        background: var(--gold);
+        color: #17324d;
+      }
+      .btn.light {
+        background: var(--soft);
+        color: var(--navy);
+      }
+      .answer {
+        display: none;
+        margin-top: 10px;
+        background: #eef9f3;
+        border: 1px solid #b7dfc9;
+        padding: 12px;
+        border-radius: 11px;
+      }
+      .answer.show {
+        display: block;
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 8px;
+      }
+      th,
+      td {
+        border: 1px solid var(--line);
+        padding: 9px;
+        text-align: center;
+      }
+      th {
+        background: var(--soft);
+        color: var(--navy);
+      }
+      .topic-nav {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .topic-btn {
+        background: #fff;
+        border: 1px solid var(--line);
+        padding: 16px;
+        border-radius: 15px;
+        text-align: left;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .topic-btn span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.86rem;
+        margin-top: 4px;
+        font-weight: 500;
+      }
+      .checklist {
+        list-style: none;
+        padding: 0;
+        display: grid;
+        gap: 9px;
+      }
+      .checklist li {
+        background: #f6fafc;
+        padding: 11px;
+        border-radius: 10px;
+      }
+      .checklist input {
+        margin-right: 9px;
+        transform: scale(1.15);
+      }
+      .mastery {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 10px;
+      }
+      .pill {
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #e9f1fb;
+        color: var(--navy);
+        font-weight: 800;
+      }
+      .assessment-grid {
+        display: grid;
+        gap: 12px;
+      }
+      .qbox {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 15px;
+        padding: 16px;
+      }
+      .qnum {
+        color: var(--blue);
+        font-weight: 900;
+      }
+      .qbox label {
+        display: block;
+        padding: 8px;
+        border-radius: 8px;
+        margin: 3px 0;
+      }
+      .qbox label:hover {
+        background: var(--soft);
+      }
+      .result {
+        display: none;
+        text-align: center;
+        background: linear-gradient(135deg, #eef8ff, #fff8dc);
+        border: 2px solid #c6dced;
+        border-radius: 18px;
+        padding: 22px;
+        margin-top: 16px;
+      }
+      .result.show {
+        display: block;
+      }
+      .scorebig {
+        font-size: 2.7rem;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      footer {
+        background: #102f60;
+        color: #fff;
+        margin-top: 40px;
+      }
+      .footer-inner {
+        max-width: 1240px;
+        margin: auto;
+        padding: 26px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .footer-inner img {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+      }
+      .footer-inner small {
+        color: #dbe8f6;
+      }
+      @media (max-width: 900px) {
+        .brand {
+          min-width: 0;
+        }
+        .brand div {
+          display: none;
+        }
+        .hamb {
+          display: block;
+          margin-left: auto;
+        }
+        nav {
+          display: none;
+          position: absolute;
+          left: 12px;
+          right: 12px;
+          top: 70px;
+          background: #fff;
+          border: 1px solid var(--line);
+          padding: 10px;
+          border-radius: 14px;
+          box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+          flex-direction: column;
+        }
+        nav.open {
+          display: flex;
+        }
+        nav button {
+          text-align: left;
+        }
+        .lesson-grid,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .topic-nav {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 520px) {
+        .topbar {
+          padding: 8px 12px;
+        }
+        .hero {
+          padding: 22px 12px 14px;
+        }
+        main {
+          padding: 0 12px 35px;
+        }
+        .hero-card {
+          padding: 22px 18px;
+        }
+        .choices,
+        .topic-nav {
+          grid-template-columns: 1fr;
+        }
+        .source-card {
+          align-items: flex-start;
+        }
+        .source-card img {
+          width: 92px;
+          height: 80px;
+        }
+        .section-title {
+          display: block;
+        }
+        .section-title p {
+          margin-top: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <img
+            src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png"
+            alt="Teacher Ed Learning Hub logo"
+          />
+          <div>
+            <strong>Teacher Ed Learning Hub</strong
+            ><small>Mathematics Interactive Reviewer</small>
+          </div>
+        </div>
+        <div class="navwrap">
+          <nav id="mainNav">
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('t1')">Lesson 1</button
+            ><button onclick="showSection('t2')">Lesson 2</button>
+            <button onclick="showSection('t3')">Lesson 3</button
+            ><button onclick="showSection('t4')">Lesson 4</button>
+            <button onclick="showSection('t5')">Lesson 5</button
+            ><button onclick="showSection('t6')">Lesson 6</button>
+            <button onclick="showSection('assessment')">
+              Final Assessment
+            </button>
+          </nav>
+        </div>
+        <button class="hamb" onclick="toggleNav()">☰</button
+        ><button class="top-action" onclick="toggleFullscreen()">⛶</button>
+      </div>
+    </header>
 
-<main>
-<section id="home" class="section active">
- <div class="section-title"><div><h2>🚀 Welcome, Math Explorer!</h2><p>Review one lesson at a time. You can revisit any lesson whenever you need more practice.</p></div></div>
- <div class="card">
-  <div class="kicker">Learning Targets</div>
-  <ul class="checklist">
-   <li><input type="checkbox" class="goal"> I can estimate a difference by rounding the minuend and subtrahend.</li>
-   <li><input type="checkbox" class="goal"> I can subtract 4- to 6-digit numbers without regrouping.</li>
-   <li><input type="checkbox" class="goal"> I can subtract 4- to 6-digit numbers with regrouping.</li>
-   <li><input type="checkbox" class="goal"> I can regroup when the minuend has zeros.</li>
-   <li><input type="checkbox" class="goal"> I can use the commutative, associative, and identity properties of addition.</li>
-   <li><input type="checkbox" class="goal"> I can use mental-addition techniques and compatible numbers.</li>
-  </ul>
- </div>
- <div class="card"><div class="kicker">How to use this reviewer</div>
-  <div class="two-col">
-   <div><h3>📖 1. Learn</h3><p>Read the short explanation and vocabulary.</p><h3>🔎 2. Explore</h3><p>Study the worked example and place-value thinking.</p><h3>🎮 3. Practice-Play</h3><p>Answer interactive questions and get immediate feedback.</p></div>
-   <div><h3>🧠 4. Think</h3><p>Explain why a method works.</p><h3>✅ 5. Check</h3><p>Use the checklist and self-check prompts.</p><h3>🏆 6. Master</h3><p>Try the challenge, then continue to the next lesson.</p></div>
-  </div>
- </div>
- <div class="topic-nav">
-  <button class="topic-btn" onclick="showSection('t1')">1️⃣ Estimating Differences<span>Round, then subtract.</span></button>
-  <button class="topic-btn" onclick="showSection('t2')">2️⃣ Without Regrouping<span>Subtract by place value.</span></button>
-  <button class="topic-btn" onclick="showSection('t3')">3️⃣ With Regrouping<span>Trade from a higher place.</span></button>
-  <button class="topic-btn" onclick="showSection('t4')">4️⃣ Zeros in the Minuend<span>Regroup across zeros.</span></button>
-  <button class="topic-btn" onclick="showSection('t5')">5️⃣ Properties of Addition<span>Reorder and regroup addends.</span></button>
-  <button class="topic-btn" onclick="showSection('t6')">6️⃣ Mental Addition<span>Use friendly and compatible numbers.</span></button>
- </div>
- <div class="card warning"><b>Source note:</b> This reviewer is based on the photographed lesson pages you supplied. The lesson titles, targets, vocabulary, examples, and strategies are kept aligned with those pages; interactive explanations are added to make the review easier to study.</div>
-</section>
+    <section class="hero">
+      <div class="hero-card">
+        <span class="badge">PRIMARY MATHEMATICS • INTERACTIVE REVIEWER</span>
+        <h1>Addition & Subtraction Mastery Quest</h1>
+        <p>
+          Explore six lessons through a clear
+          <b>Learn → Explore → Practice-Play → Think → Check → Master</b>
+          sequence.
+        </p>
+        <p>
+          Designed for young learners: short chunks, visual cues, worked
+          examples, predictable navigation, instant feedback, and repeated
+          practice.
+        </p>
+        <div class="progressbox">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              margin-bottom: 7px;
+            "
+          >
+            <b>Review Progress</b><span id="progressText">0%</span>
+          </div>
+          <div class="progressline">
+            <div class="progressfill" id="progressFill"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section id="t1" class="section">
- <div class="section-title"><div><h2>Lesson 1 — Estimating Differences</h2><p>Estimate differences by rounding minuends and subtrahends.</p></div></div>
- <div class="card source-card"><img src="lesson-1-estimating-differences.jpg" alt="Lesson 1 source page"><div><div class="kicker">Target from the lesson</div><b>Estimating differences by rounding minuends and subtrahends.</b><p>Source context: the lesson introduces the Philippine Deep / Mindanao Trench and uses a measurement situation to connect estimation with real-world quantities.</p></div></div>
- <div class="lesson-grid">
-  <div class="card"><div class="kicker">I — Learn</div><h3>What is a difference?</h3>
-   <p>A <b>difference</b> is the number that results when one number is subtracted from another.</p>
-   <p>The <b>minuend</b> is the number from which another number is subtracted. The <b>subtrahend</b> is the number being subtracted.</p>
-   <div class="formula">minuend − subtrahend = difference</div>
-  </div>
-  <div class="card"><div class="kicker">I — Learn</div><h3>What does estimating mean?</h3>
-   <p>An estimate is a close value that is easier to calculate. For a difference, round both numbers to the place named in the problem, then subtract.</p>
-   <div class="concept"><b>Remember:</b> The goal is not the exact difference. The goal is a reasonable value that is quick to find.</div>
-  </div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Worked Example: Round to the nearest hundred</h3>
-  <div class="example"><b>Estimate:</b> 7,846 − 3,218<br>
-   7,846 → <b>7,800</b> and 3,218 → <b>3,200</b><div class="formula">7,800 − 3,200 = 4,600</div>
-   <b>Estimated difference: 4,600</b></div>
-  <ol class="steps"><li>1️⃣ Identify the requested place: hundreds.</li><li>2️⃣ Round the minuend.</li><li>3️⃣ Round the subtrahend.</li><li>4️⃣ Subtract the rounded numbers.</li><li>5️⃣ Ask: “Does the estimate make sense?”</li></ol>
- </div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">🎯 Estimate 5,762 − 2,341 to the nearest hundred.</div>
-  <div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f1a')">3,500</button><button class="choice" data-correct="false" onclick="mini(this,'f1a')">3,400</button><button class="choice" data-correct="false" onclick="mini(this,'f1a')">3,421</button><button class="choice" data-correct="false" onclick="mini(this,'f1a')">3,600</button></div><div id="f1a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">P — Practice-Play 2</div><div class="prompt">Estimate 8,942 − 4,117 to the nearest hundred.</div>
-   <div class="choices"><button class="choice" data-correct="false" onclick="mini(this,'f1b')">4,700</button><button class="choice" data-correct="true" onclick="mini(this,'f1b')">4,800</button><button class="choice" data-correct="false" onclick="mini(this,'f1b')">4,825</button><button class="choice" data-correct="false" onclick="mini(this,'f1b')">5,000</button></div><div id="f1b" class="feedback"></div>
-  </div>
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Why do we round both numbers?</div><button class="btn light" onclick="reveal('r1')">Reveal thinking</button>
-   <div id="r1" class="answer">Because the difference is based on both numbers. Rounding both the minuend and subtrahend gives a quick, consistent estimate.</div>
-  </div>
- </div>
- <div class="card success"><div class="kicker">C — Check</div><b>Self-check:</b> Can I name the minuend, subtrahend, and difference? Can I round both numbers to the requested place?</div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Estimate 12,486 − 7,529 to the nearest thousand.</div><button class="btn gold" onclick="reveal('m1')">Show solution</button>
-  <div id="m1" class="answer">12,486 → 12,000 and 7,529 → 8,000. So the estimate is <b>12,000 − 8,000 = 4,000</b>.</div></div>
-</section>
+    <main>
+      <section id="home" class="section active">
+        <div class="section-title">
+          <div>
+            <h2>🚀 Welcome, Math Explorer!</h2>
+            <p>
+              Review one lesson at a time. You can revisit any lesson whenever
+              you need more practice.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">Learning Targets</div>
+          <ul class="checklist">
+            <li>
+              <input type="checkbox" class="goal" /> I can estimate a difference
+              by rounding the minuend and subtrahend.
+            </li>
+            <li>
+              <input type="checkbox" class="goal" /> I can subtract 4- to
+              6-digit numbers without regrouping.
+            </li>
+            <li>
+              <input type="checkbox" class="goal" /> I can subtract 4- to
+              6-digit numbers with regrouping.
+            </li>
+            <li>
+              <input type="checkbox" class="goal" /> I can regroup when the
+              minuend has zeros.
+            </li>
+            <li>
+              <input type="checkbox" class="goal" /> I can use the commutative,
+              associative, and identity properties of addition.
+            </li>
+            <li>
+              <input type="checkbox" class="goal" /> I can use mental-addition
+              techniques and compatible numbers.
+            </li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="kicker">How to use this reviewer</div>
+          <div class="two-col">
+            <div>
+              <h3>📖 1. Learn</h3>
+              <p>Read the short explanation and vocabulary.</p>
+              <h3>🔎 2. Explore</h3>
+              <p>Study the worked example and place-value thinking.</p>
+              <h3>🎮 3. Practice-Play</h3>
+              <p>Answer interactive questions and get immediate feedback.</p>
+            </div>
+            <div>
+              <h3>🧠 4. Think</h3>
+              <p>Explain why a method works.</p>
+              <h3>✅ 5. Check</h3>
+              <p>Use the checklist and self-check prompts.</p>
+              <h3>🏆 6. Master</h3>
+              <p>Try the challenge, then continue to the next lesson.</p>
+            </div>
+          </div>
+        </div>
+        <div class="topic-nav">
+          <button class="topic-btn" onclick="showSection('t1')">
+            1️⃣ Estimating Differences<span>Round, then subtract.</span>
+          </button>
+          <button class="topic-btn" onclick="showSection('t2')">
+            2️⃣ Without Regrouping<span>Subtract by place value.</span>
+          </button>
+          <button class="topic-btn" onclick="showSection('t3')">
+            3️⃣ With Regrouping<span>Trade from a higher place.</span>
+          </button>
+          <button class="topic-btn" onclick="showSection('t4')">
+            4️⃣ Zeros in the Minuend<span>Regroup across zeros.</span>
+          </button>
+          <button class="topic-btn" onclick="showSection('t5')">
+            5️⃣ Properties of Addition<span>Reorder and regroup addends.</span>
+          </button>
+          <button class="topic-btn" onclick="showSection('t6')">
+            6️⃣ Mental Addition<span>Use friendly and compatible numbers.</span>
+          </button>
+        </div>
+        <div class="card warning">
+          <b>Source note:</b> This reviewer is based on the photographed lesson
+          pages you supplied. The lesson titles, targets, vocabulary, examples,
+          and strategies are kept aligned with those pages; interactive
+          explanations are added to make the review easier to study.
+        </div>
+      </section>
 
-<section id="t2" class="section">
- <div class="section-title"><div><h2>Lesson 2 — Subtracting Numbers without Regrouping</h2><p>Subtract 4- to 6-digit numbers without regrouping.</p></div></div>
- <div class="card source-card"><img src="lesson-2-subtracting-without-regrouping.jpg" alt="Lesson 2 source page"><div><div class="kicker">Target from the lesson</div><b>Subtracting 4- to 6-digit numbers without regrouping.</b><p>The source practice begins with simple patterns such as 8 − 5, 80 − 50, and 800 − 500 to reinforce place-value structure.</p></div></div>
- <div class="card"><div class="kicker">I — Learn</div><h3>When is regrouping NOT needed?</h3>
-  <p>Regrouping is unnecessary when every digit in the minuend is large enough to subtract the corresponding digit in the subtrahend.</p>
-  <div class="concept"><b>Place-value rule:</b> Ones go under ones, tens under tens, hundreds under hundreds, and so on.</div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Worked Example</h3>
-  <div class="example"><div class="formula">68,745 − 23,412 = 45,333</div>
-   <p>Ones: 5 − 2 = 3<br>Tens: 4 − 1 = 3<br>Hundreds: 7 − 4 = 3<br>Thousands: 8 − 3 = 5<br>Ten-thousands: 6 − 2 = 4</p></div>
-  <ol class="steps"><li>1️⃣ Align the place values.</li><li>2️⃣ Start with the ones place.</li><li>3️⃣ Subtract from right to left.</li><li>4️⃣ Record each difference in its correct column.</li><li>5️⃣ Check by adding the difference to the subtrahend.</li></ol>
- </div>
- <div class="card"><div class="kicker">Place-Value Pattern</div><div class="table-wrap"><table>
-  <tr><th>Expression</th><th>Answer</th><th>What stays the same?</th></tr>
-  <tr><td>8 − 5</td><td>3</td><td>3 ones</td></tr><tr><td>80 − 50</td><td>30</td><td>3 tens</td></tr>
-  <tr><td>800 − 500</td><td>300</td><td>3 hundreds</td></tr><tr><td>8,000 − 5,000</td><td>3,000</td><td>3 thousands</td></tr>
- </table></div></div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">🎮 Solve: 8,765 − 2,341.</div>
-  <div class="choices"><button class="choice" data-correct="false" onclick="mini(this,'f2a')">6,324</button><button class="choice" data-correct="true" onclick="mini(this,'f2a')">6,424</button><button class="choice" data-correct="false" onclick="mini(this,'f2a')">6,524</button><button class="choice" data-correct="false" onclick="mini(this,'f2a')">6,314</button></div><div id="f2a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Why must the digits be aligned?</div><button class="btn light" onclick="reveal('r2')">Reveal answer</button><div id="r2" class="answer">Each position has a different value. Alignment makes sure ones are subtracted from ones, tens from tens, hundreds from hundreds, and so on.</div></div>
-  <div class="card activity"><div class="kicker">C — Check</div><div class="prompt">True or false: If every top digit is equal to or greater than the bottom digit, regrouping is not needed.</div><div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f2b')">True</button><button class="choice" data-correct="false" onclick="mini(this,'f2b')">False</button></div><div id="f2b" class="feedback"></div></div>
- </div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Solve: 654,321 − 123,210.</div><button class="btn gold" onclick="reveal('m2')">Show solution</button><div id="m2" class="answer"><b>531,111.</b> No regrouping is needed because each digit in the minuend is sufficient for its corresponding subtraction.</div></div>
-</section>
+      <section id="t1" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 1 — Estimating Differences</h2>
+            <p>Estimate differences by rounding minuends and subtrahends.</p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img
+            src="lesson-1-estimating-differences.jpg"
+            alt="Lesson 1 source page"
+          />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Estimating differences by rounding minuends and subtrahends.</b>
+            <p>
+              Source context: the lesson introduces the Philippine Deep /
+              Mindanao Trench and uses a measurement situation to connect
+              estimation with real-world quantities.
+            </p>
+          </div>
+        </div>
+        <div class="lesson-grid">
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>What is a difference?</h3>
+            <p>
+              A <b>difference</b> is the number that results when one number is
+              subtracted from another.
+            </p>
+            <p>
+              The <b>minuend</b> is the number from which another number is
+              subtracted. The <b>subtrahend</b> is the number being subtracted.
+            </p>
+            <div class="formula">minuend − subtrahend = difference</div>
+          </div>
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>What does estimating mean?</h3>
+            <p>
+              An estimate is a close value that is easier to calculate. For a
+              difference, round both numbers to the place named in the problem,
+              then subtract.
+            </p>
+            <div class="concept">
+              <b>Remember:</b> The goal is not the exact difference. The goal is
+              a reasonable value that is quick to find.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Worked Example: Round to the nearest hundred</h3>
+          <div class="example">
+            <b>Estimate:</b> 7,846 − 3,218<br />
+            7,846 → <b>7,800</b> and 3,218 → <b>3,200</b>
+            <div class="formula">7,800 − 3,200 = 4,600</div>
+            <b>Estimated difference: 4,600</b>
+          </div>
+          <ol class="steps">
+            <li>1️⃣ Identify the requested place: hundreds.</li>
+            <li>2️⃣ Round the minuend.</li>
+            <li>3️⃣ Round the subtrahend.</li>
+            <li>4️⃣ Subtract the rounded numbers.</li>
+            <li>5️⃣ Ask: “Does the estimate make sense?”</li>
+          </ol>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">
+            🎯 Estimate 5,762 − 2,341 to the nearest hundred.
+          </div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f1a')"
+            >
+              3,500</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f1a')"
+            >
+              3,400</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f1a')"
+            >
+              3,421</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f1a')"
+            >
+              3,600
+            </button>
+          </div>
+          <div id="f1a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">P — Practice-Play 2</div>
+            <div class="prompt">
+              Estimate 8,942 − 4,117 to the nearest hundred.
+            </div>
+            <div class="choices">
+              <button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f1b')"
+              >
+                4,700</button
+              ><button
+                class="choice"
+                data-correct="true"
+                onclick="mini(this, 'f1b')"
+              >
+                4,800</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f1b')"
+              >
+                4,825</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f1b')"
+              >
+                5,000
+              </button>
+            </div>
+            <div id="f1b" class="feedback"></div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">Why do we round both numbers?</div>
+            <button class="btn light" onclick="reveal('r1')">
+              Reveal thinking
+            </button>
+            <div id="r1" class="answer">
+              Because the difference is based on both numbers. Rounding both the
+              minuend and subtrahend gives a quick, consistent estimate.
+            </div>
+          </div>
+        </div>
+        <div class="card success">
+          <div class="kicker">C — Check</div>
+          <b>Self-check:</b> Can I name the minuend, subtrahend, and difference?
+          Can I round both numbers to the requested place?
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">
+            Estimate 12,486 − 7,529 to the nearest thousand.
+          </div>
+          <button class="btn gold" onclick="reveal('m1')">Show solution</button>
+          <div id="m1" class="answer">
+            12,486 → 12,000 and 7,529 → 8,000. So the estimate is
+            <b>12,000 − 8,000 = 4,000</b>.
+          </div>
+        </div>
+      </section>
 
-<section id="t3" class="section">
- <div class="section-title"><div><h2>Lesson 3 — Subtracting Numbers with Regrouping</h2><p>Subtract 4- to 6-digit numbers when regrouping is needed.</p></div></div>
- <div class="card source-card"><img src="lesson-3-subtracting-with-regrouping.jpg" alt="Lesson 3 source page"><div><div class="kicker">Target from the lesson</div><b>Subtracting 4- to 6-digit numbers with regrouping.</b><p>The source lesson connects subtraction to the Puerto Princesa Underground River and explains a real-world measurement context.</p></div></div>
- <div class="card"><div class="kicker">I — Learn</div><h3>What is regrouping?</h3>
-  <p>Regrouping means exchanging one unit from a higher place for <b>10 units of the next lower place</b>. For example, 1 ten can become 10 ones.</p>
-  <div class="concept"><b>Trigger:</b> If the top digit is smaller than the digit below it, you need to regroup before subtracting that column.</div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Step-by-Step Example: 6,432 − 2,785</h3>
-  <ol class="steps">
-   <li>🔹 Ones: 2 cannot subtract 5. Regroup 1 ten as 10 ones: 12 − 5 = <b>7</b>.</li>
-   <li>🔹 Tens: after giving away one ten, 2 tens remain. 2 cannot subtract 8. Regroup 1 hundred as 10 tens: 12 − 8 = <b>4</b>.</li>
-   <li>🔹 Hundreds: after regrouping, 3 hundreds became 2 hundreds. 2 cannot subtract 7. Regroup 1 thousand: 12 − 7 = <b>5</b>.</li>
-   <li>🔹 Thousands: 5 − 2 = <b>3</b>.</li>
-  </ol><div class="formula">6,432 − 2,785 = 3,647</div>
-  <div class="warning"><b>Common mistake:</b> Do not forget to reduce the higher place after you regroup from it.</div>
- </div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">🧠 Solve: 7,205 − 3,468.</div>
-  <div class="choices"><button class="choice" data-correct="false" onclick="mini(this,'f3a')">3,637</button><button class="choice" data-correct="true" onclick="mini(this,'f3a')">3,737</button><button class="choice" data-correct="false" onclick="mini(this,'f3a')">4,737</button><button class="choice" data-correct="false" onclick="mini(this,'f3a')">3,747</button></div><div id="f3a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">P — Practice-Play 2</div><div class="prompt">Which exchange is correct?</div>
-   <div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f3b')">1 ten = 10 ones</button><button class="choice" data-correct="false" onclick="mini(this,'f3b')">1 ten = 10 hundreds</button><button class="choice" data-correct="false" onclick="mini(this,'f3b')">1 hundred = 10 thousands</button><button class="choice" data-correct="false" onclick="mini(this,'f3b')">1 one = 10 tens</button></div><div id="f3b" class="feedback"></div>
-  </div>
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Why does regrouping not change the total value?</div><button class="btn light" onclick="reveal('r3')">Reveal thinking</button><div id="r3" class="answer">It only changes the form of the same value. For example, 1 ten and 10 ones both represent 10.</div></div>
- </div>
- <div class="card success"><div class="kicker">C — Check</div><b>Self-check:</b> Did I start at the ones? Did I reduce the place I regrouped from? Did I continue left one place at a time?</div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Solve: 54,302 − 27,846.</div><button class="btn gold" onclick="reveal('m3')">Show solution</button><div id="m3" class="answer"><b>26,456.</b> Regroup as needed from right to left, carefully carrying each change into the next column.</div></div>
-</section>
+      <section id="t2" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 2 — Subtracting Numbers without Regrouping</h2>
+            <p>Subtract 4- to 6-digit numbers without regrouping.</p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img
+            src="lesson-2-subtracting-without-regrouping.jpg"
+            alt="Lesson 2 source page"
+          />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Subtracting 4- to 6-digit numbers without regrouping.</b>
+            <p>
+              The source practice begins with simple patterns such as 8 − 5, 80
+              − 50, and 800 − 500 to reinforce place-value structure.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">I — Learn</div>
+          <h3>When is regrouping NOT needed?</h3>
+          <p>
+            Regrouping is unnecessary when every digit in the minuend is large
+            enough to subtract the corresponding digit in the subtrahend.
+          </p>
+          <div class="concept">
+            <b>Place-value rule:</b> Ones go under ones, tens under tens,
+            hundreds under hundreds, and so on.
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Worked Example</h3>
+          <div class="example">
+            <div class="formula">68,745 − 23,412 = 45,333</div>
+            <p>
+              Ones: 5 − 2 = 3<br />Tens: 4 − 1 = 3<br />Hundreds: 7 − 4 = 3<br />Thousands:
+              8 − 3 = 5<br />Ten-thousands: 6 − 2 = 4
+            </p>
+          </div>
+          <ol class="steps">
+            <li>1️⃣ Align the place values.</li>
+            <li>2️⃣ Start with the ones place.</li>
+            <li>3️⃣ Subtract from right to left.</li>
+            <li>4️⃣ Record each difference in its correct column.</li>
+            <li>5️⃣ Check by adding the difference to the subtrahend.</li>
+          </ol>
+        </div>
+        <div class="card">
+          <div class="kicker">Place-Value Pattern</div>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Expression</th>
+                <th>Answer</th>
+                <th>What stays the same?</th>
+              </tr>
+              <tr>
+                <td>8 − 5</td>
+                <td>3</td>
+                <td>3 ones</td>
+              </tr>
+              <tr>
+                <td>80 − 50</td>
+                <td>30</td>
+                <td>3 tens</td>
+              </tr>
+              <tr>
+                <td>800 − 500</td>
+                <td>300</td>
+                <td>3 hundreds</td>
+              </tr>
+              <tr>
+                <td>8,000 − 5,000</td>
+                <td>3,000</td>
+                <td>3 thousands</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">🎮 Solve: 8,765 − 2,341.</div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f2a')"
+            >
+              6,324</button
+            ><button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f2a')"
+            >
+              6,424</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f2a')"
+            >
+              6,524</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f2a')"
+            >
+              6,314
+            </button>
+          </div>
+          <div id="f2a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">Why must the digits be aligned?</div>
+            <button class="btn light" onclick="reveal('r2')">
+              Reveal answer
+            </button>
+            <div id="r2" class="answer">
+              Each position has a different value. Alignment makes sure ones are
+              subtracted from ones, tens from tens, hundreds from hundreds, and
+              so on.
+            </div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">C — Check</div>
+            <div class="prompt">
+              True or false: If every top digit is equal to or greater than the
+              bottom digit, regrouping is not needed.
+            </div>
+            <div class="choices">
+              <button
+                class="choice"
+                data-correct="true"
+                onclick="mini(this, 'f2b')"
+              >
+                True</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f2b')"
+              >
+                False
+              </button>
+            </div>
+            <div id="f2b" class="feedback"></div>
+          </div>
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">Solve: 654,321 − 123,210.</div>
+          <button class="btn gold" onclick="reveal('m2')">Show solution</button>
+          <div id="m2" class="answer">
+            <b>531,111.</b> No regrouping is needed because each digit in the
+            minuend is sufficient for its corresponding subtraction.
+          </div>
+        </div>
+      </section>
 
-<section id="t4" class="section">
- <div class="section-title"><div><h2>Lesson 4 — Subtracting with Zeros in the Minuend</h2><p>Regroup when the minuend contains zeros.</p></div></div>
- <div class="card source-card"><img src="lesson-4-subtracting-zeros.jpg" alt="Lesson 4 source page"><div><div class="kicker">Target from the lesson</div><b>Subtracting from a number that has zeros as digits.</b><p>The source page explicitly explores different ways of regrouping 10,000 before subtracting from numbers with zeros.</p></div></div>
- <div class="card"><div class="kicker">I — Learn</div><h3>Why are zeros tricky?</h3>
-  <p>A zero in the minuend has no units available in that place. If subtraction requires units there, regrouping must travel from a higher place that has value.</p>
-  <div class="concept"><b>Key idea:</b> Regrouping can move across several zero places. Each exchange creates 10 units in the next lower place.</div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Different forms of 10,000</h3>
-  <div class="table-wrap"><table><tr><th>Equivalent form</th><th>Value</th></tr>
-   <tr><td>10 thousands</td><td>10,000</td></tr><tr><td>9 thousands + 10 hundreds</td><td>10,000</td></tr>
-   <tr><td>9 thousands + 9 hundreds + 10 tens</td><td>10,000</td></tr><tr><td>100 hundreds</td><td>10,000</td></tr>
-   <tr><td>1,000 tens</td><td>10,000</td></tr><tr><td>10,000 ones</td><td>10,000</td></tr>
-  </table></div>
-  <p>These are different ways to name the same value. This idea makes subtraction across zeros possible.</p>
- </div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">Which is equal to 10,000?</div>
-  <div class="choices"><button class="choice" data-correct="false" onclick="mini(this,'f4a')">10 hundreds</button><button class="choice" data-correct="true" onclick="mini(this,'f4a')">100 hundreds</button><button class="choice" data-correct="false" onclick="mini(this,'f4a')">10 tens</button><button class="choice" data-correct="false" onclick="mini(this,'f4a')">1 hundred</button></div><div id="f4a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">P — Practice-Play 2</div><div class="prompt">10,000 − 6,785 = ?</div><button class="btn light" onclick="reveal('r4a')">Reveal answer</button><div id="r4a" class="answer"><b>3,215.</b> Regroup across the zeros so the lower places receive the units needed for subtraction.</div></div>
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Why can a zero place become a nonzero digit after regrouping?</div><button class="btn light" onclick="reveal('r4b')">Reveal thinking</button><div id="r4b" class="answer">Regrouping changes how the same total value is distributed among place values. The zero place receives units from the higher place through the exchange.</div></div>
- </div>
- <div class="card success"><div class="kicker">C — Check</div><b>Self-check:</b> When I see zeros, I look left for a place that can be regrouped, then pass the value through the zero places carefully.</div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Solve: 50,000 − 27,864.</div><button class="btn gold" onclick="reveal('m4')">Show solution</button><div id="m4" class="answer"><b>22,136.</b> Regroup from the higher place and carefully adjust each place value as the exchange moves toward the ones place.</div></div>
-</section>
+      <section id="t3" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 3 — Subtracting Numbers with Regrouping</h2>
+            <p>Subtract 4- to 6-digit numbers when regrouping is needed.</p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img
+            src="lesson-3-subtracting-with-regrouping.jpg"
+            alt="Lesson 3 source page"
+          />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Subtracting 4- to 6-digit numbers with regrouping.</b>
+            <p>
+              The source lesson connects subtraction to the Puerto Princesa
+              Underground River and explains a real-world measurement context.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">I — Learn</div>
+          <h3>What is regrouping?</h3>
+          <p>
+            Regrouping means exchanging one unit from a higher place for
+            <b>10 units of the next lower place</b>. For example, 1 ten can
+            become 10 ones.
+          </p>
+          <div class="concept">
+            <b>Trigger:</b> If the top digit is smaller than the digit below it,
+            you need to regroup before subtracting that column.
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Step-by-Step Example: 6,432 − 2,785</h3>
+          <ol class="steps">
+            <li>
+              🔹 Ones: 2 cannot subtract 5. Regroup 1 ten as 10 ones: 12 − 5 =
+              <b>7</b>.
+            </li>
+            <li>
+              🔹 Tens: after giving away one ten, 2 tens remain. 2 cannot
+              subtract 8. Regroup 1 hundred as 10 tens: 12 − 8 = <b>4</b>.
+            </li>
+            <li>
+              🔹 Hundreds: after regrouping, 3 hundreds became 2 hundreds. 2
+              cannot subtract 7. Regroup 1 thousand: 12 − 7 = <b>5</b>.
+            </li>
+            <li>🔹 Thousands: 5 − 2 = <b>3</b>.</li>
+          </ol>
+          <div class="formula">6,432 − 2,785 = 3,647</div>
+          <div class="warning">
+            <b>Common mistake:</b> Do not forget to reduce the higher place
+            after you regroup from it.
+          </div>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">🧠 Solve: 7,205 − 3,468.</div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f3a')"
+            >
+              3,637</button
+            ><button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f3a')"
+            >
+              3,737</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f3a')"
+            >
+              4,737</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f3a')"
+            >
+              3,747
+            </button>
+          </div>
+          <div id="f3a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">P — Practice-Play 2</div>
+            <div class="prompt">Which exchange is correct?</div>
+            <div class="choices">
+              <button
+                class="choice"
+                data-correct="true"
+                onclick="mini(this, 'f3b')"
+              >
+                1 ten = 10 ones</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f3b')"
+              >
+                1 ten = 10 hundreds</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f3b')"
+              >
+                1 hundred = 10 thousands</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f3b')"
+              >
+                1 one = 10 tens
+              </button>
+            </div>
+            <div id="f3b" class="feedback"></div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">
+              Why does regrouping not change the total value?
+            </div>
+            <button class="btn light" onclick="reveal('r3')">
+              Reveal thinking
+            </button>
+            <div id="r3" class="answer">
+              It only changes the form of the same value. For example, 1 ten and
+              10 ones both represent 10.
+            </div>
+          </div>
+        </div>
+        <div class="card success">
+          <div class="kicker">C — Check</div>
+          <b>Self-check:</b> Did I start at the ones? Did I reduce the place I
+          regrouped from? Did I continue left one place at a time?
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">Solve: 54,302 − 27,846.</div>
+          <button class="btn gold" onclick="reveal('m3')">Show solution</button>
+          <div id="m3" class="answer">
+            <b>26,456.</b> Regroup as needed from right to left, carefully
+            carrying each change into the next column.
+          </div>
+        </div>
+      </section>
 
-<section id="t5" class="section">
- <div class="section-title"><div><h2>Lesson 5 — Properties of Addition</h2><p>Use addition properties to make calculations easier.</p></div></div>
- <div class="card source-card"><img src="lesson-5-properties-of-addition.jpg" alt="Lesson 5 source page"><div><div class="kicker">Target from the lesson</div><b>Using the properties of addition to make calculations easier.</b><p>The source page defines the commutative, associative, and identity properties and introduces compatible numbers.</p></div></div>
- <div class="lesson-grid">
-  <div class="card"><div class="kicker">I — Learn</div><h3>Commutative Property</h3><div class="formula">a + b = b + a</div><p>The order of addends can change without changing the sum.</p><div class="example">45 + 59 = 59 + 45</div></div>
-  <div class="card"><div class="kicker">I — Learn</div><h3>Associative Property</h3><div class="formula">(a + b) + c = a + (b + c)</div><p>The grouping of addends can change without changing the sum.</p><div class="example">(20 + 30) + 7 = 20 + (30 + 7)</div></div>
-  <div class="card"><div class="kicker">I — Learn</div><h3>Identity Property</h3><div class="formula">a + 0 = a</div><p>Adding zero keeps the number the same.</p><div class="example">83 + 0 = 83</div></div>
-  <div class="card"><div class="kicker">I — Learn</div><h3>Compatible Numbers</h3><p>Compatible numbers are numbers whose sum is easy to calculate.</p><div class="example">49 + 51 = 100</div></div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Make a difficult addition easier</h3>
-  <p>Suppose we have <b>59 + 45 + 41</b>. Notice that 59 and 41 are compatible because they make 100.</p>
-  <div class="formula">(59 + 41) + 45 = 100 + 45 = 145</div>
-  <p>The associative property lets us choose the useful grouping, while compatible numbers make that group easy to add.</p>
- </div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">Which property is shown by 27 + 14 = 14 + 27?</div>
-  <div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f5a')">Commutative</button><button class="choice" data-correct="false" onclick="mini(this,'f5a')">Associative</button><button class="choice" data-correct="false" onclick="mini(this,'f5a')">Identity</button><button class="choice" data-correct="false" onclick="mini(this,'f5a')">Subtraction</button></div><div id="f5a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">P — Practice-Play 2</div><div class="prompt">Which pair is easiest to combine?</div>
-   <div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f5b')">49 + 51</button><button class="choice" data-correct="false" onclick="mini(this,'f5b')">49 + 42</button><button class="choice" data-correct="false" onclick="mini(this,'f5b')">37 + 26</button><button class="choice" data-correct="false" onclick="mini(this,'f5b')">68 + 17</button></div><div id="f5b" class="feedback"></div>
-  </div>
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Use a smart grouping to solve 59 + 45 + 41.</div><button class="btn light" onclick="reveal('r5')">Reveal one solution</button><div id="r5" class="answer">(59 + 41) + 45 = 100 + 45 = <b>145</b>.</div></div>
- </div>
- <div class="card success"><div class="kicker">C — Check</div><b>Remember:</b> Commutative = <b>order</b>; Associative = <b>grouping</b>; Identity = <b>add 0</b>; Compatible = <b>easy-to-add pair</b>.</div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Which property helps explain 36 + 64 = 64 + 36?</div><button class="btn gold" onclick="reveal('m5')">Check</button><div id="m5" class="answer"><b>Commutative Property of Addition.</b> The addends changed order, but the sum stayed the same.</div></div>
-</section>
+      <section id="t4" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 4 — Subtracting with Zeros in the Minuend</h2>
+            <p>Regroup when the minuend contains zeros.</p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img
+            src="lesson-4-subtracting-zeros.jpg"
+            alt="Lesson 4 source page"
+          />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Subtracting from a number that has zeros as digits.</b>
+            <p>
+              The source page explicitly explores different ways of regrouping
+              10,000 before subtracting from numbers with zeros.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">I — Learn</div>
+          <h3>Why are zeros tricky?</h3>
+          <p>
+            A zero in the minuend has no units available in that place. If
+            subtraction requires units there, regrouping must travel from a
+            higher place that has value.
+          </p>
+          <div class="concept">
+            <b>Key idea:</b> Regrouping can move across several zero places.
+            Each exchange creates 10 units in the next lower place.
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Different forms of 10,000</h3>
+          <div class="table-wrap">
+            <table>
+              <tr>
+                <th>Equivalent form</th>
+                <th>Value</th>
+              </tr>
+              <tr>
+                <td>10 thousands</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>9 thousands + 10 hundreds</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>9 thousands + 9 hundreds + 10 tens</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>100 hundreds</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>1,000 tens</td>
+                <td>10,000</td>
+              </tr>
+              <tr>
+                <td>10,000 ones</td>
+                <td>10,000</td>
+              </tr>
+            </table>
+          </div>
+          <p>
+            These are different ways to name the same value. This idea makes
+            subtraction across zeros possible.
+          </p>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">Which is equal to 10,000?</div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f4a')"
+            >
+              10 hundreds</button
+            ><button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f4a')"
+            >
+              100 hundreds</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f4a')"
+            >
+              10 tens</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f4a')"
+            >
+              1 hundred
+            </button>
+          </div>
+          <div id="f4a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">P — Practice-Play 2</div>
+            <div class="prompt">10,000 − 6,785 = ?</div>
+            <button class="btn light" onclick="reveal('r4a')">
+              Reveal answer
+            </button>
+            <div id="r4a" class="answer">
+              <b>3,215.</b> Regroup across the zeros so the lower places receive
+              the units needed for subtraction.
+            </div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">
+              Why can a zero place become a nonzero digit after regrouping?
+            </div>
+            <button class="btn light" onclick="reveal('r4b')">
+              Reveal thinking
+            </button>
+            <div id="r4b" class="answer">
+              Regrouping changes how the same total value is distributed among
+              place values. The zero place receives units from the higher place
+              through the exchange.
+            </div>
+          </div>
+        </div>
+        <div class="card success">
+          <div class="kicker">C — Check</div>
+          <b>Self-check:</b> When I see zeros, I look left for a place that can
+          be regrouped, then pass the value through the zero places carefully.
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">Solve: 50,000 − 27,864.</div>
+          <button class="btn gold" onclick="reveal('m4')">Show solution</button>
+          <div id="m4" class="answer">
+            <b>22,136.</b> Regroup from the higher place and carefully adjust
+            each place value as the exchange moves toward the ones place.
+          </div>
+        </div>
+      </section>
 
-<section id="t6" class="section">
- <div class="section-title"><div><h2>Lesson 6 — Mental Addition</h2><p>Apply techniques that make addition easier to calculate mentally.</p></div></div>
- <div class="card source-card"><img src="lesson-6-mental-addition.jpg" alt="Lesson 6 source page"><div><div class="kicker">Target from the lesson</div><b>Applying the techniques in mental addition.</b><p>The source activity asks learners to form an equation with a sum of 99 using six addition signs and the digits 9, 8, 7, 6, 5, 4, 3, 2, and 1, with no digit repeated as an addend.</p></div></div>
- <div class="card"><div class="kicker">I — Learn</div><h3>What is mental addition?</h3>
-  <p>Mental addition means calculating without writing every step on paper. The goal is to notice useful number relationships and choose an efficient strategy.</p>
-  <div class="lesson-grid">
-   <div class="concept"><b>Make a friendly number:</b> adjust a number toward 10, 100, or another easy value.</div>
-   <div class="concept"><b>Use compatible numbers:</b> pair numbers that make an easy total.</div>
-   <div class="concept"><b>Break apart numbers:</b> separate tens and ones or other place values.</div>
-   <div class="concept"><b>Reorder and regroup:</b> use addition properties to create helpful pairs.</div>
-  </div>
- </div>
- <div class="card"><div class="kicker">E — Explore</div><h3>Strategy Example: Make a friendly number</h3>
-  <div class="example"><b>38 + 27</b><br>Take 2 from 27 and add it to 38: 40 + 25 = <b>65</b>.</div>
-  <p>The total stays the same because the 2 was moved from one addend to the other.</p>
-  <div class="example"><b>98 + 37</b><br>Think 100 + 37 − 2 = <b>135</b>.</div>
- </div>
- <div class="card activity"><div class="kicker">P — Practice-Play</div><div class="prompt">⚡ Mental math: 49 + 36 = ?</div>
-  <div class="choices"><button class="choice" data-correct="false" onclick="mini(this,'f6a')">75</button><button class="choice" data-correct="true" onclick="mini(this,'f6a')">85</button><button class="choice" data-correct="false" onclick="mini(this,'f6a')">95</button><button class="choice" data-correct="false" onclick="mini(this,'f6a')">86</button></div><div id="f6a" class="feedback"></div>
- </div>
- <div class="two-col">
-  <div class="card activity"><div class="kicker">P — Practice-Play 2</div><div class="prompt">Which is a helpful mental method for 98 + 37?</div>
-   <div class="choices"><button class="choice" data-correct="true" onclick="mini(this,'f6b')">100 + 37 − 2</button><button class="choice" data-correct="false" onclick="mini(this,'f6b')">98 + 3 + 7</button><button class="choice" data-correct="false" onclick="mini(this,'f6b')">37 − 98</button><button class="choice" data-correct="false" onclick="mini(this,'f6b')">100 + 37 + 2</button></div><div id="f6b" class="feedback"></div>
-  </div>
-  <div class="card activity"><div class="kicker">T — Think</div><div class="prompt">Why can making a friendly number make mental addition faster?</div><button class="btn light" onclick="reveal('r6')">Reveal thinking</button><div id="r6" class="answer">Numbers such as 10, 20, 50, and 100 are easy to combine mentally. A small adjustment can turn a difficult addend into a friendlier one.</div></div>
- </div>
- <div class="card"><div class="kicker">C — Check</div><div class="success"><b>Mental Addition Checklist:</b> Did I look for a friendly number? Did I look for a compatible pair? Can I reorder or regroup the addends? Can I explain my strategy?</div></div>
- <div class="card activity"><div class="kicker">M — Master Challenge</div><div class="prompt">Try the source lesson challenge: form an equation with a sum of 99 using six addition signs and the digits 9, 8, 7, 6, 5, 4, 3, 2, and 1, without repeating a digit as an addend.</div>
-  <button class="btn gold" onclick="reveal('m6')">Show strategy hint</button><div id="m6" class="answer">Start by looking for small combinations that make friendly totals. The source page presents this as a partner challenge; use number relationships and addition properties rather than adding randomly.</div>
- </div>
-</section>
+      <section id="t5" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 5 — Properties of Addition</h2>
+            <p>Use addition properties to make calculations easier.</p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img
+            src="lesson-5-properties-of-addition.jpg"
+            alt="Lesson 5 source page"
+          />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Using the properties of addition to make calculations easier.</b>
+            <p>
+              The source page defines the commutative, associative, and identity
+              properties and introduces compatible numbers.
+            </p>
+          </div>
+        </div>
+        <div class="lesson-grid">
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>Commutative Property</h3>
+            <div class="formula">a + b = b + a</div>
+            <p>The order of addends can change without changing the sum.</p>
+            <div class="example">45 + 59 = 59 + 45</div>
+          </div>
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>Associative Property</h3>
+            <div class="formula">(a + b) + c = a + (b + c)</div>
+            <p>The grouping of addends can change without changing the sum.</p>
+            <div class="example">(20 + 30) + 7 = 20 + (30 + 7)</div>
+          </div>
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>Identity Property</h3>
+            <div class="formula">a + 0 = a</div>
+            <p>Adding zero keeps the number the same.</p>
+            <div class="example">83 + 0 = 83</div>
+          </div>
+          <div class="card">
+            <div class="kicker">I — Learn</div>
+            <h3>Compatible Numbers</h3>
+            <p>
+              Compatible numbers are numbers whose sum is easy to calculate.
+            </p>
+            <div class="example">49 + 51 = 100</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Make a difficult addition easier</h3>
+          <p>
+            Suppose we have <b>59 + 45 + 41</b>. Notice that 59 and 41 are
+            compatible because they make 100.
+          </p>
+          <div class="formula">(59 + 41) + 45 = 100 + 45 = 145</div>
+          <p>
+            The associative property lets us choose the useful grouping, while
+            compatible numbers make that group easy to add.
+          </p>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">
+            Which property is shown by 27 + 14 = 14 + 27?
+          </div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f5a')"
+            >
+              Commutative</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f5a')"
+            >
+              Associative</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f5a')"
+            >
+              Identity</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f5a')"
+            >
+              Subtraction
+            </button>
+          </div>
+          <div id="f5a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">P — Practice-Play 2</div>
+            <div class="prompt">Which pair is easiest to combine?</div>
+            <div class="choices">
+              <button
+                class="choice"
+                data-correct="true"
+                onclick="mini(this, 'f5b')"
+              >
+                49 + 51</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f5b')"
+              >
+                49 + 42</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f5b')"
+              >
+                37 + 26</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f5b')"
+              >
+                68 + 17
+              </button>
+            </div>
+            <div id="f5b" class="feedback"></div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">
+              Use a smart grouping to solve 59 + 45 + 41.
+            </div>
+            <button class="btn light" onclick="reveal('r5')">
+              Reveal one solution
+            </button>
+            <div id="r5" class="answer">
+              (59 + 41) + 45 = 100 + 45 = <b>145</b>.
+            </div>
+          </div>
+        </div>
+        <div class="card success">
+          <div class="kicker">C — Check</div>
+          <b>Remember:</b> Commutative = <b>order</b>; Associative =
+          <b>grouping</b>; Identity = <b>add 0</b>; Compatible =
+          <b>easy-to-add pair</b>.
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">
+            Which property helps explain 36 + 64 = 64 + 36?
+          </div>
+          <button class="btn gold" onclick="reveal('m5')">Check</button>
+          <div id="m5" class="answer">
+            <b>Commutative Property of Addition.</b> The addends changed order,
+            but the sum stayed the same.
+          </div>
+        </div>
+      </section>
 
-<section id="assessment" class="section">
- <div class="section-title"><div><h2>🏆 Final Mastery Assessment</h2><p>25 questions covering all six source-based lesson topics.</p></div></div>
- <div class="card"><b>Directions:</b> Read carefully. Choose one answer for each item. Submit when you are finished. Your score appears immediately.</div>
- <div id="assessmentForm" class="assessment-grid"></div>
- <div class="card"><button class="btn gold" onclick="submitAssessment()">Submit Assessment</button><button class="btn light" onclick="resetAssessment()">Reset</button><div id="assessmentResult" class="result"></div></div>
-</section>
-</main>
+      <section id="t6" class="section">
+        <div class="section-title">
+          <div>
+            <h2>Lesson 6 — Mental Addition</h2>
+            <p>
+              Apply techniques that make addition easier to calculate mentally.
+            </p>
+          </div>
+        </div>
+        <div class="card source-card">
+          <img src="lesson-6-mental-addition.jpg" alt="Lesson 6 source page" />
+          <div>
+            <div class="kicker">Target from the lesson</div>
+            <b>Applying the techniques in mental addition.</b>
+            <p>
+              The source activity asks learners to form an equation with a sum
+              of 99 using six addition signs and the digits 9, 8, 7, 6, 5, 4, 3,
+              2, and 1, with no digit repeated as an addend.
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">I — Learn</div>
+          <h3>What is mental addition?</h3>
+          <p>
+            Mental addition means calculating without writing every step on
+            paper. The goal is to notice useful number relationships and choose
+            an efficient strategy.
+          </p>
+          <div class="lesson-grid">
+            <div class="concept">
+              <b>Make a friendly number:</b> adjust a number toward 10, 100, or
+              another easy value.
+            </div>
+            <div class="concept">
+              <b>Use compatible numbers:</b> pair numbers that make an easy
+              total.
+            </div>
+            <div class="concept">
+              <b>Break apart numbers:</b> separate tens and ones or other place
+              values.
+            </div>
+            <div class="concept">
+              <b>Reorder and regroup:</b> use addition properties to create
+              helpful pairs.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">E — Explore</div>
+          <h3>Strategy Example: Make a friendly number</h3>
+          <div class="example">
+            <b>38 + 27</b><br />Take 2 from 27 and add it to 38: 40 + 25 =
+            <b>65</b>.
+          </div>
+          <p>
+            The total stays the same because the 2 was moved from one addend to
+            the other.
+          </p>
+          <div class="example">
+            <b>98 + 37</b><br />Think 100 + 37 − 2 = <b>135</b>.
+          </div>
+        </div>
+        <div class="card activity">
+          <div class="kicker">P — Practice-Play</div>
+          <div class="prompt">⚡ Mental math: 49 + 36 = ?</div>
+          <div class="choices">
+            <button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f6a')"
+            >
+              75</button
+            ><button
+              class="choice"
+              data-correct="true"
+              onclick="mini(this, 'f6a')"
+            >
+              85</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f6a')"
+            >
+              95</button
+            ><button
+              class="choice"
+              data-correct="false"
+              onclick="mini(this, 'f6a')"
+            >
+              86
+            </button>
+          </div>
+          <div id="f6a" class="feedback"></div>
+        </div>
+        <div class="two-col">
+          <div class="card activity">
+            <div class="kicker">P — Practice-Play 2</div>
+            <div class="prompt">
+              Which is a helpful mental method for 98 + 37?
+            </div>
+            <div class="choices">
+              <button
+                class="choice"
+                data-correct="true"
+                onclick="mini(this, 'f6b')"
+              >
+                100 + 37 − 2</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f6b')"
+              >
+                98 + 3 + 7</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f6b')"
+              >
+                37 − 98</button
+              ><button
+                class="choice"
+                data-correct="false"
+                onclick="mini(this, 'f6b')"
+              >
+                100 + 37 + 2
+              </button>
+            </div>
+            <div id="f6b" class="feedback"></div>
+          </div>
+          <div class="card activity">
+            <div class="kicker">T — Think</div>
+            <div class="prompt">
+              Why can making a friendly number make mental addition faster?
+            </div>
+            <button class="btn light" onclick="reveal('r6')">
+              Reveal thinking
+            </button>
+            <div id="r6" class="answer">
+              Numbers such as 10, 20, 50, and 100 are easy to combine mentally.
+              A small adjustment can turn a difficult addend into a friendlier
+              one.
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="kicker">C — Check</div>
+          <div class="success">
+            <b>Mental Addition Checklist:</b> Did I look for a friendly number?
+            Did I look for a compatible pair? Can I reorder or regroup the
+            addends? Can I explain my strategy?
+          </div>
+        </div>
+        <div class="card activity">
+          <div class="kicker">M — Master Challenge</div>
+          <div class="prompt">
+            Try the source lesson challenge: form an equation with a sum of 99
+            using six addition signs and the digits 9, 8, 7, 6, 5, 4, 3, 2, and
+            1, without repeating a digit as an addend.
+          </div>
+          <button class="btn gold" onclick="reveal('m6')">
+            Show strategy hint
+          </button>
+          <div id="m6" class="answer">
+            Start by looking for small combinations that make friendly totals.
+            The source page presents this as a partner challenge; use number
+            relationships and addition properties rather than adding randomly.
+          </div>
+        </div>
+      </section>
 
-<footer><div class="footer-inner"><img src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png" alt="Teacher Ed Learning Hub logo">
- <div><b>Teacher Ed Learning Hub</b><br><small>Interactive Mathematics Reviewer • Addition & Subtraction</small></div></div></footer>
+      <section id="assessment" class="section">
+        <div class="section-title">
+          <div>
+            <h2>🏆 Final Mastery Assessment</h2>
+            <p>25 questions covering all six source-based lesson topics.</p>
+          </div>
+        </div>
+        <div class="card">
+          <b>Directions:</b> Read carefully. Choose one answer for each item.
+          Submit when you are finished. Your score appears immediately.
+        </div>
+        <div id="assessmentForm" class="assessment-grid"></div>
+        <div class="card">
+          <button class="btn gold" onclick="submitAssessment()">
+            Submit Assessment</button
+          ><button class="btn light" onclick="resetAssessment()">Reset</button>
+          <div id="assessmentResult" class="result"></div>
+        </div>
+      </section>
+    </main>
 
-<script>
-const sections=['home','t1','t2','t3','t4','t5','t6','assessment'];
-let visited=new Set(['home']);
-function showSection(id){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
- document.getElementById(id).classList.add('active');visited.add(id);updateProgress();
- document.getElementById('mainNav').classList.remove('open');window.scrollTo({top:0,behavior:'smooth'});}
-function toggleNav(){document.getElementById('mainNav').classList.toggle('open')}
-function toggleFullscreen(){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}
-function reveal(id){document.getElementById(id).classList.toggle('show')}
-function mini(btn,id){const box=btn.parentElement,feedback=document.getElementById(id);
- box.querySelectorAll('.choice').forEach(b=>b.classList.remove('correct','wrong'));
- if(btn.dataset.correct==='true'){btn.classList.add('correct');feedback.className='feedback good';feedback.textContent='✅ Correct! Great thinking!'}
- else{btn.classList.add('wrong');feedback.className='feedback bad';feedback.textContent='❌ Not quite. Review the explanation and try again.'}
- visited.add(id);updateProgress();}
-function updateProgress(){const n=['t1','t2','t3','t4','t5','t6'].filter(x=>visited.has(x)).length;
- const g=[...document.querySelectorAll('.goal')].filter(x=>x.checked).length;
- const pct=Math.min(100,Math.round(n/6*75+g/6*15+(visited.has('assessment')?10:0)));
- document.getElementById('progressFill').style.width=pct+'%';document.getElementById('progressText').textContent=pct+'%';}
-document.querySelectorAll('.goal').forEach(x=>x.addEventListener('change',updateProgress));
+    <footer>
+      <div class="footer-inner">
+        <img
+          src="6d2df0a2-acc5-482d-b00f-c900f44c9023.png"
+          alt="Teacher Ed Learning Hub logo"
+        />
+        <div>
+          <b>Teacher Ed Learning Hub</b><br /><small
+            >Interactive Mathematics Reviewer • Addition & Subtraction</small
+          >
+        </div>
+      </div>
+    </footer>
 
-const questions=[
-["Lesson 1","Estimate 7,846 − 3,218 to the nearest hundred.","4,600","4,500","4,628","4,700"],
-["Lesson 1","Which numbers are rounded when estimating a difference?","Both the minuend and subtrahend","Only the minuend","Only the subtrahend","Neither"],
-["Lesson 1","Estimate 5,762 − 2,341 to the nearest hundred.","3,500","3,400","3,421","3,600"],
-["Lesson 1","The number from which another number is subtracted is called the…","minuend","subtrahend","difference","sum"],
-["Lesson 2","8,765 − 2,341 = ?","6,424","6,324","6,524","6,314"],
-["Lesson 2","Which place do you begin with in standard subtraction?","ones","thousands","hundreds","highest place"],
-["Lesson 2","Why align place values?","To subtract corresponding place values correctly","To make the answer larger","To avoid regrouping","To change subtraction to addition"],
-["Lesson 2","654,321 − 123,210 = ?","531,111","531,011","530,111","532,111"],
-["Lesson 3","6,432 − 2,785 = ?","3,647","3,547","4,647","3,657"],
-["Lesson 3","If 2 ones cannot subtract 5 ones, what should you do?","Regroup 1 ten as 10 ones","Regroup 1 one as 10 tens","Add 5 ones","Change the minuend"],
-["Lesson 3","1 ten is equal to how many ones?","10","100","1","5"],
-["Lesson 3","7,205 − 3,468 = ?","3,737","3,637","4,737","3,747"],
-["Lesson 4","10,000 is equal to how many hundreds?","100","10","1,000","1"],
-["Lesson 4","10,000 is equal to how many tens?","1,000","100","10,000","100,000"],
-["Lesson 4","10,000 − 6,785 = ?","3,215","3,315","4,215","3,125"],
-["Lesson 4","Why may regrouping move across several places?","Zeros may require the value to be exchanged from a higher place","Zeros cannot be used","The answer must contain zeros","Subtraction always starts at thousands"],
-["Lesson 5","27 + 14 = 14 + 27 shows the…","Commutative Property","Associative Property","Identity Property","Regrouping Property"],
-["Lesson 5","(20 + 30) + 7 = 20 + (30 + 7) shows the…","Associative Property","Commutative Property","Identity Property","Subtraction Property"],
-["Lesson 5","83 + 0 = 83 shows the…","Identity Property","Commutative Property","Associative Property","Compatible Property"],
-["Lesson 5","Which pair is compatible and easy to add?","49 + 51","49 + 42","37 + 26","68 + 17"],
-["Lesson 6","49 + 36 = ?","85","75","95","86"],
-["Lesson 6","98 + 37 can be thought of as…","100 + 37 − 2","100 + 37 + 2","98 + 3 + 7","37 − 98"],
-["Lesson 6","Which is a mental-addition strategy?","Make a friendly number","Always write the standard algorithm","Never change an addend","Subtract the larger number"],
-["Mixed","Which is an exact difference?","8,765 − 2,341 = 6,424","7,800 − 3,200 = 4,600","5,800 − 2,300 = 3,500","6,000 − 2,000 = 4,000"],
-["Mixed","Which statement is true?","Addition can be reordered without changing the sum.","Subtraction can always be reordered without changing the difference.","Adding zero changes a number.","Regrouping changes the total value."]
-];
-const form=document.getElementById('assessmentForm');
-questions.forEach((q,i)=>{
- const opts=[q[2],q[3],q[4],q[5]],order=[0,1,2,3].sort((a,b)=>((i*5+a*3)%11)-((i*5+b*3)%11)),sh=order.map(k=>opts[k]),correct=sh.indexOf(q[2]);
- const box=document.createElement('div');box.className='qbox';
- box.innerHTML='<div class="qnum">Question '+(i+1)+' • '+q[0]+'</div><p><b>'+q[1]+'</b></p>'+
- sh.map((o,j)=>'<label><input type="radio" name="q'+i+'" value="'+j+'" data-answer="'+(j===correct)+'"> '+String.fromCharCode(65+j)+'. '+o+'</label>').join('');
- form.appendChild(box);
-});
-function submitAssessment(){let score=0,unanswered=0;
- questions.forEach((q,i)=>{const p=document.querySelector('input[name="q'+i+'"]:checked');if(!p){unanswered++;return}if(p.dataset.answer==='true')score++;});
- const total=questions.length,pct=Math.round(score/total*100);
- const msg=pct>=90?'🌟 Excellent! You show strong mastery of the six lessons.':pct>=75?'👏 Great job! Review the items you missed.':pct>=60?'💪 Good effort! Revisit the lesson cards and practice again.':'🌱 Keep practicing! Start with the worked examples, then retry the mini-games.';
- const r=document.getElementById('assessmentResult');r.innerHTML='<div class="scorebig">'+score+'/'+total+'</div><h3>'+pct+'%</h3><p>'+msg+'</p>'+
- (unanswered?'<p><b>'+unanswered+'</b> unanswered item(s).</p>':'');r.classList.add('show');visited.add('assessment');updateProgress();r.scrollIntoView({behavior:'smooth',block:'center'});}
-function resetAssessment(){document.querySelectorAll('#assessmentForm input').forEach(x=>x.checked=false);document.getElementById('assessmentResult').classList.remove('show');document.getElementById('assessmentResult').innerHTML='';}
-updateProgress();
-</script>
-</body>
+    <script>
+      const sections = [
+        "home",
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5",
+        "t6",
+        "assessment",
+      ];
+      let visited = new Set(["home"]);
+      function showSection(id) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        visited.add(id);
+        updateProgress();
+        document.getElementById("mainNav").classList.remove("open");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      function toggleNav() {
+        document.getElementById("mainNav").classList.toggle("open");
+      }
+      function toggleFullscreen() {
+        if (!document.fullscreenElement)
+          document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      }
+      function reveal(id) {
+        document.getElementById(id).classList.toggle("show");
+      }
+      function mini(btn, id) {
+        const box = btn.parentElement,
+          feedback = document.getElementById(id);
+        box
+          .querySelectorAll(".choice")
+          .forEach((b) => b.classList.remove("correct", "wrong"));
+        if (btn.dataset.correct === "true") {
+          btn.classList.add("correct");
+          feedback.className = "feedback good";
+          feedback.textContent = "✅ Correct! Great thinking!";
+        } else {
+          btn.classList.add("wrong");
+          feedback.className = "feedback bad";
+          feedback.textContent =
+            "❌ Not quite. Review the explanation and try again.";
+        }
+        visited.add(id);
+        updateProgress();
+      }
+      function updateProgress() {
+        const n = ["t1", "t2", "t3", "t4", "t5", "t6"].filter((x) =>
+          visited.has(x),
+        ).length;
+        const g = [...document.querySelectorAll(".goal")].filter(
+          (x) => x.checked,
+        ).length;
+        const pct = Math.min(
+          100,
+          Math.round(
+            (n / 6) * 75 + (g / 6) * 15 + (visited.has("assessment") ? 10 : 0),
+          ),
+        );
+        document.getElementById("progressFill").style.width = pct + "%";
+        document.getElementById("progressText").textContent = pct + "%";
+      }
+      document
+        .querySelectorAll(".goal")
+        .forEach((x) => x.addEventListener("change", updateProgress));
+
+      const questions = [
+        [
+          "Lesson 1",
+          "Estimate 7,846 − 3,218 to the nearest hundred.",
+          "4,600",
+          "4,500",
+          "4,628",
+          "4,700",
+        ],
+        [
+          "Lesson 1",
+          "Which numbers are rounded when estimating a difference?",
+          "Both the minuend and subtrahend",
+          "Only the minuend",
+          "Only the subtrahend",
+          "Neither",
+        ],
+        [
+          "Lesson 1",
+          "Estimate 5,762 − 2,341 to the nearest hundred.",
+          "3,500",
+          "3,400",
+          "3,421",
+          "3,600",
+        ],
+        [
+          "Lesson 1",
+          "The number from which another number is subtracted is called the…",
+          "minuend",
+          "subtrahend",
+          "difference",
+          "sum",
+        ],
+        ["Lesson 2", "8,765 − 2,341 = ?", "6,424", "6,324", "6,524", "6,314"],
+        [
+          "Lesson 2",
+          "Which place do you begin with in standard subtraction?",
+          "ones",
+          "thousands",
+          "hundreds",
+          "highest place",
+        ],
+        [
+          "Lesson 2",
+          "Why align place values?",
+          "To subtract corresponding place values correctly",
+          "To make the answer larger",
+          "To avoid regrouping",
+          "To change subtraction to addition",
+        ],
+        [
+          "Lesson 2",
+          "654,321 − 123,210 = ?",
+          "531,111",
+          "531,011",
+          "530,111",
+          "532,111",
+        ],
+        ["Lesson 3", "6,432 − 2,785 = ?", "3,647", "3,547", "4,647", "3,657"],
+        [
+          "Lesson 3",
+          "If 2 ones cannot subtract 5 ones, what should you do?",
+          "Regroup 1 ten as 10 ones",
+          "Regroup 1 one as 10 tens",
+          "Add 5 ones",
+          "Change the minuend",
+        ],
+        ["Lesson 3", "1 ten is equal to how many ones?", "10", "100", "1", "5"],
+        ["Lesson 3", "7,205 − 3,468 = ?", "3,737", "3,637", "4,737", "3,747"],
+        [
+          "Lesson 4",
+          "10,000 is equal to how many hundreds?",
+          "100",
+          "10",
+          "1,000",
+          "1",
+        ],
+        [
+          "Lesson 4",
+          "10,000 is equal to how many tens?",
+          "1,000",
+          "100",
+          "10,000",
+          "100,000",
+        ],
+        ["Lesson 4", "10,000 − 6,785 = ?", "3,215", "3,315", "4,215", "3,125"],
+        [
+          "Lesson 4",
+          "Why may regrouping move across several places?",
+          "Zeros may require the value to be exchanged from a higher place",
+          "Zeros cannot be used",
+          "The answer must contain zeros",
+          "Subtraction always starts at thousands",
+        ],
+        [
+          "Lesson 5",
+          "27 + 14 = 14 + 27 shows the…",
+          "Commutative Property",
+          "Associative Property",
+          "Identity Property",
+          "Regrouping Property",
+        ],
+        [
+          "Lesson 5",
+          "(20 + 30) + 7 = 20 + (30 + 7) shows the…",
+          "Associative Property",
+          "Commutative Property",
+          "Identity Property",
+          "Subtraction Property",
+        ],
+        [
+          "Lesson 5",
+          "83 + 0 = 83 shows the…",
+          "Identity Property",
+          "Commutative Property",
+          "Associative Property",
+          "Compatible Property",
+        ],
+        [
+          "Lesson 5",
+          "Which pair is compatible and easy to add?",
+          "49 + 51",
+          "49 + 42",
+          "37 + 26",
+          "68 + 17",
+        ],
+        ["Lesson 6", "49 + 36 = ?", "85", "75", "95", "86"],
+        [
+          "Lesson 6",
+          "98 + 37 can be thought of as…",
+          "100 + 37 − 2",
+          "100 + 37 + 2",
+          "98 + 3 + 7",
+          "37 − 98",
+        ],
+        [
+          "Lesson 6",
+          "Which is a mental-addition strategy?",
+          "Make a friendly number",
+          "Always write the standard algorithm",
+          "Never change an addend",
+          "Subtract the larger number",
+        ],
+        [
+          "Mixed",
+          "Which is an exact difference?",
+          "8,765 − 2,341 = 6,424",
+          "7,800 − 3,200 = 4,600",
+          "5,800 − 2,300 = 3,500",
+          "6,000 − 2,000 = 4,000",
+        ],
+        [
+          "Mixed",
+          "Which statement is true?",
+          "Addition can be reordered without changing the sum.",
+          "Subtraction can always be reordered without changing the difference.",
+          "Adding zero changes a number.",
+          "Regrouping changes the total value.",
+        ],
+      ];
+      const form = document.getElementById("assessmentForm");
+      questions.forEach((q, i) => {
+        const opts = [q[2], q[3], q[4], q[5]],
+          order = [0, 1, 2, 3].sort(
+            (a, b) => ((i * 5 + a * 3) % 11) - ((i * 5 + b * 3) % 11),
+          ),
+          sh = order.map((k) => opts[k]),
+          correct = sh.indexOf(q[2]);
+        const box = document.createElement("div");
+        box.className = "qbox";
+        box.innerHTML =
+          '<div class="qnum">Question ' +
+          (i + 1) +
+          " • " +
+          q[0] +
+          "</div><p><b>" +
+          q[1] +
+          "</b></p>" +
+          sh
+            .map(
+              (o, j) =>
+                '<label><input type="radio" name="q' +
+                i +
+                '" value="' +
+                j +
+                '" data-answer="' +
+                (j === correct) +
+                '"> ' +
+                String.fromCharCode(65 + j) +
+                ". " +
+                o +
+                "</label>",
+            )
+            .join("");
+        form.appendChild(box);
+      });
+      function submitAssessment() {
+        let score = 0,
+          unanswered = 0;
+        questions.forEach((q, i) => {
+          const p = document.querySelector('input[name="q' + i + '"]:checked');
+          if (!p) {
+            unanswered++;
+            return;
+          }
+          if (p.dataset.answer === "true") score++;
+        });
+        const total = questions.length,
+          pct = Math.round((score / total) * 100);
+        const msg =
+          pct >= 90
+            ? "🌟 Excellent! You show strong mastery of the six lessons."
+            : pct >= 75
+              ? "👏 Great job! Review the items you missed."
+              : pct >= 60
+                ? "💪 Good effort! Revisit the lesson cards and practice again."
+                : "🌱 Keep practicing! Start with the worked examples, then retry the mini-games.";
+        const r = document.getElementById("assessmentResult");
+        r.innerHTML =
+          '<div class="scorebig">' +
+          score +
+          "/" +
+          total +
+          "</div><h3>" +
+          pct +
+          "%</h3><p>" +
+          msg +
+          "</p>" +
+          (unanswered
+            ? "<p><b>" + unanswered + "</b> unanswered item(s).</p>"
+            : "");
+        r.classList.add("show");
+        visited.add("assessment");
+        updateProgress();
+        r.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+      function resetAssessment() {
+        document
+          .querySelectorAll("#assessmentForm input")
+          .forEach((x) => (x.checked = false));
+        document.getElementById("assessmentResult").classList.remove("show");
+        document.getElementById("assessmentResult").innerHTML = "";
+      }
+      updateProgress();
+    </script>
+  </body>
 </html>

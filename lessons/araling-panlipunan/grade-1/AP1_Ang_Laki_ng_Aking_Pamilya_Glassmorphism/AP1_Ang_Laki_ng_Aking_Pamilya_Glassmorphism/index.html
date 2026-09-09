@@ -16,8 +16,9 @@
   --shadow:0 18px 45px rgba(41,72,110,.15); --radius:26px;
 }
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;color:var(--ink);font-family:Nunito,system-ui,sans-serif;background:linear-gradient(135deg,var(--bg1),#edf5ff 48%,var(--bg2));min-height:100vh;overflow-x:hidden}
-body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(8px);opacity:.5}.body:before{}
-body:before{width:360px;height:360px;background:#9de8ff;left:-120px;top:80px}.body:after{}
+body:before,body:after{content:"";position:fixed;z-index:-1;border-radius:50%;filter:blur(8px);opacity:.5}
+.body:before
+body:before{width:360px;height:360px;background:#9de8ff;left:-120px;top:80px}.body:after
 body:after{width:420px;height:420px;background:#ffd69a;right:-140px;bottom:-100px}
 button,input{font:inherit}.app{min-height:100vh}.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.58);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);box-shadow:0 8px 25px rgba(37,70,100,.08)}
 .nav{max-width:1200px;margin:auto;padding:12px 18px;display:flex;align-items:center;gap:12px}.brand{display:flex;align-items:center;gap:10px;font-weight:900;white-space:nowrap}.logo{width:44px;height:44px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,#2f80ed,#7c5cff);color:#fff;font-size:23px;box-shadow:0 8px 20px rgba(47,128,237,.25)}
