@@ -1,12 +1,247 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b1f44"><link rel="icon" type="image/png" href="BrandLogo.png"><title>Teacher Ed Learning Hub | Grade 2 Computer Review</title><link rel="stylesheet" href="style.css"></head><body>
-<header><div class="brand"><img src="BrandLogo.png"><div><b>TEACHER ED LEARNING HUB</b><small>Grade 2 • Computer</small></div></div><div class="stats">⭐ <b id="score">0</b>　🔥 <b id="streak">0</b> <button id="sound" onclick="sound()">🔊</button></div></header>
-<main>
-<section id="home" class="page active"><div class="hero"><div><label>💻 COMPUTER REVIEW ADVENTURE</label><h1>Become a <span>Computer Explorer!</span></h1><p>Discover how a computer gives us information and what happens when we start it up.</p><div class="pills"><i>🖥️ Becoming an Output Explorer</i><i>⚡ Starting Up the Computer</i></div><button class="primary" onclick="go('mission')">🚀 START REVIEW ADVENTURE</button><small>Learn • Practice • Play • Master</small></div><div class="pc"><div class="screen"><code>SYSTEM READY_</code><strong>⚡</strong><small>Teacher Ed Learning Hub</small></div><div class="keys">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦<br>▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</div></div></div></section>
-<section id="mission" class="page"><div class="card center"><div class="emoji">🎯</div><label>YOUR MISSION</label><h2>Ready to explore?</h2><p>Complete the learning games, collect stars, learn from mistakes, and finish the Master Challenge.</p><div class="mission"><p>⭐ Learn what output devices do.</p><p>⚡ Discover the startup steps.</p><p>🧠 Practice important computer words.</p><p>🏆 Finish the challenge and become a Lesson Master!</p></div><button class="primary" onclick="go('map')">🗺️ START MISSION</button></div></section>
-<section id="map" class="page"><div class="heading"><label>🗺️ GAME MAP</label><h2>Your Computer Explorer Path</h2><p>Finish each level to unlock the next.</p></div><div class="map" id="map"></div><div class="actions"><button onclick="go('lesson')">📚 Review Lesson</button><button onclick="go('rewards')">🏆 Rewards</button></div></section>
-<section id="lesson" class="page"><div class="heading"><label>📚 LEARN FIRST</label><h2>Let's Understand the Lessons</h2><p>Read, explore, then play.</p></div><div class="tabs"><button class="on" onclick="tab('out',this)">🖥️ Output Explorer</button><button onclick="tab('start',this)">⚡ Starting Up</button></div><div id="out" class="panel"><div class="teacher">👨‍🏫 <div><b>Teacher Ed says:</b><p>An <strong>output device</strong> is hardware that sends information from the computer to the user.</p></div></div><div class="devices"><article onclick="info('Monitor')">🖥️<h3>Monitor</h3><p>Displays text, pictures, and videos. Also called a screen.</p></article><article onclick="info('Printer')">🖨️<h3>Printer</h3><p>Produces a hard copy of information on paper.</p></article><article onclick="info('Speaker')">🔊<h3>Speaker</h3><p>Produces sound from the computer.</p></article><article onclick="info('Headset')">🎧<h3>Headset</h3><p>Used for listening and speaking; it has a microphone.</p></article></div></div><div id="start" class="panel hidden"><div class="teacher">👨‍🏫 <div><b>Teacher Ed says:</b><p>When you press the power button, the computer performs several steps before the desktop is ready.</p></div></div><div class="flow" id="flow"></div><div class="terms"><b>🔄 Booting</b><span>Starting a computer.</span><b>❄️ Cold Boot</b><span>Starting from powered off.</span><b>🔁 Warm Boot</b><span>Restarting while already running.</span><b>🧩 BIOS</b><span>Basic startup software.</span><b>🔎 POST</b><span>Startup hardware check.</span><b>🪟 Operating System</b><span>Main software that provides the working environment.</span><b>🚪 Login / Logout</b><span>Enter or leave a user session.</span><b>⏻ Shutdown</b><span>Safely turns the computer off.</span></div><div class="sim"><div class="simtop"><b>⚡ See How the Computer Starts</b><button onclick="boot()">▶ Run Startup</button></div><div class="simview"><strong id="bi">⏻</strong><h3 id="bt">Press Run Startup</h3><p id="bx">Watch the steps happen one at a time.</p><div class="bar"><i id="bp"></i></div></div><div id="bs"></div></div></div><button class="back" onclick="go('map')">← Back to Game Map</button></section>
-<section id="game" class="page"><div class="gametop"><button class="back" onclick="go('map')">← Map</button><div><label id="lv">LEVEL 1</label><h2 id="gt">Warm-Up</h2></div><strong>⭐ <span id="gs">0</span></strong></div><div class="qbar"><span id="ql">Question</span><span id="qp">0%</span><div><i id="qpi"></i></div></div><div id="gamearea"></div></section>
-<section id="rewards" class="page"><div class="heading"><label>🏆 REWARD ROOM</label><h2>Your Explorer Rewards</h2></div><div class="rewardstats"><div>⭐<b id="rs">0</b><small>Stars</small></div><div>🎯<b id="rp">0</b><small>Points</small></div><div>🏆<b id="rb">Explorer</b><small>Best Badge</small></div></div><div id="badges" class="badges"></div><div class="actions"><button class="primary" onclick="go('map')">🎮 Play Games</button><button onclick="resetP()">↻ Reset Progress</button></div></section>
-<section id="results" class="page"><div class="card center"><div class="emoji">🎉</div><label>REVIEW COMPLETE!</label><h2 id="rt">You're a Computer Explorer!</h2><div class="big" id="rper">0%</div><div class="resultgrid"><div><b id="rc">0</b><small>Correct</small></div><div><b id="rq">0</b><small>Questions</small></div><div><b id="rstar">0</b><small>Stars</small></div><div><b id="ra">0%</b><small>Accuracy</small></div></div><p id="rm"></p><div class="actions"><button class="primary" onclick="go('map')">🗺️ Practice Again</button><button onclick="go('lesson')">📚 Review Lesson</button></div></div></section>
-</main><footer><img src="BrandLogo.png"><div><b>TEACHER ED LEARNING HUB</b><small>Learn • Practice • Play • Master</small></div><span>Teacher Ed<br><small>Educational Review Website</small></span></footer>
-<div id="modal"><div><button onclick="closeM()">×</button><div id="mc"></div></div></div><div id="toast"></div><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#0b1f44" />
+    <link rel="icon" type="image/png" href="BrandLogo.png" />
+    <title>Teacher Ed Learning Hub | Grade 2 Computer Review</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="BrandLogo.png" />
+        <div>
+          <b>TEACHER ED LEARNING HUB</b><small>Grade 2 • Computer</small>
+        </div>
+      </div>
+      <div class="stats">
+        ⭐ <b id="score">0</b>　🔥 <b id="streak">0</b>
+        <button id="sound" onclick="sound()">🔊</button>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="page active">
+        <div class="hero">
+          <div>
+            <label>💻 COMPUTER REVIEW ADVENTURE</label>
+            <h1>Become a <span>Computer Explorer!</span></h1>
+            <p>
+              Discover how a computer gives us information and what happens when
+              we start it up.
+            </p>
+            <div class="pills">
+              <i>🖥️ Becoming an Output Explorer</i
+              ><i>⚡ Starting Up the Computer</i>
+            </div>
+            <button class="primary" onclick="go('mission')">
+              🚀 START REVIEW ADVENTURE</button
+            ><small>Learn • Practice • Play • Master</small>
+          </div>
+          <div class="pc">
+            <div class="screen">
+              <code>SYSTEM READY_</code><strong>⚡</strong
+              ><small>Teacher Ed Learning Hub</small>
+            </div>
+            <div class="keys">▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦<br />▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦ ▦</div>
+          </div>
+        </div>
+      </section>
+      <section id="mission" class="page">
+        <div class="card center">
+          <div class="emoji">🎯</div>
+          <label>YOUR MISSION</label>
+          <h2>Ready to explore?</h2>
+          <p>
+            Complete the learning games, collect stars, learn from mistakes, and
+            finish the Master Challenge.
+          </p>
+          <div class="mission">
+            <p>⭐ Learn what output devices do.</p>
+            <p>⚡ Discover the startup steps.</p>
+            <p>🧠 Practice important computer words.</p>
+            <p>🏆 Finish the challenge and become a Lesson Master!</p>
+          </div>
+          <button class="primary" onclick="go('map')">🗺️ START MISSION</button>
+        </div>
+      </section>
+      <section id="map" class="page">
+        <div class="heading">
+          <label>🗺️ GAME MAP</label>
+          <h2>Your Computer Explorer Path</h2>
+          <p>Finish each level to unlock the next.</p>
+        </div>
+        <div class="map" id="map"></div>
+        <div class="actions">
+          <button onclick="go('lesson')">📚 Review Lesson</button
+          ><button onclick="go('rewards')">🏆 Rewards</button>
+        </div>
+      </section>
+      <section id="lesson" class="page">
+        <div class="heading">
+          <label>📚 LEARN FIRST</label>
+          <h2>Let's Understand the Lessons</h2>
+          <p>Read, explore, then play.</p>
+        </div>
+        <div class="tabs">
+          <button class="on" onclick="tab('out', this)">
+            🖥️ Output Explorer</button
+          ><button onclick="tab('start', this)">⚡ Starting Up</button>
+        </div>
+        <div id="out" class="panel">
+          <div class="teacher">
+            👨‍🏫
+            <div>
+              <b>Teacher Ed says:</b>
+              <p>
+                An <strong>output device</strong> is hardware that sends
+                information from the computer to the user.
+              </p>
+            </div>
+          </div>
+          <div class="devices">
+            <article onclick="info('Monitor')">
+              🖥️
+              <h3>Monitor</h3>
+              <p>Displays text, pictures, and videos. Also called a screen.</p>
+            </article>
+            <article onclick="info('Printer')">
+              🖨️
+              <h3>Printer</h3>
+              <p>Produces a hard copy of information on paper.</p>
+            </article>
+            <article onclick="info('Speaker')">
+              🔊
+              <h3>Speaker</h3>
+              <p>Produces sound from the computer.</p>
+            </article>
+            <article onclick="info('Headset')">
+              🎧
+              <h3>Headset</h3>
+              <p>Used for listening and speaking; it has a microphone.</p>
+            </article>
+          </div>
+        </div>
+        <div id="start" class="panel hidden">
+          <div class="teacher">
+            👨‍🏫
+            <div>
+              <b>Teacher Ed says:</b>
+              <p>
+                When you press the power button, the computer performs several
+                steps before the desktop is ready.
+              </p>
+            </div>
+          </div>
+          <div class="flow" id="flow"></div>
+          <div class="terms">
+            <b>🔄 Booting</b><span>Starting a computer.</span><b>❄️ Cold Boot</b
+            ><span>Starting from powered off.</span><b>🔁 Warm Boot</b
+            ><span>Restarting while already running.</span><b>🧩 BIOS</b
+            ><span>Basic startup software.</span><b>🔎 POST</b
+            ><span>Startup hardware check.</span><b>🪟 Operating System</b
+            ><span>Main software that provides the working environment.</span
+            ><b>🚪 Login / Logout</b><span>Enter or leave a user session.</span
+            ><b>⏻ Shutdown</b><span>Safely turns the computer off.</span>
+          </div>
+          <div class="sim">
+            <div class="simtop">
+              <b>⚡ See How the Computer Starts</b
+              ><button onclick="boot()">▶ Run Startup</button>
+            </div>
+            <div class="simview">
+              <strong id="bi">⏻</strong>
+              <h3 id="bt">Press Run Startup</h3>
+              <p id="bx">Watch the steps happen one at a time.</p>
+              <div class="bar"><i id="bp"></i></div>
+            </div>
+            <div id="bs"></div>
+          </div>
+        </div>
+        <button class="back" onclick="go('map')">← Back to Game Map</button>
+      </section>
+      <section id="game" class="page">
+        <div class="gametop">
+          <button class="back" onclick="go('map')">← Map</button>
+          <div>
+            <label id="lv">LEVEL 1</label>
+            <h2 id="gt">Warm-Up</h2>
+          </div>
+          <strong>⭐ <span id="gs">0</span></strong>
+        </div>
+        <div class="qbar">
+          <span id="ql">Question</span><span id="qp">0%</span>
+          <div><i id="qpi"></i></div>
+        </div>
+        <div id="gamearea"></div>
+      </section>
+      <section id="rewards" class="page">
+        <div class="heading">
+          <label>🏆 REWARD ROOM</label>
+          <h2>Your Explorer Rewards</h2>
+        </div>
+        <div class="rewardstats">
+          <div>⭐<b id="rs">0</b><small>Stars</small></div>
+          <div>🎯<b id="rp">0</b><small>Points</small></div>
+          <div>🏆<b id="rb">Explorer</b><small>Best Badge</small></div>
+        </div>
+        <div id="badges" class="badges"></div>
+        <div class="actions">
+          <button class="primary" onclick="go('map')">🎮 Play Games</button
+          ><button onclick="resetP()">↻ Reset Progress</button>
+        </div>
+      </section>
+      <section id="results" class="page">
+        <div class="card center">
+          <div class="emoji">🎉</div>
+          <label>REVIEW COMPLETE!</label>
+          <h2 id="rt">You're a Computer Explorer!</h2>
+          <div class="big" id="rper">0%</div>
+          <div class="resultgrid">
+            <div><b id="rc">0</b><small>Correct</small></div>
+            <div><b id="rq">0</b><small>Questions</small></div>
+            <div><b id="rstar">0</b><small>Stars</small></div>
+            <div><b id="ra">0%</b><small>Accuracy</small></div>
+          </div>
+          <p id="rm"></p>
+          <div class="actions">
+            <button class="primary" onclick="go('map')">
+              🗺️ Practice Again</button
+            ><button onclick="go('lesson')">📚 Review Lesson</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="BrandLogo.png" />
+      <div>
+        <b>TEACHER ED LEARNING HUB</b
+        ><small>Learn • Practice • Play • Master</small>
+      </div>
+      <span>Teacher Ed<br /><small>Educational Review Website</small></span>
+    </footer>
+    <div id="modal">
+      <div>
+        <button onclick="closeM()">×</button>
+        <div id="mc"></div>
+      </div>
+    </div>
+    <div id="toast"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
