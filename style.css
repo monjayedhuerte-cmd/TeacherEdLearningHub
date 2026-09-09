@@ -2686,19 +2686,22 @@ body.dark .footer-bottom {
   }
 
   .support-main-card {
-    display: flex !important;
+    display: grid !important;
+    grid-template-columns: 90px 1fr 220px;
 
-    flex-direction: column;
-
-    align-items: stretch;
-
-    gap: 20px;
+    align-items: center;
+    gap: 28px;
 
     width: 100% !important;
+    padding: 28px 36px;
 
-    padding: 28px 20px;
-
+    box-sizing: border-box;
     border-radius: 18px;
+
+    height: auto;
+    min-height: 0;
+
+    overflow: hidden;
   }
 
   .support-icon-box {
