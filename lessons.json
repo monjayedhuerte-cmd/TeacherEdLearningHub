@@ -708,5 +708,55 @@
     "date": "2026-09-08",
     "featured": false,
     "icon": "heart-handshake"
+  },
+  {
+    "title": "Computer 3 | Lesson 6: What Keeps the Computer Running?",
+    "subject": "Computer", 
+    "grade": "Grade 3",
+    "description": "Learn how system software and the operating system help a computer work.",
+    "file": "lessons/computer/grade-3/TeacherEd_Computer3_Lesson6_Website/index.html",
+    "date": "2026-09-09",
+    "featured": true,
+    "icon": "monitor"
+  },
+  {
+    "title": "Computer 3 | Lesson 5: Some Keyboard Secrets",
+    "subject": "Computer", 
+    "grade": "Grade 3",
+    "description": "Explore keyboard symbols, learn the number pad, use Num Lock, and practice typing with an interactive computer lesson.",
+    "file": "lessons/computer/grade-3/Computer_3_Lesson_5_Keyboard_Secrets/index.html",
+    "date": "2026-09-09",
+    "featured": true,
+    "icon": "monitor"
+  },
+  {
+    "title": "English 3 | Lesson 5 — The Hare and the Tortoise and the Lovely Mouse",
+    "subject": "English", 
+    "grade": "Grade 3",
+    "description": "A friendly review journey based on The Hare and the Tortoise and The Lovely Mouse.",
+    "file": "lessons/English/grade-3/TeacherEd_English3_Lessons5-6_Interactive_Reviewer/index.html",
+    "date": "2026-09-09",
+    "featured": true,
+    "icon": "languages"
+  },
+  {
+    "title": "AP 3 | Aralin 5 — Mga Likas na Yaman",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": "Alamin ang mga yamang lupa, yamang gubat, yamang mineral, at yamang tubig—at kung paano natin mapapangalagaan ang mga ito.",
+    "file": "lessons/araling-panlipunan/grade-3/TeacherEd_AP3_Lesson5_LikasNaYaman/TeacherEd_AP3_Lesson5_LikasNaYaman/index.html",
+    "date": "2026-09-09",
+    "featured": true,
+    "icon": "map"
+  },
+  {
+    "title": "AP 3 | Aralin 6 — Mga Likas na Yaman",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": "Alamin kung ano ang kasaysayan, paano tayo naghahanap ng ebidensiya tungkol sa nakaraan, paano gumawa ng timeline, at paano natin nakikita ang mga pagbabago at mga bagay na nananatili.",
+    "file": "lessons/araling-panlipunan/grade-3/TeacherEd_AP3_Aralin6_KasaysayanPagbabago/TeacherEd_AP3_Aralin6_KasaysayanPagbabago/index.html",
+    "date": "2026-09-09",
+    "featured": true,
+    "icon": "map"
   }
 ]

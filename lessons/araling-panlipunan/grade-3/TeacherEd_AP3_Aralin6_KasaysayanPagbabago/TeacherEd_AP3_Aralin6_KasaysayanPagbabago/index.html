@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#123b7a">
+<meta name="description" content="Teacher Ed Learning Hub — Araling Panlipunan 3, Aralin 6: Kasaysayan at Pagbabago. Interactive learning website.">
+<title>AP 3 • Aralin 6: Kasaysayan at Pagbabago | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/BrandLogo.png">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RLFGHJNFFN');
+ </script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub">
+      <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <span><strong>Teacher Ed Learning Hub</strong><small>Araling Panlipunan 3 • Aralin 6</small></span>
+    </a>
+    <div class="top-progress" aria-label="Learning progress">
+      <div class="progress-label"><span>Learning Progress</span><strong id="progressText">0%</strong></div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-label="Buksan ang menu">☰</button>
+    <nav id="mainNav">
+      <a href="#connect">Connect</a><a href="#learn">Learn</a><a href="#model">Model</a><a href="#practice">Practice</a><a href="#games">Games</a><a href="#mastery">Mastery</a>
+    </nav>
+  </div>
+</header>
+<div class="journey-dock" id="journeyDock" aria-label="Learning journey">
+  <button data-go="#connect"><b>1</b><span>Connect</span></button><button data-go="#learn"><b>2</b><span>Learn</span></button><button data-go="#model"><b>3</b><span>Watch Me</span></button><button data-go="#practice"><b>4</b><span>Your Turn</span></button><button data-go="#games"><b>5</b><span>Games</span></button><button data-go="#mastery"><b>6</b><span>Mastery</span></button>
+</div>
+<main>
+<section id="home" class="hero section">
+  <div class="hero-copy">
+    <span class="eyebrow">ARALING PANLIPUNAN 3 • ARALIN 6</span>
+    <h1>Kasaysayan at Pagbabago</h1>
+    <p class="lead">Alamin kung ano ang kasaysayan, paano tayo naghahanap ng ebidensiya tungkol sa nakaraan, paano gumawa ng timeline, at paano natin nakikita ang mga pagbabago at mga bagay na nananatili.</p>
+    <div class="hero-actions"><button class="btn primary" data-go="#connect">Simulan ang Aralin</button><button class="btn ghost" id="continueBtn">Ipagpatuloy</button></div>
+    <div class="mini-stats"><div><strong id="starCount">0</strong><small>Stars</small></div><div><strong id="badgeCount">0</strong><small>Badges</small></div><div><strong id="bestScore">0%</strong><small>Best Mastery</small></div></div>
+  </div>
+  <div class="hero-visual">
+    <div class="history-orb">📜</div><div class="float-card c1">📷 Larawan</div><div class="float-card c2">🎁 Alaala</div><div class="float-card c3">🧾 Dokumento</div><div class="float-card c4">🕰️ Timeline</div>
+  </div>
+</section>
+
+<section id="connect" class="section">
+ <div class="section-heading"><span class="eyebrow">STEP 1 • CONNECT</span><h2>Ano ang alam mo na?</h2><p>Ang kasaysayan ay tungkol sa mga pangyayaring naganap sa nakaraan. May mga alaala at ebidensiyang tumutulong sa atin na malaman ang mga ito.</p></div>
+ <div class="connect-grid">
+  <article class="teach-card"><div class="big-icon">👶➡️🧒</div><h3>Ikaw noon at ngayon</h3><p>Maaaring magbago ang iyong hitsura, kakayahan, hilig, at kaalaman habang lumilipas ang panahon.</p><p class="support">English: <strong>Change</strong> can happen as time passes.</p></article>
+  <article class="teach-card"><div class="big-icon">📸</div><h3>Mga alaala</h3><p>Ang larawan, video, regalo, card, at kuwento ng pamilya ay maaaring makatulong sa pag-alala ng isang pangyayari.</p><p class="support">English: <strong>Evidence</strong> helps us learn about the past.</p></article>
+  <article class="teach-card"><div class="big-icon">🧭</div><h3>Pagkakasunod-sunod</h3><p>Ang timeline ay naglalagay ng mga pangyayari ayon sa kanilang pagkakasunod-sunod.</p><p class="support">English: A <strong>timeline</strong> puts events in order.</p></article>
+ </div>
+ <div class="quick-check card"><div><span class="eyebrow">QUICK CHECK</span><h3>Alin ang maaaring ebidensiya ng nakaraan?</h3></div><div id="connectChoices" class="answer-grid"></div><div id="connectFeedback" class="feedback" aria-live="polite"></div></div>
+</section>
+
+<section id="learn" class="section alt">
+ <div class="section-heading"><span class="eyebrow">STEP 2 • TEACH</span><h2>📖 Alamin Natin</h2><p>Matuto sa maliliit na bahagi. Bawat bahagi ay may paliwanag, halimbawa, at mabilis na check.</p></div>
+ <div class="lesson-chunks">
+  <article class="chunk card"><div class="chunk-no">1</div><div><h3>Ano ang Kasaysayan?</h3><p>Ang <strong>kasaysayan</strong> ay isang kuwento ng mga naganap sa nakaraan. Maaaring ito ay maikli o mahaba. Maaari nating pag-aralan ang mga pangyayaring naganap sa isang araw, ilang araw, isang dekada, o mas mahabang panahon.</p><p class="support">English: <strong>History</strong> is the story of events that happened in the past.</p><button class="mini-btn check-learn" data-key="history">Check: Ano ang tungkol sa kasaysayan?</button><div class="inline-check" data-check="history"></div></div></article>
+  <article class="chunk card"><div class="chunk-no">2</div><div><h3>🔎 Ebidensiya: Paano natin nalalaman?</h3><p>Sa pagbuo ng kuwento ng nakaraan, kailangan natin ng impormasyon o datos mula sa <strong>mga saksi</strong> at mga bagay na kaugnay sa pangyayari. Maaaring gamitin ang mga larawan, dokumento, video, regalo, card, at iba pang patunay o ebidensiya.</p><p class="support">English: <strong>Evidence</strong> gives information about what happened.</p><button class="mini-btn check-learn" data-key="evidence">Check: Alin ang makatutulong?</button><div class="inline-check" data-check="evidence"></div></div></article>
+  <article class="chunk card"><div class="chunk-no">3</div><div><h3>🕰️ Timeline</h3><p>Ang <strong>timeline</strong> ay isang linya kung saan nakalapat ang mga kaganapan ayon sa kanilang pagkakasunod-sunod. Karaniwang inilalagay ang unang pangyayari sa itaas at ang pinakahuling pangyayari sa ibaba sa halimbawa ng aklat.</p><p class="support">English: A <strong>timeline</strong> shows events in sequence.</p><button class="mini-btn check-learn" data-key="timeline">Check: Ano ang gamit ng timeline?</button><div class="inline-check" data-check="timeline"></div></div></article>
+  <article class="chunk card"><div class="chunk-no">4</div><div><h3>🔄 Pagbabago at Nananatili</h3><p>Maaaring magbago ang hitsura, katawan, hilig, kaalaman, o talento. Ngunit may ilang bagay na maaaring patuloy na nananatili, tulad ng pangalan, ilang ugali, o paboritong bagay o gawain.</p><p class="support">English: Some things <strong>change</strong>, while some things <strong>stay the same</strong>.</p><button class="mini-btn check-learn" data-key="change">Check: Alin ang halimbawa ng pagbabago?</button><div class="inline-check" data-check="change"></div></div></article>
+  <article class="chunk card"><div class="chunk-no">5</div><div><h3>👩‍🔬 Mga Historyador</h3><p>Ang mga nag-aaral ng kasaysayan ay tinatawag na <strong>historyador</strong>. Sila ay dalubhasa sa pag-alam at pagkolekta ng impormasyon at ebidensiya tungkol sa mga kaganapan noong nakaraan. Maaari silang pumunta sa mga aklatan, museo, lumang bahay, at iba pang makasaysayang lugar upang mangalap ng impormasyon.</p><p class="support">English: <strong>Historians</strong> study the past using information and evidence.</p><button class="mini-btn check-learn" data-key="historians">Check: Sino ang nag-aaral ng kasaysayan?</button><div class="inline-check" data-check="historians"></div></div></article>
+ </div>
+ <div class="source-card card"><div><span class="eyebrow">SOURCE SPOTLIGHT</span><h3>Batay sa ibinigay na Aralin 6</h3><p>Ang mga pahina ng aklat na ibinigay ay nagsisilbing pangunahing sanggunian sa araling ito.</p></div><div class="source-thumbs"><img src="assets/source-pages/page-79.jpg" alt="Aralin 6 page 79"><img src="assets/source-pages/page-84.jpg" alt="Aralin 6 page 84"><img src="assets/source-pages/page-87.jpg" alt="Aralin 6 page 87"></div></div>
+</section>
+
+<section id="model" class="section">
+ <div class="section-heading"><span class="eyebrow">STEP 3 • I DO</span><h2>👩‍🏫 Watch Me: Gumawa ng Timeline</h2><p>Tingnan muna kung paano ko aayusin ang mga pangyayari.</p></div>
+ <div class="model-card card">
+   <div class="model-example"><div class="example-label">HALIMBAWA</div><h3>Mga Pangyayari sa Buhay ni Ana</h3><div class="timeline-demo"><div><b>1</b><span>Unang kaarawan</span></div><div><b>2</b><span>Unang araw sa paaralan</span></div><div><b>3</b><span>Pagdiriwang ng Pasko kasama ang pamilya</span></div></div></div>
+   <div class="model-steps"><div><b>Step 1</b><p>Hanapin ang mga pangyayari.</p></div><div><b>Step 2</b><p>Alamin kung alin ang nauna at alin ang sumunod.</p></div><div><b>Step 3</b><p>Ilagay ang mga ito sa wastong pagkakasunod-sunod.</p></div></div>
+   <div class="model-answer">🌟 Tandaan: Ang timeline ay tumutulong sa atin na makita ang <strong>pagkakasunod-sunod ng mga pangyayari.</strong></div>
+ </div>
+ <div class="guided card"><span class="eyebrow">🤝 WE DO • LET'S DO IT TOGETHER</span><h3>Alin ang mas magandang ebidensiya upang malaman ang nangyari sa isang birthday?</h3><p class="support">Hint: Pumili ng bagay na direktang may kaugnayan sa pangyayari.</p><div id="guidedChoices" class="answer-grid"></div><div id="guidedFeedback" class="feedback" aria-live="polite"></div><button class="btn hint" id="guidedHint">💡 Hint</button><div id="guidedHintText" class="hint-box hidden"></div></div>
+</section>
+
+<section id="practice" class="section alt">
+ <div class="section-heading"><span class="eyebrow">STEP 4 • YOU DO</span><h2>🎯 Your Turn</h2><p>Subukan nang mag-isa. Kapag nagkamali, may clue para matuto at sumubok muli.</p></div>
+ <div class="practice-card card"><div class="practice-top"><span id="practiceNum">1 / 8</span><span id="practiceScore">0 correct</span></div><h3 id="practiceQuestion"></h3><div id="practiceChoices" class="answer-grid"></div><button class="btn hint" id="practiceHint">💡 Hint</button><div id="practiceHintText" class="hint-box hidden"></div><div id="practiceFeedback" class="feedback" aria-live="polite"></div><button class="btn primary hidden" id="nextPractice">Susunod →</button></div>
+ <div class="mistake-note card"><h3>💡 Let's Think Again</h3><p>Ang pagkakamali ay pagkakataong matuto. Balikan ang clue, tingnan ang halimbawa, at subukan muli.</p></div>
+</section>
+
+<section id="games" class="section">
+ <div class="section-heading"><span class="eyebrow">STEP 5 • GAME REVIEW</span><h2>🎮 Game Zone</h2><p>Mga larong may malinaw na layunin sa pagkatuto.</p></div>
+ <div class="game-tabs"><button class="game-tab active" data-game="detective">🔎 Evidence Detective</button><button class="game-tab" data-game="timeline">🕰️ Timeline Builder</button><button class="game-tab" data-game="change">🔄 Change or Same</button><button class="game-tab" data-game="memory">🧠 Memory Match</button></div>
+ <div id="game-detective" class="game-panel active card"><div class="game-title"><span>🔎</span><div><h3>Evidence Detective</h3><p>Piliin ang ebidensiyang pinakaangkop sa pangyayari.</p></div></div><div id="detectiveQuestion"></div><div id="detectiveChoices" class="answer-grid"></div><div id="detectiveFeedback" class="feedback"></div></div>
+ <div id="game-timeline" class="game-panel card"><div class="game-title"><span>🕰️</span><div><h3>Timeline Builder</h3><p>I-tap ang mga pangyayari sa tamang pagkakasunod-sunod.</p></div></div><div id="timelineItems" class="order-grid"></div><button class="btn primary" id="checkTimeline">Check Timeline</button><button class="btn ghost" id="resetTimeline">↻ Baguhin</button><div id="timelineFeedback" class="feedback"></div></div>
+ <div id="game-change" class="game-panel card"><div class="game-title"><span>🔄</span><div><h3>Change or Same?</h3><p>Sabihin kung ang sitwasyon ay pagbabago o bagay na nananatili.</p></div></div><div id="changeQuestion"></div><div id="changeChoices" class="answer-grid"></div><div id="changeFeedback" class="feedback"></div></div>
+ <div id="game-memory" class="game-panel card"><div class="game-title"><span>🧠</span><div><h3>Memory Match</h3><p>Itugma ang konsepto sa tamang paliwanag.</p></div></div><div id="memoryGrid" class="memory-grid"></div><button class="btn ghost" id="resetMemory">↻ Baguhin ang Cards</button><div id="memoryFeedback" class="feedback"></div></div>
+ <div class="bonus card"><span class="eyebrow">READY FOR MORE?</span><h3>🌟 Brain Challenge</h3><p>Aling ebidensiya ang pinakamalinaw kung gusto mong malaman kung sino ang dumalo sa isang birthday?</p><div id="bonusChoices" class="answer-grid"></div><div id="bonusFeedback" class="feedback"></div></div>
+</section>
+
+<section id="apply" class="section alt">
+ <div class="section-heading"><span class="eyebrow">STEP 5B • APPLY</span><h2>🧠 Gamitin sa Bagong Sitwasyon</h2><p>Ilapat ang natutuhan sa mga sitwasyong pamilyar sa isang batang tulad mo.</p></div>
+ <div class="scenario-grid">
+   <article class="scenario card"><div class="big-icon">🏫</div><h3>Nais mong malaman kung kailan ka unang pumasok sa paaralan.</h3><div class="answer-grid"><button class="scenario-btn" data-good="true">Tingnan ang lumang larawan o dokumento.</button><button class="scenario-btn" data-good="false">Hulaan lamang ang petsa.</button></div></article>
+   <article class="scenario card"><div class="big-icon">👨‍👩‍👧</div><h3>Napansin mong iba ang iyong hitsura ngayon kaysa noong bata ka.</h3><div class="answer-grid"><button class="scenario-btn" data-good="true">Ihambing ang mga larawan noon at ngayon.</button><button class="scenario-btn" data-good="false">Sabihing walang nagbago.</button></div></article>
+   <article class="scenario card"><div class="big-icon">🕰️</div><h3>May tatlong pangyayari ka. Ano ang susunod mong gagawin?</h3><div class="answer-grid"><button class="scenario-btn" data-good="true">Ayusin ang mga ito ayon sa pagkakasunod-sunod.</button><button class="scenario-btn" data-good="false">Ilagay nang sapalaran.</button></div></article>
+ </div><div id="scenarioFeedback" class="feedback" aria-live="polite"></div>
+ <div class="reflection card"><span class="eyebrow">💭 THINK ABOUT IT</span><h3>Ano ang gusto mong balikan?</h3><div class="reflection-grid"><button class="reflect">📜 Kasaysayan</button><button class="reflect">🔎 Ebidensiya</button><button class="reflect">🕰️ Timeline</button><button class="reflect">🔄 Pagbabago</button></div><div id="reflectionFeedback" class="feedback"></div></div>
+</section>
+
+<section id="mastery" class="section">
+ <div class="section-heading"><span class="eyebrow">STEP 6 • FINAL MASTERY CHECK</span><h2>🏆 Final Challenge</h2><p>Bagong mga tanong para makita kung kaya mong gamitin ang mga pangunahing konsepto.</p></div>
+ <div class="mastery-card card"><div class="practice-top"><span id="finalNum">1 / 12</span><span id="finalScore">0 correct</span></div><h3 id="finalQuestion"></h3><div id="finalChoices" class="answer-grid"></div><button class="btn hint" id="finalHint">💡 Hint</button><div id="finalHintText" class="hint-box hidden"></div><div id="finalFeedback" class="feedback"></div><button class="btn primary hidden" id="finalNext">Susunod →</button></div>
+ <div id="results" class="results card hidden"><div class="trophy">🏆</div><h2>🎉 Nagawa Mo!</h2><div id="resultScore" class="result-score">0%</div><p id="resultDetail"></p><h3 id="resultAchievement"></h3><div class="result-actions"><button class="btn primary" id="retryFinal">Subukan Muli</button><button class="btn ghost" id="mistakesBtn">🔄 Practice My Mistakes</button><button class="btn ghost" id="bonusBtn">🎮 Play Bonus Game</button><button class="btn ghost" data-go="#games">← Back to Game Zone</button></div><div id="mistakesArea" class="mistakes-area hidden"></div></div>
+</section>
+</main>
+<footer class="footer"><div class="footer-inner"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo"><div><strong>Teacher Ed Learning Hub</strong><p>Learn • Practice • Play • Master</p><small>Teacher Ed • Educational Learning Website</small></div><button id="resetProgress" class="footer-reset">Reset Progress</button></div></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="script.js"></script>
+</body>
+</html>

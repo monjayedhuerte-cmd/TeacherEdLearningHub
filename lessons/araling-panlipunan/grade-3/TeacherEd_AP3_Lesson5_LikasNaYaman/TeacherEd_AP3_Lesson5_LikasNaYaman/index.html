@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b7a">
+<meta name="description" content="Teacher Ed Learning Hub — Araling Panlipunan 3 Aralin 5: Mga Likas na Yaman. Interactive learning and games reviewer.">
+<title>AP 3 • Aralin 5: Mga Likas na Yaman | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/BrandLogo.png">
+ <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RLFGHJNFFN');
+ </script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home">
+      <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <span><strong>Teacher Ed Learning Hub</strong><small>Araling Panlipunan 3 • Aralin 5</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Buksan ang menu" aria-expanded="false">☰</button>
+    <nav id="mainNav" class="main-nav">
+      <a href="#home">Home</a><a href="#connect">Connect</a><a href="#learn">Learn</a><a href="#practice">Practice</a><a href="#games">Games</a><a href="#mastery">Mastery</a>
+    </nav>
+  </div>
+</header>
+<section id="progress" class="progress-strip"><div class="progress-wrap">
+  <div class="progress-head"><strong>Ang Iyong Learning Journey</strong><span id="progressText">0% complete</span></div><div class="progress-bar"><span id="progressBar"></span></div>
+  <div class="journey">
+    <button class="journey-step active" data-go="#connect"><b>1</b><span>Connect</span></button><button class="journey-step" data-go="#learn"><b>2</b><span>Learn</span></button><button class="journey-step" data-go="#model"><b>3</b><span>Model</span></button><button class="journey-step" data-go="#practice"><b>4</b><span>Practice</span></button><button class="journey-step" data-go="#games"><b>5</b><span>Games</span></button><button class="journey-step" data-go="#mastery"><b>6</b><span>Mastery</span></button>
+  </div>
+</div></section>
+
+<main>
+<section id="home" class="hero section">
+  <div class="hero-copy">
+    <span class="eyebrow">ARALING PANLIPUNAN 3 • ARALIN 5</span>
+    <h1>Mga Likas na Yaman</h1>
+    <p class="lead">Alamin ang mga yamang lupa, yamang gubat, yamang mineral, at yamang tubig—at kung paano natin mapapangalagaan ang mga ito.</p>
+    <div class="hero-actions"><button class="btn primary" data-go="#connect">Simulan ang Paglalakbay</button><button class="btn ghost" id="continueBtn">Ipagpatuloy ang Progress</button></div>
+    <div class="mini-stats"><div><span id="starCount">0</span><small>Stars</small></div><div><span id="badgeCount">0</span><small>Badges</small></div><div><span id="bestScore">0%</span><small>Best Score</small></div></div>
+  </div>
+  <div class="hero-art" aria-label="Mga likas na yaman">
+    <div class="resource-orb">🌏</div><div class="float-card f1">🌾 Yamang Lupa</div><div class="float-card f2">🌳 Yamang Gubat</div><div class="float-card f3">💎 Yamang Mineral</div><div class="float-card f4">🐟 Yamang Tubig</div>
+  </div>
+</section>
+
+
+<section id="connect" class="section">
+ <div class="section-heading"><span class="eyebrow">PHASE 1 • CONNECT</span><h2>Ano ang alam mo na?</h2><p>Isipin ang mga bagay na nakikita mo sa iyong paligid.</p></div>
+ <div class="connect-grid">
+  <article class="teach-card"><div class="big-icon">🌾</div><h3>Ano ang nakukuha sa lupa?</h3><p>May mga produktong mula sa sakahan tulad ng <strong>bigas</strong> at <strong>mga gulay</strong>.</p><p class="support">English: <strong>Land resources</strong> can provide farm products.</p></article>
+  <article class="teach-card"><div class="big-icon">🌳</div><h3>Ano ang makikita sa gubat?</h3><p>Sa kagubatan matatagpuan ang mga punongkahoy at iba't ibang hayop.</p><p class="support">English: <strong>Forest resources</strong> include trees and animals.</p></article>
+  <article class="teach-card"><div class="big-icon">💧</div><h3>Saan nanggagaling ang tubig?</h3><p>Matatagpuan ang yamang tubig sa dagat, ilog, at lawa.</p><p class="support">English: <strong>Water resources</strong> are found in bodies of water.</p></article>
+ </div>
+ <div class="quick-check card"><div><span class="eyebrow">QUICK CHECK</span><h3>Alin ang likas na yaman?</h3></div><div class="choice-row" id="connectChoices"></div><div id="connectFeedback" class="feedback" aria-live="polite"></div></div>
+</section>
+
+<section id="learn" class="section alt">
+ <div class="section-heading"><span class="eyebrow">PHASE 2 • TEACH</span><h2>Alamin Natin</h2><p>Ang likas na yaman ay mga produktong nakukuha mula sa mga anyong lupa at anyong tubig.</p></div>
+ <div class="resource-grid">
+  <article class="resource-card land"><div class="resource-icon">🌾</div><div><h3>Yamang Lupa <small>Land Resources</small></h3><p>Nagmumula sa mga anyong lupa tulad ng kapatagan at lambak. Kabilang ang mga produktong mula sa sakahan tulad ng <strong>bigas at mga gulay</strong>.</p></div></article>
+  <article class="resource-card forest"><div class="resource-icon">🌳</div><div><h3>Yamang Gubat <small>Forest Resources</small></h3><p>Matatagpuan sa kagubatan ang malalaking punongkahoy na ginagamit sa paggawa ng mga gamit o pagtatayo ng mga bahay. Mayroon ding mga hayop tulad ng <strong>usa, unggoy, baboy-ramo, at agila</strong>.</p></div></article>
+  <article class="resource-card mineral"><div class="resource-icon">💎</div><div><h3>Yamang Mineral <small>Mineral Resources</small></h3><p>Matatagpuan sa ilalim ng lupa ang mga mineral tulad ng mahahalagang bato, metal, at iba pang materyal. Halimbawa: <strong>ginto, diyamante, bakal, marmol, uling, at semento</strong>.</p></div></article>
+  <article class="resource-card water"><div class="resource-icon">🐟</div><div><h3>Yamang Tubig <small>Water Resources</small></h3><p>Matatagpuan sa dagat, ilog, at lawa. Nakukuha rito ang <strong>isda, perlas, halamang-dagat, at mga korales</strong>. Ang sariwang tubig ay ginagamit sa iba't ibang pangangailangan sa tahanan at sakahan.</p></div></article>
+ </div>
+ <div class="key-facts card"><h3>🌟 Tandaan</h3><div class="fact-grid"><div><b>Anyong lupa</b><span>→ yamang lupa, yamang gubat, yamang mineral</span></div><div><b>Anyong tubig</b><span>→ yamang tubig</span></div><div><b>Yamang tubig</b><span>→ isda, perlas, halamang-dagat, korales</span></div><div><b>Yamang mineral</b><span>→ ginto, diyamante, bakal, marmol, uling, semento</span></div></div></div>
+</section>
+
+<section id="model" class="section">
+ <div class="section-heading"><span class="eyebrow">PHASE 3 • MODEL • I DO</span><h2>👩‍🏫 Watch Me: Paano Ko Ito Kikilalanin?</h2><p>Gamitin ang pinanggagalingan upang matukoy ang uri ng likas na yaman.</p></div>
+ <div class="model-card card"><div class="model-step"><span>1</span><div><h3>Basahin ang clue.</h3><p>“Nakukuha ito sa sakahan. Halimbawa nito ang bigas.”</p></div></div><div class="model-step"><span>2</span><div><h3>Hanapin ang pinanggagalingan.</h3><p>Sakahan → anyong lupa → <strong>yamang lupa</strong>.</p></div></div><div class="model-step"><span>3</span><div><h3>Suriin ang halimbawa.</h3><p>Ang bigas ay produkto ng sakahan.</p></div></div><div class="model-answer">✅ Kaya ang sagot ay <strong>YAMANG LUPA</strong>.</div></div>
+ <div class="guided card"><div class="eyebrow">🤝 LET'S DO IT TOGETHER</div><h3>Clue: “Nakukuha ito sa dagat, ilog, o lawa. Halimbawa nito ang isda.”</h3><p class="support">Hint: Saan ito nagmumula?</p><div class="choice-row" id="guidedChoices"></div><div id="guidedFeedback" class="feedback" aria-live="polite"></div></div>
+</section>
+
+<section id="practice" class="section alt">
+ <div class="section-heading"><span class="eyebrow">PHASE 4 • YOU DO</span><h2>🎯 Your Turn</h2><p>Subukan mo nang mag-isa. Makakakuha ka ng agarang feedback.</p></div>
+ <div class="practice-card card"><div class="practice-top"><span id="practiceNum">1</span><span id="practiceScore">0 / 0</span></div><div id="practiceQuestion" class="question"></div><div id="practiceChoices" class="answer-grid"></div><button class="btn hint" id="practiceHint">💡 Hint</button><div id="practiceHintText" class="hint-box hidden"></div><div id="practiceFeedback" class="feedback" aria-live="polite"></div><button class="btn primary hidden" id="nextPractice">Susunod →</button></div>
+ <div class="mistake-note card"><h3>💡 Let's Think Again</h3><p>Kapag nagkamali, hindi ito kabiguan. Tingnan ang clue, alalahanin ang halimbawa, at subukan muli.</p></div>
+</section>
+
+<section id="games" class="section">
+ <div class="section-heading"><span class="eyebrow">PHASE 5 • GAME PRACTICE</span><h2>🎮 Game Zone</h2><p>Ngayon, gamitin ang iyong natutuhan sa mga larong may learning purpose.</p></div>
+ <div class="game-tabs"><button class="game-tab active" data-game="quick">🎯 Quick Pick</button><button class="game-tab" data-game="match">🧠 Memory Match</button><button class="game-tab" data-game="sort">🗂️ Sort It</button><button class="game-tab" data-game="order">🚂 Put in Order</button></div>
+ <div id="game-quick" class="game-panel active card"><div class="game-title"><span>🎯</span><div><h3>Quick Pick</h3><p>Learning purpose: mabilis na pagkilala sa uri ng likas na yaman.</p></div></div><div id="quickGameQ"></div><div id="quickGameChoices" class="answer-grid"></div><div id="quickGameFeedback" class="feedback"></div></div>
+ <div id="game-match" class="game-panel card"><div class="game-title"><span>🧠</span><div><h3>Memory Match</h3><p>Learning purpose: itugma ang likas na yaman sa halimbawa nito.</p></div></div><div id="memoryGrid" class="memory-grid"></div><div id="memoryFeedback" class="feedback"></div><button class="btn ghost" id="resetMemory">↻ Baguhin ang Cards</button></div>
+ <div id="game-sort" class="game-panel card"><div class="game-title"><span>🗂️</span><div><h3>Sort It</h3><p>Learning purpose: pag-uuri ng mga halimbawa ayon sa uri ng likas na yaman.</p></div></div><p><strong>Piliin muna ang grupo, pagkatapos ay ang item.</strong></p><div class="sort-groups" id="sortGroups"></div><div id="sortItems" class="sort-items"></div><div id="sortFeedback" class="feedback"></div><button class="btn ghost" id="resetSort">↻ I-reset ang Sort</button></div>
+ <div id="game-order" class="game-panel card"><div class="game-title"><span>🚂</span><div><h3>Put in Order</h3><p>Learning purpose: ayusin ang wastong proseso ng pangangalaga sa likas na yaman.</p></div></div><p>Ayusin ang mga hakbang mula una hanggang huli.</p><div id="orderItems" class="order-items"></div><button class="btn primary" id="checkOrder">Suriin ang Ayos</button><div id="orderFeedback" class="feedback"></div><button class="btn ghost" id="resetOrder">↻ Baguhin ang Ayos</button></div>
+ </section>
+
+<section id="spiral" class="section alt"><div class="section-heading"><span class="eyebrow">PHASE 7 • SPIRAL REVIEW</span><h2>🧠 Balikan Natin</h2><p>Halu-halong tanong mula sa buong aralin.</p></div><div class="spiral-grid" id="spiralGrid"></div></section>
+
+<section id="apply" class="section"><div class="section-heading"><span class="eyebrow">PHASE 8 • APPLICATION</span><h2>🌱 Gamitin sa Tunay na Buhay</h2><p>Piliin ang mga gawaing nagpapakita ng wastong pangangalaga.</p></div><div class="application-grid">
+ <button class="scenario card" data-good="true"><span>💧</span><h3>Gumamit ng baso kapag nagsesepilyo.</h3><p>Makakatulong ito sa pagtitipid ng tubig.</p></button>
+ <button class="scenario card" data-good="true"><span>♻️</span><h3>I-recycle ang lumang kagamitang maaari pang gamitin.</h3><p>Maaaring gamitin muli ang mga lumang kasangkapan.</p></button>
+ <button class="scenario card" data-good="true"><span>🌱</span><h3>Makilahok sa paglilinis o pagtatanim ng puno.</h3><p>Nakatutulong ito sa pangangalaga ng kalikasan.</p></button>
+ <button class="scenario card" data-good="false"><span>🍚</span><h3>Sayangin ang pagkain at ubusin ang pagkain sa pinggan.</h3><p>Ang pagsasayang ng pagkain ay hindi wastong pangangalaga.</p></button>
+ </div><div id="scenarioFeedback" class="feedback"></div></section>
+
+<section id="care" class="section alt"><div class="section-heading"><span class="eyebrow">PANGANGALAGA</span><h2>🛡️ Paano Natin Pangalagaan?</h2><p>Ang wastong paggamit at pangangalaga ay mahalaga dahil limitado ang likas na yaman.</p></div><div class="care-grid"><article class="care-card"><span>🍽️</span><h3>Huwag magsayang ng pagkain</h3><p>Ubusin ang pagkain sa iyong pinggan.</p></article><article class="care-card"><span>♻️</span><h3>Mag-recycle</h3><p>Gamitin muli ang mga lumang kasangkapan kung maaari.</p></article><article class="care-card"><span>🚰</span><h3>Magtipid ng tubig</h3><p>Gumamit ng baso kapag nagsesepilyo at tabo sa paliligo.</p></article><article class="care-card"><span>🌳</span><h3>Makilahok</h3><p>Sumali sa malawakang paglilinis o pagtatanim ng puno.</p></article></div></section>
+
+<section id="mastery" class="section mastery-section"><div class="section-heading"><span class="eyebrow">PHASE 9 • MASTERY CHECK</span><h2>🏆 Final Challenge</h2><p>Bagong mga tanong. Ipakita ang iyong pag-unawa sa buong aralin.</p></div><div class="mastery-card card"><div class="quiz-head"><span id="finalNum">1 / 10</span><span id="finalScore">0 correct</span></div><div id="finalQuestion" class="question"></div><div id="finalChoices" class="answer-grid"></div><button class="btn hint" id="finalHint">💡 Hint</button><div id="finalHintText" class="hint-box hidden"></div><div id="finalFeedback" class="feedback"></div><button class="btn primary hidden" id="finalNext">Susunod →</button></div><div id="results" class="results card hidden"><div class="trophy">🏆</div><h2>🎉 You Did It!</h2><div class="result-score" id="resultScore">0%</div><p id="resultDetail"></p><div id="resultAchievement" class="achievement"></div><div class="result-actions"><button class="btn primary" id="retryFinal">Try Again</button><button class="btn ghost" id="mistakesBtn">Practice My Mistakes</button><button class="btn ghost" data-go="#games">Play Bonus Game</button></div><div id="mistakesArea" class="mistakes-area hidden"></div></div></section>
+
+<section id="reflection" class="section"><div class="section-heading"><span class="eyebrow">PHASE 11 • CELEBRATE</span><h2>💭 Think About It</h2><p>Pumili ng sagot na pinakaangkop sa iyo.</p></div><div class="reflection-grid"><button class="reflect card">😊 Madali para sa akin.</button><button class="reflect card">💪 Kailangan ko pa ng practice.</button><button class="reflect card">🌟 Natutuhan ko ang iba't ibang likas na yaman.</button><button class="reflect card">🌱 Alam ko na kung paano mangalaga.</button></div><div id="reflectionFeedback" class="feedback"></div></section>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo"><div><strong>Teacher Ed Learning Hub</strong><p>Learn • Practice • Play • Master</p><small>Teacher Ed • Educational Learning Website</small></div><button class="reset-progress" id="resetProgress">Reset My Progress</button></div></footer>
+<div id="toast" class="toast" aria-live="polite"></div>
+<script src="script.js"></script>
+</body></html>

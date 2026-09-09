@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1f3a">
+  <meta name="description" content="Teacher Ed Learning Hub - Computer 3 Lesson 5: Shhh! Some Keyboard Secrets">
+  <title>Computer 3 | Lesson 5 – Shhh! Some Keyboard Secrets | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+   <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RLFGHJNFFN');
+ </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="#top" style="text-decoration:none;color:white">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <span><strong>Teacher Ed Learning Hub</strong><small>Computer 3 • Interactive Lesson</small></span>
+    </a>
+    <div class="menu">
+      <a href="#learn">Learn</a><a href="#symbols">Keyboard Secrets</a><a href="#numpad">Number Pad</a>
+      <a href="#calculator">Calculator</a><a href="#practice">Practice</a><a href="#quiz">Check</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-card">
+      <span class="eyebrow">COMPUTER 3 • LESSON 5</span>
+      <h1>Shhh! Some Keyboard Secrets</h1>
+      <p>Explore keyboard symbols, learn the number pad, use Num Lock, and practice typing with an interactive computer lesson.</p>
+      <div class="lesson-nav">
+        <a class="btn gold" href="#learn">Start Learning</a>
+        <a class="btn light" href="#quiz">Take the Quiz</a>
+      </div>
+      <div style="margin-top:20px">
+        <span class="pill">Teacher Ed Learning Hub</span>
+        <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+        <small id="progressText">Lesson progress: 0%</small>
+      </div>
+    </div>
+    <div class="hero-card hero-logo">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+    </div>
+  </section>
+
+  <section class="section" id="learn">
+    <div class="section-title">
+      <div><h2>What will you learn?</h2><p class="subtitle">Lesson targets based on the provided Computer 3 Lesson 5 pages.</p></div>
+    </div>
+    <div class="grid">
+      <div class="card objective"><div class="badge">1</div><h3>Describe the Number Pad</h3><p>Identify the number pad and explain its purpose.</p></div>
+      <div class="card objective"><div class="badge">2</div><h3>Type Keyboard Symbols</h3><p>Use the Shift key with number and other keys to type symbols.</p></div>
+      <div class="card objective"><div class="badge">3</div><h3>Use the Calculator</h3><p>Practice basic mathematical operations using a calculator program.</p></div>
+      <div class="card objective"><div class="badge">4</div><h3>Unscramble Words</h3><p>Unscramble letters and find words related to the topic.</p></div>
+      <div class="card objective"><div class="badge">5</div><h3>Type a Short Story</h3><p>Use the computer keyboard to type the provided sentences and symbols.</p></div>
+      <div class="card objective"><div class="badge">6</div><h3>Identify the Number Pad</h3><p>Recognize the number pad as the separate set of number keys usually found on the right side.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="symbols">
+    <div class="section-title">
+      <div><h2>🔐 Keyboard Secrets</h2><p class="subtitle">The Shift key helps you type the characters above many number keys.</p></div>
+    </div>
+
+    <div class="grid2">
+      <div class="card">
+        <h3>Number-row symbols</h3>
+        <p>Press and hold <b>Shift</b>, then press the number key for the character you want.</p>
+        <div class="key-row">
+          <div class="key special">!<br><small>Shift + 1</small></div>
+          <div class="key">@<br><small>Shift + 2</small></div>
+          <div class="key">#<br><small>Shift + 3</small></div>
+          <div class="key">$<br><small>Shift + 4</small></div>
+          <div class="key">%<br><small>Shift + 5</small></div>
+          <div class="key">^<br><small>Shift + 6</small></div>
+          <div class="key">&amp;<br><small>Shift + 7</small></div>
+          <div class="key">*<br><small>Shift + 8</small></div>
+          <div class="key">(<br><small>Shift + 9</small></div>
+          <div class="key">)<br><small>Shift + 0</small></div>
+        </div>
+        <div class="symbol-box" id="symbolOutput">?</div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn light" onclick="showSymbol('!','Shift + 1')">Try !</button>
+          <button class="btn light" onclick="showSymbol('@','Shift + 2')">Try @</button>
+          <button class="btn light" onclick="showSymbol('#','Shift + 3')">Try #</button>
+          <button class="btn light" onclick="showSymbol('$','Shift + 4')">Try $</button>
+          <button class="btn light" onclick="showSymbol('%','Shift + 5')">Try %</button>
+          <button class="btn light" onclick="showSymbol('&amp;','Shift + 7')">Try &amp;</button>
+        </div>
+        <p id="symbolHint" class="feedback">Choose a symbol to reveal its keyboard shortcut.</p>
+      </div>
+
+      <div class="card">
+        <h3>Other useful key combinations</h3>
+        <div class="shortcut-grid">
+          <div class="shortcut"><b>?</b><br>Shift + /</div>
+          <div class="shortcut"><b>:</b><br>Shift + ;</div>
+          <div class="shortcut"><b>"</b><br>Shift + '</div>
+          <div class="shortcut"><b>&lt;</b><br>Shift + ,</div>
+          <div class="shortcut"><b>&gt;</b><br>Shift + .</div>
+          <div class="shortcut"><b>_</b><br>Shift + -</div>
+          <div class="shortcut"><b>+</b><br>Shift + =</div>
+          <div class="shortcut"><b>{ }</b><br>Shift + [ ]</div>
+        </div>
+        <div class="accordion">
+          <button class="acc-btn" onclick="toggleAcc(this)">💡 Remember the rule</button>
+          <div class="acc-content">Hold the <b>Shift</b> key while pressing the key that has the character you want. The character is typed instead of the lower character on that key.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="numpad">
+    <div class="section-title">
+      <div><h2>🔢 The Number Pad</h2><p class="subtitle">A separate set of number keys usually found on the far right of a standard keyboard.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>What is a number pad?</h3>
+        <p>The lesson describes the numeric keypad, number pad, numpad, or ten keys as a palm-sized, usually 17-key section of a standard computer keyboard, usually on the far right.</p>
+        <ul>
+          <li>It contains number keys <b>0 through 9</b>.</li>
+          <li>It includes a decimal point.</li>
+          <li>It makes entering large amounts of numerical data easier.</li>
+          <li>The keys can also serve as cursor-control keys.</li>
+        </ul>
+        <div class="accordion">
+          <button class="acc-btn" onclick="toggleAcc(this)">🔒 What does Num Lock do?</button>
+          <div class="acc-content">For the number pad to enter numbers, make sure the <b>Num Lock</b> light is on. If it is not on, press the <b>Num Lock</b> key. When Num Lock is on, number keys enter numbers where the cursor is.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Interactive Number Pad</h3>
+        <p>Click the keys. Turn Num Lock on or off to see the difference.</p>
+        <button class="btn gold" id="numLockBtn" onclick="toggleNumLock()">Num Lock: ON</button>
+        <div class="numpad" id="numpadKeys">
+          <button class="np" onclick="npPress('Num Lock')">Num<br>Lock</button>
+          <button class="np" onclick="npPress('/')">/</button>
+          <button class="np" onclick="npPress('*')">*</button>
+          <button class="np" onclick="npPress('-')">−</button>
+          <button class="np" onclick="npPress('7')">7<br><small>Home</small></button>
+          <button class="np" onclick="npPress('8')">8<br><small>↑</small></button>
+          <button class="np" onclick="npPress('9')">9<br><small>PgUp</small></button>
+          <button class="np enter" onclick="npPress('Enter')">Enter</button>
+          <button class="np" onclick="npPress('4')">4<br><small>←</small></button>
+          <button class="np" onclick="npPress('5')">5</button>
+          <button class="np" onclick="npPress('6')">6<br><small>→</small></button>
+          <button class="np" onclick="npPress('1')">1<br><small>End</small></button>
+          <button class="np" onclick="npPress('2')">2<br><small>↓</small></button>
+          <button class="np" onclick="npPress('3')">3<br><small>PgDn</small></button>
+          <button class="np" onclick="npPress('+')">+</button>
+          <button class="np wide" onclick="npPress('0')">0<br><small>Ins</small></button>
+          <button class="np" onclick="npPress('.')">.</button>
+        </div>
+        <input id="npDisplay" class="display" value="" aria-label="Number pad output" readonly>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="calculator">
+    <div class="section-title">
+      <div><h2>🧮 Calculator Practice</h2><p class="subtitle">The number pad includes math-function keys such as divide, multiply, subtract, add, and Enter.</p></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Number-pad math keys</h3>
+        <div class="shortcut-grid">
+          <div class="shortcut"><b>/</b><br>Divides numbers — like ÷.</div>
+          <div class="shortcut"><b>*</b><br>Multiplies numbers — like ×.</div>
+          <div class="shortcut"><b>−</b><br>Subtracts numbers.</div>
+          <div class="shortcut"><b>+</b><br>Adds numbers.</div>
+          <div class="shortcut"><b>Enter</b><br>Gets the answer — like =.</div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Try the calculator</h3>
+        <input id="calcDisplay" class="display" value="0" aria-label="Calculator display" readonly>
+        <div class="calc-grid">
+          <button onclick="calcClear()">C</button><button onclick="calcBack()">⌫</button>
+          <button class="op" onclick="calcInput('/')">÷</button><button class="op" onclick="calcInput('*')">×</button>
+          <button onclick="calcInput('7')">7</button><button onclick="calcInput('8')">8</button>
+          <button onclick="calcInput('9')">9</button><button class="op" onclick="calcInput('-')">−</button>
+          <button onclick="calcInput('4')">4</button><button onclick="calcInput('5')">5</button>
+          <button onclick="calcInput('6')">6</button><button class="op" onclick="calcInput('+')">+</button>
+          <button onclick="calcInput('1')">1</button><button onclick="calcInput('2')">2</button>
+          <button onclick="calcInput('3')">3</button><button class="op" onclick="calcEquals()">=</button>
+          <button onclick="calcInput('0')">0</button><button onclick="calcInput('.')">.</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="practice">
+    <div class="section-title">
+      <div><h2>⌨️ Practice Lab</h2><p class="subtitle">Practice the same kinds of typing tasks shown in the lesson.</p></div>
+    </div>
+    <div class="card">
+      <h3>Typing Challenge</h3>
+      <div class="target" id="typingTarget">Hark! The herald angels sing!
+We’ll meet at #673 Benson &amp; Son street.
+Please confirm with ether@link.net (if you’re not 100% sure).</div>
+      <textarea class="typing-area" id="typingInput" placeholder="Type the text above here..."></textarea>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px">
+        <button class="btn green" onclick="checkTyping()">Check My Typing</button>
+        <button class="btn light" onclick="clearTyping()">Clear</button>
+        <span class="score" id="typingScore">Accuracy: —</span>
+      </div>
+      <p class="tiny" style="color:var(--muted);margin-top:12px">Tip: Look carefully at the symbols: !, #, &, @, %, parentheses, and the apostrophe.</p>
+    </div>
+
+    <div class="grid2" style="margin-top:18px">
+      <div class="card">
+        <h3>Unscramble the Word</h3>
+        <p class="pill">Topic: Keyboard</p>
+        <p style="font-size:1.6rem;font-weight:1000;letter-spacing:3px" id="scrambleWord">DPA</p>
+        <input id="scrambleInput" class="display" style="text-align:left" placeholder="Type your answer">
+        <button class="btn gold" onclick="checkScramble()">Check</button>
+        <p id="scrambleFeedback" class="feedback"></p>
+        <button class="btn light" onclick="newScramble()" style="margin-top:7px">New Word</button>
+      </div>
+      <div class="card">
+        <h3>Quick Symbol Challenge</h3>
+        <p>Which shortcut types the <b>$</b> sign?</p>
+        <button class="option" onclick="symbolQuiz(this,false)">Shift + 2</button>
+        <button class="option" onclick="symbolQuiz(this,true)">Shift + 4</button>
+        <button class="option" onclick="symbolQuiz(this,false)">Shift + 5</button>
+        <p id="symbolQuizFeedback" class="feedback"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="quiz">
+    <div class="section-title">
+      <div><h2>📝 What Have You Learned?</h2><p class="subtitle">Complete the interactive check.</p></div>
+    </div>
+    <div class="card">
+      <div id="quizBox"></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:15px">
+        <button class="btn gold" onclick="submitQuiz()">Submit Quiz</button>
+        <button class="btn light" onclick="resetQuiz()">Reset</button>
+        <span class="score" id="quizScore">Score: —</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card" style="background:linear-gradient(135deg,#0b1f3a,#173f6c);color:white">
+      <h2 style="color:white">🌟 Remember</h2>
+      <ul>
+        <li>Some characters are typed by pressing <b>Shift</b> together with another key.</li>
+        <li>The <b>number pad</b> is usually on the far right of the keyboard.</li>
+        <li>Turn <b>Num Lock</b> on when you want the number-pad keys to enter numbers.</li>
+        <li>The number pad has math-function keys for <b>divide, multiply, subtract, add</b>, and <b>Enter</b>.</li>
+      </ul>
+      <button class="btn gold" onclick="finishLesson()">Mark Lesson Complete ✓</button>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <div><strong>Teacher Ed Learning Hub</strong><br><span class="tiny">Computer 3 • Lesson 5: Shhh! Some Keyboard Secrets</span></div>
+    </div>
+    <div class="tiny">Learn • Explore • Practice • Check • Master</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

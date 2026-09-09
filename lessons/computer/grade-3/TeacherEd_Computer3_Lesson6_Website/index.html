@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123B72">
+  <title>Teacher Ed Learning Hub | Computer 3 | Lesson 6: What Keeps the Computer Running</title>
+  <link rel="icon" type="image/png" href="assets/BrandLogo.png">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RLFGHJNFFN');
+ </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <div>
+        <div class="brand-name">TEACHER ED LEARNING HUB</div>
+        <div class="brand-sub">Computer 3 • Interactive Lesson</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="sound-btn" id="soundBtn" type="button" aria-label="Toggle sound">🔊 Sound On</button>
+      <button class="reset-btn" id="resetBtn" type="button">↺ Reset Progress</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">COMPUTER 3 • LESSON 6</span>
+        <h1>What Keeps the Computer Running?</h1>
+        <p class="hero-lead">Learn how <strong>system software</strong> and the <strong>operating system</strong> help a computer work.</p>
+        <div class="hero-tags">
+          <span>📚 Learn</span><span>👩‍🏫 Watch Me</span><span>🤝 Let's Do It</span><span>🎮 Game Zone</span><span>🏆 Master</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="screen-card"><div class="screen-top"></div><div class="screen-lines"></div></div>
+        <div class="cpu-card">⚙️</div>
+        <div class="keyboard">⌨️ ⌨️ ⌨️</div>
+      </div>
+    </section>
+
+    <section class="progress-card">
+      <div class="progress-head">
+        <div>
+          <div class="small-label">YOUR PROGRESS</div>
+          <strong id="progressText">0%</strong>
+        </div>
+        <div class="stats">
+          <span>⭐ <b id="stars">0</b></span>
+          <span>🏆 <b id="badges">0</b></span>
+          <span>Level <b id="level">1</b> of 5</span>
+        </div>
+      </div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+    </section>
+
+    <nav class="lesson-map" aria-label="Lesson map">
+      <button class="map-item active" data-section="connect">🏫<span>Connect</span></button>
+      <button class="map-item" data-section="learn">📖<span>Learn</span></button>
+      <button class="map-item" data-section="model">👩‍🏫<span>Watch Me</span></button>
+      <button class="map-item" data-section="guided">🤝<span>Let's Do It</span></button>
+      <button class="map-item" data-section="practice">🎯<span>Your Turn</span></button>
+      <button class="map-item" data-section="games">🎮<span>Game Zone</span></button>
+      <button class="map-item" data-section="review">🧠<span>Review</span></button>
+      <button class="map-item" data-section="apply">💻<span>Apply</span></button>
+      <button class="map-item" data-section="mastery">🏆<span>Mastery</span></button>
+    </nav>
+
+    <section id="connect" class="lesson-section active-section">
+      <div class="section-title"><span>01</span><div><p class="kicker">PHASE 1 — CONNECT</p><h2>What do you already know?</h2></div></div>
+      <div class="two-col">
+        <div class="teacher-card">
+          <div class="teacher-icon">👩‍🏫</div>
+          <h3>Think like a computer detective!</h3>
+          <p>Some parts of a computer can be touched. Other parts cannot be touched, but they are still important.</p>
+          <div class="compare">
+            <div><b>🖥️ Hardware</b><span>You can touch it.</span><small>Example: keyboard, monitor</small></div>
+            <div><b>💾 Software</b><span>You cannot touch it.</span><small>Programs that tell the computer what to do</small></div>
+          </div>
+        </div>
+        <div class="check-card">
+          <div class="mini-label">QUICK CHECK</div>
+          <h3>Which one is software?</h3>
+          <div class="choices" data-q="connect1">
+            <button data-answer="wrong">⌨️ Keyboard</button>
+            <button data-answer="correct">⚙️ Operating system</button>
+            <button data-answer="wrong">🖱️ Mouse</button>
+          </div>
+          <div class="feedback" id="connect1-feedback"></div>
+        </div>
+      </div>
+      <button class="next-btn" data-next="learn">Continue to Learn →</button>
+    </section>
+
+    <section id="learn" class="lesson-section">
+      <div class="section-title"><span>02</span><div><p class="kicker">PHASE 2 — TEACH</p><h2>Learn in small chunks</h2></div></div>
+
+      <div class="concept-grid">
+        <article class="concept-card featured">
+          <div class="concept-icon">🧩</div>
+          <h3>System Software</h3>
+          <p>System software consists of programs that let you <strong>manage, maintain, and control</strong> the computer.</p>
+          <div class="formula">System software = Operating system + Utility programs</div>
+        </article>
+        <article class="concept-card">
+          <div class="concept-icon">🖥️</div>
+          <h3>Operating System (OS)</h3>
+          <p>The OS manages computer <strong>hardware and software resources</strong> and provides common services for computer programs.</p>
+        </article>
+        <article class="concept-card">
+          <div class="concept-icon">🛠️</div>
+          <h3>Utility Programs</h3>
+          <p>Utility programs help keep the computer working properly. They can rearrange and clean files and help fix problems.</p>
+        </article>
+        <article class="concept-card">
+          <div class="concept-icon">⚡</div>
+          <h3>Multitasking & Throughput</h3>
+          <p><strong>Multitasking</strong> means performing two or more tasks at the same time. <strong>Throughput</strong> is the amount of work a computer can do at a certain time.</p>
+        </article>
+      </div>
+
+      <div class="mini-lesson">
+        <h3>🧠 Important OS jobs</h3>
+        <div class="job-list">
+          <div>📥 Receives and understands commands.</div>
+          <div>⏱️ Helps commands get performed without unnecessary delay.</div>
+          <div>🧠 Makes sure needed resources are available.</div>
+          <div>💾 Helps the processor, storage, software, and external devices get needed data and instructions.</div>
+          <div>🗂️ Keeps track of files stored on the computer.</div>
+          <div>🔐 Helps keep files safe from unauthorized users.</div>
+          <div>🚨 Alerts you about possible system problems or system failure.</div>
+        </div>
+      </div>
+
+      <div class="check-card full">
+        <div class="mini-label">CHECK FOR UNDERSTANDING</div>
+        <h3>Which statement best describes an operating system?</h3>
+        <div class="choices" data-q="learn1">
+          <button data-answer="wrong">It is a physical part you can touch.</button>
+          <button data-answer="correct">It manages computer hardware and software resources.</button>
+          <button data-answer="wrong">It is only a game.</button>
+        </div>
+        <div class="feedback" id="learn1-feedback"></div>
+      </div>
+      <button class="next-btn" data-next="model">Watch the teacher model →</button>
+    </section>
+
+    <section id="model" class="lesson-section">
+      <div class="section-title"><span>03</span><div><p class="kicker">PHASE 3 — MODEL</p><h2>👩‍🏫 Watch Me: How the OS helps</h2></div></div>
+      <div class="model-stage">
+        <div class="model-computer">
+          <div class="monitor">
+            <div class="desktop">
+              <span>📁</span><span>🌐</span><span>📝</span>
+              <div class="desktop-label">DESKTOP</div>
+            </div>
+          </div>
+          <div class="model-base"></div>
+        </div>
+        <div class="model-steps">
+          <div class="step active"><b>Step 1</b><span>You give a command.</span></div>
+          <div class="step"><b>Step 2</b><span>The operating system helps manage the request.</span></div>
+          <div class="step"><b>Step 3</b><span>Hardware and software receive the needed instructions/resources.</span></div>
+          <div class="step"><b>Step 4</b><span>The computer performs the task.</span></div>
+        </div>
+      </div>
+      <div class="model-controls"><button class="secondary-btn" id="modelPrev">← Back</button><button class="primary-btn" id="modelNext">Show Next Step →</button></div>
+
+      <div class="example-box">
+        <div class="mini-label">ANOTHER EXAMPLE</div>
+        <h3>You open a program.</h3>
+        <p>The OS helps the computer manage the program and the resources it needs. Think of the OS as a manager helping different computer parts and programs work together.</p>
+      </div>
+
+      <div class="check-card full">
+        <div class="mini-label">QUICK CHECK</div>
+        <h3>Which word means a computer's particular operating-system architecture?</h3>
+        <div class="choices" data-q="model1">
+          <button data-answer="wrong">Throughput</button>
+          <button data-answer="correct">Platform</button>
+          <button data-answer="wrong">Taskbar</button>
+        </div>
+        <div class="feedback" id="model1-feedback"></div>
+      </div>
+      <button class="next-btn" data-next="guided">Let's practice together →</button>
+    </section>
+
+    <section id="guided" class="lesson-section">
+      <div class="section-title"><span>04</span><div><p class="kicker">PHASE 4 — GUIDED PRACTICE</p><h2>🤝 Let's Do It Together</h2></div></div>
+      <p class="section-intro">Read the clue. Choose the term that fits. You can use a hint when you need one.</p>
+      <div id="guidedBox" class="question-box"></div>
+      <div class="question-actions"><button class="hint-btn" id="guidedHint">💡 Hint</button><button class="next-question" id="guidedNext" disabled>Next →</button></div>
+      <div id="guidedHintText" class="hint-text"></div>
+      <div id="guidedFeedback" class="feedback"></div>
+      <div class="question-progress" id="guidedProgress"></div>
+      <button class="next-btn" data-next="practice">Try it by yourself →</button>
+    </section>
+
+    <section id="practice" class="lesson-section">
+      <div class="section-title"><span>05</span><div><p class="kicker">PHASE 5 — INDEPENDENT PRACTICE</p><h2>🎯 Your Turn</h2></div></div>
+      <p class="section-intro">Now solve these without step-by-step help. Take your time.</p>
+      <div id="practiceBox" class="question-box"></div>
+      <div class="question-actions"><button class="hint-btn" id="practiceHint">💡 Hint</button><button class="next-question" id="practiceNext" disabled>Next →</button></div>
+      <div id="practiceHintText" class="hint-text"></div>
+      <div id="practiceFeedback" class="feedback"></div>
+      <div class="question-progress" id="practiceProgress"></div>
+      <button class="next-btn" data-next="games">Enter the Game Zone →</button>
+    </section>
+
+    <section id="games" class="lesson-section">
+      <div class="section-title"><span>06</span><div><p class="kicker">PHASE 6 — GAME PRACTICE</p><h2>🎮 Game Zone</h2></div></div>
+      <div class="game-tabs">
+        <button class="game-tab active" data-game="quick">🎯 Quick Pick</button>
+        <button class="game-tab" data-game="match">🧩 Match It</button>
+        <button class="game-tab" data-game="sort">🗂️ Sort It</button>
+        <button class="game-tab" data-game="unlock">🗝️ Unlock the Door</button>
+      </div>
+
+      <div id="game-quick" class="game-panel active-game">
+        <div class="game-banner"><span>⭐ Game 1</span><h3>Quick Pick: OS or Utility?</h3><p>Choose the best answer for each clue.</p></div>
+        <div id="quickBox" class="game-question"></div>
+        <div class="quick-options" id="quickOptions"></div>
+        <div id="quickFeedback" class="feedback"></div>
+        <div class="game-score">Score: <b id="quickScore">0</b> / <span id="quickTotal">0</span></div>
+      </div>
+
+      <div id="game-match" class="game-panel">
+        <div class="game-banner"><span>🧩 Game 2</span><h3>Match It: Word + Meaning</h3><p>Tap one word, then tap its matching meaning.</p></div>
+        <div class="match-grid" id="matchGrid"></div>
+        <div id="matchFeedback" class="feedback"></div>
+      </div>
+
+      <div id="game-sort" class="game-panel">
+        <div class="game-banner"><span>🗂️ Game 3</span><h3>Sort It: Which group?</h3><p>Tap an item, then choose the group where it belongs.</p></div>
+        <div class="sort-item" id="sortItem"></div>
+        <div class="sort-groups">
+          <button data-group="os">🖥️ Operating System</button>
+          <button data-group="utility">🛠️ Utility Program</button>
+          <button data-group="other">📚 Other / Term</button>
+        </div>
+        <div id="sortFeedback" class="feedback"></div>
+        <div class="game-score">Sorted: <b id="sortScore">0</b> / <span id="sortTotal">0</span></div>
+      </div>
+
+      <div id="game-unlock" class="game-panel">
+        <div class="door-wrap">
+          <div class="door" id="door">🔒</div>
+          <div><div class="game-banner"><span>🗝️ Game 4</span><h3>Unlock the Door</h3><p>Answer correctly to unlock the computer lab.</p></div><div id="unlockBox"></div><div id="unlockOptions" class="quick-options"></div><div id="unlockFeedback" class="feedback"></div></div>
+        </div>
+      </div>
+
+      <button class="next-btn" data-next="review">Continue to Brain Challenge →</button>
+    </section>
+
+    <section id="review" class="lesson-section">
+      <div class="section-title"><span>07</span><div><p class="kicker">PHASE 7 — SPIRAL REVIEW</p><h2>🧠 Brain Challenge</h2></div></div>
+      <div class="spiral-card">
+        <p>Mixed review brings important ideas back again.</p>
+        <div id="spiralBox" class="question-box compact"></div>
+        <div id="spiralOptions" class="quick-options"></div>
+        <div id="spiralFeedback" class="feedback"></div>
+        <div class="question-progress" id="spiralProgress"></div>
+      </div>
+      <button class="next-btn" data-next="apply">Show me how to apply it →</button>
+    </section>
+
+    <section id="apply" class="lesson-section">
+      <div class="section-title"><span>08</span><div><p class="kicker">PHASE 8 — APPLICATION</p><h2>💻 Apply What You Learned</h2></div></div>
+      <div class="scenario">
+        <div class="scenario-icon">🏫</div>
+        <div>
+          <h3>Scenario: The classroom computer is slow.</h3>
+          <p>The teacher notices the computer is having trouble and files need to be managed or cleaned.</p>
+          <h4>Which system-software idea best fits this situation?</h4>
+          <div class="choices" data-q="apply1">
+            <button data-answer="wrong">Use a keyboard as the operating system.</button>
+            <button data-answer="correct">A utility program can help clean/rearrange files and fix problems.</button>
+            <button data-answer="wrong">Change the monitor into software.</button>
+          </div>
+          <div class="feedback" id="apply1-feedback"></div>
+        </div>
+      </div>
+      <div class="scenario">
+        <div class="scenario-icon">🖥️</div>
+        <div>
+          <h3>Scenario: You see icons and windows.</h3>
+          <p>The computer uses a graphical user interface. Programs are represented by icons.</p>
+          <h4>What type of operating system is being described?</h4>
+          <div class="choices" data-q="apply2">
+            <button data-answer="correct">Graphic-based operating system</button>
+            <button data-answer="wrong">Command-driven operating system</button>
+            <button data-answer="wrong">A hardware device</button>
+          </div>
+          <div class="feedback" id="apply2-feedback"></div>
+        </div>
+      </div>
+      <button class="next-btn" data-next="mastery">Take the Final Mastery Check →</button>
+    </section>
+
+    <section id="mastery" class="lesson-section">
+      <div class="section-title"><span>09</span><div><p class="kicker">PHASE 9 — MASTERY CHECK</p><h2>🏆 Final Challenge</h2></div></div>
+      <div id="masteryIntro" class="mastery-intro">
+        <h3>Ready to show what you know?</h3>
+        <p>This assessment checks the major ideas from Lesson 6. New questions are used instead of simply repeating earlier ones.</p>
+        <button class="primary-btn" id="startMastery">Start Final Challenge</button>
+      </div>
+      <div id="masteryQuiz" class="hidden">
+        <div class="mastery-top"><span id="masteryNum">Question 1 of 10</span><span>⭐ <b id="masteryLiveScore">0</b></span></div>
+        <div id="masteryQuestion" class="mastery-question"></div>
+        <div id="masteryOptions" class="quick-options"></div>
+        <div id="masteryFeedback" class="feedback"></div>
+        <button id="masteryNext" class="next-question" disabled>Next Question →</button>
+      </div>
+      <div id="results" class="results hidden">
+        <div class="celebrate">🎉</div>
+        <h2>YOU DID IT!</h2>
+        <div class="result-score" id="resultScore">0%</div>
+        <p id="resultCorrect">0 / 10 correct</p>
+        <div id="achievement" class="achievement">🏆 Lesson Master</div>
+        <div class="result-actions">
+          <button class="primary-btn" id="retryMastery">Try Again</button>
+          <button class="secondary-btn" id="mistakesBtn">🔄 Practice My Mistakes</button>
+          <button class="secondary-btn" id="backMap">↩ Back to Game Map</button>
+        </div>
+        <div id="mistakesArea" class="mistakes-area hidden"></div>
+      </div>
+    </section>
+
+    <section class="reflection">
+      <div class="reflection-icon">💭</div>
+      <div>
+        <p class="kicker">THINK ABOUT IT</p>
+        <h2>How are you feeling about this lesson?</h2>
+        <div class="reflection-choices">
+          <button data-reflection="I understand it!">😊 I understand it!</button>
+          <button data-reflection="I need a little more practice.">🙂 I need a little more practice.</button>
+          <button data-reflection="I want a challenge.">🚀 I want a challenge!</button>
+        </div>
+        <div id="reflectionMessage"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand">
+      <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <div><strong>Teacher Ed Learning Hub</strong><span>Learn • Practice • Play • Master</span><span>Teacher Ed • Educational Learning Website</span></div>
+    </div>
+    <div class="footer-lesson">Computer 3<br><b>Lesson 6: What Keeps the Computer Running</b></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
