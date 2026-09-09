@@ -580,16 +580,6 @@
     "icon": "languages"
   },
   {
-    "title": "AP 3 Game Reviewer|Kasaysayan ng Ating Pamayanan at Pagkilala sa Kulturang Pilipino",
-    "subject": "Araling Panlipunan",
-    "grade": "Grade 3",
-    "description": "Isang masayang review game para balikan, sanayin, at masterin ang aralin. / A fun review game to recall, practice, and master the lesson.",
-    "file": "lessons/araling-panlipunan/grade-3/AP3_TeacherEd_LearningHub/AP3_TeacherEd_LearningHub/index.html",
-    "date": "2026-09-07",
-    "featured": false,
-    "icon": "user"
-  },
-  {
     "title": "Math 2 Game Reviewer | Roman Numerals and Estimating Sum",
     "subject": "Mathematics",
     "grade": "Grade 2",
