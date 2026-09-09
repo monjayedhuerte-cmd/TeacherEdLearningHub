@@ -1,61 +1,398 @@
-const $ = id => document.getElementById(id);
-const steps = [...document.querySelectorAll('.form-step')];
-const titles = ['Basic Information','Curriculum Alignment','Learning Objectives','Lesson Content','ILAW Learning Process','Assessment & Differentiation','Reflection & Teacher Notes','Generate & Review'];
+const $ = (id) => document.getElementById(id);
+const steps = [...document.querySelectorAll(".form-step")];
+const titles = [
+  "Basic Information",
+  "Curriculum Alignment",
+  "Learning Objectives",
+  "Lesson Content",
+  "ILAW Learning Process",
+  "Assessment & Differentiation",
+  "Reflection & Teacher Notes",
+  "Generate & Review",
+];
 let currentStep = 1;
 let objectives = [
-  {type:'Knowledge / Understanding', text:''},
-  {type:'Skills / Application', text:''}
+  { type: "Knowledge / Understanding", text: "" },
+  { type: "Skills / Application", text: "" },
 ];
 const phases = [
-  ['Learner Engagement','Activate prior knowledge and establish relevance.','Connect the lesson to learners’ experiences and prior knowledge.','Engage learners through a short contextualized prompt, question, image, situation, or recall task.',''],
-  ['Exploration / Discovery','Learners investigate, observe, manipulate, compare, discuss, or solve a meaningful task.','Facilitate exploration without immediately giving the final answer.','Learners work individually, in pairs, or groups to explore the task and record evidence.',''],
-  ['Concept Development','Facilitate meaning-making and clarify the target concept.','Ask probing questions, surface patterns, address misconceptions, and formalize the concept.','Learners explain observations, compare ideas, and refine their understanding.',''],
-  ['Guided Practice','Provide supported practice toward the competency.','Model selectively, give feedback, and gradually release responsibility.','Learners practice with support and explain their thinking.',''],
-  ['Application / Transfer','Apply the competency in a meaningful or new situation.','Provide a contextualized or authentic task.','Learners apply the target skill and produce evidence of learning.',''],
-  ['Synthesis / Generalization','Help learners articulate what they learned and why it matters.','Use reflection questions or learner-generated statements.','Learners summarize, explain, connect, or generalize the learning.',''],
-  ['Assessment','Gather evidence of achievement of the objectives.','Administer an aligned formative or end-of-lesson task.','Learners complete the assessment independently or as appropriate.',''],
-  ['Feedback / Intervention','Respond to evidence of learning.','Provide targeted feedback, remediation, or enrichment.','Learners revise, practice, extend, or demonstrate mastery.','']
+  [
+    "Learner Engagement",
+    "Activate prior knowledge and establish relevance.",
+    "Connect the lesson to learners’ experiences and prior knowledge.",
+    "Engage learners through a short contextualized prompt, question, image, situation, or recall task.",
+    "",
+  ],
+  [
+    "Exploration / Discovery",
+    "Learners investigate, observe, manipulate, compare, discuss, or solve a meaningful task.",
+    "Facilitate exploration without immediately giving the final answer.",
+    "Learners work individually, in pairs, or groups to explore the task and record evidence.",
+    "",
+  ],
+  [
+    "Concept Development",
+    "Facilitate meaning-making and clarify the target concept.",
+    "Ask probing questions, surface patterns, address misconceptions, and formalize the concept.",
+    "Learners explain observations, compare ideas, and refine their understanding.",
+    "",
+  ],
+  [
+    "Guided Practice",
+    "Provide supported practice toward the competency.",
+    "Model selectively, give feedback, and gradually release responsibility.",
+    "Learners practice with support and explain their thinking.",
+    "",
+  ],
+  [
+    "Application / Transfer",
+    "Apply the competency in a meaningful or new situation.",
+    "Provide a contextualized or authentic task.",
+    "Learners apply the target skill and produce evidence of learning.",
+    "",
+  ],
+  [
+    "Synthesis / Generalization",
+    "Help learners articulate what they learned and why it matters.",
+    "Use reflection questions or learner-generated statements.",
+    "Learners summarize, explain, connect, or generalize the learning.",
+    "",
+  ],
+  [
+    "Assessment",
+    "Gather evidence of achievement of the objectives.",
+    "Administer an aligned formative or end-of-lesson task.",
+    "Learners complete the assessment independently or as appropriate.",
+    "",
+  ],
+  [
+    "Feedback / Intervention",
+    "Respond to evidence of learning.",
+    "Provide targeted feedback, remediation, or enrichment.",
+    "Learners revise, practice, extend, or demonstrate mastery.",
+    "",
+  ],
 ];
-function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._toast);window._toast=setTimeout(()=>t.classList.remove('show'),2300)}
-function renderDots(){const d=$('stepDots');d.innerHTML='';for(let i=1;i<=steps.length;i++){const s=document.createElement('span');s.className='step-dot'+(i<=currentStep?' active':'');d.appendChild(s)}}
-function showStep(n){currentStep=Math.max(1,Math.min(steps.length,n));steps.forEach((s,i)=>s.classList.toggle('active',i===currentStep-1));$('stepTitle').textContent=`${currentStep}. ${titles[currentStep-1]}`;$('stepCounter').textContent=`Step ${currentStep} of ${steps.length}`;$('progressFill').style.width=`${currentStep/steps.length*100}%`;renderDots();$('backBtn').disabled=currentStep===1;$('nextBtn').textContent=currentStep===steps.length?'Generate →':'Next →';window.scrollTo({top:document.querySelector('.app-card').offsetTop-90,behavior:'smooth'})}
-function renderObjectives(){const box=$('objectives');box.innerHTML='';objectives.forEach((o,i)=>{const row=document.createElement('div');row.className='objective-row';row.innerHTML=`<select aria-label="Objective category"><option ${o.type==='Knowledge / Understanding'?'selected':''}>Knowledge / Understanding</option><option ${o.type==='Skills / Application'?'selected':''}>Skills / Application</option><option ${o.type==='Values / Disposition'?'selected':''}>Values / Disposition</option></select><input aria-label="Objective ${i+1}" placeholder="Write a measurable objective" value="${escapeAttr(o.text)}"><button type="button" class="icon-btn" title="Remove objective">×</button>`;row.querySelector('select').onchange=e=>o.type=e.target.value;row.querySelector('input').oninput=e=>o.text=e.target.value;row.querySelector('button').onclick=()=>{if(objectives.length>1){objectives.splice(i,1);renderObjectives()}};box.appendChild(row)})}
-function renderPhases(){const box=$('phases');box.innerHTML='';phases.forEach((p,i)=>{const c=document.createElement('div');c.className='phase-card';c.innerHTML=`<div class="phase-top"><div class="phase-name">${i+1}. ${p[0]}</div><label class="phase-time">Minutes<input type="number" min="0" value="${p[4]||defaultTimes()[i]}" data-time="${i}"></label></div><div class="phase-grid"><label>Purpose<textarea data-p="1">${p[1]}</textarea></label><label>Teacher Facilitation<textarea data-p="2">${p[2]}</textarea></label><label class="full">Learner Activity / Expected Evidence<textarea data-p="3">${p[3]}</textarea></label></div>`;c.querySelector('[data-time]').oninput=e=>{p[4]=e.target.value;updateTime()};c.querySelectorAll('textarea').forEach(t=>t.oninput=e=>p[Number(t.dataset.p)]=e.target.value);box.appendChild(c)});updateTime()}
-function defaultTimes(){const d=Number($('duration').value)||60;const ratios=[.08,.18,.18,.18,.18,.08,.08,.04];let vals=ratios.map(x=>Math.max(1,Math.round(d*x)));let diff=d-vals.reduce((a,b)=>a+b,0);vals[3]+=diff;return vals}
-function updateTime(){const total=phases.reduce((s,p)=>s+(Number(p[4])||0),0),d=Number($('duration').value)||0;const el=$('timeSummary');el.textContent=`Total Planned Time: ${total} / ${d} minutes`;el.classList.toggle('warning',total>d)}
-$('duration').addEventListener('input',()=>{if(phases.every(p=>!p[4]))renderPhases();updateTime()});
-function escapeHtml(v=''){return String(v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
-function escapeAttr(v=''){return escapeHtml(v)}
-function val(id){return $(id)?.value?.trim()||''}
-function listify(s){return String(s||'').split(/\n|,/).map(x=>x.trim()).filter(Boolean)}
-function getData(){const data={};document.querySelectorAll('#lessonForm input,#lessonForm select,#lessonForm textarea').forEach(el=>{if(el.id)data[el.id]=el.value});data.objectives=objectives;data.phases=phases;return data}
-function setData(d){Object.entries(d||{}).forEach(([k,v])=>{const el=$(k);if(el&&typeof v==='string')el.value=v});objectives=Array.isArray(d.objectives)&&d.objectives.length?d.objectives:[{type:'Knowledge / Understanding',text:''},{type:'Skills / Application',text:''}];if(Array.isArray(d.phases)){d.phases.forEach((p,i)=>{if(phases[i])Object.assign(phases[i],p)})}renderObjectives();renderPhases()}
-function buildDocument(d){const obj=d.objectives.filter(x=>x.text).map((x,i)=>`<li><strong>${escapeHtml(x.type)}:</strong> ${escapeHtml(x.text)}</li>`).join('')||'<li>Review and complete the learning objectives.</li>';const phaseRows=d.phases.map(p=>`<tr><td><strong>${escapeHtml(p[0])}</strong><br><small>${escapeHtml(p[1])}</small></td><td>${escapeHtml(p[2])}</td><td>${escapeHtml(p[3])}</td><td>${escapeHtml(p[4])} min</td></tr>`).join('');const materials=listify(d.materials).map(x=>`<li>${escapeHtml(x)}</li>`).join('')||'<li>To be supplied by the teacher.</li>';const refs=listify(d.references).map(x=>`<li>${escapeHtml(x)}</li>`).join('')||'<li>Applicable learning resources.</li>';return `<h1>DAILY LESSON PLAN</h1><div class="doc-sub">ILAW-ALIGNED | ${escapeHtml(d.curriculum||'Curriculum-Aligned')}</div>
+function toast(msg) {
+  const t = $("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  clearTimeout(window._toast);
+  window._toast = setTimeout(() => t.classList.remove("show"), 2300);
+}
+function renderDots() {
+  const d = $("stepDots");
+  d.innerHTML = "";
+  for (let i = 1; i <= steps.length; i++) {
+    const s = document.createElement("span");
+    s.className = "step-dot" + (i <= currentStep ? " active" : "");
+    d.appendChild(s);
+  }
+}
+function showStep(n) {
+  currentStep = Math.max(1, Math.min(steps.length, n));
+  steps.forEach((s, i) => s.classList.toggle("active", i === currentStep - 1));
+  $("stepTitle").textContent = `${currentStep}. ${titles[currentStep - 1]}`;
+  $("stepCounter").textContent = `Step ${currentStep} of ${steps.length}`;
+  $("progressFill").style.width = `${(currentStep / steps.length) * 100}%`;
+  renderDots();
+  $("backBtn").disabled = currentStep === 1;
+  $("nextBtn").textContent =
+    currentStep === steps.length ? "Generate →" : "Next →";
+  window.scrollTo({
+    top: document.querySelector(".app-card").offsetTop - 90,
+    behavior: "smooth",
+  });
+}
+function renderObjectives() {
+  const box = $("objectives");
+  box.innerHTML = "";
+  objectives.forEach((o, i) => {
+    const row = document.createElement("div");
+    row.className = "objective-row";
+    row.innerHTML = `<select aria-label="Objective category"><option ${o.type === "Knowledge / Understanding" ? "selected" : ""}>Knowledge / Understanding</option><option ${o.type === "Skills / Application" ? "selected" : ""}>Skills / Application</option><option ${o.type === "Values / Disposition" ? "selected" : ""}>Values / Disposition</option></select><input aria-label="Objective ${i + 1}" placeholder="Write a measurable objective" value="${escapeAttr(o.text)}"><button type="button" class="icon-btn" title="Remove objective">×</button>`;
+    row.querySelector("select").onchange = (e) => (o.type = e.target.value);
+    row.querySelector("input").oninput = (e) => (o.text = e.target.value);
+    row.querySelector("button").onclick = () => {
+      if (objectives.length > 1) {
+        objectives.splice(i, 1);
+        renderObjectives();
+      }
+    };
+    box.appendChild(row);
+  });
+}
+function renderPhases() {
+  const box = $("phases");
+  box.innerHTML = "";
+  phases.forEach((p, i) => {
+    const c = document.createElement("div");
+    c.className = "phase-card";
+    c.innerHTML = `<div class="phase-top"><div class="phase-name">${i + 1}. ${p[0]}</div><label class="phase-time">Minutes<input type="number" min="0" value="${p[4] || defaultTimes()[i]}" data-time="${i}"></label></div><div class="phase-grid"><label>Purpose<textarea data-p="1">${p[1]}</textarea></label><label>Teacher Facilitation<textarea data-p="2">${p[2]}</textarea></label><label class="full">Learner Activity / Expected Evidence<textarea data-p="3">${p[3]}</textarea></label></div>`;
+    c.querySelector("[data-time]").oninput = (e) => {
+      p[4] = e.target.value;
+      updateTime();
+    };
+    c.querySelectorAll("textarea").forEach(
+      (t) => (t.oninput = (e) => (p[Number(t.dataset.p)] = e.target.value)),
+    );
+    box.appendChild(c);
+  });
+  updateTime();
+}
+function defaultTimes() {
+  const d = Number($("duration").value) || 60;
+  const ratios = [0.08, 0.18, 0.18, 0.18, 0.18, 0.08, 0.08, 0.04];
+  let vals = ratios.map((x) => Math.max(1, Math.round(d * x)));
+  let diff = d - vals.reduce((a, b) => a + b, 0);
+  vals[3] += diff;
+  return vals;
+}
+function updateTime() {
+  const total = phases.reduce((s, p) => s + (Number(p[4]) || 0), 0),
+    d = Number($("duration").value) || 0;
+  const el = $("timeSummary");
+  el.textContent = `Total Planned Time: ${total} / ${d} minutes`;
+  el.classList.toggle("warning", total > d);
+}
+$("duration").addEventListener("input", () => {
+  if (phases.every((p) => !p[4])) renderPhases();
+  updateTime();
+});
+function escapeHtml(v = "") {
+  return String(v).replace(
+    /[&<>"']/g,
+    (m) =>
+      ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#039;",
+      })[m],
+  );
+}
+function escapeAttr(v = "") {
+  return escapeHtml(v);
+}
+function val(id) {
+  return $(id)?.value?.trim() || "";
+}
+function listify(s) {
+  return String(s || "")
+    .split(/\n|,/)
+    .map((x) => x.trim())
+    .filter(Boolean);
+}
+function getData() {
+  const data = {};
+  document
+    .querySelectorAll(
+      "#lessonForm input,#lessonForm select,#lessonForm textarea",
+    )
+    .forEach((el) => {
+      if (el.id) data[el.id] = el.value;
+    });
+  data.objectives = objectives;
+  data.phases = phases;
+  return data;
+}
+function setData(d) {
+  Object.entries(d || {}).forEach(([k, v]) => {
+    const el = $(k);
+    if (el && typeof v === "string") el.value = v;
+  });
+  objectives =
+    Array.isArray(d.objectives) && d.objectives.length
+      ? d.objectives
+      : [
+          { type: "Knowledge / Understanding", text: "" },
+          { type: "Skills / Application", text: "" },
+        ];
+  if (Array.isArray(d.phases)) {
+    d.phases.forEach((p, i) => {
+      if (phases[i]) Object.assign(phases[i], p);
+    });
+  }
+  renderObjectives();
+  renderPhases();
+}
+function buildDocument(d) {
+  const obj =
+    d.objectives
+      .filter((x) => x.text)
+      .map(
+        (x, i) =>
+          `<li><strong>${escapeHtml(x.type)}:</strong> ${escapeHtml(x.text)}</li>`,
+      )
+      .join("") || "<li>Review and complete the learning objectives.</li>";
+  const phaseRows = d.phases
+    .map(
+      (p) =>
+        `<tr><td><strong>${escapeHtml(p[0])}</strong><br><small>${escapeHtml(p[1])}</small></td><td>${escapeHtml(p[2])}</td><td>${escapeHtml(p[3])}</td><td>${escapeHtml(p[4])} min</td></tr>`,
+    )
+    .join("");
+  const materials =
+    listify(d.materials)
+      .map((x) => `<li>${escapeHtml(x)}</li>`)
+      .join("") || "<li>To be supplied by the teacher.</li>";
+  const refs =
+    listify(d.references)
+      .map((x) => `<li>${escapeHtml(x)}</li>`)
+      .join("") || "<li>Applicable learning resources.</li>";
+  return `<h1>DAILY LESSON PLAN</h1><div class="doc-sub">ILAW-ALIGNED | ${escapeHtml(d.curriculum || "Curriculum-Aligned")}</div>
 <h2>I. BASIC INFORMATION</h2><table><tr><th>School</th><td>${escapeHtml(d.schoolName)}</td><th>Teacher</th><td>${escapeHtml(d.teacherName)}</td></tr><tr><th>Grade Level</th><td>${escapeHtml(d.gradeLevel)}</td><th>Learning Area</th><td>${escapeHtml(d.subject)}</td></tr><tr><th>Term / Quarter</th><td>${escapeHtml(d.quarter)}</td><th>Week</th><td>${escapeHtml(d.week)}</td></tr><tr><th>Date</th><td>${escapeHtml(d.lessonDate)}</td><th>Time</th><td>${escapeHtml(d.lessonTime)}</td></tr><tr><th>Duration</th><td>${escapeHtml(d.duration)} minutes</td><th>Section</th><td>${escapeHtml(d.section)}</td></tr><tr><th>Topic</th><td colspan="3">${escapeHtml(d.topic)}</td></tr></table>
-<h2>II. CURRICULUM ALIGNMENT</h2><h3>Content Standard</h3><p>${escapeHtml(d.contentStandard)||'Not provided.'}</p><h3>Performance Standard</h3><p>${escapeHtml(d.performanceStandard)||'Not provided.'}</p><h3>Learning Competency</h3><p><strong>${escapeHtml(d.competency)||'Not provided.'}</strong></p><p><strong>Competency Code:</strong> ${escapeHtml(d.competencyCode)||'Not provided.'}</p><p><strong>Key Learning Target:</strong> ${escapeHtml(d.learningTarget)||'Not provided.'}</p><p><strong>Essential Question:</strong> ${escapeHtml(d.essentialQuestion)||'Not provided.'}</p>
+<h2>II. CURRICULUM ALIGNMENT</h2><h3>Content Standard</h3><p>${escapeHtml(d.contentStandard) || "Not provided."}</p><h3>Performance Standard</h3><p>${escapeHtml(d.performanceStandard) || "Not provided."}</p><h3>Learning Competency</h3><p><strong>${escapeHtml(d.competency) || "Not provided."}</strong></p><p><strong>Competency Code:</strong> ${escapeHtml(d.competencyCode) || "Not provided."}</p><p><strong>Key Learning Target:</strong> ${escapeHtml(d.learningTarget) || "Not provided."}</p><p><strong>Essential Question:</strong> ${escapeHtml(d.essentialQuestion) || "Not provided."}</p>
 <h2>III. LEARNING OBJECTIVES</h2><ol>${obj}</ol>
-<h2>IV. CONTENT</h2><h3>Key Concepts</h3><p>${escapeHtml(d.keyConcepts)||'Not provided.'}</p><h3>Vocabulary / Important Terms</h3><p>${escapeHtml(d.vocabulary)||'Not provided.'}</p><h3>Essential Understanding</h3><p>${escapeHtml(d.essentialUnderstanding)||'Not provided.'}</p><h3>Prior Knowledge</h3><p>${escapeHtml(d.priorKnowledge)||'Not provided.'}</p>
+<h2>IV. CONTENT</h2><h3>Key Concepts</h3><p>${escapeHtml(d.keyConcepts) || "Not provided."}</p><h3>Vocabulary / Important Terms</h3><p>${escapeHtml(d.vocabulary) || "Not provided."}</p><h3>Essential Understanding</h3><p>${escapeHtml(d.essentialUnderstanding) || "Not provided."}</p><h3>Prior Knowledge</h3><p>${escapeHtml(d.priorKnowledge) || "Not provided."}</p>
 <h2>V. LEARNING RESOURCES</h2><h3>Materials</h3><ul>${materials}</ul><h3>References</h3><ul>${refs}</ul>
 <h2>VI. ILAW LEARNING PROCESS</h2><table><thead><tr><th>Phase</th><th>Teacher's Role / Facilitation</th><th>Learners' Role / Activity / Evidence</th><th>Time</th></tr></thead><tbody>${phaseRows}</tbody></table>
-<h2>VII. DIFFERENTIATED INSTRUCTION</h2><h3>Support for Learners Needing Assistance</h3><p>${escapeHtml(d.support)||'Use targeted modeling, visuals, chunked instructions, guided practice, and other appropriate supports based on evidence of learning.'}</p><h3>Enrichment for Learners Demonstrating Mastery</h3><p>${escapeHtml(d.enrichment)||'Provide an extension, challenge, transfer, or peer-explanation task.'}</p>
-<h2>VIII. ASSESSMENT</h2><h3>Formative Assessment</h3><p>${escapeHtml(d.formativeAssessment)||'To be completed by teacher.'}</p><h3>Performance / Application Task</h3><p>${escapeHtml(d.performanceTask)||'To be completed by teacher.'}</p><h3>Exit Assessment</h3><p>${escapeHtml(d.exitAssessment)||'To be completed by teacher.'}</p><h3>Criteria / Rubric</h3><p>${escapeHtml(d.criteria)||'To be specified based on the learning objective(s).'}</p>
-<h2>IX. REFLECTION</h2><ol><li>${escapeHtml(d.reflection1)||'What did learners understand well?'}</li><li>${escapeHtml(d.reflection2)||'Which learners need additional support?'}</li><li>${escapeHtml(d.reflection3)||'Which learning activity was most effective?'}</li><li>${escapeHtml(d.reflection4)||'What difficulties were encountered?'}</li><li>${escapeHtml(d.reflection5)||'What intervention will be provided?'}</li><li>${escapeHtml(d.reflection6)||'What will be adjusted in the next lesson?'}</li></ol>
-<p style="margin-top:30px;font-size:10px;color:#65748b"><em>Planning aid by Teacher Ed Learning Hub. Review and adapt according to the applicable DepEd curriculum and current school/division/region requirements.</em></p>`}
-function generate(){const d=getData();if(!d.gradeLevel||!d.subject||!d.topic||!d.competency){toast('Please complete Grade, Subject, Topic, and Learning Competency.');return}if(d.phases){}$('lessonOutput').innerHTML=buildDocument(d);$('outputSection').classList.remove('hidden');$('outputSection').scrollIntoView({behavior:'smooth',block:'start'});checkAlignment(false);toast('Lesson plan generated. Review and edit before exporting.')}
-function checkAlignment(showToast=true){const d=getData(), checks=[];checks.push(['Learning competency entered',!!d.competency]);checks.push(['Learning objectives entered',d.objectives.some(o=>o.text)]);checks.push(['At least one measurable action verb appears in an objective',d.objectives.some(o=>/\b(identify|describe|explain|solve|compare|classify|create|demonstrate|analyze|construct|apply|compute|write|read|perform|distinguish|interpret)\b/i.test(o.text))]);checks.push(['Learning activities are present',d.phases.some(p=>p[3]&&p[3].length>15)]);checks.push(['Assessment is present',!!(d.formativeAssessment||d.performanceTask||d.exitAssessment)]);checks.push(['Differentiation/support is included',!!(d.support||d.enrichment)]);checks.push(['Reflection is included',!!(d.reflection1||d.reflection2||d.reflection3||d.reflection4||d.reflection5||d.reflection6)]);const total=d.phases.reduce((s,p)=>s+(Number(p[4])||0),0);checks.push(['Time allocation is within the stated duration',total<=Number(d.duration||0)]);const score=Math.round(checks.filter(x=>x[1]).length/checks.length*100);const c=$('checker');c.classList.remove('hidden');c.innerHTML=`<div class="check-score">${score}%</div><strong>Lesson Plan Readiness Indicator</strong><div style="margin-top:10px">${checks.map(x=>`<div class="check-item"><span>${x[1]?'✓':'△'}</span><span>${escapeHtml(x[0])}${x[1]?'':' — Review this item.'}</span></div>`).join('')}</div>`;if(showToast)toast('Alignment check updated.')}
-function saveDraft(){localStorage.setItem('teacherEdILAWDraft',JSON.stringify({savedAt:new Date().toISOString(),data:getData()}));toast('Draft saved successfully.')}
-function loadDraft(){const raw=localStorage.getItem('teacherEdILAWDraft');if(!raw){toast('No saved draft found.');return}try{const p=JSON.parse(raw);setData(p.data);showStep(1);toast('Draft loaded successfully.')}catch(e){toast('The saved draft could not be loaded.')}}
-function duplicate(){saveDraft();toast('Current lesson copied to your saved draft. Edit it and save again as your new version.')}
-function wordExport(){const d=getData(), content=buildDocument(d), css2='body{font-family:Arial,sans-serif;color:#111}h1{text-align:center;font-size:20pt}h2{font-size:13pt;border-bottom:1px solid #222}table{width:100%;border-collapse:collapse}th,td{border:1px solid #555;padding:6px;vertical-align:top}th{background:#eee}';const doc=`<!doctype html><html><head><meta charset="utf-8"><style>${css2}</style></head><body>${content}</body></html>`;const blob=new Blob([doc],{type:'application/msword'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=`ILAW_Lesson_Plan_${safeName(d.subject||'Lesson')}_${safeName(d.gradeLevel||'Grade')}_${safeName(d.lessonDate||'Draft')}.doc`;a.click();URL.revokeObjectURL(a.href);toast('Word-compatible document downloaded.')}
-function safeName(s){return String(s).replace(/[^\w\-]+/g,'_').replace(/^_+|_+$/g,'')||'Lesson'}
-$('addObjective').onclick=()=>{objectives.push({type:'Skills / Application',text:''});renderObjectives()};
-$('backBtn').onclick=()=>showStep(currentStep-1);
-$('nextBtn').onclick=()=>{if(currentStep<steps.length)showStep(currentStep+1);else generate()};
-$('generateBtn').onclick=generate;
-$('saveDraftBtn').onclick=saveDraft;$('saveDraftTop').onclick=saveDraft;$('loadDraftTop').onclick=loadDraft;
-$('checkBtn').onclick=()=>checkAlignment(true);
-$('editBtn').onclick=()=>{ $('lessonOutput').contentEditable='true';$('lessonOutput').focus();toast('Preview is now editable. Changes are local to this preview.')};
-$('duplicateBtn').onclick=duplicate;$('wordBtn').onclick=wordExport;$('printBtn').onclick=()=>window.print();
-$('lessonForm').addEventListener('submit',e=>e.preventDefault());
-$('duration').addEventListener('change',()=>{renderPhases()});
-renderObjectives();renderPhases();showStep(1);
+<h2>VII. DIFFERENTIATED INSTRUCTION</h2><h3>Support for Learners Needing Assistance</h3><p>${escapeHtml(d.support) || "Use targeted modeling, visuals, chunked instructions, guided practice, and other appropriate supports based on evidence of learning."}</p><h3>Enrichment for Learners Demonstrating Mastery</h3><p>${escapeHtml(d.enrichment) || "Provide an extension, challenge, transfer, or peer-explanation task."}</p>
+<h2>VIII. ASSESSMENT</h2><h3>Formative Assessment</h3><p>${escapeHtml(d.formativeAssessment) || "To be completed by teacher."}</p><h3>Performance / Application Task</h3><p>${escapeHtml(d.performanceTask) || "To be completed by teacher."}</p><h3>Exit Assessment</h3><p>${escapeHtml(d.exitAssessment) || "To be completed by teacher."}</p><h3>Criteria / Rubric</h3><p>${escapeHtml(d.criteria) || "To be specified based on the learning objective(s)."}</p>
+<h2>IX. REFLECTION</h2><ol><li>${escapeHtml(d.reflection1) || "What did learners understand well?"}</li><li>${escapeHtml(d.reflection2) || "Which learners need additional support?"}</li><li>${escapeHtml(d.reflection3) || "Which learning activity was most effective?"}</li><li>${escapeHtml(d.reflection4) || "What difficulties were encountered?"}</li><li>${escapeHtml(d.reflection5) || "What intervention will be provided?"}</li><li>${escapeHtml(d.reflection6) || "What will be adjusted in the next lesson?"}</li></ol>
+<p style="margin-top:30px;font-size:10px;color:#65748b"><em>Planning aid by Teacher Ed Learning Hub. Review and adapt according to the applicable DepEd curriculum and current school/division/region requirements.</em></p>`;
+}
+function generate() {
+  const d = getData();
+  if (!d.gradeLevel || !d.subject || !d.topic || !d.competency) {
+    toast("Please complete Grade, Subject, Topic, and Learning Competency.");
+    return;
+  }
+  if (d.phases) {
+  }
+  $("lessonOutput").innerHTML = buildDocument(d);
+  $("outputSection").classList.remove("hidden");
+  $("outputSection").scrollIntoView({ behavior: "smooth", block: "start" });
+  checkAlignment(false);
+  toast("Lesson plan generated. Review and edit before exporting.");
+}
+function checkAlignment(showToast = true) {
+  const d = getData(),
+    checks = [];
+  checks.push(["Learning competency entered", !!d.competency]);
+  checks.push([
+    "Learning objectives entered",
+    d.objectives.some((o) => o.text),
+  ]);
+  checks.push([
+    "At least one measurable action verb appears in an objective",
+    d.objectives.some((o) =>
+      /\b(identify|describe|explain|solve|compare|classify|create|demonstrate|analyze|construct|apply|compute|write|read|perform|distinguish|interpret)\b/i.test(
+        o.text,
+      ),
+    ),
+  ]);
+  checks.push([
+    "Learning activities are present",
+    d.phases.some((p) => p[3] && p[3].length > 15),
+  ]);
+  checks.push([
+    "Assessment is present",
+    !!(d.formativeAssessment || d.performanceTask || d.exitAssessment),
+  ]);
+  checks.push([
+    "Differentiation/support is included",
+    !!(d.support || d.enrichment),
+  ]);
+  checks.push([
+    "Reflection is included",
+    !!(
+      d.reflection1 ||
+      d.reflection2 ||
+      d.reflection3 ||
+      d.reflection4 ||
+      d.reflection5 ||
+      d.reflection6
+    ),
+  ]);
+  const total = d.phases.reduce((s, p) => s + (Number(p[4]) || 0), 0);
+  checks.push([
+    "Time allocation is within the stated duration",
+    total <= Number(d.duration || 0),
+  ]);
+  const score = Math.round(
+    (checks.filter((x) => x[1]).length / checks.length) * 100,
+  );
+  const c = $("checker");
+  c.classList.remove("hidden");
+  c.innerHTML = `<div class="check-score">${score}%</div><strong>Lesson Plan Readiness Indicator</strong><div style="margin-top:10px">${checks.map((x) => `<div class="check-item"><span>${x[1] ? "✓" : "△"}</span><span>${escapeHtml(x[0])}${x[1] ? "" : " — Review this item."}</span></div>`).join("")}</div>`;
+  if (showToast) toast("Alignment check updated.");
+}
+function saveDraft() {
+  localStorage.setItem(
+    "teacherEdILAWDraft",
+    JSON.stringify({ savedAt: new Date().toISOString(), data: getData() }),
+  );
+  toast("Draft saved successfully.");
+}
+function loadDraft() {
+  const raw = localStorage.getItem("teacherEdILAWDraft");
+  if (!raw) {
+    toast("No saved draft found.");
+    return;
+  }
+  try {
+    const p = JSON.parse(raw);
+    setData(p.data);
+    showStep(1);
+    toast("Draft loaded successfully.");
+  } catch (e) {
+    toast("The saved draft could not be loaded.");
+  }
+}
+function duplicate() {
+  saveDraft();
+  toast(
+    "Current lesson copied to your saved draft. Edit it and save again as your new version.",
+  );
+}
+function wordExport() {
+  const d = getData(),
+    content = buildDocument(d),
+    css2 =
+      "body{font-family:Arial,sans-serif;color:#111}h1{text-align:center;font-size:20pt}h2{font-size:13pt;border-bottom:1px solid #222}table{width:100%;border-collapse:collapse}th,td{border:1px solid #555;padding:6px;vertical-align:top}th{background:#eee}";
+  const doc = `<!doctype html><html><head><meta charset="utf-8"><style>${css2}</style></head><body>${content}</body></html>`;
+  const blob = new Blob([doc], { type: "application/msword" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `ILAW_Lesson_Plan_${safeName(d.subject || "Lesson")}_${safeName(d.gradeLevel || "Grade")}_${safeName(d.lessonDate || "Draft")}.doc`;
+  a.click();
+  URL.revokeObjectURL(a.href);
+  toast("Word-compatible document downloaded.");
+}
+function safeName(s) {
+  return (
+    String(s)
+      .replace(/[^\w\-]+/g, "_")
+      .replace(/^_+|_+$/g, "") || "Lesson"
+  );
+}
+$("addObjective").onclick = () => {
+  objectives.push({ type: "Skills / Application", text: "" });
+  renderObjectives();
+};
+$("backBtn").onclick = () => showStep(currentStep - 1);
+$("nextBtn").onclick = () => {
+  if (currentStep < steps.length) showStep(currentStep + 1);
+  else generate();
+};
+$("generateBtn").onclick = generate;
+$("saveDraftBtn").onclick = saveDraft;
+$("saveDraftTop").onclick = saveDraft;
+$("loadDraftTop").onclick = loadDraft;
+$("checkBtn").onclick = () => checkAlignment(true);
+$("editBtn").onclick = () => {
+  $("lessonOutput").contentEditable = "true";
+  $("lessonOutput").focus();
+  toast("Preview is now editable. Changes are local to this preview.");
+};
+$("duplicateBtn").onclick = duplicate;
+$("wordBtn").onclick = wordExport;
+$("printBtn").onclick = () => window.print();
+$("lessonForm").addEventListener("submit", (e) => e.preventDefault());
+$("duration").addEventListener("change", () => {
+  renderPhases();
+});
+renderObjectives();
+renderPhases();
+showStep(1);
