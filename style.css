@@ -1,5 +1,5 @@
 :root {
-  --bg: #f7f9fc;
+  --bg: #e0e2e6;
   --surface: rgba(255,255,255,.88);
   --surface-solid: #ffffff;
   --text: #172033;
@@ -2810,7 +2810,7 @@ body.dark .footer-bottom {
 
   padding: 70px 0;
 
-  background: #f7f9fc;
+  background: #edeff1;
 
   overflow: hidden;
 }
