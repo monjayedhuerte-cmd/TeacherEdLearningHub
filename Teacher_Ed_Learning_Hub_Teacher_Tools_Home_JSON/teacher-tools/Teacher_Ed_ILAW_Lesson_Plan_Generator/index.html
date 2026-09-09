@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Teacher Ed Learning Hub ILAW-Aligned Lesson Plan Generator">
+  <title>ILAW Lesson Plan Generator | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="BrandLogo.png">
+  <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-RLFGHJNFFN"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-RLFGHJNFFN");
+    </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub logo" class="brand-logo">
+      <div>
+        <div class="brand-name">Teacher Ed Learning Hub</div>
+        <div class="brand-tool">ILAW Lesson Plan Generator</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="ghost-btn" id="loadDraftTop">Load Draft</button>
+      <button class="primary-btn" id="saveDraftTop">Save Draft</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div>
+        <span class="eyebrow">TEACHER TOOL</span>
+        <h1>ILAW Lesson Plan Generator</h1>
+        <p>Create an editable, learner-centered, competency-based lesson plan. Enter your lesson details, review the generated plan, then edit, save, print, or export it for Word.</p>
+        <div class="notice"><strong>Important:</strong> This is a planning aid, not an official DepEd template. Verify competencies, standards, codes, and local requirements using the applicable official sources.</div>
+      </div>
+      <img src="BrandLogo.png" alt="" class="hero-logo" aria-hidden="true">
+    </section>
+
+    <section class="feature-grid">
+      <div class="feature-card"><span>01</span><strong>PLAN</strong><p>Build your lesson step by step.</p></div>
+      <div class="feature-card"><span>02</span><strong>ALIGN</strong><p>Connect competency, objectives, activities, and assessment.</p></div>
+      <div class="feature-card"><span>03</span><strong>EXPORT</strong><p>Edit, save, print, and download your lesson plan.</p></div>
+    </section>
+
+    <section class="app-card">
+      <div class="progress-wrap">
+        <div class="progress-head"><strong id="stepTitle">1. Basic Information</strong><span id="stepCounter">Step 1 of 8</span></div>
+        <div class="progress-bar"><div id="progressFill"></div></div>
+        <div class="step-dots" id="stepDots"></div>
+      </div>
+
+      <form id="lessonForm" novalidate>
+        <section class="form-step active" data-step="1">
+          <h2>Basic Information</h2>
+          <p class="section-help">Start with the school and lesson details.</p>
+          <div class="form-grid">
+            <label>School Name<input id="schoolName" name="schoolName" placeholder="Enter school name"></label>
+            <label>Teacher Name<input id="teacherName" name="teacherName" placeholder="Teacher name"></label>
+            <label>School ID<input id="schoolId" name="schoolId" placeholder="Optional"></label>
+            <label>District<input id="district" name="district" placeholder="District"></label>
+            <label>Division<input id="division" name="division" placeholder="Schools Division"></label>
+            <label>Region<input id="region" name="region" placeholder="Region"></label>
+            <label>School Year<input id="schoolYear" name="schoolYear" value="2026–2027"></label>
+            <label>Grade Level<select id="gradeLevel" name="gradeLevel">
+              <option value="">Select grade</option><option>Kindergarten</option>
+              <option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option>
+              <option>Grade 7</option><option>Grade 8</option><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option>
+            </select></label>
+            <label>Learning Area / Subject<select id="subject" name="subject">
+              <option value="">Select subject</option><option>English</option><option>Filipino</option><option>Mathematics</option><option>Science</option>
+              <option>Araling Panlipunan</option><option>Edukasyon sa Pagpapakatao / GMRC</option><option>MAPEH</option><option>EPP</option>
+              <option>Technology and Livelihood Education</option><option>Computer / ICT</option><option>Physical Education</option><option>Health</option><option>Other</option>
+            </select></label>
+            <label>Term / Quarter<input id="quarter" name="quarter" placeholder="e.g., Term 1 / Quarter 1"></label>
+            <label>Week<input id="week" name="week" placeholder="Week"></label>
+            <label>Date<input id="lessonDate" name="lessonDate" type="date"></label>
+            <label>Time<input id="lessonTime" name="lessonTime" type="text" placeholder="e.g., 8:00–9:00 AM"></label>
+            <label>Duration (minutes)<input id="duration" name="duration" type="number" min="10" value="60"></label>
+            <label>Section<input id="section" name="section" placeholder="Section"></label>
+            <label class="full">Topic / Lesson Title<input id="topic" name="topic" placeholder="Enter lesson title"></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="2">
+          <h2>Curriculum Alignment</h2>
+          <p class="section-help">Paste the exact competency and standards when available. The tool will not invent official codes.</p>
+          <div class="form-grid">
+            <label>Curriculum<select id="curriculum" name="curriculum"><option>MATATAG Curriculum</option><option>K to 12 Curriculum</option><option>Other</option></select></label>
+            <label>Competency Code<input id="competencyCode" name="competencyCode" placeholder="Enter only if verified"></label>
+            <label class="full">Content Standard<textarea id="contentStandard" name="contentStandard" placeholder="Paste or enter the applicable content standard"></textarea></label>
+            <label class="full">Performance Standard<textarea id="performanceStandard" name="performanceStandard" placeholder="Paste or enter the applicable performance standard"></textarea></label>
+            <label class="full">Learning Competency<textarea id="competency" name="competency" required placeholder="Paste the exact learning competency"></textarea></label>
+            <label>Key Learning Target<input id="learningTarget" name="learningTarget" placeholder="What should learners demonstrate?"></label>
+            <label>Essential Question<input id="essentialQuestion" name="essentialQuestion" placeholder="A meaningful guiding question"></label>
+          </div>
+          <div class="tip">Tip: Preserve official competency wording exactly as supplied by your curriculum guide.</div>
+        </section>
+
+        <section class="form-step" data-step="3">
+          <h2>Learning Objectives</h2>
+          <p class="section-help">Create measurable objectives aligned to the competency.</p>
+          <div id="objectives"></div>
+          <button type="button" class="secondary-btn" id="addObjective">+ Add Objective</button>
+        </section>
+
+        <section class="form-step" data-step="4">
+          <h2>Lesson Content & Resources</h2>
+          <div class="form-grid">
+            <label class="full">Key Concepts<textarea id="keyConcepts" name="keyConcepts" placeholder="Essential concepts learners need to understand"></textarea></label>
+            <label class="full">Vocabulary / Important Terms<textarea id="vocabulary" name="vocabulary" placeholder="Terms, meanings, language supports"></textarea></label>
+            <label class="full">Essential Understanding<textarea id="essentialUnderstanding" name="essentialUnderstanding" placeholder="What lasting understanding should learners take away?"></textarea></label>
+            <label class="full">Prior Knowledge<textarea id="priorKnowledge" name="priorKnowledge" placeholder="What should learners already know or be able to do?"></textarea></label>
+            <label class="full">Materials<textarea id="materials" name="materials" placeholder="e.g., flashcards, manipulatives, activity sheets"></textarea></label>
+            <label class="full">References<textarea id="references" name="references" placeholder="Learning guides, modules, books, official references"></textarea></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="5">
+          <h2>ILAW Learning Process</h2>
+          <p class="section-help">Adjust these phases to suit the competency. The sequence is editable and should not be treated as a rigid one-size-fits-all script.</p>
+          <div class="phase-list" id="phases"></div>
+          <div class="time-total" id="timeSummary">Total Planned Time: 60 / 60 minutes</div>
+        </section>
+
+        <section class="form-step" data-step="6">
+          <h2>Assessment & Differentiation</h2>
+          <div class="form-grid">
+            <label class="full">Formative Assessment<textarea id="formativeAssessment" name="formativeAssessment" placeholder="Checks for understanding during the lesson"></textarea></label>
+            <label class="full">Performance / Application Task<textarea id="performanceTask" name="performanceTask" placeholder="Authentic or contextualized application task"></textarea></label>
+            <label class="full">Exit Assessment<textarea id="exitAssessment" name="exitAssessment" placeholder="Short end-of-lesson check"></textarea></label>
+            <label class="full">Criteria / Rubric<textarea id="criteria" name="criteria" placeholder="Success criteria, rubric, or scoring guide"></textarea></label>
+            <label class="full">Support for Learners Needing Assistance<textarea id="support" name="support" placeholder="Visuals, modeling, chunking, guided practice, additional processing time, etc."></textarea></label>
+            <label class="full">Enrichment for Learners Demonstrating Mastery<textarea id="enrichment" name="enrichment" placeholder="Challenge, extension, transfer, peer explanation, etc."></textarea></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="7">
+          <h2>Reflection & Teacher Notes</h2>
+          <div class="form-grid">
+            <label class="full">What did learners understand well?<textarea id="reflection1" name="reflection1"></textarea></label>
+            <label class="full">Which learners need additional support?<textarea id="reflection2" name="reflection2"></textarea></label>
+            <label class="full">Which learning activity was most effective?<textarea id="reflection3" name="reflection3"></textarea></label>
+            <label class="full">What difficulties were encountered?<textarea id="reflection4" name="reflection4"></textarea></label>
+            <label class="full">What intervention will be provided?<textarea id="reflection5" name="reflection5"></textarea></label>
+            <label class="full">What will be adjusted in the next lesson?<textarea id="reflection6" name="reflection6"></textarea></label>
+          </div>
+        </section>
+
+        <section class="form-step" data-step="8">
+          <h2>Generate & Review</h2>
+          <p class="section-help">Generate the complete lesson plan, then review and edit it before exporting.</p>
+          <div class="generate-box">
+            <div><strong>Ready to generate?</strong><p>Your entered information will be assembled into an editable ILAW-aligned lesson plan.</p></div>
+            <button type="button" class="primary-btn large" id="generateBtn">Generate Lesson Plan</button>
+          </div>
+          <div id="checker" class="checker hidden"></div>
+        </section>
+
+        <div class="nav-bar">
+          <button type="button" class="ghost-btn" id="backBtn">← Back</button>
+          <div class="nav-right">
+            <button type="button" class="secondary-btn" id="saveDraftBtn">Save Draft</button>
+            <button type="button" class="primary-btn" id="nextBtn">Next →</button>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <section class="output-card hidden" id="outputSection">
+      <div class="output-head">
+        <div>
+          <span class="eyebrow">GENERATED DOCUMENT</span>
+          <h2>Lesson Plan Preview</h2>
+        </div>
+        <div class="output-actions">
+          <button class="secondary-btn" id="checkBtn">Check Alignment</button>
+          <button class="secondary-btn" id="editBtn">Edit</button>
+          <button class="secondary-btn" id="duplicateBtn">Duplicate</button>
+          <button class="primary-btn" id="wordBtn">Download Word</button>
+          <button class="primary-btn" id="printBtn">Print / PDF</button>
+        </div>
+      </div>
+      <div id="lessonOutput" class="lesson-document" contenteditable="false"></div>
+      <div class="output-note">Review all generated content and verify official curriculum details before use.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="BrandLogo.png" alt="Teacher Ed Learning Hub" class="footer-logo">
+    <div><strong>Teacher Ed Learning Hub</strong><br><span>Teacher Tools • ILAW Lesson Plan Generator</span></div>
+    <div class="footer-right">© Teacher Ed Learning Hub — Teacher Tools</div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

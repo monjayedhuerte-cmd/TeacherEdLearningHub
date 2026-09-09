@@ -33,6 +33,14 @@
       "file": "TOS%20Generator/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "ILAW Lesson Plan Generator",
+      "title": "Lesson Plan Generator",
+      "description": "Create an editable, learner-centered, competency-based lesson plan. Enter your lesson details, review the generated plan, then edit, save, print, or export it for Word.",
+      "file": "Teacher_Ed_ILAW_Lesson_Plan_Generator/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }
