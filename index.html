@@ -875,7 +875,6 @@
 
     </div>
 
-
     <!-- =================================================
          ABOUT TEACHER ED
          ================================================= -->
@@ -1055,6 +1054,166 @@
 
     </div>
 
+</section>
+
+<!-- ================================
+     COMMUNITY VOICES
+================================= -->
+<section class="community-section" id="community">
+    <div class="community-container">
+
+        <div class="community-header">
+            <span class="section-kicker">COMMUNITY VOICES</span>
+
+            <h2>Comments & Suggestions</h2>
+
+            <p>
+                Share your thoughts about Teacher Ed Learning Hub.
+                Your feedback can help improve learning resources
+                for learners, parents, and teachers.
+            </p>
+        </div>
+
+        <div class="community-layout">
+
+            <!-- FEEDBACK FORM -->
+            <div class="community-form-card">
+
+                <div class="community-card-icon">
+                    <i data-lucide="message-circle"></i>
+                </div>
+
+                <div class="community-form-heading">
+                    <h3>Share Your Feedback</h3>
+                    <p>
+                        Tell us what you like, what can be improved,
+                        or suggest a new learning resource.
+                    </p>
+                </div>
+
+                <form id="feedbackForm">
+
+                    <div class="feedback-field">
+                        <label for="feedbackName">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="feedbackName"
+                            placeholder="Enter your name"
+                            maxlength="50"
+                            required
+                        >
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackRole">
+                            I am a...
+                        </label>
+
+                        <select id="feedbackRole" required>
+                            <option value="">Select your role</option>
+                            <option value="Learner">Learner</option>
+                            <option value="Parent / Guardian">
+                                Parent / Guardian
+                            </option>
+                            <option value="Teacher">Teacher</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackType">
+                            Feedback Type
+                        </label>
+
+                        <select id="feedbackType" required>
+                            <option value="">Select feedback type</option>
+                            <option value="Comment">Comment</option>
+                            <option value="Suggestion">Suggestion</option>
+                            <option value="Question">Question</option>
+                        </select>
+                    </div>
+
+                    <div class="feedback-field">
+                        <label for="feedbackMessage">
+                            Your Message
+                        </label>
+
+                        <textarea
+                            id="feedbackMessage"
+                            placeholder="Write your comment or suggestion..."
+                            maxlength="500"
+                            required
+                        ></textarea>
+
+                        <div class="character-count">
+                            <span id="characterCount">0</span>/500
+                        </div>
+                    </div>
+
+                    <div class="feedback-notice">
+                        <i data-lucide="shield-check"></i>
+
+                        <span>
+                            Please do not share private information,
+                            phone numbers, addresses, passwords, or
+                            personal student information.
+                        </span>
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="feedback-submit"
+                        id="feedbackSubmit"
+                    >
+                        <i data-lucide="send"></i>
+                        <span>Submit Feedback</span>
+                    </button>
+
+                    <div
+                        id="feedbackStatus"
+                        class="feedback-status"
+                    ></div>
+
+                </form>
+            </div>
+
+
+            <!-- PUBLIC COMMENTS -->
+            <div class="community-comments-card">
+
+                <div class="comments-header">
+                    <div>
+                        <span class="comments-kicker">
+                            COMMUNITY FEEDBACK
+                        </span>
+
+                        <h3>What Our Community Says</h3>
+                    </div>
+
+                    <div class="comments-count">
+                        <i data-lucide="messages-square"></i>
+                        <span id="feedbackCount">0</span>
+                    </div>
+                </div>
+
+                <div
+                    id="feedbackList"
+                    class="feedback-list"
+                >
+                    <div class="feedback-loading">
+                        <div class="loading-spinner"></div>
+                        <p>Loading community feedback...</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 </section>
 
 <!-- =========================================================
@@ -1253,7 +1412,7 @@
         © 2026 TEACHER ED Learning Hub. All rights reserved.
     </div>
 </footer>
-
+  <script type="module" src="community-feedback.js"></script>
   <script src="app.js"></script>
   <script>
     lucide.createIcons();

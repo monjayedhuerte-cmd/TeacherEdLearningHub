@@ -1,0 +1,33 @@
+FIRESTORE RULES — COMMUNITY FEEDBACK
+
+Replace YOUR_ADMIN_UID with your Firebase Authentication teacher/admin UID.
+
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /feedback/{feedbackId} {
+
+      allow read: if resource.data.approved == true
+                  || (request.auth != null
+                      && request.auth.uid == "YOUR_ADMIN_UID");
+
+      allow create: if
+        request.resource.data.name is string
+        && request.resource.data.name.size() >= 1
+        && request.resource.data.name.size() <= 50
+        && request.resource.data.role is string
+        && request.resource.data.type is string
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 5
+        && request.resource.data.message.size() <= 500
+        && request.resource.data.approved == false;
+
+      allow update, delete: if
+        request.auth != null
+        && request.auth.uid == "YOUR_ADMIN_UID";
+    }
+  }
+}
+
+Firebase Console → Firestore Database → Rules → replace YOUR_ADMIN_UID → Publish.

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Community Feedback Moderation | Teacher Ed</title>
+    <link rel="icon" type="image/png" href="assets/teacher-ed-logo.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="topbar">
+        <a href="../index.html" class="brand">
+          <img src="assets/teacher-ed-logo.svg" alt="Teacher Ed Learning Hub" />
+          <div><strong>Teacher Ed</strong><span>Learning Hub</span></div>
+        </a>
+        <a href="../index.html" class="back-link">← Teacher Tools</a>
+      </header>
+
+      <section id="loginSection" class="login-section">
+        <div class="login-card">
+          <div class="login-icon">🔐</div>
+          <span class="eyebrow">TEACHER ADMIN</span>
+          <h1>Community Feedback</h1>
+          <p>
+            Sign in to review, approve, or delete learner and parent feedback.
+          </p>
+          <form id="loginForm">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+            />
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your password"
+              required
+            />
+            <button type="submit" class="primary-button" id="loginButton">
+              Sign In
+            </button>
+          </form>
+          <div id="loginMessage" class="message"></div>
+        </div>
+      </section>
+
+      <main id="dashboard" class="dashboard hidden">
+        <div class="dashboard-header">
+          <div>
+            <span class="eyebrow">COMMUNITY VOICES</span>
+            <h1>Feedback Moderation</h1>
+            <p>
+              Review feedback before it appears publicly on Teacher Ed Learning
+              Hub.
+            </p>
+          </div>
+          <button id="logoutButton" class="logout-button">Sign Out</button>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon pending">⏳</div>
+            <div><span>Pending</span><strong id="pendingCount">0</strong></div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon approved">✓</div>
+            <div>
+              <span>Approved</span><strong id="approvedCount">0</strong>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon total">💬</div>
+            <div><span>Total</span><strong id="totalCount">0</strong></div>
+          </div>
+        </div>
+
+        <div class="toolbar">
+          <div>
+            <h2>Feedback</h2>
+            <p>Manage community submissions.</p>
+          </div>
+          <select id="statusFilter">
+            <option value="pending">Pending</option>
+            <option value="approved">Approved</option>
+            <option value="all">All Feedback</option>
+          </select>
+        </div>
+
+        <section id="feedbackList" class="feedback-list">
+          <div class="loading">Loading feedback...</div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
