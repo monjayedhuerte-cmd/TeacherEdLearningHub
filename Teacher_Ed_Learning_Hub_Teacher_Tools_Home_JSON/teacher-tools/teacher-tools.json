@@ -49,6 +49,14 @@
       "file": "feedback-moderation/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "Item-Analysis Tool",
+      "title": "Item-Analysis Tracker",
+      "description": "Turn assessment results into instructional action.",
+      "file": "TeacherEd_Item_Analysis_Tracker/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }

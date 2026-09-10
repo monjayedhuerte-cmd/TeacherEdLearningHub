@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b2b5c" />
+    <meta
+      name="description"
+      content="Teacher Ed Learning Hub Item Analysis & Intervention Tracker"
+    />
+    <title>Item Analysis Tracker | Teacher Ed Learning Hub</title>
+    <link rel="icon" type="image/png" href="BrandLogo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img
+          src="BrandLogo.png"
+          alt="Teacher Ed Learning Hub Logo"
+          class="brand-logo"
+        />
+        <div>
+          <div class="brand-name">Teacher Ed Learning Hub</div>
+          <div class="brand-subtitle">Item Analysis & Intervention Tracker</div>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button class="btn btn-outline" id="demoBtn">Load Demo Data</button>
+        <button class="btn btn-gold" id="saveBtn">Save Assessment</button>
+      </div>
+    </header>
+
+    <nav class="nav" aria-label="Main navigation">
+      <div class="nav-inner">
+        <button class="nav-toggle" id="navToggle" aria-expanded="false">
+          ☰ Menu
+        </button>
+        <div class="nav-links" id="navLinks">
+          <a href="#dashboard">Dashboard</a>
+          <a href="#assessment">Assessment</a>
+          <a href="#students">Students</a>
+          <a href="#item-analysis">Item Analysis</a>
+          <a href="#competencies">Competencies</a>
+          <a href="#intervention">Intervention</a>
+          <a href="#reassessment">Reassessment</a>
+          <a href="#reports">Reports</a>
+          <a href="#settings">Settings</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <section class="hero" id="dashboard">
+        <div>
+          <span class="eyebrow">POST-ASSESSMENT TEACHER TOOL</span>
+          <h1>Welcome, Teacher</h1>
+          <p>Turn assessment results into instructional action.</p>
+        </div>
+        <div class="privacy-note">
+          🔒 Local-first tool — assessment data stays in this browser.
+        </div>
+      </section>
+
+      <section class="dashboard-grid" aria-label="Assessment summary">
+        <div class="stat-card">
+          <span>Total Students</span><strong id="statStudents">0</strong
+          ><small>students assessed</small>
+        </div>
+        <div class="stat-card">
+          <span>Total Items</span><strong id="statItems">0</strong
+          ><small>test items</small>
+        </div>
+        <div class="stat-card">
+          <span>Class Average</span><strong id="statAverage">0%</strong
+          ><small>average percentage</small>
+        </div>
+        <div class="stat-card success">
+          <span>Mastered</span><strong id="statMastered">0</strong
+          ><small>at or above mastery</small>
+        </div>
+        <div class="stat-card warning">
+          <span>Needs Improvement</span><strong id="statNearly">0</strong
+          ><small>nearly mastered</small>
+        </div>
+        <div class="stat-card danger">
+          <span>Needs Intervention</span><strong id="statIntervention">0</strong
+          ><small>below intervention level</small>
+        </div>
+        <div class="stat-card">
+          <span>Priority Item</span><strong id="statHardest">—</strong
+          ><small id="statHardestPct">lowest % correct</small>
+        </div>
+        <div class="stat-card accent">
+          <span>Overall Mastery</span><strong id="statMastery">0%</strong
+          ><small>students who mastered</small>
+        </div>
+      </section>
+
+      <section class="section" id="assessment">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">01</span>
+            <h2>Assessment Information</h2>
+          </div>
+          <span class="section-help"
+            >Set the assessment details before entering results.</span
+          >
+        </div>
+        <div class="form-grid">
+          <label
+            >School Name<input id="schoolName" placeholder="School name"
+          /></label>
+          <label
+            >Teacher Name<input
+              id="teacherName"
+              value="Teacher Ed"
+              placeholder="Teacher name"
+          /></label>
+          <label
+            >Grade Level<input
+              id="gradeLevel"
+              value="Grade 3"
+              placeholder="e.g., Grade 3"
+          /></label>
+          <label>Section<input id="sectionName" placeholder="Section" /></label>
+          <label
+            >Subject<input
+              id="subject"
+              value="Mathematics"
+              placeholder="Subject"
+          /></label>
+          <label
+            >Quarter / Term<select id="quarter">
+              <option>Quarter 1</option>
+              <option>Quarter 2</option>
+              <option>Quarter 3</option>
+              <option>Quarter 4</option>
+              <option>Term 1</option>
+              <option>Term 2</option>
+              <option>Term 3</option>
+            </select></label
+          >
+          <label
+            >Assessment Title<input
+              id="assessmentTitle"
+              value="Periodic Test"
+              placeholder="Assessment title"
+          /></label>
+          <label
+            >Date of Assessment<input id="assessmentDate" type="date"
+          /></label>
+          <label>School Year<input id="schoolYear" value="2026–2027" /></label>
+          <label
+            >Mastery Threshold (%)<input
+              id="masteryThreshold"
+              type="number"
+              min="1"
+              max="100"
+              value="75"
+          /></label>
+          <label
+            >Nearly Mastered Threshold (%)<input
+              id="nearlyThreshold"
+              type="number"
+              min="0"
+              max="99"
+              value="60"
+          /></label>
+          <label
+            >Easy Item Threshold (%)<input
+              id="easyThreshold"
+              type="number"
+              min="1"
+              max="100"
+              value="80"
+          /></label>
+          <label
+            >Moderate Item Threshold (%)<input
+              id="moderateThreshold"
+              type="number"
+              min="0"
+              max="99"
+              value="60"
+          /></label>
+          <label
+            >Total Items<input
+              id="totalItems"
+              type="number"
+              min="1"
+              max="200"
+              value="20"
+          /></label>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-primary" id="applyItemCount">
+            Apply Item Count
+          </button>
+          <button class="btn btn-outline" id="addItemBtn">Add Item</button>
+          <button class="btn btn-outline" id="addStudentBtn">
+            Add Student
+          </button>
+          <button class="btn btn-danger-outline" id="resetBtn">
+            Reset Assessment
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="students">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">02</span>
+            <h2>Student Roster</h2>
+          </div>
+          <div class="section-tools">
+            <input
+              id="studentSearch"
+              class="compact-input"
+              placeholder="Search student…"
+            />
+            <select id="statusFilter" class="compact-input">
+              <option value="all">All statuses</option>
+              <option value="mastered">Mastered</option>
+              <option value="nearly">Nearly Mastered</option>
+              <option value="intervention">Needs Intervention</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="studentTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Student Name</th>
+                <th>Score</th>
+                <th>Correct</th>
+                <th>Wrong</th>
+                <th>Percentage</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="empty" id="studentEmpty">
+          📊 No assessment data yet. Add students and enter responses to begin
+          item analysis.
+        </div>
+      </section>
+
+      <section class="section" id="response-matrix">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">03</span>
+            <h2>Student Item Response Matrix</h2>
+          </div>
+          <span class="section-help"
+            >Click a cell to cycle: ✓ Correct → ✗ Wrong → blank.</span
+          >
+        </div>
+        <div class="matrix-legend">
+          <span>✓ Correct</span><span>✗ Wrong</span><span>— Not recorded</span
+          ><span>Scores update automatically from recorded responses.</span>
+        </div>
+        <div class="table-wrap matrix-wrap">
+          <table class="matrix" id="matrixTable">
+            <thead></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="item-analysis">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">04</span>
+            <h2>Item Analysis</h2>
+          </div>
+          <select id="itemDifficultyFilter" class="compact-input">
+            <option value="all">All difficulties</option>
+            <option value="easy">Easy</option>
+            <option value="moderate">Moderate</option>
+            <option value="difficult">Difficult</option>
+          </select>
+        </div>
+        <div class="table-wrap">
+          <table class="data-table" id="itemTable">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Learning Competency</th>
+                <th>Correct</th>
+                <th>Wrong</th>
+                <th>% Correct</th>
+                <th>Difficulty</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section" id="competencies">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">05</span>
+            <h2>Competency Tracker</h2>
+          </div>
+          <span class="section-help"
+            >You can edit item numbers, competencies, and manual Correct/Wrong
+            counts. If response data is entered, Correct/Wrong are calculated
+            automatically.</span
+          >
+        </div>
+        <div class="cards-grid" id="competencyCards"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">06</span>
+            <h2>Item Correct vs Wrong Tracker</h2>
+          </div>
+        </div>
+        <div class="item-bars" id="itemBars"></div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">07</span>
+            <h2>Class Performance</h2>
+          </div>
+        </div>
+        <div class="class-summary">
+          <div class="summary-list" id="classSummary"></div>
+          <div class="distribution" id="distribution"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">08</span>
+            <h2>Priority Items for Remediation</h2>
+          </div>
+        </div>
+        <div class="priority-grid">
+          <div>
+            <h3>🚨 Top 5 Most Difficult Items</h3>
+            <div id="hardestItems"></div>
+          </div>
+          <div>
+            <h3>🏆 Top 5 Best-Performing Items</h3>
+            <div id="bestItems"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="intervention">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">09</span>
+            <h2>Student Intervention Groups</h2>
+          </div>
+        </div>
+        <div class="groups-grid">
+          <article class="group mastered">
+            <h3>GROUP A — MASTERED</h3>
+            <p>Provide enrichment or extension activities.</p>
+            <div id="groupMastered"></div>
+          </article>
+          <article class="group nearly">
+            <h3>GROUP B — NEARLY MASTERED</h3>
+            <p>Provide guided practice and additional exercises.</p>
+            <div id="groupNearly"></div>
+          </article>
+          <article class="group intervention">
+            <h3>GROUP C — NEEDS INTERVENTION</h3>
+            <p>Provide focused remediation and teacher-guided intervention.</p>
+            <div id="groupIntervention"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">10</span>
+            <h2>Student Error Profile</h2>
+          </div>
+        </div>
+        <div class="profile-layout">
+          <div>
+            <label>Select Student<select id="profileStudent"></select></label>
+            <div id="studentProfile" class="profile-card empty-profile">
+              Select a student to view their error profile.
+            </div>
+          </div>
+          <div class="insight-box" id="interventionEngine"></div>
+        </div>
+      </section>
+
+      <section class="section" id="reassessment">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">11</span>
+            <h2>Reassessment Tracker</h2>
+          </div>
+        </div>
+        <div class="reassessment-grid">
+          <label>Student<select id="reassessStudent"></select></label>
+          <label
+            >Pre-Intervention Score<input
+              id="preScore"
+              type="number"
+              min="0"
+              placeholder="Score"
+          /></label>
+          <label
+            >Pre-Intervention Total<input
+              id="preTotal"
+              type="number"
+              min="1"
+              value="20"
+          /></label>
+          <label
+            >Post-Intervention Score<input
+              id="postScore"
+              type="number"
+              min="0"
+              placeholder="Score"
+          /></label>
+          <label
+            >Post-Intervention Total<input
+              id="postTotal"
+              type="number"
+              min="1"
+              value="20"
+          /></label>
+        </div>
+        <div class="reassessment-result" id="reassessmentResult">
+          Enter scores to compare before and after intervention.
+        </div>
+      </section>
+
+      <section class="section" id="intervention-plan">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">12</span>
+            <h2>Remediation / Intervention Plan</h2>
+          </div>
+        </div>
+        <div class="form-grid">
+          <label
+            >Target Students<textarea
+              id="planStudents"
+              placeholder="Names or group"
+            ></textarea>
+          </label>
+          <label
+            >Target Competency<textarea
+              id="planCompetency"
+              placeholder="Learning competency"
+            ></textarea>
+          </label>
+          <label
+            >Identified Difficulty<textarea
+              id="planDifficulty"
+              placeholder="What did students struggle with?"
+            ></textarea>
+          </label>
+          <label
+            >Intervention Strategy<textarea
+              id="planStrategy"
+              placeholder="Reteaching, guided practice, visual aids, etc."
+            ></textarea>
+          </label>
+          <label
+            >Materials Needed<textarea
+              id="planMaterials"
+              placeholder="Materials"
+            ></textarea>
+          </label>
+          <label
+            >Teacher Notes<textarea
+              id="planNotes"
+              placeholder="Notes"
+            ></textarea>
+          </label>
+          <label>Intervention Date<input id="planDate" type="date" /></label>
+          <label
+            >Number of Sessions<input
+              id="planSessions"
+              type="number"
+              min="1"
+              value="1"
+          /></label>
+          <label
+            >Reassessment Date<input id="planReassessDate" type="date"
+          /></label>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-primary" id="savePlanBtn">
+            Save Intervention Plan</button
+          ><button class="btn btn-outline" id="printPlanBtn">
+            Print Intervention Plan
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="reports">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">13</span>
+            <h2>Teacher Insights & Report</h2>
+          </div>
+        </div>
+        <div class="insight-box" id="teacherInsights"></div>
+        <div class="reflection">
+          <h3>Teacher Reflection</h3>
+          <div class="reflection-grid">
+            <label
+              >1. Which competencies were mastered?<textarea
+                id="reflect1"
+              ></textarea>
+            </label>
+            <label
+              >2. Which competencies require reteaching?<textarea
+                id="reflect2"
+              ></textarea>
+            </label>
+            <label
+              >3. Which students require intervention?<textarea
+                id="reflect3"
+              ></textarea>
+            </label>
+            <label
+              >4. What instructional strategy will be used?<textarea
+                id="reflect4"
+              ></textarea>
+            </label>
+            <label
+              >5. When will reassessment occur?<textarea
+                id="reflect5"
+              ></textarea>
+            </label>
+            <label
+              >6. What changes should be made to future instruction?<textarea
+                id="reflect6"
+              ></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-primary" id="printReportBtn">
+            🖨 Print Item Analysis Report
+          </button>
+          <button class="btn btn-outline" id="exportCsvBtn">Export CSV</button>
+          <button class="btn btn-outline" id="exportJsonBtn">
+            Export JSON
+          </button>
+          <button class="btn btn-gold" id="exportWordBtn">
+            📝 Download Editable Word (.doc)
+          </button>
+          <label class="btn btn-outline file-btn"
+            >Import JSON<input
+              type="file"
+              id="importJson"
+              accept=".json,application/json"
+          /></label>
+        </div>
+      </section>
+
+      <section class="section" id="settings">
+        <div class="section-head">
+          <div>
+            <span class="section-kicker">14</span>
+            <h2>Settings</h2>
+          </div>
+        </div>
+        <div class="settings-note">
+          <strong>Thresholds</strong>
+          <p>
+            Mastery, nearly-mastered, and item difficulty thresholds can be
+            changed above. Changes recalculate the entire tracker automatically.
+          </p>
+        </div>
+        <button class="btn btn-danger-outline" id="resetSettingsBtn">
+          Reset Thresholds & Defaults
+        </button>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="BrandLogo.png" alt="Teacher Ed Learning Hub Logo" />
+      <div>
+        <strong>Teacher Ed Learning Hub</strong>
+        <div>Teach • Analyze • Intervene • Improve</div>
+        <small>© 2026 Teacher Ed Learning Hub | Teacher Ed</small>
+      </div>
+      <div class="footer-note">
+        Teacher Tool • Local Data Storage • No Student Data Sent to Server
+      </div>
+    </footer>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-card">
+        <h3 id="modalTitle">Confirm</h3>
+        <p id="modalText"></p>
+        <div class="modal-actions">
+          <button class="btn btn-outline" id="modalCancel">Cancel</button
+          ><button class="btn btn-danger" id="modalConfirm">Confirm</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
