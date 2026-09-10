@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jangracemed Intervention Learning Hub</title>
+  <link rel="icon" type="image/png" href="JanGraceMed.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+
+    <div class="header-container">
+
+        <a href="#" class="brand" onclick="showPage('home'); return false;">
+
+            <div class="brand-logo">
+                <img src="JanGraceMed.png"
+                     alt="JanGraceMed Logo">
+            </div>
+
+            <div class="brand-text">
+                <strong>JanGraceMed</strong>
+                <span>Intervention Learning Hub</span>
+            </div>
+
+        </a>
+
+
+        <nav class="main-navigation">
+
+            <button onclick="showPage('home')">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
+
+            <button onclick="showPage('lessons')">
+                <i class="fa-solid fa-book-open"></i>
+                <span>Lessons</span>
+            </button>
+
+            <button onclick="showPage('progress')">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Progress</span>
+            </button>
+
+            <button onclick="showPage('about')">
+                <i class="fa-solid fa-circle-info"></i>
+                <span>About</span>
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+  <main>
+    <section id="homePage" class="page active">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow">PERSONALIZED INTERVENTION</span>
+          <h1>Learn. Practice. <span>Grow.</span></h1>
+          <p>A trusted learning space by <strong>Jangracemed</strong> for focused Math and English intervention practice.</p>
+          <button class="primary-btn" id="startBtn"><i class="fa-solid fa-play"></i> Explore Lessons</button>
+        </div>
+        <div class="hero-card">
+          <div class="hero-card-icon"><i class="fa-solid fa-lightbulb"></i></div>
+          <h3>Small steps. Big progress.</h3>
+          <p>Lessons can be added anytime by simply editing one JSON file.</p>
+        </div>
+      </div>
+    </section>
+<section class="home-lessons-section">
+
+    <div class="section-heading">
+        <span class="section-kicker">START LEARNING</span>
+        <h2>Intervention Games</h2>
+        <p>
+            Choose a lesson and learn through interactive games,
+            practice activities, and challenges.
+        </p>
+    </div>
+
+    <div id="homeLessons" class="home-lessons-grid">
+        <!-- Lessons will automatically appear here -->
+    </div>
+
+</section>
+
+    <section id="lessonsPage" class="page">
+      <div class="page-title">
+        <div><span class="eyebrow">LEARNING LIBRARY</span><h1>Lessons</h1><p>Open a built-in game or a lesson you linked in <code>lessons.json</code>.</p></div>
+      </div>
+      <div class="toolbar">
+        <label class="search"><i class="fa-solid fa-magnifying-glass"></i><input id="searchInput" placeholder="Search lessons..."></label>
+        <select id="subjectFilter"><option value="All">All Subjects</option><option value="Math">Math</option><option value="English">English</option></select>
+        <select id="typeFilter"><option value="All">All Types</option><option value="game">Built-in Game</option><option value="html">Local HTML</option><option value="external">External Link</option></select>
+      </div>
+      <div id="lessonGrid" class="lesson-grid"></div>
+      <div id="emptyState" class="empty hidden"><i class="fa-regular fa-folder-open"></i><h3>No lessons found</h3><p>Try another search or filter.</p></div>
+    </section>
+
+    <section id="progressPage" class="page">
+      <div class="page-title"><span class="eyebrow">YOUR RECORD</span><h1>Progress</h1><p>Your scores are stored on this device.</p></div>
+      <div class="progress-card">
+        <div class="progress-number" id="overallScore">0%</div>
+        <div><h3>Overall Practice Score</h3><p id="progressText">Complete a built-in game to begin tracking progress.</p></div>
+      </div>
+      <div id="progressList" class="progress-list"></div>
+    </section>
+
+<!-- =========================
+     ABOUT PAGE
+========================= -->
+<section id="aboutPage" class="page">
+
+    <!-- ABOUT HERO -->
+    <div class="about-hero">
+
+        <div class="about-hero-content">
+            <span class="eyebrow">ABOUT THE LEARNING HUB</span>
+
+            <h1>
+                Learning Can Be
+                <span>Fun, Meaningful,</span>
+                and Encouraging.
+            </h1>
+
+            <p>
+                Welcome to <strong>Ms. Grace Intervention Learning Hub</strong>,
+                an interactive learning space created to help learners practice
+                essential Math and English skills through engaging lessons,
+                activities, and educational games.
+            </p>
+
+            <p>
+                Our goal is to make intervention learning less stressful and
+                more enjoyable by giving learners opportunities to practice,
+                make mistakes, receive feedback, and try again.
+            </p>
+        </div>
+
+        <div class="about-hero-visual">
+
+            <div class="about-main-icon">
+              <img src="JanGraceMed.png" alt="JanGraceMed Logo">
+            </div>
+
+            <div class="floating-card floating-card-one">
+                <i class="fa-solid fa-gamepad"></i>
+                <div>
+                    <strong>Learn & Play</strong>
+                    <small>Interactive Activities</small>
+                </div>
+            </div>
+
+            <div class="floating-card floating-card-two">
+                <i class="fa-solid fa-chart-line"></i>
+                <div>
+                    <strong>Keep Growing</strong>
+                    <small>Celebrate Progress</small>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PURPOSE -->
+    <div class="about-section">
+
+        <div class="about-section-heading">
+            <span class="eyebrow">OUR PURPOSE</span>
+            <h2>Why This Learning Hub Exists</h2>
+        </div>
+
+        <div class="purpose-grid">
+
+            <div class="purpose-content">
+
+                <p>
+                    The <strong>Ms. Grace Intervention Learning Hub</strong>
+                    is designed to provide additional learning opportunities
+                    for learners who need more practice, reinforcement, or
+                    support in specific skills.
+                </p>
+
+                <p>
+                    Intervention does not have to feel like a difficult or
+                    stressful experience. Through interactive activities and
+                    educational games, learners can practice important skills
+                    while enjoying the learning process.
+                </p>
+
+                <p>
+                    The purpose is not simply to get the correct answer.
+                    The greater goal is to help learners
+                    <strong>understand, practice, improve, and become more
+                    confident.</strong>
+                </p>
+
+            </div>
+
+            <div class="purpose-list">
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div>
+                        <strong>Skill Reinforcement</strong>
+                        <span>Strengthen important skills through repeated practice.</span>
+                    </div>
+                </div>
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <strong>Additional Practice</strong>
+                        <span>Provide learners with more opportunities to learn.</span>
+                    </div>
+                </div>
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">
+                        <i class="fa-solid fa-puzzle-piece"></i>
+                    </div>
+                    <div>
+                        <strong>Interactive Learning</strong>
+                        <span>Make practice more engaging through activities and games.</span>
+                    </div>
+                </div>
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div>
+                        <strong>Build Confidence</strong>
+                        <span>Encourage learners to believe in their ability to improve.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LEARNING THROUGH GAMES -->
+    <div class="game-about-section">
+
+        <div class="game-about-content">
+
+            <span class="eyebrow">LEARNING THROUGH PLAY</span>
+
+            <h2>
+                Intervention Doesn't Have
+                to Feel Like Work.
+            </h2>
+
+            <p>
+                The Learning Hub uses interactive games and activities to
+                encourage learners to actively participate in their learning.
+            </p>
+
+            <p>
+                Instead of simply answering worksheets repeatedly, learners
+                can answer questions, receive feedback, use hints, improve
+                their scores, and challenge themselves.
+            </p>
+
+            <div class="learning-cycle">
+
+                <div class="cycle-item">
+                    <div class="cycle-number">01</div>
+                    <strong>Try</strong>
+                    <span>Start the activity.</span>
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-number">02</div>
+                    <strong>Practice</strong>
+                    <span>Work on the skill.</span>
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-number">03</div>
+                    <strong>Learn</strong>
+                    <span>Understand the concept.</span>
+                </div>
+
+                <div class="cycle-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+
+                <div class="cycle-item">
+                    <div class="cycle-number">04</div>
+                    <strong>Grow</strong>
+                    <span>Become more confident.</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- THREE LEVELS -->
+    <div class="about-section levels-section">
+
+        <div class="about-section-heading centered">
+
+            <span class="eyebrow">THREE LEVELS OF CHALLENGE</span>
+
+            <h2>
+                Start Where You Are.
+                Challenge Yourself.
+            </h2>
+
+            <p>
+                Every learner is different. That's why our built-in games
+                provide three levels of difficulty.
+            </p>
+
+        </div>
+
+
+        <div class="levels-grid">
+
+            <!-- EASY -->
+            <div class="level-card easy-level">
+
+                <div class="level-top">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <span class="level-number">01</span>
+                </div>
+
+                <span class="level-label">EASY LEVEL</span>
+
+                <h3>Build Confidence</h3>
+
+                <p>
+                    The Easy Level provides simpler questions and activities
+                    designed to introduce or review a skill.
+                </p>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Review basic concepts
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Build confidence
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Practice essential skills
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Receive additional support
+                    </li>
+                </ul>
+
+                <div class="level-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <span>"I can do this!"</span>
+                </div>
+
+            </div>
+
+
+            <!-- AVERAGE -->
+            <div class="level-card average-level">
+
+                <div class="level-top">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+
+                    <span class="level-number">02</span>
+                </div>
+
+                <span class="level-label">AVERAGE LEVEL</span>
+
+                <h3>Strengthen Skills</h3>
+
+                <p>
+                    The Average Level provides a greater challenge while
+                    continuing to reinforce the same important skills.
+                </p>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Apply learned skills
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Think more carefully
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Improve accuracy
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Practice independently
+                    </li>
+                </ul>
+
+                <div class="level-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <span>"I am getting better!"</span>
+                </div>
+
+            </div>
+
+
+            <!-- DIFFICULT -->
+            <div class="level-card difficult-level">
+
+                <div class="level-top">
+                    <div class="level-icon">
+                        <i class="fa-solid fa-fire"></i>
+                    </div>
+
+                    <span class="level-number">03</span>
+                </div>
+
+                <span class="level-label">DIFFICULT LEVEL</span>
+
+                <h3>Challenge Yourself</h3>
+
+                <p>
+                    The Difficult Level is designed for learners who are ready
+                    to apply their skills to more challenging questions.
+                </p>
+
+                <ul>
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Think critically
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Solve challenging problems
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Work independently
+                    </li>
+
+                    <li>
+                        <i class="fa-solid fa-check"></i>
+                        Challenge personal limits
+                    </li>
+                </ul>
+
+                <div class="level-quote">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <span>"I can challenge myself!"</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SUBJECTS -->
+    <div class="about-section subjects-about">
+
+        <div class="about-section-heading">
+            <span class="eyebrow">WHAT WE PRACTICE</span>
+
+            <h2>
+                Math & English Intervention
+            </h2>
+
+            <p>
+                The Learning Hub focuses primarily on foundational Math and
+                English skills that learners can practice through interactive
+                lessons.
+            </p>
+        </div>
+
+
+        <div class="about-subject-grid">
+
+            <div class="about-subject-card math-about">
+
+                <div class="about-subject-icon">
+                    <i class="fa-solid fa-calculator"></i>
+                </div>
+
+                <h3>Math</h3>
+
+                <p>
+                    Develop mathematical understanding and confidence through
+                    guided practice and interactive activities.
+                </p>
+
+                <div class="subject-tags">
+                    <span>Number Sense</span>
+                    <span>Operations</span>
+                    <span>Place Value</span>
+                    <span>Fractions</span>
+                    <span>Problem Solving</span>
+                </div>
+
+            </div>
+
+
+            <div class="about-subject-card english-about">
+
+                <div class="about-subject-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <h3>English</h3>
+
+                <p>
+                    Strengthen language, reading, vocabulary, and foundational
+                    English skills through engaging practice.
+                </p>
+
+                <div class="subject-tags">
+                    <span>Phonics</span>
+                    <span>Reading</span>
+                    <span>Vocabulary</span>
+                    <span>Grammar</span>
+                    <span>Comprehension</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- MISTAKES -->
+    <div class="mistakes-section">
+
+        <div class="mistakes-icon">
+            <i class="fa-solid fa-rotate-right"></i>
+        </div>
+
+        <div class="mistakes-content">
+
+            <span class="eyebrow">A POSITIVE LEARNING SPACE</span>
+
+            <h2>
+                Mistakes Are Part of Learning.
+            </h2>
+
+            <p>
+                Getting an answer wrong does not mean that a learner has
+                failed. It means there is another opportunity to learn.
+            </p>
+
+            <p>
+                The Learning Hub encourages learners to review feedback,
+                understand their mistakes, use hints when available, and
+                try again.
+            </p>
+
+            <strong class="mistakes-message">
+                Try again. Learn from it. Keep going.
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROGRESS -->
+    <div class="progress-about-section">
+
+        <div class="progress-about-content">
+
+            <span class="eyebrow">CELEBRATE PROGRESS</span>
+
+            <h2>
+                Every Step Forward Matters.
+            </h2>
+
+            <p>
+                Learning is not only about achieving a perfect score.
+                Improvement is also an achievement.
+            </p>
+
+            <div class="progress-examples">
+
+                <div>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    <span>Improving a score</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-star"></i>
+                    <span>Mastering a skill</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-medal"></i>
+                    <span>Moving to a higher level</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Continuing after mistakes</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- LEARNING PHILOSOPHY -->
+    <div class="about-section philosophy-section">
+
+        <div class="about-section-heading centered">
+
+            <span class="eyebrow">OUR LEARNING PHILOSOPHY</span>
+
+            <h2>
+                Learning Should Be...
+            </h2>
+
+        </div>
+
+
+        <div class="philosophy-grid">
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Engaging</h3>
+                <p>Activities should capture the learner's attention.</p>
+            </div>
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-universal-access"></i>
+                <h3>Accessible</h3>
+                <p>Learning should be approachable and understandable.</p>
+            </div>
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-hand-pointer"></i>
+                <h3>Interactive</h3>
+                <p>Learners should actively participate in learning.</p>
+            </div>
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-stairs"></i>
+                <h3>Progressive</h3>
+                <p>Learners can gradually move toward greater challenges.</p>
+            </div>
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-hands-holding-child"></i>
+                <h3>Encouraging</h3>
+                <p>Learners should feel supported when mistakes happen.</p>
+            </div>
+
+            <div class="philosophy-card">
+                <i class="fa-solid fa-face-smile"></i>
+                <h3>Enjoyable</h3>
+                <p>Learning can be meaningful while still being fun.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL CTA -->
+    <div class="about-final">
+
+        <div class="final-decoration final-decoration-one"></div>
+        <div class="final-decoration final-decoration-two"></div>
+        
+        <span class="eyebrow">WELCOME TO THE HUB</span>
+
+        <h2>
+            Learn. Practice. Play. Progress.
+        </h2>
+
+        <p>
+            Start where you are, practice what you need, challenge yourself,
+            and celebrate every step forward.
+        </p>
+
+        <button class="primary-btn" onclick="showPage('lessons')">
+            <i class="fa-solid fa-play"></i>
+            Explore Lessons
+        </button>
+
+        <div class="owner-signature">
+            <span>Created for intervention learning by</span>
+            <strong>JangraceMed</strong>
+        </div>
+
+    </div>
+
+</section>
+
+  </main>
+
+  <div class="modal hidden" id="gameModal">
+    <div class="game-window">
+      <button class="close" id="closeGame"><i class="fa-solid fa-xmark"></i></button>
+      <div class="game-top">
+        <div><span class="eyebrow" id="gameSubject">MATH</span><h2 id="gameTitle">Lesson</h2></div>
+        <div class="score-pill">Score: <b id="gameScore">0</b></div>
+      </div>
+      <div class="difficulty" id="difficultyButtons"></div>
+      <div class="game-progress"><span id="gameProgressBar"></span></div>
+      <div id="questionArea"></div>
+      <div class="game-footer">
+        <button class="secondary-btn" id="hintBtn"><i class="fa-solid fa-lightbulb"></i> Hint</button>
+        <button class="primary-btn" id="nextBtn">Check Answer <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div id="feedback"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+
+    <div class="footer-container">
+
+        <!-- BRAND -->
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+                <img src="JanGraceMed.png"
+                     alt="JanGraceMed Logo">
+            </div>
+
+            <div>
+                <h3>JanGraceMed</h3>
+
+                <p>
+                    Intervention Learning Hub
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- DESCRIPTION -->
+        <div class="footer-description">
+
+            <p>
+                An interactive learning space designed to help learners
+                practice Math and English skills through engaging lessons,
+                educational games, and progressive levels of challenge.
+            </p>
+
+        </div>
+
+
+        <!-- LEVELS -->
+        <div class="footer-levels">
+
+            <span class="footer-title">
+                LEARNING LEVELS
+            </span>
+
+            <div class="footer-level-list">
+
+                <span>
+                    <i class="fa-solid fa-seedling"></i>
+                    Easy
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Average
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-fire"></i>
+                    Difficult
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 JanGraceMed Intervention Learning Hub
+        </span>
+
+        <span>
+            Learn • Practice • Play • Progress
+        </span>
+
+    </div>
+
+</footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/js/all.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

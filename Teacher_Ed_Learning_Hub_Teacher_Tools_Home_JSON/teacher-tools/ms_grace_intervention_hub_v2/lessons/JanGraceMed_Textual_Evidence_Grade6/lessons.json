@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-grade6-textual-evidence",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Textual Evidence",
+    "description": "Identify relevant evidence, match claims to support, and explain how evidence proves an idea.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["easy", "average", "difficult", "boss"]
+  }
+]

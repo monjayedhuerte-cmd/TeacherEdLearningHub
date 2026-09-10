@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JanGraceMed Intervention Learning Hub — Grade 6 English Context Clue intervention games.">
+<title>JanGraceMed Intervention Learning Hub | Grade 6 Context Clues</title>
+<link rel="icon" type="image/png" href="JanGraceMed.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home">
+      <img src="JanGraceMed.png" alt="JanGraceMed logo">
+      <span><strong>JanGraceMed</strong><small>Intervention Learning Hub</small></span>
+    </a>
+    <nav class="nav"><a href="#home">Home</a><a href="#learn">Learn</a><a href="#levels">Games</a><a href="#about">About</a></nav>
+    <div class="score-pill">⭐ <b id="totalScore">0</b></div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero wrap">
+  <div class="hero-copy">
+    <span class="eyebrow">GRADE 6 • ENGLISH INTERVENTION</span>
+    <h1>Become a <em>Context Clue Detective.</em></h1>
+    <p>Use the words around an unfamiliar word to discover its meaning, unlock clues, solve missions, and become a stronger reader.</p>
+    <div class="hero-actions"><button class="btn primary" data-scroll="#levels">🎮 Start Games</button><button class="btn ghost" data-scroll="#learn">📖 Learn First</button></div>
+    <div class="hero-stats"><div><b>3</b><span>Skill Levels</span></div><div><b>4</b><span>Game Missions</span></div><div><b>🏆</b><span>Mastery Challenge</span></div></div>
+  </div>
+  <div class="hero-art">
+    <div class="orbit"></div><div class="hero-logo"><img src="JanGraceMed.png" alt="JanGraceMed"></div>
+    <div class="float-card clue">🔎 <b>CLUE FOUND!</b><small>Look around the word.</small></div>
+    <div class="float-card streak">🔥 <b id="streakDisplay">0</b><small>best streak</small></div>
+  </div>
+</section>
+
+<section id="learn" class="section wrap">
+  <div class="heading"><span class="eyebrow">📖 LEARN</span><h2>What Are Context Clues?</h2><p>Context clues are words, phrases, sentences, or details around an unfamiliar word that help readers figure out what the word means.</p></div>
+  <div class="learn-grid">
+    <article class="learn-card featured"><div class="learn-icon">🔎</div><h3>Think Like a Detective</h3><p>Do not stop when you see a difficult word. Read the whole sentence and nearby sentences. Look for clues that explain, describe, compare, contrast, or show an example.</p><div class="formula"><span>UNKNOWN WORD</span><b>+</b><span>SURROUNDING CLUES</span><b>→</b><strong>MEANING</strong></div></article>
+    <article class="learn-card"><span class="num">01</span><h3>Definition Clue</h3><p>The meaning is stated directly.</p><div class="example">Arid, or very dry, regions receive little rain.</div></article>
+    <article class="learn-card"><span class="num">02</span><h3>Example Clue</h3><p>Examples help explain the word.</p><div class="example">Celestial objects, such as the sun, moon, and stars, fill the sky.</div></article>
+    <article class="learn-card"><span class="num">03</span><h3>Contrast Clue</h3><p>Opposite ideas can reveal meaning.</p><div class="example">Unlike his timid brother, Marco was bold and fearless.</div></article>
+    <article class="learn-card"><span class="num">04</span><h3>Synonym / Restatement</h3><p>A nearby word or phrase gives a similar meaning.</p><div class="example">The puppy was enormous—in other words, very large.</div></article>
+  </div>
+  <div class="tip"><b>💡 QUICK TIP</b><strong>Ask: “What words around the unfamiliar word give me a clue?”</strong><span>Try the clue first, then choose the meaning that best fits the context.</span></div>
+</section>
+
+<section id="levels" class="section wrap">
+  <div class="heading"><span class="eyebrow">🎮 LEARNING QUEST</span><h2>Choose Your Challenge</h2><p>Complete each mission to unlock the next. Every game gives feedback and teaches you how to think.</p></div>
+  <div class="level-grid">
+    <article class="level-card easy" data-level="easy"><div class="level-top"><span>🟢 EASY</span><b id="lock-easy">✓</b></div><div class="level-icon">🔎</div><h3>Clue Finder</h3><p>Find the clue and choose the meaning of an unfamiliar word.</p><div class="tags"><i>Detective</i><i>5 questions</i></div><button class="btn primary play" data-game="easy">Start Mission</button></article>
+    <article class="level-card average locked" data-level="average"><div class="level-top"><span>🟡 AVERAGE</span><b id="lock-average">🔒</b></div><div class="level-icon">🧩</div><h3>Context Clue Puzzle</h3><p>Match unfamiliar words with the strongest meaning using sentence clues.</p><div class="tags"><i>Puzzle</i><i>6 questions</i></div><button class="btn primary play" data-game="average">Unlock & Play</button></article>
+    <article class="level-card difficult locked" data-level="difficult"><div class="level-top"><span>🔴 DIFFICULT</span><b id="lock-difficult">🔒</b></div><div class="level-icon">🔐</div><h3>Vocabulary Escape</h3><p>Use multiple clues to unlock a four-letter reading vault.</p><div class="tags"><i>Escape</i><i>6 questions</i></div><button class="btn primary play" data-game="difficult">Unlock & Play</button></article>
+    <article class="level-card boss locked" data-level="boss"><div class="level-top"><span>🏆 FINAL</span><b id="lock-boss">🔒</b></div><div class="level-icon">👑</div><h3>Context Clue Master</h3><p>Prove your vocabulary detective skills in the final mastery challenge.</p><div class="tags"><i>Boss Challenge</i><i>6 questions</i></div><button class="btn primary play" data-game="boss">Unlock & Play</button></article>
+  </div>
+</section>
+
+<section class="progress-panel wrap">
+  <div><span class="eyebrow">📊 YOUR PROGRESS</span><h2 id="progressTitle">Ready to begin?</h2><p id="progressText">Complete Clue Finder to unlock your next challenge.</p></div>
+  <div class="ring" id="ring"><strong id="percent">0%</strong><small>mastery</small></div>
+</section>
+
+<section id="about" class="section wrap">
+  <div class="heading"><span class="eyebrow">ℹ️ ABOUT</span><h2>Learn • Practice • Play • Progress</h2><p>JanGraceMed Intervention Learning Hub turns focused intervention practice into an engaging, supportive learning experience.</p></div>
+  <div class="about-grid"><article><span>🌱</span><h3>Build Confidence</h3><p>Easy activities give learners a friendly starting point and celebrate effort.</p></article><article><span>🎮</span><h3>Learn Through Games</h3><p>Detective missions, puzzles, escape challenges, and mastery games make practice active.</p></article><article><span>🔥</span><h3>Keep Improving</h3><p>Each level increases thinking demands without making mistakes feel discouraging.</p></article><article><span>🏆</span><h3>Celebrate Progress</h3><p>Scores, streaks, unlocks, and completion screens make growth visible.</p></article></div>
+</section>
+</main>
+
+<footer class="footer"><div class="footer-inner"><div class="footer-brand"><img src="JanGraceMed.png" alt="JanGraceMed logo"><div><h3>JanGraceMed</h3><p>Intervention Learning Hub</p></div></div><p>An interactive learning space designed to help learners build skills through meaningful lessons, educational games, and progressive challenges.</p><div class="footer-levels"><b>LEARNING LEVELS</b><span>🟢 Easy</span><span>🟡 Average</span><span>🔴 Difficult</span></div></div><div class="footer-bottom"><span>© 2026 JanGraceMed Intervention Learning Hub</span><span>Grade 6 English • Context Clues</span></div></footer>
+
+<div class="modal" id="modal"><div class="game-window"><button class="close" id="close">×</button><div class="game-head"><div><span class="eyebrow" id="gameLevel">EASY MISSION</span><h2 id="gameTitle">Clue Finder</h2></div><div class="live-score">⭐ <b id="gameScore">0</b></div></div><div class="bar"><span id="bar"></span></div><div class="meta"><span id="counter"></span><span id="streak">🔥 0 streak</span></div><div id="gameArea"></div></div></div>
+<div id="toast" class="toast"></div><div id="confetti"></div>
+<script src="script.js"></script>
+</body>
+</html>

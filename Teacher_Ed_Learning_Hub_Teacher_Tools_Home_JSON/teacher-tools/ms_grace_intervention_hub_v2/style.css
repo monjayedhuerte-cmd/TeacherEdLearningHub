@@ -1,0 +1,2057 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap");
+:root {
+  --navy: #13243b;
+  --navy2: #1d3553;
+  --gold: #c7a35a;
+  --cream: #f7f5ef;
+  --white: #fff;
+  --text: #27364a;
+  --muted: #718096;
+  --line: #e5e8ed;
+  --green: #3c8c6a;
+  --red: #c65b5b;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+.topbar {
+  height: 78px;
+  background: var(--navy);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 6%;
+  justify-content: space-between;
+  box-shadow: 0 3px 18px #13243b20;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--gold);
+  display: grid;
+  place-items: center;
+  color: var(--navy);
+  font-size: 21px;
+}
+.brand-name {
+  font-family: "Playfair Display";
+  font-size: 20px;
+}
+.brand-sub {
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #d7dce4;
+  text-transform: uppercase;
+}
+.topbar nav {
+  display: flex;
+  gap: 8px;
+}
+.nav-link {
+  background: transparent;
+  border: 0;
+  color: #dbe2eb;
+  padding: 10px 14px;
+  border-radius: 9px;
+}
+.nav-link:hover,
+.nav-link.active {
+  background: #ffffff16;
+  color: white;
+}
+.menu-btn {
+  display: none;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 22px;
+}
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 38px 6% 70px;
+}
+.page {
+  display: none;
+}
+.page.active {
+  display: block;
+}
+.hero {
+  display: grid;
+  grid-template-columns: 1.5fr 0.8fr;
+  gap: 45px;
+  align-items: center;
+  padding: 45px 0;
+}
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  color: var(--gold);
+}
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+.hero h1 {
+  font: 700 clamp(42px, 6vw, 68px)/1.04 "Playfair Display";
+  color: var(--navy);
+  margin: 13px 0 20px;
+}
+.hero h1 span {
+  color: var(--gold);
+}
+.hero p {
+  max-width: 650px;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.75;
+}
+.primary-btn,
+.secondary-btn {
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+.primary-btn {
+  background: var(--navy);
+  color: white;
+}
+.primary-btn:hover {
+  background: var(--navy2);
+  transform: translateY(-1px);
+}
+.secondary-btn {
+  background: #edf0f3;
+  color: var(--navy);
+}
+.hero-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 32px;
+  box-shadow: 0 14px 40px #13243b0d;
+}
+.hero-card-icon,
+.about-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #f5ecd9;
+  color: var(--gold);
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.hero-card h3 {
+  font: 700 24px "Playfair Display";
+}
+.hero-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 15px 0 55px;
+}
+.stat {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 22px;
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  column-gap: 10px;
+}
+.stat i {
+  grid-row: span 2;
+  color: var(--gold);
+  font-size: 20px;
+  margin-top: 4px;
+}
+.stat strong {
+  font-size: 25px;
+  color: var(--navy);
+}
+.stat span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.section-heading {
+  margin-bottom: 18px;
+}
+.section-heading h2,
+.page-title h1 {
+  font: 700 35px "Playfair Display";
+  color: var(--navy);
+  margin: 7px 0;
+}
+.subject-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.subject-card {
+  display: grid;
+  grid-template-columns: 60px 1fr 25px;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  color: var(--text);
+}
+.subject-card:hover {
+  box-shadow: 0 12px 30px #13243b12;
+  transform: translateY(-2px);
+}
+.subject-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 20px;
+}
+.math .subject-icon {
+  background: #eaf0f8;
+  color: #345a87;
+}
+.english .subject-icon {
+  background: #f5ecd9;
+  color: #9a742d;
+}
+.subject-card b {
+  display: block;
+  font-size: 17px;
+  color: var(--navy);
+}
+.subject-card small {
+  display: block;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.page-title {
+  margin-bottom: 28px;
+}
+.page-title p {
+  color: var(--muted);
+}
+code {
+  background: #eef0f2;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.toolbar {
+  display: grid;
+  grid-template-columns: 1fr 180px 180px;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+.search {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.search i {
+  color: var(--muted);
+}
+.search input {
+  border: 0;
+  outline: 0;
+  width: 100%;
+  padding: 12px 0;
+  background: transparent;
+}
+.toolbar select {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 10px;
+  padding: 0 12px;
+  color: var(--text);
+  outline: 0;
+}
+.lesson-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+}
+.lesson-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  min-height: 225px;
+}
+.lesson-card .badge {
+  display: inline-flex;
+  align-self: flex-start;
+  background: #eef2f6;
+  color: var(--navy);
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.lesson-card h3 {
+  font: 700 21px "Playfair Display";
+  margin: 16px 0 7px;
+  color: var(--navy);
+}
+.lesson-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+  flex: 1;
+}
+.lesson-meta {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+.lesson-open {
+  width: 100%;
+  padding: 10px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--navy);
+  color: white;
+  font-weight: 700;
+}
+.lesson-open:hover {
+  background: var(--navy2);
+}
+.empty {
+  text-align: center;
+  padding: 70px;
+  color: var(--muted);
+}
+.empty i {
+  font-size: 40px;
+}
+.hidden {
+  display: none !important;
+}
+.progress-card {
+  background: var(--navy);
+  color: white;
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.progress-number {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--gold);
+}
+.progress-card p {
+  color: #ccd5df;
+  margin-bottom: 0;
+}
+.progress-list {
+  display: grid;
+  gap: 10px;
+}
+.progress-row {
+  background: white;
+  border: 1px solid var(--line);
+  padding: 17px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+.about-card {
+  max-width: 780px;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  padding: 40px;
+}
+.about-card h1 {
+  font: 700 38px "Playfair Display";
+  color: var(--navy);
+  margin: 10px 0 15px;
+}
+.about-card p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+.feature-list {
+  display: grid;
+  gap: 12px;
+  margin-top: 25px;
+}
+.feature-list div {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.feature-list i {
+  color: var(--green);
+}
+.modal {
+  position: fixed;
+  inset: 0;
+  background: #0c1727b8;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 50;
+}
+.game-window {
+  width: min(720px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  position: relative;
+}
+.close {
+  position: absolute;
+  right: 20px;
+  top: 18px;
+  border: 0;
+  background: #eef0f2;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  color: var(--navy);
+}
+.game-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: start;
+  padding-right: 45px;
+}
+.game-top h2 {
+  font: 700 29px "Playfair Display";
+  color: var(--navy);
+  margin: 5px 0;
+}
+.score-pill {
+  background: #f4ecd9;
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: #7e6129;
+  white-space: nowrap;
+}
+.difficulty {
+  display: flex;
+  gap: 7px;
+  margin: 15px 0;
+}
+.difficulty button {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 8px;
+  padding: 7px 12px;
+  font-size: 12px;
+}
+.difficulty button.active {
+  background: var(--navy);
+  color: white;
+}
+.game-progress {
+  height: 6px;
+  background: #edf0f2;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 18px 0 25px;
+}
+.game-progress span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  width: 0;
+}
+.question-label {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.question {
+  font-size: 25px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 22px;
+}
+.choices {
+  display: grid;
+  gap: 10px;
+}
+.choice {
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 10px;
+  padding: 13px;
+  text-align: left;
+}
+.choice:hover {
+  border-color: var(--gold);
+}
+.choice.selected {
+  border: 2px solid var(--gold);
+  background: #fffaf0;
+}
+.choice.correct {
+  border-color: var(--green);
+  background: #eef8f2;
+}
+.choice.wrong {
+  border-color: var(--red);
+  background: #fff1f1;
+}
+.game-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 22px;
+}
+.feedback {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 9px;
+  font-size: 13px;
+}
+.feedback.good {
+  background: #eef8f2;
+  color: #286347;
+}
+.feedback.bad {
+  background: #fff1f1;
+  color: #984646;
+}
+.hint {
+  margin-top: 12px;
+  background: #fffaf0;
+  border-left: 3px solid var(--gold);
+  padding: 10px;
+  color: #6d5a35;
+  font-size: 13px;
+}
+@media (max-width: 800px) {
+  .topbar {
+    padding: 0 5%;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .topbar nav {
+    display: none;
+    position: absolute;
+    top: 78px;
+    right: 5%;
+    background: var(--navy);
+    padding: 10px;
+    border-radius: 10px;
+    flex-direction: column;
+    width: 180px;
+  }
+  .topbar nav.open {
+    display: flex;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 25px;
+  }
+  .stats {
+    grid-template-columns: 1fr;
+  }
+  .subject-grid,
+  .lesson-grid {
+    grid-template-columns: 1fr;
+  }
+  .toolbar {
+    grid-template-columns: 1fr;
+  }
+  .game-window {
+    padding: 23px;
+  }
+  .game-top {
+    display: block;
+  }
+  .score-pill {
+    display: inline-block;
+    margin-top: 10px;
+  }
+}
+
+/* =========================================================
+   MS. GRACE INTERVENTION HUB
+   DETAILED ABOUT PAGE
+========================================================= */
+
+.about-hero {
+    min-height: 500px;
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    align-items: center;
+    gap: 60px;
+    padding: 45px 0 70px;
+}
+
+.about-hero-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(42px, 5vw, 64px);
+    line-height: 1.08;
+    color: var(--navy);
+    margin: 14px 0 25px;
+}
+
+.about-hero-content h1 span {
+    color: var(--gold);
+    display: block;
+}
+
+.about-hero-content p {
+    max-width: 690px;
+    color: var(--muted);
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-hero-content strong {
+    color: var(--navy);
+}
+
+.about-hero-visual {
+    min-height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-main-icon {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--gold);
+    display: grid;
+    place-items: center;
+    font-size: 85px;
+    box-shadow:
+        0 25px 60px rgba(19, 36, 59, .18),
+        0 0 0 18px rgba(199, 163, 90, .08);
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 15px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 15px 35px rgba(19, 36, 59, .12);
+}
+
+.floating-card i {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    background: #f5ecd9;
+    color: var(--gold);
+}
+
+.floating-card strong {
+    display: block;
+    color: var(--navy);
+    font-size: 13px;
+}
+
+.floating-card small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.floating-card-one {
+    left: 0;
+    top: 45px;
+}
+
+.floating-card-two {
+    right: 0;
+    bottom: 55px;
+}
+
+
+/* =========================================================
+   ABOUT SECTIONS
+========================================================= */
+
+.about-section {
+    padding: 75px 0;
+}
+
+.about-section-heading {
+    margin-bottom: 35px;
+}
+
+.about-section-heading h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    color: var(--navy);
+    margin: 8px 0 12px;
+}
+
+.about-section-heading p {
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 700px;
+}
+
+.about-section-heading.centered {
+    text-align: center;
+}
+
+.about-section-heading.centered p {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   PURPOSE
+========================================================= */
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.purpose-content p {
+    color: var(--muted);
+    line-height: 1.85;
+    font-size: 15px;
+}
+
+.purpose-content strong {
+    color: var(--navy);
+}
+
+.purpose-list {
+    display: grid;
+    gap: 13px;
+}
+
+.purpose-item {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 17px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    transition: .25s ease;
+}
+
+.purpose-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(19, 36, 59, .08);
+}
+
+.purpose-icon {
+    min-width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #f5ecd9;
+    color: var(--gold);
+}
+
+.purpose-item strong {
+    display: block;
+    color: var(--navy);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.purpose-item span {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GAME SECTION
+========================================================= */
+
+.game-about-section {
+    background: var(--navy);
+    color: white;
+    border-radius: 24px;
+    padding: 55px;
+    position: relative;
+    overflow: hidden;
+}
+
+.game-about-section::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,.08);
+    right: -100px;
+    top: -100px;
+}
+
+.game-about-content {
+    position: relative;
+    z-index: 2;
+}
+
+.game-about-content h2 {
+    max-width: 650px;
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    line-height: 1.15;
+    margin: 10px 0 18px;
+}
+
+.game-about-content p {
+    max-width: 700px;
+    color: #cbd4df;
+    line-height: 1.75;
+}
+
+.learning-cycle {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 38px;
+    flex-wrap: wrap;
+}
+
+.cycle-item {
+    min-width: 120px;
+}
+
+.cycle-number {
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 7px;
+}
+
+.cycle-item strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+
+.cycle-item span {
+    color: #aeb9c6;
+    font-size: 11px;
+}
+
+.cycle-arrow {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   LEVELS
+========================================================= */
+
+.levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.level-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 26px;
+    position: relative;
+    overflow: hidden;
+    transition: .25s ease;
+}
+
+.level-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(19, 36, 59, .1);
+}
+
+.level-card::after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.easy-level::after {
+    background: #75a87d;
+}
+
+.average-level::after {
+    background: var(--gold);
+}
+
+.difficult-level::after {
+    background: #b75b5b;
+}
+
+.level-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.level-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+}
+
+.easy-level .level-icon {
+    background: #edf6ee;
+    color: #52865b;
+}
+
+.average-level .level-icon {
+    background: #f8f0dd;
+    color: #9b782f;
+}
+
+.difficult-level .level-icon {
+    background: #faeeee;
+    color: #a94e4e;
+}
+
+.level-number {
+    color: #d6dbe0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.level-label {
+    display: inline-block;
+    margin-top: 22px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    font-weight: 700;
+}
+
+.easy-level .level-label {
+    color: #52865b;
+}
+
+.average-level .level-label {
+    color: #9b782f;
+}
+
+.difficult-level .level-label {
+    color: #a94e4e;
+}
+
+.level-card h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    color: var(--navy);
+    margin: 7px 0 10px;
+}
+
+.level-card > p {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.level-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: grid;
+    gap: 9px;
+}
+
+.level-card li {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.level-card li i {
+    margin-right: 7px;
+}
+
+.easy-level li i {
+    color: #52865b;
+}
+
+.average-level li i {
+    color: var(--gold);
+}
+
+.difficult-level li i {
+    color: #a94e4e;
+}
+
+.level-quote {
+    background: #f7f7f6;
+    padding: 12px;
+    border-radius: 10px;
+    display: flex;
+    gap: 9px;
+    align-items: center;
+    color: var(--navy);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.level-quote i {
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   SUBJECTS
+========================================================= */
+
+.subjects-about {
+    background: white;
+    border-radius: 24px;
+    padding: 55px;
+}
+
+.about-subject-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.about-subject-card {
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+}
+
+.about-subject-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.math-about .about-subject-icon {
+    background: #eaf0f8;
+    color: #345a87;
+}
+
+.english-about .about-subject-icon {
+    background: #f5ecd9;
+    color: #9a742d;
+}
+
+.about-subject-card h3 {
+    font-family: "Playfair Display", serif;
+    color: var(--navy);
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+.about-subject-card p {
+    color: var(--muted);
+    line-height: 1.7;
+    font-size: 13px;
+}
+
+.subject-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 20px;
+}
+
+.subject-tags span {
+    background: #f1f3f5;
+    color: var(--navy);
+    padding: 7px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MISTAKES
+========================================================= */
+
+.mistakes-section {
+    margin: 70px 0;
+    background: #fffaf0;
+    border: 1px solid #eee2c7;
+    border-radius: 22px;
+    padding: 45px;
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 25px;
+    align-items: start;
+}
+
+.mistakes-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 20px;
+    background: var(--gold);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.mistakes-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 34px;
+    color: var(--navy);
+    margin: 8px 0 13px;
+}
+
+.mistakes-content p {
+    max-width: 750px;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.mistakes-message {
+    display: block;
+    margin-top: 20px;
+    color: var(--navy);
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress-about-section {
+    background: var(--navy);
+    border-radius: 24px;
+    padding: 55px;
+    color: white;
+}
+
+.progress-about-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 40px;
+    margin: 10px 0 15px;
+}
+
+.progress-about-content p {
+    color: #cbd4df;
+    line-height: 1.7;
+    max-width: 650px;
+}
+
+.progress-examples {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.progress-examples div {
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 13px;
+    padding: 16px;
+}
+
+.progress-examples i {
+    color: var(--gold);
+    margin-right: 8px;
+}
+
+.progress-examples span {
+    color: #d2dae3;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+========================================================= */
+
+.philosophy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.philosophy-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    padding: 24px;
+    transition: .2s ease;
+}
+
+.philosophy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(19, 36, 59, .08);
+}
+
+.philosophy-card > i {
+    color: var(--gold);
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.philosophy-card h3 {
+    color: var(--navy);
+    font-size: 17px;
+    margin-bottom: 7px;
+}
+
+.philosophy-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-final {
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 25px;
+    padding: 65px 30px;
+    margin-top: 25px;
+}
+
+.final-decoration {
+    position: absolute;
+    border: 1px solid rgba(199,163,90,.2);
+    border-radius: 50%;
+}
+
+.final-decoration-one {
+    width: 300px;
+    height: 300px;
+    left: -130px;
+    top: -130px;
+}
+
+.final-decoration-two {
+    width: 250px;
+    height: 250px;
+    right: -100px;
+    bottom: -110px;
+}
+
+.final-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 18px;
+    background: var(--navy);
+    color: var(--gold);
+    border-radius: 18px;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+    position: relative;
+}
+
+.about-final h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 43px;
+    color: var(--navy);
+    margin: 10px 0 13px;
+    position: relative;
+}
+
+.about-final p {
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+    position: relative;
+}
+
+.about-final .primary-btn {
+    position: relative;
+}
+
+.owner-signature {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.owner-signature span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.owner-signature strong {
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .about-hero {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .about-hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-hero-visual {
+        min-height: 350px;
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .levels-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-subject-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-examples {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .about-section {
+        padding: 50px 0;
+    }
+
+    .about-hero {
+        padding-top: 20px;
+    }
+
+    .about-hero-content h1 {
+        font-size: 42px;
+    }
+
+    .about-main-icon {
+        width: 180px;
+        height: 180px;
+        font-size: 65px;
+    }
+
+    .floating-card-one {
+        left: 0;
+    }
+
+    .floating-card-two {
+        right: 0;
+    }
+
+    .game-about-section,
+    .subjects-about,
+    .progress-about-section,
+    .mistakes-section {
+        padding: 30px 22px;
+    }
+
+    .game-about-content h2,
+    .progress-about-content h2,
+    .mistakes-content h2 {
+        font-size: 30px;
+    }
+
+    .learning-cycle {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cycle-arrow {
+        display: none;
+    }
+
+    .progress-examples {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .mistakes-section {
+        grid-template-columns: 1fr;
+    }
+
+    .mistakes-icon {
+        margin-bottom: 5px;
+    }
+
+    .about-final h2 {
+        font-size: 34px;
+    }
+}
+
+/* =========================================================
+   JANGRACEMED BRAND / HEADER
+========================================================= */
+
+.site-header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.96);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(12px);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 78px;
+    padding: 10px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--navy);
+    min-width: 240px;
+}
+
+.brand-logo {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.brand-text strong {
+    font-family: "Playfair Display", serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--navy);
+}
+
+.brand-text span {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+
+/* NAVIGATION */
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.main-navigation button {
+    border: none;
+    background: transparent;
+
+    color: var(--muted);
+
+    padding: 10px 13px;
+    border-radius: 9px;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    transition: all .2s ease;
+}
+
+.main-navigation button i {
+    font-size: 13px;
+}
+
+.main-navigation button:hover {
+    color: var(--navy);
+    background: #f4f6f8;
+}
+
+.main-navigation button.active {
+    color: var(--navy);
+    background: #f7f0df;
+}
+
+.main-navigation button.active i {
+    color: var(--gold);
+}
+
+/* =========================================================
+   JAN GRACEMED FOOTER
+========================================================= */
+
+.site-footer {
+    margin-top: 80px;
+    background: var(--navy);
+    color: white;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 55px 24px 45px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1.5fr 1fr;
+
+    gap: 45px;
+
+    align-items: start;
+}
+
+
+/* FOOTER BRAND */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer-logo {
+    width: 65px;
+    height: 65px;
+
+    border-radius: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, .08);
+
+    padding: 7px;
+}
+
+.footer-logo img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+.footer-brand h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    margin: 0 0 5px;
+}
+
+.footer-brand p {
+    margin: 0;
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+
+/* FOOTER DESCRIPTION */
+
+.footer-description p {
+    color: #bdc7d2;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 0;
+    max-width: 470px;
+}
+
+
+/* FOOTER LEVELS */
+
+.footer-title {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 17px;
+}
+
+.footer-level-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-level-list span {
+    color: #d3dae2;
+    font-size: 12px;
+}
+
+.footer-level-list i {
+    width: 20px;
+    color: var(--gold);
+}
+
+
+/* FOOTER BOTTOM */
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 18px 24px;
+
+    border-top: 1px solid rgba(255,255,255,.1);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    color: #8996a5;
+
+    font-size: 10px;
+}
+
+/* =========================================================
+   JAN GRACEMED MOBILE HEADER & FOOTER
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .header-container {
+        min-height: 70px;
+        padding: 9px 16px;
+    }
+
+    .brand {
+        min-width: auto;
+    }
+
+    .brand-logo {
+        width: 45px;
+        height: 45px;
+    }
+
+    .brand-text strong {
+        font-size: 18px;
+    }
+
+    .brand-text span {
+        font-size: 8px;
+    }
+
+    .main-navigation {
+        gap: 2px;
+    }
+
+    .main-navigation button {
+        padding: 9px;
+    }
+
+    .main-navigation button span {
+        display: none;
+    }
+
+    .main-navigation button i {
+        font-size: 15px;
+    }
+
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 22px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    .brand-text span {
+        display: none;
+    }
+
+    .brand-text strong {
+        font-size: 17px;
+    }
+
+    .brand-logo {
+        width: 42px;
+        height: 42px;
+    }
+
+    .main-navigation button {
+        padding: 7px;
+    }
+}
+
+.about-main-icon {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-main-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* =========================================
+   HOME LESSON CARDS
+========================================= */
+
+.home-lessons-section {
+    max-width: 1200px;
+    margin: 70px auto;
+    padding: 0 24px;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-kicker {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    color: var(--navy);
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: 12px auto 0;
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* Lesson Grid */
+
+.home-lessons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* Lesson Card */
+
+.home-lesson-card {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 26px;
+    overflow: hidden;
+    cursor: pointer;
+
+    box-shadow: 0 10px 30px rgba(19, 36, 59, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.home-lesson-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+    box-shadow: 0 18px 40px rgba(19, 36, 59, 0.15);
+}
+
+/* Animated glow */
+
+.home-lesson-card::before {
+    content: "";
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: rgba(199, 163, 90, 0.12);
+    top: -60px;
+    right: -60px;
+    transition: transform 0.4s ease;
+}
+
+.home-lesson-card:hover::before {
+    transform: scale(1.5);
+}
+
+/* Icon */
+
+.lesson-card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #f7f0df;
+    color: var(--gold);
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+    transition: transform 0.3s ease;
+}
+
+.home-lesson-card:hover .lesson-card-icon {
+    transform: rotate(-5deg) scale(1.08);
+}
+
+/* Subject */
+
+.lesson-card-subject {
+    display: inline-block;
+
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    color: var(--gold);
+
+    margin-bottom: 8px;
+}
+
+/* Title */
+
+.lesson-card-title {
+    margin: 0 0 10px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 24px;
+
+    color: var(--navy);
+}
+
+/* Description */
+
+.lesson-card-description {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+
+    margin-bottom: 20px;
+}
+
+/* Grade */
+
+.lesson-card-grade {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+
+    background: #f4f6f8;
+
+    color: var(--navy);
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+/* Button */
+
+.lesson-card-button {
+    width: 100%;
+
+    margin-top: 20px;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 13px 16px;
+
+    background: var(--navy);
+    color: white;
+
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lesson-card-button:hover {
+    background: #1d3555;
+    transform: translateY(-2px);
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .home-lessons-section {
+        margin: 45px auto;
+        padding: 0 16px;
+    }
+
+    .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .home-lessons-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

@@ -1,0 +1,23 @@
+{
+  "lessons": [
+    {
+      "id": "english-001",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Textual Evidence",
+      "description": "Become an Evidence Detective. Read closely, find the best proof, and explain how the text supports an idea.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Textual_Evidence_Grade6/index.html"
+    },
+    {
+      "id": "english-002",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Context Clues",
+      "description": "Use the words around an unfamiliar word to discover its meaning, unlock clues, solve missions, and become a stronger reader.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Context_Clue_Grade6/index.html"
+    }
+    
+  ]
+}

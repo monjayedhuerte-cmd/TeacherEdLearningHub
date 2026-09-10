@@ -57,6 +57,14 @@
       "file": "TeacherEd_Item_Analysis_Tracker/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "JanGraceMed",
+      "title": "Intervention Learning Hub",
+      "description": "A trusted learning space by Jangracemed for focused Math and English intervention practice.",
+      "file": "ms_grace_intervention_hub_v2/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }

@@ -1,0 +1,13 @@
+{
+  "lessons": [
+    {
+      "id": "english-002",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Context Clues",
+      "description": "Use clues in a sentence or passage to figure out the meaning of unfamiliar words.",
+      "lessonType": "html",
+      "url": "lessons/context-clue.html"
+    }
+  ]
+}

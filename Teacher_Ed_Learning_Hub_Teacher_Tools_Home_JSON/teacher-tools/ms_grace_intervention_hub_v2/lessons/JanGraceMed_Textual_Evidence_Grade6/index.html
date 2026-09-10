@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JanGraceMed Intervention Learning Hub - Grade 6 English Textual Evidence interactive intervention games.">
+<title>JanGraceMed Intervention Learning Hub | Grade 6 Textual Evidence</title>
+<link rel="icon" type="image/png" href="JanGraceMed.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="confetti" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="#home" aria-label="JanGraceMed home">
+      <img src="JanGraceMed.png" alt="JanGraceMed logo" class="brand-logo">
+      <span class="brand-text"><strong>JanGraceMed</strong><small>Intervention Learning Hub</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#learn">Learn</a><a href="#levels">Games</a><a href="#about">About</a>
+    </nav>
+    <div class="header-score"><span>⭐</span><b id="headerScore">0</b></div>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero section-shell">
+  <div class="hero-copy reveal">
+    <span class="eyebrow">GRADE 6 • ENGLISH INTERVENTION</span>
+    <h1>Become an <em>Evidence Detective.</em></h1>
+    <p class="hero-lead">Read closely, find the strongest proof, connect evidence to a claim, and show your thinking through interactive challenges.</p>
+    <div class="hero-buttons"><button class="btn primary" data-scroll="#levels">🎮 Start the Games</button><button class="btn ghost" data-scroll="#learn">📖 Learn First</button></div>
+    <div class="hero-stats"><div><strong>3</strong><span>Skill Levels</span></div><div><strong>4</strong><span>Game Missions</span></div><div><strong>🏆</strong><span>Final Challenge</span></div></div>
+  </div>
+  <div class="hero-visual reveal delay-1">
+    <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+    <div class="hero-logo-card"><img src="JanGraceMed.png" alt="JanGraceMed Intervention Learning Hub"></div>
+    <div class="float-card clue"><span>🔎</span><b>CLUE FOUND!</b><small>Evidence supports the claim.</small></div>
+    <div class="float-card streak"><span>🔥</span><b id="heroStreak">0</b><small>answer streak</small></div>
+  </div>
+</section>
+
+<section id="learn" class="section-shell section">
+  <div class="section-heading reveal"><span class="eyebrow">📖 LEARN</span><h2>What Is Textual Evidence?</h2><p>Textual evidence is a specific detail, fact, action, quotation, or example from a text that supports an idea or answer.</p></div>
+  <div class="learning-grid">
+    <article class="learn-card featured reveal"><div class="learn-icon">🕵️</div><h3>Think Like a Detective</h3><p>Do not guess from memory. Return to the passage and look for proof that is directly connected to the claim.</p><div class="formula"><span>CLAIM</span><b>→</b><span>EVIDENCE</span><b>→</b><span>EXPLANATION</span></div></article>
+    <article class="learn-card reveal delay-1"><div class="number">01</div><h3>Make a Claim</h3><p>A claim is the idea or answer you think the text supports.</p><div class="example">Maya is responsible.</div></article>
+    <article class="learn-card reveal delay-2"><div class="number">02</div><h3>Find Evidence</h3><p>Choose a detail from the passage that gives direct proof.</p><div class="example">Maya checked the class plants every morning.</div></article>
+    <article class="learn-card reveal delay-3"><div class="number">03</div><h3>Explain the Connection</h3><p>Tell how the evidence proves or supports the claim.</p><div class="example">Checking the plants shows that Maya takes responsibility.</div></article>
+  </div>
+  <div class="tip-box reveal"><span>💡 QUICK TIP</span><strong>Ask: “Where in the text can I prove my answer?”</strong><p>Strong evidence is relevant, specific, and directly connected to the claim.</p></div>
+</section>
+
+<section id="levels" class="section-shell section levels-section">
+  <div class="section-heading reveal"><span class="eyebrow">🎮 YOUR LEARNING QUEST</span><h2>Choose Your Challenge</h2><p>Finish each level to unlock the next mission. Every game teaches while you play.</p></div>
+  <div class="level-path"><div class="path-line"></div>
+    <article class="level-card easy reveal" data-level="easy"><div class="level-top"><span class="level-badge">🟢 EASY</span><span class="lock" id="lock-easy">✓</span></div><div class="level-art">🔎</div><h3>Evidence Finder</h3><p>Find the sentence that directly supports a claim.</p><div class="game-tags"><span>Detective</span><span>Clues</span></div><button class="btn primary play-btn" data-game="easy">Start Mission</button></article>
+    <article class="level-card average locked reveal delay-1" data-level="average"><div class="level-top"><span class="level-badge">🟡 AVERAGE</span><span class="lock" id="lock-average">🔒</span></div><div class="level-art">🧩</div><h3>Claim & Evidence Puzzle</h3><p>Match claims with the strongest supporting evidence.</p><div class="game-tags"><span>Puzzle</span><span>Matching</span></div><button class="btn primary play-btn" data-game="average">Unlock & Play</button></article>
+    <article class="level-card difficult locked reveal delay-2" data-level="difficult"><div class="level-top"><span class="level-badge">🔴 DIFFICULT</span><span class="lock" id="lock-difficult">🔒</span></div><div class="level-art">🔐</div><h3>Evidence Escape Room</h3><p>Use the best evidence to unlock four reading locks.</p><div class="game-tags"><span>Escape</span><span>Reasoning</span></div><button class="btn primary play-btn" data-game="difficult">Unlock & Play</button></article>
+    <article class="level-card boss locked reveal delay-3" data-level="boss"><div class="level-top"><span class="level-badge">🏆 FINAL</span><span class="lock" id="lock-boss">🔒</span></div><div class="level-art boss-art">👑</div><h3>Evidence Master Challenge</h3><p>Defeat the final challenge by proving your answers with text.</p><div class="game-tags"><span>Boss Battle</span><span>Mastery</span></div><button class="btn primary play-btn" data-game="boss">Unlock & Play</button></article>
+  </div>
+</section>
+
+<section class="section-shell progress-section section">
+ <div class="progress-panel reveal"><div><span class="eyebrow">📊 YOUR PROGRESS</span><h2 id="progressTitle">Ready to begin?</h2><p id="progressMessage">Complete Easy to unlock your next challenge.</p></div><div class="progress-ring"><span id="overallPercent">0%</span><small>mastery</small></div></div>
+</section>
+
+<section id="about" class="section-shell section about-section">
+ <div class="section-heading reveal"><span class="eyebrow">ℹ️ ABOUT JAN GRACEMED</span><h2>Learning Can Be Fun, Meaningful, and Encouraging.</h2><p>JanGraceMed Intervention Learning Hub turns focused intervention practice into an active learning experience.</p></div>
+ <div class="about-grid"><article class="about-card reveal"><span>🌱</span><h3>Build Confidence</h3><p>Easy activities give learners a supportive starting point and celebrate progress.</p></article><article class="about-card reveal delay-1"><span>🎮</span><h3>Learn Through Games</h3><p>Detective missions, puzzles, escape rooms, and challenges make practice more engaging.</p></article><article class="about-card reveal delay-2"><span>🔥</span><h3>Keep Improving</h3><p>Average and Difficult levels increase thinking demands without making mistakes feel discouraging.</p></article><article class="about-card reveal delay-3"><span>🏆</span><h3>Celebrate Progress</h3><p>Scores, streaks, unlocks, badges, and completion screens show learners how far they have come.</p></article></div>
+</section>
+</main>
+
+<footer class="site-footer">
+ <div class="footer-inner"><div class="footer-brand"><img src="JanGraceMed.png" alt="JanGraceMed logo"><div><h3>JanGraceMed</h3><p>Intervention Learning Hub</p></div></div><div class="footer-copy"><p>An interactive learning space designed to help learners build skills through meaningful lessons, educational games, and progressive challenges.</p><strong>Learn • Practice • Play • Progress</strong></div><div class="footer-levels"><span>LEARNING LEVELS</span><b>🟢 Easy</b><b>🟡 Average</b><b>🔴 Difficult</b></div></div>
+ <div class="footer-bottom"><span>© 2026 JanGraceMed Intervention Learning Hub</span><span>Grade 6 English • Textual Evidence</span></div>
+</footer>
+
+<div class="game-modal" id="gameModal" aria-hidden="true"><div class="game-window" role="dialog" aria-modal="true" aria-labelledby="gameTitle"><button class="close-game" id="closeGame" aria-label="Close game">×</button><div class="game-head"><div><span class="eyebrow" id="gameLevel">EASY MISSION</span><h2 id="gameTitle">Evidence Finder</h2></div><div class="live-score">⭐ <span id="gameScore">0</span></div></div><div class="game-progress"><span id="gameProgressBar"></span></div><div class="game-meta"><span id="questionCounter">Question 1 of 6</span><span id="streakText">🔥 0 streak</span></div><div id="gameArea"></div></div></div>
+
+<div class="toast" id="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
