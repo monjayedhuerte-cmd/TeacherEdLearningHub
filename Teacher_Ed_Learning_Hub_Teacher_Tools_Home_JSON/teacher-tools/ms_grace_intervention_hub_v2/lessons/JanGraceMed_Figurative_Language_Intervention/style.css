@@ -1,0 +1,93 @@
+:root{
+  --navy:#102746;--navy2:#17355f;--gold:#e5b83f;--blue:#2e79d7;
+  --green:#16a866;--orange:#f59b23;--purple:#7952c7;--ink:#14233a;
+  --muted:#637187;--line:#dfe7f0;--white:#fff;--soft:#f3f8fd;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Poppins,Arial,sans-serif;color:var(--ink);background:#fff}
+button,a{font:inherit}
+button{cursor:pointer}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(16,39,70,.98);box-shadow:0 4px 18px #0002}
+.header-inner{max-width:1280px;margin:auto;min-height:78px;padding:9px 22px;display:flex;align-items:center;gap:22px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:#fff;min-width:310px}
+.brand-logo{width:58px;height:58px;object-fit:contain}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-text strong{font:800 25px "Baloo 2",sans-serif}
+.brand-text span{font-size:9px;letter-spacing:1.3px;color:var(--gold);font-weight:800;margin-top:2px}
+.brand-text small{font-size:8px;color:#e2e9f2;margin-top:4px}
+.main-nav{display:flex;align-items:center;gap:3px;flex:1;justify-content:center}
+.nav-link{color:#fff;text-decoration:none;padding:11px 12px;border-radius:9px;font-size:12px;font-weight:600;transition:.2s}
+.nav-link:hover,.nav-link.active{background:#fff1;color:var(--gold);transform:translateY(-1px)}
+.grade-badge{border:1px solid #4d79b0;border-radius:11px;color:#fff;padding:8px 14px;text-align:center;min-width:88px}
+.grade-badge span,.grade-badge b{display:block}.grade-badge span{font-size:9px;letter-spacing:1px}.grade-badge b{font-size:13px;margin-top:2px}
+.hero{position:relative;overflow:hidden;min-height:410px;background:linear-gradient(135deg,#dff3ff,#fff4cf 50%,#e5ddff);display:flex;align-items:center;text-align:center}
+.hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 30%,#fff 0 4%,transparent 5%),radial-gradient(circle at 86% 22%,#fff8 0 7%,transparent 8%);opacity:.8}
+.hero-inner{position:relative;z-index:2;max-width:1000px;margin:auto;padding:60px 20px}
+.hero-kicker{font-size:12px;letter-spacing:3px;font-weight:800;color:#173c76;margin-bottom:13px}
+.hero h1{font:800 clamp(38px,6vw,70px)/.92 "Baloo 2",sans-serif;margin:0;color:#112b57;text-shadow:3px 4px #fff}
+.hero h1 span{display:block;color:#f09a18;font-size:.57em;margin-top:8px;letter-spacing:1px}
+.hero p{max-width:680px;margin:20px auto;color:#3b506e;font-size:16px}
+.hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;padding:13px 23px;border-radius:12px;font-weight:700;transition:.2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 20px #1233}
+.primary{background:var(--blue);color:#fff}.secondary{background:#fff;color:var(--navy);border:2px solid #cbd9ea}
+.hero-shape{position:absolute;border-radius:50%;filter:blur(1px);opacity:.5;animation:float 5s ease-in-out infinite}
+.hero-shape.one{width:100px;height:100px;background:#f7c94b;left:6%;top:15%}
+.hero-shape.two{width:70px;height:70px;background:#79c7ff;right:8%;top:35%;animation-delay:1s}
+.hero-shape.three{width:45px;height:45px;background:#bf8cff;left:17%;bottom:12%;animation-delay:2s}
+@keyframes float{50%{transform:translateY(-14px) rotate(8deg)}}
+.section{max-width:1240px;margin:auto;padding:72px 22px}
+.soft{max-width:none;background:var(--soft)}
+.heading{text-align:center;max-width:750px;margin:0 auto 34px}
+.heading>span{font-size:10px;letter-spacing:1.8px;font-weight:800;color:#2863a9}
+.heading h2{font:800 36px "Baloo 2",sans-serif;margin:7px 0;color:var(--navy)}
+.heading p{margin:0;color:var(--muted)}
+.game-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.game-card{padding:27px 21px 21px;border:1px solid var(--line);border-radius:20px;background:#fff;box-shadow:0 8px 25px #18304d12;position:relative;overflow:hidden;transition:.25s}
+.game-card:hover{transform:translateY(-7px);box-shadow:0 18px 35px #18304d20}
+.game-card:after{content:"";position:absolute;left:0;right:0;top:0;height:6px}
+.game-card.easy:after{background:var(--green)}.game-card.average:after{background:var(--blue)}
+.game-card.difficult:after{background:var(--orange)}.game-card.master:after{background:var(--purple)}
+.game-symbol{font-size:48px;text-align:center;margin-bottom:10px;animation:bob 3s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-5px) rotate(2deg)}}
+.level{display:inline-block;border-radius:20px;padding:4px 13px;color:#fff;font-size:10px;letter-spacing:1px}
+.easy .level{background:var(--green)}.average .level{background:var(--blue)}
+.difficult .level{background:var(--orange)}.master .level{background:var(--purple)}
+.game-card h3{font:800 23px "Baloo 2",sans-serif;margin:10px 0 5px;color:var(--navy)}
+.game-card p{font-size:12px;line-height:1.7;color:var(--muted);min-height:63px}
+.game-card small{font-size:9px;color:#718096}
+.start-btn{display:block;width:100%;border:0;border-radius:11px;color:#fff;padding:12px;margin-top:17px;font-weight:700}
+.easy .start-btn{background:var(--green)}.average .start-btn{background:var(--blue)}
+.difficult .start-btn{background:var(--orange)}.master .start-btn{background:var(--purple)}
+.concept-grid{max-width:1180px;margin:auto;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.concept{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 5px 15px #18304d0c}
+.concept i{font-style:normal;font-size:10px;font-weight:800;color:#6c85a3}.concept h3{font:800 23px "Baloo 2";margin:4px 0}.concept p{font-size:11px;line-height:1.65;color:var(--muted)}.concept em{display:block;background:#eef6ff;padding:9px;border-radius:9px;font-size:10px}
+.practice{max-width:950px;margin:auto;display:flex;gap:22px;align-items:flex-start;border:1px solid var(--line);border-radius:22px;padding:28px;background:#fff;box-shadow:0 12px 35px #18304d13}
+.practice-icon{font-size:45px}.practice>div:last-child{flex:1}.practice span{font-size:10px;font-weight:800;letter-spacing:1.5px;color:#2466ad}.practice h2{font:800 27px "Baloo 2";margin:4px 0}.practice>div p{font-weight:600}
+.practice-options{display:flex;flex-wrap:wrap;gap:9px}.practice-options button{background:#f4f7fb;border:1px solid #d7e1ed;border-radius:10px;padding:9px 14px;font-size:12px}.practice-options button:hover{background:#e8f2ff}
+.feedback{min-height:25px;margin-top:10px;font-size:12px;font-weight:700}
+.stats{max-width:1000px;margin:0 auto 30px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stats div{background:#fff;border:1px solid var(--line);border-radius:15px;padding:20px;text-align:center}.stats b{display:block;font:800 30px "Baloo 2";color:var(--navy)}.stats span{font-size:10px;color:var(--muted)}
+.level-progress{max-width:900px;margin:auto;background:#fff;border-radius:18px;padding:22px;border:1px solid var(--line)}
+.progress-row{margin:12px 0}.progress-row>span{display:flex;justify-content:space-between;font-size:11px;font-weight:700}.progress-row>div{height:10px;background:#e8eef5;border-radius:10px;overflow:hidden;margin-top:6px}.progress-row i{display:block;height:100%;width:0;border-radius:10px;transition:width .5s}
+#easy-bar{background:var(--green)}#average-bar{background:var(--blue)}#difficult-bar{background:var(--orange)}#master-bar{background:var(--purple)}
+.about-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.about-grid article{padding:25px;border:1px solid var(--line);border-radius:17px}.about-grid article>b{font-size:25px}.about-grid h3{font:800 22px "Baloo 2";margin:6px 0}.about-grid p{font-size:12px;line-height:1.8;color:var(--muted)}
+.cycle{max-width:700px;margin:35px auto 0;padding:16px;border-radius:50px;background:var(--navy);color:#fff;text-align:center;word-spacing:10px}
+.footer{background:var(--navy);color:#fff}.footer-inner{max-width:1200px;margin:auto;padding:45px 22px;display:grid;grid-template-columns:1.2fr 1.5fr 1fr;gap:35px}.footer-brand{display:flex;gap:12px;align-items:center}.footer-brand img{width:62px;height:62px;object-fit:contain}.footer h3{font:800 25px "Baloo 2";margin:0}.footer span{display:block;color:var(--gold);font-size:9px;letter-spacing:1px;font-weight:800}.footer small{display:block;color:#d9e1eb;font-size:8px;margin-top:3px}.footer p{color:#bac6d4;font-size:11px;line-height:1.7}.footer-bottom{border-top:1px solid #ffffff1c;max-width:1200px;margin:auto;padding:17px 22px;color:#aebbc9;font-size:9px;display:flex;justify-content:space-between}
+.modal{display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-backdrop{position:absolute;inset:0;background:#071526c9;backdrop-filter:blur(5px)}
+.game-window{position:relative;z-index:2;width:min(720px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:22px;padding:25px;box-shadow:0 30px 80px #0006;animation:pop .25s ease}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.close{position:absolute;right:15px;top:12px;border:0;background:#eef2f6;border-radius:50%;width:34px;height:34px;font-size:22px}
+.game-top{display:flex;justify-content:space-between;gap:20px;align-items:center;padding-right:35px}.game-top h2{font:800 29px "Baloo 2";margin:2px 0}.game-top span{font-size:9px;font-weight:800;color:#2870bb;letter-spacing:1.5px}.score-box{display:grid;grid-template-columns:auto auto;gap:2px 7px;text-align:right}.score-box small{font-size:8px;color:var(--muted)}
+.question-progress{height:9px;background:#e9eef4;border-radius:9px;margin:17px 0 10px;overflow:hidden}.question-progress i{display:block;width:10%;height:100%;background:linear-gradient(90deg,#347fe1,#7c58ca);transition:.3s}
+.question-count{font-size:10px;color:var(--muted)}.question{margin:18px 0;padding:25px;border-radius:17px;background:#f4f8fd;text-align:center}.question span{font-size:30px}.question p{font:700 22px "Baloo 2";margin:8px 0 0}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:10px}.answers button{border:2px solid #dce5ef;background:#fff;border-radius:12px;padding:13px;text-align:left;font-weight:600;transition:.2s}.answers button:hover{border-color:#6c9ddd;background:#f4f8ff;transform:translateY(-2px)}.answers button.correct{background:#dff8eb;border-color:#20aa6a}.answers button.wrong{background:#ffe5e5;border-color:#e85c5c}
+.hint-line{margin:14px 0;display:flex;align-items:center;gap:10px;min-height:32px}.hint-line button{border:0;background:#fff1c7;border-radius:9px;padding:8px 12px;font-size:11px;font-weight:700}.hint-line span{font-size:10px;color:#876c20}
+.answer-feedback{min-height:50px;padding:11px;border-radius:11px;font-size:11px;line-height:1.6}.answer-feedback.correct{background:#e3f8ed;color:#17663f}.answer-feedback.wrong{background:#fff0f0;color:#8b3030}
+.next{width:100%;margin-top:8px;border:0;background:var(--navy);color:#fff;border-radius:11px;padding:13px;font-weight:700}.next:disabled{opacity:.4;cursor:not-allowed}
+#celebration{position:fixed;inset:0;pointer-events:none;z-index:200}
+.confetti{position:absolute;width:9px;height:15px;animation:fall 1.2s linear forwards}@keyframes fall{to{transform:translateY(100vh) rotate(600deg);opacity:0}}
+@media(max-width:1050px){.main-nav{gap:0}.nav-link{padding:10px 7px}.game-grid{grid-template-columns:repeat(2,1fr)}.concept-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.header-inner{flex-wrap:wrap}.brand{min-width:0;flex:1}.main-nav{order:3;width:100%;overflow:auto;justify-content:flex-start}.grade-badge{display:none}.nav-link span{display:none}.nav-link{font-size:17px}.hero{min-height:370px}.stats{grid-template-columns:repeat(2,1fr)}.concept-grid{grid-template-columns:1fr 1fr}.footer-inner{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:7px;text-align:center}.about-grid{grid-template-columns:1fr}}
+@media(max-width:520px){.brand-text strong{font-size:21px}.brand-logo{width:48px;height:48px}.game-grid,.concept-grid{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.practice{flex-direction:column}.hero h1{font-size:42px}.heading h2{font-size:30px}}

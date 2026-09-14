@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-figures-of-speech-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Figures of Speech",
+    "description": "Interactive intervention games covering simile, metaphor, personification, hyperbole, and idiom.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["Easy", "Average", "Difficult", "Master"]
+  }
+]

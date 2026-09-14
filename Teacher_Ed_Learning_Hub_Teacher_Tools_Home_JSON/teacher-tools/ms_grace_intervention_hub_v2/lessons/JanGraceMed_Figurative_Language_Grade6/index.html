@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>JanGraceMed Intervention Learning Hub</title>
+    <link rel="icon" href="JanGraceMed.png" />
+    <style>
+      :root {
+        --n: #13243b;
+        --g: #c7a35a;
+        --m: #667384;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f5f7fa;
+        color: #243247;
+      }
+      .head {
+        position: sticky;
+        top: 0;
+        background: #fff;
+        border-bottom: 1px solid #e5e9ee;
+        z-index: 5;
+      }
+      .inner {
+        max-width: 1100px;
+        margin: auto;
+        padding: 12px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-decoration: none;
+        color: var(--n);
+      }
+      .logo {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+      }
+      .brand b {
+        font: 700 22px Georgia;
+      }
+      .brand small {
+        display: block;
+        color: var(--g);
+        font-size: 9px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 3px;
+      }
+      nav a {
+        color: var(--m);
+        text-decoration: none;
+        font-weight: bold;
+        margin-left: 18px;
+        font-size: 13px;
+      }
+      .main {
+        max-width: 1000px;
+        margin: auto;
+        padding: 65px 20px 80px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #13243b, #294c72);
+        color: white;
+        border-radius: 25px;
+        text-align: center;
+        padding: 60px 25px;
+        box-shadow: 0 20px 50px #13243b22;
+      }
+      .hero small {
+        color: #efd48e;
+        letter-spacing: 2px;
+        font-weight: bold;
+      }
+      .hero h1 {
+        font: 700 52px Georgia;
+        margin: 14px 0;
+      }
+      .hero p {
+        max-width: 700px;
+        margin: 0 auto 28px;
+        line-height: 1.8;
+        color: #dce5ef;
+      }
+      .btn {
+        display: inline-block;
+        background: white;
+        color: var(--n);
+        padding: 14px 22px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .levels {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+        margin-top: 24px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid #e2e7ed;
+        border-radius: 17px;
+        padding: 23px;
+        text-align: center;
+      }
+      .card strong {
+        display: block;
+        color: var(--n);
+        font: 700 21px Georgia;
+        margin: 8px;
+      }
+      .card span {
+        font-size: 11px;
+        color: var(--m);
+        line-height: 1.5;
+      }
+      .foot {
+        background: var(--n);
+        color: #fff;
+      }
+      .footin {
+        max-width: 1100px;
+        margin: auto;
+        padding: 42px 20px;
+        display: grid;
+        grid-template-columns: 1fr 1.5fr 1fr;
+        gap: 30px;
+      }
+      .foot .logo {
+        width: 60px;
+        height: 60px;
+      }
+      .footbrand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .foot h3 {
+        margin: 0;
+        font: 700 21px Georgia;
+      }
+      .foot p {
+        font-size: 11px;
+        color: #c8d2dc;
+        line-height: 1.8;
+      }
+      .gold {
+        color: var(--g) !important;
+        font-size: 9px !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .bottom {
+        border-top: 1px solid #ffffff1a;
+        padding: 15px 20px;
+        text-align: center;
+        color: #91a0b0;
+        font-size: 9px;
+      }
+      @media (max-width: 700px) {
+        .hero h1 {
+          font-size: 36px;
+        }
+        .levels,
+        .footin {
+          grid-template-columns: 1fr 1fr;
+        }
+        .brand small,
+        nav a {
+          display: none;
+        }
+      }
+      @media (max-width: 450px) {
+        .levels,
+        .footin {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="head">
+      <div class="inner">
+        <a class="brand" href="#"
+          ><img class="logo" src="JanGraceMed.png" alt="JanGraceMed" /><span
+            ><b>JanGraceMed</b><small>Intervention Learning Hub</small></span
+          ></a
+        >
+        <nav>
+          <a href="#levels">Levels</a
+          ><a href="figurative-language-grade6.html">Lesson</a>
+        </nav>
+      </div>
+    </header>
+    <main class="main">
+      <section class="hero">
+        <small>GRADE 6 • ENGLISH INTERVENTION</small>
+        <h1>Types of Figurative Language</h1>
+        <p>
+          Learn to identify and understand simile, metaphor, personification,
+          hyperbole, and idiom through enjoyable, animated, game-based
+          intervention practice.
+        </p>
+        <a class="btn" href="figurative-language-grade6.html"
+          >Start the Lesson →</a
+        >
+      </section>
+      <section id="levels" class="levels">
+        <div class="card">
+          🌱<strong>Easy</strong
+          ><span>Build confidence by identifying examples.</span>
+        </div>
+        <div class="card">
+          🧩<strong>Average</strong
+          ><span>Match types with their meanings.</span>
+        </div>
+        <div class="card">
+          🚪<strong>Difficult</strong
+          ><span>Use context clues to solve challenges.</span>
+        </div>
+        <div class="card">
+          🏆<strong>Master</strong
+          ><span>Apply all five types in a final challenge.</span>
+        </div>
+      </section>
+    </main>
+    <footer class="foot">
+      <div class="footin">
+        <div class="footbrand">
+          <img class="logo" src="JanGraceMed.png" alt="JanGraceMed" />
+          <div>
+            <h3>JanGraceMed</h3>
+            <p class="gold">Intervention Learning Hub</p>
+          </div>
+        </div>
+        <p>
+          An engaging intervention space designed to make learning enjoyable,
+          supportive, interactive, and progressive.
+        </p>
+        <p>
+          <b class="gold">Learning Levels</b><br />🌱 Easy<br />🧩 Average<br />🚪
+          Difficult<br />🏆 Master
+        </p>
+      </div>
+      <div class="bottom">
+        © 2026 JanGraceMed Intervention Learning Hub • Learn • Practice • Play •
+        Progress
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-sentences-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Sentences",
+    "description": "Interactive intervention games for complete sentences, subjects, predicates, sentence types, simple and compound sentences, fragments, run-ons, and clauses.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["Easy", "Average", "Difficult", "Master"]
+  }
+]

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="JanGraceMed Grade 6 English Sentences Intervention Learning Games">
+<title>JanGraceMed | Sentences Intervention</title>
+<link rel="icon" type="image/png" href="JanGraceMed.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="JanGraceMed Home">
+    <img src="JanGraceMed.png" alt="JanGraceMed logo">
+    <span><strong>JanGraceMed</strong><small>INTERVENTION LEARNING HUB</small></span>
+  </a>
+  <nav class="nav" aria-label="Main navigation">
+    <a href="#home">Home</a><a href="#lesson">Lesson</a><a href="#games">Games</a><a href="#progress">Progress</a><a href="#about">About</a>
+  </nav>
+  <div class="badge">GRADE 6<br><small>ENGLISH</small></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <p class="kicker">LEARN • PRACTICE • PLAY • PROGRESS</p>
+    <h1>Sentence <span>Power</span></h1>
+    <h2>English Grammar Game Lab</h2>
+    <p>Build stronger sentence skills by learning how complete thoughts are formed, how ideas connect, and how to spot fragments and run-ons.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#games">🎮 Start Playing</a>
+      <a class="btn secondary" href="#lesson">📖 Learn the Basics</a>
+    </div>
+    <div class="chips"><span>🧩 Complete Sentences</span><span>🎯 4 Challenge Levels</span><span>⭐ Instant Feedback</span></div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="sentence-board">
+      <div class="board-line">SUBJECT</div><div class="arrow">→</div><div class="board-line accent">PREDICATE</div>
+      <div class="board-sentence">The learner <b>practices</b>.</div>
+    </div>
+    <div class="float-tag tag-one">✓ COMPLETE!</div>
+    <div class="float-tag tag-two">?</div>
+    <div class="float-tag tag-three">. ! ?</div>
+  </div>
+</section>
+
+<section id="lesson" class="section">
+  <div class="section-heading"><p>📖 MINI LESSON</p><h2>Build a Strong Sentence</h2><span>Use these quick guides before entering the games.</span></div>
+  <div class="lesson-grid">
+    <article><b>01</b><h3>Complete Thought</h3><p>A complete sentence expresses a complete thought and normally contains a subject and a predicate.</p><em>The students practiced.</em></article>
+    <article><b>02</b><h3>Subject</h3><p>The subject tells who or what the sentence is about.</p><em><u>The children</u> laughed.</em></article>
+    <article><b>03</b><h3>Predicate</h3><p>The predicate tells what the subject does or what the subject is.</p><em>The children <u>laughed loudly</u>.</em></article>
+    <article><b>04</b><h3>Sentence Types</h3><p>Statements, questions, commands, and exclamations have different purposes.</p><em>She reads. / Does she read?</em></article>
+    <article><b>05</b><h3>Simple Sentence</h3><p>Has one independent clause and expresses one main idea.</p><em>Maria studies.</em></article>
+    <article><b>06</b><h3>Compound Sentence</h3><p>Joins independent clauses, often with a coordinating conjunction such as and, but, or so.</p><em>I studied, and I practiced.</em></article>
+    <article><b>07</b><h3>Fragment</h3><p>A fragment is missing a necessary part or does not express a complete thought.</p><em>Because the bell rang.</em></article>
+    <article><b>08</b><h3>Run-on Sentence</h3><p>A run-on incorrectly joins complete thoughts without the needed punctuation or connection.</p><em>I ran home I was tired.</em></article>
+  </div>
+</section>
+
+<section id="games" class="section game-zone">
+  <div class="section-heading"><p>🎮 INTERVENTION GAMES</p><h2>Choose Your Challenge</h2><span>Start with confidence, then move toward deeper sentence analysis.</span></div>
+  <div class="game-grid">
+    <article class="game-card easy"><div class="game-icon">🔎</div><label>EASY</label><h3>Sentence Scout</h3><p>Identify complete sentences, subjects, predicates, and sentence purposes.</p><small>10 questions • confidence builder</small><button data-level="easy">Play Easy →</button></article>
+    <article class="game-card average"><div class="game-icon">🧩</div><label>AVERAGE</label><h3>Sentence Builder</h3><p>Choose the best sentence structure and fix basic sentence problems.</p><small>10 questions • skill builder</small><button data-level="average">Play Average →</button></article>
+    <article class="game-card difficult"><div class="game-icon">🔐</div><label>DIFFICULT</label><h3>Sentence Escape</h3><p>Analyze fragments, run-ons, clauses, and sentence structures in context.</p><small>10 questions • challenge mode</small><button data-level="difficult">Play Difficult →</button></article>
+    <article class="game-card master"><div class="game-icon">🏆</div><label>MASTER</label><h3>Sentence Master</h3><p>Face a mixed challenge covering the major sentence skills in this lesson.</p><small>10 questions • mastery test</small><button data-level="master">Play Master →</button></article>
+  </div>
+</section>
+
+<section class="section quick-section">
+  <div class="quick-box"><div class="quick-mark">💡</div><div class="quick-content">
+    <p>QUICK PRACTICE</p><h2>Which sentence is complete?</h2>
+    <div class="quick-options">
+      <button data-answer="A">A. Because the rain stopped.</button>
+      <button data-answer="B">B. The children returned to class.</button>
+      <button data-answer="C">C. Running through the hallway.</button>
+      <button data-answer="D">D. When the teacher arrived.</button>
+    </div>
+    <div id="quick-feedback" role="status"></div>
+  </div></div>
+</section>
+
+<section id="progress" class="section progress-zone">
+  <div class="section-heading"><p>📊 YOUR PROGRESS</p><h2>Keep Growing!</h2><span>Your progress is saved automatically on this device.</span></div>
+  <div class="stats"><div><b id="total-points">0</b><span>Total Points</span></div><div><b id="best-streak">0</b><span>Best Streak</span></div><div><b id="games-played">0</b><span>Games Played</span></div><div><b id="mastered">0</b><span>Levels Mastered</span></div></div>
+  <div class="progress-panel" id="progress-panel"></div>
+</section>
+
+<section id="about" class="section about-section">
+  <div class="section-heading"><p>ⓘ ABOUT THE INTERVENTION</p><h2>Learning Can Be Fun, Meaningful, and Encouraging.</h2><span>This intervention space gives learners another opportunity to practice, understand, and grow.</span></div>
+  <div class="about-grid">
+    <article><span>♥</span><h3>Why Intervention?</h3><p>Intervention gives learners additional guided practice, repetition, examples, and encouragement so they can strengthen skills at a manageable pace.</p></article>
+    <article><span>🎮</span><h3>Learning Through Games</h3><p>Short interactive challenges make practice active and engaging through hints, immediate explanations, rewards, streaks, and achievable goals.</p></article>
+    <article><span>📈</span><h3>Progressive Levels</h3><p><strong>Easy</strong> builds confidence, <strong>Average</strong> strengthens skills, <strong>Difficult</strong> develops deeper thinking, and <strong>Master</strong> checks overall understanding.</p></article>
+    <article><span>🌱</span><h3>A Positive Learning Space</h3><p>Mistakes are part of learning. The goal is steady improvement, stronger understanding, and confidence—not simply getting every answer right immediately.</p></article>
+  </div>
+  <div class="cycle"><b>TRY</b><span>→</span><b>PRACTICE</b><span>→</span><b>LEARN</b><span>→</span><b>GROW</b></div>
+</section>
+</main>
+
+<div id="game-modal" class="modal" aria-hidden="true">
+  <div class="modal-shade"></div>
+  <div class="game-window" role="dialog" aria-modal="true" aria-labelledby="game-title">
+    <button id="close-game" class="close" aria-label="Close game">×</button>
+    <div class="game-top"><div><small id="game-level">EASY</small><h2 id="game-title">Sentence Scout</h2></div><div class="score-box"><span>⭐ <b id="live-score">0</b><small> points</small></span><span>🔥 <b id="live-streak">0</b><small> streak</small></span></div></div>
+    <div class="question-bar"><i id="question-progress"></i></div>
+    <p class="question-count">Question <b id="question-number">1</b> of 10</p>
+    <div class="question-box"><span>✨</span><p id="game-question"></p></div>
+    <div id="answers" class="answers"></div>
+    <div class="hint-row"><button id="hint-button">💡 Hint</button><span id="hint-text"></span></div>
+    <div id="feedback" class="feedback" role="status"></div>
+    <button id="next-button" class="next-button" disabled>Next Question →</button>
+  </div>
+</div>
+<div id="confetti" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand"><img src="JanGraceMed.png" alt="JanGraceMed logo"><div><h3>JanGraceMed</h3><b>INTERVENTION LEARNING HUB</b><small>Learn Today. A Brighter Tomorrow.</small></div></div>
+    <div><strong>SENTENCES</strong><p>Interactive Grade 6 English intervention for complete thoughts, sentence parts, sentence types, clauses, fragments, and run-ons.</p></div>
+    <div><strong>LEARNING LEVELS</strong><p>Easy • Average • Difficult • Master</p></div>
+  </div>
+  <div class="footer-bottom">© 2026 JanGraceMed Intervention Learning Hub <span>Learn • Practice • Play • Progress</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

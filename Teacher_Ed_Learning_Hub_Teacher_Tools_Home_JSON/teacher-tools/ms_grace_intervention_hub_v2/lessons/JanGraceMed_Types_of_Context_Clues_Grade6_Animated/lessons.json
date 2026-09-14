@@ -1,0 +1,13 @@
+{
+  "lessons": [
+    {
+      "id": "english-002",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Types of Context Clues",
+      "description": "Identify definition, synonym, antonym, example, and inference context clues.",
+      "lessonType": "html",
+      "url": "lessons/types-of-context-clues.html"
+    }
+  ]
+}

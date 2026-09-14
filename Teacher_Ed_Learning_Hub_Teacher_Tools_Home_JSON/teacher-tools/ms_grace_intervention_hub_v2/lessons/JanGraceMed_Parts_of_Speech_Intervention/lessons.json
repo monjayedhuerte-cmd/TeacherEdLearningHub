@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-parts-of-speech-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Parts of Speech",
+    "description": "Interactive intervention games covering noun, pronoun, verb, adjective, adverb, preposition, conjunction, and interjection.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["Easy", "Average", "Difficult", "Master"]
+  }
+]

@@ -17,6 +17,78 @@
       "description": "Use the words around an unfamiliar word to discover its meaning, unlock clues, solve missions, and become a stronger reader.",
       "lessonType": "html",
       "url": "lessons/JanGraceMed_Context_Clue_Grade6/index.html"
+    },
+    {
+      "id": "english-003",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Types of Context Clues",
+      "description": "Become a word detective. Learn how definition, synonym, antonym, example, and inference clues help you discover unfamiliar words.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Types_of_Context_Clues_Grade6_Animated/index.html"
+    },
+    {
+      "id": "english-004",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Types of Figurative Language",
+      "description": "Become a word detective. Learn how definition, synonym, antonym, example, and inference clues help you discover unfamiliar words.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Figurative_Language_Grade6/index.html"
+    },
+    {
+      "id": "english-005",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Figurative Language",
+      "description": "Discover how writers make ordinary words more colorful, meaningful, and imaginative.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Figurative_Language_Intervention/index.html"
+    },
+    {
+      "id": "english-006",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Figure of Speech",
+      "description": "Learn how writers make language vivid, expressive, and memorable—then prove your skills through fun, progressive challenges.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Figures_of_Speech_Intervention/index.html"
+    },
+    {
+      "id": "english-007",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Parts of Speech",
+      "description": "Strengthen grammar skills by discovering how words work in sentences. Learn the eight parts of speech, then practice through animated intervention games.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Parts_of_Speech_Intervention/index.html"
+    },
+    {
+      "id": "english-008",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Sentence",
+      "description": "Build stronger sentence skills by learning how complete thoughts are formed, how ideas connect, and how to spot fragments and run-ons.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Sentences_Intervention/index.html"
+    },
+    {
+      "id": "english-009",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Type of Sentence",
+      "description": "Learn how sentences communicate ideas and feelings. Identify statements, questions, commands, and exclamations through fun, progressive intervention games.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Type_of_Sentences_Intervention/index.html"
+    },
+    {
+      "id": "english-010",
+      "subject": "English",
+      "grade": "Grade 6",
+      "title": "Essays",
+      "description": "Build confidence in essay writing through short, interactive challenges. Learn how to plan an essay, organize ideas, support a main idea, use transitions, write conclusions, and revise your work.",
+      "lessonType": "html",
+      "url": "lessons/JanGraceMed_Essays_Intervention/index.html#games"
     }
     
   ]

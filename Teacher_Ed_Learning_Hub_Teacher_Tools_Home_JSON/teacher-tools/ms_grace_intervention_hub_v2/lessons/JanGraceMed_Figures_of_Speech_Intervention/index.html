@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JanGraceMed | Figures of Speech Intervention</title>
+<link rel="icon" type="image/png" href="JanGraceMed.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="JanGraceMed.png" alt="JanGraceMed logo">
+    <div><strong>JanGraceMed</strong><span>INTERVENTION LEARNING HUB</span></div>
+  </div>
+  <nav>
+    <a href="#home">Home</a><a href="#lesson">Lesson</a><a href="#games">Games</a>
+    <a href="#progress">Progress</a><a href="#about">About</a>
+  </nav>
+  <div class="grade">GRADE 6<br><small>ENGLISH</small></div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">LEARN • PRACTICE • PLAY • PROGRESS</p>
+    <h1>Figures of <span>Speech</span></h1>
+    <h2>Intervention Game Lab</h2>
+    <p>Learn how writers make language vivid, expressive, and memorable—then prove your skills through fun, progressive challenges.</p>
+    <div class="actions"><a class="btn primary" href="#games">🎮 Start Playing</a><a class="btn light" href="#lesson">📖 Learn First</a></div>
+    <div class="hero-tags"><span>🎭 5 Core Figures</span><span>🎯 4 Levels</span><span>⭐ Instant Feedback</span></div>
+  </div>
+  <div class="hero-art">
+    <div class="bubble b1">LIKE</div><div class="bubble b2">WOW!</div><div class="bubble b3">“ ”</div>
+    <img src="JanGraceMed.png" alt="JanGraceMed">
+    <div class="floating-card">🧠 <b>Think beyond<br>the literal!</b></div>
+  </div>
+</section>
+
+<section id="lesson" class="section">
+  <div class="section-head"><p>📖 MINI LESSON</p><h2>Know the Five Core Figures</h2><span>Use the clues below before entering a game.</span></div>
+  <div class="concepts">
+    <article><b>01</b><h3>Simile</h3><p>Compares two unlike things using <strong>like</strong> or <strong>as</strong>.</p><em>“He is as brave as a lion.”</em></article>
+    <article><b>02</b><h3>Metaphor</h3><p>Makes a direct comparison without using like or as.</p><em>“The classroom was a zoo.”</em></article>
+    <article><b>03</b><h3>Personification</h3><p>Gives human actions or qualities to nonhuman things.</p><em>“The wind whispered.”</em></article>
+    <article><b>04</b><h3>Hyperbole</h3><p>Uses deliberate exaggeration for emphasis or effect.</p><em>“I waited forever.”</em></article>
+    <article><b>05</b><h3>Idiom</h3><p>Uses a phrase whose intended meaning is different from its literal words.</p><em>“Break a leg!”</em></article>
+  </div>
+</section>
+
+<section id="games" class="section game-section">
+  <div class="section-head"><p>🎮 INTERVENTION GAMES</p><h2>Choose Your Challenge</h2><span>Start at Easy, build confidence, and work toward mastery.</span></div>
+  <div class="game-grid">
+    <article class="game-card easy"><div class="icon">🔎</div><label>EASY</label><h3>Figurative Scout</h3><p>Identify the figure of speech in clear, familiar examples.</p><small>10 questions • confidence builder</small><button data-level="easy">Play Easy →</button></article>
+    <article class="game-card average"><div class="icon">🧩</div><label>AVERAGE</label><h3>Meaning Matcher</h3><p>Interpret expressions and connect them to their intended meanings.</p><small>10 questions • skill builder</small><button data-level="average">Play Average →</button></article>
+    <article class="game-card difficult"><div class="icon">🔐</div><label>DIFFICULT</label><h3>Context Quest</h3><p>Use context clues to solve more challenging figurative language.</p><small>10 questions • challenge mode</small><button data-level="difficult">Play Difficult →</button></article>
+    <article class="game-card master"><div class="icon">🏆</div><label>MASTER</label><h3>Figure of Speech Master</h3><p>Mix identification and interpretation in the ultimate challenge.</p><small>10 questions • mastery test</small><button data-level="master">Play Master →</button></article>
+  </div>
+</section>
+
+<section class="section quick">
+  <div class="quick-box">
+    <div class="quick-icon">💡</div>
+    <div>
+      <p>QUICK PRACTICE</p><h2>Spot the Figure of Speech</h2>
+      <blockquote>“The moon smiled down on the sleeping town.”</blockquote>
+      <div class="quick-options">
+        <button>Simile</button><button>Metaphor</button><button data-correct="true">Personification</button><button>Hyperbole</button>
+      </div>
+      <div id="quick-feedback"></div>
+    </div>
+  </div>
+</section>
+
+<section id="progress" class="section progress-section">
+  <div class="section-head"><p>📊 YOUR PROGRESS</p><h2>Keep Growing!</h2><span>Progress is saved automatically on this device.</span></div>
+  <div class="stats"><div><b id="score">0</b><span>Total Points</span></div><div><b id="best">0</b><span>Best Streak</span></div><div><b id="played">0</b><span>Games Played</span></div><div><b id="mastered">0</b><span>Levels Mastered</span></div></div>
+  <div class="progress-card" id="progress-bars"></div>
+</section>
+
+<section id="about" class="section">
+  <div class="section-head"><p>ⓘ ABOUT THE INTERVENTION</p><h2>Learning Can Be Fun, Meaningful, and Encouraging.</h2></div>
+  <div class="about-grid">
+    <article><span>♥</span><h3>Why Intervention?</h3><p>Intervention gives learners another opportunity to strengthen skills, understand difficult concepts, and build confidence through guided practice.</p></article>
+    <article><span>🎮</span><h3>Learning Through Games</h3><p>Short interactive challenges provide practice, immediate feedback, hints, rewards, and a safe place to learn from mistakes.</p></article>
+    <article><span>📈</span><h3>Progressive Difficulty</h3><p><strong>Easy</strong> builds confidence, <strong>Average</strong> strengthens skills, <strong>Difficult</strong> develops deeper thinking, and <strong>Master</strong> checks overall understanding.</p></article>
+    <article><span>🌱</span><h3>Celebrate Progress</h3><p>Every correct answer is a step forward. The goal is not only a high score—it is stronger understanding and growing confidence.</p></article>
+  </div>
+  <div class="cycle"><b>TRY</b><span>→</span><b>PRACTICE</b><span>→</span><b>LEARN</b><span>→</span><b>GROW</b></div>
+</section>
+</main>
+
+<div id="modal" class="modal" aria-hidden="true">
+  <div class="shade"></div>
+  <div class="game-window">
+    <button id="close" class="close" aria-label="Close">×</button>
+    <div class="game-head"><div><small id="level-name">EASY</small><h2 id="game-title">Figurative Scout</h2></div><div class="live-score">⭐ <b id="live-score">0</b><small>points</small> 🔥 <b id="streak">0</b><small>streak</small></div></div>
+    <div class="bar"><i id="bar"></i></div>
+    <p class="count">Question <b id="num">1</b> of 10</p>
+    <div class="question"><span>✨</span><p id="question"></p></div>
+    <div id="answers" class="answers"></div>
+    <div class="hint-row"><button id="hint">💡 Hint</button><span id="hint-text"></span></div>
+    <div id="feedback" class="feedback"></div>
+    <button id="next" class="next" disabled>Next Question →</button>
+  </div>
+</div>
+<div id="confetti"></div>
+
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand"><img src="JanGraceMed.png" alt="JanGraceMed logo"><div><h3>JanGraceMed</h3><b>INTERVENTION LEARNING HUB</b><small>Learn Today. A Brighter Tomorrow.</small></div></div>
+    <div><strong>FIGURES OF SPEECH</strong><p>Interactive Grade 6 English intervention through learning, practice, play, and progressive challenges.</p></div>
+    <div><strong>LEVELS</strong><p>Easy • Average • Difficult • Master</p></div>
+  </div>
+  <div class="footer-bottom">© 2026 JanGraceMed Intervention Learning Hub <span>Learn • Practice • Play • Progress</span></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

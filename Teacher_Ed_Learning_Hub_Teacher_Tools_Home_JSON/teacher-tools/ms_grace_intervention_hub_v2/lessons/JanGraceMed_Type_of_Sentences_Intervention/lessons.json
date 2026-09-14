@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-types-of-sentences-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Types of Sentences",
+    "description": "Interactive intervention games for declarative, interrogative, imperative, and exclamatory sentences.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["Easy", "Average", "Difficult", "Master"]
+  }
+]

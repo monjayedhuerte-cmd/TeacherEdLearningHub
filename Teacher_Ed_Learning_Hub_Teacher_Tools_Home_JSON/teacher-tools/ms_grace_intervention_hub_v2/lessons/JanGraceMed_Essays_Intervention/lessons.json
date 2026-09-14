@@ -1,0 +1,12 @@
+[
+  {
+    "id": "english-essays-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Essays",
+    "description": "Interactive intervention games for essay planning, organization, supporting details, conclusions, transitions, and revision.",
+    "lessonType": "html",
+    "url": "index.html",
+    "levels": ["Easy", "Average", "Difficult", "Master"]
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "english-figurative-language-grade6",
+    "subject": "English",
+    "grade": "Grade 6",
+    "title": "Types of Figurative Language",
+    "description": "Interactive intervention games for simile, metaphor, personification, hyperbole, and idiom.",
+    "lessonType": "html",
+    "url": "figurative-language-grade6.html",
+    "levels": [
+      "Easy",
+      "Average",
+      "Difficult",
+      "Master"
+    ]
+  }
+]
