@@ -65,6 +65,14 @@
       "file": "ms_grace_intervention_hub_v2/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "Ms.RachelLearningJungle",
+      "title": "Ms. Rachel's Learning Jungle",
+      "description": "Explore new ideas, discover new skills, and grow every day with Ms. Rachel.",
+      "file": "Ms_Rachel_Learning_Jungle/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }
