@@ -1,0 +1,56 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" type="image/png" href="Learning Jungle logo.png">
+<title>Ms. Rachel's Learning Jungle | Connect to Reading</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header class="hero" id="start"><nav><div class="brand">🌿 MS. RACHEL'S <small>LEARNING JUNGLE</small></div>
+<div class="links"><a href="#targets">Targets</a><a href="#words">Words</a><a href="#learn">Learn</a><a href="#practice">Practice</a><a href="#talk">Communicate</a><a href="#finish">Finish</a></div></nav>
+<div class="heroText"><span class="pill">📚 CONNECT TO READING</span><h1>Rhyme & Read!</h1><p class="tag">Explore • Learn • Grow</p>
+<p>Listen, talk, read, and write as we discover <b>rhyming words</b> and the joy of reading.</p><button class="primary" onclick="go('targets')">🚀 Start Learning</button></div></header>
+
+<main>
+<section id="targets"><div class="title">🎯 <div><h2>Our Learning Targets</h2><p>Today I can...</p></div></div>
+<div class="grid four"><article class="card center">👂<h3>Listening</h3><p>I can listen to an informational text and find the <b>main idea</b>.</p></article>
+<article class="card center">🗣️<h3>Speaking</h3><p>I can exchange ideas with others during a discussion.</p></article>
+<article class="card center">✏️<h3>Writing</h3><p>I can write words to complete sentences.</p></article>
+<article class="card center">👀<h3>Reading</h3><p>I can closely read a text and understand its meaning.</p></article></div></section>
+
+<section class="soft" id="words"><div class="title">🌱 <div><h2>Word Garden</h2><p>Learn our important words.</p></div></div>
+<div class="grid two"><article class="card center"><div class="emoji">🎵</div><h3>RHYME</h3><p>Words rhyme when they have the same or similar <b>ending sound</b>.</p><div class="example">cat 🐱 + hat 🎩</div><button onclick="speak('Rhyme. Cat and hat rhyme.')">🔊 Listen</button></article>
+<article class="card center"><div class="emoji">📖</div><h3>READ</h3><p>To read means to look at written words, letters, or symbols to understand meaning.</p><div class="example">I read a book. 📚</div><button onclick="speak('Read. I read words to understand their meaning.')">🔊 Listen</button></article></div></section>
+
+<section id="learn"><div class="title">🔎 <div><h2>Explore & Learn</h2><p>Look, listen, and discover.</p></div></div>
+<article class="card"><h3>🎵 What Is a Rhyme?</h3><p class="large">Listen to the ending sounds.</p><div class="rhyme"><div>🐱<b>CAT</b></div><strong>↔</strong><div>🎩<b>HAT</b></div></div>
+<p><b>Cat</b> and <b>hat</b> rhyme because they end with the sound <b>/at/</b>.</p><button onclick="speak('Cat and hat rhyme. They have the same ending sound: at.')">🔊 Hear Example</button></article>
+<div class="grid three examples"><article class="card center"><h3>☀️ Pair 1</h3><div class="pair">sun — fun</div><p>Both end with <b>/un/</b>.</p></article>
+<article class="card center"><h3>⚽ Pair 2</h3><div class="pair">ball — tall</div><p>Both end with <b>/all/</b>.</p></article>
+<article class="card center"><h3>🍰 Pair 3</h3><div class="pair">cake — snake</div><p>Both end with <b>/ake/</b>.</p></article></div>
+<article class="card"><h3>📖 What Does It Mean to Read?</h3><div class="steps"><div>1️⃣ <b>Look</b> at words.</div><div>2️⃣ <b>Notice</b> letters and sounds.</div><div>3️⃣ <b>Think</b> about meaning.</div><div>4️⃣ <b>Share</b> what you understand.</div></div></article>
+<article class="card highlight"><h3>💡 Main Idea Example</h3><p><b>Text:</b> “Books can teach us many things. We can learn about animals, places, people, and new ideas by reading books.”</p><p><b>Main idea:</b> Books help us learn many things.</p><button onclick="speak('The main idea is: Books help us learn many things.')">🔊 Listen</button></article>
+</section>
+
+<section class="soft" id="practice"><div class="title">🎮 <div><h2>Practice Zone</h2><p>Try it! Every mistake is a chance to learn.</p></div></div>
+<article class="card activity"><h3>1️⃣ Rhyme or Not?</h3><p>Do these words rhyme?</p><div id="rq" class="question"></div><div class="choices"><button onclick="rhymeCheck(true)">✅ YES</button><button onclick="rhymeCheck(false)">❌ NO</button></div><div id="rf" class="feedback"></div><button onclick="nextRhyme()">➡️ Next Pair</button></article>
+<article class="card activity"><h3>2️⃣ Find the Rhyming Word</h3><p id="fq" class="question"></p><div id="fc" class="choices"></div><div id="ff" class="feedback"></div><button onclick="newFind()">🔄 New Question</button></article>
+<article class="card activity"><h3>3️⃣ Complete the Sentence</h3><p id="sq" class="question"></p><div id="sc" class="choices"></div><div id="sf" class="feedback"></div><button onclick="newSentence()">🔄 New Sentence</button></article>
+<article class="card activity"><h3>4️⃣ Listen for the Main Idea</h3><button onclick="speak(mainText)">🔊 Read the Text Aloud</button><p class="textbox">“Pencils are useful in school. We use pencils to write, draw, and complete our work.”</p>
+<div class="choices"><button onclick="mainCheck(false)">A. Pencils are only for drawing.</button><button onclick="mainCheck(true)">B. Pencils are useful for school work.</button><button onclick="mainCheck(false)">C. Pencils are toys.</button></div><div id="mf" class="feedback"></div></article>
+<article class="card activity"><h3>5️⃣ Reading Detective</h3><p class="textbox"><b>Text:</b> “Mia has a red book. She reads the book every day. The book teaches her about plants.”</p><p class="large"><b>What does the book teach Mia about?</b></p><div class="choices"><button onclick="detect(false)">A. Animals</button><button onclick="detect(true)">B. Plants</button><button onclick="detect(false)">C. Cars</button></div><div id="df" class="feedback"></div></article></section>
+
+<section id="talk"><div class="title">🗣️ <div><h2>Communicate</h2><p>Talk with a partner and share your ideas.</p></div></div>
+<div class="grid three"><article class="card"><h3>💬 Talk About Rhymes</h3><p class="frame">“_____ rhymes with _____.”</p><p>Example: <b>Cat rhymes with hat.</b></p><button onclick="speak('Cat rhymes with hat.')">🔊 Hear Example</button></article>
+<article class="card"><h3>💬 Talk About Reading</h3><p class="frame">“I read _____ because _____.”</p><p>Example: <b>I read books because I want to learn.</b></p></article>
+<article class="card"><h3>🤝 Partner Questions</h3><ul><li>What words rhyme?</li><li>What did you read?</li><li>What is the main idea?</li><li>What did you learn?</li></ul></article></div></section>
+
+<section class="soft" id="write"><div class="title">✏️ <div><h2>Write & Draw</h2><p>Choose the task for your grade level.</p></div></div>
+<div class="grid five">
+<script>
+const grades=[
+['1','Draw or name two things that rhyme.'],['2','Write 2 pairs of rhyming words.'],['3','Write a sentence using a rhyming pair.'],['4','Write the main idea of a short text.'],['5','Write 2–3 sentences explaining why reading is important.']];
+document.write(grades.map((g,i)=>`<article class="card grade center"><span class="gradeNum">${g[0]}</span><h3>Grade ${g[0]}</h3><p>${g[1]}</p><input id="g${i+1}" placeholder="Write here..."><button onclick="saveWork('g${i+1}','m${i+1}')">💾 Save</button><small id="m${i+1}"></small></article>`).join(''));
+</script></div></section>
+
+<section id="finish"><div class="finish"><div>🏆</div><h2>Jungle Reading Mission Complete!</h2><p>Remember:</p><div class="bigIdea">🎵 Rhyming words have similar ending sounds.<br>📖 Reading helps us understand words and ideas.<br>💡 Good readers look, listen, think, and share.</div><button class="primary" onclick="complete()">🌟 Complete My Lesson</button><p id="done"></p></div></section>
+</main><footer>🌿 Ms. Rachel's Learning Jungle • Explore • Learn • Grow</footer><script src="script.js"></script></body></html>

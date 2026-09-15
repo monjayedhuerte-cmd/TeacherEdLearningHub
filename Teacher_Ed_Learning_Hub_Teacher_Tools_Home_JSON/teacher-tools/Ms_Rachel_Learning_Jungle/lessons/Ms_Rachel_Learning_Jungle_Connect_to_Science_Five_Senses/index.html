@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="Learning Jungle logo.png">
+  <title>Ms. Rachel's Learning Jungle | Connect to Science</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="Learning Jungle logo.png" alt="Ms. Rachel's Learning Jungle Logo" onerror="this.style.display='none'">
+    <div><strong>MS. RACHEL'S</strong><small>LEARNING JUNGLE</small></div>
+  </div>
+  <nav>
+    <a href="#targets">Targets</a><a href="#learn">Learn</a><a href="#practice">Practice</a>
+    <a href="#communicate">Communicate</a><a href="#mission">Mission</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero">
+  <div class="hero-text">
+    <span class="pill">🔬 CONNECT TO SCIENCE • TUESDAY / THURSDAY</span>
+    <h1>Our Five Senses<br><span>Help Us Learn About the World!</span></h1>
+    <p>Explore, observe, listen, describe, and communicate like a young scientist.</p>
+    <div class="hero-actions">
+      <button class="primary" onclick="scrollToId('learn')">🌿 Start Exploring</button>
+      <button class="secondary" onclick="speakText('Welcome to Connect to Science. Today we will learn how our five senses help us observe and understand the world around us.')">🔊 Listen</button>
+    </div>
+  </div>
+  <div class="hero-art">🌳<div class="floating">👀 👂 👃 👅 ✋</div></div>
+</section>
+
+<section class="info-grid">
+  <article class="info-card"><b>WIDA Standard 4</b><p>English language learners communicate information, ideas, and concepts necessary for academic success in Science.</p></article>
+  <article class="info-card"><b>📚 Materials</b><p>Get Ready Soar TG pp. 22–23 • Textbook pp. 22–23 • drawing paper • coloring materials • realia such as a leaf and eraser.</p></article>
+</section>
+
+<section id="targets" class="section">
+  <div class="section-head"><span>🎯</span><div><p class="eyebrow">LEARNING TARGETS</p><h2>What will I learn?</h2></div></div>
+  <div class="target-grid">
+    <div><b>👂 Listening</b><p>I can listen actively to spoken English in a science lesson.</p></div>
+    <div><b>🗣️ Speaking</b><p>I can introduce and talk about a science topic.</p></div>
+    <div><b>✏️ Writing</b><p>I can read and analyze science information and write simple ideas.</p></div>
+    <div><b>📖 Reading</b><p>I can read science vocabulary and numbers used in activities.</p></div>
+  </div>
+</section>
+
+<section class="routine section">
+  <div class="section-head"><span>☀️</span><div><p class="eyebrow">MORNING ROUTINE</p><h2>Ready to learn!</h2></div></div>
+  <div class="routine-grid">
+    <div><h3>🌤️ Weather</h3><p>How is the weather today?</p><div class="choices" data-answer="sunny"><button onclick="chooseRoutine(this,'weather')">☀️ Sunny</button><button onclick="chooseRoutine(this,'weather')">🌧️ Rainy</button><button onclick="chooseRoutine(this,'weather')">☁️ Cloudy</button></div><small id="weatherMsg"></small></div>
+    <div><h3>😊 Emotions</h3><p>How do you feel today?</p><div class="choices"><button onclick="emotion('Happy')">😀 Happy</button><button onclick="emotion('Calm')">😌 Calm</button><button onclick="emotion('Excited')">🤩 Excited</button></div><small id="emotionMsg"></small></div>
+    <div><h3>🎯 Objective</h3><p>Read our objective aloud:</p><blockquote>“I can use my senses to observe and learn about the world.”</blockquote><button class="tiny" onclick="speakText('I can use my senses to observe and learn about the world.')">🔊 Hear it</button></div>
+  </div>
+</section>
+
+<section id="learn" class="section">
+  <div class="section-head"><span>🌱</span><div><p class="eyebrow">EXPLORE & LEARN</p><h2>Meet the Five Senses</h2></div></div>
+  <p class="lead">Your body has special parts that help you collect information. Scientists use observation to learn about the world.</p>
+  <div class="sense-grid">
+    <article class="sense-card"><div class="big-icon">👀</div><h3>SEE</h3><p>We use our <b>eyes</b> to see colors, people, shapes, and things.</p><button onclick="speakText('I see with my eyes. I see color, people, and things.')">🔊 Hear</button></article>
+    <article class="sense-card"><div class="big-icon">👂</div><h3>HEAR</h3><p>We use our <b>ears</b> to hear music, voices, and sounds.</p><button onclick="speakText('I hear with my ears. I hear music, voices, and sounds.')">🔊 Hear</button></article>
+    <article class="sense-card"><div class="big-icon">👃</div><h3>SMELL</h3><p>We use our <b>nose</b> to smell flowers, food, and perfume.</p><button onclick="speakText('I smell with my nose. I smell flowers, food, and perfume.')">🔊 Hear</button></article>
+    <article class="sense-card"><div class="big-icon">👅</div><h3>TASTE</h3><p>We use our <b>mouth/tongue</b> to taste food that may be sweet, sour, salty, or bitter.</p><button onclick="speakText('I taste with my mouth and tongue. Food can be sweet, sour, salty, or bitter.')">🔊 Hear</button></article>
+    <article class="sense-card"><div class="big-icon">✋</div><h3>TOUCH</h3><p>We use our <b>fingers/skin</b> to feel things that are soft, rough, hot, or cold.</p><button onclick="speakText('I feel with my fingers and skin. Things can feel soft, rough, hot, or cold.')">🔊 Hear</button></article>
+  </div>
+
+  <div class="explain-box">
+    <h3>🧠 Scientist's Idea</h3>
+    <p><b>Observe</b> means to look closely or use our senses to notice information. In science, we <b>observe, investigate, gather information, work with others, and explain our ideas.</b></p>
+  </div>
+
+  <div class="gesture-box">
+    <h3>🎵 Sense Chant</h3>
+    <p>Point to the body part and say the sentence.</p>
+    <div class="chant">
+      <button onclick="speakText('I see with my eyes.')">👀 I see with my eyes.</button>
+      <button onclick="speakText('I hear with my ears.')">👂 I hear with my ears.</button>
+      <button onclick="speakText('I smell with my nose.')">👃 I smell with my nose.</button>
+      <button onclick="speakText('I taste with my mouth.')">👅 I taste with my mouth.</button>
+      <button onclick="speakText('I feel with my fingers.')">✋ I feel with my fingers.</button>
+    </div>
+    <div class="sentence-frame"><b>Sentence Frame:</b> I ______ with my __________.</div>
+  </div>
+</section>
+
+<section class="section activity">
+  <div class="section-head"><span>🧩</span><div><p class="eyebrow">ACTIVITY 1</p><h2>Match the Sense</h2></div></div>
+  <p>Choose the body part that helps you get the information. Try all 5!</p>
+  <div id="matchGame" class="game-card"></div>
+  <p id="matchScore" class="score">Score: 0 / 5</p>
+</section>
+
+<section class="section activity">
+  <div class="section-head"><span>🔍</span><div><p class="eyebrow">ACTIVITY 2</p><h2>What Can You Observe?</h2></div></div>
+  <p>Read the object. Choose the sense that gives you the best information.</p>
+  <div class="observe-grid">
+    <button onclick="observeAnswer(this,'eyes','apple')">🍎 Apple<br><small>What color is it?</small></button>
+    <button onclick="observeAnswer(this,'nose','flower')">🌸 Flower<br><small>What does it smell like?</small></button>
+    <button onclick="observeAnswer(this,'ears','music')">🎵 Music<br><small>What do you hear?</small></button>
+    <button onclick="observeAnswer(this,'fingers','eraser')">🧽 Eraser<br><small>How does it feel?</small></button>
+    <button onclick="observeAnswer(this,'mouth','food')">🍋 Food<br><small>What does it taste like?</small></button>
+  </div>
+  <div id="observeMsg" class="feedback"></div>
+</section>
+
+<section class="section activity">
+  <div class="section-head"><span>🌿</span><div><p class="eyebrow">ACTIVITY 3</p><h2>Real-Life Science Desk</h2></div></div>
+  <p>Imagine these objects are on your desk. Explore them safely and describe what you notice.</p>
+  <div class="object-grid">
+    <div class="object-card"><span>🍃</span><h3>Dry Leaf</h3><p>Think: color, sound, texture.</p><button onclick="showObject('leaf')">🔎 Explore</button></div>
+    <div class="object-card"><span>🌱</span><h3>Fresh Leaf</h3><p>Think: color, smell, texture.</p><button onclick="showObject('fresh leaf')">🔎 Explore</button></div>
+    <div class="object-card"><span>🧽</span><h3>Eraser</h3><p>Think: shape, color, texture.</p><button onclick="showObject('eraser')">🔎 Explore</button></div>
+    <div class="object-card"><span>🖊️</span><h3>Scented Marker</h3><p>Think: color and smell.</p><button onclick="showObject('scented marker')">🔎 Explore</button></div>
+  </div>
+  <div id="objectPrompt" class="feedback"></div>
+</section>
+
+<section class="section">
+  <div class="section-head"><span>📚</span><div><p class="eyebrow">ACTIVITY 4</p><h2>Read Like a Young Scientist</h2></div></div>
+  <div class="reading-card">
+    <h3>The World Around Us</h3>
+    <p>In science, we <b>observe</b> the world around us. We use our senses to gather information. We may use our eyes, ears, nose, mouth, and fingers. Scientists also investigate, work with other people, and explain their ideas.</p>
+    <button class="primary" onclick="speakText(document.querySelector('.reading-card p').innerText)">🔊 Read Aloud</button>
+  </div>
+  <div class="question-box">
+    <h3>Think & Answer</h3>
+    <div class="question"><p>1. What do we use to gather information?</p><button onclick="answerQuestion(this,true)">Our senses</button><button onclick="answerQuestion(this,false)">Only a pencil</button></div>
+    <div class="question"><p>2. What can we gather with our nose?</p><button onclick="answerQuestion(this,true)">Smells</button><button onclick="answerQuestion(this,false)">Shapes</button></div>
+    <div class="question"><p>3. What can we gather with our fingers?</p><button onclick="answerQuestion(this,true)">Touch information</button><button onclick="answerQuestion(this,false)">Music</button></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><span>🧪</span><div><p class="eyebrow">ACTIVITY 5</p><h2>Science Vocabulary Lab</h2></div></div>
+  <div class="vocab-grid">
+    <div><b>OBSERVE</b><p>to look closely and notice information</p></div>
+    <div><b>INVESTIGATE</b><p>to explore or find out more</p></div>
+    <div><b>GATHER</b><p>to collect information or objects</p></div>
+    <div><b>INFORMATION</b><p>facts or details we learn</p></div>
+    <div><b>EXPLAIN</b><p>to tell or show an idea clearly</p></div>
+    <div><b>SENSE</b><p>a way our body gets information</p></div>
+  </div>
+  <div class="mini-quiz">
+    <p><b>Which word means “look closely and notice”?</b></p>
+    <button onclick="vocabQuiz(this,true)">Observe</button><button onclick="vocabQuiz(this,false)">Gather</button><button onclick="vocabQuiz(this,false)">Explain</button>
+    <p id="vocabMsg"></p>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <div class="section-head"><span>✏️</span><div><p class="eyebrow">PRACTICE</p><h2>Complete the Science Sentence</h2></div></div>
+  <p>Choose the word that makes each sentence correct.</p>
+  <div class="sentence-quiz">
+    <div><p>I ______ with my eyes.</p><button onclick="sentenceAnswer(this,true)">see</button><button onclick="sentenceAnswer(this,false)">smell</button></div>
+    <div><p>I ______ with my ears.</p><button onclick="sentenceAnswer(this,false)">taste</button><button onclick="sentenceAnswer(this,true)">hear</button></div>
+    <div><p>I ______ with my nose.</p><button onclick="sentenceAnswer(this,true)">smell</button><button onclick="sentenceAnswer(this,false)">touch</button></div>
+    <div><p>I ______ with my fingers.</p><button onclick="sentenceAnswer(this,false)">hear</button><button onclick="sentenceAnswer(this,true)">feel</button></div>
+    <div><p>This tastes ______.</p><button onclick="sentenceAnswer(this,true)">sweet</button><button onclick="sentenceAnswer(this,false)">rough</button></div>
+  </div>
+  <p id="sentenceScore" class="score">Score: 0 / 5</p>
+</section>
+
+<section id="communicate" class="section communicate">
+  <div class="section-head"><span>🗣️</span><div><p class="eyebrow">COMMUNICATE</p><h2>Talk Like a Scientist</h2></div></div>
+  <p>Practice with a partner. One student asks. The other student answers using a complete sentence.</p>
+  <div class="partner-grid">
+    <div class="partner-card"><h3>Question</h3><p>What do you use to see?</p><strong>I use my eyes to see.</strong><button onclick="speakText('I use my eyes to see.')">🔊</button></div>
+    <div class="partner-card"><h3>Question</h3><p>What do you use to hear?</p><strong>I use my ears to hear.</strong><button onclick="speakText('I use my ears to hear.')">🔊</button></div>
+    <div class="partner-card"><h3>Question</h3><p>What can you smell?</p><strong>I smell a flower.</strong><button onclick="speakText('I smell a flower.')">🔊</button></div>
+    <div class="partner-card"><h3>Question</h3><p>How does it feel?</p><strong>I feel the soft leaf.</strong><button onclick="speakText('I feel the soft leaf.')">🔊</button></div>
+  </div>
+  <div class="sentence-frame big"><b>Science Speaking Frame:</b> In science, we __________.</div>
+  <div class="choices large">
+    <button onclick="chooseCommunicate(this)">observe</button><button onclick="chooseCommunicate(this)">investigate</button><button onclick="chooseCommunicate(this)">gather information</button><button onclick="chooseCommunicate(this)">work together</button><button onclick="chooseCommunicate(this)">explain ideas</button>
+  </div>
+  <p id="commMsg" class="feedback"></p>
+</section>
+
+<section class="section writing">
+  <div class="section-head"><span>🎨</span><div><p class="eyebrow">ACTIVITY 6</p><h2>Draw & Describe</h2></div></div>
+  <p>Draw one object you can observe. Then write one or more sentences about it.</p>
+  <div class="grade-box">
+    <button onclick="setGrade(1)">Grade 1</button><button onclick="setGrade(2)">Grade 2</button><button onclick="setGrade(3)">Grade 3</button><button onclick="setGrade(4)">Grade 4</button><button onclick="setGrade(5)">Grade 5</button>
+    <p id="gradePrompt">Choose your grade level for a writing challenge.</p>
+  </div>
+  <textarea id="writingArea" placeholder="Example: I see a green leaf. I feel a soft leaf."></textarea>
+  <div class="writing-tools"><button class="primary" onclick="saveWriting()">💾 Save My Writing</button><button class="secondary" onclick="speakText(document.getElementById('writingArea').value)">🔊 Read My Writing</button><button class="tiny" onclick="clearWriting()">Clear</button></div>
+  <p id="saveMsg"></p>
+</section>
+
+<section class="section">
+  <div class="section-head"><span>🧠</span><div><p class="eyebrow">REVISIT THE ESSENTIAL QUESTION</p><h2>What is Science?</h2></div></div>
+  <div class="big-idea">
+    <p class="essential">❓ How do my senses help me learn in science?</p>
+    <p>Our eyes help us <b>observe</b>. Our ears help us <b>hear</b>. Our nose helps us <b>smell</b>. Our mouth helps us <b>taste</b>. Our fingers and skin help us <b>feel</b>.</p>
+    <h3>🌟 Science is learning about the world by observing, investigating, gathering information, working with others, and explaining ideas.</h3>
+  </div>
+</section>
+
+<section id="mission" class="section mission">
+  <div class="mission-card">
+    <div class="trophy">🏆</div>
+    <h2>Young Scientist Mission Complete!</h2>
+    <p>You explored the five senses, practiced science vocabulary, read science information, answered questions, and communicated like a scientist.</p>
+    <button class="primary" onclick="completeMission()">🌟 Complete My Mission</button>
+    <div id="missionMsg"></div>
+  </div>
+</section>
+</main>
+
+<footer>🌿 Ms. Rachel's Learning Jungle • Explore • Learn • Grow • Connect to Science</footer>
+<script src="script.js"></script>
+</body>
+</html>

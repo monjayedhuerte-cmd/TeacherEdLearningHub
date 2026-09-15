@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="Learning Jungle logo.png">
+<title>Connect to Mathematics | Ms. Rachel's Learning Jungle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#start"><div class="brand-leaf">🌿</div><div><b>MS. RACHEL'S</b><span>LEARNING JUNGLE</span></div></a>
+  <div class="top-actions"><span class="guide-badge">🐾 Guided by Ms. Rachel</span><button id="soundBtn">🔊 Sound</button></div>
+</header>
+
+<nav class="trail-nav">
+  <a href="#start">🏕️ Start</a><a href="#targets">🎯 Targets</a><a href="#learn">🌱 Learn</a>
+  <a href="#numbers">🔢 Numbers</a><a href="#measure">📏 Measure</a><a href="#shapes">🔺 Shapes</a>
+  <a href="#time">⏱️ Time</a><a href="#numberhunt">🔎 Number Hunt</a><a href="#communicate">💬 Communicate</a><a href="#finish">⭐ Finish</a>
+</nav>
+
+<main id="start">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">🔢 MATHEMATICS TRAIL • CONNECT TO MATHEMATICS</div>
+    <h1>Let’s Explore the Math Jungle!</h1>
+    <p>Numbers are everywhere! Today we will count, measure, recognize shapes, explore time, read math words, and talk about how we use numbers in real life.</p>
+    <div class="target-pills"><span>🔢 Count</span><span>📏 Measure</span><span>🔺 Identify shapes</span><span>⏱️ Explore time</span></div>
+    <button class="primary" onclick="document.querySelector('#learn').scrollIntoView({behavior:'smooth'})">🌿 Start the Math Trail</button>
+  </div>
+  <div class="hero-art" aria-hidden="true"><div class="sun">☀️</div><div class="jungle-scene">🌴 🌳 🦜<br>🐒 🔢 🐯</div></div>
+</section>
+
+<section class="teacher-note">
+  <div class="teacher-avatar">👩‍🏫</div><div><small>YOUR JUNGLE GUIDE</small><h2>Ms. Rachel’s Math Mission</h2>
+  <p>“Look around you! Math is not only in a book. We use numbers to count, measure, recognize shapes, and tell time.”</p></div>
+</section>
+
+<section class="standards" id="targets">
+ <div class="standard-card"><span>📘</span><div><small>WIDA STANDARD</small><h3>English Language Development Standard 3</h3><p>English language learners communicate information, ideas, and concepts necessary for academic success in the content area of Mathematics.</p></div></div>
+ <div class="objective-card"><span>🎯</span><div><small>LEARNING TARGETS</small>
+ <ol><li>Listen to identify concepts in a math text.</li><li>Answer questions about a math topic.</li><li>Write numbers.</li><li>Read math vocabulary and numbers.</li></ol></div></div>
+</section>
+
+<section class="vocab">
+ <div class="section-title"><span>🌱</span><div><small>BACKGROUND KNOWLEDGE</small><h2>Our Four Math Words</h2></div></div>
+ <div class="vocab-grid">
+  <button class="vocab-card" data-say="Numbers. We use numbers to count."><b>🔢 NUMBERS</b><span>We use numbers to count.</span></button>
+  <button class="vocab-card" data-say="Measure. We use numbers to measure how long or how much."><b>📏 MEASURE</b><span>We use numbers to measure.</span></button>
+  <button class="vocab-card" data-say="Shapes. Shapes can be the same or different."><b>🔺 SHAPES</b><span>Shapes can be the same or different.</span></button>
+  <button class="vocab-card" data-say="Time. We use numbers and time to tell how fast or when something happens."><b>⏱️ TIME</b><span>We use numbers and time.</span></button>
+ </div>
+</section>
+
+<section class="lesson-section" id="learn">
+ <div class="section-title"><span>🌱</span><div><small>EXPLORE AND LEARN</small><h2>Where Do We See Math?</h2></div></div>
+ <div class="teacher-tip">🐾 <b>Ms. Rachel says:</b> Think about places such as a market, road signs, department stores, classrooms, clocks, calendars, and sports.</div>
+ <p class="lead">Complete the pattern: <b>“I see numbers in ______.”</b></p>
+ <div class="real-life-grid">
+  <button data-say="I see numbers in the market." data-example="🛒 Market"><span>🛒</span><b>Market</b><small>Prices, quantities, weights</small></button>
+  <button data-say="I see numbers on road signs." data-example="🚦 Road Signs"><span>🚦</span><b>Road Signs</b><small>Speed limits and route numbers</small></button>
+  <button data-say="I see numbers in department stores." data-example="🏬 Department Store"><span>🏬</span><b>Department Store</b><small>Prices, sizes, floors</small></button>
+  <button data-say="I see numbers in the classroom." data-example="🏫 Classroom"><span>🏫</span><b>Classroom</b><small>Pages, pencils, desks</small></button>
+  <button data-say="I see numbers on a calendar." data-example="📅 Calendar"><span>📅</span><b>Calendar</b><small>Days and dates</small></button>
+  <button data-say="I see numbers on a clock." data-example="🕐 Clock"><span>🕐</span><b>Clock</b><small>Hours and minutes</small></button>
+ </div>
+ <div id="realLifeDisplay" class="talk-display">💬 Click an example to hear and practice the sentence.</div>
+</section>
+
+<section class="lesson-section" id="numbers">
+ <div class="section-title"><span>🔢</span><div><small>PICTURE A • NUMBERS</small><h2>Numbers Help Us Count</h2></div></div>
+ <div class="two-col">
+  <div class="explain-card"><h3>🔢 What do numbers do?</h3><p>We use numbers to tell <b>how many</b>.</p><div class="object-row"><span>✏️</span><span>✏️</span><span>✏️</span><span>✏️</span><span>✏️</span></div><p>There are <b>5 pencils</b>.</p><button class="secondary" id="countDemo">🔊 Count the pencils</button></div>
+  <div class="game-card"><h3>🎮 How Many?</h3><p>Count the objects and choose the answer.</p><div id="countObjects" class="object-row big"></div><div id="countChoices" class="choice-row"></div><div id="countFeedback" class="feedback"></div><button class="small-btn" id="newCount">🔄 New Question</button></div>
+ </div>
+</section>
+
+<section class="lesson-section" id="numberchart">
+ <div class="section-title"><span>🔢</span><div><small>CLOSE VIEWING</small><h2>Number Chart 1–20</h2></div></div>
+ <p class="lead">Click a number to hear it. Practice saying each number aloud.</p>
+ <div id="numberChart" class="number-chart"></div>
+</section>
+
+<section class="lesson-section" id="measure">
+ <div class="section-title"><span>📏</span><div><small>PICTURE B • MEASURE</small><h2>How Long?</h2></div></div>
+ <div class="two-col">
+  <div class="explain-card"><h3>📏 We use numbers to measure.</h3><p>A <b>ruler</b> can help us measure a small object such as a pencil.</p><div class="ruler"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span></div><p>We can use units such as <b>inches</b> and <b>centimeters</b>.</p></div>
+  <div class="game-card"><h3>🎮 Which Is Longer?</h3><p>Choose the object that is longer.</p><div class="measure-objects"><button data-correct="false">✏️ Pencil<br><span>6 units</span></button><button data-correct="true">📏 Ruler<br><span>10 units</span></button></div><div id="measureFeedback" class="feedback"></div><button class="secondary" id="measureSpeak">🔊 Say: “The ruler is longer.”</button></div>
+ </div>
+</section>
+
+<section class="lesson-section" id="shapes">
+ <div class="section-title"><span>🔺</span><div><small>PICTURE C • SHAPES</small><h2>Same Shape or Different Shapes?</h2></div></div>
+ <div class="teacher-tip">🔺 <b>Remember:</b> A circle, triangle, and square are different shapes. Two circles are the same shape.</div>
+ <div class="shape-game">
+  <div class="shape-pair" id="shapePair"><div class="shape circle"></div><div class="shape circle"></div></div>
+  <p id="shapeQuestion"><b>Are these the same shape?</b></p>
+  <div class="choice-row"><button data-shape="same">✅ Same Shape</button><button data-shape="different">🔀 Different Shapes</button></div>
+  <div id="shapeFeedback" class="feedback"></div><button class="small-btn" id="newShape">🔄 New Shape Pair</button>
+ </div>
+ <div class="shape-examples"><div><div class="shape circle"></div><b>Circle</b></div><div><div class="shape triangle"></div><b>Triangle</b></div><div><div class="shape square"></div><b>Square</b></div></div>
+</section>
+
+<section class="lesson-section" id="time">
+ <div class="section-title"><span>⏱️</span><div><small>PICTURE D • TIME</small><h2>Numbers and Time</h2></div></div>
+ <div class="two-col">
+  <div class="explain-card"><h3>⏱️ What do we see?</h3><p>We can use a stopwatch to measure time. For example, we can time a boy running.</p><div class="stopwatch"><span id="stopwatchDisplay">00:00.0</span><button id="startStopwatch">▶ Start</button><button id="resetStopwatch">↺ Reset</button></div></div>
+  <div class="game-card"><h3>💭 Think and Talk</h3><p><b>Question:</b> What do you see on a stopwatch?</p><div class="answer-options"><button data-correct="true">🔢 Numbers</button><button data-correct="false">🍎 Apples</button><button data-correct="false">📚 Books</button></div><div id="timeFeedback" class="feedback"></div></div>
+ </div>
+</section>
+
+<section class="lesson-section" id="numberhunt">
+ <div class="section-title"><span>🔎</span><div><small>CONNECT TO THE THEME</small><h2>Number Hunt in the Classroom</h2></div></div>
+ <div class="teacher-tip">👀 Walk around the classroom. Find numbers on objects, signs, books, clocks, calendars, or other classroom materials.</div>
+ <div class="hunt-grid">
+  <div class="hunt-card"><span>📚</span><b>Books</b><p>What number do you see?</p><input placeholder="Write a number"></div>
+  <div class="hunt-card"><span>🕐</span><b>Clock</b><p>What numbers do you see?</p><input placeholder="Write a number"></div>
+  <div class="hunt-card"><span>📅</span><b>Calendar</b><p>What date do you see?</p><input placeholder="Write a number"></div>
+  <div class="hunt-card"><span>✏️</span><b>Pencils</b><p>How many can you count?</p><input placeholder="Write a number"></div>
+ </div>
+ <div class="pattern-box"><b>Practice the pattern:</b><span>I see numbers in <input id="patternInput" placeholder="a place"></span><button id="patternCheck">Check</button><div id="patternFeedback" class="feedback"></div></div>
+</section>
+
+<section class="lesson-section" id="communicate">
+ <div class="section-title"><span>💬</span><div><small>COMMUNICATE</small><h2>Ask, Answer, Exchange Roles</h2></div></div>
+ <p class="lead">Pair up. One student asks. The other student answers. Then switch roles.</p>
+ <div class="talk-grid">
+  <button data-talk="How many pencils are there?">✏️ How many?</button>
+  <button data-talk="How much does it cost?">🛒 How much?</button>
+  <button data-talk="How long is the pencil?">📏 How long?</button>
+  <button data-talk="What shape is it?">🔺 What shape?</button>
+  <button data-talk="What numbers do you see?">🔢 What numbers?</button>
+  <button data-talk="What time is it?">⏰ What time?</button>
+ </div>
+ <div class="talk-display" id="talkDisplay">💬 Choose a question to begin.</div>
+ <div class="sentence-frames"><b>Helpful sentence frames:</b><span>“There are ______.”</span><span>“It is ______ inches.”</span><span>“It is a ______.”</span><span>“I see numbers in ______.”</span><span>“It costs ______.”</span></div>
+</section>
+
+<section class="big-idea">
+ <div class="big-leaf">🌿</div><div><small>CONNECT TO THE BIG IDEA</small><h2>Math Is Everywhere!</h2>
+ <div class="big-lines"><div>“We see numbers everywhere.”</div><div>“Numbers help us to count, measure, tell shapes and tell time.”</div></div>
+ <button id="bigIdeaRead">🔊 Read the Big Idea</button></div>
+</section>
+
+<section class="finish" id="finish">
+ <div class="trophy">🏆</div><small>MATH JUNGLE COMPLETION</small><h2>Great Job, Math Explorer!</h2>
+ <p>You counted, measured, explored shapes, practiced time, hunted for numbers, and communicated your ideas.</p>
+ <div class="finish-badges"><span>🔢 Counter</span><span>📏 Measurer</span><span>🔺 Shape Explorer</span><span>⏱️ Time Explorer</span></div>
+ <button class="primary" id="finishBtn">🌟 Complete My Math Mission</button><div class="finish-message" id="finishMessage"></div>
+</section>
+</main>
+<footer><div class="footer-brand"><div class="footer-logo">🌿</div><div><b>MS. RACHEL'S LEARNING JUNGLE</b><small>Explore • Learn • Grow</small></div></div><small>Connect to Mathematics • Interactive Learning Trail</small></footer>
+<script src="script.js"></script>
+</body>
+</html>

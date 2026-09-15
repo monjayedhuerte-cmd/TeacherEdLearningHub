@@ -1,0 +1,73 @@
+{
+  "lessons": [
+    {
+      "id": "lesson-001",
+      "title": "All About Me",
+      "grade": "Grades 1",
+      "grades": [1],
+      "subject": "English",
+      "type": "Interactive Lesson",
+      "description": "Today we will meet Ms. Medina, learn about each other, play with sounds and words, and make a virtual class card.",
+      "url": "https://monjayedhuerte-cmd.github.io/MsMedinaFirstdaymeeting/",
+      "status": "published",
+      "featured": true,
+      "dateAdded": "2026-09-02"
+    },
+
+    {
+      "id": "lesson-002",
+      "title": "At School",
+      "grade": "Grades 5",
+      "grades": [5],
+      "subject": "English",
+      "type": "Interactive Lesson",
+      "description": "English language learners communicate information, ideas, and concepts necessary for academic success in the content area of science.",
+      "url": "lessons/Ms_Rachel_Learning_Jungle_Connect_to_Reading/Ms_Rachel_Learning_Jungle_Activity3_Upload_Only/index.html",
+      "status": "published",
+      "featured": true,
+      "dateAdded": "2026-09-03"
+    },
+
+    {
+      "id": "lesson-003",
+      "title": "At School",
+      "grade": "Grades 5",
+      "grades": [5],
+      "subject": "English",
+      "type": "Interactive Lesson",
+      "description": "Numbers are everywhere! Today we will count, measure, recognize shapes, explore time, read math words, and talk about how we use numbers in real life.",
+      "url": "lessons/Ms_Rachel_Learning_Jungle_Connect_to_Mathematics/index.html",
+      "status": "published",
+      "featured": true,
+      "dateAdded": "2026-09-03"
+    },
+    {
+      "id": "lesson-004",
+      "title": "At School",
+      "grade": "Grades 1-5",
+      "grades": [5],
+      "subject": "English",
+      "type": "Interactive Lesson",
+      "description": "Listen, talk, read, and write as we discover rhyming words and the joy of reading.",
+      "url": "lessons/Ms_Rachel_Learning_Jungle_Connect_to_Reading_Rhyme_Read/index.html",
+      "status": "published",
+      "featured": true,
+      "dateAdded": "2026-09-05"
+    },
+    {
+      "id": "lesson-005",
+      "title": "At School",
+      "grade": "Grades 1-5",
+      "grades": [5],
+      "subject": "English",
+      "type": "Interactive Lesson",
+      "description": "Explore, observe, listen, describe, and communicate like a young scientist.",
+      "url": "lessons/Ms_Rachel_Learning_Jungle_Connect_to_Science_Five_Senses/index.html",
+      "status": "published",
+      "featured": true,
+      "dateAdded": "2026-09-05"
+    }
+
+
+  ]
+}

@@ -1,0 +1,973 @@
+*{box-sizing:border-box}html{scroll-behavior:smooth}:root{--green:#14532d;--leaf:#22c55e;--cream:#fffdf3;--ink:#163020;--yellow:#facc15;--shadow:0 16px 40px #14532d18}body{margin:0;background:var(--cream);color:var(--ink);font-family:Nunito,sans-serif}a{text-decoration:none;color:inherit}.site-header{height:78px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:#fffdf3ee;backdrop-filter:blur(10px);position:sticky;top:0;z-index:10;border-bottom:1px solid #e5eadf}.brand{display:flex;align-items:center;gap:10px;color:var(--green)}.brand-icon{font-size:35px}.brand small{display:block;font-size:10px;letter-spacing:2px;font-weight:900}.brand strong{display:block;font-family:"Baloo 2";font-size:20px;line-height:1}nav{display:flex;gap:28px;font-weight:800}nav a:hover{color:var(--leaf)}.menu-btn{display:none;border:0;background:#ecfdf5;border-radius:10px;padding:8px;font-size:22px}.hero{min-height:590px;padding:55px 7%;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:linear-gradient(145deg,#ecfdf5,#f7fee7 55%,#fff7c2);overflow:hidden}.hero-copy{max-width:620px}.pill,.section-heading span,.row-heading span,.guide span{font-weight:900;letter-spacing:1.3px;font-size:12px;color:var(--green)}h1,h2,h3{font-family:"Baloo 2"}.hero h1{font-size:clamp(50px,6vw,82px);line-height:.92;color:var(--green);margin:15px 0 24px}.hero h1 span{color:#65a30d}.hero p{font-size:20px;line-height:1.6;color:#42604b}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 21px;border-radius:15px;font-weight:900;box-shadow:0 8px 18px #0001}.primary{background:var(--green);color:white}.secondary{background:white;color:var(--green);border:2px solid #d9e9d9}.jungle-scene{height:420px;position:relative;border-radius:40%;background:linear-gradient(#9fe6f5 0 55%,#78c85a 55%);box-shadow:inset 0 -50px #4d9a46,0 20px 45px #14532d20;overflow:hidden}.sun{position:absolute;right:15%;top:10%;font-size:55px}.cloud{position:absolute;font-size:48px}.c1{left:10%;top:12%}.c2{right:30%;top:27%}.tree{position:absolute;font-size:155px;bottom:-22px}.tl{left:-18px}.tr{right:-25px}.animal{position:absolute;z-index:3}.tiger{font-size:85px;left:37%;bottom:54px}.monkey{font-size:72px;right:24%;bottom:110px}.parrot{font-size:60px;left:20%;top:37%}.sign{position:absolute;left:43%;top:48%;background:#b87932;color:white;padding:12px 20px;border-radius:10px;text-align:center;transform:rotate(-3deg);box-shadow:0 8px 10px #0002}.section{padding:80px 7%;max-width:1300px;margin:auto}.section-heading{text-align:center;margin-bottom:35px}.section-heading h2,.row-heading h2{font-size:45px;margin:5px 0;color:var(--green)}.section-heading p{margin:0;color:#627365;font-size:17px}.grade-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}.grade-card{min-height:190px;padding:25px 15px;border-radius:25px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;box-shadow:var(--shadow);transition:.2s;border:3px solid white}.grade-card:hover{transform:translateY(-8px)}.grade-card span{font-size:52px}.grade-card b{font-family:"Baloo 2";font-size:27px;color:var(--green)}.grade-card small{font-weight:800;color:#55705e}.g1{background:#f0fdf4}.g2{background:#ecfccb}.g3{background:#fef9c3}.g4{background:#e0f2fe}.g5{background:#ffedd5}.trails{max-width:none;background:var(--green);color:white}.trails .section-heading span{color:#bef264}.trails .section-heading h2{color:white}.trails .section-heading p{color:#d8eadb}.trail-grid{max-width:1160px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.trail-card{background:#fff1;border:1px solid #fff3;border-radius:22px;padding:27px;color:white}.trail-card:hover{background:#fff2}.trail-card i{font-style:normal;font-size:35px}.trail-card h3{font-size:24px;margin:12px 0 4px}.trail-card p{color:#d9eee0;line-height:1.5;margin:0}.latest{max-width:none;background:#f6f8ec}.row-heading{max-width:1160px;margin:0 auto 35px;display:flex;justify-content:space-between;align-items:end}.row-heading input{width:280px;padding:14px 17px;border-radius:14px;border:2px solid #dbe7d9;background:white;font:inherit}.lesson-grid{max-width:1160px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.lesson-card{background:white;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #e7eee5;transition:.2s}.lesson-card:hover{transform:translateY(-5px)}.lesson-top{height:115px;background:linear-gradient(135deg,#dcfce7,#fef9c3);display:flex;align-items:center;justify-content:center;font-size:48px}.lesson-body{padding:20px}.badge{display:inline-block;padding:5px 9px;border-radius:8px;background:#ecfdf5;color:var(--green);font-size:11px;font-weight:900}.lesson-body h3{font-size:24px;margin:8px 0 5px;color:var(--green)}.lesson-body p{color:#607266;line-height:1.5}.open{font-weight:900;color:#65a30d}.loading{text-align:center;grid-column:1/-1;padding:30px}.website-grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.website-card{display:flex;gap:15px;align-items:center;padding:20px;border-radius:20px;background:#f8faf5;border:2px solid #e7eee5}.website-card>span{font-size:38px}.website-card b{display:block;color:var(--green);font-size:18px}.website-card small{display:block;color:#68796e;margin-top:3px}.guide{max-width:1100px;margin:70px auto;padding:45px;display:flex;align-items:center;gap:35px;border-radius:35px;background:linear-gradient(135deg,#fef9c3,#ecfccb);box-shadow:var(--shadow)}.guide-animal{font-size:100px}.guide h2{font-size:42px;color:var(--green);margin:5px 0}.guide p{font-size:17px;line-height:1.6}.values{display:flex;gap:12px;flex-wrap:wrap}.values b{background:white;padding:9px 13px;border-radius:12px;color:var(--green)}footer{padding:30px 7%;background:#0b351d;color:white;display:flex;justify-content:space-between;gap:20px}footer b{font-family:"Baloo 2";font-size:20px}footer span,footer small{display:block;color:#b9d8bf}@media(max-width:900px){nav{display:none}.menu-btn{display:block}.hero{grid-template-columns:1fr}.jungle-scene{height:330px;margin-top:35px}.grade-grid{grid-template-columns:repeat(2,1fr)}.grade-card:last-child{grid-column:1/-1}.trail-grid,.lesson-grid,.website-grid{grid-template-columns:1fr 1fr}.row-heading{display:block}.row-heading input{margin-top:20px;width:100%}}@media(max-width:560px){.hero{padding:42px 5%}.hero h1{font-size:53px}.hero p{font-size:17px}.section{padding:60px 5%}.grade-grid,.trail-grid,.lesson-grid,.website-grid{grid-template-columns:1fr}.grade-card:last-child{grid-column:auto}.guide{margin:40px 5%;padding:30px;display:block;text-align:center}.guide-animal{font-size:75px}footer{display:block;text-align:center}.jungle-scene{height:280px}.tree{font-size:115px}.tiger{font-size:65px}.monkey{font-size:55px}.parrot{font-size:48px}}
+
+footer {
+  padding: 30px 7%;
+  background: #0b351d;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.footer-brand img {
+  width: 65px;
+  height: 65px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.footer-brand b {
+  font-family: "Baloo 2";
+  font-size: 20px;
+  display: block;
+}
+
+.footer-brand span {
+  display: block;
+  color: #b9d8bf;
+  margin-top: 2px;
+}
+
+footer small {
+  color: #b9d8bf;
+}
+
+@media (max-width: 560px) {
+  footer {
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .footer-brand img {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+/* Logo container inside Meet Ms. Rachel section */
+.guide-animal {
+    width: 190px;
+    height: 190px;
+    min-width: 190px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fdf6df;
+    border: 5px solid #e8c85a;
+    border-radius: 50%;
+
+    padding: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Logo itself */
+.guide-animal img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .guide-animal {
+        width: 150px;
+        height: 150px;
+        min-width: 150px;
+        margin: 0 auto;
+    }
+}
+/* =========================================================
+   MS. RACHEL'S LEARNING JUNGLE
+   SCHOOL PLACE EXPLORER
+   JUNGLE-THEME PHOTO UPLOAD DESIGN
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   MAIN SCHOOL PLACE SECTION
+--------------------------------------------------------- */
+
+#school-places {
+    position: relative;
+    padding: 70px 0;
+}
+
+
+/* Decorative jungle leaves */
+
+#school-places::before {
+    content: "🌿";
+    position: absolute;
+    top: 20px;
+    left: -10px;
+    font-size: 55px;
+    opacity: 0.18;
+    transform: rotate(-20deg);
+    pointer-events: none;
+}
+
+#school-places::after {
+    content: "🍃";
+    position: absolute;
+    bottom: 30px;
+    right: -5px;
+    font-size: 50px;
+    opacity: 0.18;
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+
+
+/* ---------------------------------------------------------
+   SECTION HEADING
+--------------------------------------------------------- */
+
+#school-places .section-heading {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+#school-places .section-number {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    background: #5d8c3d;
+    color: #ffffff;
+
+    font-size: 1.25rem;
+    font-weight: 900;
+
+    box-shadow:
+        0 8px 0 #456c2f,
+        0 12px 25px rgba(69, 108, 47, 0.18);
+}
+
+#school-places .eyebrow {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    color: #6f8f4e;
+
+    font-size: 0.78rem;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+}
+
+#school-places h2 {
+    margin: 0;
+
+    color: #31482b;
+
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+
+    font-weight: 900;
+
+    line-height: 1.1;
+}
+
+#school-places .section-heading p {
+    margin: 8px 0 0;
+
+    color: #69745f;
+
+    font-size: 1rem;
+}
+
+
+/* ---------------------------------------------------------
+   INSTRUCTION BOX
+--------------------------------------------------------- */
+
+#school-places .instruction-box {
+    position: relative;
+
+    margin: 25px 0 35px;
+
+    padding: 22px 25px 22px 70px;
+
+    background: #fff9df;
+
+    border: 2px solid #f1d778;
+
+    border-radius: 20px;
+
+    box-shadow: 0 8px 20px rgba(75, 80, 40, 0.06);
+}
+
+#school-places .instruction-box::before {
+    content: "🐾";
+
+    position: absolute;
+
+    left: 22px;
+    top: 21px;
+
+    font-size: 30px;
+}
+
+#school-places .instruction-box strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #5c5429;
+
+    font-size: 1.05rem;
+}
+
+#school-places .instruction-box p {
+    margin: 0;
+
+    color: #706943;
+
+    line-height: 1.6;
+}
+
+
+/* ---------------------------------------------------------
+   INDIVIDUAL QUESTION CARD
+--------------------------------------------------------- */
+
+.school-picture-card {
+    position: relative;
+
+    margin: 30px 0;
+
+    padding: 0;
+
+    background: #fffdf7;
+
+    border: 2px solid #e4ead9;
+
+    border-radius: 26px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 10px 30px rgba(48, 67, 42, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.school-picture-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 16px 35px rgba(48, 67, 42, 0.12);
+}
+
+
+/* Small jungle accent at top */
+
+.school-picture-card::before {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 7px;
+
+    background: linear-gradient(
+        90deg,
+        #5d8c3d 0%,
+        #82a95f 50%,
+        #e5b84b 100%
+    );
+}
+
+
+/* ---------------------------------------------------------
+   QUESTION HEADER
+--------------------------------------------------------- */
+
+.picture-card-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+    padding: 25px 28px 20px;
+}
+
+.picture-card-header h3 {
+    margin: 0;
+
+    color: #34482e;
+
+    font-size: 1.25rem;
+
+    font-weight: 900;
+}
+
+.picture-card-header p {
+    margin: 5px 0 0;
+
+    color: #78816f;
+
+    font-size: 0.9rem;
+}
+
+
+/* ---------------------------------------------------------
+   QUESTION NUMBER
+--------------------------------------------------------- */
+
+.question-number {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 17px;
+
+    background: #e9f2df;
+
+    border: 2px solid #c8dcb9;
+
+    color: #527a38;
+
+    font-size: 1.2rem;
+
+    font-weight: 900;
+}
+
+
+/* ---------------------------------------------------------
+   UPLOAD AREA
+--------------------------------------------------------- */
+
+.upload-area {
+    margin: 0 28px;
+
+    padding: 20px;
+
+    background: #f3f7ed;
+
+    border: 2px dashed #bfd2af;
+
+    border-radius: 21px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.upload-area:hover {
+    border-color: #86a968;
+
+    background: #f0f6e9;
+}
+
+
+/* ---------------------------------------------------------
+   PICTURE PREVIEW
+--------------------------------------------------------- */
+
+.picture-preview-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    height: 310px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e8f0df,
+            #f7f3dd
+        );
+
+    border: 3px solid #ffffff;
+
+    box-shadow:
+        0 5px 15px rgba(55, 72, 46, 0.08);
+}
+
+
+/* ---------------------------------------------------------
+   UPLOADED IMAGE
+--------------------------------------------------------- */
+
+.uploaded-school-image {
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    animation: jungleImageAppear 0.35s ease;
+}
+
+
+@keyframes jungleImageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(1.04);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   UPLOAD PLACEHOLDER
+--------------------------------------------------------- */
+
+.upload-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: center;
+
+    color: #68755f;
+}
+
+.upload-icon {
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 4px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    font-size: 2.3rem;
+
+    box-shadow:
+        0 5px 15px rgba(50, 70, 40, 0.08);
+}
+
+.upload-placeholder strong {
+    color: #405437;
+
+    font-size: 1.05rem;
+
+    font-weight: 900;
+}
+
+.upload-placeholder span {
+    color: #7b8572;
+
+    font-size: 0.85rem;
+}
+
+
+/* ---------------------------------------------------------
+   UPLOAD CONTROLS
+--------------------------------------------------------- */
+
+.upload-controls {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+
+    margin-top: 17px;
+}
+
+
+/* ---------------------------------------------------------
+   CHOOSE PICTURE BUTTON
+--------------------------------------------------------- */
+
+.upload-button {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    min-height: 45px;
+
+    padding: 11px 20px;
+
+    border-radius: 13px;
+
+    background: #5d8c3d;
+
+    color: #ffffff;
+
+    font-size: 0.92rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 0 #456c2f;
+
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease,
+        background 0.15s ease;
+}
+
+.upload-button:hover {
+    background: #527e36;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 0 #456c2f;
+}
+
+.upload-button:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        0 2px 0 #456c2f;
+}
+
+.upload-button input[type="file"] {
+    display: none;
+}
+
+
+/* ---------------------------------------------------------
+   REMOVE BUTTON
+--------------------------------------------------------- */
+
+.remove-picture-button {
+    min-height: 45px;
+
+    padding: 10px 18px;
+
+    border: 2px solid #ead5cd;
+
+    border-radius: 13px;
+
+    background: #fff8f5;
+
+    color: #b35e4c;
+
+    font-size: 0.9rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.remove-picture-button:hover {
+    background: #fff0eb;
+
+    border-color: #dba99b;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   ANSWER AREA
+--------------------------------------------------------- */
+
+.answer-area {
+    padding: 25px 28px 30px;
+}
+
+.question-text {
+    margin: 0 0 16px;
+
+    text-align: center;
+
+    color: #3c4f35;
+
+    font-size: 1rem;
+
+    font-weight: 800;
+}
+
+
+/* ---------------------------------------------------------
+   ANSWER BUTTONS
+--------------------------------------------------------- */
+
+.answer-buttons {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    max-width: 750px;
+
+    margin: 0 auto;
+}
+
+.answer-buttons button {
+    min-height: 55px;
+
+    padding: 12px 15px;
+
+    border: 2px solid #d9e5cf;
+
+    border-radius: 15px;
+
+    background: #ffffff;
+
+    color: #43553b;
+
+    font-family: inherit;
+
+    font-size: 0.95rem;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 0 #e5ecdf;
+
+    transition:
+        transform 0.15s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.15s ease;
+}
+
+.answer-buttons button:hover {
+    background: #f0f7ea;
+
+    border-color: #8ead75;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 0 #dce8d4;
+}
+
+.answer-buttons button:active {
+    transform: translateY(2px);
+
+    box-shadow:
+        0 2px 0 #dce8d4;
+}
+
+
+/* ---------------------------------------------------------
+   FEEDBACK
+--------------------------------------------------------- */
+
+.school-feedback {
+    min-height: 28px;
+
+    margin-top: 18px;
+
+    text-align: center;
+
+    font-size: 0.95rem;
+
+    font-weight: 900;
+
+    line-height: 1.5;
+
+    transition: all 0.25s ease;
+}
+
+.school-feedback.correct {
+    color: #4c843d;
+
+    animation: feedbackPop 0.3s ease;
+}
+
+.school-feedback.wrong {
+    color: #bb604d;
+
+    animation: feedbackPop 0.3s ease;
+}
+
+
+@keyframes feedbackPop {
+
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   WHEN A PICTURE IS UPLOADED
+--------------------------------------------------------- */
+
+.school-picture-card:has(
+    .uploaded-school-image[style*="display: block"]
+) .upload-area {
+    border-style: solid;
+
+    border-color: #b5cba5;
+
+    background: #f5f8f1;
+}
+
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 850px) {
+
+    #school-places {
+        padding: 55px 0;
+    }
+
+    .picture-preview-wrapper {
+        height: 280px;
+    }
+
+    .answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    #school-places {
+        padding: 45px 0;
+    }
+
+
+    #school-places .section-heading {
+        gap: 14px;
+
+        align-items: flex-start;
+    }
+
+
+    #school-places .section-number {
+        width: 52px;
+        height: 52px;
+
+        border-radius: 16px;
+
+        box-shadow:
+            0 6px 0 #456c2f;
+    }
+
+
+    #school-places h2 {
+        font-size: 1.75rem;
+    }
+
+
+    #school-places .instruction-box {
+        padding: 20px 18px 20px 58px;
+    }
+
+
+    #school-places .instruction-box::before {
+        left: 17px;
+    }
+
+
+    .school-picture-card {
+        border-radius: 21px;
+
+        margin: 24px 0;
+    }
+
+
+    .picture-card-header {
+        padding: 20px 18px 17px;
+
+        gap: 12px;
+    }
+
+
+    .question-number {
+        width: 43px;
+        height: 43px;
+
+        border-radius: 14px;
+
+        font-size: 1rem;
+    }
+
+
+    .picture-card-header h3 {
+        font-size: 1.05rem;
+    }
+
+
+    .picture-card-header p {
+        font-size: 0.82rem;
+    }
+
+
+    .upload-area {
+        margin: 0 16px;
+
+        padding: 12px;
+
+        border-radius: 17px;
+    }
+
+
+    .picture-preview-wrapper {
+        height: 220px;
+
+        border-radius: 14px;
+    }
+
+
+    .upload-placeholder {
+        padding: 15px;
+    }
+
+
+    .upload-icon {
+        width: 62px;
+        height: 62px;
+
+        font-size: 2rem;
+    }
+
+
+    .upload-controls {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .upload-button,
+    .remove-picture-button {
+        width: 100%;
+    }
+
+
+    .answer-area {
+        padding: 20px 16px 24px;
+    }
+
+
+    .answer-buttons {
+        grid-template-columns: 1fr;
+
+        gap: 9px;
+    }
+
+
+    .answer-buttons button {
+        min-height: 50px;
+
+        font-size: 0.92rem;
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   EXTRA SMALL PHONES
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+
+    .picture-preview-wrapper {
+        height: 190px;
+    }
+
+    #school-places .section-heading {
+        flex-direction: column;
+    }
+
+}

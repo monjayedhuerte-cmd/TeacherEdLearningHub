@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connect to Reading | Ms. Rachel's Learning Jungle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#">
+    <div class="brand-leaf">🌿</div>
+    <div><b>MS. RACHEL'S</b><span>LEARNING JUNGLE</span></div>
+  </a>
+  <div class="top-actions">
+    <span class="guide-badge">🐾 Guided by Ms. Rachel</span>
+    <button id="soundBtn">🔊 Sound</button>
+  </div>
+</header>
+
+<nav class="trail-nav">
+  <a href="#start">🏕️ Start</a>
+  <a href="#activity1">📚 Fiction</a>
+  <a href="#activity2">👀 Visualize</a>
+  <a href="#activity3">🏫 School Places</a>
+  <a href="#activity4">💬 Communicate</a>
+  <a href="#mainIdea">🔎 Main Idea</a>
+  <a href="#finish">⭐ Finish</a>
+</nav>
+
+<main id="start">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">📖 READING TRAIL • CONNECT TO READING</div>
+    <h1>Let’s Explore the Reading Jungle!</h1>
+    <p>Hi, explorers! <strong>Ms. Rachel</strong> is your guide. Today we will listen, read, think, talk, and write as we travel through our school jungle.</p>
+    <div class="target-pills">
+      <span>👂 Listen for the main idea</span>
+      <span>💬 Exchange ideas</span>
+      <span>✍️ Complete sentences</span>
+      <span>🔎 Read closely</span>
+    </div>
+    <button class="primary" onclick="document.querySelector('#activity1').scrollIntoView()">🌿 Start the Reading Trail</button>
+  </div>
+  <div class="hero-art" aria-hidden="true">
+    <div class="sun">☀️</div>
+    <div class="jungle-scene">🌴 🌳 🦜<br>🐒 📚 🐯</div>
+  </div>
+</section>
+
+<section class="teacher-note">
+  <div class="teacher-avatar">👩‍🏫</div>
+  <div>
+    <small>YOUR JUNGLE GUIDE</small>
+    <h2>Ms. Rachel’s Reading Mission</h2>
+    <p>“Good readers look carefully at words, listen for important ideas, share their thinking, and use words to make meaning.”</p>
+  </div>
+</section>
+
+<section class="standards">
+  <div class="standard-card">
+    <span>📘</span>
+    <div><small>WIDA STANDARD</small>
+    <h3>English Language Development Standard 4</h3>
+    <p>English language learners communicate information, ideas, and concepts necessary for academic success in the content area of science.</p></div>
+  </div>
+  <div class="objective-card">
+    <span>🎯</span>
+    <div><small>OUR 4 LEARNING TARGETS</small>
+    <ol>
+      <li>Listen to an informational text to understand the main idea.</li>
+      <li>Exchange ideas through collaborative discussions on academic topics.</li>
+      <li>Write words to complete sentences.</li>
+      <li>Closely read informational texts to determine how meaning is conveyed through language.</li>
+    </ol></div>
+  </div>
+</section>
+
+<section class="vocab">
+  <div class="section-title"><span>🌱</span><div><small>BACKGROUND KNOWLEDGE</small><h2>Meet Our Reading Words</h2></div></div>
+  <div class="vocab-grid">
+    <button class="vocab-card" data-say="Fiction. An imaginary story. It is not real."><b>✨ Fiction</b><span>Imaginary story</span></button>
+    <button class="vocab-card" data-say="Nonfiction. A story or text about real people, places, events, or facts."><b>📘 Nonfiction</b><span>About real things</span></button>
+    <button class="vocab-card" data-say="Story. A story tells about people and places. It tells things that happen."><b>📖 Story</b><span>People, places, and events</span></button>
+  </div>
+</section>
+
+<!-- ACTIVITY 1 -->
+<section class="lesson-section" id="activity1">
+  <div class="section-title">
+    <span>📚</span><div><small>ACTIVITY 1 • OBJECTIVE 4</small><h2>Fiction or Nonfiction?</h2></div>
+  </div>
+  <div class="teacher-tip">🐾 <b>Ms. Rachel says:</b> Fiction is imaginary. Nonfiction is about real things. Read the title and clue, then choose the correct kind of text.</div>
+  <p class="lead">Can you sort all 10 books correctly? Choose <b>Fiction</b> or <b>Nonfiction</b>.</p>
+
+  <div class="book-grid" id="bookGrid">
+    <article class="book" data-answer="fiction">
+      <div class="book-cover pink">👠<strong>Cinderella</strong><small>A magical fairy tale</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="fiction">
+      <div class="book-cover blue">🐇<strong>Alice in Wonderland</strong><small>A fantastical adventure</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="nonfiction">
+      <div class="book-cover cream">📔<strong>The Diary of Anne Frank</strong><small>A real historical diary</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="nonfiction">
+      <div class="book-cover green">🕊️<strong>Martin Luther</strong><small>A biography about a real person</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="fiction">
+      <div class="book-cover rose">🌹<strong>Beauty and the Beast</strong><small>A fairy-tale story</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="fiction">
+      <div class="book-cover sky">🧚<strong>Peter Pan</strong><small>A fantasy adventure</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="nonfiction">
+      <div class="book-cover leaf">🦁<strong>Animal Facts</strong><small>Real facts about animals</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="fiction">
+      <div class="book-cover purple">🐉<strong>The Dragon’s Cave</strong><small>An imaginary adventure</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="nonfiction">
+      <div class="book-cover gold">🌍<strong>Our World</strong><small>Facts about real places</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+    <article class="book" data-answer="fiction">
+      <div class="book-cover orange">🧙<strong>The Magic Forest</strong><small>An imaginary story</small></div>
+      <div class="choices"><button data-choice="fiction">✨ Fiction</button><button data-choice="nonfiction">📘 Nonfiction</button></div>
+      <div class="book-result"></div>
+    </article>
+  </div>
+  <div class="score-pill" id="bookScore">🌱 Score: 0 / 10</div>
+</section>
+
+<!-- ACTIVITY 2 -->
+<section class="lesson-section" id="activity2">
+  <div class="section-title">
+    <span>👀</span><div><small>ACTIVITY 2 • OBJECTIVES 1 & 4</small><h2>Visualization Practice</h2></div>
+  </div>
+  <div class="teacher-tip">👀 <b>Ms. Rachel says:</b> Good readers make a picture in their minds. Look for color words, people, places, objects, and actions.</div>
+  <p class="lead">Read each sentence carefully. Then choose the picture details that match the words.</p>
+
+  <div class="visual-card">
+    <div class="visual-tabs">
+      <button class="visual-tab active" data-story="0">🌧️ A</button>
+      <button class="visual-tab" data-story="1">📚 B</button>
+      <button class="visual-tab" data-story="2">🐕 C</button>
+    </div>
+    <div id="visualText" class="visual-text"></div>
+    <div id="visualChoices" class="visual-choices"></div>
+    <div class="feedback" id="visualFeedback"></div>
+  </div>
+</section>
+
+<!-- ACTIVITY 3 -->
+<section class="lesson-section" id="activity3">
+  <div class="section-title">
+    <span>🏫</span><div><small>ACTIVITY 3 • OBJECTIVES 2 & 3</small><h2>Places in School Explorer</h2></div>
+  </div>
+  <div class="teacher-tip">📸 <b>Ms. Rachel’s picture challenge:</b> Replace the five picture placeholders with your own school pictures. Students identify the place, then practice the word.</div>
+
+  <h3 class="part-heading">PART 1 — What Place Is It?</h3>
+  <p class="lead">Look at each picture. Choose the correct school place. There are <b>5 items</b>.</p>
+
+  <div class="place-grid">
+    <article class="place-card" data-answer="library">
+      <div class="picture-slot"><span>🖼️</span><small>ADD SCHOOL PICTURE 1</small></div>
+      <h3>Picture 1</h3>
+      <div class="place-choices"><button data-place="library">📚 Library</button><button data-place="cafeteria">🍎 Cafeteria</button><button data-place="gym">🏀 Gym</button></div>
+      <div class="place-result"></div>
+    </article>
+    <article class="place-card" data-answer="cafeteria">
+      <div class="picture-slot"><span>🖼️</span><small>ADD SCHOOL PICTURE 2</small></div>
+      <h3>Picture 2</h3>
+      <div class="place-choices"><button data-place="classroom">🪑 Classroom</button><button data-place="cafeteria">🍎 Cafeteria</button><button data-place="office">🏢 Office</button></div>
+      <div class="place-result"></div>
+    </article>
+    <article class="place-card" data-answer="playground">
+      <div class="picture-slot"><span>🖼️</span><small>ADD SCHOOL PICTURE 3</small></div>
+      <h3>Picture 3</h3>
+      <div class="place-choices"><button data-place="playground">🛝 Playground</button><button data-place="hallway">🚶 Hallway</button><button data-place="music room">🎵 Music Room</button></div>
+      <div class="place-result"></div>
+    </article>
+    <article class="place-card" data-answer="gym">
+      <div class="picture-slot"><span>🖼️</span><small>ADD SCHOOL PICTURE 4</small></div>
+      <h3>Picture 4</h3>
+      <div class="place-choices"><button data-place="restroom">🚻 Restroom</button><button data-place="gym">🏀 Gym</button><button data-place="office">🏢 Office</button></div>
+      <div class="place-result"></div>
+    </article>
+    <article class="place-card" data-answer="classroom">
+      <div class="picture-slot"><span>🖼️</span><small>ADD SCHOOL PICTURE 5</small></div>
+      <h3>Picture 5</h3>
+      <div class="place-choices"><button data-place="classroom">🪑 Classroom</button><button data-place="library">📚 Library</button><button data-place="playground">🛝 Playground</button></div>
+      <div class="place-result"></div>
+    </article>
+  </div>
+  <div class="teacher-list">
+    <b>School places to know:</b> cafeteria • classroom • office • hallway • library • restroom • gym • music room • playground
+  </div>
+
+  <h3 class="part-heading">PART 2 — Spelling Trail ✍️</h3>
+  <p class="lead">Complete the word. Type the school place correctly, then click <b>Check</b>.</p>
+
+  <div class="spelling-grid">
+    <div class="spell-card"><b>1. L - b - a r -</b><input data-answer="library" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>2. cafe - - - - -</b><input data-answer="cafeteria" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>3. h - l - w a -</b><input data-answer="hallway" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>4. c l a - s r - o m</b><input data-answer="classroom" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>5. o f f - c e</b><input data-answer="office" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>6. r e s t r - o m</b><input data-answer="restroom" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>7. g - m</b><input data-answer="gym" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>8. m - s i c r o o m</b><input data-answer="musicroom" placeholder="Type the word"><button>Check</button><span></span></div>
+    <div class="spell-card"><b>9. p l a y g r - u n d</b><input data-answer="playground" placeholder="Type the word"><button>Check</button><span></span></div>
+  </div>
+</section>
+
+<!-- ACTIVITY 4 -->
+<section class="lesson-section" id="activity4">
+  <div class="section-title">
+    <span>💬</span><div><small>ACTIVITY 4 • OBJECTIVES 2 & 3</small><h2>Communicate Like an Explorer</h2></div>
+  </div>
+  <div class="teacher-tip">💬 <b>Ms. Rachel says:</b> Good communication means we listen to another person, share our idea, and give a reason or detail.</div>
+  <p class="lead">Choose a question. Think first. Then tell your answer to a partner.</p>
+
+  <div class="talk-grid">
+    <button data-talk="Which story is fiction? Why do you think so?">📖 Which story is fiction? Why?</button>
+    <button data-talk="Which school place do you like best? Why?">🏫 Which school place do you like best? Why?</button>
+    <button data-talk="What words help you picture Mia under the umbrella?">☂️ What words help you picture Mia?</button>
+    <button data-talk="What makes a text nonfiction?">🔎 What makes a text nonfiction?</button>
+    <button data-talk="What do you like to learn at school?">🎒 What do you like to learn at school?</button>
+    <button data-talk="How can you help a classmate who is lost at school?">🤝 How can you help a classmate?</button>
+  </div>
+
+  <div class="talk-display" id="talkDisplay">💬 Choose a question to begin your partner discussion.</div>
+  <div class="sentence-frames">
+    <b>Helpful sentence frames:</b>
+    <span>“I think ______ because ______.”</span>
+    <span>“I agree with ______ because ______.”</span>
+    <span>“I see ______ in the text.”</span>
+    <span>“My favorite place is ______ because ______.”</span>
+  </div>
+</section>
+
+<!-- MARIA -->
+<section class="story-section">
+  <div class="story-icon">📖</div>
+  <div>
+    <small>STORY READING</small>
+    <h2>Maria Is Lost</h2>
+    <p><b>Ms. Rachel’s story book goes here.</b> You mentioned that you already have the book, so this website keeps a dedicated reading space for it rather than replacing your original story.</p>
+    <button class="secondary" id="storyReminder">📚 I’m Ready to Read Maria Is Lost</button>
+    <div class="mini-note">After reading the book with Ms. Rachel, talk with a partner: <b>What happened? Who was involved? Where did it happen?</b></div>
+  </div>
+</section>
+
+<!-- MAIN IDEA -->
+<section class="lesson-section" id="mainIdea">
+  <div class="section-title">
+    <span>🔎</span><div><small>LISTEN • READ • THINK</small><h2>Find the Main Idea</h2></div>
+  </div>
+  <div class="teacher-tip">👂 <b>Ms. Rachel says:</b> The main idea tells what the text is mostly about. Listen and look for the idea that connects the details.</div>
+
+  <div class="info-reading">
+    <h3>🏫 I Learn at School</h3>
+    <p>School is a place for learning and fun. At school, children learn in many places. They can read books in the library, learn with classmates in the classroom, and play on the playground. Each place helps children learn and enjoy school.</p>
+    <button id="readAloud">🔊 Ms. Rachel Reads This</button>
+  </div>
+
+  <p class="question"><b>What is the main idea?</b></p>
+  <div class="main-choices">
+    <button data-correct="false">School only has a library.</button>
+    <button data-correct="true">School has many places where children can learn and have fun.</button>
+    <button data-correct="false">Children only play at school.</button>
+  </div>
+  <div class="feedback" id="mainFeedback"></div>
+</section>
+
+<!-- SENTENCE COMPLETION -->
+<section class="lesson-section">
+  <div class="section-title">
+    <span>✍️</span><div><small>OBJECTIVE 3 • WRITE WORDS</small><h2>Complete the Sentence</h2></div>
+  </div>
+  <p class="lead">Choose the word that makes the sentence complete.</p>
+  <div class="sentence-grid">
+    <div class="sentence-item" data-correct="imaginary"><p>1. Fiction is an ______ story.</p><div><button>imaginary</button><button>real</button><button>school</button></div><span></span></div>
+    <div class="sentence-item" data-correct="real"><p>2. Nonfiction is about things that are ______.</p><div><button>real</button><button>imaginary</button><button>magic</button></div><span></span></div>
+    <div class="sentence-item" data-correct="library"><p>3. We can read books in the ______.</p><div><button>library</button><button>gym</button><button>playground</button></div><span></span></div>
+    <div class="sentence-item" data-correct="school"><p>4. I learn at ______.</p><div><button>school</button><button>forest</button><button>ocean</button></div><span></span></div>
+  </div>
+  <div class="feedback" id="sentenceFeedback"></div>
+</section>
+
+<!-- BIG IDEA -->
+<section class="big-idea">
+  <div class="big-leaf">🌿</div>
+  <div>
+    <small>CONNECT TO THE BIG IDEA</small>
+    <h2>Read It Aloud With Ms. Rachel!</h2>
+    <div class="big-lines">
+      <div>“I LEARN AT SCHOOL.”</div>
+      <div>“I HAVE FUN AT SCHOOL.”</div>
+    </div>
+    <button id="bigIdeaRead">🔊 Read the Big Idea</button>
+  </div>
+</section>
+
+<section class="finish" id="finish">
+  <div class="trophy">🏆</div>
+  <small>READING JUNGLE COMPLETION</small>
+  <h2>Great Job, Explorer!</h2>
+  <p>You listened, read, visualized, spelled, discussed, and found the main idea with <strong>Ms. Rachel</strong>.</p>
+  <div class="finish-badges">
+    <span>👂 Listener</span><span>🔎 Reader</span><span>✍️ Writer</span><span>💬 Communicator</span>
+  </div>
+  <button class="primary" id="finishBtn">🌟 Complete My Reading Mission</button>
+  <div class="finish-message" id="finishMessage"></div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-brand">
+    <div class="footer-logo">🌿</div>
+    <div><b>MS. RACHEL'S LEARNING JUNGLE</b><small>Explore • Learn • Grow</small></div>
+  </div>
+  <small>Connect to Reading • Interactive Learning Trail</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
