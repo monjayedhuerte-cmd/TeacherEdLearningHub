@@ -73,6 +73,14 @@
       "file": "Ms_Rachel_Learning_Jungle/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "TermReadinessTool",
+      "title": "Term Readiness & Diagnostic Tool",
+      "description": "Prepare learners for the next term by identifying prerequisite gaps, planning bridge lessons, and monitoring improvement.",
+      "file": "Teacher_Ed_Term_Readiness_Tool/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }
