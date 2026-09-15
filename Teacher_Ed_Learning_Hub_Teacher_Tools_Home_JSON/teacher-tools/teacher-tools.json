@@ -81,6 +81,14 @@
       "file": "Teacher_Ed_Term_Readiness_Tool/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "A fresh start for every learner",
+      "title": "Return and Reconnect: A Fresh Start for Every Learner",
+      "description": "PYour brain is ready for a new adventure. Reconnect, reset, reflect, rebuild, and relaunch learning.",
+      "file": "Teacher_Ed_Return_Reconnect/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }
