@@ -798,5 +798,15 @@
     "date": "2026-09-17",
     "featured": true,
     "icon": "map"
+  },
+  {
+    "title": "Filipino 3 | Yunit 2 Lesson 2: Ang Aking Pagtulong sa Kasapi ng Komunidad, Part 1",
+    "subject": "Filipino", 
+    "grade": "Grade 3",
+    "description": "Maligayang pagdating! Ngayon ay matututo tayo mula sa mga larawan, kuwento, salita, at mga gawain tungkol sa mabuting pakikipagkapuwa-tao.",
+    "file": "lessons/filipino/grade-3/Grade3_Aralin2_Full_Interactive_Lesson/index.html",
+    "date": "2026-09-17",
+    "featured": true,
+    "icon": "map"
   }
 ]

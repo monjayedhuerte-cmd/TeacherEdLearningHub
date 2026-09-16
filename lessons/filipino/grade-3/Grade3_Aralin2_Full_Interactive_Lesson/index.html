@@ -1,0 +1,2441 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#12335b" />
+    <title>
+      Aralin 2 • Ang Aking Pagtulong sa Kasapi ng Komunidad | Teacher Ed
+      Learning Hub
+    </title>
+    <link rel="icon" type="image/png" href="assets/BrandLogo.png" />
+    <style>
+      :root {
+        --navy: #12335b;
+        --navy2: #0b2340;
+        --blue: #2563eb;
+        --sky: #eef7ff;
+        --gold: #f5b700;
+        --gold2: #ffd65a;
+        --green: #159957;
+        --red: #d94841;
+        --ink: #172033;
+        --muted: #5d6b7c;
+        --white: #fff;
+        --line: #dce6f2;
+        --shadow: 0 18px 45px rgba(18, 51, 91, 0.13);
+        --radius: 24px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Arial,
+          sans-serif;
+        color: var(--ink);
+        background: linear-gradient(
+          135deg,
+          #f7fbff 0%,
+          #eef6ff 48%,
+          #fffaf0 100%
+        );
+        overflow-x: hidden;
+      }
+      .app {
+        min-height: 100vh;
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(18, 51, 91, 0.96);
+        color: #fff;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+      }
+      .top-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: contain;
+        background: #fff;
+        border: 3px solid var(--gold);
+      }
+      .brand {
+        min-width: 0;
+        flex: 1;
+      }
+      .brand strong {
+        display: block;
+        font-size: 15px;
+        letter-spacing: 0.5px;
+      }
+      .brand small {
+        display: block;
+        opacity: 0.78;
+        font-size: 11px;
+      }
+      .controls {
+        display: flex;
+        gap: 8px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 14px;
+        padding: 11px 15px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.18s;
+        min-height: 44px;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn:focus-visible,
+      .choice:focus-visible,
+      .tile:focus-visible {
+        outline: 3px solid var(--gold);
+        outline-offset: 2px;
+      }
+      .btn-light {
+        background: #fff;
+        color: var(--navy);
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: #182a40;
+      }
+      .btn-blue {
+        background: var(--blue);
+        color: #fff;
+      }
+      .btn-green {
+        background: var(--green);
+        color: #fff;
+      }
+      .btn-ghost {
+        background: #edf4ff;
+        color: var(--navy);
+      }
+      .progress-wrap {
+        max-width: 1200px;
+        margin: auto;
+        padding: 0 18px 10px;
+      }
+      .progress-line {
+        height: 8px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        overflow: hidden;
+      }
+      .progress-fill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--gold), #fff08a);
+        transition: 0.3s;
+      }
+      .status {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        font-size: 12px;
+        margin-top: 6px;
+        opacity: 0.92;
+      }
+      .main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 24px 18px 100px;
+      }
+      .slide {
+        display: none;
+        animation: fade 0.35s ease;
+      }
+      .slide.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.93);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 26px;
+      }
+      .hero .card:first-child {
+        background: linear-gradient(135deg, #fff, #f0f7ff);
+      }
+      .eyebrow {
+        display: inline-flex;
+        gap: 7px;
+        align-items: center;
+        padding: 7px 11px;
+        border-radius: 999px;
+        background: #e9f2ff;
+        color: var(--blue);
+        font-weight: 900;
+        font-size: 12px;
+      }
+      .title {
+        font-size: clamp(30px, 5vw, 56px);
+        line-height: 1.02;
+        margin: 14px 0 12px;
+        color: var(--navy);
+      }
+      h2 {
+        font-size: clamp(25px, 4vw, 38px);
+        margin: 0 0 8px;
+        color: var(--navy);
+      }
+      h3 {
+        margin: 8px 0;
+        color: var(--navy);
+      }
+      p {
+        line-height: 1.65;
+        margin: 9px 0;
+      }
+      .en {
+        display: block;
+        color: var(--muted);
+        font-size: 0.92em;
+        font-style: italic;
+        margin-top: 3px;
+      }
+      .hero-img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        border-radius: 22px;
+        border: 5px solid #fff;
+        box-shadow: var(--shadow);
+      }
+      .tag-row,
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 15px 0;
+      }
+      .tag {
+        padding: 8px 11px;
+        border-radius: 12px;
+        background: #fff5cf;
+        color: #765400;
+        font-weight: 800;
+        font-size: 13px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+      .teacher {
+        border-left: 5px solid var(--gold);
+        background: #fff9e8;
+        padding: 15px 17px;
+        border-radius: 16px;
+        margin: 15px 0;
+      }
+      .teacher b {
+        color: #805d00;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+      }
+      .mini {
+        padding: 20px;
+        border-radius: 20px;
+        background: var(--sky);
+        border: 1px solid #d8e9fb;
+      }
+      .icon {
+        font-size: 35px;
+      }
+      .source-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .source-grid figure {
+        margin: 0;
+      }
+      .source-grid img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 18px;
+        border: 1px solid var(--line);
+        cursor: pointer;
+      }
+      .source-grid figcaption {
+        font-weight: 800;
+        font-size: 12px;
+        margin-top: 6px;
+        text-align: center;
+      }
+      .visual-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+      .visual-card {
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+      }
+      .visual-card img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+      }
+      .visual-card .body {
+        padding: 15px;
+      }
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .choice {
+        width: 100%;
+        text-align: left;
+        background: #fff;
+        border: 2px solid #d9e3ee;
+        padding: 15px;
+        border-radius: 17px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 750;
+        transition: 0.15s;
+      }
+      .choice:hover {
+        border-color: var(--blue);
+        background: #f7fbff;
+      }
+      .choice.correct {
+        border-color: var(--green);
+        background: #ecfff5;
+      }
+      .choice.wrong {
+        border-color: var(--red);
+        background: #fff0ef;
+      }
+      .feedback {
+        min-height: 30px;
+        margin-top: 12px;
+        font-weight: 800;
+      }
+      .feedback.good {
+        color: var(--green);
+      }
+      .feedback.try {
+        color: #9b5b00;
+      }
+      .nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 60;
+        background: rgba(255, 255, 255, 0.97);
+        border-top: 1px solid var(--line);
+        box-shadow: 0 -8px 24px rgba(18, 51, 91, 0.08);
+      }
+      .nav-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px 18px;
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .nav-center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        font-size: 12px;
+        font-weight: 900;
+        color: var(--muted);
+      }
+      .story {
+        background: linear-gradient(135deg, #fffdf5, #f3f9ff);
+        border: 2px solid #f0dfa3;
+      }
+      .story p {
+        font-size: 17px;
+      }
+      .highlight {
+        padding: 2px 6px;
+        border-radius: 6px;
+        background: #fff0a9;
+        font-weight: 900;
+      }
+      .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 10px;
+      }
+      .vocab {
+        padding: 14px;
+        border-radius: 17px;
+        background: #f8fbff;
+        border: 1px solid var(--line);
+        text-align: center;
+        cursor: pointer;
+        min-height: 125px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .vocab:hover {
+        background: #eef6ff;
+      }
+      .vocab .word {
+        font-size: 20px;
+        font-weight: 950;
+        color: var(--navy);
+      }
+      .vocab .meaning {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .answer-box {
+        padding: 17px;
+        border-radius: 18px;
+        background: #f7fbff;
+        border: 1px solid var(--line);
+        margin-top: 15px;
+      }
+      .sentence {
+        font-size: 21px;
+        font-weight: 800;
+        padding: 17px;
+        background: #fff;
+        border-radius: 15px;
+        border: 1px solid var(--line);
+      }
+      .blank {
+        display: inline-block;
+        min-width: 110px;
+        border-bottom: 4px solid var(--navy);
+        padding: 0 7px;
+        text-align: center;
+      }
+      .tiles {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin: 14px 0;
+      }
+      .tile {
+        padding: 13px 15px;
+        border-radius: 14px;
+        background: #fff;
+        border: 2px solid #dbe6f1;
+        font-weight: 850;
+        cursor: pointer;
+      }
+      .tile.selected {
+        border-color: var(--blue);
+        background: #eaf2ff;
+      }
+      .sort-zone {
+        min-height: 110px;
+        border: 2px dashed #b8c9dc;
+        border-radius: 18px;
+        padding: 14px;
+        background: #fbfdff;
+      }
+      .sort-zones {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+      }
+      .sort-zone h4 {
+        margin: 0 0 8px;
+      }
+      .badge-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .badge {
+        padding: 10px 13px;
+        background: #fff4c7;
+        border: 1px solid #f1d979;
+        border-radius: 14px;
+        font-weight: 850;
+      }
+      .result {
+        display: none;
+        text-align: center;
+        padding: 28px;
+      }
+      .result.show {
+        display: block;
+      }
+      .big-score {
+        font-size: 56px;
+        font-weight: 1000;
+        color: var(--navy);
+      }
+      .reflection button {
+        margin: 5px;
+      }
+      .selected-reflect {
+        background: #dcecff !important;
+        border-color: var(--blue) !important;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(8, 25, 46, 0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 100;
+      }
+      .modal.show {
+        display: flex;
+      }
+      .modal-box {
+        max-width: 760px;
+        width: 100%;
+        background: #fff;
+        border-radius: 24px;
+        padding: 20px;
+        max-height: 90vh;
+        overflow: auto;
+      }
+      .modal-box img {
+        max-width: 100%;
+        border-radius: 16px;
+      }
+      .small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .source-note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .footer {
+        margin-top: 35px;
+        background: var(--navy2);
+        color: #fff;
+        border-radius: 24px;
+        padding: 26px;
+        display: flex;
+        gap: 16px;
+        align-items: center;
+      }
+      .footer img {
+        width: 58px;
+        height: 58px;
+        border-radius: 50%;
+        background: #fff;
+        border: 3px solid var(--gold);
+      }
+      .footer small {
+        opacity: 0.78;
+      }
+      .teacher-toggle {
+        margin-left: auto;
+      }
+      .hidden {
+        display: none !important;
+      }
+      @media (max-width: 900px) {
+        .hero,
+        .grid2 {
+          grid-template-columns: 1fr;
+        }
+        .grid,
+        .source-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .vocab-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .visual-row {
+          grid-template-columns: 1fr;
+        }
+        .hero-img {
+          max-height: 320px;
+        }
+        .title {
+          font-size: 42px;
+        }
+      }
+      @media (max-width: 600px) {
+        .top-inner {
+          padding: 8px 12px;
+        }
+        .controls .btn span {
+          display: none;
+        }
+        .main {
+          padding: 16px 12px 92px;
+        }
+        .card {
+          padding: 18px;
+          border-radius: 20px;
+        }
+        .grid,
+        .source-grid,
+        .choice-grid,
+        .sort-zones,
+        .vocab-grid {
+          grid-template-columns: 1fr;
+        }
+        .source-grid img {
+          height: 350px;
+        }
+        .nav-inner {
+          padding: 8px 10px;
+        }
+        .nav-center {
+          font-size: 11px;
+        }
+        .btn {
+          padding: 10px 12px;
+        }
+        .sentence {
+          font-size: 18px;
+        }
+        .footer {
+          flex-direction: column;
+          text-align: center;
+        }
+        .teacher-toggle {
+          margin: 0;
+        }
+        .section-head {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <header class="topbar">
+        <div class="top-inner">
+          <img
+            class="brand-logo"
+            src="assets/BrandLogo.png"
+            alt="Teacher Ed Learning Hub logo"
+          />
+          <div class="brand">
+            <strong>TEACHER ED LEARNING HUB</strong
+            ><small>Aralin 2 • Filipino 3 • Interactive Lesson</small>
+          </div>
+          <div class="controls">
+            <button class="btn btn-light" onclick="toggleTeacher()">
+              👩‍🏫 <span>Teacher Guide</span></button
+            ><button class="btn btn-gold" onclick="fullscreenPage()">
+              ⛶ <span>Full Screen</span>
+            </button>
+          </div>
+        </div>
+        <div class="progress-wrap">
+          <div class="progress-line">
+            <div id="progressFill" class="progress-fill"></div>
+          </div>
+          <div class="status">
+            <span id="stepText">1 / 15</span
+            ><span>⭐ <b id="stars">0</b> stars</span
+            ><span>🏆 <b id="badges">0</b> badges</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <!-- 1 -->
+        <section class="slide active" data-title="Kumusta, Mag-aaral!">
+          <div class="hero">
+            <div class="card">
+              <span class="eyebrow">📚 FILIPINO 3 • ARALIN 2</span>
+              <h1 class="title">Ang Aking Pagtulong sa Kasapi ng Komunidad</h1>
+              <span class="en">My Helping a Member of the Community</span>
+              <p>
+                Maligayang pagdating! Ngayon ay matututo tayo mula sa mga
+                larawan, kuwento, salita, at mga gawain tungkol sa
+                <b>mabuting pakikipagkapuwa-tao</b>.
+              </p>
+              <span class="en"
+                >Welcome! Today we will learn from pictures, a story, words, and
+                activities about being kind and helpful to others.</span
+              >
+              <div class="tag-row">
+                <span class="tag">📖 Kuwento / Story</span
+                ><span class="tag">🔤 Talasalitaan / Vocabulary</span
+                ><span class="tag">✍️ Wika / Language</span
+                ><span class="tag">❤️ Pagpapahalaga / Values</span>
+              </div>
+              <div class="teacher">
+                <b>Teacher Ed:</b> “Tingnan muna natin. Huwag magmadali.
+                Mag-isip, magpaliwanag, at matuto tayo nang sama-sama.”<span
+                  class="en"
+                  >“Look carefully first. Do not rush. Think, explain, and learn
+                  together.”</span
+                >
+              </div>
+              <button class="btn btn-blue" onclick="nextSlide()">
+                Simulan ang Aralin →
+                <span class="en" style="display: inline; color: #fff"
+                  >Start the Lesson</span
+                >
+              </button>
+            </div>
+            <div>
+              <img
+                class="hero-img"
+                src="assets/good-samaritan.jpg"
+                alt="Illustration based on the supplied lesson page showing the Good Samaritan helping an injured man"
+              />
+              <p class="source-note">
+                Larawan batay sa ibinigay na pahina ng aralin.
+                <span class="en">Image based on the supplied lesson page.</span>
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2 -->
+        <section class="slide" data-title="Ano ang Matututuhan?">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🎯 LEARNING TARGETS</span>
+                <h2>Mga Layunin sa Pagkatuto</h2>
+                <span class="en">Learning Targets</span>
+              </div>
+              <div class="badge">Level 1 • Connect</div>
+            </div>
+            <div class="grid">
+              <div class="mini">
+                <div class="icon">🔤</div>
+                <h3>Talasalitaan</h3>
+                <span class="en">Vocabulary</span>
+                <p>
+                  Maiintindihan ang kahulugan ng mahahalagang salita ayon sa
+                  gamit sa pangungusap.
+                </p>
+              </div>
+              <div class="mini">
+                <div class="icon">📖</div>
+                <h3>Pag-unawa sa Teksto</h3>
+                <span class="en">Reading Comprehension</span>
+                <p>
+                  Maiuugnay ang mga pangyayari at makikilala ang katangian ng
+                  mga tauhan.
+                </p>
+              </div>
+              <div class="mini">
+                <div class="icon">✍️</div>
+                <h3>Wika</h3>
+                <span class="en">Language</span>
+                <p>
+                  Matutukoy at magagamit ang <b>pandiwa</b>, <b>pang-ukol</b>,
+                  at <b>pang-angkop</b>.
+                </p>
+              </div>
+              <div class="mini">
+                <div class="icon">❤️</div>
+                <h3>Pagpapahalaga</h3>
+                <span class="en">Values</span>
+                <p>
+                  Maiisip kung paano maipapakita ang kabutihan sa pamilya,
+                  paaralan, at komunidad.
+                </p>
+              </div>
+              <div class="mini">
+                <div class="icon">🧠</div>
+                <h3>Pag-iisip</h3>
+                <span class="en">Thinking</span>
+                <p>
+                  Makapagbibigay ng dahilan, paghahambing, at sariling
+                  halimbawa.
+                </p>
+              </div>
+              <div class="mini">
+                <div class="icon">🏆</div>
+                <h3>Paglalapat</h3>
+                <span class="en">Application</span>
+                <p>Magagamit ang natutuhan sa mga tunay na sitwasyon.</p>
+              </div>
+            </div>
+            <div class="teacher">
+              <b>Teacher Guide:</b> Sabihin sa klase: “Sa dulo ng aralin, gusto
+              kong maipaliwanag ninyo hindi lamang kung ano ang sagot, kundi
+              <i>bakit</i> iyon ang sagot.”<span class="en"
+                >Ask students to explain not only the answer, but why it is
+                correct.</span
+              >
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Handa na ako →
+              <span class="en" style="display: inline; color: #fff"
+                >I’m ready</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 3 -->
+        <section class="slide" data-title="Tingnan ang mga Larawan">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">👀 CONNECT</span>
+                <h2>Tingnan, Mag-isip, Magsalita</h2>
+                <span class="en">Look, Think, Talk</span>
+              </div>
+            </div>
+            <p>
+              Ang mga larawang ito ay hango sa mga larawang kasama ng ibinigay
+              mong aralin. I-click ang larawan upang palakihin.
+            </p>
+            <span class="en"
+              >These visuals are based on the pictures included in the lesson
+              you provided. Click an image to enlarge it.</span
+            >
+            <div class="visual-row" style="margin-top: 18px">
+              <div class="visual-card">
+                <img
+                  src="assets/priest.jpg"
+                  alt="Priest character illustration"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Saserdoteng Hudyo</b><span class="en">Jewish priest</span>
+                  <p>Napansin ba niya ang taong nangangailangan?</p>
+                  <span class="en">Did he help the person in need?</span>
+                </div>
+              </div>
+              <div class="visual-card">
+                <img
+                  src="assets/levite.jpg"
+                  alt="Levite character illustration"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Lalaking Levita</b><span class="en">Levite man</span>
+                  <p>Ano ang ginawa niya nang makita ang sugatang lalaki?</p>
+                  <span class="en"
+                    >What did he do when he saw the injured man?</span
+                  >
+                </div>
+              </div>
+              <div class="visual-card">
+                <img
+                  src="assets/samaritan.jpg"
+                  alt="Samaritan helping the injured man"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Samaritano</b><span class="en">Samaritan</span>
+                  <p>Sino ang kumilos upang tumulong?</p>
+                  <span class="en">Who took action to help?</span>
+                </div>
+              </div>
+            </div>
+            <div class="answer-box">
+              <b>Quick Think:</b> Alin sa tatlong larawan ang nagpapakita ng
+              <span class="highlight">pagtulong</span>?<span class="en"
+                >Which picture shows helping?</span
+              >
+              <div class="choice-grid" style="margin-top: 12px">
+                <button class="choice" onclick="pictureAnswer(this, true)">
+                  🤝 Samaritano — tumutulong sa sugatan
+                  <span class="en"
+                    >The Samaritan helps the injured man.</span
+                  ></button
+                ><button class="choice" onclick="pictureAnswer(this, false)">
+                  🚶 Dumaan lamang at hindi tumulong
+                  <span class="en">Passed by without helping.</span>
+                </button>
+              </div>
+              <div id="picFeedback" class="feedback"></div>
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Ipagpatuloy →
+              <span class="en" style="display: inline; color: #fff"
+                >Continue</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 4 -->
+        <section class="slide" data-title="Talasalitaan">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🔤 MINI-LESSON 1</span>
+                <h2>Pagpapayaman ng Bokabularyo</h2>
+                <span class="en">Vocabulary Building</span>
+              </div>
+            </div>
+            <p>I-click ang bawat salita. Basahin ang kahulugan at halimbawa.</p>
+            <span class="en"
+              >Click each word. Read its meaning and example.</span
+            >
+            <div class="vocab-grid" style="margin-top: 18px">
+              <div
+                class="vocab"
+                onclick="
+                  showVocab(
+                    'kapuwa',
+                    'taong katulad natin; ibang tao na dapat nating igalang at mahalin.',
+                    'person like us; another person whom we should respect and love.',
+                    'Mahal natin ang ating kapuwa.',
+                  )
+                "
+              >
+                <div class="word">kapuwa</div>
+                <div class="meaning">other people / fellow</div>
+              </div>
+              <div
+                class="vocab"
+                onclick="
+                  showVocab(
+                    'bahay-tuluyan',
+                    'lugar na maaaring tuluyan o pansamantalang tirahan.',
+                    'a place where someone can stay or receive temporary shelter.',
+                    'Dinala niya ang lalaki sa bahay-tuluyan.',
+                  )
+                "
+              >
+                <div class="word">bahay-tuluyan</div>
+                <div class="meaning">inn / shelter</div>
+              </div>
+              <div
+                class="vocab"
+                onclick="
+                  showVocab(
+                    'salapi',
+                    'pera na ginagamit sa pagbili o pagbabayad.',
+                    'money used for buying or paying.',
+                    'Nagbigay siya ng salapi para sa pangangalaga.',
+                  )
+                "
+              >
+                <div class="word">salapi</div>
+                <div class="meaning">money</div>
+              </div>
+              <div
+                class="vocab"
+                onclick="
+                  showVocab(
+                    'pinuno',
+                    'taong namumuno o nangunguna.',
+                    'a person who leads or is in charge.',
+                    'Nagtanong ang pinuno kay Hesus.',
+                  )
+                "
+              >
+                <div class="word">pinuno</div>
+                <div class="meaning">leader</div>
+              </div>
+              <div
+                class="vocab"
+                onclick="
+                  showVocab(
+                    'tinulungan',
+                    'binigyan ng tulong o inasikaso.',
+                    'given help or assisted.',
+                    'Tinulungan ng Samaritano ang lalaki.',
+                  )
+                "
+              >
+                <div class="word">tinulungan</div>
+                <div class="meaning">helped</div>
+              </div>
+            </div>
+            <div id="vocabDisplay" class="answer-box">
+              <b>Subukan:</b> I-click ang isang salita sa itaas.<span class="en"
+                >Try it: Click a word above.</span
+              >
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Naintindihan ko →
+              <span class="en" style="display: inline; color: #fff"
+                >I understand</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 5 story -->
+        <section class="slide" data-title="Ang Mabuting Samaritano">
+          <div class="card story">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">📖 READ & LISTEN WITH YOUR TEACHER</span>
+                <h2>Ang Mabuting Samaritano</h2>
+                <span class="en">The Good Samaritan</span>
+              </div>
+              <div class="badge">Source-based retelling</div>
+            </div>
+            <img
+              class="hero-img"
+              src="assets/good-samaritan.jpg"
+              alt="Good Samaritan helping an injured man"
+              style="
+                max-height: 330px;
+                object-fit: cover;
+                object-position: center 62%;
+              "
+            />
+            <div class="teacher">
+              <b>Teacher Ed:</b> “Basahin natin nang dahan-dahan. Habang
+              nagbabasa, hanapin ang mga taong nakakita sa sugatang lalaki at
+              isipin kung ano ang ginawa ng bawat isa.”<span class="en"
+                >“Read slowly. As we read, notice who saw the injured man and
+                what each person did.”</span
+              >
+            </div>
+            <div class="story-text">
+              <p>
+                <b>1. Ang nangyari sa daan.</b>
+                <span class="en">What happened on the road.</span><br />Isang
+                lalaki ang naglalakbay sa may Jerico. Hinarang siya ng mga
+                magnanakaw, kinuha ang kaniyang mga gamit, sinaktan, at iniwan
+                sa daan.
+              </p>
+              <p>
+                <b>2. May mga taong dumaan.</b>
+                <span class="en">People passed by.</span><br />Isang
+                <b>saserdoteng Hudyo</b> ang nakakita sa lalaki ngunit hindi
+                tumulong. Sumunod ang isang <b>Levita</b>; nakita rin niya ang
+                sugatan ngunit nagpatuloy lamang.
+              </p>
+              <p>
+                <b>3. Dumating ang Samaritano.</b>
+                <span class="en">The Samaritan arrived.</span><br />Nang makita
+                niya ang lalaki, <b>nahabag</b> siya. Nilapitan niya ito,
+                ginamot ang mga sugat, at dinala sa isang bahay-tuluyan upang
+                maalagaan.
+              </p>
+              <p>
+                <b>4. Hindi lamang salita ang kaniyang kabutihan.</b>
+                <span class="en">His kindness was shown through action.</span
+                ><br />Nagbigay rin siya ng salapi para sa pangangalaga ng
+                lalaki. Ipinakita niya na ang tunay na pakikipagkapuwa-tao ay
+                nakikita sa mabuting kilos.
+              </p>
+              <p>
+                <b>5. Ang tanong ni Jesus.</b>
+                <span class="en">Jesus’ question.</span><br />Tinanong ni Jesus
+                kung sino sa tatlo ang tunay na naging kapuwa ng sugatang
+                lalaki. Ang sagot ay ang <b>Samaritano</b> dahil siya ang
+                tumulong.
+              </p>
+            </div>
+            <div class="answer-box">
+              <b>Think While Reading:</b> Sino ang
+              <span class="highlight">kumilos</span> upang makatulong?<span
+                class="en"
+                >Who took action to help?</span
+              >
+              <div class="choice-grid" style="margin-top: 12px">
+                <button class="choice" onclick="storyCheck(this, true)">
+                  Ang Samaritano <span class="en">The Samaritan</span></button
+                ><button class="choice" onclick="storyCheck(this, false)">
+                  Ang saserdote lamang <span class="en">Only the priest</span>
+                </button>
+              </div>
+              <div id="storyFeedback" class="feedback"></div>
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Suriin natin ang kuwento →
+              <span class="en" style="display: inline; color: #fff"
+                >Let’s examine the story</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 6 comprehension -->
+        <section class="slide" data-title="Pag-unawa sa Teksto">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🔎 CHECK FOR UNDERSTANDING</span>
+                <h2>Hanapin ang Tamang Sagot</h2>
+                <span class="en">Find the Correct Answer</span>
+              </div>
+            </div>
+            <div id="compQuiz"></div>
+            <div id="compFeedback" class="feedback"></div>
+            <button
+              id="compNext"
+              class="btn btn-blue hidden"
+              onclick="nextComp()"
+            >
+              Susunod na Tanong →
+            </button>
+          </div>
+        </section>
+
+        <!-- 7 traits -->
+        <section class="slide" data-title="Katangian ng Tauhan">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🧠 CHARACTER DETECTIVE</span>
+                <h2>Anong Katangian ang Nakikita?</h2>
+                <span class="en">What Character Trait Do You See?</span>
+              </div>
+            </div>
+            <p>
+              Basahin ang kilos. Piliin ang katangiang pinakamainam na
+              ipinapakita.
+            </p>
+            <span class="en"
+              >Read the action. Choose the character trait it best shows.</span
+            >
+            <div class="visual-row" style="margin-top: 18px">
+              <div class="visual-card">
+                <img
+                  src="assets/priest.jpg"
+                  alt="Priest"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Saserdote</b><span class="en">Priest</span>
+                  <p>
+                    Nakita niya ang sugatang lalaki ngunit hindi niya ito
+                    tinulungan.
+                  </p>
+                  <span class="en"
+                    >He saw the injured man but did not help.</span
+                  >
+                </div>
+              </div>
+              <div class="visual-card">
+                <img
+                  src="assets/levite.jpg"
+                  alt="Levite"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Levita</b><span class="en">Levite</span>
+                  <p>
+                    Nakita rin niya ang lalaki ngunit nagpatuloy siya sa
+                    kaniyang paglalakbay.
+                  </p>
+                  <span class="en"
+                    >He also saw the man but continued on his way.</span
+                  >
+                </div>
+              </div>
+              <div class="visual-card">
+                <img
+                  src="assets/samaritan.jpg"
+                  alt="Samaritan"
+                  onclick="openImage(this.src, this.alt)"
+                />
+                <div class="body">
+                  <b>Samaritano</b><span class="en">Samaritan</span>
+                  <p>Nilapitan niya, ginamot, at inalagaan ang lalaki.</p>
+                  <span class="en"
+                    >He approached, treated, and cared for the man.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="answer-box" style="margin-top: 18px">
+              <div class="sentence">
+                Ang Samaritano ay __________ dahil tinulungan niya ang sugatang
+                lalaki.
+              </div>
+              <div class="choice-grid" style="margin-top: 12px">
+                <button class="choice" onclick="traitCheck(this, false)">
+                  walang malasakit <span class="en">uncaring</span></button
+                ><button class="choice" onclick="traitCheck(this, true)">
+                  maawain at matulungin
+                  <span class="en">compassionate and helpful</span></button
+                ><button class="choice" onclick="traitCheck(this, false)">
+                  walang pakialam <span class="en">indifferent</span></button
+                ><button class="choice" onclick="traitCheck(this, false)">
+                  mapanakit <span class="en">hurtful</span>
+                </button>
+              </div>
+              <div id="traitFeedback" class="feedback"></div>
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Pumunta sa Wika →
+              <span class="en" style="display: inline; color: #fff"
+                >Move to Language</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 8 pandiwa -->
+        <section class="slide" data-title="Pandiwa">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">✍️ MINI-LESSON 2</span>
+                <h2>Pandiwa</h2>
+                <span class="en">Verb — an action word</span>
+              </div>
+              <div class="badge">Teach → Model → Practice</div>
+            </div>
+            <div class="grid2">
+              <div class="mini">
+                <h3>Ano ang pandiwa?</h3>
+                <span class="en">What is a verb?</span>
+                <p>
+                  Ang <b>pandiwa</b> ay salitang nagsasaad ng
+                  <b>kilos o gawain</b>.
+                </p>
+                <span class="en">A verb tells an action or activity.</span>
+                <p><b>Tanong:</b> “Ano ang ginagawa?”</p>
+                <span class="en"><b>Question:</b> “What is being done?”</span>
+              </div>
+              <div class="mini">
+                <h3>Mga halimbawa</h3>
+                <span class="en">Examples</span>
+                <div class="chips">
+                  <span class="badge"
+                    >tumulong <span class="en">helped/help</span></span
+                  ><span class="badge"
+                    >naglakbay <span class="en">traveled</span></span
+                  ><span class="badge"
+                    >gumamot <span class="en">treated</span></span
+                  ><span class="badge"
+                    >dinala <span class="en">brought</span></span
+                  ><span class="badge"
+                    >nagbigay <span class="en">gave</span></span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="teacher">
+              <b>I DO — Teacher Modeling:</b> “Tinulungan ng Samaritano ang
+              lalaki.” Ang salitang <span class="highlight">tinulungan</span> ay
+              kilos, kaya ito ay pandiwa.<span class="en"
+                >The word “tinulungan” shows an action, so it is a verb.</span
+              >
+            </div>
+            <h3>WE DO — Sabay nating tukuyin</h3>
+            <span class="en">Let’s identify together</span>
+            <div class="sentence">
+              “Dinala ng Samaritano ang lalaki sa bahay-tuluyan.”
+            </div>
+            <p>Piliin ang pandiwa.</p>
+            <div class="choice-grid">
+              <button class="choice" onclick="verbCheck(this, false)">
+                Samaritano</button
+              ><button class="choice" onclick="verbCheck(this, true)">
+                Dinala</button
+              ><button class="choice" onclick="verbCheck(this, false)">
+                bahay-tuluyan</button
+              ><button class="choice" onclick="verbCheck(this, false)">
+                lalaki
+              </button>
+            </div>
+            <div id="verbFeedback" class="feedback"></div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Practice pa →
+              <span class="en" style="display: inline; color: #fff"
+                >More practice</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 9 pang-ukol -->
+        <section class="slide" data-title="Pang-ukol at Pang-angkop">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🔗 MINI-LESSON 3</span>
+                <h2>Pang-ukol at Pang-angkop</h2>
+                <span class="en">Preposition and Linker</span>
+              </div>
+            </div>
+            <div class="grid2">
+              <div class="mini">
+                <h3>📍 Pang-ukol</h3>
+                <span class="en">Preposition</span>
+                <p>
+                  Salitang nag-uugnay sa ibang salita upang ipakita ang
+                  kaugnayan ng mga ito sa pangungusap.
+                </p>
+                <span class="en"
+                  >A word that connects words and shows their relationship in a
+                  sentence.</span
+                >
+                <div class="chips">
+                  <span class="badge">sa <span class="en">to/in/at</span></span
+                  ><span class="badge"
+                    >kay <span class="en">to/from a person</span></span
+                  ><span class="badge">para sa <span class="en">for</span></span
+                  ><span class="badge"
+                    >tungkol sa <span class="en">about</span></span
+                  >
+                </div>
+                <p>
+                  <b>Halimbawa:</b> Dinala ang lalaki
+                  <span class="highlight">sa</span> bahay-tuluyan.
+                </p>
+                <span class="en"
+                  >Example: The man was brought to the inn/shelter.</span
+                >
+              </div>
+              <div class="mini">
+                <h3>🔤 Pang-angkop</h3>
+                <span class="en">Linker</span>
+                <p>
+                  Salitang nag-uugnay sa panuring at salitang inilalarawan.
+                  Karaniwang ginagamit ang <b>na</b>, <b>-ng</b>, at <b>-g</b>.
+                </p>
+                <span class="en"
+                  >A linker connects a modifier to the word it describes. Common
+                  forms are na, -ng, and -g.</span
+                >
+                <p>
+                  <b>Halimbawa:</b> mabuti<span class="highlight">ng</span>
+                  Samaritano
+                </p>
+                <span class="en">Example: good Samaritan</span>
+                <p>
+                  <b>Isa pa:</b> bahay <span class="highlight">na</span> malinis
+                </p>
+                <span class="en">Another example: a clean house</span>
+              </div>
+            </div>
+            <div class="teacher">
+              <b>Remember:</b> Huwag paghaluin ang tatlo. <b>Pandiwa</b> =
+              kilos. <b>Pang-ukol</b> = ugnayan ng salita. <b>Pang-angkop</b> =
+              nag-uugnay ng panuring at inilalarawan nito.<span class="en"
+                >Do not mix them up: Verb = action; Preposition = relationship;
+                Linker = connects a modifier and the word it describes.</span
+              >
+            </div>
+            <div class="answer-box">
+              <b>Quick Check:</b> Sa pangungusap na “Dinala niya ang lalaki
+              <span class="highlight">sa</span> bahay-tuluyan,” ano ang
+              <b>sa</b>?<span class="en">What is “sa” in the sentence?</span>
+              <div class="choice-grid" style="margin-top: 12px">
+                <button class="choice" onclick="ukolCheck(this, true)">
+                  Pang-ukol <span class="en">Preposition</span></button
+                ><button class="choice" onclick="ukolCheck(this, false)">
+                  Pandiwa <span class="en">Verb</span></button
+                ><button class="choice" onclick="ukolCheck(this, false)">
+                  Pang-angkop <span class="en">Linker</span></button
+                ><button class="choice" onclick="ukolCheck(this, false)">
+                  Pangngalan <span class="en">Noun</span>
+                </button>
+              </div>
+              <div id="ukolFeedback" class="feedback"></div>
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Sabay nating gamitin →
+              <span class="en" style="display: inline; color: #fff"
+                >Let’s use them together</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 10 guided -->
+        <section class="slide" data-title="Guided Practice">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🤝 WE DO</span>
+                <h2>Gawin Natin Nang Sama-sama</h2>
+                <span class="en">Guided Practice</span>
+              </div>
+            </div>
+            <p>Basahin ang pangungusap. I-click ang salitang hinihingi.</p>
+            <span class="en">Read the sentence. Click the word requested.</span>
+            <div id="guidedArea"></div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Ikaw naman →
+              <span class="en" style="display: inline; color: #fff"
+                >Your turn</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 11 independent -->
+        <section class="slide" data-title="Your Turn">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🎯 YOU DO</span>
+                <h2>Ikaw Naman!</h2>
+                <span class="en">Independent Practice</span>
+              </div>
+            </div>
+            <p>
+              Piliin ang tamang sagot. Makakatanggap ka ng paliwanag pagkatapos
+              ng bawat sagot.
+            </p>
+            <span class="en"
+              >Choose the correct answer. You will receive an explanation after
+              each answer.</span
+            >
+            <div id="indQuiz"></div>
+            <div id="indFeedback" class="feedback"></div>
+            <button
+              id="indNext"
+              class="btn btn-blue hidden"
+              onclick="nextInd()"
+            >
+              Susunod →
+            </button>
+          </div>
+        </section>
+
+        <!-- 12 game -->
+        <section class="slide" data-title="Game Zone">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🎮 GAME PRACTICE</span>
+                <h2>Word Detective: Saan Ka Nabibilang?</h2>
+                <span class="en">Word Detective: Where Does It Belong?</span>
+              </div>
+              <div class="badge">No timer</div>
+            </div>
+            <p>
+              I-click ang salita at ilagay ito sa tamang kahon: <b>PANDIWA</b>,
+              <b>PANG-UKOL</b>, o <b>PANG-ANGKOP</b>.
+            </p>
+            <span class="en"
+              >Click a word and place it in the correct box: Verb, Preposition,
+              or Linker.</span
+            >
+            <div id="gameTiles" class="tiles"></div>
+            <div class="sort-zones">
+              <div class="sort-zone">
+                <h4>🏃 PANDIWA <span class="en">Verb</span></h4>
+                <div id="zoneVerb"></div>
+              </div>
+              <div class="sort-zone">
+                <h4>📍 PANG-UKOL <span class="en">Preposition</span></h4>
+                <div id="zoneUkol"></div>
+              </div>
+              <div class="sort-zone">
+                <h4>🔗 PANG-ANGKOP <span class="en">Linker</span></h4>
+                <div id="zoneAngkop"></div>
+              </div>
+              <div class="sort-zone">
+                <h4>💡 HINT</h4>
+                <p id="gameHint">Pumili muna ng salita.</p>
+                <span class="en">Select a word first.</span>
+              </div>
+            </div>
+            <div id="gameFeedback" class="feedback"></div>
+            <button class="btn btn-gold" onclick="resetGame()">
+              🔄 Ulitin ang Game
+              <span class="en" style="display: inline">Replay</span>
+            </button>
+          </div>
+        </section>
+
+        <!-- 13 application -->
+        <section class="slide" data-title="Application">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🌱 APPLY</span>
+                <h2>Mabuting Gawa sa Ating Komunidad</h2>
+                <span class="en">Good Deeds in Our Community</span>
+              </div>
+            </div>
+            <p>
+              Ang kuwento ay hindi lamang tungkol sa nakaraan. Maaari natin
+              itong isabuhay ngayon.
+            </p>
+            <span class="en"
+              >The story is not only about the past. We can live out its lesson
+              today.</span
+            >
+            <div class="grid">
+              <div class="mini">
+                <div class="icon">🧹</div>
+                <h3>Panatilihing malinis</h3>
+                <span class="en">Keep the place clean</span>
+                <p>Itapon ang basura sa tamang lalagyan.</p>
+              </div>
+              <div class="mini">
+                <div class="icon">🤝</div>
+                <h3>Tumulong sa nangangailangan</h3>
+                <span class="en">Help someone in need</span>
+                <p>Magbigay ng tulong kung kaya at ligtas itong gawin.</p>
+              </div>
+              <div class="mini">
+                <div class="icon">🌱</div>
+                <h3>Alagaan ang kapaligiran</h3>
+                <span class="en">Care for the environment</span>
+                <p>Makilahok sa mga gawaing nakatutulong sa komunidad.</p>
+              </div>
+            </div>
+            <div class="answer-box">
+              <h3>Challenge: Bumuo ng pangungusap</h3>
+              <span class="en">Build a sentence</span>
+              <p>
+                Gamitin ang isang <b>pandiwa</b> at isang <b>pang-ukol</b> sa
+                pangungusap tungkol sa pagtulong.
+              </p>
+              <span class="en"
+                >Use one verb and one preposition in a sentence about
+                helping.</span
+              >
+              <div class="sentence" style="margin-top: 10px">
+                Ako ay <span class="blank">________</span>
+                <span class="blank">________</span> aking kapuwa.
+              </div>
+              <div class="tiles">
+                <button class="tile" onclick="fillSentence('tutulong')">
+                  tutulong <span class="en">will help</span></button
+                ><button class="tile" onclick="fillSentence('sa')">
+                  sa <span class="en">to/in</span></button
+                ><button class="tile" onclick="fillSentence('tutulong sa')">
+                  tutulong sa <span class="en">will help</span></button
+                ><button class="tile" onclick="fillSentence('kay')">
+                  kay <span class="en">to a person</span>
+                </button>
+              </div>
+              <p id="sentenceFeedback" class="feedback"></p>
+            </div>
+            <button class="btn btn-blue" onclick="nextSlide()">
+              Final Challenge →
+              <span class="en" style="display: inline; color: #fff"
+                >Final Challenge</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <!-- 14 mastery -->
+        <section class="slide" data-title="Mastery Check">
+          <div class="card">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">🏆 MASTERY CHECK</span>
+                <h2>Huling Hamon</h2>
+                <span class="en">Final Challenge</span>
+              </div>
+            </div>
+            <p>
+              Bagong mga tanong ito. Gamitin ang natutuhan mo sa buong aralin.
+            </p>
+            <span class="en"
+              >These are new questions. Use what you learned throughout the
+              lesson.</span
+            >
+            <div id="finalQuiz"></div>
+            <div id="finalResult" class="result">
+              <div class="big-score" id="finalScore">0%</div>
+              <h2 id="finalMessage">Magaling!</h2>
+              <p id="finalDetails"></p>
+              <div class="badge-row" style="justify-content: center">
+                <span class="badge" id="finalBadge">⭐ Great Effort</span>
+              </div>
+              <div style="margin-top: 18px">
+                <button class="btn btn-blue" onclick="restartLesson()">
+                  🔄 Subukan Muli
+                  <span class="en" style="display: inline; color: #fff"
+                    >Try Again</span
+                  ></button
+                ><button class="btn btn-gold" onclick="showMissed()">
+                  🧠 Practice My Mistakes
+                </button>
+              </div>
+              <div
+                id="missedBox"
+                class="answer-box hidden"
+                style="text-align: left"
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 15 celebration -->
+        <section class="slide" data-title="Celebrate">
+          <div
+            class="card"
+            style="
+              text-align: center;
+              background: linear-gradient(135deg, #fffdf2, #eef7ff);
+            "
+          >
+            <img
+              src="assets/BrandLogo.png"
+              alt="Teacher Ed Learning Hub logo"
+              style="
+                width: 100px;
+                height: 100px;
+                object-fit: contain;
+                border-radius: 50%;
+                background: #fff;
+                border: 5px solid var(--gold);
+              "
+            />
+            <h1 class="title" style="font-size: 46px">
+              🎉 Natapos Mo ang Aralin!
+            </h1>
+            <span class="en">You completed the lesson!</span>
+            <p>
+              Ang tunay na tagumpay ay hindi lamang mataas na puntos. Ito ay
+              <b>pag-unawa, pagsasanay, pag-alala, at paggamit</b> ng natutuhan.
+            </p>
+            <span class="en"
+              >True success is not only a high score. It is understanding,
+              practicing, remembering, and applying what you learned.</span
+            >
+            <div
+              class="badge-row"
+              style="justify-content: center; margin: 20px 0"
+            >
+              <span class="badge">📖 Story Thinker</span
+              ><span class="badge">🔤 Word Detective</span
+              ><span class="badge">🤝 Helpful Citizen</span
+              ><span class="badge">🏆 Lesson Master</span>
+            </div>
+            <div class="reflection">
+              <h3>💭 Isipin Mo</h3>
+              <span class="en">Think About It</span>
+              <p>
+                Ano ang gusto mong gawin upang makatulong sa iyong komunidad?
+              </p>
+              <span class="en"
+                >What would you like to do to help your community?</span
+              >
+              <div>
+                <button class="btn btn-ghost" onclick="reflect(this)">
+                  🤝 Tumulong sa iba</button
+                ><button class="btn btn-ghost" onclick="reflect(this)">
+                  🧹 Panatilihing malinis</button
+                ><button class="btn btn-ghost" onclick="reflect(this)">
+                  🌱 Alagaan ang kapaligiran</button
+                ><button class="btn btn-ghost" onclick="reflect(this)">
+                  ❤️ Maging mabait
+                </button>
+              </div>
+              <p id="reflectMsg" class="feedback"></p>
+            </div>
+            <button class="btn btn-blue" onclick="goToSlide(0)">
+              🏠 Balik sa Simula
+              <span class="en" style="display: inline; color: #fff"
+                >Back to Start</span
+              >
+            </button>
+          </div>
+        </section>
+
+        <div class="footer">
+          <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo" />
+          <div>
+            <b>Teacher Ed Learning Hub</b><br />Learn • Practice • Play •
+            Master<br /><small>Teacher Ed • Educational Learning Website</small>
+          </div>
+          <button
+            class="btn btn-light teacher-toggle"
+            onclick="toggleTeacher()"
+          >
+            👩‍🏫 Teacher Guide
+          </button>
+        </div>
+      </main>
+
+      <div class="nav">
+        <div class="nav-inner">
+          <button class="btn btn-ghost" onclick="prevSlide()">← Back</button>
+          <div class="nav-center">
+            <span id="navTitle">Kumusta, Mag-aaral!</span>
+          </div>
+          <button class="btn btn-blue" onclick="nextSlide()">Next →</button>
+        </div>
+      </div>
+
+      <div id="imageModal" class="modal" onclick="closeModal(event)">
+        <div class="modal-box">
+          <button class="btn btn-ghost" onclick="closeImage()">✕ Close</button
+          ><img id="modalImg" src="" alt="" />
+          <p id="modalCaption" class="small"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      const slides = [...document.querySelectorAll(".slide")];
+      let current = 0;
+      let stars = 0,
+        badges = 0;
+      let teacherVisible = false;
+      let compIndex = 0,
+        indIndex = 0,
+        finalIndex = 0;
+      let compScore = 0,
+        indScore = 0,
+        finalScore = 0;
+      let missed = [];
+      const saveKey = "teacherEdFil3Aralin2Progress";
+      function save() {
+        localStorage.setItem(
+          saveKey,
+          JSON.stringify({
+            stars,
+            badges,
+            bestFinal: Math.max(
+              finalScore,
+              Number(localStorage.getItem(saveKey + "Best") || 0),
+            ),
+          }),
+        );
+      }
+      function update() {
+        slides.forEach((s, i) => s.classList.toggle("active", i === current));
+        const pct = (current / (slides.length - 1)) * 100;
+        document.getElementById("progressFill").style.width = pct + "%";
+        document.getElementById("stepText").textContent =
+          current + 1 + " / " + slides.length;
+        document.getElementById("stars").textContent = stars;
+        document.getElementById("badges").textContent = badges;
+        document.getElementById("navTitle").textContent =
+          slides[current].dataset.title || "";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (current === 5) renderComp();
+        if (current === 9) renderGuided();
+        if (current === 10) renderInd();
+        if (current === 11) renderGame();
+        if (current === 13) renderFinal();
+      }
+      function goToSlide(n) {
+        current = Math.max(0, Math.min(slides.length - 1, n));
+        update();
+      }
+      function nextSlide() {
+        if (current < slides.length - 1) {
+          current++;
+          update();
+        }
+      }
+      function prevSlide() {
+        if (current > 0) {
+          current--;
+          update();
+        }
+      }
+      function fullscreenPage() {
+        if (!document.fullscreenElement)
+          document.documentElement.requestFullscreen?.();
+        else document.exitFullscreen?.();
+      }
+      function toggleTeacher() {
+        teacherVisible = !teacherVisible;
+        document
+          .querySelectorAll(".teacher")
+          .forEach((x) => x.classList.toggle("hidden", !teacherVisible));
+        if (teacherVisible)
+          document
+            .querySelectorAll(".teacher")
+            .forEach((x) => x.classList.remove("hidden"));
+      }
+      function addStar(n = 1) {
+        stars += n;
+        save();
+        update();
+      }
+      function markChoice(btn, ok) {
+        btn.parentElement
+          .querySelectorAll(".choice")
+          .forEach((b) => (b.disabled = true));
+        btn.classList.add(ok ? "correct" : "wrong");
+      }
+      function pictureAnswer(btn, ok) {
+        markChoice(btn, ok);
+        const el = document.getElementById("picFeedback");
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '⭐ Tama! Ang Samaritano ang kumilos upang tumulong.<span class="en">Correct! The Samaritan took action to help.</span>'
+          : '💡 Mag-isip muli. Sino ang lumapit, gumamot, at nag-alaga?<span class="en">Think again. Who approached, treated, and cared for him?</span>';
+        if (ok) addStar();
+      }
+      function storyCheck(btn, ok) {
+        markChoice(btn, ok);
+        const el = document.getElementById("storyFeedback");
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '🌟 Mahusay! Siya ang tunay na tumulong sa lalaki.<span class="en">Excellent! He was the one who helped the man.</span>'
+          : '💡 Balikan ang bahagi kung saan may taong “nahabag” at kumilos.<span class="en">Review the part where someone felt compassion and took action.</span>';
+        if (ok) addStar();
+      }
+      function traitCheck(btn, ok) {
+        markChoice(btn, ok);
+        const el = document.getElementById("traitFeedback");
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '💛 Tama. Ang pagtulong ay nagpapakita ng malasakit at pagiging matulungin.<span class="en">Correct. Helping shows care and helpfulness.</span>'
+          : '💡 Hanapin ang katangiang makikita sa pagtulong sa nangangailangan.<span class="en">Look for the trait shown by helping someone in need.</span>';
+        if (ok) addStar();
+      }
+      function verbCheck(btn, ok) {
+        markChoice(btn, ok);
+        const el = document.getElementById("verbFeedback");
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '🏃 Tama! “Dinala” ay kilos, kaya pandiwa ito.<span class="en">Correct! “Dinala” shows an action, so it is a verb.</span>'
+          : '💡 Tanungin: “Ano ang ginawa?”<span class="en">Ask: “What action was done?”</span>';
+        if (ok) addStar();
+      }
+      function ukolCheck(btn, ok) {
+        markChoice(btn, ok);
+        const el = document.getElementById("ukolFeedback");
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '📍 Tama! “Sa” ay pang-ukol sa pangungusap.<span class="en">Correct! “Sa” is a preposition here.</span>'
+          : '💡 Ang “sa” ay nag-uugnay at nagpapakita ng kaugnayan sa lugar o bagay.<span class="en">“Sa” connects words and shows a relationship to a place or thing.</span>';
+        if (ok) addStar();
+      }
+      function showVocab(w, m, e, ex) {
+        document.getElementById("vocabDisplay").innerHTML =
+          "<h3>" +
+          w +
+          ' <span class="en">' +
+          e +
+          "</span></h3><p>" +
+          m +
+          '</p><span class="en">' +
+          e +
+          "</span><p><b>Halimbawa:</b> " +
+          ex +
+          '</p><span class="en">Example: ' +
+          translateExample(w) +
+          "</span>";
+      }
+      function translateExample(w) {
+        const map = {
+          kapuwa: "We love our fellow people.",
+          "bahay-tuluyan": "He brought the man to the shelter.",
+          salapi: "He gave money for the care.",
+          pinuno: "The leader asked Jesus.",
+          tinulungan: "The Samaritan helped the man.",
+        };
+        return map[w] || "";
+      }
+      const compQ = [
+        [
+          "Ano ang nangyari sa lalaki sa daan?",
+          "What happened to the man on the road?",
+          [
+            "Tinulungan siya agad ng mga magnanakaw.",
+            "Hinarang, sinaktan, at iniwan siya.",
+            "Dinala siya agad sa bahay.",
+          ],
+          "Hinarang, sinaktan, at iniwan siya.",
+        ],
+        [
+          "Sino ang unang dalawang taong nakakita sa lalaki ngunit hindi tumulong?",
+          "Who were the first two people who saw the man but did not help?",
+          ["Saserdote at Levita", "Samaritano at pinuno", "Mga bata at guro"],
+          "Saserdote at Levita",
+        ],
+        [
+          "Ano ang ginawa ng Samaritano?",
+          "What did the Samaritan do?",
+          [
+            "Nilampasan niya ang lalaki.",
+            "Nilapitan, ginamot, at inalagaan niya.",
+            "Kinuha niya ang gamit ng lalaki.",
+          ],
+          "Nilapitan, ginamot, at inalagaan niya.",
+        ],
+        [
+          "Bakit naging halimbawa ang Samaritano?",
+          "Why was the Samaritan an example?",
+          [
+            "Dahil marami siyang sinabi.",
+            "Dahil tumulong siya sa nangangailangan.",
+            "Dahil siya ang pinuno.",
+          ],
+          "Dahil tumulong siya sa nangangailangan.",
+        ],
+      ];
+      function renderComp() {
+        const q = compQ[compIndex];
+        document.getElementById("compQuiz").innerHTML =
+          "<h3>Tanong " +
+          (compIndex + 1) +
+          " / " +
+          compQ.length +
+          "</h3><p><b>" +
+          q[0] +
+          '</b><span class="en">' +
+          q[1] +
+          '</span></p><div class="choice-grid">' +
+          q[2]
+            .map(
+              (a, i) =>
+                '<button class="choice" onclick="answerComp(this,' +
+                JSON.stringify(a) +
+                ')">' +
+                a +
+                '<span class="en">' +
+                compEn(a) +
+                "</span></button>",
+            )
+            .join("") +
+          "</div>";
+        document.getElementById("compNext").classList.add("hidden");
+        document.getElementById("compFeedback").textContent = "";
+      }
+      function compEn(a) {
+        const m = {
+          "Hinarang, sinaktan, at iniwan siya.":
+            "He was stopped, hurt, and left behind.",
+          "Saserdote at Levita": "Priest and Levite",
+          "Nilapitan, ginamot, at inalagaan niya.":
+            "He approached, treated, and cared for him.",
+          "Dahil tumulong siya sa nangangailangan.":
+            "Because he helped someone in need.",
+          "Tinulungan siya agad ng mga magnanakaw.":
+            "The robbers helped him immediately.",
+          "Dinala siya agad sa bahay.": "He was immediately brought home.",
+          "Samaritano at pinuno": "Samaritan and leader",
+          "Mga bata at guro": "Children and teacher",
+          "Nilampasan niya ang lalaki.": "He passed by the man.",
+          "Kinuha niya ang gamit ng lalaki.": "He took the man’s belongings.",
+          "Dahil marami siyang sinabi.": "Because he said many things.",
+          "Dahil siya ang pinuno.": "Because he was the leader.",
+        };
+        return m[a] || "";
+      }
+      function answerComp(btn, a) {
+        const q = compQ[compIndex],
+          ok = a === q[3];
+        markChoice(btn, ok);
+        const f = document.getElementById("compFeedback");
+        f.className = "feedback " + (ok ? "good" : "try");
+        f.innerHTML = ok
+          ? '🌟 Tama! Magandang pagbasa at pag-iisip.<span class="en">Correct! Good reading and thinking.</span>'
+          : '💡 Balikan ang kuwento. Hanapin ang eksaktong pangyayari.<span class="en">Review the story and find the exact event.</span>';
+        if (ok) {
+          compScore++;
+          addStar();
+        }
+        document.getElementById("compNext").classList.remove("hidden");
+        document.getElementById("compNext").textContent =
+          compIndex < compQ.length - 1 ? "Susunod na Tanong →" : "Tapos na! →";
+      }
+      function nextComp() {
+        if (compIndex < compQ.length - 1) {
+          compIndex++;
+          renderComp();
+        } else nextSlide();
+      }
+      function renderGuided() {
+        document.getElementById("guidedArea").innerHTML =
+          `<div class="answer-box"><h3>Halimbawa 1: Hanapin ang Pandiwa</h3><span class="en">Example 1: Find the Verb</span><p class="sentence">“Tinulungan ng Samaritano ang lalaki.”</p><div class="choice-grid"><button class="choice" onclick="guided(this,true,'g1')">Tinulungan</button><button class="choice" onclick="guided(this,false,'g1')">Samaritano</button><button class="choice" onclick="guided(this,false,'g1')">lalaki</button></div><p id="g1" class="feedback"></p></div><div class="answer-box"><h3>Halimbawa 2: Hanapin ang Pang-ukol</h3><span class="en">Example 2: Find the Preposition</span><p class="sentence">“Dinala ang lalaki <span class="highlight">sa</span> bahay-tuluyan.”</p><div class="choice-grid"><button class="choice" onclick="guided(this,false,'g2')">Dinala</button><button class="choice" onclick="guided(this,true,'g2')">sa</button><button class="choice" onclick="guided(this,false,'g2')">bahay-tuluyan</button></div><p id="g2" class="feedback"></p></div><div class="answer-box"><h3>Halimbawa 3: Hanapin ang Pang-angkop</h3><span class="en">Example 3: Find the Linker</span><p class="sentence">“Siya ay isang mabuti<span class="highlight">ng</span> Samaritano.”</p><div class="choice-grid"><button class="choice" onclick="guided(this,false,'g3')">mabuti</button><button class="choice" onclick="guided(this,true,'g3')">-ng</button><button class="choice" onclick="guided(this,false,'g3')">Samaritano</button></div><p id="g3" class="feedback"></p></div>`;
+      }
+      function guided(btn, ok, id) {
+        markChoice(btn, ok);
+        const el = document.getElementById(id);
+        el.className = "feedback " + (ok ? "good" : "try");
+        el.innerHTML = ok
+          ? '⭐ Tama! Ipaliwanag kung bakit.<span class="en">Correct! Explain why.</span>'
+          : '💡 Balikan ang kahulugan ng hinihinging uri ng salita.<span class="en">Review the meaning of the requested word type.</span>';
+        if (ok) addStar();
+      }
+      const indQ = [
+        [
+          "Alin ang pandiwa sa pangungusap? “Nagbigay ng salapi ang Samaritano.”",
+          "Which is the verb?",
+          ["Samaritano", "nagbigay", "salapi"],
+          "nagbigay",
+        ],
+        [
+          "Alin ang pang-ukol? “Tumulong siya sa kaniyang kapuwa.”",
+          "Which is the preposition?",
+          ["tumulong", "sa", "kapuwa"],
+          "sa",
+        ],
+        [
+          "Alin ang pang-angkop sa “mabuting gawa”?",
+          "Which is the linker in “mabuting gawa”?",
+          ["mabuti", "-ng", "gawa"],
+          "-ng",
+        ],
+        [
+          "Alin ang nagpapakita ng mabuting gawa?",
+          "Which shows a good deed?",
+          [
+            "Tumulong sa nangangailangan.",
+            "Iniwan ang nangangailangan.",
+            "Kinuha ang gamit ng iba.",
+          ],
+          "Tumulong sa nangangailangan.",
+        ],
+        [
+          "Ano ang ipinakita ng Samaritano?",
+          "What did the Samaritan show?",
+          ["Malasakit", "Pagwawalang-bahala", "Panunukso"],
+          "Malasakit",
+        ],
+      ];
+      function renderInd() {
+        const q = indQ[indIndex];
+        document.getElementById("indQuiz").innerHTML =
+          "<h3>Ikaw Naman " +
+          (indIndex + 1) +
+          " / " +
+          indQ.length +
+          "</h3><p><b>" +
+          q[0] +
+          '</b><span class="en">' +
+          q[1] +
+          '</span></p><div class="choice-grid">' +
+          q[2]
+            .map(
+              (a) =>
+                '<button class="choice" onclick="answerInd(this,' +
+                JSON.stringify(a) +
+                ')">' +
+                a +
+                '<span class="en">' +
+                indEn(a) +
+                "</span></button>",
+            )
+            .join("") +
+          "</div>";
+        document.getElementById("indNext").classList.add("hidden");
+        document.getElementById("indFeedback").textContent = "";
+      }
+      function indEn(a) {
+        const m = {
+          Samaritano: "Samaritan",
+          nagbigay: "gave",
+          salapi: "money",
+          tumulong: "helped/help",
+          sa: "to/in/at",
+          kapuwa: "fellow person",
+          mabuti: "good",
+          "-ng": "linker",
+          gawa: "deed",
+          "Tumulong sa nangangailangan.": "Help someone in need.",
+          "Iniwan ang nangangailangan.": "Leave the person in need.",
+          "Kinuha ang gamit ng iba.": "Take someone else’s belongings.",
+          Malasakit: "care/concern",
+          "Pagwawalang-bahala": "indifference",
+          Panunukso: "teasing",
+        };
+        return m[a] || "";
+      }
+      function answerInd(btn, a) {
+        const q = indQ[indIndex],
+          ok = a === q[3];
+        markChoice(btn, ok);
+        const f = document.getElementById("indFeedback");
+        f.className = "feedback " + (ok ? "good" : "try");
+        f.innerHTML = ok
+          ? '🌟 Tama! Nakikita mong muli ang konsepto sa bagong halimbawa.<span class="en">Correct! You can recognize the concept in a new example.</span>'
+          : '💡 Hindi pa. Tandaan: kilos = pandiwa; ugnayan = pang-ukol; linker = pang-angkop.<span class="en">Not yet. Remember: action = verb; relationship = preposition; linker = linker.</span>';
+        if (ok) {
+          indScore++;
+          addStar();
+        }
+        document.getElementById("indNext").classList.remove("hidden");
+        document.getElementById("indNext").textContent =
+          indIndex < indQ.length - 1 ? "Susunod →" : "Tapos na! →";
+      }
+      function nextInd() {
+        if (indIndex < indQ.length - 1) {
+          indIndex++;
+          renderInd();
+        } else nextSlide();
+      }
+      const gameWords = [
+        ["tumulong", "verb", "helped/help"],
+        ["nagbigay", "verb", "gave"],
+        ["dinala", "verb", "brought"],
+        ["sa", "ukol", "to/in/at"],
+        ["kay", "ukol", "to/from a person"],
+        ["para sa", "ukol", "for"],
+        ["-ng", "angkop", "linker"],
+        ["na", "angkop", "linker"],
+        ["gumamot", "verb", "treated"],
+      ];
+      let gameSelected = null,
+        gameDone = new Set();
+      function renderGame() {
+        const area = document.getElementById("gameTiles");
+        area.innerHTML = gameWords
+          .filter((x) => !gameDone.has(x[0]))
+          .map(
+            (x, i) =>
+              '<button class="tile" onclick="selectGame(' +
+              i +
+              ')">' +
+              x[0] +
+              '<span class="en">' +
+              x[2] +
+              "</span></button>",
+          )
+          .join("");
+        document.getElementById("gameFeedback").textContent = "";
+        document.getElementById("gameHint").textContent =
+          "Pumili muna ng salita.";
+      }
+      function selectGame(i) {
+        const available = gameWords.filter((x) => !gameDone.has(x[0]));
+        gameSelected = available[i];
+        document
+          .querySelectorAll("#gameTiles .tile")
+          .forEach((b) => b.classList.remove("selected"));
+        event.currentTarget.classList.add("selected");
+        const [w, t] = gameSelected;
+        document.getElementById("gameHint").innerHTML =
+          "Napili: <b>" +
+          w +
+          '</b>. Ngayon i-click ang tamang kahon sa ibaba.<span class="en">Selected: ' +
+          w +
+          ". Click the correct box below.</span>";
+        ["zoneVerb", "zoneUkol", "zoneAngkop"].forEach((id) => {
+          const el = document.getElementById(id);
+          el.onclick = () => placeGame(id.slice(4).toLowerCase());
+        });
+      }
+      function placeGame(zone) {
+        if (!gameSelected) return;
+        const map = { verb: "verb", ukol: "ukol", angkop: "angkop" };
+        const ok = zone === map[gameSelected[1]];
+        const f = document.getElementById("gameFeedback");
+        if (ok) {
+          gameDone.add(gameSelected[0]);
+          document.getElementById(
+            zone === "verb"
+              ? "zoneVerb"
+              : zone === "ukol"
+                ? "zoneUkol"
+                : "zoneAngkop",
+          ).innerHTML += '<span class="badge">' + gameSelected[0] + "</span> ";
+          f.className = "feedback good";
+          f.innerHTML =
+            "🎯 Tama! " +
+            gameSelected[0] +
+            " ay " +
+            zone +
+            '.<span class="en">Correct!</span>';
+          addStar();
+          gameSelected = null;
+          renderGame();
+          if (gameDone.size === gameWords.length) {
+            badges++;
+            document.getElementById("gameHint").innerHTML =
+              '🏆 Game complete! Magaling!<span class="en">Game complete! Great job!</span>';
+          }
+        } else {
+          f.className = "feedback try";
+          f.innerHTML =
+            '💡 Mag-isip muli. Ano ang uri ng salitang ito?<span class="en">Think again. What type of word is it?</span>';
+        }
+      }
+      function resetGame() {
+        gameDone.clear();
+        gameSelected = null;
+        ["zoneVerb", "zoneUkol", "zoneAngkop"].forEach(
+          (id) => (document.getElementById(id).innerHTML = ""),
+        );
+        renderGame();
+      }
+      function fillSentence(text) {
+        const f = document.getElementById("sentenceFeedback");
+        if (text === "tutulong sa") {
+          f.className = "feedback good";
+          f.innerHTML =
+            '🌟 Magandang halimbawa: “Ako ay tutulong sa aking kapuwa.”<span class="en">Good example: “I will help my fellow person.”</span>';
+          addStar();
+        } else {
+          f.className = "feedback try";
+          f.innerHTML =
+            '💡 Subukang pagsamahin ang pandiwa at pang-ukol: “tutulong” + “sa”.<span class="en">Try combining the verb and preposition.</span>';
+        }
+      }
+      const finalQ = [
+        [
+          "Sa “Nagbigay ng salapi ang Samaritano,” alin ang pandiwa?",
+          "In “The Samaritan gave money,” which is the verb?",
+          ["nagbigay", "salapi", "Samaritano"],
+          "nagbigay",
+        ],
+        [
+          "Sa “Dinala niya ang lalaki sa bahay-tuluyan,” alin ang pang-ukol?",
+          "Which is the preposition?",
+          ["Dinala", "sa", "lalaki"],
+          "sa",
+        ],
+        [
+          "Sa “mabuting gawa,” ano ang pang-angkop?",
+          "What is the linker in “mabuting deed”?",
+          ["mabuti", "-ng", "gawa"],
+          "-ng",
+        ],
+        [
+          "Sino ang tumulong sa sugatang lalaki?",
+          "Who helped the injured man?",
+          ["Samaritano", "Levita", "Saserdote"],
+          "Samaritano",
+        ],
+        [
+          "Alin ang pinakamalinaw na halimbawa ng mabuting gawa?",
+          "Which is the clearest example of a good deed?",
+          [
+            "Tinulungan ang nangangailangan.",
+            "Nilampasan ang nangangailangan.",
+            "Sinaktan ang nangangailangan.",
+          ],
+          "Tinulungan ang nangangailangan.",
+        ],
+        [
+          "Ano ang ipinakita ng Samaritano sa kaniyang kilos?",
+          "What did the Samaritan show through his actions?",
+          ["Malasakit", "Pagwawalang-bahala", "Pagiging mapanakit"],
+          "Malasakit",
+        ],
+        [
+          "Alin ang pangungusap na may pandiwa at pang-ukol?",
+          "Which sentence has a verb and a preposition?",
+          ["Tumulong siya sa kapuwa.", "Mabuting Samaritano.", "Ang lalaki."],
+          "Tumulong siya sa kapuwa.",
+        ],
+        [
+          "Ano ang aral na maiuugnay natin sa komunidad?",
+          "What lesson can we apply to our community?",
+          [
+            "Tumulong sa nangangailangan.",
+            "Huwag pansinin ang iba.",
+            "Unahin lamang ang sarili.",
+          ],
+          "Tumulong sa nangangailangan.",
+        ],
+      ];
+      function renderFinal() {
+        if (finalIndex >= finalQ.length) {
+          showFinalResult();
+          return;
+        }
+        const q = finalQ[finalIndex];
+        document.getElementById("finalQuiz").innerHTML =
+          "<h3>Hamon " +
+          (finalIndex + 1) +
+          " / " +
+          finalQ.length +
+          "</h3><p><b>" +
+          q[0] +
+          '</b><span class="en">' +
+          q[1] +
+          '</span></p><div class="choice-grid">' +
+          q[2]
+            .map(
+              (a) =>
+                '<button class="choice" onclick="answerFinal(this,' +
+                JSON.stringify(a) +
+                ')">' +
+                a +
+                '<span class="en">' +
+                finalEn(a) +
+                "</span></button>",
+            )
+            .join("") +
+          '</div><div id="finalFeedback" class="feedback"></div>';
+      }
+      function finalEn(a) {
+        return (
+          indEn(a) ||
+          compEn(a) ||
+          {
+            Samaritano: "Samaritan",
+            Levita: "Levite",
+            Saserdote: "Priest",
+            "Tinulungan ang nangangailangan.": "Helped someone in need.",
+            "Nilampasan ang nangangailangan.": "Passed by someone in need.",
+            "Sinaktan ang nangangailangan.": "Hurt someone in need.",
+            "Tumulong siya sa kapuwa.": "He/She helped a fellow person.",
+            "Mabuting Samaritano.": "Good Samaritan.",
+            "Ang lalaki.": "The man.",
+            "Pagiging mapanakit": "Hurtfulness",
+            "Pagwawalang-bahala": "Indifference",
+            "Unahin lamang ang sarili.": "Think only of yourself.",
+            "Huwag pansinin ang iba.": "Ignore others.",
+            "Tumulong sa nangangailangan.": "Help someone in need.",
+          }[a] ||
+          ""
+        );
+      }
+      function answerFinal(btn, a) {
+        const q = finalQ[finalIndex],
+          ok = a === q[3];
+        markChoice(btn, ok);
+        const f = document.getElementById("finalFeedback");
+        f.className = "feedback " + (ok ? "good" : "try");
+        f.innerHTML = ok
+          ? '🌟 Tama! Ipinakita mo ang pag-unawa sa aralin.<span class="en">Correct! You demonstrated understanding.</span>'
+          : '💡 Suriin ang clue at balikan ang mga halimbawa sa aralin.<span class="en">Review the clue and the examples from the lesson.</span>';
+        if (ok) finalScore++;
+        else missed.push({ q: q[0], a: q[3] });
+        setTimeout(() => {
+          finalIndex++;
+          renderFinal();
+        }, 650);
+      }
+      function showFinalResult() {
+        document.getElementById("finalQuiz").innerHTML = "";
+        document.getElementById("finalResult").classList.add("show");
+        const pct = Math.round((finalScore / finalQ.length) * 100);
+        document.getElementById("finalScore").textContent = pct + "%";
+        document.getElementById("finalDetails").textContent =
+          "Nakuha mo ang " +
+          finalScore +
+          " sa " +
+          finalQ.length +
+          " tamang sagot.";
+        let msg = "Ipagpatuloy ang pagsasanay!";
+        let badge = "⭐ Great Effort";
+        if (pct >= 90) {
+          msg = "🏆 Napakahusay! Naipakita mo ang mahusay na pag-unawa.";
+          badge = "🏆 Lesson Master";
+          badges++;
+        } else if (pct >= 80) {
+          msg = "🌟 Magaling! Kaunti na lang at mastery na.";
+          badge = "🌟 Super Learner";
+          badges++;
+        } else if (pct >= 70) {
+          msg = "👍 Magandang progreso! Mag-practice pa nang kaunti.";
+          badge = "🎯 Practice Pro";
+        }
+        document.getElementById("finalMessage").textContent = msg;
+        document.getElementById("finalBadge").textContent = badge;
+        localStorage.setItem(
+          saveKey + "Best",
+          Math.max(
+            finalScore,
+            Number(localStorage.getItem(saveKey + "Best") || 0),
+          ),
+        );
+        save();
+      }
+      function showMissed() {
+        const b = document.getElementById("missedBox");
+        b.classList.remove("hidden");
+        if (!missed.length) {
+          b.innerHTML =
+            '<b>🎉 Walang missed questions!</b><p>Mahusay na pag-unawa.</p><span class="en">Excellent understanding.</span>';
+          return;
+        }
+        b.innerHTML =
+          '<h3>🧠 Practice My Mistakes</h3><p>Balikan ang mga konseptong kailangan pang sanayin.</p><span class="en">Review the concepts that need more practice.</span>' +
+          missed
+            .map(
+              (x) =>
+                '<div class="answer-box"><b>' +
+                x.q +
+                "</b><p>✓ Tamang sagot: <b>" +
+                x.a +
+                '</b></p><span class="en">Correct answer: ' +
+                finalEn(x.a) +
+                "</span><p>Clue: Balikan ang kahulugan at halimbawa ng konseptong ito.</p></div>",
+            )
+            .join("");
+      }
+      function restartLesson() {
+        compIndex = 0;
+        indIndex = 0;
+        finalIndex = 0;
+        compScore = 0;
+        indScore = 0;
+        finalScore = 0;
+        missed = [];
+        document.getElementById("finalResult").classList.remove("show");
+        resetGame();
+        goToSlide(0);
+      }
+      function reflect(btn) {
+        document
+          .querySelectorAll(".reflection .btn")
+          .forEach((b) => b.classList.remove("selected-reflect"));
+        btn.classList.add("selected-reflect");
+        document.getElementById("reflectMsg").className = "feedback good";
+        document.getElementById("reflectMsg").innerHTML =
+          '💛 Magandang pagpili! Ang maliit na mabuting gawa ay maaaring makatulong sa iba.<span class="en">Good choice! A small good deed can help others.</span>';
+        addStar();
+      }
+      function openImage(src, alt) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalImg").alt = alt;
+        document.getElementById("modalCaption").textContent = alt;
+        document.getElementById("imageModal").classList.add("show");
+      }
+      function closeImage() {
+        document.getElementById("imageModal").classList.remove("show");
+      }
+      function closeModal(e) {
+        if (e.target.id === "imageModal") closeImage();
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight") nextSlide();
+        if (e.key === "ArrowLeft") prevSlide();
+        if (e.key.toLowerCase() === "f") fullscreenPage();
+        if (e.key === "Escape") closeImage();
+      });
+      update();
+    </script>
+  </body>
+</html>
