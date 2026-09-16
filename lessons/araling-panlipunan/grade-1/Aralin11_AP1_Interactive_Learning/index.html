@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2d63">
+  <title>Aralin 11 • Ang Aking mga Tungkulin sa Pamilya at Tahanan</title>
+  <link rel="icon" type="image/png" href="TeacherEdLogo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="TeacherEdLogo.png" alt="Teacher Ed Logo" class="logo">
+      <div>
+        <div class="brand-name">Teacher Ed Learning Hub</div>
+        <div class="brand-sub">Araling Panlipunan • Baitang 1</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="soundBtn" class="icon-btn" type="button" aria-label="Tunog">🔊</button>
+      <button id="resetBtn" class="ghost-btn" type="button">I-reset</button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section id="homeScreen" class="screen active">
+      <div class="hero glass">
+        <div class="hero-copy">
+          <span class="eyebrow">ARALIN 11 • GAME REVIEWER</span>
+          <h1>Ang Aking mga Tungkulin sa Pamilya at Tahanan</h1>
+          <p>Maglaro, matuto, at ipakita kung paano mo ginagampanan ang iyong mga tungkulin sa pamilya at tahanan!</p>
+          <button id="startBtn" class="primary-btn" type="button">🚀 Simulan ang Misyon</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">🏠<span>👨‍👩‍👧‍👦</span></div>
+      </div>
+
+      <div class="mission-grid">
+        <article class="mission-card glass"><div class="mission-icon">📚</div><h3>Mis­yon 1</h3><p>Kilalanin ang mga tungkulin.</p></article>
+        <article class="mission-card glass"><div class="mission-icon">💛</div><h3>Mis­yon 2</h3><p>Ipakita ang paggalang at pagmamahal.</p></article>
+        <article class="mission-card glass"><div class="mission-icon">🧹</div><h3>Mis­yon 3</h3><p>Piliin ang mabubuting gawain sa tahanan.</p></article>
+        <article class="mission-card glass"><div class="mission-icon">🏆</div><h3>Huling Hamon</h3><p>Subukin ang iyong natutuhan.</p></article>
+      </div>
+
+      <div class="learn-box glass">
+        <h2>🌟 Mga Dapat Matutuhan</h2>
+        <div class="learn-list">
+          <div>👨‍👩‍👧‍👦 <b>Tungkulin sa pamilya</b> — bawat kasapi ay may sariling tungkulin.</div>
+          <div>🙏 <b>Paggalang</b> — gumamit ng “po” at “opo” sa pakikipag-usap sa nakatatanda.</div>
+          <div>📖 <b>Pag-aaral</b> — mag-aral nang mabuti at tapusin muna ang takdang-aralin bago maglaro o gumamit ng gadget.</div>
+          <div>🏠 <b>Tahanan</b> — panatilihing malinis at maayos ang bahay at tumulong sa mga gawaing-bahay.</div>
+          <div>💖 <b>Pamilya</b> — igalang at mahalin ang mga magulang at kapatid.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gameScreen" class="screen">
+      <div class="game-head glass">
+        <div><span id="roundLabel" class="eyebrow">MISYON 1</span><h2 id="roundTitle">Kilalanin ang Tungkulin</h2></div>
+        <div class="stats"><span>⭐ <b id="score">0</b></span><span>🔥 <b id="streak">0</b></span><span>🏅 <b id="badges">0</b></span></div>
+      </div>
+      <div class="progress-wrap"><div id="progressBar" class="progress-bar"></div></div>
+      <div id="gameCard" class="game-card glass"></div>
+      <div class="game-nav"><button id="homeBtn" class="ghost-btn" type="button">⌂ Home</button><span id="questionCounter">1 / 5</span></div>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <div class="result-card glass">
+        <div class="trophy">🏆</div>
+        <span class="eyebrow">MISYON NATAPOS</span>
+        <h1>Magaling!</h1>
+        <p id="resultMessage">Natapos mo ang Aralin 11.</p>
+        <div class="result-stats">
+          <div><strong id="finalScore">0</strong><span>Puntos</span></div>
+          <div><strong id="finalCorrect">0</strong><span>Tamang Sagot</span></div>
+          <div><strong id="finalStars">0</strong><span>⭐</span></div>
+        </div>
+        <div id="badgeDisplay" class="badge-display"></div>
+        <div class="result-actions">
+          <button id="playAgainBtn" class="primary-btn" type="button">🔄 Maglaro Muli</button>
+          <button id="reviewBtn" class="secondary-btn" type="button">📘 Balikan ang Aralin</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <img src="TeacherEdLogo.png" alt="Teacher Ed Logo"><div><b>Teacher Ed Learning Hub</b><br><span>Araling Panlipunan • Baitang 1 • Aralin 11</span></div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

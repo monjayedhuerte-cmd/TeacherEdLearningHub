@@ -750,6 +750,16 @@
     "icon": "map"
   },
   {
+    "title": "AP 1 | Aralin 11: Ang Aking mga Tungkulin sa Pamilya at Tahanan | Game Reviewer",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 1",
+    "description": "Maglaro, matuto, at ipakita kung paano mo ginagampanan ang iyong mga tungkulin sa pamilya at tahanan!",
+    "file": "lessons/araling-panlipunan/grade-1/Aralin11_AP1_Interactive_Learning/index.html",
+    "date": "2026-09-16",
+    "featured": false,
+    "icon": "map"
+  },
+  {
     "title": "Modular Learning Guide | Kagandahang-Loob at Ako ay Magalang",
     "subject": "ESP", 
     "grade": "Grade 2",
@@ -757,6 +767,26 @@
     "file": "lessons/esp/grade-2/ESP2_Kagandahang_Loob_Ako_Ay_Magalang_Modular_Guide/index.html",
     "date": "2026-09-09",
     "featured": true,
+    "icon": "map"
+  },
+  {
+    "title": "AP 1 | Aralin 11: Ang Aking mga Tungkulin sa Pamilya at Tahanan",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 1",
+    "description": "Matuto, magsanay, maglaro, at ipakita kung paano mo ginagampanan ang iyong mga tungkulin.",
+    "file": "lessons/araling-panlipunan/grade-1/Aralin11_AP1/index.html",
+    "date": "2026-09-16",
+    "featured": false,
+    "icon": "map"
+  },
+  {
+    "title": "AP 3 | Aralin 9: Mga Katutubong Sayaw",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": "Kilalanin ang ilang katutubong sayaw ng Pilipinas at alamin kung paano sila naging mahalagang bahagi ng pagkakakilanlan ng mga pamayanan.",
+    "file": "lessons/araling-panlipunan/grade-3/AP3_Lesson9_Katutubong_Sayaw/index.html",
+    "date": "2026-09-16",
+    "featured": false,
     "icon": "map"
   }
 ]

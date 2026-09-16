@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b3b78">
+<meta name="description" content="Teacher Ed Learning Hub — AP3 Aralin 9: Mga Katutubong Sayaw">
+<link rel="icon" type="image/png" href="assets/BrandLogo.png">
+<title>AP3 Aralin 9 | Mga Katutubong Sayaw</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo"><div><strong>Teacher Ed</strong><span>Learning Hub</span></div></div>
+  <div class="header-right"><span id="starsTop">⭐ 0</span><button id="soundBtn" class="icon-btn" aria-label="Toggle sound">🔊</button><button id="fsBtn" class="icon-btn" aria-label="Fullscreen">⛶</button></div>
+</header>
+<main>
+<section id="home" class="screen active">
+  <div class="hero-card">
+    <div class="hero-copy">
+      <span class="eyebrow">ARALIN 9 • ARALING PANLIPUNAN 3</span>
+      <h1>🇵🇭 Mga Katutubong Sayaw</h1>
+      <p class="lead">Kilalanin ang ilang katutubong sayaw ng Pilipinas at alamin kung paano sila naging mahalagang bahagi ng pagkakakilanlan ng mga pamayanan.</p>
+      <div class="pill-row"><span>🎯 Matuto</span><span>🧩 Magsanay</span><span>🏆 Mag-master</span></div>
+      <button class="primary big" data-go="learn">🚀 Simulan ang Aralin</button>
+    </div>
+    <div class="hero-art"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub"></div>
+  </div>
+  <div class="journey">
+    <div class="journey-title">🗺️ Learning Journey</div>
+    <div class="steps"><span>🏠 Start</span><b>→</b><span>📖 Learn</span><b>→</b><span>👩‍🏫 Watch Me</span><b>→</b><span>🤝 We Do</span><b>→</b><span>🎯 Your Turn</span><b>→</b><span>🎮 Game Zone</span><b>→</b><span>🏆 Master</span></div>
+  </div>
+</section>
+
+<section id="learn" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 1 • CONNECT & LEARN</span><h2>Ano ang Katutubong Sayaw?</h2><p>Ang mga pamayanan sa Pilipinas ay may mga kilalang katutubong sayaw. Ang mga sayaw na ito ay karaniwang bahagi ng pagdiriwang at pista ng isang bayan.</p></div><div class="progress-box"><span>Progress</span><strong id="progressText">1 / 7</strong></div></div>
+  <div class="teach-grid">
+    <article class="teach-card featured"><div class="emoji">💃</div><h3>Katutubong Sayaw</h3><p><b>Filipino:</b> Sayaw na bahagi ng kultura at pagkakakilanlan ng isang pamayanan.</p><p class="english"><b>English:</b> A traditional dance that is part of a community's culture and identity.</p></article>
+    <article class="teach-card"><div class="emoji">🎉</div><h3>Bahagi ng Pagdiriwang</h3><p>Karaniwang bahagi ng pista o pagdiriwang ng isang bayan ang mga katutubong sayaw.</p><p class="english">Traditional dances are often performed during community festivals and celebrations.</p></article>
+    <article class="teach-card"><div class="emoji">🏘️</div><h3>Pagkakakilanlan</h3><p>Ang katutubong sayaw ay maaaring maging mahalagang bahagi ng pagkakakilanlan ng isang pamayanan.</p><p class="english">A traditional dance can help show the identity of a community.</p></article>
+  </div>
+  <div class="check-card"><h3>🔎 Quick Check</h3><p>Bakit mahalaga ang katutubong sayaw sa isang pamayanan?</p><div id="quickCheck" class="choices"></div><div id="quickFeedback" class="feedback"></div></div>
+  <div class="nav-row"><button class="ghost" data-go="home">← Home</button><button class="primary" data-go="watch">Next: Watch Me →</button></div>
+</section>
+
+<section id="watch" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 2 • I DO</span><h2>👩‍🏫 Watch Me: Kilalanin Natin</h2><p>Tingnan ang larawan, basahin ang clue, at alamin kung anong sayaw ang ipinapakita.</p></div></div>
+  <div class="dance-grid" id="danceCards"></div>
+  <div class="model-box"><div class="model-title">⭐ Tandaan</div><p>Kapag nakita mo ang <b>kawayan na pinagitan ng mananayaw</b>, isipin ang <b>Tinikling</b>. Kapag may <b>mga bangko</b> na tinatapakan at sinasayawan, isipin ang <b>Sayaw sa Bangko</b>.</p><p class="english">Remember: bamboo poles → Tinikling; benches → Sayaw sa Bangko.</p></div>
+  <div class="nav-row"><button class="ghost" data-go="learn">← Balik</button><button class="primary" data-go="weDo">Let's Do It Together →</button></div>
+</section>
+
+<section id="weDo" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 3 • WE DO</span><h2>🤝 Let's Do It Together</h2><p>Gamitin natin ang mga clue. Piliin natin ang tamang sayaw nang sama-sama.</p></div></div>
+  <div class="guided-card"><div class="question-tag">GUIDED PRACTICE</div><div id="guidedQuestion" class="big-question"></div><div id="guidedChoices" class="choices"></div><div id="guidedFeedback" class="feedback"></div><button id="guidedNext" class="primary hidden">Next Clue →</button></div>
+  <div class="nav-row"><button class="ghost" data-go="watch">← Balik</button><button class="primary" id="toYourTurn">Your Turn →</button></div>
+</section>
+
+<section id="yourTurn" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 4 • YOU DO</span><h2>🎯 Your Turn</h2><p>Ikaw naman! Sagutin nang mag-isa. May hint kung kailangan mo.</p></div><div class="score-box">⭐ <b id="ytScore">0</b></div></div>
+  <div class="guided-card"><div id="ytQuestion" class="big-question"></div><div id="ytChoices" class="choices"></div><div class="assist-row"><button id="hintBtn" class="hint">💡 Hint</button><span id="hintText"></span></div><div id="ytFeedback" class="feedback"></div><button id="ytNext" class="primary hidden">Next →</button></div>
+</section>
+
+<section id="games" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 5 • GAME ZONE</span><h2>🎮 Game Zone</h2><p>Practice tayo sa iba't ibang paraan. Bawat laro ay may learning goal.</p></div></div>
+  <div class="game-tabs"><button class="game-tab active" data-game="identify">🔎 Identify It</button><button class="game-tab" data-game="match">🧩 Match It</button><button class="game-tab" data-game="sort">🗂️ Sort It</button><button class="game-tab" data-game="memory">🧠 Memory</button></div>
+  <div id="gameArea"></div>
+  <div class="nav-row"><button class="ghost" data-go="yourTurn">← Balik</button><button class="primary" data-go="challenge">Brain Challenge →</button></div>
+</section>
+
+<section id="challenge" class="screen">
+  <div class="section-head"><div><span class="eyebrow">STEP 6 • APPLY</span><h2>🧠 Brain Challenge</h2><p>Mas malalim na tanong: gamitin ang natutuhan mo sa bagong sitwasyon.</p></div></div>
+  <div class="guided-card"><div class="question-tag">APPLY</div><div id="challengeQuestion" class="big-question"></div><div id="challengeChoices" class="choices"></div><div id="challengeFeedback" class="feedback"></div><button id="challengeNext" class="primary hidden">Next →</button></div>
+</section>
+
+<section id="master" class="screen">
+  <div class="master-card"><div class="trophy">🏆</div><span class="eyebrow">STEP 7 • MASTER</span><h2>Final Challenge</h2><p>Handa ka na? 10 mixed questions. Ipakita ang iyong mastery!</p><div class="master-stats"><span>⭐ <b id="finalStars">0</b></span><span>🎯 <b id="finalPercent">0%</b></span></div><button id="startFinal" class="primary big">Start Final Challenge</button></div>
+  <div id="finalArea" class="final-area hidden"><div class="guided-card"><div id="finalQuestion" class="big-question"></div><div id="finalChoices" class="choices"></div><div id="finalFeedback" class="feedback"></div><button id="finalNext" class="primary hidden">Next →</button></div></div>
+  <div id="results" class="results hidden"></div>
+  <div class="nav-row"><button class="ghost" data-go="challenge">← Review</button><button class="primary hidden" id="retryFinal">🔄 Try Again</button></div>
+</section>
+</main>
+<footer><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo"><div><b>Teacher Ed Learning Hub</b><br><span>AP3 • Aralin 9 • Mga Katutubong Sayaw</span></div><span class="footer-right">© Learning • Practice • Mastery</span></footer>
+<div id="toast" class="toast"></div>
+<script src="script.js"></script>
+</body></html>

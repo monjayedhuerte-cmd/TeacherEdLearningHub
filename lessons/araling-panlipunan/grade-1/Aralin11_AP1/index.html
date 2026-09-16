@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="theme-color" content="#0b2d5c" />
+    <title>Aralin 11 | Ang Aking mga Tungkulin sa Pamilya at Tahanan</title>
+    <link rel="icon" type="image/png" href="assets/TeacherEdLogo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <img
+          src="assets/TeacherEdLogo.png"
+          alt="Teacher Ed Learning Hub logo"
+        />
+        <div>
+          <strong>TEACHER ED LEARNING HUB</strong
+          ><span>Teacher Ed • Araling Panlipunan 1</span>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="soundBtn" class="icon-btn" type="button" aria-label="Tunog">
+          🔊</button
+        ><button id="resetBtn" class="small-btn" type="button">
+          ↻ I-reset
+        </button>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero glass">
+          <div class="hero-copy">
+            <span class="pill">ARALIN 11 • BAITANG 1 • ARALING PANLIPUNAN</span>
+            <h1>Ang Aking mga Tungkulin sa Pamilya at Tahanan</h1>
+            <p>
+              Matuto, magsanay, maglaro, at ipakita kung paano mo ginagampanan
+              ang iyong mga tungkulin.
+            </p>
+            <button class="primary" data-go="connect">
+              🚀 Simulan ang Paglalakbay
+            </button>
+          </div>
+          <img
+            class="hero-logo"
+            src="assets/TeacherEdLogo.png"
+            alt="Teacher Ed Learning Hub"
+          />
+        </div>
+        <div class="progress-card glass">
+          <div><b>ANG AKING PAG-UNLAD</b><span id="homeProgress">0%</span></div>
+          <div class="bar"><i id="homeBar"></i></div>
+          <div class="stats">
+            <span>⭐ <b id="homeStars">0</b> Stars</span
+            ><span>🏅 <b id="homeBadges">0</b> Badge</span
+            ><span>🔥 <b id="homeStreak">0</b> Streak</span>
+          </div>
+        </div>
+        <div class="map">
+          <div class="map-node done" data-go="connect">
+            🏫<b>CONNECT</b><small>Alalahanin</small>
+          </div>
+          <div class="map-node" data-go="teach">
+            📖<b>TEACH</b><small>Matuto</small>
+          </div>
+          <div class="map-node" data-go="model">
+            👩‍🏫<b>MODEL</b><small>Panoorin</small>
+          </div>
+          <div class="map-node" data-go="guided">
+            🤝<b>WE DO</b><small>Sabay tayo</small>
+          </div>
+          <div class="map-node" data-go="independent">
+            🎯<b>YOU DO</b><small>Ikaw naman</small>
+          </div>
+          <div class="map-node" data-go="games">
+            🎮<b>GAME ZONE</b><small>Maglaro</small>
+          </div>
+          <div class="map-node" data-go="apply">
+            🏠<b>APPLY</b><small>Gamitin</small>
+          </div>
+          <div class="map-node" data-go="mastery">
+            🏆<b>MASTER</b><small>Hamon</small>
+          </div>
+        </div>
+      </section>
+
+      <section id="connect" class="screen">
+        <div class="section-head">
+          <span>PHASE 1 • CONNECT</span>
+          <h2>👋 Ano ang alam mo?</h2>
+          <p>Isipin ang mga ginagawa mo sa bahay.</p>
+        </div>
+        <div class="choice-grid" id="connectChoices"></div>
+        <div id="connectFeedback" class="feedback"></div>
+        <button class="next hidden" id="connectNext" data-go="teach">
+          Susunod ➜
+        </button>
+      </section>
+
+      <section id="teach" class="screen">
+        <div class="section-head">
+          <span>PHASE 2 • TEACH</span>
+          <h2>📖 Alamin ang mga Tungkulin</h2>
+          <p>Basahin ang maiikling aralin. Pindutin ang bawat kard.</p>
+        </div>
+        <div class="lesson-grid">
+          <div class="lesson-card">
+            <div class="big-icon">❤️</div>
+            <h3>Iginalang at mahalin</h3>
+            <p>
+              Tungkulin nating <b>igalang at mahalin</b> ang ating mga magulang.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">👫</div>
+            <h3>Alagaan ang kapatid</h3>
+            <p>
+              Tungkulin nating <b>igalang at mahalin</b> ang ating mga kapatid.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">🙇</div>
+            <h3>Magalang na pananalita</h3>
+            <p>
+              Gamitin ang <b>“po” at “opo”</b> sa pakikipag-usap sa nanay,
+              tatay, at nakatatandang kasapi ng pamilya.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">🚪</div>
+            <h3>Magpaalam</h3>
+            <p>Magpaalam kina nanay at tatay kung lalabas ng bahay.</p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">📚</div>
+            <h3>Mag-aral at sumunod</h3>
+            <p>
+              Gawin at sundin ang mga <b>pangaral</b> ng magulang. Mag-aral nang
+              mabuti.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">📱</div>
+            <h3>Tapusin muna ang takdang-aralin</h3>
+            <p>
+              Tapusin muna ang mga takdang-aralin bago gumamit ng gadget o
+              maglaro.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">👕</div>
+            <h3>Ayusin ang damit</h3>
+            <p>
+              Ilagay sa wastong lagayan ang mga damit at iba pang gamit sa
+              bahay.
+            </p>
+          </div>
+          <div class="lesson-card">
+            <div class="big-icon">🧹</div>
+            <h3>Tumulong sa gawaing-bahay</h3>
+            <p>
+              Tumulong sa mga gawaing-bahay, lalo na kung araw ng Sabado at
+              Linggo.
+            </p>
+          </div>
+        </div>
+        <div class="teacher-note">
+          💡 <b>Tandaan:</b> Ang bawat kasapi ng pamilya ay may kani-kaniyang
+          tungkulin.
+        </div>
+        <button class="next" data-go="model">Natutuhan ko na! ➜</button>
+      </section>
+
+      <section id="model" class="screen">
+        <div class="section-head">
+          <span>PHASE 3 • MODEL • I DO</span>
+          <h2>👩‍🏫 Panoorin kung paano pumili</h2>
+          <p>Basahin ang sitwasyon. Ipapakita natin ang tamang pag-iisip.</p>
+        </div>
+        <div class="model-box glass">
+          <div class="scenario-icon">📱</div>
+          <h3>Halimbawa</h3>
+          <p>May takdang-aralin si Mia. Gusto niyang maglaro sa tablet.</p>
+          <div class="steps">
+            <div>
+              <b>1</b><span>Ano ang tungkulin?</span
+              ><em>Tapusin ang takdang-aralin.</em>
+            </div>
+            <div>
+              <b>2</b><span>Ano ang dapat unahin?</span><em>Ang pag-aaral.</em>
+            </div>
+            <div>
+              <b>3</b><span>Ano ang gagawin?</span
+              ><em>Tapusin muna ang takdang-aralin bago maglaro.</em>
+            </div>
+          </div>
+          <div class="model-answer">
+            ⭐ <b>Magandang desisyon!</b> Inuuna ni Mia ang kaniyang tungkulin.
+          </div>
+        </div>
+        <button class="next" data-go="guided">
+          Subukan natin nang sabay ➜
+        </button>
+      </section>
+
+      <section id="guided" class="screen">
+        <div class="section-head">
+          <span>PHASE 4 • GUIDED PRACTICE • WE DO</span>
+          <h2>🤝 Sabay Tayo!</h2>
+          <p>Pumili ng kilos na nagpapakita ng pagtupad sa tungkulin.</p>
+        </div>
+        <div id="guidedGame" class="quiz-card glass"></div>
+      </section>
+      <section id="independent" class="screen">
+        <div class="section-head">
+          <span>PHASE 5 • INDEPENDENT PRACTICE • YOU DO</span>
+          <h2>🎯 Ikaw Naman!</h2>
+          <p>
+            Piliin ang pinakamahusay na sagot. Maaari kang humingi ng pahiwatig.
+          </p>
+        </div>
+        <div id="independentGame" class="quiz-card glass"></div>
+      </section>
+
+      <section id="games" class="screen">
+        <div class="section-head">
+          <span>PHASE 6 • GAME PRACTICE</span>
+          <h2>🎮 Game Zone</h2>
+          <p>
+            Subukan ang tatlong laro. Bawat laro ay may layunin sa pagkatuto.
+          </p>
+        </div>
+        <div class="game-tabs">
+          <button class="game-tab active" data-game="quick">
+            🎯 Quick Pick</button
+          ><button class="game-tab" data-game="sort">🗂️ Sort It</button
+          ><button class="game-tab" data-game="match">🧩 Match It</button>
+        </div>
+        <div id="gameArea"></div>
+        <button class="next hidden" id="gamesNext" data-go="apply">
+          Pumunta sa Application ➜
+        </button>
+      </section>
+
+      <section id="apply" class="screen">
+        <div class="section-head">
+          <span>PHASE 8 • APPLICATION</span>
+          <h2>🏠 Ano ang gagawin mo?</h2>
+          <p>Gamitin ang iyong natutuhan sa mga tunay na sitwasyon.</p>
+        </div>
+        <div id="applyGame" class="quiz-card glass"></div>
+      </section>
+      <section id="mastery" class="screen">
+        <div class="section-head">
+          <span>PHASE 9 • MASTERY CHECK</span>
+          <h2>🏆 Huling Hamon</h2>
+          <p>Bagong mga tanong ito. Ipakita ang iyong pag-unawa.</p>
+        </div>
+        <div id="masteryGame" class="quiz-card glass"></div>
+      </section>
+      <section id="results" class="screen">
+        <div class="result-card glass">
+          <div class="trophy">🏆</div>
+          <h2>🎉 Mahusay!</h2>
+          <p id="resultMessage">Natapos mo ang Aralin 11.</p>
+          <div class="score-ring">
+            <span id="finalPercent">0%</span><small>Marka</small>
+          </div>
+          <div class="result-stats">
+            <div>⭐<b id="finalStars">0</b><small>Stars</small></div>
+            <div>🏅<b id="finalBadges">0</b><small>Badge</small></div>
+            <div>🔥<b id="finalStreak">0</b><small>Streak</small></div>
+          </div>
+          <div id="mistakesBox" class="mistakes"></div>
+          <div class="result-actions">
+            <button class="primary" id="retryBtn">🔄 Subukan Muli</button
+            ><button class="secondary" id="mistakeBtn">
+              💡 Practice My Mistakes</button
+            ><button class="secondary" data-go="home">🏠 Game Map</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub" />
+      <div>
+        <b>Teacher Ed Learning Hub</b
+        ><span>Learn • Practice • Play • Master</span
+        ><small>Teacher Ed • Educational Learning Website</small>
+      </div>
+    </footer>
+    <div id="toast" class="toast"></div>
+    <div id="celebrate" class="celebrate"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
