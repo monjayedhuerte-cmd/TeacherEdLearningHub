@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#0b3b75" />
+    <title>Science 1 • Lesson 8 • Sense Organs Working Together</title>
+    <link rel="icon" type="image/png" href="assets/TeacherEdLogo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand">
+          <img
+            src="assets/TeacherEdLogo.png"
+            alt="Teacher Ed Learning Hub logo"
+          />
+          <div>
+            <div class="brand-name">TEACHER ED LEARNING HUB</div>
+            <div class="brand-sub">Science 1 • Lesson 8</div>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">
+            🔊</button
+          ><button id="resetBtn" class="icon-btn" aria-label="Reset progress">
+            ↻
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <section id="home" class="screen active">
+          <div class="hero">
+            <div class="hero-copy">
+              <span class="eyebrow">🔬 SCIENCE 1 • BODY SYSTEMS</span>
+              <h1>Sense Organs<br /><span>Working Together</span></h1>
+              <p>
+                Learn how your eyes, ears, nose, tongue, and skin help you
+                understand the world—and work as a team!
+              </p>
+              <button class="primary" data-go="learn">
+                🚀 Start the Adventure
+              </button>
+            </div>
+            <div
+              class="hero-art"
+              aria-label="Five sense organs working together"
+            >
+              <div class="orbit"></div>
+              <div class="sense-ball eyes">👀<small>Eyes</small></div>
+              <div class="sense-ball ears">👂<small>Ears</small></div>
+              <div class="sense-ball nose">👃<small>Nose</small></div>
+              <div class="sense-ball tongue">👅<small>Tongue</small></div>
+              <div class="sense-ball skin">🖐️<small>Skin</small></div>
+              <div class="center-book">
+                📖<b>TEAM<br />SENSES</b>
+              </div>
+            </div>
+          </div>
+          <div class="map-card">
+            <h2>🗺️ Your Learning Journey</h2>
+            <div class="journey">
+              <button data-go="learn">1<br /><b>CONNECT</b></button><i>→</i
+              ><button data-go="teach">2<br /><b>TEACH</b></button><i>→</i
+              ><button data-go="model">3<br /><b>WATCH ME</b></button><i>→</i
+              ><button data-go="guided">4<br /><b>WE DO</b></button><i>→</i
+              ><button data-go="practice">5<br /><b>YOUR TURN</b></button
+              ><i>→</i><button data-go="games">6<br /><b>GAME ZONE</b></button
+              ><i>→</i><button data-go="challenge">7<br /><b>MASTER</b></button>
+            </div>
+          </div>
+        </section>
+
+        <section id="learn" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 1 • CONNECT</span>
+            <h2>What do your senses help you do?</h2>
+            <p>
+              Think about everyday activities. Your sense organs often work
+              together.
+            </p>
+          </div>
+          <div class="activity-grid">
+            <article class="lesson-card">
+              <div class="big-icon">🍽️</div>
+              <h3>Eating</h3>
+              <p>
+                <b>Eyes</b> see the food. <b>Nose</b> smells it.
+                <b>Tongue</b> tastes it.
+              </p>
+              <button
+                class="secondary reveal"
+                data-answer="Eyes + Nose + Tongue"
+              >
+                Show the team
+              </button>
+              <div class="reveal-box"></div>
+            </article>
+            <article class="lesson-card">
+              <div class="big-icon">📖</div>
+              <h3>Reading</h3>
+              <p>Your <b>eyes</b> help you see the words in a book.</p>
+              <button class="secondary reveal" data-answer="Eyes">
+                Show the team
+              </button>
+              <div class="reveal-box"></div>
+            </article>
+            <article class="lesson-card">
+              <div class="big-icon">✍️</div>
+              <h3>Writing</h3>
+              <p>
+                Your <b>eyes</b> help you see. Your <b>skin</b> helps you feel
+                the paper and pen.
+              </p>
+              <button class="secondary reveal" data-answer="Eyes + Skin">
+                Show the team
+              </button>
+              <div class="reveal-box"></div>
+            </article>
+            <article class="lesson-card">
+              <div class="big-icon">🦜</div>
+              <h3>Playing</h3>
+              <p>
+                Depending on the game, several senses can help. You may
+                <b>see, hear, and feel</b>.
+              </p>
+              <button class="secondary reveal" data-answer="Eyes + Ears + Skin">
+                Show the team
+              </button>
+              <div class="reveal-box"></div>
+            </article>
+          </div>
+          <div class="check-card">
+            <div>
+              <span class="eyebrow">QUICK CHECK</span>
+              <h3>Which sense organ helps you smell?</h3>
+            </div>
+            <div class="choice-row">
+              <button class="choice quick" data-correct="true">👃 Nose</button
+              ><button class="choice quick">👀 Eyes</button
+              ><button class="choice quick">👅 Tongue</button>
+            </div>
+            <div id="quickFeedback" class="feedback"></div>
+          </div>
+          <button class="primary next" data-go="teach">
+            Next: Learn the Five Sense Organs →
+          </button>
+        </section>
+
+        <section id="teach" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 2 • TEACH</span>
+            <h2>Meet the Five Sense Organs</h2>
+            <p>
+              Each sense organ has a special job. Together, they help you learn
+              and stay safe.
+            </p>
+          </div>
+          <div class="sense-grid">
+            <article class="sense-card" data-sense="eyes">
+              <div>👀</div>
+              <h3>Eyes</h3>
+              <p>
+                Help you <b>see</b> colors, shapes, people, words, and objects.
+              </p>
+              <span class="tag">SIGHT</span>
+            </article>
+            <article class="sense-card" data-sense="ears">
+              <div>👂</div>
+              <h3>Ears</h3>
+              <p>
+                Help you <b>hear</b> sounds, voices, music, and warning signals.
+              </p>
+              <span class="tag">HEARING</span>
+            </article>
+            <article class="sense-card" data-sense="nose">
+              <div>👃</div>
+              <h3>Nose</h3>
+              <p>
+                Helps you <b>smell</b> food and things around you. Smelling
+                happens when you breathe.
+              </p>
+              <span class="tag">SMELL</span>
+            </article>
+            <article class="sense-card" data-sense="tongue">
+              <div>👅</div>
+              <h3>Tongue</h3>
+              <p>
+                Helps you <b>taste</b> food. It can tell sweet, sour, salty, and
+                bitter tastes.
+              </p>
+              <span class="tag">TASTE</span>
+            </article>
+            <article class="sense-card" data-sense="skin">
+              <div>🖐️</div>
+              <h3>Skin</h3>
+              <p>
+                Helps you <b>feel</b> things such as hot, cold, soft, hard,
+                rough, and smooth.
+              </p>
+              <span class="tag">TOUCH</span>
+            </article>
+          </div>
+          <div class="tip">
+            <b>💡 Remember:</b> Sense organs do not always work alone. Two or
+            more can work together for one activity.
+          </div>
+          <button class="primary next" data-go="model">Next: Watch Me →</button>
+        </section>
+
+        <section id="model" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 3 • I DO</span>
+            <h2>👩‍🏫 Watch Me: How Senses Work Together</h2>
+            <p>Let’s model what happens in real-life situations.</p>
+          </div>
+          <div class="model-tabs">
+            <button class="tab active" data-model="eat">🍎 Eating</button
+            ><button class="tab" data-model="safe">🚦 Crossing Safely</button
+            ><button class="tab" data-model="food">🍲 Cooking</button
+            ><button class="tab" data-model="birds">🦜 Birds</button>
+          </div>
+          <div id="modelBox" class="model-box"></div>
+          <button class="primary next" data-go="guided">
+            Next: Let's Do It Together →
+          </button>
+        </section>
+
+        <section id="guided" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 4 • WE DO</span>
+            <h2>🤝 Let's Do It Together</h2>
+            <p>
+              Choose the sense organs that work together. We will think one step
+              at a time.
+            </p>
+          </div>
+          <div id="guidedBox" class="guided-box"></div>
+          <div class="progress-mini">
+            <span id="guidedCount">1 / 5</span>
+            <div><i id="guidedBar"></i></div>
+          </div>
+          <button id="guidedNext" class="primary" disabled>
+            Next Guided Question →
+          </button>
+        </section>
+
+        <section id="practice" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 5 • YOU DO</span>
+            <h2>🎯 Your Turn</h2>
+            <p>Try these independently. You can use a hint if you need one.</p>
+          </div>
+          <div id="practiceBox" class="quiz-box"></div>
+          <div class="progress-mini">
+            <span id="practiceCount">1 / 8</span>
+            <div><i id="practiceBar"></i></div>
+          </div>
+          <button id="practiceNext" class="primary" disabled>
+            Next Question →
+          </button>
+        </section>
+
+        <section id="games" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 6 • GAME ZONE</span>
+            <h2>🎮 Sense Team Game Zone</h2>
+            <p>Play short games that review what you learned.</p>
+          </div>
+          <div class="game-menu">
+            <button class="game-tile active" data-game="match">
+              🧩<b>Match It</b><small>Match activity to senses</small></button
+            ><button class="game-tile" data-game="sort">
+              🗂️<b>Sort It</b><small>Put sense organs in groups</small></button
+            ><button class="game-tile" data-game="find">
+              🔎<b>Find It</b><small>Pick the sense organ</small></button
+            ><button class="game-tile" data-game="memory">
+              🧠<b>Memory Match</b><small>Reveal pairs</small>
+            </button>
+          </div>
+          <div id="gameArea" class="game-area"></div>
+          <button class="primary next" data-go="challenge">
+            Next: Final Challenge →
+          </button>
+        </section>
+
+        <section id="challenge" class="screen">
+          <div class="section-head">
+            <span class="eyebrow">PHASE 7 • MASTER</span>
+            <h2>🏆 Final Challenge</h2>
+            <p>
+              Show what you know. These questions use new situations, not just
+              the examples above.
+            </p>
+          </div>
+          <div class="challenge-top">
+            <span>Question <b id="chNum">1</b> of 20</span
+            ><span>Score: <b id="chScore">0</b></span>
+          </div>
+          <div id="challengeBox" class="quiz-box"></div>
+          <div class="progress-mini">
+            <div><i id="chBar"></i></div>
+          </div>
+          <button id="chNext" class="primary" disabled>Next →</button>
+        </section>
+
+        <section id="results" class="screen">
+          <div class="results-card">
+            <div class="celebrate">🎉</div>
+            <span class="eyebrow">MASTERY CHECK COMPLETE</span>
+            <h2>You Did It!</h2>
+            <div class="score-ring">
+              <span id="finalPct">0%</span><small>Score</small>
+            </div>
+            <p id="resultMessage"></p>
+            <div id="badges" class="badges"></div>
+            <div class="result-actions">
+              <button class="primary" id="mistakesBtn">
+                🔄 Practice My Mistakes</button
+              ><button class="secondary" data-go="games">
+                🎮 Play Bonus Game</button
+              ><button class="secondary" id="againBtn">↻ Try Again</button>
+            </div>
+            <div id="mistakes" class="mistakes"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub" />
+        <div>
+          <b>Teacher Ed Learning Hub</b
+          ><span>Learn • Practice • Play • Master</span
+          ><small>Teacher Ed • Educational Learning Website</small>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

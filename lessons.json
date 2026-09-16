@@ -788,5 +788,15 @@
     "date": "2026-09-16",
     "featured": false,
     "icon": "map"
+  },
+  {
+    "title": "Science 1 | Lesson 8: Sense Organs Working Together",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": "Learn how your eyes, ears, nose, tongue, and skin help you understand the world—and work as a team!",
+    "file": "lessons/science/grade-1/Science1_Lesson8_Senses_Working_Together/index.html",
+    "date": "2026-09-17",
+    "featured": true,
+    "icon": "map"
   }
 ]
