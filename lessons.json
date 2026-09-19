@@ -790,6 +790,16 @@
     "icon": "map"
   },
   {
+    "title": "AP 3 | Aralin 10: Mga Katutubong Kanta",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": "Tuklasin kung paano nagpapahayag ng damdamin at naglalahad ng kuwento ang mga katutubong awit, at kung paano nauugnay ang mga ito sa kultura at pagkakakilanlan ng mga pamayanan.",
+    "file": "lessons/araling-panlipunan/grade-3/AP3_Lesson10_Katutubong_Kanta/index.html",
+    "date": "2026-09-21",
+    "featured": false,
+    "icon": "map"
+  },
+  {
     "title": "Science 1 | Lesson 8: Sense Organs Working Together",
     "subject": "Science", 
     "grade": "Grade 1",
@@ -807,6 +817,16 @@
     "file": "lessons/filipino/grade-3/Grade3_Aralin2_Full_Interactive_Lesson/index.html",
     "date": "2026-09-17",
     "featured": true,
-    "icon": "map"
+    "icon": "languages"
+  },
+  {
+    "title": "Filipino 3 | Yunit 2 Lesson 2: Magalang na Salita at Pang-angkop",
+    "subject": "Filipino", 
+    "grade": "Grade 3",
+    "description": "Sa araling ito, matututuhan natin ang wastong paggamit ng magagalang na pananalita at ang wastong paggamit ng pang-angkop na na at -ng.",
+    "file": "lessons/filipino/grade-3/TeacherEd_Filipino3_Part2_Magagalang_PangAngkop/index.html",
+    "date": "2026-09-21",
+    "featured": true,
+    "icon": "languages"
   }
 ]
