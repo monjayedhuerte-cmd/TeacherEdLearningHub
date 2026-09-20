@@ -838,5 +838,15 @@
     "date": "2026-09-25",
     "featured": true,
     "icon": "map"
+  },
+  {
+    "title": "AP 3 | Aralin 12: Mga Larong Pilipino",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": " Likas sa ating mga Pilipino ang maglaro at maglibang, lalo na ang mga bata. Tuklasin natin ang mga larong bahagi ng ating kultura.",
+    "file": "lessons/araling-panlipunan/grade-3/AP3_Mga_Larong_Pilipino/index.html",
+    "date": "2026-09-30",
+    "featured": true,
+    "icon": "map"
   }
 ]

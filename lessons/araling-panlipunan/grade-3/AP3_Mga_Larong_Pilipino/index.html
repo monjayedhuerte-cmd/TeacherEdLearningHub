@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mga Larong Pilipino | Teacher Ed Interactive Lesson</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand"><img src="assets/BrandLogo.png" alt="Teacher Ed logo"><div><strong>TEACHER ED</strong><span>Learning Hub</span></div></div>
+  <div class="lesson-chip">AP 3 • Mga Larong Pilipino</div>
+  <button class="icon-btn" id="muteBtn" aria-label="Toggle sound">🔊</button>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">🇵🇭 ARALIN 12 • ARALING PANLIPUNAN 3</div>
+    <h1>Mga Larong <span>Pilipino</span></h1>
+    <p class="lead">Kilalanin ang mga larong bahagi ng kulturang Pilipino—at alamin kung bakit mahalagang pahalagahan at ipagpatuloy ang mga ito.</p>
+    <p class="eng-support"><b>English Support:</b> Discover Filipino games, their basic ways of playing, and why these games are worth appreciating and preserving.</p>
+    <div class="hero-actions"><button class="primary" data-go="engage">🎮 Simulan ang Aralin</button><button class="secondary" data-go="map">🧭 Tingnan ang Roadmap</button></div>
+  </div>
+  <div class="hero-art"><div class="game-orbit"><div class="orbit-card">🦶<small>Luksong Tinik</small></div><div class="orbit-card">🥫<small>Tumbang Preso</small></div><div class="orbit-card">✏️<small>Patintero</small></div><div class="orbit-card">🪨<small>Piko</small></div><div class="center-logo"><img src="assets/BrandLogo.png" alt="Teacher Ed"></div></div></div>
+</section>
+
+<section class="roadmap card" id="map">
+  <div class="section-heading"><div><span class="kicker">YOUR LEARNING PATH</span><h2>12 Hakbang sa Pagkatuto</h2></div><span class="progress-label" id="progressLabel">0 / 12</span></div>
+  <div class="steps" id="steps"></div>
+</section>
+
+<main id="lesson">
+<section class="stage" id="stage-engage" data-stage="0">
+  <div class="stage-head"><span class="stage-num">01</span><div><span class="kicker">🎮 ENGAGE</span><h2>Hulaan ang Larong Pilipino!</h2></div></div>
+  <div class="game-card warmup">
+    <div class="game-visual" id="warmupVisual"><div class="big-emoji">🦶</div><div class="clue">May tumatalon sa ibabaw ng nakaupong mga manlalaro.</div></div>
+    <div class="game-panel"><p class="instruction">Anong laro ang inilalarawan?</p><div class="choice-grid" id="warmupChoices"></div><div class="feedback" id="warmupFeedback" aria-live="polite"></div><button class="next-btn" id="warmupNext" hidden>➡️ Susunod na Clue</button></div>
+  </div>
+</section>
+
+<section class="stage" id="stage-connect" data-stage="1">
+ <div class="stage-head"><span class="stage-num">02</span><div><span class="kicker">🎯 CONNECT</span><h2>May Larong Ganyan sa Inyong Pamayanan?</h2></div></div>
+ <div class="split-card"><div class="text-card"><p><b>Tanong:</b> Ano ang paborito mong laro kasama ang iyong mga kaibigan? May laro ba sa inyong pamayanan na katulad ng mga larong Pilipino?</p><p class="eng-support"><b>English Support:</b> What game do you enjoy with friends? Is there a game in your community that is similar to a Filipino traditional game?</p><div class="chips"><button class="pill" data-connect="galaw">🏃 Laro na maraming galaw</button><button class="pill" data-connect="grupo">👥 Laro ng pangkat</button><button class="pill" data-connect="tira">🎯 Laro na may target</button></div><div class="feedback" id="connectFeedback"></div></div><div class="image-card"><img src="assets/page174.jpg" alt="Mga larong ipinakita sa aklat"><small>Larawan mula sa ibinigay na lesson source • p. 174</small></div></div>
+</section>
+
+<section class="stage" id="stage-explore" data-stage="2">
+ <div class="stage-head"><span class="stage-num">03</span><div><span class="kicker">🔎 EXPLORE</span><h2>4 na Larong Pilipino, 4 na Paraan</h2></div></div>
+ <p class="stage-intro">I-tap ang bawat card. Hanapin ang mahalagang clue sa paraan ng paglalaro.</p>
+ <div class="game-cards" id="gameCards"></div>
+ <div class="source-strip"><img src="assets/page175.jpg" alt="Luksong Tinik at Tumbang Preso mula sa lesson source"><img src="assets/page176.jpg" alt="Tumbang Preso at Patintero mula sa lesson source"><img src="assets/page177.jpg" alt="Piko mula sa lesson source"><span>📖 Mga larawan mula sa lesson source, pp. 175–177</span></div>
+</section>
+
+<section class="stage" id="stage-learn" data-stage="3">
+ <div class="stage-head"><span class="stage-num">04</span><div><span class="kicker">🧠 LEARN</span><h2>Alamin Natin!</h2></div></div>
+ <div class="concept-grid">
+  <article class="concept"><div class="concept-icon">🇵🇭</div><h3>Ano ang larong Pilipino?</h3><p>Ang mga larong Pilipino ay mga larong likas sa ating kultura o nagmula sa ibang bansa.</p><p class="eng-support">Filipino games are games that are part of our culture or games adopted from other countries.</p></article>
+  <article class="concept"><div class="concept-icon">🧩</div><h3>Iba-iba ang bersiyon</h3><p>May iba’t ibang bersiyon ng mga larong Pilipino sa iba’t ibang pamayanan sa Pilipinas.</p><p class="eng-support">A Filipino game may have different versions in different communities.</p></article>
+  <article class="concept"><div class="concept-icon">❤️</div><h3>Bakit mahalaga?</h3><p>Ang pagkilala at pagpapahalaga sa mga laro ay tumutulong sa atin na pahalagahan ang sining at kultura ng komunidad.</p><p class="eng-support">Appreciating games helps us value the art and culture of our communities.</p></article>
+ </div>
+ <div class="mini-fact"><span>⭐</span><div><b>Halimbawa:</b> Ang <b>Game of the Generals</b> ay inimbento ni Sofronio Pasola, Jr. kasama ang kaniyang anak na si Ronnie. Katulad ito ng chess sa paggamit ng mga pirasang may ranggo, ngunit ang layunin ay madakip ang bandila ng kalaban.</div></div><button class="primary" id="learnDone">✅ Naiintindihan ko na!</button>
+</section>
+
+<section class="stage" id="stage-guided" data-stage="4">
+ <div class="stage-head"><span class="stage-num">05</span><div><span class="kicker">🤝 GUIDED PRACTICE</span><h2>Tulungan Natin ang Manlalaro</h2></div></div>
+ <div class="guided-card"><div class="guided-visual">🧒<span>➡️</span>🏁</div><div><p id="guidedQuestion" class="instruction"></p><div id="guidedChoices" class="choice-grid"></div><button class="hint-btn" id="guidedHint">💡 Hint</button><div class="hint-box" id="guidedHintBox"></div><div class="feedback" id="guidedFeedback"></div><button class="next-btn" id="guidedNext" hidden>➡️ Susunod</button></div></div>
+</section>
+
+<section class="stage" id="stage-practice" data-stage="5">
+ <div class="stage-head"><span class="stage-num">06</span><div><span class="kicker">🎮 PRACTICE</span><h2>Game Zone: Piliin ang Tamang Laro</h2></div></div>
+ <div class="level-tabs"><button class="level active" data-level="easy">🟢 Easy</button><button class="level" data-level="developing">🟡 Developing</button><button class="level" data-level="challenge">🔴 Challenge</button></div>
+ <div class="quiz-card"><div class="quiz-top"><span id="practiceCount">1 / 5</span><span id="practiceScore">⭐ 0</span></div><div id="practiceQuestion" class="question"></div><div id="practiceChoices" class="choice-grid"></div><div class="feedback" id="practiceFeedback"></div><button class="next-btn" id="practiceNext" hidden>Next ➜</button></div>
+</section>
+
+<section class="stage" id="stage-think" data-stage="6">
+ <div class="stage-head"><span class="stage-num">07</span><div><span class="kicker">💭 THINK</span><h2>Isipin at Ipaliwanag</h2></div></div>
+ <div class="think-grid"><article class="think-card"><span>🤔</span><h3>Kung iba ang bersiyon...</h3><p>Kung pareho ang pangalan ng isang laro ngunit iba ang paraan ng paglalaro sa dalawang pamayanan, masasabi pa rin ba nating parehong laro ito?</p><button class="think-btn" data-answer="Oo, maaari. Ang aralin ay nagsasabing may iba’t ibang bersiyon ng mga larong Pilipino sa iba’t ibang pamayanan.">💡 Tingnan ang gabay</button></article><article class="think-card"><span>🌱</span><h3>Paano mapahahalagahan?</h3><p>Pumili ng isang paraan kung paano mo maipapakita na pinahahalagahan mo ang larong Pilipino.</p><div class="chips"><button class="pill think-choice">👵 Matuto mula sa nakatatanda</button><button class="pill think-choice">👫 Maglaro nang maayos</button><button class="pill think-choice">📚 Kilalanin ang mga laro</button></div><div id="thinkFeedback" class="feedback"></div></article></div>
+</section>
+
+<section class="stage" id="stage-review" data-stage="7">
+ <div class="stage-head"><span class="stage-num">08</span><div><span class="kicker">🔄 REVIEW</span><h2>Quick Recall</h2></div></div>
+ <div class="review-strip" id="reviewStrip"></div>
+</section>
+
+<section class="stage" id="stage-check" data-stage="8">
+ <div class="stage-head"><span class="stage-num">09</span><div><span class="kicker">✅ CHECK</span><h2>Subukan ang Iyong Kaalaman</h2></div></div>
+ <div class="quiz-card"><div class="quiz-top"><span id="checkCount">1 / 8</span><span id="checkScore">🎯 0</span></div><div id="checkQuestion" class="question"></div><div id="checkChoices" class="choice-grid"></div><div class="feedback" id="checkFeedback"></div><button class="next-btn" id="checkNext" hidden>Next ➜</button></div>
+</section>
+
+<section class="stage" id="stage-master" data-stage="9">
+ <div class="stage-head"><span class="stage-num">10</span><div><span class="kicker">🏆 MASTER</span><h2>Final Challenge: Larong Pilipino Detective</h2></div></div>
+ <div class="master-card"><div class="case-file"><div class="stamp">CASE</div><h3>Hanapin ang Larong Tama!</h3><p>May apat na clue. Iugnay ang bawat clue sa tamang laro. Kailangan mong makakuha ng <b>4/4</b> upang ma-unlock ang badge.</p></div><div id="masterItems"></div><div class="master-result" id="masterResult"></div></div>
+</section>
+
+<section class="stage" id="stage-reflect" data-stage="10">
+ <div class="stage-head"><span class="stage-num">11</span><div><span class="kicker">🌈 REFLECT</span><h2>Ako Bilang Tagapangalaga ng Laro</h2></div></div>
+ <div class="reflect-card"><p class="instruction">Kumpletuhin sa isip o sabihin sa klase:</p><div class="sentence">“Ngayon natutuhan ko na ang mga larong Pilipino ay ____________. Mapahahalagahan ko ang mga ito sa pamamagitan ng ____________.”</div><p class="eng-support"><b>English Support:</b> “Today I learned that Filipino games are ____________. I can value them by ____________.”</p><div class="confidence"><p>Gaano ka kahanda?</p><button data-confidence="need">😟 Kailangan ko pa ng practice</button><button data-confidence="getting">🙂 Getting there</button><button data-confidence="understand">😀 Naiintindihan ko</button><button data-confidence="teach">🤩 Kaya ko nang magturo!</button></div><div id="reflectFeedback" class="feedback"></div></div>
+</section>
+
+<section class="stage" id="stage-celebrate" data-stage="11">
+ <div class="celebrate-card"><div class="confetti" id="confetti"></div><img src="assets/BrandLogo.png" alt="Teacher Ed logo" class="completion-logo"><div class="kicker">🎉 CELEBRATE</div><h2>Ang Galing Mo!</h2><p>Natapos mo ang interactive lesson tungkol sa <b>Mga Larong Pilipino</b>.</p><div class="stats"><div><span id="finalStars">0</span><small>⭐ Stars</small></div><div><span id="finalCompleted">0</span><small>🏆 Activities</small></div><div><span id="finalMastery">—</span><small>🎯 Mastery</small></div></div><p class="celebrate-line">“Ang mga larong Pilipino ay bahagi ng ating kultura. Kilalanin, pahalagahan, at ipagpatuloy ang mga ito.”</p><button class="primary" id="restartBtn">🔄 Simulan Muli</button></div>
+</section>
+</main>
+
+<footer><img src="assets/BrandLogo.png" alt="Teacher Ed logo"><div><b>Teacher Ed Learning Hub</b><br><span>AP 3 • Mga Larong Pilipino • Interactive Lesson</span></div><button class="secondary" data-go="home">⬆️ Back to Top</button></footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
