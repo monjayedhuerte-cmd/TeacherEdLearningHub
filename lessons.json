@@ -828,5 +828,15 @@
     "date": "2026-09-21",
     "featured": true,
     "icon": "languages"
+  },
+  {
+    "title": "AP 3 | Aralin 11: Mga Katutubong Likha",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": " Indigenous and local Filipino crafts. Alamin kung paano ipinapakita ng mga likhang-kamay ang sining, kultura, kasanayan, at likas-yaman ng iba’t ibang pamayanan.",
+    "file": "lessons/araling-panlipunan/grade-3/TeacherEd_AP3_Lesson11_Mga_Katutubong_Likha/index.html",
+    "date": "2026-09-25",
+    "featured": true,
+    "icon": "map"
   }
 ]
