@@ -1,0 +1,1659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Teacher Ed • Computer 2 • Protecting Your Computer</title>
+    <link rel="icon" type="image/png" href="TeacherEdLogo.png" />
+    <style>
+      :root {
+        --navy: #082b61;
+        --blue: #1267c9;
+        --sky: #eaf5ff;
+        --gold: #f7b928;
+        --ink: #162033;
+        --muted: #61708a;
+        --card: #fff;
+        --line: #dbe7f4;
+        --green: #16864a;
+        --red: #c33d45;
+        --purple: #7656c8;
+        --shadow: 0 14px 40px rgba(15, 44, 85, 0.12);
+        --r: 24px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #f4f9ff, #fff 40%, #f7fbff);
+        line-height: 1.55;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: 0;
+      }
+      .top {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .nav {
+        max-width: 1180px;
+        margin: auto;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 230px;
+      }
+      .brand img {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+      }
+      .brand strong {
+        color: var(--navy);
+      }
+      .navlinks {
+        display: flex;
+        gap: 6px;
+        overflow: auto;
+        margin-left: auto;
+      }
+      .navlinks button {
+        background: transparent;
+        padding: 9px 11px;
+        border-radius: 12px;
+        color: var(--muted);
+        font-weight: 700;
+        white-space: nowrap;
+      }
+      .navlinks button:hover,
+      .navlinks button.active {
+        background: var(--sky);
+        color: var(--navy);
+      }
+      .sound {
+        background: var(--navy);
+        color: white;
+        padding: 9px 12px;
+        border-radius: 12px;
+        font-weight: 800;
+      }
+      .hero {
+        max-width: 1180px;
+        margin: 28px auto 18px;
+        padding: 26px 18px;
+      }
+      .heroCard {
+        background: linear-gradient(135deg, #06285d, #0d63bf);
+        color: #fff;
+        border-radius: 34px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .heroCard:after {
+        content: "🛡️";
+        position: absolute;
+        right: 25px;
+        bottom: -25px;
+        font-size: 150px;
+        opacity: 0.12;
+      }
+      .heroGrid {
+        display: grid;
+        grid-template-columns: 1.3fr 0.7fr;
+        gap: 25px;
+        align-items: center;
+      }
+      .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.14);
+        padding: 7px 11px;
+        border-radius: 99px;
+        font-weight: 800;
+        font-size: 0.9rem;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 4rem);
+        line-height: 1.05;
+        margin: 14px 0 10px;
+      }
+      .hero p {
+        max-width: 680px;
+        color: #eaf4ff;
+      }
+      .heroLogo {
+        display: flex;
+        justify-content: center;
+      }
+      .heroLogo img {
+        width: min(230px, 60vw);
+        filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.2));
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .btn {
+        padding: 12px 17px;
+        border-radius: 14px;
+        font-weight: 900;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .primary {
+        background: var(--gold);
+        color: #192033;
+      }
+      .light {
+        background: #fff;
+        color: var(--navy);
+      }
+      .outline {
+        background: transparent;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: auto;
+        padding: 0 18px 60px;
+      }
+      .progressBox {
+        position: sticky;
+        top: 72px;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+      }
+      .progressTrack {
+        height: 12px;
+        background: #e8eef6;
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .progressFill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--blue), var(--gold));
+        transition: 0.4s;
+      }
+      .stageText {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.86rem;
+        font-weight: 800;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .stage {
+        display: none;
+        animation: fade 0.35s ease;
+      }
+      .stage.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .stageHead {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        margin: 28px 0 18px;
+      }
+      .stageNo {
+        width: 52px;
+        height: 52px;
+        border-radius: 16px;
+        background: var(--navy);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 1.25rem;
+        font-weight: 900;
+      }
+      .stageHead h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: clamp(1.5rem, 4vw, 2.2rem);
+      }
+      .stageHead p {
+        margin: 2px 0 0;
+        color: var(--muted);
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        box-shadow: var(--shadow);
+        padding: 22px;
+        margin: 14px 0;
+      }
+      .bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 14px;
+      }
+      .span6 {
+        grid-column: span 6;
+      }
+      .span4 {
+        grid-column: span 4;
+      }
+      .span8 {
+        grid-column: span 8;
+      }
+      .span12 {
+        grid-column: 1/-1;
+      }
+      .mini {
+        background: #f7fbff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
+      }
+      .mini h3 {
+        margin-top: 0;
+      }
+      .tag {
+        display: inline-block;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #edf5ff;
+        color: var(--blue);
+        font-weight: 900;
+        font-size: 0.78rem;
+      }
+      .support {
+        margin-top: 10px;
+        padding: 12px 14px;
+        border-left: 4px solid var(--gold);
+        background: #fff8dc;
+        border-radius: 10px;
+      }
+      .support b {
+        color: #7c5a00;
+      }
+      .termGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 12px;
+      }
+      .term {
+        padding: 16px;
+        border-radius: 18px;
+        background: #f7faff;
+        border: 1px solid var(--line);
+        min-height: 140px;
+      }
+      .term strong {
+        display: block;
+        color: var(--navy);
+        font-size: 1.05rem;
+      }
+      .reveal {
+        width: 100%;
+        text-align: left;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 17px;
+        margin: 6px 0;
+        font-weight: 800;
+      }
+      .reveal .ans {
+        display: none;
+        margin-top: 8px;
+        font-weight: 500;
+        color: var(--muted);
+      }
+      .reveal.open .ans {
+        display: block;
+      }
+      .deviceGrid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 14px;
+      }
+      .device {
+        min-height: 165px;
+        background: linear-gradient(145deg, #fff, #f2f8ff);
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 18px;
+        transition: 0.2s;
+      }
+      .device:hover {
+        transform: translateY(-3px);
+        box-shadow: var(--shadow);
+      }
+      .device .emoji {
+        font-size: 42px;
+      }
+      .device button {
+        margin-top: 8px;
+        background: var(--navy);
+        color: white;
+        padding: 9px 12px;
+        border-radius: 12px;
+        font-weight: 800;
+      }
+      .quiz {
+        display: grid;
+        gap: 14px;
+      }
+      .q {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 17px;
+        background: #fff;
+      }
+      .q h3 {
+        font-size: 1rem;
+        margin-top: 0;
+      }
+      .opts {
+        display: grid;
+        gap: 8px;
+      }
+      .opts button {
+        text-align: left;
+        background: #f5f8fc;
+        border: 1px solid #dce6f1;
+        padding: 11px 13px;
+        border-radius: 12px;
+      }
+      .opts button:hover {
+        border-color: var(--blue);
+      }
+      .opts button.correct {
+        background: #e7f8ee;
+        border-color: #9ad7b5;
+        color: #0e6337;
+      }
+      .opts button.wrong {
+        background: #fff0f0;
+        border-color: #e3a3a8;
+        color: #8d2730;
+      }
+      .feedback {
+        margin-top: 9px;
+        font-weight: 800;
+        min-height: 24px;
+      }
+      .hint {
+        background: #fff6cf;
+        color: #705300;
+        padding: 10px 12px;
+        border-radius: 12px;
+        margin-top: 10px;
+        display: none;
+      }
+      .show {
+        display: block;
+      }
+      .score {
+        font-size: 1.25rem;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .choiceRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .choice {
+        background: #f5f8fc;
+        border: 2px solid #dbe5f0;
+        border-radius: 16px;
+        padding: 12px 15px;
+        font-weight: 900;
+      }
+      .choice.selected {
+        border-color: var(--blue);
+        background: #eaf4ff;
+      }
+      .choice.good {
+        border-color: var(--green);
+        background: #eaf8f0;
+      }
+      .choice.bad {
+        border-color: var(--red);
+        background: #fff0f0;
+      }
+      .navBtns {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 24px;
+      }
+      .navBtns .btn {
+        min-width: 120px;
+      }
+      .notice {
+        padding: 14px 16px;
+        border-radius: 15px;
+        background: #eef6ff;
+        border: 1px solid #cfe4fb;
+      }
+      .danger {
+        background: #fff1f1;
+        border-color: #f0c1c4;
+      }
+      .success {
+        background: #edf9f2;
+        border-color: #b9e4ca;
+      }
+      .masterScenario {
+        background: linear-gradient(135deg, #fff8dc, #f6fbff);
+        border: 2px dashed #e0b62c;
+      }
+      .reflection button {
+        font-size: 1.6rem;
+        background: #f5f8fc;
+        border: 2px solid #dce6f1;
+        border-radius: 18px;
+        padding: 12px 16px;
+      }
+      .reflection button.selected {
+        border-color: var(--blue);
+        background: #eaf4ff;
+      }
+      .celebrate {
+        text-align: center;
+        background: linear-gradient(135deg, #06285d, #1267c9);
+        color: white;
+        overflow: hidden;
+        position: relative;
+      }
+      .celebrate .big {
+        font-size: 5rem;
+      }
+      .stars {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+      }
+      .footer {
+        margin-top: 50px;
+        background: #06285d;
+        color: white;
+        padding: 30px 18px;
+      }
+      .foot {
+        max-width: 1120px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        justify-content: space-between;
+      }
+      .foot img {
+        width: 62px;
+        height: 62px;
+        object-fit: contain;
+      }
+      .small {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 18, 40, 0.62);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        z-index: 100;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modalCard {
+        max-width: 560px;
+        width: 100%;
+        background: #fff;
+        border-radius: 26px;
+        padding: 25px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+      }
+      .close {
+        float: right;
+        background: #edf2f8;
+        border-radius: 10px;
+        padding: 7px 10px;
+        font-weight: 900;
+      }
+      .confetti {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 90;
+      }
+      .piece {
+        position: absolute;
+        top: -20px;
+        width: 10px;
+        height: 18px;
+        animation: fall 2.4s linear forwards;
+      }
+      @keyframes fall {
+        to {
+          transform: translateY(110vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      @media (max-width: 800px) {
+        .heroGrid {
+          grid-template-columns: 1fr;
+        }
+        .heroLogo {
+          order: -1;
+        }
+        .navlinks {
+          display: none;
+        }
+        .span6,
+        .span4,
+        .span8 {
+          grid-column: 1/-1;
+        }
+        .progressBox {
+          top: 58px;
+        }
+        .nav {
+          padding: 7px 12px;
+        }
+        .brand strong {
+          font-size: 0.9rem;
+        }
+        .brand img {
+          width: 40px;
+          height: 40px;
+        }
+        .card {
+          padding: 17px;
+        }
+        .stageHead {
+          align-items: flex-start;
+        }
+        .stageNo {
+          width: 44px;
+          height: 44px;
+          flex: 0 0 44px;
+        }
+        .foot {
+          flex-direction: column;
+          text-align: center;
+        }
+        .heroCard {
+          padding: 23px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="nav">
+        <div class="brand">
+          <img src="TeacherEdLogo.png" alt="Teacher Ed logo" /><strong
+            >Teacher Ed • Computer 2</strong
+          >
+        </div>
+        <div class="navlinks">
+          <button onclick="goStage(0)">🎮 Engage</button
+          ><button onclick="goStage(3)">🧠 Learn</button
+          ><button onclick="goStage(5)">🎮 Practice</button
+          ><button onclick="goStage(9)">🏆 Master</button
+          ><button onclick="goStage(11)">🎉 Finish</button>
+        </div>
+        <button class="sound" onclick="toggleSound()" id="soundBtn">
+          🔊 Sound
+        </button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="heroCard">
+          <div class="heroGrid">
+            <div>
+              <span class="eyebrow">💻 COMPUTER 2 • LESSON 9</span>
+              <h1>Protecting Your Computer</h1>
+              <p>
+                Become a <b>Computer Safety Explorer</b>! Discover why computer
+                security matters, spot unsafe choices, and learn ways to care
+                for your computer.
+              </p>
+              <div class="actions">
+                <button class="btn primary" onclick="startLesson()">
+                  🚀 Start Lesson</button
+                ><button class="btn light" onclick="goStage(1)">
+                  🎯 What will I learn?</button
+                ><button class="btn outline" onclick="resetAll()">
+                  🔄 Restart
+                </button>
+              </div>
+            </div>
+            <div class="heroLogo">
+              <img src="TeacherEdLogo.png" alt="Official Teacher Ed logo" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="wrap">
+        <div class="progressBox">
+          <div class="stageText">
+            <span id="stageLabel">Stage 1 of 12 • ENGAGE</span
+            ><span id="pct">0%</span>
+          </div>
+          <div class="progressTrack">
+            <div class="progressFill" id="progressFill"></div>
+          </div>
+        </div>
+
+        <section class="stage active" id="s0">
+          <div class="stageHead">
+            <div class="stageNo">1</div>
+            <div>
+              <h2>🎮 ENGAGE — Safety Detective</h2>
+              <p>Can you spot the safe computer choice?</p>
+            </div>
+          </div>
+          <div class="card">
+            <p>
+              <b>Mission:</b> Choose the safer action. This is a warm-up—not a
+              test!
+            </p>
+            <div class="bento">
+              <div class="mini">
+                <div style="font-size: 42px">📎📧</div>
+                <h3>An unknown email attachment</h3>
+                <button class="btn primary" onclick="engagePick(false, this)">
+                  Open it</button
+                ><button class="btn light" onclick="engagePick(true, this)">
+                  Don't open it
+                </button>
+              </div>
+              <div class="mini">
+                <div style="font-size: 42px">🔗❓</div>
+                <h3>A strange link in a message</h3>
+                <button class="btn primary" onclick="engagePick(false, this)">
+                  Click it</button
+                ><button class="btn light" onclick="engagePick(true, this)">
+                  Avoid it
+                </button>
+              </div>
+              <div class="mini">
+                <div style="font-size: 42px">💻🧹</div>
+                <h3>Computer care</h3>
+                <button class="btn primary" onclick="engagePick(true, this)">
+                  Keep it dust-free</button
+                ><button class="btn light" onclick="engagePick(false, this)">
+                  Ignore dust
+                </button>
+              </div>
+            </div>
+            <div id="engageMsg" class="notice" style="margin-top: 15px">
+              Choose an action to begin.
+            </div>
+          </div>
+        </section>
+
+        <section class="stage" id="s1">
+          <div class="stageHead">
+            <div class="stageNo">2</div>
+            <div>
+              <h2>🎯 CONNECT — My Digital Life</h2>
+              <p>Think about what you already do with computers.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Have you ever…?</h3>
+            <div class="choiceRow" id="connectChoices">
+              <button class="choice" onclick="chooseConnect(this)">
+                Downloaded a file 📥</button
+              ><button class="choice" onclick="chooseConnect(this)">
+                Visited a website 🌐</button
+              ><button class="choice" onclick="chooseConnect(this)">
+                Clicked a link 🔗</button
+              ><button class="choice" onclick="chooseConnect(this)">
+                Used a USB 💾
+              </button>
+            </div>
+            <div class="support">
+              <b>Filipino support:</b> Ang mga gawain online ay may kasamang
+              responsibilidad. Maging maingat sa dina-download, bina-browse, at
+              pini-click.
+            </div>
+            <p id="connectMsg" class="notice" style="margin-top: 15px">
+              Pick one or more. Then continue.
+            </p>
+          </div>
+        </section>
+
+        <section class="stage" id="s2">
+          <div class="stageHead">
+            <div class="stageNo">3</div>
+            <div>
+              <h2>🔎 EXPLORE — What Could Go Wrong?</h2>
+              <p>Tap a card to reveal what the lesson says.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="termGrid">
+              <button class="reveal" onclick="reveal(this)">
+                🦠 Virus
+                <div class="ans">
+                  A piece of code capable of copying itself and typically having
+                  a detrimental effect, such as corrupting the system or
+                  destroying data.
+                </div></button
+              ><button class="reveal" onclick="reveal(this)">
+                🕵️ Spyware
+                <div class="ans">
+                  Software that enables a user to obtain covert information
+                  about another computer's activities by transmitting data from
+                  the hard drive.
+                </div></button
+              ><button class="reveal" onclick="reveal(this)">
+                👨‍💻 Hacker
+                <div class="ans">
+                  A person who uses computers to gain unauthorized access to
+                  data.
+                </div></button
+              ><button class="reveal" onclick="reveal(this)">
+                🧩 Malware
+                <div class="ans">
+                  Software specifically designed to disrupt, damage, or gain
+                  unauthorized access to a computer system.
+                </div>
+              </button>
+            </div>
+            <div class="support">
+              <b>English support:</b> A threat can harm your computer or access
+              information without permission.
+            </div>
+            <p class="notice" style="margin-top: 15px">
+              What do you notice? The lesson groups computer safety around
+              <b>prevention</b> and <b>detection</b>.
+            </p>
+          </div>
+        </section>
+
+        <section class="stage" id="s3">
+          <div class="stageHead">
+            <div class="stageNo">4</div>
+            <div>
+              <h2>🧠 LEARN — Protecting Your Computer</h2>
+              <p>Concept → example → explanation → example</p>
+            </div>
+          </div>
+          <div class="bento">
+            <div class="card span8">
+              <span class="tag">CORE IDEA</span>
+              <h3>Why is computer security important?</h3>
+              <p>
+                Computer security is important because it keeps your information
+                protected. It is also important for your computer's overall
+                health; proper security helps prevent viruses and malware, which
+                allows programs to run quicker and smoother.
+              </p>
+              <div class="support">
+                <b>Filipino:</b> Mahalaga ang computer security para
+                maprotektahan ang impormasyon at mapanatiling maayos ang
+                computer.
+              </div>
+            </div>
+            <div class="card span4">
+              <h3>👀 Be aware of:</h3>
+              <ul>
+                <li>what you're downloading</li>
+                <li>what websites you visit</li>
+                <li>where emails come from</li>
+                <li>what links you click</li>
+                <li>what information you enter</li>
+              </ul>
+            </div>
+            <div class="card span12">
+              <h3>🛡️ Ways to protect your computer</h3>
+              <div class="termGrid">
+                <div class="term">
+                  <strong>🔥 Use a firewall</strong
+                  ><span>It helps prevent unauthorized access.</span>
+                </div>
+                <div class="term">
+                  <strong>🔄 Keep software updated</strong
+                  ><span>Use automatic updates when available.</span>
+                </div>
+                <div class="term">
+                  <strong>🛡️ Use antivirus</strong
+                  ><span>Keep antivirus software installed and current.</span>
+                </div>
+                <div class="term">
+                  <strong>🔐 Protect passwords</strong
+                  ><span>Choose and protect passwords carefully.</span>
+                </div>
+                <div class="term">
+                  <strong>🚫 Avoid suspicious links</strong
+                  ><span>Do not open unusual links or attachments.</span>
+                </div>
+                <div class="term">
+                  <strong>🌐 Browse safely</strong
+                  ><span
+                    >Avoid unsafe or illicit sites and untrusted
+                    downloads.</span
+                  >
+                </div>
+                <div class="term">
+                  <strong>💾 Be careful with USBs</strong
+                  ><span
+                    >Use external devices you own or from a reliable
+                    source.</span
+                  >
+                </div>
+                <div class="term">
+                  <strong>🧹 Care for hardware</strong
+                  ><span
+                    >Keep components dust-free and use proper cleaning
+                    methods.</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="stage" id="s4">
+          <div class="stageHead">
+            <div class="stageNo">5</div>
+            <div>
+              <h2>🤝 GUIDED PRACTICE — Let's Do It Together</h2>
+              <p>First I show you. Then you try.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Example 1 — Teacher demonstrates</h3>
+            <p>
+              Imagine a message arrives with an unusual attachment from someone
+              you do not know.
+            </p>
+            <button class="btn primary" onclick="guided(1)">
+              Show the safe action
+            </button>
+            <div id="g1" class="notice" style="display: none; margin-top: 12px">
+              💡 <b>Do not open it.</b> The lesson says not to open suspicious
+              attachments or click unusual links.
+            </div>
+            <hr />
+            <h3>Example 2 — Your turn with a hint</h3>
+            <p>
+              You receive a download from a website you do not know or trust.
+              What should you do?
+            </p>
+            <div class="choiceRow">
+              <button class="choice" onclick="guidedAnswer(this, false)">
+                Accept the download</button
+              ><button class="choice" onclick="guidedAnswer(this, true)">
+                Do not accept it
+              </button>
+            </div>
+            <button
+              class="btn light"
+              onclick="
+                document.getElementById('gHint').classList.toggle('show')
+              "
+            >
+              💡 Hint
+            </button>
+            <div id="gHint" class="hint">
+              Think about whether the website is known and trusted.
+            </div>
+            <div id="gMsg" class="feedback"></div>
+          </div>
+        </section>
+
+        <section class="stage" id="s5">
+          <div class="stageHead">
+            <div class="stageNo">6</div>
+            <div>
+              <h2>🎮 PRACTICE — Safety Games</h2>
+              <p>Play, learn, and earn stars.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>🟢 EASY — Safe or Unsafe?</h3>
+            <div class="quiz" id="easyQuiz"></div>
+            <p class="score" id="easyScore"></p>
+          </div>
+          <div class="card">
+            <h3>🟡 DEVELOPING — Sort the choices</h3>
+            <p>Tap each item to place it in the correct group.</p>
+            <div class="deviceGrid" id="sortGrid"></div>
+            <p id="sortMsg" class="feedback"></p>
+            <button class="btn light" onclick="resetSort()">
+              🔄 Reset Sort
+            </button>
+          </div>
+          <div class="card">
+            <h3>🔴 CHALLENGE — Security Scenario</h3>
+            <p>
+              <b>Situation:</b> A USB comes from a source you do not know. What
+              is the safest choice according to the lesson?
+            </p>
+            <div class="choiceRow">
+              <button class="choice" onclick="challengePick(this, false)">
+                Use it immediately</button
+              ><button class="choice" onclick="challengePick(this, true)">
+                Do not use it unless it is yours or from a reliable source
+              </button>
+            </div>
+            <div id="challengeMsg" class="feedback"></div>
+          </div>
+        </section>
+
+        <section class="stage" id="s6">
+          <div class="stageHead">
+            <div class="stageNo">7</div>
+            <div>
+              <h2>💭 THINK — Why Does It Matter?</h2>
+              <p>Use your reasoning, not just memory.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>
+              What would happen if everyone clicked every suspicious link?
+            </h3>
+            <div class="choiceRow" id="thinkChoices">
+              <button class="choice" onclick="think(this, false)">
+                Nothing could ever happen.</button
+              ><button class="choice" onclick="think(this, true)">
+                It could expose the computer to risks such as malware or
+                unauthorized access.</button
+              ><button class="choice" onclick="think(this, false)">
+                It would automatically make the computer safer.
+              </button>
+            </div>
+            <div id="thinkMsg" class="feedback"></div>
+            <div class="support">
+              <b>Think in Filipino:</b> Bakit kailangang maging maingat sa
+              links, attachments, downloads, at websites?
+            </div>
+          </div>
+        </section>
+
+        <section class="stage" id="s7">
+          <div class="stageHead">
+            <div class="stageNo">8</div>
+            <div>
+              <h2>🔄 REVIEW — Quick Recall</h2>
+              <p>Let's bring the important ideas back to mind.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="quiz" id="reviewQuiz"></div>
+            <p class="score" id="reviewScore"></p>
+          </div>
+        </section>
+
+        <section class="stage" id="s8">
+          <div class="stageHead">
+            <div class="stageNo">9</div>
+            <div>
+              <h2>✅ CHECK — Show What You Know</h2>
+              <p>Answer the assessment connected to today's objectives.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="quiz" id="checkQuiz"></div>
+            <p class="score" id="checkScore"></p>
+            <button
+              class="btn primary"
+              onclick="resetQuiz('checkQuiz', 'checkScore', checkQuestions)"
+            >
+              🔄 Try Again
+            </button>
+          </div>
+        </section>
+
+        <section class="stage" id="s9">
+          <div class="stageHead">
+            <div class="stageNo">10</div>
+            <div>
+              <h2>🏆 MASTER — Computer Safety Boss Challenge</h2>
+              <p>Apply the lesson to a real-life situation.</p>
+            </div>
+          </div>
+          <div class="card masterScenario">
+            <h3>🕵️ Mission: Protect the Classroom Computer</h3>
+            <p>
+              You are the classroom Computer Safety Explorer. You notice four
+              actions:
+            </p>
+            <ol>
+              <li>A classmate wants to open an unusual email attachment.</li>
+              <li>
+                Someone wants to download a program from an unknown website.
+              </li>
+              <li>The computer has updates waiting.</li>
+              <li>A USB comes from a reliable source.</li>
+            </ol>
+            <p>
+              <b
+                >Select every action that follows the safety ideas in the
+                lesson.</b
+              >
+            </p>
+            <div class="choiceRow" id="masterChoices">
+              <button
+                class="choice"
+                data-good="false"
+                onclick="masterToggle(this)"
+              >
+                Open the unusual attachment</button
+              ><button
+                class="choice"
+                data-good="false"
+                onclick="masterToggle(this)"
+              >
+                Download from the unknown site</button
+              ><button
+                class="choice"
+                data-good="true"
+                onclick="masterToggle(this)"
+              >
+                Keep software updated</button
+              ><button
+                class="choice"
+                data-good="true"
+                onclick="masterToggle(this)"
+              >
+                Use the reliable-source USB
+              </button>
+            </div>
+            <button class="btn primary" onclick="checkMaster()">
+              🏆 Check My Mission
+            </button>
+            <div id="masterMsg" class="feedback"></div>
+          </div>
+        </section>
+
+        <section class="stage" id="s10">
+          <div class="stageHead">
+            <div class="stageNo">11</div>
+            <div>
+              <h2>🌈 REFLECT — Think About Your Learning</h2>
+              <p>How do you feel about protecting a computer?</p>
+            </div>
+          </div>
+          <div class="card reflection">
+            <h3>Choose your confidence:</h3>
+            <div class="choiceRow">
+              <button onclick="reflect(this, 'I need more practice')">
+                😟<br /><small>I need more practice</small></button
+              ><button onclick="reflect(this, 'I am getting there')">
+                🙂<br /><small>I'm getting there</small></button
+              ><button onclick="reflect(this, 'I understand')">
+                😀<br /><small>I understand</small></button
+              ><button onclick="reflect(this, 'I can teach someone else')">
+                🤩<br /><small>I can teach someone else!</small>
+              </button>
+            </div>
+            <div class="support">
+              <b>Today I learned:</b> computer security helps protect
+              information and computer health. I can be careful with downloads,
+              websites, emails, links, passwords, and external devices.
+            </div>
+            <p id="reflectMsg" class="notice">Choose one confidence level.</p>
+          </div>
+        </section>
+
+        <section class="stage" id="s11">
+          <div class="stageHead">
+            <div class="stageNo">12</div>
+            <div>
+              <h2>🎉 CELEBRATE — Safety Explorer Complete!</h2>
+              <p>You made it through the whole lesson.</p>
+            </div>
+          </div>
+          <div class="card celebrate">
+            <div class="big">🏆</div>
+            <img
+              src="TeacherEdLogo.png"
+              alt="Teacher Ed logo"
+              style="width: 100px; height: 100px; object-fit: contain"
+            />
+            <h2>AMAZING WORK!</h2>
+            <p>You completed <b>Protecting Your Computer</b>.</p>
+            <div class="stars" id="finalStars">☆☆☆☆☆</div>
+            <p id="finalStats">Your learning record will appear here.</p>
+            <h3>🛡️ COMPUTER SAFETY EXPLORER</h3>
+            <p>Remember: <b>You learned something new today!</b></p>
+            <button class="btn primary" onclick="resetAll()">
+              🔄 Learn Again
+            </button>
+          </div>
+        </section>
+
+        <div class="navBtns">
+          <button class="btn light" id="prevBtn" onclick="prevStage()">
+            ← Back</button
+          ><button class="btn primary" id="nextBtn" onclick="nextStage()">
+            Next →
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <div class="foot">
+        <div>
+          <img src="TeacherEdLogo.png" alt="Teacher Ed official logo" />
+        </div>
+        <div>
+          <strong>Teacher Ed Learning Hub</strong><br /><span
+            >Computer 2 • Lesson 9: Protecting Your Computer</span
+          ><br /><span class="small" style="color: #cfe4ff"
+            >Learn • Explore • Practice • Master</span
+          >
+        </div>
+    </footer>
+    <div class="modal" id="modal">
+      <div class="modalCard">
+        <button class="close" onclick="closeModal()">✕</button>
+        <h2 id="modalTitle">Feedback</h2>
+        <p id="modalBody"></p>
+        <button class="btn primary" onclick="closeModal()">Continue</button>
+      </div>
+    </div>
+    <div class="confetti" id="confetti"></div>
+    <script>
+      const stages = [
+        "ENGAGE",
+        "CONNECT",
+        "EXPLORE",
+        "LEARN",
+        "GUIDED PRACTICE",
+        "PRACTICE",
+        "THINK",
+        "REVIEW",
+        "CHECK",
+        "MASTER",
+        "REFLECT",
+        "CELEBRATE",
+      ];
+      let current = 0,
+        soundOn = true,
+        stars = 0,
+        completed = new Set();
+      function save() {
+        localStorage.setItem(
+          "teacherEdL9",
+          JSON.stringify({ current, stars, completed: [...completed] }),
+        );
+      }
+      function load() {
+        try {
+          const x = JSON.parse(localStorage.getItem("teacherEdL9"));
+          if (x) {
+            current = Math.max(0, Math.min(11, x.current || 0));
+            stars = x.stars || 0;
+            completed = new Set(x.completed || []);
+          }
+        } catch (e) {}
+        render();
+      }
+      function render() {
+        document
+          .querySelectorAll(".stage")
+          .forEach((s, i) => s.classList.toggle("active", i === current));
+        const pct = Math.round((current / 11) * 100);
+        document.getElementById("progressFill").style.width = pct + "%";
+        document.getElementById("pct").textContent = pct + "%";
+        document.getElementById("stageLabel").textContent =
+          `Stage ${current + 1} of 12 • ${stages[current]}`;
+        document.getElementById("prevBtn").disabled = current === 0;
+        document.getElementById("prevBtn").style.opacity =
+          current === 0 ? 0.5 : 1;
+        document.getElementById("nextBtn").textContent =
+          current === 11 ? "🏁 Finished" : "Next →";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        save();
+        if (current === 11) finish();
+      }
+      function goStage(i) {
+        current = Math.max(0, Math.min(11, i));
+        completed.add(current);
+        render();
+      }
+      function nextStage() {
+        if (current < 11) {
+          completed.add(current);
+          current++;
+          if (soundOn) beep(740, 0.06);
+          render();
+        } else finish();
+      }
+      function prevStage() {
+        if (current > 0) {
+          current--;
+          render();
+        }
+      }
+      function startLesson() {
+        current = 0;
+        render();
+      }
+      function toggleSound() {
+        soundOn = !soundOn;
+        document.getElementById("soundBtn").textContent = soundOn
+          ? "🔊 Sound"
+          : "🔇 Muted";
+      }
+      function beep(freq, dur) {
+        try {
+          const c = new AudioContext(),
+            o = c.createOscillator(),
+            g = c.createGain();
+          o.frequency.value = freq;
+          g.gain.value = 0.03;
+          o.connect(g);
+          g.connect(c.destination);
+          o.start();
+          o.stop(c.currentTime + dur);
+        } catch (e) {}
+      }
+      function engagePick(ok, el) {
+        document.getElementById("engageMsg").className =
+          "notice " + (ok ? "success" : "danger");
+        document.getElementById("engageMsg").innerHTML = ok
+          ? "🎉 Great! That is the safer choice based on the lesson."
+          : "💡 Almost! Think about what the lesson says about suspicious attachments, links, and safe computer care.";
+        if (ok) {
+          stars++;
+          completed.add(0);
+          if (soundOn) beep(880, 0.08);
+        }
+        save();
+      }
+      function chooseConnect(el) {
+        el.classList.toggle("selected");
+        document.getElementById("connectMsg").textContent =
+          "Nice! These are real situations where computer safety matters. You can select more than one.";
+        stars += 1;
+        save();
+      }
+      function reveal(el) {
+        el.classList.toggle("open");
+        if (el.classList.contains("open")) {
+          stars++;
+          save();
+        }
+      }
+      function guided(n) {
+        document.getElementById("g" + n).style.display = "block";
+        stars++;
+        save();
+      }
+      function guidedAnswer(el, ok) {
+        document
+          .querySelectorAll(".card .choice")
+          .forEach((x) => x.classList.remove("good", "bad"));
+        el.classList.add(ok ? "good" : "bad");
+        document.getElementById("gMsg").textContent = ok
+          ? "🎉 Excellent! Do not accept downloads from sites you do not know and trust."
+          : "💡 Almost! Check whether the source is known and trusted.";
+        if (ok) {
+          stars += 2;
+          completed.add(4);
+        }
+        save();
+      }
+      const easyQuestions = [
+        ["Should you open a suspicious email attachment?", "No, avoid it."],
+        ["Should you keep software up to date?", "Yes, keep it updated."],
+        [
+          "Should you use a USB from an unknown source immediately?",
+          "No, avoid it.",
+        ],
+        ["Should computer components be kept dust-free?", "Yes."],
+      ];
+      const reviewQuestions = [
+        [
+          "What does computer security help protect?",
+          "Information and computer health.",
+        ],
+        ["What should you do with unusual links?", "Avoid clicking them."],
+        [
+          "What should you do with software updates?",
+          "Keep software up to date.",
+        ],
+        [
+          "What should you do with external devices?",
+          "Use ones you own or from a reliable source.",
+        ],
+      ];
+      const checkQuestions = [
+        [
+          "Computer security is important because it…",
+          [
+            "protects information",
+            "makes every website safe",
+            "removes all passwords",
+          ],
+          0,
+        ],
+        [
+          "A hacker is a person who…",
+          [
+            "gains unauthorized access to data",
+            "prints documents",
+            "cleans the monitor",
+          ],
+          0,
+        ],
+        [
+          "Which is a safe practice?",
+          [
+            "Click every link",
+            "Keep antivirus installed and current",
+            "Download from unknown sites",
+          ],
+          1,
+        ],
+        [
+          "Which should you avoid?",
+          [
+            "Suspicious attachments",
+            "Automatic updates",
+            "Dust-free components",
+          ],
+          0,
+        ],
+        [
+          "What is malware?",
+          [
+            "Software designed to disrupt, damage, or gain unauthorized access",
+            "A type of printer",
+            "A password",
+          ],
+          0,
+        ],
+        [
+          "Which is a maintenance practice from the lesson?",
+          [
+            "Keep components dust-free",
+            "Open the system unit casually",
+            "Step on cables",
+          ],
+          0,
+        ],
+      ];
+      function buildSimpleQuiz(id, scoreId, qs) {
+        const box = document.getElementById(id);
+        box.innerHTML = "";
+        qs.forEach((q, i) => {
+          const d = document.createElement("div");
+          d.className = "q";
+          d.innerHTML = `<h3>${i + 1}. ${q[0]}</h3><div class="opts"></div><div class="feedback"></div>`;
+          const opts = d.querySelector(".opts");
+          const choices =
+            q[1] instanceof Array
+              ? q[1]
+              : [q[1], "Yes, always do the opposite", "I am not sure"];
+          if (q[1] instanceof Array) {
+            choices.forEach((c, j) => {
+              const b = document.createElement("button");
+              b.textContent = c;
+              b.onclick = () => answer(d, j === q[2], scoreId);
+              opts.appendChild(b);
+            });
+          } else {
+            const correct = q[1],
+              arr = [
+                correct,
+                correct.startsWith("No")
+                  ? "Yes, do it immediately"
+                  : "No, avoid it",
+              ];
+            arr.forEach((c, j) => {
+              const b = document.createElement("button");
+              b.textContent = c;
+              b.onclick = () => answer(d, j === 0, scoreId);
+              opts.appendChild(b);
+            });
+          }
+        });
+      }
+      function answer(card, ok, scoreId) {
+        if (card.dataset.done) return;
+        card.dataset.done = "1";
+        const f = card.querySelector(".feedback");
+        card.querySelectorAll("button").forEach((b) => (b.disabled = true));
+        if (ok) {
+          f.textContent = "🎉 Excellent!";
+          f.className = "feedback success";
+          stars += 2;
+        } else {
+          f.textContent = "💡 Almost! Review the idea and keep learning.";
+          f.className = "feedback danger";
+        }
+        updateQuizScore(scoreId);
+        save();
+      }
+      function updateQuizScore(scoreId) {
+        const stageId =
+          scoreId === "easyScore"
+            ? "easyQuiz"
+            : scoreId === "reviewScore"
+              ? "reviewQuiz"
+              : "checkQuiz";
+        const total = document.querySelectorAll("#" + stageId + " .q").length,
+          done = document.querySelectorAll(
+            "#" + stageId + " .q[data-done]",
+          ).length;
+        let good = 0;
+        document.querySelectorAll("#" + stageId + " .feedback").forEach((f) => {
+          if (f.textContent.includes("Excellent")) good++;
+        });
+        document.getElementById(scoreId).textContent =
+          `Score: ${good} / ${total}`;
+        if (done === total) completed.add(current);
+        save();
+      }
+      function resetQuiz(id, scoreId, qs) {
+        buildSimpleQuiz(id, scoreId, qs);
+      }
+      function setupQuizzes() {
+        buildSimpleQuiz("easyQuiz", "easyScore", easyQuestions);
+        buildSimpleQuiz("reviewQuiz", "reviewScore", reviewQuestions);
+        buildSimpleQuiz("checkQuiz", "checkScore", checkQuestions);
+      }
+      const sortItems = [
+        ["🔄 Automatic updates", "safe"],
+        ["🔗 Suspicious link", "unsafe"],
+        ["🛡️ Current antivirus", "safe"],
+        ["📥 Unknown download", "unsafe"],
+        ["🧹 Dust-free computer", "safe"],
+        ["💾 Unknown USB", "unsafe"],
+      ];
+      let sortDone = 0;
+      function setupSort() {
+        const g = document.getElementById("sortGrid");
+        g.innerHTML = "";
+        sortItems.forEach((x, i) => {
+          const d = document.createElement("button");
+          d.className = "device";
+          d.innerHTML = `<div style="font-size:34px">${x[0].split(" ")[0]}</div><b>${x[0].substring(x[0].indexOf(" ") + 1)}</b><div class="small">Tap to choose: SAFE or UNSAFE</div>`;
+          d.onclick = () => sortItem(d, x[1]);
+          g.appendChild(d);
+        });
+      }
+      function sortItem(d, kind) {
+        if (d.dataset.done) return;
+        const safe = confirm(
+          "Is this SAFE?\n\nPress OK for SAFE, Cancel for UNSAFE.",
+        );
+        const ok = (safe && kind === "safe") || (!safe && kind === "unsafe");
+        d.dataset.done = "1";
+        d.style.opacity = 0.55;
+        sortDone++;
+        const msg = document.getElementById("sortMsg");
+        msg.textContent = ok
+          ? "🎉 Correct sorting!"
+          : "💡 Check the lesson again: think about trusted sources, updates, suspicious links, and care.";
+        msg.className = "feedback " + (ok ? "success" : "danger");
+        if (ok) stars += 2;
+        if (sortDone === sortItems.length) completed.add(5);
+        save();
+      }
+      function resetSort() {
+        sortDone = 0;
+        document.getElementById("sortMsg").textContent = "";
+        setupSort();
+      }
+      function challengePick(el, ok) {
+        el.classList.add(ok ? "good" : "bad");
+        document.getElementById("challengeMsg").textContent = ok
+          ? "🏆 Correct! Use external devices only if they belong to you or come from a reliable source."
+          : "💡 Almost! The lesson warns about malware and viruses from untrusted external devices.";
+        if (ok) {
+          stars += 3;
+          completed.add(5);
+        }
+        save();
+      }
+      function think(el, ok) {
+        document
+          .querySelectorAll("#thinkChoices .choice")
+          .forEach((x) => x.classList.remove("good", "bad"));
+        el.classList.add(ok ? "good" : "bad");
+        document.getElementById("thinkMsg").textContent = ok
+          ? "⭐ Great reasoning! Suspicious links can create risks such as malware or unauthorized access."
+          : "💡 Think about why the lesson tells us to avoid unusual links.";
+        if (ok) {
+          stars += 3;
+          completed.add(6);
+        }
+        save();
+      }
+      function masterToggle(el) {
+        el.classList.toggle("selected");
+      }
+      function checkMaster() {
+        const items = [...document.querySelectorAll("#masterChoices .choice")];
+        const selected = items.filter((x) => x.classList.contains("selected"));
+        const correct = items.filter((x) => x.dataset.good === "true");
+        const ok =
+          selected.length === correct.length &&
+          selected.every((x) => x.dataset.good === "true");
+        const m = document.getElementById("masterMsg");
+        m.textContent = ok
+          ? "🏆 MASTERED! You selected the actions that match the lesson."
+          : "💡 Almost! Choose actions that protect the computer: updates and reliable external devices. Avoid suspicious attachments and unknown downloads.";
+        m.className = "feedback " + (ok ? "success" : "danger");
+        if (ok) {
+          stars += 8;
+          completed.add(9);
+          celebrate();
+        }
+        save();
+      }
+      function reflect(el, text) {
+        document
+          .querySelectorAll(".reflection button")
+          .forEach((x) => x.classList.remove("selected"));
+        el.classList.add("selected");
+        document.getElementById("reflectMsg").textContent =
+          "🌈 " + text + " — thank you for thinking about your learning!";
+        stars += 1;
+        completed.add(10);
+        save();
+      }
+      function finish() {
+        if (current !== 11) return;
+        const count = Math.min(5, Math.floor(stars / 8));
+        document.getElementById("finalStars").textContent =
+          "★".repeat(count) + "☆".repeat(5 - count);
+        document.getElementById("finalStats").textContent =
+          `⭐ Stars earned: ${stars}  •  🎯 Stages visited: ${completed.size}/12`;
+      }
+      function celebrate() {
+        const c = document.getElementById("confetti");
+        c.innerHTML = "";
+        for (let i = 0; i < 55; i++) {
+          const p = document.createElement("span");
+          p.className = "piece";
+          p.style.left = Math.random() * 100 + "%";
+          p.style.background = [
+            "#1267c9",
+            "#f7b928",
+            "#16864a",
+            "#7656c8",
+            "#c33d45",
+          ][i % 5];
+          p.style.animationDelay = Math.random() * 0.5 + "s";
+          c.appendChild(p);
+        }
+        setTimeout(() => (c.innerHTML = ""), 3000);
+        if (soundOn) beep(1000, 0.12);
+      }
+      function resetAll() {
+        localStorage.removeItem("teacherEdL9");
+        location.reload();
+      }
+      setupQuizzes();
+      setupSort();
+      load();
+    </script>
+  </body>
+</html>

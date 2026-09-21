@@ -1,0 +1,78 @@
+{
+  "title": "Sense Organs Working Together",
+  "grade": "Grade 1",
+  "subject": "Science",
+  "topic": "Sense Organs Working Together",
+  "lessonFocus": "The eyes, ears, nose, tongue, and skin work together to help us do tasks and stay safe.",
+  "review": [
+    {"icon":"👀","organ":"Eyes","job":"help us see colors, shapes, people, food, and things around us."},
+    {"icon":"👂","organ":"Ears","job":"help us hear sounds and warning signals."},
+    {"icon":"👃","organ":"Nose","job":"helps us smell things, enjoy food, and notice warning smells such as smoke."},
+    {"icon":"👅","organ":"Tongue","job":"helps us taste food."},
+    {"icon":"🖐️","organ":"Skin","job":"helps us feel by touch, such as the feathers of a bird or the surface of an object."}
+  ],
+  "sections": [
+    {
+      "id":"guided",
+      "title":"Guided Practice",
+      "subtitle":"Let’s warm up! Choose the sense organ or organs that fit the situation.",
+      "questions":[
+        {"id":1,"type":"mc","q":"When you eat food, which sense organs work together?","choices":["Eyes, nose, and tongue","Ears and skin","Eyes and ears"],"answer":0,"explain":"Your eyes see the food, your nose smells it, and your tongue tastes it."},
+        {"id":2,"type":"mc","q":"When reading a book, which sense organ do you mainly use?","choices":["Eyes","Nose","Tongue"],"answer":0,"explain":"Your eyes help you see the words and pictures."},
+        {"id":3,"type":"mc","q":"When you listen to a story, which sense organ helps you hear it?","choices":["Ears","Skin","Tongue"],"answer":0,"explain":"Your ears help you hear sounds."},
+        {"id":4,"type":"mc","q":"When you touch a bird’s feathers, which sense organ helps you feel them?","choices":["Skin","Nose","Ears"],"answer":0,"explain":"Your skin helps you feel things by touch."},
+        {"id":5,"type":"mc","q":"When you smell smoke, which sense organ gives you a warning?","choices":["Nose","Tongue","Skin"],"answer":0,"explain":"Your nose helps you smell smoke and notice a possible danger."}
+      ]
+    },
+    {
+      "id":"practice",
+      "title":"Practice",
+      "subtitle":"Think about how different sense organs work together.",
+      "questions":[
+        {"id":6,"type":"mc","q":"When crossing a street, which two sense organs work together to help keep you safe?","choices":["Eyes and ears","Nose and tongue","Skin and tongue"],"answer":0,"explain":"Your eyes help you see vehicles and signals, while your ears help you hear vehicle sounds."},
+        {"id":7,"type":"mc","q":"When buying a piece of cloth, which two sense organs can help you?","choices":["Eyes and skin","Nose and ears","Tongue and nose"],"answer":0,"explain":"Your eyes can see the cloth, and your skin can feel its texture."},
+        {"id":8,"type":"mc","q":"When playing a guitar, which three sense organs from the lesson can be used?","choices":["Eyes, ears, and skin","Nose, tongue, and ears","Tongue, nose, and skin"],"answer":0,"explain":"You can see the guitar, hear the music, and feel the instrument with your skin."},
+        {"id":9,"type":"mc","q":"When cooking, which sense organs are used to smell and taste the food?","choices":["Nose and tongue","Eyes and ears","Skin and ears"],"answer":0,"explain":"The nose smells the food and the tongue tastes it."},
+        {"id":10,"type":"mc","q":"When receiving a gift from a friend, which sense organ helps you hear what your friend says?","choices":["Ears","Eyes","Tongue"],"answer":0,"explain":"Your ears help you listen to sounds."}
+      ]
+    },
+    {
+      "id":"matching",
+      "title":"Match It",
+      "subtitle":"Match each situation with the sense organ that helps most.",
+      "pairs":[
+        {"id":11,"left":"See the color of food","answer":"Eyes"},
+        {"id":12,"left":"Hear a bus coming","answer":"Ears"},
+        {"id":13,"left":"Smell smoke","answer":"Nose"},
+        {"id":14,"left":"Taste food","answer":"Tongue"},
+        {"id":15,"left":"Feel feathers","answer":"Skin"}
+      ],
+      "choices":["Eyes","Ears","Nose","Tongue","Skin"]
+    },
+    {
+      "id":"application",
+      "title":"Real-Life Science",
+      "subtitle":"Choose the answer that best explains how sense organs work together.",
+      "questions":[
+        {"id":16,"type":"mc","q":"Ana is eating a meal. Her eyes see the food, her nose smells it, and her tongue tastes it. What does this show?","choices":["Sense organs can work together.","Only the tongue is important.","Sense organs cannot work together."],"answer":0,"explain":"Different sense organs can work together during the same activity."},
+        {"id":17,"type":"mc","q":"Ben hears a loud vehicle while crossing the street. Why are his ears useful?","choices":["They help him notice sounds that can warn him.","They help him taste the vehicle.","They help him see colors."],"answer":0,"explain":"Hearing sounds can give us warning signals."},
+        {"id":18,"type":"mc","q":"Mia smells smoke and looks around to find where it is coming from. Which sense organs are working together?","choices":["Nose and eyes","Tongue and skin","Ears and tongue"],"answer":0,"explain":"The nose detects the smell and the eyes help look for its source."},
+        {"id":19,"type":"mc","q":"A child touches a rough fruit and looks at its shape. Which sense organs are being used?","choices":["Skin and eyes","Nose and tongue","Ears and tongue"],"answer":0,"explain":"Skin helps feel the surface and eyes help see the shape."},
+        {"id":20,"type":"mc","q":"Why are sense organs important?","choices":["They help us learn about our surroundings and do tasks safely.","They are only used when eating.","They are used only for playing."],"answer":0,"explain":"Sense organs help us see, hear, smell, taste, feel, and respond to what is around us."}
+      ]
+    },
+    {
+      "id":"challenge",
+      "title":"Thinking Challenge",
+      "subtitle":"Choose the best answer. Think carefully!",
+      "questions":[
+        {"id":21,"type":"mc","q":"Which activity uses eyes, nose, and tongue together?","choices":["Eating","Reading","Listening to music"],"answer":0,"explain":"During eating, the eyes see the food, the nose smells it, and the tongue tastes it."},
+        {"id":22,"type":"mc","q":"Which activity uses eyes and ears together to help keep you safe?","choices":["Crossing the street","Tasting a snack","Touching cloth"],"answer":0,"explain":"When crossing, you can see vehicles and signals and hear vehicle sounds."},
+        {"id":23,"type":"mc","q":"Which pair can help you identify something when your eyes are closed?","choices":["Nose and skin","Eyes and ears","Tongue and eyes"],"answer":0,"explain":"The nose can smell things and the skin can feel objects."},
+        {"id":24,"type":"mc","q":"A child hears music and moves to the rhythm. Which sense organ helps hear the music?","choices":["Ears","Nose","Tongue"],"answer":0,"explain":"Ears receive sounds such as music."},
+        {"id":25,"type":"mc","q":"Which statement is true?","choices":["Different sense organs can work together during one activity.","Only one sense organ can work at a time.","Sense organs are not important for safety."],"answer":0,"explain":"The lesson shows many activities in which two or more sense organs work together."}
+      ]
+    }
+  ],
+  "reflection":["😊 I understand!","😐 I need more practice.","😟 I need help."]
+}

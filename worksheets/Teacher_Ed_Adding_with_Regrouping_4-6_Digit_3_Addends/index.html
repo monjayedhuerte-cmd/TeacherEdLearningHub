@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3b82">
+  <title>Adding with Regrouping | Teacher Ed Worksheet</title>
+  <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed logo">
+      <div>
+        <div class="brand-name">Teacher Ed</div>
+        <div class="brand-sub">Learning Worksheet</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn secondary" onclick="window.print()">🖨️ Print</button>
+      <button class="btn" onclick="resetWorksheet()">↻ Reset</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero card">
+      <div>
+        <span class="badge">GRADE 2 • MATHEMATICS</span>
+        <h1>Adding with Regrouping</h1>
+        <p>Practice adding 4–6 digit numbers with 3 addends and regrouping.</p>
+      </div>
+      <img class="hero-logo" src="assets/teacher-ed-logo.png" alt="Teacher Ed">
+    </section>
+
+    <section class="student-info card">
+      <h2>👩‍🎓 Student Information</h2>
+      <div class="info-grid">
+        <label>Name <input id="studentName" type="text" placeholder="Write your name"></label>
+        <label>Grade & Section <input type="text" placeholder="Grade 2 - ______"></label>
+        <label>Date <input id="dateField" type="date"></label>
+        <div class="score-box">Score <strong id="scoreDisplay">0 / 20</strong></div>
+      </div>
+    </section>
+
+    <section class="card review">
+      <h2>📖 Quick Review</h2>
+      <div class="review-grid">
+        <div>
+          <h3>Remember!</h3>
+          <p>When the ones add up to <strong>10 or more</strong>, regroup 10 ones as <strong>1 ten</strong>.</p>
+        </div>
+        <div class="example">
+          <h3>Example</h3>
+          <div class="math-stack">
+            <div>  1,248</div>
+            <div>  2,376</div>
+            <div>+ 1,589</div>
+            <div class="line">──────</div>
+            <div>  5,213</div>
+          </div>
+          <p class="small">Add the ones first. When a place value reaches 10 or more, regroup to the next place.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="card guided">
+      <h2>✏️ Guided Practice</h2>
+      <p>Try these first. Think about the ones place before adding the tens.</p>
+      <div class="guided-problem">
+        <div class="math-stack big">
+          <div>  2,748</div><div>  1,659</div><div>+ 3,876</div><div class="line">────────</div>
+        </div>
+        <div class="guided-steps">
+          <label>Ones: 8 + 9 + 6 = <input id="g1" maxlength="2" inputmode="numeric"></label>
+          <label>Write the ones digit: <input id="g2" maxlength="1" inputmode="numeric"></label>
+          <label>Regrouped tens: <input id="g3" maxlength="1" inputmode="numeric"></label>
+          <label>Final answer: <input id="g4" maxlength="5" inputmode="numeric"></label>
+          <button class="btn" onclick="checkGuided()">Check Guided Practice</button>
+          <div id="guidedFeedback" class="feedback"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <span class="level easy">🟢 EASY</span>
+          <h2>Practice A — Add</h2>
+        </div>
+        <span class="progress-label">5 questions</span>
+      </div>
+      <div class="questions" id="practiceA"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <span class="level medium">🟡 PRACTICE</span>
+          <h2>Practice B — Regroup and Add</h2>
+        </div>
+        <span class="progress-label">5 questions</span>
+      </div>
+      <div class="questions" id="practiceB"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <span class="level challenge">🔴 CHALLENGE</span>
+          <h2>Practice C — Word Problems</h2>
+        </div>
+        <span class="progress-label">5 questions</span>
+      </div>
+      <div class="questions word-questions" id="practiceC"></div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <div>
+          <span class="level mastery">🏆 MASTERY CHECK</span>
+          <h2>Show What You Know</h2>
+        </div>
+        <span class="progress-label">5 questions</span>
+      </div>
+      <div class="questions" id="mastery"></div>
+    </section>
+
+    <section class="card reflection">
+      <h2>🌈 Reflection</h2>
+      <p>Choose the statement that best describes you today.</p>
+      <div class="reflection-options">
+        <label><input type="radio" name="reflection" value="understand"> 😊 I understand adding with regrouping!</label>
+        <label><input type="radio" name="reflection" value="practice"> 😐 I need more practice.</label>
+        <label><input type="radio" name="reflection" value="help"> 😟 I need help from my teacher.</label>
+      </div>
+    </section>
+
+    <section class="card actions">
+      <button class="btn primary large" onclick="checkWorksheet()">✅ Check My Worksheet</button>
+      <button class="btn secondary large" onclick="window.print()">🖨️ Print Worksheet</button>
+      <button class="btn outline large" onclick="showAnswerKey()">🔑 Teacher Answer Key</button>
+      <div id="result" class="result hidden"></div>
+    </section>
+
+    <section id="answerKey" class="card answer-key hidden">
+      <h2>🔑 Teacher Answer Key</h2>
+      <div id="answers"></div>
+      <button class="btn" onclick="document.getElementById('answerKey').classList.add('hidden')">Hide Answer Key</button>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/teacher-ed-logo.png" alt="Teacher Ed logo">
+    <div><strong>Teacher Ed Learning Hub</strong><br><span>Teach. Lead. Inspire.</span></div>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>

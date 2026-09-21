@@ -848,5 +848,35 @@
     "date": "2026-09-30",
     "featured": true,
     "icon": "map"
+  },
+  {
+    "title": "Computer 3 | Lesson 9: Protecting Your Computer",
+    "subject": "Computer", 
+    "grade": "Grade 2",
+    "description": " Become a Computer Safety Explorer! Discover why computer security matters, spot unsafe choices, and learn ways to care for your computer.",
+    "file": "lessons/computer/grade-2/Computer2_Lesson9/index.html",
+    "date": "2026-09-30",
+    "featured": true,
+    "icon": "monitor"
+  },
+  {
+    "title": "Math 2 | Worksheet in Adding with Regrouping",
+    "subject": "Mathematics", 
+    "grade": "Grade 2",
+    "description": " Practice adding 4–6 digit numbers with 3 addends and regrouping.",
+    "file": "worksheets/Teacher_Ed_Adding_with_Regrouping_4-6_Digit_3_Addends/index.html",
+    "date": "2026-09-30",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
+    "title": "Science 1 | Worksheet in Sense Organ Working Together",
+    "subject": "Science", 
+    "grade": "Grade 2",
+    "description": " Explore how your eyes, ears, nose, tongue, and skin help you do everyday activities and stay safe.",
+    "file": "worksheets/Sense_Organs_Working_Together_Worksheet/index.html",
+    "date": "2026-09-30",
+    "featured": true,
+    "icon": "user"
   }
 ]

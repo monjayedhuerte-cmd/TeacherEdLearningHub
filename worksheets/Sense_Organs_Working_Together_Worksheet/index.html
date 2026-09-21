@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Science 1 Worksheet | Sense Organs Working Together</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar no-print">
+  <div class="brand"><img src="assets/logo.png" alt="Teacher Ed Learning Hub logo"><div><strong>TEACHER ED</strong><span>Learning Hub</span></div></div>
+  <div class="tools"><button id="printBtn">🖨️ Print Worksheet</button><button id="teacherBtn">🔐 Teacher Mode</button></div>
+</header>
+<main>
+<section class="hero">
+  <div class="hero-copy"><span class="pill">SCIENCE 1 • WORKSHEET</span><h1>Sense Organs<br><em>Working Together</em></h1><p>Explore how your eyes, ears, nose, tongue, and skin help you do everyday activities and stay safe.</p></div>
+  <div class="hero-icon" aria-hidden="true">👀 👂 👃 👅 🖐️</div>
+</section>
+<section class="student-card card">
+  <div><label>Name</label><input id="studentName" type="text" placeholder="Write your name"></div>
+  <div><label>Grade & Section</label><input id="gradeSection" type="text" placeholder="Grade 1 - ______"></div>
+  <div><label>Date</label><input id="date" type="date"></div>
+  <div><label>Score</label><input id="scoreBox" type="text" readonly placeholder="— / 25"></div>
+</section>
+<section class="review card">
+  <div class="section-title"><span>📖</span><div><h2>Quick Review</h2><p>Remember what each sense organ helps you do.</p></div></div>
+  <div class="review-grid" id="reviewGrid"></div>
+</section>
+<div id="worksheet"></div>
+<section class="reflection card">
+ <div class="section-title"><span>🌈</span><div><h2>My Reflection</h2><p>How do you feel about the lesson?</p></div></div>
+ <div class="reflect-options" id="reflection"></div>
+ <label class="print-note">One thing I learned: <span class="line"></span></label>
+</section>
+<section id="completion" class="completion card hidden"></section>
+</main>
+<footer class="footer"><img src="assets/logo.png" alt="Teacher Ed logo"><div><strong>Teacher Ed Learning Hub</strong><span>Teach • Lead • Inspire</span></div><small>Science 1 • Sense Organs Working Together</small></footer>
+<div id="toast" class="toast" role="status"></div>
+<div id="teacherPanel" class="modal hidden no-print"><div class="modal-card"><button class="close" id="closeTeacher">×</button><h2>🔐 Teacher Mode</h2><p>Teacher tools are available here without exposing answers during normal worksheet use.</p><div class="teacher-actions"><button id="showAnswers">🔑 Show Answer Key</button><button id="hideAnswers">🙈 Hide Answer Key</button><button id="resetBtn">♻️ Reset Worksheet</button><button id="printKey">🖨️ Print Answer Key</button></div><div id="answerKey" class="answer-key hidden"></div></div></div>
+<script src="script.js"></script>
+</body>
+</html>
