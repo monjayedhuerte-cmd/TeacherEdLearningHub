@@ -1,0 +1,75 @@
+{
+  "grade":"Grade 7","subject":"Computer / ICT","title":"Types of Algorithms","quarter":"Lesson 2 — Discover","teacher":"Teacher Ed","brand":"EDJAY","tagline":"Teach. Lead. Inspire.","sourceNote":"Based on the provided lesson materials.",
+  "algorithms":[
+    {"name":"Brute Force","meaning":"A simple, direct approach that tries all possible solutions systematically until a solution is found.","example":"Searching every possible combination for a solution, even when many choices are unnecessary.","when":"The problem is small enough that trying every possibility is practical, or when correctness is more important than speed."},
+    {"name":"Recursive","meaning":"A problem-solving approach where a solution is expressed in terms of smaller instances of the same problem until a small base case is reached.","example":"The factorial function: n! = n × (n−1)! with a base case such as 1! = 1.","when":"A problem naturally repeats the same structure on smaller inputs."},
+    {"name":"Divide and Conquer","meaning":"Divides a problem into smaller sub-problems, solves each part, and combines the results to solve the whole problem.","example":"Merge Sort divides a list into smaller lists, sorts them, then combines the sorted parts.","when":"A large problem can be separated into smaller, manageable sub-problems."},
+    {"name":"Dynamic Programming","meaning":"Solves overlapping sub-problems while remembering previous results so the same calculations do not have to be repeated.","example":"A recursive calculation may repeatedly solve the same smaller problem; dynamic programming stores that result for later use.","when":"Sub-problems overlap and repeated calculations would waste time."},
+    {"name":"Greedy","meaning":"Builds a solution step by step by choosing what appears to be the best option at the current moment without considering all future choices.","example":"At each step, choose the locally best available option in a problem where such choices can lead to a useful solution.","when":"Local choices can produce an appropriate or optimal solution for the problem."},
+    {"name":"Randomized","meaning":"Uses random numbers or random choices to decide the next step or procedure.","example":"Randomized algorithms can choose a random pivot or random candidate to change which path is taken.","when":"Random choices can reduce predictable patterns or increase the chance of efficient behavior."},
+    {"name":"Backtracking","meaning":"Searches possible choices and abandons a partial solution when it cannot lead to a feasible solution, then tries another choice.","example":"A maze solver follows a path and goes back when it reaches a dead end.","when":"A problem requires exploring combinations or paths while rejecting choices that cannot work."}
+  ],
+  "keyTerms":[
+    {"term":"Algorithm","definition":"A sequence of steps used to solve a problem or perform a task."},
+    {"term":"Best Case","definition":"The input or situation in which an algorithm takes minimum time."},
+    {"term":"Worst Case","definition":"The input or situation in which an algorithm takes maximum or long time."},
+    {"term":"Average Case","definition":"An analysis based on typical or random inputs and their computation time."},
+    {"term":"A Priori Analysis","definition":"Theoretical analysis performed before implementation, using assumptions about the computing environment."},
+    {"term":"Posterior Analysis","definition":"Empirical analysis after implementation, using observed statistics such as time and space."},
+    {"term":"Optimal Substructure","definition":"An optimal solution to a problem contains optimal solutions to its sub-problems."},
+    {"term":"Overlapping Sub-problems","definition":"A recursive solution contains a small number of distinct sub-problems that are solved repeatedly."},
+    {"term":"Feasible Solution","definition":"A solution that satisfies the requirements or constraints of a problem."}
+  ],
+  "guided":[
+    {"q":"The algorithm tries every possible combination until it finds a solution.","choices":["Brute Force","Greedy","Randomized"],"answer":0,"explanation":"Brute force systematically explores possible solutions."},
+    {"q":"The same type of problem is solved again with a smaller input until a base case is reached.","choices":["Recursive","Backtracking","Greedy"],"answer":0,"explanation":"Recursion solves smaller versions of the same problem."},
+    {"q":"A large problem is divided into smaller parts, solved, and then combined.","choices":["Divide and Conquer","Randomized","Brute Force"],"answer":0,"explanation":"Divide and conquer follows divide → solve → combine."},
+    {"q":"Previous answers are stored so repeated calculations can be avoided.","choices":["Dynamic Programming","Greedy","Backtracking"],"answer":0,"explanation":"Dynamic programming stores useful results from overlapping sub-problems."},
+    {"q":"The algorithm chooses what seems best right now at each step.","choices":["Greedy","Recursive","Brute Force"],"answer":0,"explanation":"Greedy methods make locally best choices step by step."},
+    {"q":"The next choice is influenced by a random number.","choices":["Randomized","Dynamic Programming","Divide and Conquer"],"answer":0,"explanation":"Randomized algorithms use random choices in their procedure."},
+    {"q":"A search follows a choice, but goes back when that choice cannot lead to a feasible solution.","choices":["Backtracking","Greedy","Brute Force"],"answer":0,"explanation":"Backtracking explores choices and removes failed paths."}
+  ],
+  "analysisCases":[
+    {"q":"The input makes the algorithm finish in the minimum time.","choices":["Best case","Worst case","Average case"],"answer":0,"explanation":"Best case represents minimum time."},
+    {"q":"The input makes the algorithm take the maximum amount of time.","choices":["Best case","Worst case","Average case"],"answer":1,"explanation":"Worst case represents maximum or long time."},
+    {"q":"Typical or random inputs are considered to estimate usual computation time.","choices":["Best case","Worst case","Average case"],"answer":2,"explanation":"Average-case analysis considers typical/random inputs."},
+    {"q":"You evaluate efficiency theoretically before the algorithm is implemented.","choices":["A priori analysis","Posterior analysis","Average case"],"answer":0,"explanation":"A priori analysis is theoretical and performed before implementation."},
+    {"q":"You run the implemented algorithm and collect time and space statistics.","choices":["A priori analysis","Posterior analysis","Best case"],"answer":1,"explanation":"Posterior analysis is empirical and performed after implementation."}
+  ],
+  "scenarios":[
+    {"q":"A maze program follows a path, then returns to the last decision point when it reaches a dead end.","choices":["Backtracking","Greedy","Randomized"],"answer":0,"explanation":"Returning from a failed path is the key idea of backtracking."},
+    {"q":"A problem can be split into smaller independent pieces and the results can later be combined.","choices":["Divide and Conquer","Randomized","Brute Force"],"answer":0,"explanation":"Divide and conquer is built around splitting and combining."},
+    {"q":"A problem has repeated sub-problems, so the program stores answers to reuse them.","choices":["Dynamic Programming","Greedy","Recursive only"],"answer":0,"explanation":"Dynamic programming avoids repeated work by remembering previous results."}
+  ],
+  "think":[
+    {"q":"Which clue most strongly suggests dynamic programming?","choices":["Repeated sub-problems and stored results","A random next choice","Trying every possible answer"],"answer":0,"explanation":"Dynamic programming is especially useful when sub-problems overlap and results can be reused."},
+    {"q":"Which clue most strongly suggests backtracking?","choices":["Choose a local best option","Undo a choice when it cannot lead to a feasible solution","Use a random number"],"answer":1,"explanation":"Backtracking explores a choice and reverses it when that path fails."},
+    {"q":"Which approach is most direct when the search space is small and every possibility can be checked?","choices":["Brute Force","Dynamic Programming","Greedy"],"answer":0,"explanation":"Brute force systematically checks possibilities and is practical for small enough problems."},
+    {"q":"Which analysis asks what happens before implementation using theoretical measures?","choices":["A priori","Posterior","Average case only"],"answer":0,"explanation":"A priori analysis is theoretical and occurs before implementation."}
+  ],
+  "apply":[
+    {"q":"Your team wants to sort data by splitting it into smaller lists, sorting them, then merging them.","choices":["Divide and Conquer","Greedy","Randomized"],"answer":0,"explanation":"That is the divide → solve → combine pattern."},
+    {"q":"A search program can save the result of a smaller calculation and reuse it later.","choices":["Dynamic Programming","Brute Force","Randomized"],"answer":0,"explanation":"Reusing stored sub-problem results is a core dynamic-programming idea."},
+    {"q":"A decision process repeatedly chooses the best-looking option available at the current step.","choices":["Greedy","Backtracking","Recursive"],"answer":0,"explanation":"Greedy algorithms make local choices at each step."}
+  ],
+  "quiz":[
+    {"q":"Which algorithm systematically tries all possible solutions?","choices":["Brute Force","Greedy","Randomized","Dynamic Programming"],"answer":0,"explanation":"Brute force checks possible solutions systematically."},
+    {"q":"Which approach solves smaller versions of the same problem until a base case is reached?","choices":["Recursive","Greedy","Randomized","Backtracking"],"answer":0,"explanation":"Recursion uses smaller instances of the same problem."},
+    {"q":"Which algorithm divides a problem, solves the parts, and combines the results?","choices":["Dynamic Programming","Divide and Conquer","Brute Force","Greedy"],"answer":1,"explanation":"Divide and conquer follows the divide, solve, and combine pattern."},
+    {"q":"Which approach stores previous results to avoid repeating calculations?","choices":["Greedy","Dynamic Programming","Randomized","Brute Force"],"answer":1,"explanation":"Dynamic programming remembers useful results from sub-problems."},
+    {"q":"Which strategy makes a locally best choice at each step?","choices":["Backtracking","Greedy","Recursive","Divide and Conquer"],"answer":1,"explanation":"Greedy methods choose what appears best at the current step."},
+    {"q":"Which type uses random numbers or random choices in its procedure?","choices":["Randomized","Brute Force","Dynamic Programming","Recursive"],"answer":0,"explanation":"Randomized algorithms use randomness to influence choices."},
+    {"q":"Which strategy goes back after discovering that a choice cannot lead to a feasible solution?","choices":["Backtracking","Greedy","Randomized","Divide and Conquer"],"answer":0,"explanation":"Backtracking abandons failed partial solutions and tries another path."},
+    {"q":"Which case describes the minimum time taken by an algorithm?","choices":["Best case","Worst case","Average case","Posterior"],"answer":0,"explanation":"Best case is the minimum-time situation."},
+    {"q":"Which analysis is theoretical and performed before implementation?","choices":["Posterior analysis","A priori analysis","Average-case analysis","Backtracking"],"answer":1,"explanation":"A priori analysis evaluates an algorithm theoretically before implementation."},
+    {"q":"Which statement is an advantage of algorithms noted in the lesson materials?","choices":["They are easy to understand without programming knowledge.","They always use the fewest steps.","They never require processing time.","They can solve every possible problem."],"answer":0,"explanation":"The source notes that algorithms are easy to understand without programming knowledge. It also notes limitations such as processing time and difficulty handling some structures."}
+  ],
+  "master":[
+    {"q":"A school app has a small set of possible PIN combinations and can safely check each one. Which strategy is the most direct starting point?","choices":["Brute Force","Greedy","Randomized"],"answer":0,"explanation":"When the search space is small enough, systematic checking is a direct brute-force approach."},
+    {"q":"A route problem is split into smaller parts, each part is solved, and the results are combined. Which strategy is this?","choices":["Divide and Conquer","Backtracking","Randomized"],"answer":0,"explanation":"Divide and conquer divides, solves sub-problems, and combines results."},
+    {"q":"A calculation repeatedly encounters the same smaller sub-problems, so answers are stored for reuse. Which strategy?","choices":["Dynamic Programming","Greedy","Brute Force"],"answer":0,"explanation":"Storing and reusing repeated sub-problem results is dynamic programming."},
+    {"q":"A maze solver tries a path and returns to the previous decision when the path becomes impossible. Which strategy?","choices":["Backtracking","Greedy","Randomized"],"answer":0,"explanation":"Backtracking explores paths and reverses failed choices."},
+    {"q":"You want a theoretical efficiency estimate before the program is implemented. Which analysis?","choices":["A priori analysis","Posterior analysis","Average case"],"answer":0,"explanation":"A priori analysis is theoretical and done before implementation."},
+    {"q":"After implementation, you run the algorithm and record actual time and space behavior. Which analysis?","choices":["Posterior analysis","A priori analysis","Best case only"],"answer":0,"explanation":"Posterior analysis uses observed statistics after implementation."}
+  ]
+}

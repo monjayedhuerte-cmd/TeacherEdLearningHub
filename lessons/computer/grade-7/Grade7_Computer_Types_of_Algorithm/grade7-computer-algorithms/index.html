@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2a5b">
+<meta name="description" content="EDJAY Grade 7 Computer Interactive Lesson — Types of Algorithms and Algorithm Analysis.">
+<title>Grade 7 Computer | Types of Algorithms — Teacher Ed</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="EDJAY home">
+    <img src="assets/logo.png" alt="Teacher Ed Learning Hub logo">
+    <span><strong>EDJAY</strong><small>Teach. Lead. Inspire.</small></span>
+  </a>
+  <div class="header-title"><span>GRADE 7 • COMPUTER / ICT</span><h1>Types of Algorithms</h1></div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+  <nav id="mainNav" aria-label="Lesson navigation">
+    <button data-go="home">🏠 Home</button>
+    <button data-go="engage">🎮 Engage</button>
+    <button data-go="learn">🧠 Learn</button>
+    <button data-go="practice">🎯 Practice</button>
+    <button data-go="check">✅ Check</button>
+    <button data-go="master">🏆 Mastery</button>
+  </nav>
+</header>
+
+<div class="progress-wrap" aria-label="Lesson progress">
+  <div class="progress-top"><span id="stageLabel">START</span><strong id="progressText">0%</strong></div>
+  <div class="progress-track"><div id="progressBar"></div></div>
+</div>
+
+<main id="app" tabindex="-1">
+<section id="home" class="screen active">
+  <div class="hero glass">
+    <div class="hero-copy">
+      <span class="eyebrow">LESSON 2 • DISCOVER</span>
+      <h2>How many ways can a computer solve a problem?</h2>
+      <p>Algorithms can use different strategies. In this lesson, you will discover <strong>Brute Force, Recursive, Divide and Conquer, Dynamic Programming, Greedy, Randomized,</strong> and <strong>Backtracking</strong> algorithms—and learn how algorithm analysis helps us compare solutions.</p>
+      <div class="hero-actions"><button class="primary" data-start="engage">Start the Lesson 🚀</button><button class="secondary" data-go="learn">Preview Concepts</button></div>
+      <div class="meta-row"><span>👨‍🏫 Teacher Ed</span><span>💻 Computer / ICT</span><span>🎓 Grade 7</span></div>
+    </div>
+    <div class="hero-visual" aria-label="Algorithm strategy map">
+      <div class="orbit center">ALGORITHM</div>
+      <div class="orbit o1">BRUTE<br>FORCE</div><div class="orbit o2">GREEDY</div><div class="orbit o3">DYNAMIC<br>PROGRAMMING</div><div class="orbit o4">BACKTRACKING</div><div class="orbit o5">RANDOMIZED</div>
+    </div>
+  </div>
+  <div class="grid three feature-grid">
+    <article class="card"><span class="icon">🔎</span><h3>Discover</h3><p>See how different algorithm strategies approach problems.</p></article>
+    <article class="card"><span class="icon">🎮</span><h3>Practice</h3><p>Match, classify, sequence, and solve realistic scenarios.</p></article>
+    <article class="card"><span class="icon">🏆</span><h3>Master</h3><p>Apply what you learned as an algorithm analyst.</p></article>
+  </div>
+</section>
+
+<section id="engage" class="screen">
+  <div class="section-head"><span class="eyebrow">01 • ENGAGE</span><h2>Choose Your Strategy</h2><p>You have a problem: <strong>find a target item in a collection.</strong> Which approach would you try first?</p></div>
+  <div class="scenario glass">
+    <div class="scenario-icon">🧩</div><div><h3>Quick Challenge</h3><p>You do not know which item contains the answer. You could check possibilities one by one, or use a strategy that reduces the search.</p></div>
+  </div>
+  <div class="choice-grid" id="engageChoices">
+    <button data-correct="true"><b>🔍 Check possibilities systematically</b><span>Try a direct, organized method.</span></button>
+    <button data-correct="false"><b>🎲 Pick without thinking</b><span>Choose randomly every time.</span></button>
+    <button data-correct="false"><b>🛑 Stop immediately</b><span>Do not analyze the problem.</span></button>
+  </div>
+  <div id="engageFeedback" class="feedback" aria-live="polite"></div>
+  <div class="nav-row"><button class="secondary" data-go="home">← Home</button><button class="primary next-btn hidden" id="engageNext">Continue to Connect →</button></div>
+</section>
+
+<section id="connect" class="screen">
+  <div class="section-head"><span class="eyebrow">02 • CONNECT</span><h2>Algorithms Are Strategies</h2><p>You already use algorithms—even outside a computer.</p></div>
+  <div class="grid three">
+    <article class="card scenario-card"><div>🍳</div><h3>Cooking</h3><p>Follow steps, check conditions, repeat actions, and finish with a result.</p></article>
+    <article class="card scenario-card"><div>🚌</div><h3>Travel</h3><p>Choose a route based on distance, time, traffic, or cost.</p></article>
+    <article class="card scenario-card"><div>🎮</div><h3>Gaming</h3><p>A game can search, make decisions, repeat actions, and change strategy.</p></article>
+  </div>
+  <div class="prompt-card glass"><h3>💭 Think About It</h3><p>When you solve a difficult problem, do you always use the same strategy?</p><div class="reflection-options" id="connectChoices"><button data-correct="true">No. I may change my strategy.</button><button data-correct="false">Yes. Every problem needs exactly the same strategy.</button></div><div id="connectFeedback" class="feedback"></div></div>
+  <div class="nav-row"><button class="secondary" data-go="engage">← Previous</button><button class="primary" data-go="explore">Next →</button></div>
+</section>
+
+<section id="explore" class="screen">
+  <div class="section-head"><span class="eyebrow">03 • EXPLORE</span><h2>Explore the 7 Algorithm Types</h2><p>Tap a card to reveal its core idea and a simple example.</p></div>
+  <div class="algorithm-grid" id="algorithmGrid"></div>
+  <div class="source-note">📚 These concepts are organized from the uploaded lesson photos. Wording has been simplified for Grade 7 learners while preserving the source meaning.</div>
+  <div class="nav-row"><button class="secondary" data-go="connect">← Previous</button><button class="primary" data-go="learn">Next →</button></div>
+</section>
+
+<section id="learn" class="screen">
+  <div class="section-head"><span class="eyebrow">04 • LEARN</span><h2>Understand the Core Concepts</h2><p>Use the pattern <strong>term → simple meaning → example → when it helps</strong>.</p></div>
+  <div class="lesson-tabs" id="lessonTabs"></div>
+  <article class="lesson-panel glass" id="lessonPanel"></article>
+  <div class="key-terms"><h3>💡 Key Terms</h3><div class="term-grid" id="termGrid"></div></div>
+  <div class="nav-row"><button class="secondary" data-go="explore">← Previous</button><button class="primary" data-go="seeit">Next →</button></div>
+</section>
+
+<section id="seeit" class="screen">
+  <div class="section-head"><span class="eyebrow">05 • SEE IT</span><h2>See the Strategies in Action</h2><p>Compare how the strategies approach the same general problem.</p></div>
+  <div class="compare-table glass">
+    <div class="compare-row compare-head"><span>Strategy</span><span>What it does</span><span>Easy picture</span></div>
+    <div class="compare-row"><b>Brute Force</b><span>Checks all possible solutions until a solution is found.</span><span>🔍🔍🔍</span></div>
+    <div class="compare-row"><b>Divide & Conquer</b><span>Divides a problem into smaller parts, solves them, then combines results.</span><span>🧩 → 🧩🧩</span></div>
+    <div class="compare-row"><b>Dynamic Programming</b><span>Stores useful previous results to avoid repeated calculations.</span><span>💾♻️</span></div>
+    <div class="compare-row"><b>Greedy</b><span>Chooses the locally best option at each step without looking at the future.</span><span>➡️⭐</span></div>
+    <div class="compare-row"><b>Randomized</b><span>Uses random choices to decide the next step or procedure.</span><span>🎲</span></div>
+    <div class="compare-row"><b>Backtracking</b><span>Searches possibilities and removes choices that cannot lead to a feasible solution.</span><span>↩️🌳</span></div>
+    <div class="compare-row"><b>Recursive</b><span>Breaks a problem into smaller versions of the same problem until a small enough case is reached.</span><span>🔁</span></div>
+  </div>
+  <div class="visual-demo glass"><h3>🧠 Recursive Idea</h3><div class="recursion-stack"><span>Problem</span><b>↓</b><span>Smaller problem</span><b>↓</b><span>Even smaller</span><b>↓</b><span>Base case ✓</span></div><p>The source uses factorial as a classic example: <strong>n! = n × (n−1) × (n−2) × … × 1</strong>.</p></div>
+  <div class="nav-row"><button class="secondary" data-go="learn">← Previous</button><button class="primary" data-go="guided">Next →</button></div>
+</section>
+
+<section id="guided" class="screen">
+  <div class="section-head"><span class="eyebrow">06 • GUIDED PRACTICE</span><h2>Match the Strategy</h2><p>Choose the algorithm type that best fits each description. You get feedback after every choice.</p></div>
+  <div id="guidedArea" class="practice-stack"></div>
+  <div class="nav-row"><button class="secondary" data-go="seeit">← Previous</button><button class="primary next-btn hidden" id="guidedNext">Continue to Practice →</button></div>
+</section>
+
+<section id="practice" class="screen">
+  <div class="section-head"><span class="eyebrow">07 • PRACTICE</span><h2>Algorithm Strategy Lab</h2><p>Complete all three mini-challenges.</p></div>
+  <div class="practice-tabs" id="practiceTabs"><button class="active" data-practice="sequence">🔢 Sequence</button><button data-practice="analysis">📊 Analysis</button><button data-practice="case">🧪 Scenario</button></div>
+  <div id="practiceArea"></div>
+  <div class="nav-row"><button class="secondary" data-go="guided">← Previous</button><button class="primary next-btn hidden" id="practiceNext">Continue to Think →</button></div>
+</section>
+
+<section id="think" class="screen">
+  <div class="section-head"><span class="eyebrow">08 • THINK</span><h2>Which Strategy Fits?</h2><p>There may be more than one possible algorithm. Think about the clue in each situation.</p></div>
+  <div id="thinkArea" class="grid two"></div>
+  <div class="nav-row"><button class="secondary" data-go="practice">← Previous</button><button class="primary next-btn hidden" id="thinkNext">Continue to Apply →</button></div>
+</section>
+
+<section id="apply" class="screen">
+  <div class="section-head"><span class="eyebrow">09 • APPLY</span><h2>Algorithm Analyst Mission</h2><p>You are helping a school app team choose strategies for real tasks.</p></div>
+  <div class="mission glass"><div class="mission-badge">🧑‍💻</div><div><h3>Mission Brief</h3><p>For each task, select the strategy you would investigate first. The goal is not to memorize a word—it is to connect the strategy to the problem structure.</p></div></div>
+  <div id="applyArea" class="practice-stack"></div>
+  <div class="nav-row"><button class="secondary" data-go="think">← Previous</button><button class="primary next-btn hidden" id="applyNext">Continue to Review →</button></div>
+</section>
+
+<section id="review" class="screen">
+  <div class="section-head"><span class="eyebrow">10 • REVIEW</span><h2>One-Page Review</h2><p>Use this map before taking the check.</p></div>
+  <div class="review-grid">
+    <article class="review-card"><h3>⚙️ Core Strategies</h3><p><b>Brute Force:</b> try possibilities.</p><p><b>Recursive:</b> solve smaller versions of the same problem.</p><p><b>Divide & Conquer:</b> divide, conquer, combine.</p><p><b>Dynamic Programming:</b> reuse stored results.</p></article>
+    <article class="review-card"><h3>🧠 More Strategies</h3><p><b>Greedy:</b> choose the best local option.</p><p><b>Randomized:</b> use random choices.</p><p><b>Backtracking:</b> explore and undo choices that fail.</p></article>
+    <article class="review-card"><h3>📊 Algorithm Analysis</h3><p><b>Best case:</b> minimum time.</p><p><b>Worst case:</b> maximum/long time.</p><p><b>Average case:</b> considers typical/random inputs.</p></article>
+    <article class="review-card"><h3>⏱️ A Priori vs Posterior</h3><p><b>A priori:</b> theoretical, before implementation.</p><p><b>Posterior:</b> empirical, after implementation using observed statistics such as time and space.</p></article>
+  </div>
+  <div class="nav-row"><button class="secondary" data-go="apply">← Previous</button><button class="primary" data-go="check">Take the Check →</button></div>
+</section>
+
+<section id="check" class="screen">
+  <div class="section-head"><span class="eyebrow">11 • CHECK</span><h2>Knowledge Check</h2><p>10 questions • Multiple choice, true/false, matching ideas, and scenarios.</p></div>
+  <form id="quizForm" class="quiz-form"></form>
+  <button class="primary wide" id="submitQuiz">Check My Answers ✅</button>
+  <div id="quizResult" aria-live="polite"></div>
+  <div class="nav-row"><button class="secondary" data-go="review">← Review</button><button class="primary" data-go="master">Go to Mastery →</button></div>
+</section>
+
+<section id="master" class="screen">
+  <div class="section-head"><span class="eyebrow">12 • MASTER</span><h2>Algorithm Analyst Challenge</h2><p>Apply the lesson to a problem instead of simply recalling definitions.</p></div>
+  <div class="master-banner glass"><span>🏆</span><div><h3>Final Challenge</h3><p>Choose the strategy or analysis idea that best fits each step of the case.</p></div></div>
+  <div id="masterArea" class="practice-stack"></div>
+  <div id="reflection" class="hidden reflection-box glass"><h3>🌈 Reflect</h3><p>Write a short answer for each question. Your answers stay in this browser.</p><textarea id="reflect1" placeholder="What algorithm type do you understand best, and why?"></textarea><textarea id="reflect2" placeholder="Which concept do you still need to practice?"></textarea><textarea id="reflect3" placeholder="Where could algorithm strategies help you in real life?"></textarea><button class="primary" id="finishMaster">Complete Reflection →</button></div>
+  <div id="celebrate" class="hidden celebration glass"><div class="confetti">🎉 ⭐ 🏆 💻 ⭐ 🎉</div><h2>Digital Problem-Solving Explorer!</h2><p>You completed the interactive lesson on Types of Algorithms.</p><div class="achievement"><span>EDJAY</span><b>Teach. Lead. Inspire.</b><small>Grade 7 Computer • Algorithms</small></div><button class="primary" data-go="home">Return Home ↺</button></div>
+  <div class="nav-row"><button class="secondary" data-go="check">← Previous</button></div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/logo.png" alt="EDJAY logo"><div><strong>EDJAY</strong><span>Teach. Lead. Inspire.</span><small>Grade 7 Computer Interactive Learning</small></div><p>© 2026 EDJAY Teacher Learning Hub. All rights reserved.</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

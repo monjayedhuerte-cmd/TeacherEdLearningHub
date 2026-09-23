@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2a5b">
+<meta name="description" content="Grade 7 Computer Interactive Learning — How Algorithms Work and Algorithm Analysis">
+<title>Grade 7 Computer | Algorithms — Teacher Ed</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/logo.png" alt="Teacher Ed logo" class="logo">
+    <div><strong>EDJAY</strong><span>Teach. Lead. Inspire.</span></div>
+  </div>
+  <div class="lesson-title"><small>GRADE 7 COMPUTER</small><h1>Algorithms & Algorithm Analysis</h1></div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  <nav id="nav">
+    <button data-section="home">🏠 Home</button>
+    <button data-section="learn">📚 Learn</button>
+    <button data-section="practice">🎮 Practice</button>
+    <button data-section="quiz">✅ Check</button>
+    <button data-section="master">🏆 Mastery</button>
+  </nav>
+</header>
+
+<main>
+<section id="home" class="screen active">
+  <div class="hero glass">
+    <div>
+      <span class="eyebrow">GRADE 7 • COMPUTER / ICT</span>
+      <h2>How Do Computers Know What to Do?</h2>
+      <p>Explore how algorithms receive input, process information, produce output, and make decisions through sequences, conditions, and loops.</p>
+      <button class="primary" data-next="engage">Start Learning 🚀</button>
+    </div>
+    <div class="hero-flow">
+      <div>INPUT</div><span>→</span><div>PROCESSING</div><span>→</span><div>OUTPUT</div><span>→</span><div>TERMINATION</div>
+    </div>
+  </div>
+  <div class="grid three">
+    <article class="card"><b>🎯 Learn</b><p>Understand the stages and constructs of algorithms.</p></article>
+    <article class="card"><b>🎮 Practice</b><p>Arrange, match, and solve algorithm challenges.</p></article>
+    <article class="card"><b>🏆 Master</b><p>Apply your knowledge as an algorithm analyst.</p></article>
+  </div>
+</section>
+
+<section id="engage" class="screen">
+  <div class="section-head"><span class="eyebrow">01 • ENGAGE</span><h2>Think Like a Computer</h2><p>A computer follows instructions. What happens first?</p></div>
+  <div class="scenario glass">
+    <h3>🍳 Mini Challenge: Making a Sandwich</h3>
+    <p>Imagine giving a computer instructions for making a sandwich. Which should come first?</p>
+    <div class="choice-grid" id="engageChoices">
+      <button data-correct="false">Eat the sandwich</button>
+      <button data-correct="true">Gather the needed ingredients</button>
+      <button data-correct="false">Clean the plate after eating</button>
+    </div>
+    <div class="feedback" id="engageFeedback"></div>
+    <button class="primary hidden" id="engageNext">Continue →</button>
+  </div>
+</section>
+
+<section id="learn" class="screen">
+  <div class="section-head"><span class="eyebrow">02–05 • CONNECT • EXPLORE • LEARN • SEE IT</span><h2>How Algorithms Work</h2><p>Click each concept to reveal the explanation.</p></div>
+  <div class="concept-grid" id="conceptGrid"></div>
+  <div class="flow-card glass">
+    <h3>🔁 The Algorithm Flow</h3>
+    <div class="flow"><span>Input</span><b>→</b><span>Processing</span><b>→</b><span>Output</span><b>→</b><span>Termination</span></div>
+  </div>
+  <div class="constructs">
+    <h3>Three Algorithm Constructs</h3>
+    <div class="grid three">
+      <article class="card accent"><h4>1. Linear Sequence</h4><p>Statements or tasks are performed in an orderly sequence.</p></article>
+      <article class="card accent"><h4>2. Conditional</h4><p>The algorithm makes a decision based on a condition and can follow different paths.</p></article>
+      <article class="card accent"><h4>3. Loop</h4><p>Certain steps are repeated until a specific condition is met.</p></article>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="screen">
+  <div class="section-head"><span class="eyebrow">06–10 • GUIDED PRACTICE • PRACTICE • THINK • APPLY • REVIEW</span><h2>Practice Lab</h2></div>
+  <div class="practice-tabs">
+    <button class="tab active" data-tab="sequence">🔢 Sequence</button>
+    <button class="tab" data-tab="match">🧩 Match</button>
+    <button class="tab" data-tab="cases">📊 Analysis Cases</button>
+    <button class="tab" data-tab="flashcards">🃏 Flashcards</button>
+  </div>
+  <div id="practiceArea"></div>
+</section>
+
+<section id="quiz" class="screen">
+  <div class="section-head"><span class="eyebrow">11 • CHECK</span><h2>Knowledge Check</h2><p>Answer 10 questions. Explanations appear after submission.</p></div>
+  <form id="quizForm" class="quiz"></form>
+  <button class="primary" id="submitQuiz">Submit Quiz</button>
+  <div id="quizResult"></div>
+</section>
+
+<section id="master" class="screen">
+  <div class="section-head"><span class="eyebrow">12–14 • MASTER • REFLECT • CELEBRATE</span><h2>Algorithm Analyst Challenge</h2></div>
+  <div class="master-card glass">
+    <h3>🧑‍💻 Your Mission</h3>
+    <p>You are reviewing an algorithm before it is implemented. Identify the correct stage, construct, and analysis type.</p>
+    <div id="masterArea"></div>
+  </div>
+  <div id="reflection" class="reflection glass hidden">
+    <h3>🌈 Reflect</h3>
+    <label>What did you learn about algorithms?<textarea placeholder="Type your reflection..."></textarea></label>
+    <label>Which concept do you still need to practice?<textarea placeholder="Type your answer..."></textarea></label>
+    <button class="primary" id="finishBtn">Finish Lesson 🎉</button>
+  </div>
+  <div id="celebrate" class="celebrate hidden">
+    <div class="confetti">🎉 🏆 💻 ⭐ 🚀</div>
+    <h2>COMPUTER EXPLORER!</h2>
+    <p>You completed the interactive lesson on algorithms and algorithm analysis.</p>
+    <button class="primary" data-section="home">Back to Home</button>
+  </div>
+</section>
+</main>
+
+<div class="progress-wrap">
+  <div class="progress-label"><span id="progressText">Lesson Progress</span><span id="progressPct">0%</span></div>
+  <div class="progress"><i id="progressBar"></i></div>
+</div>
+
+<footer>
+  <div class="footer-brand"><img src="assets/logo.png" alt="Teacher Ed logo"><div><strong>EDJAY</strong><span>Teach. Lead. Inspire.</span></div></div>
+  <p>Grade 7 Computer Interactive Learning • Learn. Practice. Create. Inspire.</p>
+  <small>© 2026 EDJAY Teacher Learning Hub. All rights reserved.</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

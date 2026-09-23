@@ -1,0 +1,338 @@
+{
+  "grade": "Grade 7",
+  "subject": "Computer / ICT",
+  "title": "How Algorithms Work and Algorithm Analysis",
+  "subtitle": "Understanding Inputs, Processing, Outputs, Termination, and Algorithm Analysis",
+  "teacher": "Teacher Ed",
+  "brand": "EDJAY",
+  "tagline": "Teach. Lead. Inspire.",
+  "sourceNote": "Based on the provided lesson materials.",
+  "objectives": [
+    "Identify the typical stages involved in the functioning of an algorithm.",
+    "Explain input, processing, output, and termination.",
+    "Recognize linear, conditional, and loop constructs.",
+    "Explain the purpose of algorithm analysis.",
+    "Distinguish best-case, worst-case, and average-case analysis.",
+    "Distinguish a priori analysis from posterior analysis."
+  ],
+  "keyTerms": [
+    {
+      "term": "Algorithm",
+      "definition": "A sequence of steps used to solve a problem or perform a task."
+    },
+    {
+      "term": "Input",
+      "definition": "The first stage that defines the input; it refers to anything from a single value to a complex data structure that an algorithm will operate on."
+    },
+    {
+      "term": "Processing",
+      "definition": "The stage where an algorithm executes operations on the input using a sequence of steps, guided by logical and arithmetic calculations."
+    },
+    {
+      "term": "Output",
+      "definition": "The result produced after the processing of inputs through a sequence of steps."
+    },
+    {
+      "term": "Termination",
+      "definition": "The definite stopping point once all the steps are done and the output is produced."
+    },
+    {
+      "term": "Linear Sequence",
+      "definition": "A sequence in which statements or tasks are performed in an orderly sequence."
+    },
+    {
+      "term": "Conditional",
+      "definition": "A construct in which an algorithm makes decisions between options based on conditions."
+    },
+    {
+      "term": "Loop",
+      "definition": "A construct in which a sequence of statements is repeated a number of times or until a condition is met."
+    },
+    {
+      "term": "Best Case",
+      "definition": "The input for which the algorithm takes less time or minimum time."
+    },
+    {
+      "term": "Worst Case",
+      "definition": "The input for which the algorithm takes a long time or maximum time."
+    },
+    {
+      "term": "Average Case",
+      "definition": "Random inputs are considered and the computation time for all inputs is calculated."
+    },
+    {
+      "term": "A Priori Analysis",
+      "definition": "Theoretical analysis of algorithms before implementation, using factors such as constant processor speed as the basis for measuring efficiency."
+    },
+    {
+      "term": "Posterior Analysis",
+      "definition": "Empirical analysis after implementation, collecting statistics such as the time and space required for the algorithm to run."
+    }
+  ],
+  "concepts": [
+    {
+      "title": "The Typical Stages of an Algorithm",
+      "summary": "The source breaks an algorithm into four typical stages: input, processing, output, and termination.",
+      "visual": "input \u2192 processing \u2192 output \u2192 termination"
+    },
+    {
+      "title": "How Algorithms Work",
+      "summary": "Algorithms are key components of computer programs and operating systems. They help devices follow the correct commands and deliver the right outputs.",
+      "visual": "Input \u2192 Processing \u2192 Output"
+    },
+    {
+      "title": "Three Algorithm Constructs",
+      "summary": "The source identifies three constructs: linear sequence, conditional, and loop.",
+      "visual": "Linear | Conditional | Loop"
+    },
+    {
+      "title": "Algorithm Analysis",
+      "summary": "Algorithm analysis assesses performance in terms of time, space complexity, and data structures. It considers the amount of time and space resources required to execute an algorithm.",
+      "visual": "Input size \u2192 key operations \u2192 time & space"
+    },
+    {
+      "title": "Three Types of Algorithm Analysis Cases",
+      "summary": "The source describes best case, worst case, and average case.",
+      "visual": "Best | Worst | Average"
+    },
+    {
+      "title": "Two Types of Analysis",
+      "summary": "A priori analysis is theoretical and happens before implementation; posterior analysis is empirical and happens after implementation.",
+      "visual": "Before implementation \u2194 After implementation"
+    },
+    {
+      "title": "Advantages and Disadvantages of Algorithms",
+      "summary": "The source notes that algorithms are easy to understand without programming knowledge, are not dependent on a programming language, and are easy to debug because each step has logical reasons. It also notes that they take time to process, can make loops and branches difficult to show, and some problems cannot be reduced to algorithms easily.",
+      "visual": "Advantages \u2194 Disadvantages"
+    }
+  ],
+  "activities": [
+    {
+      "type": "sequence",
+      "title": "Put the Algorithm Stages in Order",
+      "instruction": "Arrange the four stages in the order presented in the lesson.",
+      "items": [
+        "Input",
+        "Processing",
+        "Output",
+        "Termination"
+      ],
+      "answer": [
+        "Input",
+        "Processing",
+        "Output",
+        "Termination"
+      ]
+    },
+    {
+      "type": "match",
+      "title": "Match the Construct",
+      "instruction": "Match each construct with its description.",
+      "pairs": [
+        [
+          "Linear sequence",
+          "An orderly sequence of statements or tasks."
+        ],
+        [
+          "Conditional",
+          "Decision-making between different paths based on conditions."
+        ],
+        [
+          "Loop",
+          "Repeating certain steps until a condition is met."
+        ]
+      ]
+    },
+    {
+      "type": "scenario",
+      "title": "Which Analysis Case?",
+      "instruction": "Choose the case that best matches each situation.",
+      "questions": [
+        {
+          "q": "An input allows the algorithm to finish in the minimum time.",
+          "choices": [
+            "Best case",
+            "Worst case",
+            "Average case"
+          ],
+          "answer": 0,
+          "why": "Best case is the input for which the algorithm takes less or minimum time."
+        },
+        {
+          "q": "An input makes the algorithm take the maximum amount of time.",
+          "choices": [
+            "Best case",
+            "Worst case",
+            "Average case"
+          ],
+          "answer": 1,
+          "why": "Worst case is the input for which the algorithm takes a long or maximum time."
+        },
+        {
+          "q": "Random inputs are considered and computation time is calculated across them.",
+          "choices": [
+            "Best case",
+            "Worst case",
+            "Average case"
+          ],
+          "answer": 2,
+          "why": "Average case considers random inputs and the computation time for all inputs."
+        }
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "q": "Which stage is the first stage defining the data an algorithm will operate on?",
+      "choices": [
+        "Input",
+        "Processing",
+        "Output",
+        "Termination"
+      ],
+      "answer": 0,
+      "explanation": "Input is the first stage defining the input."
+    },
+    {
+      "q": "Which stage performs operations on the input using a sequence of steps?",
+      "choices": [
+        "Input",
+        "Processing",
+        "Output",
+        "Termination"
+      ],
+      "answer": 1,
+      "explanation": "Processing is where operations are performed on the input."
+    },
+    {
+      "q": "What is produced after processing the inputs?",
+      "choices": [
+        "Input",
+        "Output",
+        "Condition",
+        "Loop"
+      ],
+      "answer": 1,
+      "explanation": "Output is the result produced after processing."
+    },
+    {
+      "q": "Which construct performs tasks in an orderly sequence?",
+      "choices": [
+        "Conditional",
+        "Loop",
+        "Linear sequence",
+        "Average case"
+      ],
+      "answer": 2,
+      "explanation": "A linear sequence moves through statements or tasks in order."
+    },
+    {
+      "q": "Which construct directs the flow based on conditions?",
+      "choices": [
+        "Conditional",
+        "Linear sequence",
+        "Output",
+        "Termination"
+      ],
+      "answer": 0,
+      "explanation": "A conditional makes decisions based on conditions."
+    },
+    {
+      "q": "Which construct repeats steps until a condition is met?",
+      "choices": [
+        "Input",
+        "Loop",
+        "Output",
+        "A priori analysis"
+      ],
+      "answer": 1,
+      "explanation": "A loop repeats certain operations until a specified condition is met."
+    },
+    {
+      "q": "Which case represents the minimum time taken by an algorithm?",
+      "choices": [
+        "Best case",
+        "Worst case",
+        "Average case",
+        "Posterior analysis"
+      ],
+      "answer": 0,
+      "explanation": "Best case is the input for which the algorithm takes less or minimum time."
+    },
+    {
+      "q": "Which analysis is theoretical and performed before implementation?",
+      "choices": [
+        "Posterior analysis",
+        "A priori analysis",
+        "Average case",
+        "Output analysis"
+      ],
+      "answer": 1,
+      "explanation": "A priori analysis is theoretical analysis before implementation."
+    },
+    {
+      "q": "Which analysis collects time and space statistics after implementation?",
+      "choices": [
+        "A priori analysis",
+        "Posterior analysis",
+        "Best-case analysis",
+        "Linear analysis"
+      ],
+      "answer": 1,
+      "explanation": "Posterior analysis is empirical analysis after implementation."
+    },
+    {
+      "q": "Which is identified in the source as an advantage of algorithms?",
+      "choices": [
+        "They always take no time to process.",
+        "They are easy to understand without programming knowledge.",
+        "They eliminate every difficult problem.",
+        "They never contain loops."
+      ],
+      "answer": 1,
+      "explanation": "The source states that algorithms are easy to understand without programming knowledge."
+    }
+  ],
+  "masterChallenge": {
+    "title": "Algorithm Analyst Challenge",
+    "scenario": "You are reviewing an algorithm before it is implemented. You must identify its stages, construct, and the type of analysis that fits the situation.",
+    "steps": [
+      {
+        "prompt": "The algorithm receives a list of numbers.",
+        "choices": [
+          "Input",
+          "Output",
+          "Termination"
+        ],
+        "answer": 0
+      },
+      {
+        "prompt": "The algorithm performs calculations on the list.",
+        "choices": [
+          "Input",
+          "Processing",
+          "Termination"
+        ],
+        "answer": 1
+      },
+      {
+        "prompt": "The algorithm repeats a set of steps until a condition is met.",
+        "choices": [
+          "Linear sequence",
+          "Conditional",
+          "Loop"
+        ],
+        "answer": 2
+      },
+      {
+        "prompt": "You evaluate the algorithm theoretically before it is implemented.",
+        "choices": [
+          "A priori analysis",
+          "Posterior analysis",
+          "Average case"
+        ],
+        "answer": 0
+      }
+    ]
+  }
+}
