@@ -882,10 +882,20 @@
   {
     "title": "Science 1 | Worksheet in Sense Organ Working Together",
     "subject": "Science", 
-    "grade": "Grade 2",
+    "grade": "Grade 1",
     "description": " Explore how your eyes, ears, nose, tongue, and skin help you do everyday activities and stay safe.",
     "file": "worksheets/Sense_Organs_Working_Together_Worksheet/index.html",
     "date": "2026-09-30",
+    "featured": true,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Sense Organ Detectives",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Investigate how your eyes, ears, nose, tongue, and skin work together during everyday activities.",
+    "file": "lessons/science/grade-1/Sense_Organ_Detectives/index.html",
+    "date": "2026-09-23",
     "featured": true,
     "icon": "user"
   }

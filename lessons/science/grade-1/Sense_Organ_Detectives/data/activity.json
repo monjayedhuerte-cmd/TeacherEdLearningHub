@@ -1,0 +1,13 @@
+{
+  "title":"Sense Organ Detectives",
+  "grade":"Grade 1",
+  "subject":"Science",
+  "topic":"Sense Organs Working Together",
+  "stations":[
+    {"id":"food","name":"Mystery Food","icon":"🍎","short":"Investigate food using more than one sense.","question":"You are eating a fruit. Which sense organs can work together to help you notice its color, smell, and taste?","choices":["Eyes + Nose + Tongue","Ears + Skin","Eyes + Ears"],"answer":0,"clue":"Your eyes see the food, your nose smells it, and your tongue tastes it."},
+    {"id":"read","name":"Read & Listen","icon":"📖","short":"See words and hear a reader.","question":"A teacher reads a story while you look at the book. Which sense organs work together?","choices":["Eyes + Ears","Nose + Tongue","Skin + Tongue"],"answer":0,"clue":"Your eyes see the words and pictures. Your ears hear the teacher's voice."},
+    {"id":"touch","name":"Touch Detective","icon":"🧸","short":"Discover an object by feeling it.","question":"You place your hand on a covered object and feel that it is rough. Which sense organ gives you this touch information?","choices":["Skin","Nose","Tongue"],"answer":0,"clue":"The skin helps you feel textures such as rough and smooth. In the real activity, use safe objects."},
+    {"id":"sound","name":"Sound Detective","icon":"🔊","short":"Listen and connect the sound to what you see.","question":"You see a musical instrument and hear its sound. Which sense organs work together?","choices":["Eyes + Ears","Nose + Tongue","Skin + Nose"],"answer":0,"clue":"Your eyes help you see the instrument, while your ears hear the sound."},
+    {"id":"safety","name":"Safety Mission","icon":"🚦","short":"Use your senses to stay safe.","question":"When crossing a street, which two sense organs work together to help you notice vehicles?","choices":["Eyes + Ears","Nose + Tongue","Skin + Nose"],"answer":0,"clue":"Your eyes see vehicles and your ears hear vehicle sounds. These warning signals can help keep you safe."}
+  ]
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b2d5c">
+<title>Sense Organ Detectives | Science 1</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>Teacher Ed Learning Hub</strong><span>Science 1 • Sense Organ Detectives</span></div>
+  </div>
+  <div class="top-actions">
+    <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">🔊 Sound</button>
+    <button id="resetBtn" class="icon-btn" aria-label="Reset activity">↻ Reset</button>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">🔬 SCIENCE 1 • HANDS-ON MISSION</div>
+    <h1>🕵️ Sense Organ Detectives</h1>
+    <p>Investigate how your <b>eyes, ears, nose, tongue, and skin</b> work together during everyday activities.</p>
+    <div class="hero-buttons">
+      <button class="primary" id="startBtn">Start Detective Mission 🚀</button>
+      <button class="secondary" id="howBtn">How to Play</button>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="detective-badge">🕵️‍♀️</div>
+    <h3>Your Mission</h3>
+    <p>Complete 5 stations. Identify the sense organs that work together. Earn stars and become a Sense Organ Super Detective!</p>
+    <div class="mini-stats"><span>⭐ 5 Stars</span><span>🎯 5 Stations</span><span>🏆 1 Badge</span></div>
+  </div>
+</section>
+
+<section class="progress-wrap" id="missionSection">
+  <div class="progress-head"><div><b>Mission Progress</b><span id="progressText">0 of 5 stations complete</span></div><div class="score-pill">⭐ <span id="score">0</span></div></div>
+  <div class="progress"><div id="progressBar"></div></div>
+</section>
+
+<section class="how panel" id="howPanel" hidden>
+  <button class="close" id="closeHow">×</button>
+  <h2>🕵️ How to Play</h2>
+  <ol>
+    <li>Open a detective station.</li>
+    <li>Look, listen, smell, taste, or feel as the mission describes.</li>
+    <li>Choose the sense organs that work together.</li>
+    <li>Read the science clue after answering.</li>
+    <li>Finish all five stations to earn your badge.</li>
+  </ol>
+  <div class="safety"><b>🛡️ Safety First:</b> For the real classroom activity, use teacher-approved objects only. Never taste an unknown food or touch a hot, sharp, dirty, or unsafe object.</div>
+</section>
+
+<section class="stations" id="stations">
+  <div class="section-heading"><div><div class="eyebrow">MISSION CONTROL</div><h2>Choose a Detective Station</h2></div><p>Complete all 5.</p></div>
+  <div class="station-grid" id="stationGrid"></div>
+</section>
+
+<section class="workspace panel" id="workspace" hidden>
+  <div class="workspace-head">
+    <div><div class="eyebrow" id="stationTag">STATION</div><h2 id="stationTitle">Station</h2></div>
+    <button class="close" id="closeStation">×</button>
+  </div>
+  <div id="stationContent"></div>
+</section>
+
+<section class="mission-card panel">
+  <div class="section-heading"><div><div class="eyebrow">DETECTIVE RECORD</div><h2>My Sense Organ Mission Card</h2></div><button class="secondary small" id="printBtn">🖨️ Print Card</button></div>
+  <div class="mission-grid">
+    <label>Detective Name <input id="studentName" placeholder="Write your name"></label>
+    <label>Grade & Section <input id="studentSection" placeholder="Grade 1 - ______"></label>
+  </div>
+  <div class="record-table" id="recordTable"></div>
+  <div class="reflection"><h3>🌈 Detective Reflection</h3><p>I learned that sense organs can ______________________________.</p><p>My favorite mission was __________________ because __________________________.</p></div>
+</section>
+
+<section class="final panel" id="finalSection">
+  <div class="trophy">🏆</div>
+  <div><div class="eyebrow">FINAL REPORT</div><h2>Detective Status</h2><p id="finalMessage">Complete all five stations to unlock your final badge.</p><div id="badgeArea"></div></div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="Teacher Ed Learning Hub">
+  <div><b>Teacher Ed Learning Hub</b><br><span>Explore • Learn • Grow</span></div>
+  <small>Science 1 • Sense Organ Detectives</small>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
