@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2a5b">
+<link rel="icon" type="image/png" href="assets/BrandLogo.png">
+<title>Teacher Ed Learning Hub | Science 1 - Taking Care of the Ears</title>
+<style>
+:root{--navy:#0b2a5b;--navy2:#123f7a;--gold:#f4b400;--gold2:#ffd35c;--sky:#eaf5ff;--ink:#19324d;--muted:#5d7187;--white:#fff;--green:#1b9a59;--red:#d84a4a;--purple:#6f55c7;--shadow:0 14px 35px rgba(11,42,91,.12);--radius:24px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:linear-gradient(180deg,#f6fbff 0,#eef6ff 42%,#fff 100%);min-height:100vh}.hidden{display:none!important}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #dce7f4}.nav{max-width:1180px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:14px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand img{width:52px;height:52px;object-fit:contain}.brand strong{display:block;color:var(--navy);font-size:1rem}.brand span{font-size:.78rem;color:var(--muted)}.nav-actions{margin-left:auto;display:flex;gap:8px;flex-wrap:wrap}.btn{border:0;border-radius:14px;padding:11px 15px;font-weight:800;cursor:pointer;transition:.18s transform,.18s box-shadow,.18s background}.btn:hover{transform:translateY(-1px);box-shadow:0 8px 18px rgba(11,42,91,.12)}.btn.primary{background:var(--navy);color:#fff}.btn.gold{background:var(--gold);color:#14263e}.btn.light{background:#edf4fb;color:var(--navy)}.btn.green{background:var(--green);color:#fff}.btn.danger{background:#fff0f0;color:#a52c2c}
+main{max-width:1180px;margin:auto;padding:22px 18px 70px}.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:stretch;margin:10px 0 24px}.hero-card{background:linear-gradient(135deg,#0b2a5b,#17559e);color:white;border-radius:32px;padding:34px;box-shadow:var(--shadow);position:relative;overflow:hidden}.hero-card:after{content:"👂";position:absolute;font-size:9rem;right:22px;bottom:-18px;opacity:.12}.eyebrow{font-weight:900;color:var(--gold2);letter-spacing:.08em;text-transform:uppercase;font-size:.78rem}.hero h1{font-size:clamp(2rem,4vw,3.5rem);line-height:1.03;margin:10px 0}.hero p{font-size:1.05rem;max-width:700px;color:#eaf3ff}.hero-side{background:#fff;border:1px solid #dbe7f4;border-radius:32px;padding:22px;box-shadow:var(--shadow)}.hero-side img{width:100%;height:210px;object-fit:cover;border-radius:20px}.hero-side .caption{font-size:.78rem;color:var(--muted);margin-top:8px}.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}.stat{background:rgba(255,255,255,.12);padding:10px 14px;border-radius:14px}.stat b{display:block;font-size:1.15rem}.stat small{opacity:.82}
+.map{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin:18px 0 24px}.map button{min-height:76px;border:1px solid #d7e5f3;background:#fff;border-radius:16px;padding:9px 6px;font-weight:800;color:var(--navy);cursor:pointer}.map button.active{background:#e8f2ff;border-color:#74a7e3;box-shadow:inset 0 -3px 0 var(--gold)}.map button.done{background:#effaf4;border-color:#9fd8b8}.map .icon{font-size:1.4rem;display:block;margin-bottom:3px}.section{background:#fff;border:1px solid #dbe7f4;border-radius:28px;padding:26px;box-shadow:var(--shadow);margin:18px 0}.section h2{margin:0 0 6px;color:var(--navy);font-size:1.65rem}.section .lead{color:var(--muted);margin-top:0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.card{background:#f8fbff;border:1px solid #dce8f5;border-radius:20px;padding:18px}.card h3{margin:0 0 7px;color:var(--navy)}.card p{margin:7px 0;color:#425a72}.source-img{width:100%;height:190px;object-fit:cover;border-radius:16px;border:1px solid #d9e4ef;background:#fff}.tag{display:inline-block;border-radius:999px;padding:5px 9px;font-size:.72rem;font-weight:900;background:#e9f3ff;color:#1a4e87;margin:4px 4px 0 0}
+.callout{background:linear-gradient(135deg,#fff8dd,#fff);border-left:6px solid var(--gold);border-radius:16px;padding:15px 17px;margin:14px 0}.teacher{background:#eef6ff;border:1px solid #cfe1f5;border-radius:18px;padding:16px}.teacher strong{color:var(--navy)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.choice{background:#fff;border:2px solid #d8e5f2;border-radius:18px;padding:15px;text-align:left;font-weight:800;color:var(--ink);cursor:pointer;min-height:60px}.choice:hover{border-color:#8db7e5}.choice.selected{border-color:var(--navy);background:#edf5ff}.choice.correct{border-color:var(--green);background:#effbf4}.choice.incorrect{border-color:var(--red);background:#fff1f1}.feedback{margin-top:12px;border-radius:16px;padding:13px;font-weight:700}.feedback.good{background:#eaf9f0;color:#14643a}.feedback.try{background:#fff3f3;color:#9a3030}
+.progress-wrap{background:#e8f0f8;border-radius:999px;height:13px;overflow:hidden}.progress-bar{height:100%;width:0;background:linear-gradient(90deg,var(--navy),var(--gold));transition:.35s}.topline{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:8px}.scorebox{display:flex;gap:8px;flex-wrap:wrap}.pill{background:#eef5fb;border-radius:999px;padding:7px 11px;font-weight:800;color:var(--navy)}
+.mini-game{border:2px dashed #c8dced;border-radius:22px;padding:20px;background:#fbfdff}.scenario-img{width:100%;height:230px;object-fit:cover;border-radius:18px;margin-bottom:12px}.two-actions{display:flex;gap:10px;flex-wrap:wrap}.sort-zone{display:grid;grid-template-columns:1fr 1fr;gap:14px}.dropzone{min-height:150px;border:2px dashed #aac7e2;border-radius:20px;padding:14px;background:#f8fbff}.dropzone h4{margin:0 0 10px}.sort-item{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #d7e4ef;padding:12px;border-radius:14px;margin:8px 0;cursor:pointer;font-weight:800}.sort-item.selected{outline:3px solid #cfe1f7}.badge{display:inline-flex;align-items:center;gap:6px;background:#fff4cf;border:1px solid #f4d67d;color:#6c5100;padding:7px 11px;border-radius:999px;font-weight:900}.result{text-align:center;padding:30px;background:linear-gradient(135deg,#eef7ff,#fff);border-radius:24px;border:1px solid #d6e6f6}.result .big{font-size:4rem}
+footer{background:#08234d;color:#dceaff;padding:28px 18px;text-align:center}.footer-inner{max-width:1180px;margin:auto}.footer-inner img{width:60px;height:60px;object-fit:contain}.small{font-size:.82rem;color:var(--muted)}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.map{grid-template-columns:repeat(4,1fr)}.grid3{grid-template-columns:1fr 1fr}}@media(max-width:620px){.nav-actions .btn.light{display:none}.hero-card{padding:25px}.section{padding:19px}.grid2,.grid3,.choice-grid,.sort-zone{grid-template-columns:1fr}.map{grid-template-columns:repeat(2,1fr)}.source-img{height:180px}.brand span{display:none}.hero-side img{height:180px}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="brand"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo"><div><strong>TEACHER ED LEARNING HUB</strong><span>Science 1 • Interactive Lesson</span></div></div><div class="nav-actions"><button class="btn light" onclick="toggleSound()" id="soundBtn">🔊 Sound On</button><button class="btn light" onclick="resetProgress()">↺ Reset</button></div></div></header>
+<main>
+<section class="hero" id="home">
+  <div class="hero-card"><div class="eyebrow">Science 1 • Lesson 9</div><h1>Taking Care of the Ears</h1><p>Learn how to keep your ears safe, clean, and protected from things that may hurt them.</p><div class="stats"><div class="stat"><b id="stars">0 ⭐</b><small>Stars</small></div><div class="stat"><b id="badges">0 🏆</b><small>Badges</small></div><div class="stat"><b id="mastery">0%</b><small>Mastery</small></div></div><div style="margin-top:20px"><button class="btn gold" onclick="go('connect')">Start Learning →</button></div></div>
+  <div class="hero-side"><img src="assets/clean_outside_ear.jpg" alt="Child cleaning the outside of the ear with a soft cloth"><div class="caption">A cropped picture from the supplied textbook page. Look closely: the lesson shows safe ways to care for the ears.</div></div>
+</section>
+<div class="topline"><strong>Your Learning Journey</strong><div class="scorebox"><span class="pill" id="progressText">0 / 8 stages</span><span class="pill" id="scorePill">0 points</span></div></div>
+<div class="progress-wrap"><div class="progress-bar" id="mainProgress"></div></div>
+<nav class="map" aria-label="Learning journey">
+<button id="m-connect" onclick="go('connect')"><span class="icon">🏫</span>Connect</button>
+<button id="m-teach" onclick="go('teach')"><span class="icon">📖</span>Learn</button>
+<button id="m-model" onclick="go('model')"><span class="icon">👩‍🏫</span>Watch Me</button>
+<button id="m-guided" onclick="go('guided')"><span class="icon">🤝</span>Let's Do It</button>
+<button id="m-independent" onclick="go('independent')"><span class="icon">🎯</span>Your Turn</button>
+<button id="m-game" onclick="go('game')"><span class="icon">🎮</span>Game Zone</button>
+<button id="m-brain" onclick="go('brain')"><span class="icon">🧠</span>Brain Challenge</button>
+<button id="m-final" onclick="go('final')"><span class="icon">🏆</span>Mastery</button>
+</nav>
+
+<section class="section stage" id="connect">
+<h2>🏫 Connect: What Do You Notice?</h2><p class="lead">Before we learn, think about your ears and the sounds around you.</p>
+<div class="grid2"><div class="card"><img class="source-img" src="assets/firecracker_loud_sound.jpg" alt="Child covering ears near loud sounds"><h3>Look carefully.</h3><p>What is the child doing with the ears?</p><div class="choice-grid"><button class="choice" onclick="checkChoice(this,true,'connectFb')">Covering the ears</button><button class="choice" onclick="checkChoice(this,false,'connectFb')">Putting a sharp object in the ear</button></div><div id="connectFb"></div></div>
+<div class="teacher"><strong>Teacher Ed says:</strong><p>Our ears are delicate sense organs. They help us hear, so we need to care for and protect them.</p><span class="tag">care</span><span class="tag">protection</span><span class="tag">safe habits</span></div></div>
+<button class="btn primary" onclick="completeStage('connect','teach')">I am ready to learn →</button>
+</section>
+
+<section class="section stage hidden" id="teach">
+<h2>📖 Learn: Eight Ear-Care Rules</h2><p class="lead">Read each small lesson. Look at the picture, then tell yourself the safe habit.</p>
+<div class="grid2">
+<div class="card"><img class="source-img" src="assets/clean_outside_ear.jpg"><h3>1. Clean the outside</h3><p>Clean the outside part of your ears with a clean, soft washcloth. The source also says cotton swabs may be used to clean the outside.</p></div>
+<div class="card"><img class="source-img" src="assets/no_sharp_objects.jpg"><h3>2. Keep hard objects out</h3><p>Do not put pointed or hard objects such as hairpins or matchsticks into your ears.</p></div>
+<div class="card"><img class="source-img" src="assets/low_music_volume.jpg"><h3>3. Keep music volume low</h3><p>Do not expose yourself to loud music or noise for a long time.</p></div>
+<div class="card"><img class="source-img" src="assets/no_shouting.jpg"><h3>4. Do not shout into ears</h3><p>Do not shout directly into another person's ears because it can hurt the ears.</p></div>
+<div class="card"><img class="source-img" src="assets/ear_protection.jpg"><h3>5. Protect your ears from noise</h3><p>Stay away from noisy places when possible. If you must be in a noisy place, use ear protection such as earplugs.</p></div>
+<div class="card"><img class="source-img" src="assets/firecracker_loud_sound.jpg"><h3>6. Be careful around very loud sounds</h3><p>The source advises covering your ears and opening your mouth during a firecracker explosion.</p></div>
+<div class="card"><img class="source-img" src="assets/keep_water_out.jpg"><h3>7. Keep water out</h3><p>When bathing or swimming, do not let water get into your ears.</p></div>
+<div class="card"><img class="source-img" src="assets/see_doctor.jpg"><h3>8. Ask a doctor when there is a problem</h3><p>See a doctor when you have an ear problem so your ears can be checked properly.</p></div>
+</div>
+<div class="callout"><strong>Remember:</strong> Clean the outside. Keep harmful objects and loud sounds away. Protect your ears. Ask a doctor when there is an ear problem.</div>
+<button class="btn primary" onclick="completeStage('teach','model')">I learned the rules →</button>
+</section>
+
+<section class="section stage hidden" id="model">
+<h2>👩‍🏫 Watch Me: Teacher Modeling</h2><p class="lead">Let's model how to choose a safe action.</p>
+<div class="mini-game"><img class="scenario-img" src="assets/no_sharp_objects.jpg"><h3>Situation: “I want to clean my ear.”</h3><p>Which action matches the lesson?</p><div class="choice-grid"><button class="choice" onclick="checkChoice(this,false,'modelFb')">Use a hairpin inside the ear.</button><button class="choice" onclick="checkChoice(this,true,'modelFb')">Clean the outside with a clean, soft washcloth.</button></div><div id="modelFb"></div><div class="teacher" style="margin-top:12px"><strong>Think like a scientist:</strong> The picture is evidence. The safe action is the one that protects the ear.</div></div>
+<button class="btn primary" onclick="completeStage('model','guided')">Let's practice together →</button>
+</section>
+
+<section class="section stage hidden" id="guided">
+<h2>🤝 Let's Do It: Safe or Unsafe?</h2><p class="lead">Choose the best answer. You will get a short explanation after each try.</p>
+<div id="guidedGame"></div>
+</section>
+
+<section class="section stage hidden" id="independent">
+<h2>🎯 Your Turn: Ear-Care Detective</h2><p class="lead">Look at each picture and decide what the child should do.</p>
+<div id="independentGame"></div>
+</section>
+
+<section class="section stage hidden" id="game">
+<h2>🎮 Game Zone: Save the Ears!</h2><p class="lead">A noisy day is coming! Help the character make safe choices.</p>
+<div id="gameZone"></div>
+</section>
+
+<section class="section stage hidden" id="brain">
+<h2>🧠 Brain Challenge: What Should Happen Next?</h2><p class="lead">Put your science thinking to work. Choose the action that best follows the lesson.</p>
+<div id="brainGame"></div>
+</section>
+
+<section class="section stage hidden" id="final">
+<h2>🏆 Final Mastery Check</h2><p class="lead">Show what you know. These questions use the same ideas but new situations.</p>
+<div id="finalGame"></div>
+</section>
+
+<section class="section hidden" id="results">
+<div class="result"><div class="big">🎉</div><h2>You did it!</h2><p id="resultMessage"></p><div class="stats" style="justify-content:center"><span class="badge" id="resultScore">0 points</span><span class="badge" id="resultMastery">0%</span><span class="badge" id="resultBadge">🌟 Keep Learning</span></div><div style="margin-top:18px" class="two-actions"><button class="btn primary" onclick="go('final')">Try Mastery Again</button><button class="btn light" onclick="practiceMistakes()">🔄 Practice My Mistakes</button><button class="btn gold" onclick="go('connect')">↺ Start Journey</button></div></div>
+</section>
+
+<section class="section hidden" id="reflection"><h2>💭 Think About It</h2><p class="lead">Choose one sentence that matches your learning today.</p><div class="choice-grid"><button class="choice" onclick="reflect(this)">I can name safe ways to care for my ears.</button><button class="choice" onclick="reflect(this)">I want to practice more.</button><button class="choice" onclick="reflect(this)">I can teach someone an ear-care rule.</button></div><div id="reflectFb"></div></section>
+</main>
+<footer><div class="footer-inner"><img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub"><div><strong>Teacher Ed Learning Hub</strong></div><div>Learn • Practice • Play • Master</div><div style="margin-top:8px;font-size:.82rem;opacity:.8">Science 1 • Taking Care of the Ears</div></div></footer>
+<script>
+const state={stage:0,score:0,stars:0,badges:0,answers:[],sound:true,finalDone:false,finalScore:0,finalTotal:0,completed:new Set()};
+const stages=['connect','teach','model','guided','independent','game','brain','final'];
+const points={connect:5,teach:10,model:5,guided:15,independent:15,game:20,brain:15,final:30};
+function save(){localStorage.setItem('earCareState',JSON.stringify({stage:state.stage,score:state.score,stars:state.stars,badges:state.badges,answers:state.answers,finalDone:state.finalDone,finalScore:state.finalScore,finalTotal:state.finalTotal,completed:[...state.completed]}));updateUI()}
+function load(){try{const x=JSON.parse(localStorage.getItem('earCareState'));if(x){state.stage=x.stage||0;state.score=x.score||0;state.stars=x.stars||0;state.badges=x.badges||0;state.answers=x.answers||[];state.finalDone=!!x.finalDone;state.finalScore=x.finalScore||0;state.finalTotal=x.finalTotal||0;state.completed=new Set(x.completed||[]);}}catch(e){} updateUI()}
+function updateUI(){document.getElementById('stars').textContent=state.stars+' ⭐';document.getElementById('badges').textContent=state.badges+' 🏆';const max=115;document.getElementById('mastery').textContent=Math.min(100,Math.round(state.score/max*100))+'%';document.getElementById('scorePill').textContent=state.score+' points';document.getElementById('progressText').textContent=state.completed.size+' / 8 stages';document.getElementById('mainProgress').style.width=(state.completed.size/8*100)+'%';stages.forEach(s=>{const b=document.getElementById('m-'+s);if(b){b.classList.toggle('done',state.completed.has(s));b.classList.toggle('active',document.getElementById(s)?.classList.contains('hidden')===false)}})}
+function go(id){document.querySelectorAll('.stage').forEach(x=>x.classList.add('hidden'));const el=document.getElementById(id);if(el)el.classList.remove('hidden');document.getElementById('results').classList.add('hidden');document.getElementById('reflection').classList.add('hidden');window.scrollTo({top:0,behavior:'smooth'});if(id==='guided')renderGuided();if(id==='independent')renderIndependent();if(id==='game')renderGame();if(id==='brain')renderBrain();if(id==='final')renderFinal();updateUI()}
+function completeStage(current,next){if(!state.completed.has(current)){state.completed.add(current);state.score+=points[current]||5;state.stars+=1;if(state.completed.size===4||state.completed.size===8)state.badges+=1;save();}go(next)}
+function checkChoice(btn,correct,target){const box=document.getElementById(target);const group=btn.parentElement;group.querySelectorAll('.choice').forEach(x=>x.disabled=true);btn.classList.add(correct?'correct':'incorrect');box.className='feedback '+(correct?'good':'try');box.textContent=correct?'⭐ Excellent! That is the safe choice.':'Let’s think again. Look at the picture and remember the ear-care rule.';if(correct){state.score+=2;state.stars+=1;playTone(true)}else playTone(false);save()}
+const guidedQ=[
+['You are listening to music. What should you do?','Keep the volume low.', ['Keep the volume low.','Turn it as loud as possible.','Put the speaker beside your ear.'],0,'Loud music or noise for a long time can harm hearing.'],
+['A friend wants to shout into your ear. What should you say?','Please do not shout into my ear.', ['Please shout louder.','Please do not shout into my ear.','Come closer and shout.'],1,'The lesson says not to shout into another person’s ears.'],
+['You are cleaning your ears. Which is safe?','Clean the outside with a clean, soft washcloth.', ['Use a matchstick inside the ear.','Use a hairpin inside the ear.','Clean the outside with a clean, soft washcloth.'],2,'Hard or pointed objects should not be put into the ears.'],
+['You must stay in a noisy place. What can protect your ears?','Ear protection such as earplugs.', ['Ear protection such as earplugs.','A louder radio.','Shouting.'],0,'The source recommends ear protection in noisy places.'],
+['During a firecracker explosion, what does the lesson say to do?','Cover your ears and open your mouth.', ['Cover your ears and open your mouth.','Put a stick in your ear.','Turn the music louder.'],0,'The supplied lesson gives this safety action for a firecracker explosion.'],
+['During bathing or swimming, what should you avoid?','Letting water get into your ears.', ['Letting water get into your ears.','Wearing clean clothes.','Washing your hands.'],0,'The source says not to let water get into your ears.']
+];
+function renderGuided(){const wrap=document.getElementById('guidedGame');wrap.innerHTML='';let i=0,correct=0;const next=()=>{if(i>=guidedQ.length){wrap.innerHTML='<div class="result"><div class="big">🤝</div><h3>Guided Practice Complete!</h3><p>You got '+correct+' out of '+guidedQ.length+' with teacher-style feedback.</p><button class="btn primary" onclick="completeStage(\'guided\',\'independent\')">Continue →</button></div>';return}const q=guidedQ[i];wrap.innerHTML='<div class="mini-game"><span class="tag">Question '+(i+1)+' of '+guidedQ.length+'</span><h3>'+q[0]+'</h3><div class="choice-grid">'+q[2].map((a,j)=>'<button class="choice" data-j="'+j+'">'+a+'</button>').join('')+'</div><div id="gfb"></div></div>';wrap.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{const ok=Number(b.dataset.j)===q[3];wrap.querySelectorAll('.choice').forEach(x=>x.disabled=true);b.classList.add(ok?'correct':'incorrect');document.getElementById('gfb').className='feedback '+(ok?'good':'try');document.getElementById('gfb').textContent=ok?'⭐ '+q[4]:'Let’s try again. '+q[4];if(ok){correct++;state.score+=2;state.stars++;playTone(true)}else playTone(false);state.answers.push({q:q[0],ok});save();setTimeout(()=>{i++;next()},700)});};next()}
+const independentQ=[
+['A child uses a clean, soft washcloth on the outside of the ear.','SAFE','clean_outside_ear.jpg'],
+['A child puts a hairpin inside the ear.','UNSAFE','no_sharp_objects.jpg'],
+['A child listens to very loud music for a long time.','UNSAFE','low_music_volume.jpg'],
+['A child keeps away from noisy places and uses ear protection when needed.','SAFE','ear_protection.jpg'],
+['A child lets bath water go into the ears.','UNSAFE','keep_water_out.jpg'],
+['A child visits a doctor for an ear problem.','SAFE','see_doctor.jpg']
+];
+function renderIndependent(){const wrap=document.getElementById('independentGame');let i=0,correct=0;function show(){if(i>=independentQ.length){wrap.innerHTML='<div class="result"><div class="big">🎯</div><h3>Independent Practice Complete!</h3><p>'+correct+' out of '+independentQ.length+' safe choices identified.</p><button class="btn primary" onclick="completeStage(\'independent\',\'game\')">Enter Game Zone →</button></div>';return}const q=independentQ[i];wrap.innerHTML='<div class="mini-game"><img class="scenario-img" src="assets/'+q[2]+'"><h3>Is this a <u>SAFE</u> or <u>UNSAFE</u> ear-care action?</h3><div class="two-actions"><button class="btn green" id="safeBtn">SAFE</button><button class="btn danger" id="unsafeBtn">UNSAFE</button></div><div id="ifb"></div></div>';wrap.querySelector('#safeBtn').onclick=()=>ans('SAFE');wrap.querySelector('#unsafeBtn').onclick=()=>ans('UNSAFE');function ans(a){const ok=a===q[1];document.getElementById('safeBtn').disabled=true;document.getElementById('unsafeBtn').disabled=true;const fb=document.getElementById('ifb');fb.className='feedback '+(ok?'good':'try');fb.textContent=ok?'⭐ Great detective work!':'Look at the picture again and remember the safety rule.';if(ok){correct++;state.score+=3;state.stars++;playTone(true)}else playTone(false);state.answers.push({q:'Safe or unsafe: '+q[1],ok});save();setTimeout(()=>{i++;show()},700)}}show()}
+const gameQ=[
+['A firecracker is about to explode nearby. Which action follows the lesson?',['Cover your ears and open your mouth.','Put a pointed object in your ear.','Shout into a friend’s ear.'],0,'firecracker_loud_sound.jpg'],
+['You are in a noisy place and cannot leave right away. What is a helpful choice?',['Use ear protection such as earplugs.','Turn the noise louder.','Stand beside the loudest machine.'],0,'ear_protection.jpg'],
+['Your ear feels uncomfortable and you have an ear problem. What should you do?',['See a doctor.','Put a matchstick inside.','Ignore it forever.'],0,'see_doctor.jpg'],
+['Which action is shown as a good way to clean the outside of the ear?',['Use a clean, soft washcloth.','Use a hairpin inside the ear.','Use a matchstick inside the ear.'],0,'clean_outside_ear.jpg']
+];
+function renderGame(){const wrap=document.getElementById('gameZone');let i=0,correct=0;function show(){if(i>=gameQ.length){wrap.innerHTML='<div class="result"><div class="big">🛡️</div><h3>Ear Safety Rescue Complete!</h3><p>You rescued '+correct+' out of '+gameQ.length+' situations.</p><button class="btn primary" onclick="completeStage(\'game\',\'brain\')">Brain Challenge →</button></div>';return}const q=gameQ[i];wrap.innerHTML='<div class="mini-game"><img class="scenario-img" src="assets/'+q[3]+'"><span class="tag">Rescue '+(i+1)+' / '+gameQ.length+'</span><h3>'+q[0]+'</h3><div class="choice-grid">'+q[1].map((a,j)=>'<button class="choice" data-j="'+j+'">'+a+'</button>').join('')+'</div><div id="gameFb"></div></div>';wrap.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{const ok=Number(b.dataset.j)===q[2];wrap.querySelectorAll('.choice').forEach(x=>x.disabled=true);b.classList.add(ok?'correct':'incorrect');const fb=document.getElementById('gameFb');fb.className='feedback '+(ok?'good':'try');fb.textContent=ok?'🛡️ You protected the ears!':'Try again next time. Remember the lesson rule.';if(ok){correct++;state.score+=4;state.stars++;playTone(true)}else playTone(false);state.answers.push({q:q[0],ok});save();setTimeout(()=>{i++;show()},700)});}show()}
+const brainQ=[
+['Which pair shows two good ear-care habits?',['Low music volume + clean the outside of the ears.','Loud music + hairpin inside the ear.','Shouting + water inside the ears.'],0],
+['Which action should you avoid?',['Using ear protection in a noisy place.','Putting a pointed object in the ear.','Seeing a doctor for an ear problem.'],1],
+['What is the best reason to care for the ears?',['They are delicate sense organs that need care and protection.','They should always be exposed to loud sounds.','They do not need protection.'],0],
+['A child is going swimming. Which lesson rule should the child remember?',['Do not let water get into the ears.','Put a cotton swab deep inside the ear.','Listen to loud music underwater.'],0]
+];
+function renderBrain(){const wrap=document.getElementById('brainGame');let i=0,c=0;function show(){if(i>=brainQ.length){wrap.innerHTML='<div class="result"><div class="big">🧠</div><h3>Brain Challenge Complete!</h3><p>'+c+' out of '+brainQ.length+' choices showed strong science thinking.</p><button class="btn primary" onclick="completeStage(\'brain\',\'final\')">Take Mastery Check →</button></div>';return}const q=brainQ[i];wrap.innerHTML='<div class="mini-game"><span class="tag">Think '+(i+1)+' / '+brainQ.length+'</span><h3>'+q[0]+'</h3><div class="choice-grid">'+q[1].map((a,j)=>'<button class="choice" data-j="'+j+'">'+a+'</button>').join('')+'</div><div id="brainFb"></div></div>';wrap.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{const ok=Number(b.dataset.j)===q[2];wrap.querySelectorAll('.choice').forEach(x=>x.disabled=true);b.classList.add(ok?'correct':'incorrect');document.getElementById('brainFb').className='feedback '+(ok?'good':'try');document.getElementById('brainFb').textContent=ok?'💡 Great reasoning!':'Think about which action keeps the ears safe.';if(ok){c++;state.score+=4;state.stars++;playTone(true)}else playTone(false);state.answers.push({q:q[0],ok});save();setTimeout(()=>{i++;show()},700)});}show()}
+const finalQ=[
+['What should you use to clean the outside of your ears?',['A clean, soft washcloth.','A matchstick.','A hairpin.'],0],
+['What should you do with music volume?',['Keep it low.','Make it as loud as possible.','Put the speaker beside your ear.'],0],
+['Which should never be put into the ear?',['A pointed object such as a hairpin.','A clean shirt.','A soft towel used on the outside.'],0],
+['What should you avoid doing to another person’s ears?',['Shouting into them.','Speaking normally.','Listening together quietly.'],0],
+['What can help protect ears in a noisy place?',['Ear protection such as earplugs.','A louder radio.','A pointed object.'],0],
+['During a firecracker explosion, what does the lesson say?',['Cover your ears and open your mouth.','Put a stick in your ear.','Shout at a friend.'],0],
+['During bathing or swimming, what should you avoid?',['Letting water get into the ears.','Washing the outside of the ears.','Using a towel to dry yourself.'],0],
+['When should you see a doctor?',['When you have an ear problem.','Only when you want loud music.','When you want to shout.'],0],
+['Which is a SAFE choice?',['Keeping music low.','Using a matchstick in the ear.','Shouting into someone’s ear.'],0],
+['Which is an UNSAFE choice?',['Putting a pointed object in the ear.','Using ear protection in a noisy place.','Seeing a doctor for an ear problem.'],0],
+['A child hears very loud noise. Which lesson idea fits?',['Protect the ears from loud sounds.','Move closer to the noise.','Make the noise louder.'],0],
+['Why do we take care of the ears?',['They are delicate sense organs that need care and protection.','They never need protection.','They are not part of the body.'],0]
+];
+function renderFinal(){const wrap=document.getElementById('finalGame');if(state.finalDone){showFinalResult();return}let i=0,c=0;function show(){if(i>=finalQ.length){state.finalDone=true;state.finalScore=c;state.finalTotal=finalQ.length;state.score+=Math.round(c*2.5);state.stars+=Math.ceil(c/4);state.badges+=c>=10?1:0;state.completed.add('final');save();showFinalResult();return}const q=finalQ[i];wrap.innerHTML='<div class="mini-game"><div class="topline"><span class="tag">Mastery '+(i+1)+' / '+finalQ.length+'</span><span class="pill">Score '+c+'</span></div><h3>'+q[0]+'</h3><div class="choice-grid">'+q[1].map((a,j)=>'<button class="choice" data-j="'+j+'">'+a+'</button>').join('')+'</div><div id="finalFb"></div></div>';wrap.querySelectorAll('.choice').forEach(b=>b.onclick=()=>{const ok=Number(b.dataset.j)===q[2];wrap.querySelectorAll('.choice').forEach(x=>x.disabled=true);b.classList.add(ok?'correct':'incorrect');document.getElementById('finalFb').className='feedback '+(ok?'good':'try');document.getElementById('finalFb').textContent=ok?'⭐ Correct!':'Let’s remember the ear-care rule and keep going.';if(ok){c++;playTone(true)}else playTone(false);state.answers.push({q:q[0],ok});save();setTimeout(()=>{i++;show()},450)});}show()}
+function showFinalResult(){const c=state.finalScore;const total=state.finalTotal||finalQ.length;const pct=Math.round(c/Math.max(1,total)*100);document.getElementById('finalGame').innerHTML='<div class="result"><div class="big">🏆</div><h3>Mastery Check Finished!</h3><p>Your current learning record shows <strong>'+pct+'%</strong> correct across answered review and mastery items.</p><p class="small">Remember: needing more practice is part of learning. You can practice your mistakes anytime.</p><button class="btn green" onclick="showResults('+pct+')">See My Results →</button></div>'}
+function showResults(pct){document.getElementById('results').classList.remove('hidden');document.getElementById('reflection').classList.remove('hidden');document.getElementById('resultScore').textContent=state.score+' points';document.getElementById('resultMastery').textContent=pct+'% mastery';let badge=pct>=90?'🏆 Lesson Master':pct>=80?'🧠 Smart Thinker':pct>=70?'🎯 Practice Pro':'⭐ Great Effort';document.getElementById('resultBadge').textContent=badge;document.getElementById('resultMessage').textContent=pct>=90?'Excellent! You showed strong understanding of how to care for the ears.':pct>=80?'Great work! You understand most of the ear-care rules.':'You are learning! Review the pictures and practice the rules again.';document.getElementById('results').scrollIntoView({behavior:'smooth'});}
+function practiceMistakes(){const missed=state.answers.filter(a=>a.q&&!a.ok);if(!missed.length){alert('Great! There are no recorded missed questions yet.');return}alert('You have '+missed.length+' item(s) to practice. Go back through Learn and Game Zone, then try the Mastery Check again.');go('teach')}
+function reflect(btn){document.querySelectorAll('#reflection .choice').forEach(x=>x.classList.remove('selected'));btn.classList.add('selected');document.getElementById('reflectFb').className='feedback good';document.getElementById('reflectFb').textContent='🌟 Reflection saved. Keep caring for your ears!';state.stars++;save()}
+function resetProgress(){if(confirm('Reset this Science 1 ear-care lesson?')){localStorage.removeItem('earCareState');location.reload()}}
+let audioCtx=null;function playTone(good){if(!state.sound)return;try{audioCtx=audioCtx||new (window.AudioContext||window.webkitAudioContext)();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type='sine';o.frequency.value=good?740:220;g.gain.setValueAtTime(.0001,audioCtx.currentTime);g.gain.exponentialRampToValueAtTime(.05,audioCtx.currentTime+.01);g.gain.exponentialRampToValueAtTime(.0001,audioCtx.currentTime+.16);o.connect(g);g.connect(audioCtx.destination);o.start();o.stop(audioCtx.currentTime+.18)}catch(e){}}
+function toggleSound(){state.sound=!state.sound;document.getElementById('soundBtn').textContent=state.sound?'🔊 Sound On':'🔇 Sound Off'}
+load();go(stages[state.stage]||'connect');
+</script>
+</body>
+</html>

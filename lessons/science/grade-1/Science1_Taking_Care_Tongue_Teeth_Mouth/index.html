@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taking Care of the Tongue, Teeth, and Mouth | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>Teacher Ed Learning Hub</strong><span>Science 1 • Interactive Lesson</span></div>
+  </div>
+  <div class="top-actions">
+    <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
+    <button class="icon-btn" id="resetBtn" aria-label="Reset progress">↻</button>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <span class="eyebrow">SCIENCE 1 • PEOPLE</span>
+    <h1>Taking Care of the<br><span>Tongue, Teeth & Mouth</span></h1>
+    <p>Learn healthy habits, practice together, and show what you know!</p>
+    <div class="hero-buttons">
+      <button class="primary" onclick="goTo('connect')">🚀 Let's Begin</button>
+      <button class="secondary" onclick="goTo('learn')">📖 Learn First</button>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit-card"><span>🦷</span><b>Healthy Smile</b><small>Clean • Safe • Healthy</small></div>
+    <div class="orbit-card second"><span>👅</span><b>Care for Your Tongue</b><small>Protect • Clean • Be Careful</small></div>
+  </div>
+</section>
+
+<section class="progress-panel">
+  <div><b>Your Learning Journey</b><span id="stageText">1 of 11 stages</span></div>
+  <div class="progress-track"><div id="progressBar"></div></div>
+  <div class="stats">
+    <span>⭐ <b id="stars">0</b></span>
+    <span>🎯 <b id="score">0</b> points</span>
+    <span>🏆 <b id="badges">0</b> badges</span>
+  </div>
+</section>
+
+<main>
+<section class="lesson-section" id="connect">
+  <div class="section-head"><span class="phase">PHASE 1</span><h2>🔗 Connect — What Do You Already Know?</h2></div>
+  <div class="connect-grid">
+    <div class="card big">
+      <h3>Look at the pictures.</h3>
+      <p>Which actions help keep your mouth healthy?</p>
+      <div class="choice-grid" id="connectChoices">
+        <button data-correct="true">🪥 Brush your teeth</button>
+        <button data-correct="false">🍬 Eat lots of candy</button>
+        <button data-correct="true">🧵 Use dental floss</button>
+        <button data-correct="false">🔥 Eat food while it is very hot</button>
+      </div>
+      <div class="feedback" id="connectFeedback">Choose an answer to begin.</div>
+    </div>
+    <div class="card tip-card">
+      <div class="tip-icon">💡</div>
+      <h3>Our Big Idea</h3>
+      <p>Good habits help keep the <b>tongue, teeth, and mouth</b> clean and safe.</p>
+    </div>
+  </div>
+</section>
+
+<section class="lesson-section" id="learn">
+  <div class="section-head"><span class="phase">PHASE 2</span><h2>📖 Teach — Learn in Small Chunks</h2></div>
+  <p class="lead">The lesson source teaches several simple ways to care for the tongue, teeth, and mouth.</p>
+  <div class="visual-grid">
+    <article class="visual-card">
+      <img src="assets/cool_food.jpg" alt="Child cooling hot food">
+      <div><h3>1. Cool Food First</h3><p>Cool food before eating. Hot food could burn your tongue.</p><span class="tag">PROTECT YOUR TONGUE</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/clean_tongue.jpg" alt="Child cleaning tongue">
+      <div><h3>2. Clean Your Tongue</h3><p>Clean your tongue with a cotton swab or a clean, soft cloth after each meal.</p><span class="tag">KEEP IT CLEAN</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/avoid_biting.jpg" alt="Child being careful not to bite tongue">
+      <div><h3>3. Protect Your Tongue</h3><p>Be careful not to bite your tongue.</p><span class="tag">BE CAREFUL</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/avoid_tasting.jpg" alt="Child holding an unsafe substance">
+      <div><h3>4. Never Taste Unknown Things</h3><p>Avoid tasting all kinds of things. Some may be toxic or poisonous.</p><span class="tag">STAY SAFE</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/brush_teeth.jpg" alt="Child brushing teeth">
+      <div><h3>5. Brush Your Teeth</h3><p>Brush your teeth after every meal. Use a clean toothbrush with soft bristles.</p><span class="tag">HEALTHY TEETH</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/floss_mouthwash.jpg" alt="Children using dental floss and mouthwash">
+      <div><h3>6. Clean Between Teeth</h3><p>Use dental floss to remove particles between your teeth. Use mouthwash when you gargle.</p><span class="tag">CLEAN BETWEEN</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/avoid_candy.jpg" alt="Child eating candy">
+      <div><h3>7. Limit Candy & Sweet Foods</h3><p>Avoid eating too much candy or sweet foods. Brush your teeth after eating them.</p><span class="tag">SMART CHOICES</span></div>
+    </article>
+    <article class="visual-card">
+      <img src="assets/dentist.jpg" alt="Child having a dental checkup">
+      <div><h3>8. Visit the Dentist</h3><p>See your dentist at least once a year for a dental checkup.</p><span class="tag">CHECKUP</span></div>
+    </article>
+  </div>
+  <div class="source-note">Visuals above are cropped from the textbook pages you provided (Science Wonders 2, pp. 73–74) and are used here to help students see what each habit looks like.</div>
+</section>
+
+<section class="lesson-section" id="model">
+  <div class="section-head"><span class="phase">PHASE 3</span><h2>👩‍🏫 Model — Watch Me</h2></div>
+  <div class="model-box">
+    <div class="model-step active" data-step="0"><span>1</span><b>See the habit.</b><p>Look at the picture and name what the child is doing.</p></div>
+    <div class="model-step" data-step="1"><span>2</span><b>Say why it helps.</b><p>Connect the action to keeping the tongue, teeth, or mouth safe and clean.</p></div>
+    <div class="model-step" data-step="2"><span>3</span><b>Do it safely.</b><p>Choose the healthy action when you face a similar situation.</p></div>
+  </div>
+  <button class="primary" id="modelNext">Show the next step →</button>
+</section>
+
+<section class="lesson-section" id="guided">
+  <div class="section-head"><span class="phase">PHASE 4</span><h2>🤝 Guided Practice — Let's Do It Together</h2></div>
+  <div class="game-card">
+    <div class="question-count">Guided Question <span id="guidedNum">1</span> / 5</div>
+    <h3 id="guidedQ"></h3>
+    <div class="answers" id="guidedAnswers"></div>
+    <div class="feedback" id="guidedFeedback"></div>
+    <button class="secondary hidden" id="guidedNext">Next Question →</button>
+  </div>
+</section>
+
+<section class="lesson-section" id="independent">
+  <div class="section-head"><span class="phase">PHASE 5</span><h2>🎯 Independent Practice — Your Turn</h2></div>
+  <div class="game-card">
+    <div class="question-count">Your Turn <span id="indNum">1</span> / 6</div>
+    <h3 id="indQ"></h3>
+    <div class="answers" id="indAnswers"></div>
+    <div class="feedback" id="indFeedback"></div>
+    <button class="secondary hidden" id="indNext">Next Question →</button>
+  </div>
+</section>
+
+<section class="lesson-section" id="games">
+  <div class="section-head"><span class="phase">PHASE 6</span><h2>🎮 Game Zone — Learn by Playing</h2></div>
+  <div class="game-menu">
+    <button class="game-tile" onclick="startSortGame()"><span>🗂️</span><b>Sort It!</b><small>Healthy or Unsafe?</small></button>
+    <button class="game-tile" onclick="startPictureGame()"><span>🔎</span><b>Find It!</b><small>Match picture to habit</small></button>
+    <button class="game-tile" onclick="startQuickPick()"><span>🎯</span><b>Quick Pick</b><small>Choose the best answer</small></button>
+  </div>
+  <div class="game-card game-stage" id="gameStage">
+    <p class="muted">Choose a game above to start.</p>
+  </div>
+</section>
+
+<section class="lesson-section" id="review">
+  <div class="section-head"><span class="phase">PHASE 7</span><h2>🧠 Spiral Review — Remember It!</h2></div>
+  <div class="review-strip">
+    <div><span>👅</span><b>Tongue</b><small>Keep it clean. Protect it from hot food and biting.</small></div>
+    <div><span>🦷</span><b>Teeth</b><small>Brush, floss, and care for them.</small></div>
+    <div><span>👄</span><b>Mouth</b><small>Keep it clean and avoid unsafe substances.</small></div>
+  </div>
+  <div class="mini-check">
+    <h3>Quick Check</h3>
+    <p>Which habit belongs with all three: tongue, teeth, and mouth?</p>
+    <div class="answers" id="reviewAnswers"></div>
+    <div class="feedback" id="reviewFeedback"></div>
+  </div>
+</section>
+
+<section class="lesson-section" id="apply">
+  <div class="section-head"><span class="phase">PHASE 8</span><h2>🌎 Application — What Would You Do?</h2></div>
+  <div class="scenario-card">
+    <div class="scenario-icon">🍲</div>
+    <h3>Your food is steaming hot.</h3>
+    <p>What is the safest choice?</p>
+    <div class="choice-grid" id="scenarioChoices">
+      <button data-correct="true">Wait for it to cool.</button>
+      <button data-correct="false">Eat it right away.</button>
+      <button data-correct="false">Taste it to see if it burns.</button>
+    </div>
+    <div class="feedback" id="scenarioFeedback"></div>
+  </div>
+</section>
+
+<section class="lesson-section" id="mastery">
+  <div class="section-head"><span class="phase">PHASE 9</span><h2>🏆 Mastery Check</h2></div>
+  <div class="game-card">
+    <div class="question-count">Mastery Question <span id="masterNum">1</span> / 10</div>
+    <h3 id="masterQ"></h3>
+    <div class="answers" id="masterAnswers"></div>
+    <div class="feedback" id="masterFeedback"></div>
+    <button class="secondary hidden" id="masterNext">Next Question →</button>
+  </div>
+</section>
+
+<section class="lesson-section" id="remediate">
+  <div class="section-head"><span class="phase">PHASE 10</span><h2>🔄 Practice My Mistakes</h2></div>
+  <div class="mistakes-card" id="mistakesCard">
+    <h3>Keep learning!</h3>
+    <p>If you missed questions, this area will give you another chance to practice the same ideas.</p>
+    <button class="primary" onclick="reviewMistakes()">Practice My Mistakes</button>
+  </div>
+</section>
+
+<section class="lesson-section celebrate" id="celebrate">
+  <div class="celebrate-inner">
+    <div class="confetti">🎉 ⭐ 🦷 👅 ⭐ 🎉</div>
+    <span class="phase">PHASE 11</span>
+    <h2>🎉 You Did It!</h2>
+    <p>You learned how to care for your tongue, teeth, and mouth.</p>
+    <div class="result-grid">
+      <div><b id="finalScore">0</b><small>Points</small></div>
+      <div><b id="finalStars">0</b><small>Stars</small></div>
+      <div><b id="finalBadges">0</b><small>Badges</small></div>
+    </div>
+    <div class="mastery-message" id="masteryMessage">Complete the Mastery Check to see your result.</div>
+    <div class="hero-buttons">
+      <button class="primary" onclick="goTo('home')">🏠 Back to Start</button>
+      <button class="secondary" onclick="location.reload()">🔄 Try Again</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="Teacher Ed Learning Hub">
+  <div><b>Teacher Ed Learning Hub</b><br>Learn • Practice • Play • Master<br><small>Teacher Ed • Educational Learning Website</small></div>
+</footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

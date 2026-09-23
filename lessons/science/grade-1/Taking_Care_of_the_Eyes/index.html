@@ -1,0 +1,1396 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Science 1 | Taking Care of the Eyes</title>
+    <meta
+      name="description"
+      content="Grade 1 interactive Science lesson: Taking Care of the Eyes."
+    />
+    <style>
+      :root {
+        --navy: #062a63;
+        --blue: #0b67d1;
+        --gold: #f5b900;
+        --sky: #eaf5ff;
+        --ink: #18304f;
+        --green: #27a56b;
+        --red: #d94a4a;
+        --purple: #7656d6;
+        --card: #ffffff;
+        --soft: #f5f8fc;
+        --shadow: 0 16px 40px rgba(6, 42, 99, 0.12);
+        --radius: 24px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        color: var(--ink);
+        background: linear-gradient(180deg, #edf7ff 0, #fff 36%, #f8fbff 100%);
+        line-height: 1.5;
+      }
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: 0;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid #dce8f5;
+      }
+      .topbar {
+        max-width: 1180px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        padding: 10px 18px;
+      }
+      .logo {
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+        border-radius: 50%;
+        box-shadow: 0 4px 14px #062a6322;
+      }
+      .brand {
+        font-weight: 900;
+        color: var(--navy);
+        letter-spacing: 0.4px;
+      }
+      .brand small {
+        display: block;
+        color: #67809c;
+        font-weight: 700;
+        font-size: 0.76rem;
+      }
+      .scorebox {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .pill {
+        background: #fff;
+        border: 1px solid #d7e5f3;
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .progress-wrap {
+        height: 7px;
+        background: #dfeefa;
+      }
+      .progress {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--blue), var(--gold));
+        transition: 0.35s;
+      }
+      main {
+        max-width: 1180px;
+        margin: auto;
+        padding: 26px 18px 70px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #062a63, #0c5fc2);
+        color: white;
+        border-radius: 32px;
+        padding: 34px 28px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "👁️";
+        position: absolute;
+        right: 35px;
+        bottom: -30px;
+        font-size: 160px;
+        opacity: 0.12;
+      }
+      .eyebrow {
+        font-weight: 900;
+        letter-spacing: 1.2px;
+        color: #ffd34f;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3.8rem);
+        line-height: 1.05;
+        margin: 8px 0 12px;
+      }
+      .hero p {
+        max-width: 760px;
+        font-size: 1.08rem;
+      }
+      .objectives {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .objective {
+        background: #ffffff1b;
+        border: 1px solid #ffffff36;
+        padding: 9px 12px;
+        border-radius: 14px;
+        font-weight: 750;
+      }
+      .nav {
+        display: flex;
+        gap: 8px;
+        overflow: auto;
+        padding: 14px 0 4px;
+        position: sticky;
+        top: 76px;
+        z-index: 10;
+        background: linear-gradient(#edf7ff 78%, transparent);
+      }
+      .nav button {
+        flex: 0 0 auto;
+        background: #fff;
+        border: 1px solid #d8e6f4;
+        border-radius: 14px;
+        padding: 9px 12px;
+        font-weight: 800;
+        color: #57708b;
+      }
+      .nav button.active {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+      .stage {
+        display: none;
+        margin-top: 18px;
+      }
+      .stage.active {
+        display: block;
+        animation: rise 0.35s ease;
+      }
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .section-title {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin: 14px 0 18px;
+      }
+      .badge {
+        width: 48px;
+        height: 48px;
+        border-radius: 15px;
+        background: var(--navy);
+        color: white;
+        display: grid;
+        place-items: center;
+        font-size: 1.4rem;
+        flex: 0 0 auto;
+      }
+      .section-title h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: 1.7rem;
+      }
+      .section-title p {
+        margin: 2px 0 0;
+        color: #6a8097;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid #dce8f3;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 20px;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        color: var(--navy);
+      }
+      .muted {
+        color: #667e98;
+      }
+      .center {
+        text-align: center;
+      }
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .choice {
+        background: white;
+        border: 3px solid transparent;
+        border-radius: 22px;
+        padding: 0;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        transition: 0.2s;
+      }
+      .choice:hover {
+        transform: translateY(-3px);
+      }
+      .choice img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        display: block;
+      }
+      .choice .ct {
+        padding: 15px;
+      }
+      .choice.correct {
+        border-color: var(--green);
+      }
+      .choice.wrong {
+        border-color: var(--red);
+      }
+      .bigbtn,
+      .nextbtn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 13px 18px;
+        border-radius: 16px;
+        background: var(--blue);
+        color: #fff;
+        font-weight: 900;
+        box-shadow: 0 8px 18px #0b67d133;
+      }
+      .bigbtn.gold {
+        background: var(--gold);
+        color: var(--navy);
+      }
+      .bigbtn.light {
+        background: #eef6ff;
+        color: var(--navy);
+        box-shadow: none;
+        border: 1px solid #d5e6f6;
+      }
+      .actions {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+      .feedback {
+        margin-top: 15px;
+        border-radius: 16px;
+        padding: 13px 15px;
+        font-weight: 800;
+        display: none;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .feedback.good {
+        background: #e8f8f0;
+        color: #16643f;
+      }
+      .feedback.bad {
+        background: #fff0f0;
+        color: #9c3030;
+      }
+      .tip {
+        background: #fff8d9;
+        border: 1px solid #f3dd8b;
+        border-radius: 18px;
+        padding: 14px 16px;
+      }
+      .visual-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .visual {
+        background: #fff;
+        border: 1px solid #dbe7f3;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+      }
+      .visual img {
+        width: 100%;
+        height: 190px;
+        object-fit: cover;
+        display: block;
+      }
+      .visual .cap {
+        padding: 14px;
+      }
+      .goodtag {
+        display: inline-block;
+        background: #e7f8ef;
+        color: #187149;
+        border-radius: 999px;
+        padding: 5px 9px;
+        font-weight: 900;
+        font-size: 0.75rem;
+        margin-bottom: 7px;
+      }
+      .notag {
+        background: #fff0f0;
+        color: #9e3030;
+      }
+      .flash {
+        min-height: 270px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: linear-gradient(135deg, #fff, #eef7ff);
+        border: 2px dashed #bdd6ed;
+      }
+      .flash .emoji {
+        font-size: 4rem;
+      }
+      .flash h3 {
+        font-size: 2rem;
+        margin: 4px;
+      }
+      .flash button {
+        margin-top: 8px;
+      }
+      .question {
+        font-size: 1.25rem;
+        font-weight: 850;
+        color: var(--navy);
+        margin-bottom: 15px;
+      }
+      .answers {
+        display: grid;
+        gap: 10px;
+      }
+      .answer {
+        background: #f5f9fd;
+        border: 2px solid #d8e6f3;
+        border-radius: 16px;
+        padding: 13px 15px;
+        text-align: left;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .answer:hover {
+        border-color: var(--blue);
+        background: #eef7ff;
+      }
+      .answer.selected {
+        border-color: var(--blue);
+      }
+      .answer.correct {
+        border-color: var(--green);
+        background: #e9f8f0;
+      }
+      .answer.wrong {
+        border-color: var(--red);
+        background: #fff0f0;
+      }
+      .sort-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      .scenario {
+        background: #fff;
+        border: 2px dashed #b8cfe5;
+        border-radius: 20px;
+        padding: 18px;
+        text-align: center;
+      }
+      .dropzone {
+        min-height: 110px;
+        display: grid;
+        place-items: center;
+        border: 2px dashed #9fbad2;
+        border-radius: 16px;
+        background: #f8fbff;
+        margin-top: 10px;
+      }
+      .dropzone.good {
+        background: #e9f8f0;
+        border-color: var(--green);
+      }
+      .dropzone.bad {
+        background: #fff0f0;
+        border-color: var(--red);
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 12px;
+      }
+      .mini {
+        padding: 15px;
+        border-radius: 18px;
+        background: #fff;
+        border: 1px solid #dce8f3;
+        box-shadow: 0 8px 22px #062a6310;
+      }
+      .mini b {
+        display: block;
+        color: var(--navy);
+        margin-bottom: 5px;
+      }
+      input[type="text"],
+      textarea {
+        width: 100%;
+        border: 2px solid #d4e2ef;
+        border-radius: 16px;
+        padding: 13px;
+        outline: none;
+      }
+      input:focus,
+      textarea:focus {
+        border-color: var(--blue);
+      }
+      .result {
+        background: linear-gradient(135deg, #fff8d8, #fff);
+        border: 2px solid #f0d46b;
+        border-radius: 26px;
+        padding: 30px;
+        text-align: center;
+      }
+      .stars {
+        font-size: 2.6rem;
+        letter-spacing: 5px;
+      }
+      .bigscore {
+        font-size: 3.4rem;
+        font-weight: 1000;
+        color: var(--navy);
+      }
+      footer {
+        text-align: center;
+        color: #7288a0;
+        padding: 28px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .small {
+        font-size: 0.88rem;
+      }
+      @media (max-width: 850px) {
+        .grid,
+        .visual-grid,
+        .choice-grid,
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .grid.two,
+        .sort-area {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          top: 72px;
+        }
+        .hero:after {
+          font-size: 100px;
+        }
+      }
+      @media (max-width: 560px) {
+        .grid,
+        .visual-grid,
+        .choice-grid,
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .topbar {
+          padding: 8px 12px;
+        }
+        .logo {
+          width: 46px;
+          height: 46px;
+        }
+        .scorebox {
+          font-size: 0.82rem;
+        }
+        .hero {
+          padding: 26px 20px;
+          border-radius: 24px;
+        }
+        .card {
+          padding: 16px;
+        }
+        .choice img,
+        .visual img {
+          height: 210px;
+        }
+        .nav button {
+          padding: 8px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <img
+          class="logo"
+          src="assets/teacher-ed-logo.png"
+          alt="Teacher Ed logo"
+        />
+        <div class="brand">
+          TEACHER ED LEARNING HUB<small>Science 1 • Interactive Lesson</small>
+        </div>
+        <div class="scorebox">
+          <span class="pill">⭐ <span id="score">0</span></span
+          ><span class="pill">🏅 <span id="badge">Eye Explorer</span></span>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div id="progress" class="progress"></div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="eyebrow">SCIENCE 1 • LESSON</div>
+        <h1>Taking Care of the Eyes 👀</h1>
+        <p>
+          Become an <strong>Eye Care Explorer!</strong> Discover safe habits
+          that help us protect our eyes at home, at school, while reading,
+          playing, and enjoying the outdoors.
+        </p>
+        <div class="objectives">
+          <span class="objective">👁️ Identify healthy eye-care habits</span
+          ><span class="objective">🛡️ Tell safe from unsafe actions</span
+          ><span class="objective">🌟 Make a healthy-eye promise</span>
+        </div>
+      </section>
+      <nav class="nav" id="nav"></nav>
+
+      <section class="stage active" id="s1"></section>
+      <section class="stage" id="s2"></section>
+      <section class="stage" id="s3"></section>
+      <section class="stage" id="s4"></section>
+      <section class="stage" id="s5"></section>
+      <section class="stage" id="s6"></section>
+      <section class="stage" id="s7"></section>
+      <section class="stage" id="s8"></section>
+      <section class="stage" id="s9"></section>
+      <section class="stage" id="s10"></section>
+      <section class="stage" id="s11"></section>
+      <section class="stage" id="s12"></section>
+    </main>
+    <footer>
+      Teacher Ed Learning Hub • Science 1 • Taking Care of the Eyes
+    </footer>
+    <script>
+      const A = "assets/";
+      const stages = [
+        ["🎮", "ENGAGE"],
+        ["🎯", "CONNECT"],
+        ["🔎", "EXPLORE"],
+        ["🧠", "LEARN"],
+        ["🤝", "GUIDED"],
+        ["🎮", "PRACTICE"],
+        ["💭", "THINK"],
+        ["🔄", "REVIEW"],
+        ["✅", "CHECK"],
+        ["🏆", "MASTER"],
+        ["🌈", "REFLECT"],
+        ["🎉", "CELEBRATE"],
+      ];
+      let score = 0,
+        current = 0,
+        completed = new Set(),
+        answered = new Set();
+      const nav = document.getElementById("nav");
+      stages.forEach((s, i) => {
+        let b = document.createElement("button");
+        b.textContent = `${s[0]} ${s[1]}`;
+        b.onclick = () => showStage(i);
+        nav.appendChild(b);
+      });
+      function update() {
+        document.getElementById("score").textContent = score;
+        document.getElementById("progress").style.width =
+          (completed.size / 12) * 100 + "%";
+        let badge =
+          score >= 90
+            ? "👑 Eye Care Champion"
+            : score >= 60
+              ? "🌟 Eye Care Hero"
+              : "🔎 Eye Explorer";
+        document.getElementById("badge").textContent = badge;
+        [...nav.children].forEach((b, i) =>
+          b.classList.toggle("active", i === current),
+        );
+      }
+      function showStage(i) {
+        current = i;
+        document
+          .querySelectorAll(".stage")
+          .forEach((x, j) => x.classList.toggle("active", j === i));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        update();
+      }
+      function done(i, pts = 0) {
+        if (!completed.has(i)) {
+          completed.add(i);
+          score += pts;
+        }
+        update();
+      }
+      function next(i) {
+        showStage(Math.min(11, i + 1));
+      }
+      function title(i, icon, head, sub) {
+        return `<div class="section-title"><div class="badge">${icon}</div><div><h2>${head}</h2><p>${sub}</p></div></div>`;
+      }
+
+      // 1 ENGAGE
+      const s1 = document.getElementById("s1");
+      s1.innerHTML =
+        title(
+          0,
+          "🎮",
+          "ENGAGE: Spot the Safe Choice",
+          "Which picture shows a good way to care for your eyes?",
+        ) +
+        `<div class="choice-grid">
+<button class="choice" onclick="engage(this,false)"><img src="${A}eye_scratch.jpg"><div class="ct"><b>Rub your itchy eyes</b><div class="muted">Is this a safe habit?</div></div></button>
+<button class="choice" onclick="engage(this,true)"><img src="${A}eye_sunglasses.jpg"><div class="ct"><b>Wear sunglasses on a sunny day</b><div class="muted">A safer choice!</div></div></button>
+<button class="choice" onclick="engage(this,false)"><img src="${A}eye_no_throw.jpg"><div class="ct"><b>Throw something toward a person's eyes</b><div class="muted">Safe or unsafe?</div></div></button></div><div id="f1" class="feedback"></div><div class="actions"><button class="nextbtn" onclick="done(0,5);next(0)">Continue →</button></div>`;
+      function engage(el, good) {
+        document
+          .querySelectorAll("#s1 .choice")
+          .forEach((x) => x.classList.remove("correct", "wrong"));
+        el.classList.add(good ? "correct" : "wrong");
+        const f = document.getElementById("f1");
+        f.className = "feedback show " + (good ? "good" : "bad");
+        f.textContent = good
+          ? "Great! Sunglasses can help protect the eyes from bright sunlight."
+          : "Try again. We should protect our eyes, not put them at risk.";
+      }
+
+      // 2 CONNECT
+      const s2 = document.getElementById("s2");
+      s2.innerHTML =
+        title(
+          1,
+          "🎯",
+          "CONNECT: Your Eyes at Home",
+          "Think about things you do every day.",
+        ) +
+        `<div class="grid two"><div class="card"><h3>📖 You are reading.</h3><p>What should you do?</p><div class="answers"><button class="answer" onclick="connect(this,true)">Read with proper lighting.</button><button class="answer" onclick="connect(this,false)">Read in a very dark place.</button></div></div><div class="card"><h3>📺 You are watching TV.</h3><p>What is a good habit?</p><div class="answers"><button class="answer" onclick="connect(this,true)">Switch on the light.</button><button class="answer" onclick="connect(this,false)">Watch in a dark room.</button></div></div></div><div id="f2" class="feedback"></div><div class="actions"><button class="nextbtn" onclick="done(1,5);next(1)">I’m ready to explore →</button></div>`;
+      function connect(el, good) {
+        el.parentElement
+          .querySelectorAll(".answer")
+          .forEach((x) => x.classList.remove("correct", "wrong"));
+        el.classList.add(good ? "correct" : "wrong");
+        const f = document.getElementById("f2");
+        f.className = "feedback show " + (good ? "good" : "bad");
+        f.textContent = good
+          ? "Yes! That habit helps care for your eyes."
+          : "Think about a way that protects your eyes.";
+      }
+
+      // 3 EXPLORE
+      const visuals = [
+        [
+          "eye_sharp_object.jpg",
+          "Keep sharp objects away from your eyes.",
+          "Avoid pointing sharp objects near the eyes.",
+        ],
+        [
+          "eye_reading_light.jpg",
+          "Use proper lighting when reading.",
+          "Avoid reading in dark places or inside moving vehicles.",
+        ],
+        [
+          "eye_rest_green.jpg",
+          "Give tired eyes a rest.",
+          "Close your eyes for a few minutes or look at green objects.",
+        ],
+        [
+          "eye_sunglasses.jpg",
+          "Protect your eyes outdoors.",
+          "Never look directly at the sun. Sunglasses can be worn on a sunny day.",
+        ],
+        [
+          "eye_light_tv.jpg",
+          "Use light while watching TV.",
+          "Switch on the light when watching television.",
+        ],
+        [
+          "eye_no_throw.jpg",
+          "Do not throw objects at eyes.",
+          "Keep play safe around other people’s eyes.",
+        ],
+        [
+          "eye_cleaners.jpg",
+          "Be careful with household cleaners.",
+          "They can burn or sting your eyes.",
+        ],
+        [
+          "eye_sports.jpg",
+          "Be careful when playing sports.",
+          "Avoid getting your eyes poked with sticks or sharp objects.",
+        ],
+        [
+          "eye_no_chemicals.jpg",
+          "Never spray chemicals into eyes.",
+          "Keep chemicals away from people’s eyes.",
+        ],
+        [
+          "eye_wipe.jpg",
+          "Wipe your eyes gently.",
+          "Use a clean handkerchief or clean soft cloth.",
+        ],
+        [
+          "eye_vitamin_a.jpg",
+          "Eat foods rich in vitamin A.",
+          "Examples in the lesson include carrots, mangoes, and papaya.",
+        ],
+        [
+          "eye_checkup.jpg",
+          "Have an eye checkup.",
+          "The lesson recommends a checkup with an eye doctor at least once a year.",
+        ],
+      ];
+      const s3 = document.getElementById("s3");
+      s3.innerHTML =
+        title(
+          2,
+          "🔎",
+          "EXPLORE: Eye-Care Gallery",
+          "Look closely at the pictures from your lesson. Tap a card to learn more.",
+        ) +
+        `<div class="visual-grid">${visuals.map((v, i) => `<article class="visual" tabindex="0" onclick="speakCard(${i})"><img src="${A + v[0]}" alt="${v[1]}"><div class="cap"><span class="goodtag ${i === 5 || i === 8 ? "notag" : ""}">${i === 5 || i === 8 ? "STOP & STAY SAFE" : "EYE CARE"}</span><h3>${v[1]}</h3><p class="muted">${v[2]}</p></div></article>`).join("")}</div><div class="tip" style="margin-top:16px">💡 <b>Detective tip:</b> Ask yourself: “Does this action protect my eyes or put them in danger?”</div><div class="actions"><button class="nextbtn" onclick="done(2,10);next(2)">I found the eye-care clues →</button></div>`;
+      function speakCard(i) {
+        const v = visuals[i];
+        if ("speechSynthesis" in window) {
+          speechSynthesis.cancel();
+          let u = new SpeechSynthesisUtterance(v[1] + ". " + v[2]);
+          u.rate = 0.9;
+          speechSynthesis.speak(u);
+        }
+      }
+
+      // 4 LEARN
+      const s4 = document.getElementById("s4");
+      s4.innerHTML =
+        title(
+          3,
+          "🧠",
+          "LEARN: Rules for Healthy Eyes",
+          "Let’s turn the pictures into simple eye-care rules.",
+        ) +
+        `<div class="grid"><div class="card"><h3>🧼 Keep eyes clean</h3><p>Use a clean handkerchief or clean soft cloth to wipe your eyes.</p></div><div class="card"><h3>💡 Use proper light</h3><p>Read with proper lighting and switch on the light when watching television.</p></div><div class="card"><h3>☀️ Protect from bright light</h3><p>Never look directly at the sun or very bright lights. Wear sunglasses on a sunny day.</p></div><div class="card"><h3>🛑 Avoid danger</h3><p>Do not point sharp objects, throw objects, or spray chemicals toward someone’s eyes.</p></div><div class="card"><h3>⚽ Play carefully</h3><p>Be careful during sports and avoid sticks or other sharp objects near the eyes.</p></div><div class="card"><h3>🥕 Help your eyes stay healthy</h3><p>Eat foods rich in vitamin A, such as carrots, mangoes, and papaya.</p></div></div><div class="tip" style="margin-top:16px">👩‍⚕️ If your eyes are hit by a sharp object, the lesson says to see a doctor at once. If itching continues, consult an eye doctor.</div><div class="actions"><button class="nextbtn" onclick="done(3,10);next(3)">I understand the rules →</button></div>`;
+
+      // 5 GUIDED
+      const guided = [
+        [
+          "A child rubs itchy eyes with dirty hands.",
+          "Not Safe",
+          "Germs from hands might get into the eyes.",
+        ],
+        [
+          "A child reads with a lamp on.",
+          "Safe",
+          "Good lighting is a helpful eye-care habit.",
+        ],
+        [
+          "A child looks directly at the sun.",
+          "Not Safe",
+          "Never look directly at the sun.",
+        ],
+        [
+          "A child uses a clean soft cloth to wipe the eyes.",
+          "Safe",
+          "The lesson recommends a clean handkerchief or soft cloth.",
+        ],
+        [
+          "A child points a sharp pencil toward a friend’s eyes.",
+          "Not Safe",
+          "Sharp objects should be kept away from the eyes.",
+        ],
+        [
+          "A child wears sunglasses on a sunny day.",
+          "Safe",
+          "Sunglasses can help protect the eyes from bright sunlight.",
+        ],
+      ];
+      const s5 = document.getElementById("s5");
+      let gIndex = 0;
+      s5.innerHTML =
+        title(
+          4,
+          "🤝",
+          "GUIDED PRACTICE: Safe or Not Safe?",
+          "Let’s solve each situation together.",
+        ) + `<div id="guidedBox"></div>`;
+      function renderGuided() {
+        const q = guided[gIndex];
+        document.getElementById("guidedBox").innerHTML =
+          `<div class="card center"><div class="question">${q[0]}</div><div class="actions"><button class="bigbtn" onclick="guidedAns(true)">✅ Safe</button><button class="bigbtn" style="background:#d94a4a" onclick="guidedAns(false)">🛑 Not Safe</button></div><div id="gf" class="feedback"></div><div class="small muted" style="margin-top:10px">Situation ${gIndex + 1} of ${guided.length}</div></div>`;
+      }
+      function guidedAns(ans) {
+        const good = guided[gIndex][1] === "Safe";
+        const f = document.getElementById("gf");
+        f.className = "feedback show " + (ans === good ? "good" : "bad");
+        f.textContent =
+          (ans === good ? "Correct! " : "Not quite. ") + guided[gIndex][2];
+        if (ans === good) score += 3;
+        update();
+        setTimeout(() => {
+          gIndex++;
+          if (gIndex < guided.length) renderGuided();
+          else {
+            done(4);
+            document.getElementById("guidedBox").innerHTML =
+              `<div class="result"><div class="stars">⭐⭐⭐</div><h3>Guided practice complete!</h3><p>You practiced making safe choices for your eyes.</p><button class="nextbtn" onclick="next(4)">Continue →</button></div>`;
+          }
+        }, 650);
+      }
+      renderGuided();
+
+      // 6 PRACTICE
+      const practice = [
+        [
+          "What should you use to wipe your eyes?",
+          ["A clean soft cloth", "A dirty hand", "A sharp object"],
+          0,
+        ],
+        [
+          "What should you do when watching TV?",
+          ["Switch on the light", "Turn off all lights", "Look at the sun"],
+          0,
+        ],
+        [
+          "Which is safe on a sunny day?",
+          [
+            "Wear sunglasses",
+            "Look directly at the sun",
+            "Look at a very bright light",
+          ],
+          0,
+        ],
+        [
+          "What should you avoid near the eyes?",
+          ["Sharp objects", "Soft cloth", "Green objects"],
+          0,
+        ],
+        [
+          "Which food is listed as rich in vitamin A?",
+          ["Carrots", "Candy", "Chips"],
+          0,
+        ],
+        [
+          "What can you do when your eyes are tired?",
+          [
+            "Close them for a few minutes",
+            "Rub them with dirty hands",
+            "Look directly at the sun",
+          ],
+          0,
+        ],
+        [
+          "What should you do with household cleaners?",
+          [
+            "Be careful because they can burn or sting the eyes",
+            "Spray them toward a person",
+            "Put them near the eyes",
+          ],
+          0,
+        ],
+        [
+          "What does the lesson recommend about eye checkups?",
+          [
+            "Have a checkup with an eye doctor at least once a year",
+            "Never have a checkup",
+            "Only check the eyes when watching TV",
+          ],
+          0,
+        ],
+      ];
+      let pIndex = 0;
+      const s6 = document.getElementById("s6");
+      s6.innerHTML =
+        title(
+          5,
+          "🎮",
+          "PRACTICE: Eye Care Quest",
+          "Answer the questions and collect points.",
+        ) + `<div id="practiceBox"></div>`;
+      function renderPractice() {
+        const q = practice[pIndex];
+        document.getElementById("practiceBox").innerHTML =
+          `<div class="card"><div class="question">${pIndex + 1}. ${q[0]}</div><div class="answers">${q[1].map((a, i) => `<button class="answer" onclick="practiceAns(${i},this)">${String.fromCharCode(65 + i)}. ${a}</button>`).join("")}</div><div id="pf" class="feedback"></div><div class="small muted" style="margin-top:12px">Question ${pIndex + 1} of ${practice.length}</div></div>`;
+      }
+      function practiceAns(i, el) {
+        const q = practice[pIndex];
+        document
+          .querySelectorAll("#practiceBox .answer")
+          .forEach((x) => (x.disabled = true));
+        const good = i === q[2];
+        el.classList.add(good ? "correct" : "wrong");
+        const f = document.getElementById("pf");
+        f.className = "feedback show " + (good ? "good" : "bad");
+        f.textContent = good
+          ? "Correct! Great eye-care thinking."
+          : "Try again next time. Review the picture clues and eye-care rules.";
+        if (good) score += 5;
+        update();
+        setTimeout(() => {
+          pIndex++;
+          if (pIndex < practice.length) renderPractice();
+          else {
+            done(5);
+            document.getElementById("practiceBox").innerHTML =
+              `<div class="result"><div class="bigscore">${score}</div><p>points so far</p><button class="nextbtn" onclick="next(5)">Continue to Think →</button></div>`;
+          }
+        }, 700);
+      }
+      renderPractice();
+
+      // 7 THINK
+      const scenarios = [
+        [
+          "Your friend wants to play with a pencil by pointing it toward your face.",
+          "What should you say?",
+          "“Let’s keep sharp objects away from our eyes.”",
+        ],
+        [
+          "Your eyes feel tired after reading.",
+          "What could you do?",
+          "Close your eyes for a few minutes or look at green objects.",
+        ],
+        [
+          "You are outside on a sunny day.",
+          "What is a safer choice?",
+          "Wear sunglasses and never look directly at the sun.",
+        ],
+        [
+          "A bottle of household cleaner is nearby.",
+          "What should you remember?",
+          "Be careful because cleaners can burn or sting the eyes.",
+        ],
+      ];
+      let thIndex = 0;
+      const s7 = document.getElementById("s7");
+      s7.innerHTML =
+        title(
+          6,
+          "💭",
+          "THINK: What Would You Do?",
+          "Choose the best action for each real-life situation.",
+        ) + `<div id="thinkBox"></div>`;
+      function renderThink() {
+        let q = scenarios[thIndex];
+        document.getElementById("thinkBox").innerHTML =
+          `<div class="card"><h3>${q[0]}</h3><p class="muted">${q[1]}</p><textarea id="thinkInput" rows="3" placeholder="Type or tell your answer..."></textarea><div class="actions"><button class="bigbtn" onclick="showThink()">Check my thinking</button></div><div id="tf" class="feedback"></div></div>`;
+      }
+      function showThink() {
+        const f = document.getElementById("tf");
+        f.className = "feedback show good";
+        f.innerHTML =
+          "<b>Good thinking!</b> A strong answer is: " + scenarios[thIndex][2];
+        score += 3;
+        update();
+        setTimeout(() => {
+          thIndex++;
+          if (thIndex < scenarios.length) renderThink();
+          else {
+            done(6);
+            document.getElementById("thinkBox").innerHTML =
+              `<div class="result"><div class="stars">🧠🌟</div><h3>You used your science thinking!</h3><button class="nextbtn" onclick="next(6)">Review the lesson →</button></div>`;
+          }
+        }, 900);
+      }
+      renderThink();
+
+      // 8 REVIEW flashcards
+      const review = [
+        [
+          "👁️",
+          "Clean",
+          "Use a clean handkerchief or clean soft cloth to wipe your eyes.",
+        ],
+        [
+          "💡",
+          "Light",
+          "Read with proper lighting and switch on the light when watching TV.",
+        ],
+        ["☀️", "Sun", "Never look directly at the sun or very bright lights."],
+        ["🛑", "Sharp objects", "Keep sharp objects away from the eyes."],
+        ["⚽", "Sports", "Be careful when playing sports."],
+        [
+          "🥕",
+          "Vitamin A",
+          "Carrots, mangoes, and papaya are examples listed in the lesson.",
+        ],
+        [
+          "🧘",
+          "Rest",
+          "Let tired eyes rest by closing them for a few minutes or looking at green objects.",
+        ],
+        [
+          "👩‍⚕️",
+          "Checkup",
+          "The lesson recommends an eye checkup with an eye doctor at least once a year.",
+        ],
+      ];
+      let r = 0;
+      const s8 = document.getElementById("s8");
+      s8.innerHTML =
+        title(
+          7,
+          "🔄",
+          "REVIEW: Flip & Remember",
+          "Tap the card to reveal the eye-care idea.",
+        ) +
+        `<div class="flash" id="flash" onclick="flipFlash()"></div><div class="actions"><button class="bigbtn light" onclick="prevFlash()">← Previous</button><button class="bigbtn" onclick="nextFlash()">Next →</button></div><p class="center muted small" id="rCount"></p>`;
+      let flipped = false;
+      function renderFlash() {
+        let x = review[r];
+        document.getElementById("flash").innerHTML = flipped
+          ? `<div><div class="emoji">${x[0]}</div><h3>${x[1]}</h3><p>${x[2]}</p><button class="bigbtn light" onclick="event.stopPropagation();flipFlash()">Show front</button></div>`
+          : `<div><div class="emoji">${x[0]}</div><h3>What eye-care idea is this?</h3><p>Tap to reveal.</p></div>`;
+        document.getElementById("rCount").textContent =
+          `Card ${r + 1} of ${review.length}`;
+      }
+      function flipFlash() {
+        flipped = !flipped;
+        renderFlash();
+      }
+      function nextFlash() {
+        r = (r + 1) % review.length;
+        flipped = false;
+        renderFlash();
+      }
+      function prevFlash() {
+        r = (r - 1 + review.length) % review.length;
+        flipped = false;
+        renderFlash();
+      }
+      renderFlash();
+
+      // 9 CHECK
+      const check = [
+        [
+          "Which is a good way to wipe your eyes?",
+          ["Clean soft cloth", "Dirty hand", "Sharp stick"],
+          0,
+        ],
+        [
+          "When reading, light should be proper.",
+          ["True", "False", "Only at night"],
+          0,
+        ],
+        [
+          "Should you look directly at the sun?",
+          ["No", "Yes", "Only for fun"],
+          0,
+        ],
+        [
+          "What can you wear on a sunny day?",
+          ["Sunglasses", "A blindfold", "A sharp object"],
+          0,
+        ],
+        [
+          "What should you do when watching TV?",
+          [
+            "Switch on the light",
+            "Turn off all lights",
+            "Stand very close to the screen",
+          ],
+          0,
+        ],
+        [
+          "Should you throw objects into another person’s eyes?",
+          ["No", "Yes", "Sometimes"],
+          0,
+        ],
+        [
+          "Household cleaners can hurt the eyes.",
+          ["True", "False", "Never"],
+          0,
+        ],
+        [
+          "Which food is an example of vitamin A-rich food in the lesson?",
+          ["Papaya", "Candy", "Soda"],
+          0,
+        ],
+        [
+          "What should you do if your eyes are tired?",
+          ["Rest them", "Rub them with dirty hands", "Look at the sun"],
+          0,
+        ],
+        [
+          "How often does the lesson recommend an eye checkup?",
+          ["At least once a year", "Every hour", "Never"],
+          0,
+        ],
+      ];
+      let c = 0,
+        checkCorrect = 0;
+      const s9 = document.getElementById("s9");
+      s9.innerHTML =
+        title(
+          8,
+          "✅",
+          "CHECK: Quick Science Check",
+          "Show what you remember. Three choices each!",
+        ) + `<div id="checkBox"></div>`;
+      function renderCheck() {
+        let q = check[c];
+        document.getElementById("checkBox").innerHTML =
+          `<div class="card"><div class="question">${c + 1}. ${q[0]}</div><div class="answers">${q[1].map((a, i) => `<button class="answer" onclick="checkAns(${i},this)">${String.fromCharCode(65 + i)}. ${a}</button>`).join("")}</div><div id="cf" class="feedback"></div><div class="small muted" style="margin-top:12px">${c + 1} / ${check.length}</div></div>`;
+      }
+      function checkAns(i, el) {
+        const q = check[c];
+        document
+          .querySelectorAll("#checkBox .answer")
+          .forEach((x) => (x.disabled = true));
+        let good = i === q[2];
+        el.classList.add(good ? "correct" : "wrong");
+        if (good) {
+          checkCorrect++;
+          score += 5;
+        }
+        const f = document.getElementById("cf");
+        f.className = "feedback show " + (good ? "good" : "bad");
+        f.textContent = good
+          ? "Correct!"
+          : "Review the eye-care rules and try the next one.";
+        update();
+        setTimeout(() => {
+          c++;
+          if (c < check.length) renderCheck();
+          else {
+            done(8);
+            document.getElementById("checkBox").innerHTML =
+              `<div class="result"><div class="bigscore">${checkCorrect}/${check.length}</div><p>correct answers</p><p>${checkCorrect >= 8 ? "Excellent! You are ready for the mastery challenge." : "Nice effort! Review the cards once more, then keep going."}</p><button class="nextbtn" onclick="next(8)">Go to Master →</button></div>`;
+          }
+        }, 650);
+      }
+      renderCheck();
+
+      // 10 MASTER
+      const master = [
+        [
+          "You are outside. The sun is very bright.",
+          "Choose a safe action.",
+          [
+            "Look directly at the sun",
+            "Wear sunglasses and avoid looking directly at the sun",
+            "Stare at a very bright light",
+          ],
+          1,
+        ],
+        [
+          "You are reading a book. The room is dark.",
+          "Choose a safe action.",
+          [
+            "Turn on proper lighting",
+            "Keep reading in the dark",
+            "Read inside a moving vehicle",
+          ],
+          0,
+        ],
+        [
+          "Your eyes feel itchy.",
+          "Choose the safer action.",
+          [
+            "Rub them with dirty hands",
+            "Ask an adult about appropriate care and avoid rubbing",
+            "Scratch the eyes",
+          ],
+          1,
+        ],
+        [
+          "You are playing sports.",
+          "Choose a safe action.",
+          [
+            "Use sharp sticks near faces",
+            "Be careful and avoid sharp objects near the eyes",
+            "Throw objects toward faces",
+          ],
+          1,
+        ],
+        [
+          "A friend is holding a sharp pencil near your eyes.",
+          "Choose the safest response.",
+          [
+            "Move away and tell them to point it down",
+            "Let them point it at your eyes",
+            "Throw another object back",
+          ],
+          0,
+        ],
+      ];
+      let m = 0,
+        masterScore = 0;
+      const s10 = document.getElementById("s10");
+      s10.innerHTML =
+        title(
+          9,
+          "🏆",
+          "MASTER: Eye Care Champion",
+          "Five challenge situations. Can you make safe choices every time?",
+        ) + `<div id="masterBox"></div>`;
+      function renderMaster() {
+        let q = master[m];
+        document.getElementById("masterBox").innerHTML =
+          `<div class="card"><div class="question">${m + 1}. ${q[0]}</div><p class="muted">${q[1]}</p><div class="answers">${q[2].map((a, i) => `<button class="answer" onclick="masterAns(${i},this)">${String.fromCharCode(65 + i)}. ${a}</button>`).join("")}</div><div id="mf" class="feedback"></div></div>`;
+      }
+      function masterAns(i, el) {
+        let q = master[m];
+        document
+          .querySelectorAll("#masterBox .answer")
+          .forEach((x) => (x.disabled = true));
+        let good = i === q[3];
+        el.classList.add(good ? "correct" : "wrong");
+        const f = document.getElementById("mf");
+        f.className = "feedback show " + (good ? "good" : "bad");
+        f.textContent = good
+          ? "Excellent safe choice!"
+          : "Not quite. Think about how to protect the eyes.";
+        if (good) {
+          masterScore++;
+          score += 8;
+        }
+        update();
+        setTimeout(() => {
+          m++;
+          if (m < master.length) renderMaster();
+          else {
+            done(9);
+            document.getElementById("masterBox").innerHTML =
+              `<div class="result"><div class="stars">${"⭐".repeat(Math.max(1, masterScore))}</div><div class="bigscore">${masterScore}/5</div><h3>${masterScore === 5 ? "Eye Care Champion!" : "Great job, Eye Care Explorer!"}</h3><p>You completed the mastery challenge.</p><button class="nextbtn" onclick="next(9)">Reflect →</button></div>`;
+          }
+        }, 700);
+      }
+      renderMaster();
+
+      // 11 REFLECT
+      const s11 = document.getElementById("s11");
+      s11.innerHTML =
+        title(
+          10,
+          "🌈",
+          "REFLECT: My Eye-Care Promise",
+          "Choose one healthy habit you will practice today.",
+        ) +
+        `<div class="grid"><button class="card" onclick="promise(this,'I will use proper lighting when I read.')"><h3>💡 Reading Light</h3><p>I will use proper lighting when I read.</p></button><button class="card" onclick="promise(this,'I will keep sharp objects away from my eyes.')"><h3>🛑 Safe Play</h3><p>I will keep sharp objects away from my eyes.</p></button><button class="card" onclick="promise(this,'I will protect my eyes from bright sunlight.')"><h3>☀️ Sun Safety</h3><p>I will protect my eyes from bright sunlight.</p></button><button class="card" onclick="promise(this,'I will use a clean soft cloth to wipe my eyes.')"><h3>🧼 Clean Eyes</h3><p>I will use a clean soft cloth to wipe my eyes.</p></button></div><div id="promiseBox" class="feedback"></div><div class="actions"><button class="nextbtn" onclick="done(10,5);next(10)">Finish reflection →</button></div>`;
+      function promise(el, text) {
+        document
+          .querySelectorAll("#s11 .card")
+          .forEach((x) => (x.style.borderColor = "#dce8f3"));
+        el.style.borderColor = "var(--green)";
+        const b = document.getElementById("promiseBox");
+        b.className = "feedback show good";
+        b.textContent = "🌟 My promise: " + text;
+      }
+
+      // 12 CELEBRATE
+      const s12 = document.getElementById("s12");
+      s12.innerHTML =
+        title(
+          11,
+          "🎉",
+          "CELEBRATE: You Did It!",
+          "You explored, practiced, checked, and mastered eye-care habits.",
+        ) +
+        `<div class="result"><div class="stars">🎉 ⭐ 👁️ ⭐ 🎉</div><div class="bigscore" id="finalScore">0</div><p>total points</p><h3 id="finalBadge">Eye Explorer</h3><p id="finalMessage">Your eyes deserve care and protection!</p><div class="actions"><button class="bigbtn gold" onclick="finishLesson()">Complete Lesson</button><button class="bigbtn light" onclick="restart()">Restart</button></div></div><div class="tip" style="margin-top:18px"><b>Remember:</b> Keep your eyes clean, use proper lighting, avoid dangerous objects and chemicals, protect your eyes from bright sunlight, rest tired eyes, and ask an adult or eye doctor when you need help.</div>`;
+      function finishLesson() {
+        done(11, 10);
+        document.getElementById("finalScore").textContent = score;
+        document.getElementById("finalBadge").textContent =
+          score >= 90
+            ? "👑 Eye Care Champion"
+            : score >= 60
+              ? "🌟 Eye Care Hero"
+              : "🔎 Eye Explorer";
+        document.getElementById("finalMessage").textContent =
+          score >= 90
+            ? "Amazing! You showed strong eye-care knowledge."
+            : score >= 60
+              ? "Great work! Keep practicing healthy habits."
+              : "Good start! Review the picture gallery and try again.";
+        confetti();
+      }
+      function confetti() {
+        for (let i = 0; i < 22; i++) {
+          let d = document.createElement("div");
+          d.textContent = ["⭐", "🎉", "✨", "👁️"][i % 4];
+          d.style.position = "fixed";
+          d.style.left = Math.random() * 100 + "vw";
+          d.style.top = "-30px";
+          d.style.fontSize = 18 + Math.random() * 22 + "px";
+          d.style.zIndex = 100;
+          d.style.transition = "transform 1.6s ease, opacity 1.6s ease";
+          document.body.appendChild(d);
+          requestAnimationFrame(() => {
+            d.style.transform = `translateY(${70 + Math.random() * 70}vh) rotate(${Math.random() * 720 - 360}deg)`;
+            d.style.opacity = 0;
+          });
+          setTimeout(() => d.remove(), 1700);
+        }
+      }
+      function restart() {
+        score = 0;
+        completed.clear();
+        answered.clear();
+        gIndex = 0;
+        pIndex = 0;
+        c = 0;
+        checkCorrect = 0;
+        m = 0;
+        masterScore = 0;
+        r = 0;
+        flipped = false;
+        renderGuided();
+        renderPractice();
+        renderCheck();
+        renderMaster();
+        renderFlash();
+        showStage(0);
+        update();
+      }
+      update();
+    </script>
+  </body>
+</html>

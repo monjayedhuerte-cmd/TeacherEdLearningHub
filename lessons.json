@@ -898,5 +898,55 @@
     "date": "2026-09-23",
     "featured": true,
     "icon": "user"
+  },
+  {
+    "title": "Science 1 | Lesson 9: Taking Care of the Eyes",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Become an Eye Care Explorer! Discover safe habits that help us protect our eyes at home, at school, while reading, playing, and enjoying the outdoors.",
+    "file": "lessons/science/grade-1/Taking_Care_of_the_Eyes/index.html",
+    "date": "2026-09-24",
+    "featured": true,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Lesson 9: Taking Care of the Ears",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Learn how to keep your ears safe, clean, and protected from things that may hurt them.",
+    "file": "lessons/science/grade-1/Taking_Care_of_the_Ears/index.html",
+    "date": "2026-09-24",
+    "featured": true,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Lesson 9: Taking Care of the Nose",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Learn simple ways to keep your nose safe and cared for through pictures, short explanations, practice, and games.",
+    "file": "lessons/science/grade-1/Taking_Care_of_the_Nose/index.html",
+    "date": "2026-09-24",
+    "featured": true,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Lesson 9: Taking Care of the Skin",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Learn how to keep your skin clean, healthy, and safe through pictures, practice, and games!",
+    "file": "lessons/science/grade-1/Taking_Care_of_the_Skin_Interactive/index.html",
+    "date": "2026-09-24",
+    "featured": true,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Lesson 9: Taking Care of the Tongue, Mouth and Teeth",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": " Learn healthy habits, practice together, and show what you know!",
+    "file": "lessons/science/grade-1/Science1_Taking_Care_Tongue_Teeth_Mouth/index.html",
+    "date": "2026-09-24",
+    "featured": true,
+    "icon": "user"
   }
 ]
