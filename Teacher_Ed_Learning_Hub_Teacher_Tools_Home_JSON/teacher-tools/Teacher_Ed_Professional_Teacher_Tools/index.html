@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#06142F">
+  <meta name="description" content="Teacher Ed Learning Hub — professional classroom teacher tools and customizable learning games.">
+  <title>Teacher Ed Learning Hub | Teacher Tools</title>
+  <link rel="icon" type="image/png" href="assets/TeacherEdFavicon.png">
+  <link rel="apple-touch-icon" href="assets/TeacherEdFavicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#dashboard" aria-label="Teacher Ed Learning Hub home">
+        <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+        <span class="brand-copy"><strong>Teacher Ed Learning Hub</strong><small>EDJAY • Teach. Lead. Inspire.</small></span>
+      </a>
+      <nav class="topnav" aria-label="Primary navigation">
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="tools">Tools</button>
+        <button class="nav-btn" data-view="questions">Question Bank</button>
+        <button class="nav-btn" data-view="favorites">Favorites</button>
+      </nav>
+      <div class="top-actions">
+        <button class="icon-btn" id="soundToggle" title="Toggle sound" aria-label="Toggle sound">🔊</button>
+        <button class="icon-btn" id="motionToggle" title="Toggle reduced motion" aria-label="Toggle reduced motion">♿</button>
+        <button class="avatar-btn" id="settingsBtn" title="Settings">⚙</button>
+      </div>
+    </header>
+
+    <main>
+      <section class="view active" id="dashboardView">
+        <div class="hero-panel">
+          <div class="hero-copy">
+            <span class="eyebrow">TEACHER TOOLKIT • PRIMARY CLASSROOM</span>
+            <h1>Make every classroom moment <span>engaging.</span></h1>
+            <p>Launch quick classroom tools, attention games, brain breaks, timers and customizable question activities from one polished workspace.</p>
+            <div class="hero-actions">
+              <button class="btn btn-gold" data-action="open-tools">Explore Tools <span>→</span></button>
+              <button class="btn btn-ghost" data-action="new-question-set">Create Question Set</button>
+            </div>
+          </div>
+          <div class="hero-logo-wrap"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub"></div>
+        </div>
+
+        <div class="stat-grid" id="statGrid"></div>
+        <div class="section-heading"><div><span class="eyebrow">QUICK ACCESS</span><h2>Start a classroom activity</h2></div><button class="text-btn" data-action="open-tools">View all tools →</button></div>
+        <div class="tool-grid compact" id="quickTools"></div>
+      </section>
+
+      <section class="view" id="toolsView">
+        <div class="page-heading"><div><span class="eyebrow">TEACHER TOOLS</span><h1>Everything for your classroom</h1><p>Choose a tool, customize it when needed, then present it to your class.</p></div></div>
+        <div class="filter-bar">
+          <label class="search-field">⌕ <input id="toolSearch" type="search" placeholder="Search tools, subjects, categories…" autocomplete="off"></label>
+          <select id="categoryFilter"><option value="All">All Categories</option></select>
+          <select id="subjectFilter"><option value="All">All Subjects</option><option>Mathematics</option><option>Science</option><option>English</option><option>Filipino</option><option>Araling Panlipunan</option><option>EsP / GMRC</option><option>Computer</option><option>General</option></select>
+          <select id="gradeFilter"><option value="All">All Grades</option><option>Kindergarten</option><option>Grade 1</option><option>Grade 2</option><option>Grade 3</option><option>Grade 4</option><option>Grade 5</option><option>Grade 6</option></select>
+        </div>
+        <div class="tool-grid" id="toolGrid"></div>
+      </section>
+
+      <section class="view" id="questionsView">
+        <div class="page-heading row-heading"><div><span class="eyebrow">CONTENT ENGINE</span><h1>Question Bank</h1><p>Build reusable question sets and use them in multiple games.</p></div><button class="btn btn-gold" data-action="new-question-set">+ New Question Set</button></div>
+        <div class="question-layout"><aside class="question-list" id="questionSetList"></aside><div class="question-editor" id="questionEditor"><div class="empty-state"><div>🧠</div><h3>Select or create a question set</h3><p>Your questions can power Rocket Race, Target Toss, Mystery Box, Quiz Race and more.</p></div></div></div>
+      </section>
+
+      <section class="view" id="favoritesView">
+        <div class="page-heading"><div><span class="eyebrow">YOUR SHORTLIST</span><h1>Favorites</h1><p>Keep your most-used classroom tools one click away.</p></div></div>
+        <div class="tool-grid" id="favoriteGrid"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub"><div><strong>Teacher Ed Learning Hub</strong><span>EDJAY — Teach. Lead. Inspire.</span></div></div>
+      <div class="footer-note">Built for engaging classrooms • <span id="year"></span> Teacher Ed Learning Hub</div>
+    </footer>
+  </div>
+
+  <div id="modalRoot" aria-live="polite"></div>
+  <div id="toastRoot" class="toast-root" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js" defer></script>
+</body>
+</html>

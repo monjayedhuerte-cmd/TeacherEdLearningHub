@@ -1,0 +1,10 @@
+[
+  {"id":"demo-grade2-addition","title":"Demo • Grade 2 Addition","subject":"Mathematics","grade":"Grade 2","topic":"Adding with Regrouping","questions":[
+    {"id":"q-add-1","type":"multiple-choice","question":"What is 245 + 137?","choices":["372","382","392","402"],"answer":"382","explanation":"245 + 137 = 382."},
+    {"id":"q-add-2","type":"multiple-choice","question":"What is 326 + 148?","choices":["464","474","484","494"],"answer":"474","explanation":"326 + 148 = 474."}
+  ]},
+  {"id":"demo-grade1-science","title":"Demo • Grade 1 Science","subject":"Science","grade":"Grade 1","topic":"Sense Organs","questions":[
+    {"id":"q-sense-1","type":"multiple-choice","question":"Which body part helps us see?","choices":["Ear","Eye","Nose","Tongue"],"answer":"Eye","explanation":"We use our eyes to see."},
+    {"id":"q-sense-2","type":"multiple-choice","question":"Which body part helps us hear?","choices":["Ear","Eye","Skin","Teeth"],"answer":"Ear","explanation":"We use our ears to hear sounds."}
+  ]}
+]
