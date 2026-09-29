@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2d63">
+  <title>Sense Explorers | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="confetti"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+      <div>
+        <strong>Teacher Ed</strong>
+        <span>Learning Hub</span>
+      </div>
+    </div>
+    <div class="hud">
+      <span>⭐ <b id="score">0</b></span>
+      <span>🔥 <b id="streak">0</b></span>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">🔊</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- START -->
+    <section id="startScreen" class="screen active">
+      <div class="hero-card glass">
+        <div class="hero-logo"><img src="assets/teacher-ed-logo.png" alt=""></div>
+        <div class="hero-copy">
+          <p class="eyebrow">GRADE 1 • SCIENCE ADVENTURE</p>
+          <h1>SENSE <span>EXPLORERS</span></h1>
+          <h2>The Great Five Senses Quest</h2>
+          <p>Become a Sense Explorer! Travel through five exciting worlds, solve mysteries, earn badges, and discover how your amazing senses help you explore the world.</p>
+          <button id="startBtn" class="primary-btn">🚀 START THE QUEST</button>
+        </div>
+      </div>
+      <div class="feature-row">
+        <div>👀 <b>Explore</b><small>Five sense worlds</small></div>
+        <div>🕵️ <b>Investigate</b><small>Fun science mysteries</small></div>
+        <div>🏆 <b>Earn</b><small>Stars & badges</small></div>
+      </div>
+    </section>
+
+    <!-- MAP -->
+    <section id="mapScreen" class="screen">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR ADVENTURE MAP</p>
+          <h2>🌟 Sense Explorer Map</h2>
+          <p>Complete each mission. Every mission mixes <b>all five senses</b> to measure what you really learned.</p>
+        </div>
+        <div class="progress-box">
+          <span>Quest Progress</span>
+          <div class="progress"><i id="questProgress"></i></div>
+          <b id="progressText">0%</b>
+        </div>
+      </div>
+      <div id="worldGrid" class="world-grid"></div>
+      <div class="tip-card">💡 <b>Teacher Ed says:</b> Look closely, think carefully, and have fun exploring!</div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quizScreen" class="screen">
+      <div class="quiz-top">
+        <button id="backMap" class="ghost-btn">← Map</button>
+        <div class="world-title" id="worldTitle"></div>
+        <div class="question-count" id="questionCount"></div>
+      </div>
+
+      <div class="quiz-progress"><i id="quizProgress"></i></div>
+
+      <div class="quiz-layout">
+        <aside class="explorer-card glass">
+          <div class="explorer-avatar">🧒🔎</div>
+          <h3>Sense Explorer</h3>
+          <p id="teacherMessage">Teacher Ed says: Ready for a mystery?</p>
+          <div class="powerups">
+            <button id="hintBtn" class="power-btn">💡 Teacher Ed's Clue</button>
+            <button id="scannerBtn" class="power-btn">🔍 Sense Scanner</button>
+            <button id="secondBtn" class="power-btn">⭐ Second Chance</button>
+          </div>
+        </aside>
+
+        <div class="question-card">
+          <div class="challenge-pill" id="challengeType">🔎 MYSTERY CHALLENGE</div>
+          <div id="questionVisual" class="question-visual">👀</div>
+          <h2 id="questionText"></h2>
+          <div id="hintBox" class="hint-box hidden"></div>
+          <div id="choices" class="choices"></div>
+          <div id="feedback" class="feedback hidden"></div>
+          <button id="nextBtn" class="primary-btn hidden">CONTINUE ➜</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORLD COMPLETE -->
+    <section id="worldComplete" class="screen">
+      <div class="celebrate-card glass">
+        <div class="big-icon" id="worldBadge">🏅</div>
+        <p class="eyebrow">MISSION COMPLETE!</p>
+        <h1 id="completeTitle">Amazing, Explorer!</h1>
+        <p id="completeMessage"></p>
+        <div class="result-stats">
+          <div><span>⭐</span><b id="worldPoints">0</b><small>Points</small></div>
+          <div><span>🎯</span><b id="worldCorrect">0</b><small>Correct</small></div>
+          <div><span>🔥</span><b id="worldStreak">0</b><small>Best Streak</small></div>
+        </div>
+        <button id="continueBtn" class="primary-btn">🗺️ BACK TO MAP</button>
+      </div>
+    </section>
+
+    <!-- SHOWDOWN -->
+    <section id="showdownScreen" class="screen">
+      <div class="hero-card showdown glass">
+        <div class="hero-logo">🏆</div>
+        <p class="eyebrow">FINAL BOSS UNLOCKED</p>
+        <h1>👑 THE <span>SENSE MASTER</span></h1>
+        <p>You completed all five mixed missions! Now face the Final Boss and prove that you truly mastered all five senses.</p>
+        <div class="rounds">
+          <span>⚔️ Boss 1–5<br><small>Five Sense Trials</small></span>
+          <span>🧠 Mixed Challenge<br><small>Think Carefully</small></span>
+          <span>👑 FINAL BOSS<br><small>Defeat the Sense Master</small></span>
+        </div>
+        <button id="showdownBtn" class="primary-btn">🏆 ENTER THE SHOWDOWN</button>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="finalScreen" class="screen">
+      <div class="celebrate-card final glass">
+        <div class="confetti-icon">🎉</div>
+        <p class="eyebrow">QUEST COMPLETE</p>
+        <h1>YOU ARE A <span>SENSE MASTER!</span></h1>
+        <p id="achievementText">Your five senses helped you solve every mystery!</p>
+        <div class="final-stats">
+          <div><span>⭐</span><b id="finalScore">0</b><small>Total Sense Points</small></div>
+          <div><span>🏅</span><b id="finalBadges">0</b><small>Badges Earned</small></div>
+          <div><span>🎯</span><b id="finalAnswered">0</b><small>Questions Answered</small></div>
+          <div><span>🔥</span><b id="finalBestStreak">0</b><small>Best Streak</small></div>
+        </div>
+        <div id="badgeRow" class="badge-row"></div>
+        <button id="restartBtn" class="primary-btn">🚀 PLAY AGAIN</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/teacher-ed-logo.png" alt="">
+    <span>Teacher Ed Learning Hub • Learn. Explore. Discover.</span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -978,5 +978,15 @@
     "date": "2026-09-29",
     "featured": true,
     "icon": "user"
+  },
+  {
+    "title": "Science 1 Quiz Bee | SENSE EXPLORERS",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": "Become a Sense Explorer! Travel through five exciting worlds, solve mysteries, earn badges, and discover how your amazing senses help you explore the world.",
+    "file": "lessons/science/grade-1/Sense_Explorers_Grade1_2/index.html",
+    "date": "2026-09-30",
+    "featured": true,
+    "icon": "user"
   }
 ]
