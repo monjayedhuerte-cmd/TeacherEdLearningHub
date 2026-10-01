@@ -1,0 +1,1642 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#071a3a" />
+    <meta
+      name="description"
+      content="EDJAY Grade 7 interactive lesson on laws of exponents using Singapore Mathematics principles."
+    />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <title>Grade 7 Exponents | Teacher Ed Learning Hub</title>
+    <style>
+      :root {
+        --navy: #071a3a;
+        --navy2: #0b2a5b;
+        --blue: #1769e0;
+        --gold: #f5b700;
+        --gold2: #ffd34e;
+        --ink: #10213d;
+        --muted: #60708c;
+        --paper: #f5f8fc;
+        --card: #fff;
+        --line: #dce5f0;
+        --green: #159447;
+        --red: #d83b3b;
+        --orange: #ef8d19;
+        --shadow: 0 18px 45px rgba(7, 26, 58, 0.12);
+        --radius: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          Segoe UI,
+          Arial,
+          sans-serif;
+        color: var(--ink);
+        background:
+          radial-gradient(
+            circle at 10% 0%,
+            rgba(245, 183, 0, 0.12),
+            transparent 24%
+          ),
+          linear-gradient(180deg, #eef4fb 0%, #f8fafc 45%, #eef3f8 100%);
+        line-height: 1.55;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      .container {
+        width: min(1180px, calc(100% - 32px));
+        margin: auto;
+      }
+      .topbar {
+        position: sticky;
+        top: 12px;
+        z-index: 50;
+        margin: 12px auto 0;
+        width: min(1180px, calc(100% - 24px));
+        background: rgba(7, 26, 58, 0.93);
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 20px;
+        box-shadow: 0 14px 35px rgba(7, 26, 58, 0.2);
+        backdrop-filter: blur(14px);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 12px 16px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        min-width: 230px;
+      }
+      .brand img {
+        width: 45px;
+        height: 45px;
+        object-fit: contain;
+      }
+      .brand strong {
+        display: block;
+        letter-spacing: 0.4px;
+      }
+      .brand small {
+        display: block;
+        color: #d6e0f0;
+        font-size: 0.72rem;
+      }
+      .navlinks {
+        display: flex;
+        gap: 6px;
+        flex: 1;
+        justify-content: flex-end;
+      }
+      .navlinks button {
+        border: 0;
+        background: transparent;
+        color: #dfe9f7;
+        padding: 9px 11px;
+        border-radius: 11px;
+      }
+      .navlinks button:hover,
+      .navlinks button.active {
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+      }
+      .menu {
+        display: none;
+        background: transparent;
+        border: 0;
+        color: #fff;
+        font-size: 1.4rem;
+      }
+      .hero {
+        padding: 62px 0 30px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 0.75fr;
+        gap: 26px;
+        align-items: stretch;
+      }
+      .hero-card,
+      .mission {
+        background: rgba(255, 255, 255, 0.82);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+      .hero-card {
+        padding: 38px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero-card:after {
+        content: "² ³ ⁴ ⁵";
+        position: absolute;
+        right: -10px;
+        top: -24px;
+        font-size: 8rem;
+        font-weight: 900;
+        color: rgba(23, 105, 224, 0.06);
+        transform: rotate(8deg);
+      }
+      .eyebrow {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        background: #eaf2ff;
+        color: #1556aa;
+        border-radius: 999px;
+        padding: 7px 12px;
+        font-size: 0.78rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+      .hero h1 {
+        font-size: clamp(2.1rem, 5vw, 4rem);
+        line-height: 1.05;
+        margin: 18px 0 14px;
+        color: var(--navy);
+      }
+      .hero h1 span {
+        color: var(--blue);
+      }
+      .hero p {
+        max-width: 700px;
+        color: #53627a;
+        font-size: 1.06rem;
+      }
+      .mission {
+        padding: 28px;
+        background: linear-gradient(145deg, var(--navy), #0e3975);
+        color: #fff;
+      }
+      .mission h3 {
+        margin-top: 0;
+      }
+      .mission ul {
+        padding-left: 20px;
+        color: #dfe8f5;
+      }
+      .pill {
+        display: inline-block;
+        background: rgba(245, 183, 0, 0.16);
+        color: #ffe38a;
+        border: 1px solid rgba(245, 183, 0, 0.35);
+        padding: 5px 9px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 800;
+      }
+      .cta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 13px;
+        padding: 12px 17px;
+        font-weight: 800;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .btn.primary {
+        background: var(--gold);
+        color: #151515;
+      }
+      .btn.secondary {
+        background: #eaf2ff;
+        color: #134d9d;
+      }
+      .btn.ghost {
+        background: transparent;
+        border: 1px solid var(--line);
+        color: var(--ink);
+      }
+      .btn.danger {
+        background: #fff0f0;
+        color: #a32121;
+      }
+      .progress-wrap {
+        position: sticky;
+        top: 91px;
+        z-index: 30;
+        background: rgba(245, 248, 252, 0.94);
+        backdrop-filter: blur(10px);
+        padding: 10px 0;
+      }
+      .progress {
+        height: 10px;
+        background: #dce5f0;
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .progress > div {
+        height: 100%;
+        width: 8.3%;
+        background: linear-gradient(90deg, var(--blue), var(--gold));
+        transition: 0.35s;
+      }
+      .step-label {
+        display: flex;
+        justify-content: space-between;
+        color: #65738a;
+        font-size: 0.78rem;
+        margin-top: 5px;
+      }
+      .section {
+        padding: 42px 0;
+        scroll-margin-top: 145px;
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: end;
+        margin-bottom: 18px;
+      }
+      .section-head h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: clamp(1.55rem, 3vw, 2.2rem);
+      }
+      .section-head p {
+        margin: 5px 0 0;
+        color: var(--muted);
+      }
+      .tag {
+        font-size: 0.74rem;
+        font-weight: 800;
+        color: #1454a1;
+        background: #e8f1ff;
+        border-radius: 999px;
+        padding: 7px 10px;
+        white-space: nowrap;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 22px;
+        box-shadow: 0 10px 28px rgba(7, 26, 58, 0.07);
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        color: var(--navy);
+      }
+      .card p {
+        color: #61708a;
+      }
+      .rule-card {
+        position: relative;
+        overflow: hidden;
+      }
+      .rule-num {
+        position: absolute;
+        right: 16px;
+        top: 13px;
+        color: #d8e4f5;
+        font-weight: 900;
+        font-size: 2.3rem;
+      }
+      .formula {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        background: #f4f7fb;
+        border: 1px solid #e0e8f2;
+        border-radius: 12px;
+        padding: 10px 13px;
+        font-weight: 900;
+        font-size: 1.12rem;
+        color: var(--navy);
+      }
+      .visual {
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+        margin: 13px 0;
+      }
+      .dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: #dbeaff;
+        border: 2px solid #a9c9f7;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+        color: #1455a3;
+      }
+      .dot.gold {
+        background: #fff1b9;
+        border-color: #f1ca4b;
+        color: #8c6500;
+      }
+      .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .callout {
+        border-left: 5px solid var(--gold);
+        background: #fffaf0;
+        padding: 15px 17px;
+        border-radius: 0 14px 14px 0;
+      }
+      .warning {
+        border-left-color: var(--red);
+        background: #fff4f4;
+      }
+      .success {
+        border-left-color: var(--green);
+        background: #f0fff5;
+      }
+      .concept-flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .flow {
+        padding: 18px;
+        border-radius: 18px;
+        background: #fff;
+        border: 1px solid var(--line);
+        text-align: center;
+      }
+      .flow strong {
+        display: block;
+        font-size: 1.15rem;
+        color: var(--navy);
+      }
+      .game {
+        background: linear-gradient(150deg, #061832, #0e3975);
+        color: #fff;
+        border-radius: 28px;
+        padding: 26px;
+        box-shadow: 0 20px 50px rgba(7, 26, 58, 0.22);
+      }
+      .game .muted {
+        color: #d5e0ef;
+      }
+      .game-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+      }
+      .score {
+        font-weight: 900;
+        color: #ffe18a;
+      }
+      .question {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 900;
+        margin: 24px 0;
+      }
+      .answers {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 11px;
+      }
+      .answer {
+        background: rgba(255, 255, 255, 0.09);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #fff;
+        padding: 15px;
+        border-radius: 15px;
+        text-align: left;
+        font-weight: 800;
+      }
+      .answer:hover {
+        background: rgba(255, 255, 255, 0.16);
+      }
+      .answer.correct {
+        background: rgba(21, 148, 71, 0.3);
+        border-color: #62dc8b;
+      }
+      .answer.wrong {
+        background: rgba(216, 59, 59, 0.25);
+        border-color: #ff8a8a;
+      }
+      .feedback {
+        min-height: 48px;
+        margin-top: 15px;
+        color: #dfe8f5;
+      }
+      .game-actions {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+      }
+      .game-actions .btn {
+        background: #fff;
+        color: var(--navy);
+      }
+      .xp {
+        margin-top: 18px;
+      }
+      .xpbar {
+        height: 10px;
+        background: rgba(255, 255, 255, 0.14);
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .xpbar div {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--gold), #fff09a);
+        transition: 0.3s;
+      }
+      .lab {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 18px;
+      }
+      .control {
+        background: #f7f9fc;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 18px;
+      }
+      .control label {
+        display: block;
+        font-weight: 800;
+        color: var(--navy);
+        margin-bottom: 7px;
+      }
+      .control input[type="number"] {
+        width: 100%;
+        padding: 11px;
+        border: 1px solid #ccd7e6;
+        border-radius: 11px;
+        background: #fff;
+      }
+      .visual-power {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(145deg, #fff, #f1f6fd);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 20px;
+      }
+      .power-line {
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .array {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 520px;
+        margin: 20px;
+      }
+      .array .dot {
+        width: 40px;
+        height: 40px;
+      }
+      .quiz-card {
+        max-width: 900px;
+        margin: auto;
+      }
+      .quiz-options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .quiz-options button {
+        border: 1px solid var(--line);
+        background: #fff;
+        padding: 14px;
+        border-radius: 14px;
+        text-align: left;
+        font-weight: 800;
+        color: var(--ink);
+      }
+      .quiz-options button:hover {
+        border-color: #8db5e9;
+        background: #f5f9ff;
+      }
+      .quiz-options button.selected {
+        outline: 3px solid #c5dcff;
+      }
+      .master {
+        background: linear-gradient(145deg, #fffdf3, #fff);
+        border: 2px solid #f0d36a;
+      }
+      .boss-q {
+        font-size: 1.45rem;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .result {
+        text-align: center;
+        padding: 22px;
+        background: #f4f8ff;
+        border-radius: 18px;
+        margin-top: 15px;
+      }
+      .stars {
+        font-size: 2.2rem;
+        letter-spacing: 5px;
+      }
+      .footer {
+        margin-top: 50px;
+        background: var(--navy);
+        color: #dce7f6;
+        padding: 36px 0;
+      }
+      .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+        align-items: center;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .footer img {
+        width: 54px;
+        height: 54px;
+      }
+      .footer small {
+        color: #aebed5;
+      }
+      .toast {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        background: var(--navy);
+        color: #fff;
+        padding: 13px 16px;
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        transform: translateY(120px);
+        opacity: 0;
+        transition: 0.25s;
+        z-index: 100;
+      }
+      .toast.show {
+        transform: none;
+        opacity: 1;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .badge-row {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .badge {
+        background: #fff7d6;
+        border: 1px solid #f0d36a;
+        color: #745300;
+        padding: 6px 9px;
+        border-radius: 999px;
+        font-size: 0.76rem;
+        font-weight: 900;
+      }
+      .table-wrap {
+        overflow: auto;
+      }
+      .mini-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .mini-table th,
+      .mini-table td {
+        padding: 11px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+      }
+      .mini-table th {
+        color: var(--navy);
+        background: #f5f8fc;
+      }
+      .reflection {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+      }
+      .reflection textarea {
+        width: 100%;
+        min-height: 120px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 12px;
+        resize: vertical;
+      }
+      .print-only {
+        display: none;
+      }
+      @media (max-width: 850px) {
+        .hero-grid,
+        .lab,
+        .two-col {
+          grid-template-columns: 1fr;
+        }
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .navlinks {
+          display: none;
+        }
+        .menu {
+          display: block;
+          margin-left: auto;
+        }
+        .nav.mobile-open .navlinks {
+          display: flex;
+          position: absolute;
+          top: 74px;
+          left: 10px;
+          right: 10px;
+          background: var(--navy);
+          padding: 10px;
+          border-radius: 16px;
+          flex-direction: column;
+        }
+        .nav.mobile-open .navlinks button {
+          text-align: left;
+        }
+        .brand {
+          min-width: 0;
+        }
+        .concept-flow {
+          grid-template-columns: 1fr;
+        }
+        .section {
+          padding: 34px 0;
+        }
+        .progress-wrap {
+          top: 75px;
+        }
+      }
+      @media (max-width: 560px) {
+        .container {
+          width: min(100% - 22px, 1180px);
+        }
+        .hero {
+          padding-top: 36px;
+        }
+        .hero-card {
+          padding: 25px;
+        }
+        .grid,
+        .answers,
+        .quiz-options,
+        .reflection {
+          grid-template-columns: 1fr;
+        }
+        .game {
+          padding: 20px;
+        }
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+        }
+        .footer-inner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .brand img {
+          width: 39px;
+          height: 39px;
+        }
+        .brand small {
+          display: none;
+        }
+      }
+      @media print {
+        .topbar,
+        .progress-wrap,
+        .cta,
+        .game-actions,
+        .footer,
+        .btn {
+          display: none !important;
+        }
+        .section {
+          padding: 15px 0;
+        }
+        .card,
+        .hero-card,
+        .mission,
+        .game {
+          box-shadow: none;
+          border: 1px solid #ccc;
+        }
+        .print-only {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="nav" id="nav">
+        <a
+          class="brand"
+          href="#top"
+          aria-label="Teacher Ed Learning Hub home"
+          style="color: inherit; text-decoration: none"
+        >
+          <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo" />
+          <div><strong>Teacher Ed Learning Hub</strong><small>Teach. Lead. Inspire.</small></div>
+        </a>
+        <button class="menu" id="menuBtn" aria-label="Open navigation">
+          ☰
+        </button>
+        <div class="navlinks" id="navlinks">
+          <button data-target="learn">Learn</button
+          ><button data-target="lab">Math Lab</button
+          ><button data-target="practice">Practice</button
+          ><button data-target="master">Final Boss</button
+          ><button data-target="reflect">Reflect</button>
+        </div>
+      </div>
+    </header>
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-grid">
+          <div class="hero-card">
+            <span class="eyebrow">GRADE 7 • MATHEMATICS • EXPONENTS</span>
+            <h1>Power Up Your <span>Exponent</span> Skills!</h1>
+            <p>
+              Master the laws of exponents through a Singapore
+              Mathematics-inspired journey:
+              <strong>Concrete → Pictorial → Abstract</strong>. Build the idea,
+              see the pattern, then use the rule.
+            </p>
+            <div class="badge-row">
+              <span class="badge">🎯 Learn the why</span
+              ><span class="badge">🧠 Think strategically</span
+              ><span class="badge">🏆 Beat the Boss</span>
+            </div>
+            <div class="cta">
+              <button class="btn primary" onclick="go('engage')">
+                Start Mission 🚀</button
+              ><button class="btn secondary" onclick="go('learn')">
+                See the rules
+              </button>
+            </div>
+          </div>
+          <aside class="mission">
+            <span class="pill">TODAY'S MISSION</span>
+            <h3>Become an Exponent Strategist</h3>
+            <ul>
+              <li>Represent repeated multiplication as powers.</li>
+              <li>Explain and apply the laws of exponents.</li>
+              <li>Spot common traps such as −4² vs (−4)².</li>
+              <li>Simplify expressions with confidence.</li>
+            </ul>
+            <p class="muted">Your progress is saved in this browser.</p>
+          </aside>
+        </div>
+      </section>
+      <div class="progress-wrap">
+        <div class="container">
+          <div class="progress"><div id="progressBar"></div></div>
+          <div class="step-label">
+            <span id="progressText">Mission 1 of 12</span
+            ><span id="xpText">0 XP</span>
+          </div>
+        </div>
+      </div>
+
+      <section class="section container" id="engage">
+        <div class="section-head">
+          <div>
+            <span class="tag">ENGAGE</span>
+            <h2>⚡ Quick Challenge: What's the Power?</h2>
+            <p>Before learning the rules, notice the structure.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="two-col">
+            <div>
+              <h3>Can you see the shortcut?</h3>
+              <p>
+                Rewrite <strong>2 × 2 × 2 × 2 × 2</strong> using exponent
+                notation.
+              </p>
+              <div class="visual">
+                <span class="dot">2</span><span class="dot">2</span
+                ><span class="dot">2</span><span class="dot">2</span
+                ><span class="dot">2</span>
+              </div>
+            </div>
+            <div>
+              <div class="formula">2⁵</div>
+              <p>Five copies of the base 2 → exponent 5.</p>
+              <button
+                class="btn primary"
+                onclick="
+                  award(10);
+                  go('connect');
+                "
+              >
+                I see the pattern! +10 XP
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="connect">
+        <div class="section-head">
+          <div>
+            <span class="tag">CONNECT</span>
+            <h2>🔗 Connect the Parts</h2>
+            <p>Singapore Math starts with meaning before symbols.</p>
+          </div>
+        </div>
+        <div class="concept-flow">
+          <div class="flow">
+            <div style="font-size: 2rem">🧱</div>
+            <strong>Concrete</strong
+            ><span>Build repeated groups of the same factor.</span>
+          </div>
+          <div class="flow">
+            <div style="font-size: 2rem">👀</div>
+            <strong>Pictorial</strong
+            ><span>See the repeated factors as a visual pattern.</span>
+          </div>
+          <div class="flow">
+            <div style="font-size: 2rem">🔣</div>
+            <strong>Abstract</strong><span>Compress the pattern into xⁿ.</span>
+          </div>
+        </div>
+        <div class="callout" style="margin-top: 15px">
+          <strong>Key vocabulary:</strong> base = the repeated factor; exponent
+          = how many times the base is used; power = the whole expression xⁿ.
+        </div>
+      </section>
+
+      <section class="section container" id="learn">
+        <div class="section-head">
+          <div>
+            <span class="tag">LEARN</span>
+            <h2>🧠 The Exponent Rulebook</h2>
+            <p>
+              These are the rules represented in your textbook pages 139–147.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <article class="card rule-card">
+            <div class="rule-num">01</div>
+            <h3>Rules of 1</h3>
+            <p>
+              Any nonzero number raised to 1 stays itself. One raised to any
+              exponent is 1.
+            </p>
+            <div class="formula">x¹ = x &nbsp; • &nbsp; 1ⁿ = 1</div>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">02</div>
+            <h3>Product Rule</h3>
+            <p>
+              Same base multiplied? Keep the base and <strong>add</strong> the
+              exponents.
+            </p>
+            <div class="formula">xᵐ · xⁿ = xᵐ⁺ⁿ</div>
+            <p>Example: 2³ · 2⁵ = 2⁸.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">03</div>
+            <h3>Power Rule</h3>
+            <p>
+              A power raised to a power? Keep the base and
+              <strong>multiply</strong> the exponents.
+            </p>
+            <div class="formula">(xᵐ)ⁿ = xᵐⁿ</div>
+            <p>Example: (5²)³ = 5⁶.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">04</div>
+            <h3>Power of a Product</h3>
+            <p>Distribute a power across factors multiplied together.</p>
+            <div class="formula">(xy)ⁿ = xⁿyⁿ</div>
+            <p>Example: (2·3)³ = 2³·3³.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">05</div>
+            <h3>Power of a Quotient</h3>
+            <p>Raise both numerator and denominator to the same power.</p>
+            <div class="formula">(x/y)ⁿ = xⁿ/yⁿ</div>
+            <p>where y ≠ 0.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">06</div>
+            <h3>Quotient Rule</h3>
+            <p>Same base divided? <strong>Subtract</strong> the exponents.</p>
+            <div class="formula">xᵐ/xⁿ = xᵐ⁻ⁿ</div>
+            <p>For m &lt; n, rewrite as a reciprocal.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">07</div>
+            <h3>Zero Exponent</h3>
+            <p>Any nonzero base raised to zero equals 1.</p>
+            <div class="formula">x⁰ = 1, x ≠ 0</div>
+            <p>Example: (5·2²·3⁴)⁰ = 1.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">08</div>
+            <h3>Negative Exponent</h3>
+            <p>
+              A negative exponent means the reciprocal with the positive
+              exponent.
+            </p>
+            <div class="formula">x⁻ⁿ = 1/xⁿ</div>
+            <p>Example: 3⁻⁴ = 1/3⁴.</p>
+          </article>
+          <article class="card rule-card">
+            <div class="rule-num">09</div>
+            <h3>Power ≠ Sum Distribution</h3>
+            <p>
+              A power does <strong>not</strong> distribute over addition or
+              subtraction.
+            </p>
+            <div class="formula">(x+y)ⁿ ≠ xⁿ+yⁿ</div>
+            <p>Example: (4+5)² = 81, but 4²+5² = 41.</p>
+          </article>
+        </div>
+        <div class="callout warning" style="margin-top: 16px">
+          <strong>⚠️ Parentheses matter:</strong> −4² = −16, but (−4)² = 16. The
+          exponent applies only to the 4 unless parentheses include the negative
+          sign.
+        </div>
+      </section>
+
+      <section class="section container" id="explore">
+        <div class="section-head">
+          <div>
+            <span class="tag">EXPLORE</span>
+            <h2>🔬 Math Lab: Build a Power</h2>
+            <p>Move from repeated factors to a compact exponent.</p>
+          </div>
+        </div>
+        <div class="lab">
+          <div class="control">
+            <label for="base">Choose a base</label
+            ><input id="base" type="number" min="2" max="9" value="3" />
+            <label for="exp" style="margin-top: 14px">Choose an exponent</label
+            ><input id="exp" type="number" min="1" max="6" value="4" />
+            <button
+              class="btn primary"
+              style="margin-top: 15px; width: 100%"
+              onclick="renderLab()"
+            >
+              Build it!
+            </button>
+            <div class="callout" style="margin-top: 15px">
+              <strong>Think:</strong> How many copies of the base do you see?
+              What happens when the exponent increases by 1?
+            </div>
+          </div>
+          <div class="visual-power">
+            <div class="power-line" id="labFormula">3⁴ = 81</div>
+            <div class="array" id="labArray"></div>
+            <div id="labWords">3 × 3 × 3 × 3 = 81</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="guided">
+        <div class="section-head">
+          <div>
+            <span class="tag">GUIDED PRACTICE</span>
+            <h2>🤝 Coach's Corner</h2>
+            <p>
+              Use the Singapore Math habit: identify the structure before
+              calculating.
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Step 1 — Name the structure</h3>
+            <p>For <strong>2³ · 2⁵</strong>, both powers have the same base.</p>
+            <div class="formula">Same base → Product Rule</div>
+          </div>
+          <div class="card">
+            <h3>Step 2 — Apply the operation</h3>
+            <p>Add the exponents, not the bases.</p>
+            <div class="formula">2³⁺⁵ = 2⁸</div>
+          </div>
+          <div class="card">
+            <h3>Step 3 — Check reasonableness</h3>
+            <p>2⁸ should be greater than 2⁵ because we multiplied by 2³.</p>
+            <div class="formula">2⁸ = 256</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="practice">
+        <div class="section-head">
+          <div>
+            <span class="tag">PRACTICE</span>
+            <h2>🎮 Exponent Sprint</h2>
+            <p>Choose the correct answer. Questions are randomized.</p>
+          </div>
+          <span class="tag" id="practiceScore">0 / 0</span>
+        </div>
+        <div class="game">
+          <div class="game-top">
+            <span class="pill">ROUND <span id="roundNo">1</span> / 8</span
+            ><span class="score">⭐ <span id="score">0</span> XP</span>
+          </div>
+          <div class="question" id="gameQuestion"></div>
+          <div class="answers" id="gameAnswers"></div>
+          <div class="feedback" id="gameFeedback"></div>
+          <div class="game-actions">
+            <button class="btn" onclick="nextGameQuestion()">
+              Next Question →</button
+            ><button class="btn" onclick="resetGame()">Reset</button>
+          </div>
+          <div class="xp">
+            <div class="xpbar"><div id="xpFill"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="think">
+        <div class="section-head">
+          <div>
+            <span class="tag">THINK</span>
+            <h2>💭 Error Detective</h2>
+            <p>
+              Mathematicians learn from errors by locating the exact step where
+              reasoning changed.
+            </p>
+          </div>
+        </div>
+        <div class="two-col">
+          <div class="card">
+            <h3>Student work</h3>
+            <p><strong>(4 + 5)² = 4² + 5² = 41</strong></p>
+            <p>Is this reasoning valid?</p>
+            <button class="btn secondary" onclick="showDetective(false)">
+              No — find the error
+            </button>
+            <button class="btn primary" onclick="showDetective(true)">
+              Explain it
+            </button>
+            <div
+              id="detective"
+              class="callout hidden"
+              style="margin-top: 12px"
+            ></div>
+          </div>
+          <div class="card">
+            <h3>Parentheses challenge</h3>
+            <p>
+              <strong>−4²</strong> and <strong>(−4)²</strong> look similar.
+              Explain why their values differ.
+            </p>
+            <div class="formula">−4² = −16 &nbsp; | &nbsp; (−4)² = 16</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="review">
+        <div class="section-head">
+          <div>
+            <span class="tag">REVIEW</span>
+            <h2>🔄 Rule Match</h2>
+            <p>Match the structure to the operation.</p>
+          </div>
+        </div>
+        <div class="table-wrap card">
+          <table class="mini-table">
+            <thead>
+              <tr>
+                <th>Expression structure</th>
+                <th>What changes?</th>
+                <th>Rule</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>xᵐ · xⁿ</td>
+                <td>Add exponents</td>
+                <td>Product Rule</td>
+              </tr>
+              <tr>
+                <td>xᵐ / xⁿ</td>
+                <td>Subtract exponents</td>
+                <td>Quotient Rule</td>
+              </tr>
+              <tr>
+                <td>(xᵐ)ⁿ</td>
+                <td>Multiply exponents</td>
+                <td>Power Rule</td>
+              </tr>
+              <tr>
+                <td>(xy)ⁿ</td>
+                <td>Apply n to each factor</td>
+                <td>Power of a Product</td>
+              </tr>
+              <tr>
+                <td>(x/y)ⁿ</td>
+                <td>Apply n to numerator & denominator</td>
+                <td>Power of a Quotient</td>
+              </tr>
+              <tr>
+                <td>x⁰</td>
+                <td>Becomes 1 (x ≠ 0)</td>
+                <td>Zero Exponent</td>
+              </tr>
+              <tr>
+                <td>x⁻ⁿ</td>
+                <td>Reciprocal</td>
+                <td>Negative Exponent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section container" id="check">
+        <div class="section-head">
+          <div>
+            <span class="tag">CHECK</span>
+            <h2>✅ Quick Check</h2>
+            <p>Five items. Aim for accurate reasoning, not just speed.</p>
+          </div>
+        </div>
+        <div class="card quiz-card">
+          <div id="quizArea"></div>
+          <button class="btn primary" id="quizNext" onclick="quizNext()">
+            Next →
+          </button>
+          <div id="quizResult"></div>
+        </div>
+      </section>
+
+      <section class="section container" id="master">
+        <div class="section-head">
+          <div>
+            <span class="tag">MASTER</span>
+            <h2>👑 FINAL BOSS: Exponent Strategist</h2>
+            <p>10 mixed challenges. Earn the mastery badge.</p>
+          </div>
+        </div>
+        <div class="card master">
+          <div class="boss-q" id="bossQ"></div>
+          <div
+            class="quiz-options"
+            id="bossOptions"
+            style="margin-top: 18px"
+          ></div>
+          <div class="feedback" id="bossFeedback"></div>
+          <button class="btn primary" onclick="bossNext()">
+            Submit / Next →
+          </button>
+          <div id="bossResult"></div>
+        </div>
+      </section>
+
+      <section class="section container" id="reflect">
+        <div class="section-head">
+          <div>
+            <span class="tag">REFLECT</span>
+            <h2>🌱 Reflect & Celebrate</h2>
+            <p>
+              Explain your thinking. That is where mathematical mastery becomes
+              durable.
+            </p>
+          </div>
+        </div>
+        <div class="reflection">
+          <div class="card">
+            <h3>What rule is easiest for me?</h3>
+            <textarea
+              placeholder="Write one rule and explain why it makes sense."
+            ></textarea>
+          </div>
+          <div class="card">
+            <h3>What mistake will I avoid next time?</h3>
+            <textarea
+              placeholder="For example: I will check parentheses before evaluating a power."
+            ></textarea>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 15px; text-align: center">
+          <div class="stars">⭐ ⭐ ⭐</div>
+          <h2 style="margin: 5px 0">You are building real exponent power!</h2>
+          <p>
+            Keep the Singapore Math habit:
+            <strong
+              >see it → explain it → represent it → apply it → check it.</strong
+            >
+          </p>
+          <button class="btn primary" onclick="window.print()">
+            Print My Lesson Summary 🖨️
+          </button>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-brand">
+          <img src="assets/BrandLogo.png" alt="EDJAY logo" />
+          <div>
+            <strong>Teacher Ed Learning Hub</strong><br /><small
+              >EDJAY • Teach. Lead. Inspire.</small
+            >
+          </div>
+        </div>
+        <div>
+          <small
+            >Grade 7 Mathematics • Laws of Exponents<br />© 2026 Teacher Ed
+            Learning Hub</small
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script>
+      const steps = [
+        "engage",
+        "connect",
+        "learn",
+        "explore",
+        "guided",
+        "practice",
+        "think",
+        "review",
+        "check",
+        "master",
+        "reflect",
+        "celebrate",
+      ];
+      let xp = Number(localStorage.getItem("edjayExponentXP") || 0);
+      let currentStep = 0;
+      function go(id) {
+        document
+          .getElementById(id)
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        award(0);
+      }
+      function award(n) {
+        xp += n;
+        localStorage.setItem("edjayExponentXP", xp);
+        document.getElementById("xpText").textContent = xp + " XP";
+        toast(n ? `+${n} XP — Nice work!` : "Keep going!");
+      }
+      function toast(msg) {
+        const t = document.getElementById("toast");
+        t.textContent = msg;
+        t.classList.add("show");
+        clearTimeout(window._toast);
+        window._toast = setTimeout(() => t.classList.remove("show"), 1600);
+      }
+      function renderProgress() {
+        const pct = ((currentStep + 1) / steps.length) * 100;
+        document.getElementById("progressBar").style.width = pct + "%";
+        document.getElementById("progressText").textContent =
+          `Mission ${currentStep + 1} of ${steps.length}`;
+      }
+      const obs = new IntersectionObserver(
+        (es) => {
+          es.forEach((e) => {
+            if (e.isIntersecting) {
+              const i = steps.indexOf(e.target.id);
+              if (i >= 0) {
+                currentStep = i;
+                renderProgress();
+              }
+            }
+          });
+        },
+        { rootMargin: "-35% 0px -55% 0px" },
+      );
+      steps.forEach((s) => {
+        const el = document.getElementById(s);
+        if (el) obs.observe(el);
+      });
+      function renderLab() {
+        const b = Math.max(
+          2,
+          Math.min(9, Number(document.getElementById("base").value) || 3),
+        );
+        const n = Math.max(
+          1,
+          Math.min(6, Number(document.getElementById("exp").value) || 4),
+        );
+        const value = b ** n;
+        document.getElementById("labFormula").textContent = `${b}ⁿ = ${value}`;
+        document.getElementById("labWords").textContent =
+          Array(n).fill(b).join(" × ") + " = " + value;
+        const a = document.getElementById("labArray");
+        a.innerHTML = "";
+        for (let i = 0; i < n; i++) {
+          const d = document.createElement("div");
+          d.className = "dot";
+          d.textContent = b;
+          a.appendChild(d);
+        }
+        award(3);
+      }
+      const gameBank = [
+        ["Simplify: 2³ · 2⁵", ["2⁸", "2¹⁵", "4⁸", "2²"], "2⁸"],
+        ["Simplify: (5²)³", ["5⁶", "5⁵", "5⁹", "10⁶"], "5⁶"],
+        ["Simplify: (2·3)³", ["2³·3³", "6³·3", "2⁶·3³", "2·3³"], "2³·3³"],
+        ["Simplify: (1/4)³", ["1/64", "1/12", "1/16", "4/3"], "1/64"],
+        ["Evaluate: 7⁰", ["0", "1", "7", "70"], "1"],
+        [
+          "Rewrite using positive exponents: 3⁻²",
+          ["3²", "1/3²", "−3²", "1/6"],
+          "1/3²",
+        ],
+        ["Evaluate: −4²", ["16", "−16", "8", "−8"], "−16"],
+        ["Evaluate: (−4)²", ["16", "−16", "−8", "8"], "16"],
+        [
+          "Which is NOT generally true?",
+          ["(x+y)ⁿ=xⁿ+yⁿ", "(xy)ⁿ=xⁿyⁿ", "xᵐxⁿ=xᵐ⁺ⁿ", "x⁰=1 for x≠0"],
+          "(x+y)ⁿ=xⁿ+yⁿ",
+        ],
+        ["Simplify: 3⁶ / 3²", ["3⁸", "3⁴", "3³", "1/3⁴"], "3⁴"],
+      ];
+      let gameRound = 0,
+        gameScore = 0,
+        gameLocked = false;
+      function shuffled(a) {
+        return [...a].sort(() => Math.random() - 0.5);
+      }
+      function renderGame() {
+        const q = shuffled(gameBank)[0];
+        window.activeGame = q;
+        gameLocked = false;
+        document.getElementById("gameQuestion").textContent = q[0];
+        const wrap = document.getElementById("gameAnswers");
+        wrap.innerHTML = "";
+        shuffled(q[1]).forEach((ans) => {
+          const b = document.createElement("button");
+          b.className = "answer";
+          b.textContent = ans;
+          b.onclick = () => answerGame(b, ans, q[2]);
+          wrap.appendChild(b);
+        });
+        document.getElementById("roundNo").textContent = Math.min(
+          gameRound + 1,
+          8,
+        );
+        document.getElementById("gameFeedback").textContent = "";
+        document.getElementById("xpFill").style.width =
+          (gameRound / 8) * 100 + "%";
+        document.getElementById("practiceScore").textContent =
+          `${gameScore} / ${gameRound}`;
+      }
+      function answerGame(btn, ans, correct) {
+        if (gameLocked) return;
+        gameLocked = true;
+        document.querySelectorAll(".answer").forEach((b) => {
+          if (b.textContent === correct) b.classList.add("correct");
+        });
+        if (ans === correct) {
+          btn.classList.add("correct");
+          gameScore += 10;
+          award(10);
+          document.getElementById("gameFeedback").textContent =
+            "Correct! You identified the structure.";
+        } else {
+          btn.classList.add("wrong");
+          document.getElementById("gameFeedback").textContent =
+            `Not quite. The correct answer is ${correct}.`;
+        }
+        gameRound++;
+        document.getElementById("practiceScore").textContent =
+          `${gameScore} / ${gameRound}`;
+      }
+      function nextGameQuestion() {
+        if (gameRound >= 8) {
+          toast("Round complete! Try Reset for another run.");
+          return;
+        }
+        renderGame();
+      }
+      function resetGame() {
+        gameRound = 0;
+        gameScore = 0;
+        renderGame();
+        toast("Sprint reset.");
+      }
+      function showDetective(ok) {
+        const d = document.getElementById("detective");
+        d.classList.remove("hidden");
+        d.innerHTML = ok
+          ? "<strong>Exactly.</strong> A power can distribute over multiplication, not over addition. Since (4+5)² = 9² = 81, while 4²+5²=41, the two expressions are not equal."
+          : "<strong>Correct.</strong> The error is treating addition like multiplication. Powers do not generally distribute across a sum.";
+        award(5);
+      }
+      const quiz = [
+        [
+          "What does the exponent tell you?",
+          [
+            "How many times the base is used as a factor",
+            "The value of the base",
+            "Whether the answer is positive",
+            "The denominator",
+          ],
+          "How many times the base is used as a factor",
+        ],
+        [
+          "Which rule changes x³·x⁴ into x⁷?",
+          [
+            "Power Rule",
+            "Product Rule",
+            "Zero Exponent Rule",
+            "Negative Exponent Rule",
+          ],
+          "Product Rule",
+        ],
+        ["Which is equal to 1?", ["0⁰", "5⁰", "1⁵ only", "5¹"], "5⁰"],
+        [
+          "Rewrite 2⁻³ using positive exponents.",
+          ["−2³", "1/2³", "2³", "1/6"],
+          "1/2³",
+        ],
+        [
+          "Which statement is true?",
+          ["(4+5)²=4²+5²", "(2·3)³=2³·3³", "−4²=(−4)²", "x⁰=0 for x≠0"],
+          "(2·3)³=2³·3³",
+        ],
+      ];
+      let qi = 0,
+        qscore = 0,
+        qAnswered = false;
+      function renderQuiz() {
+        const q = quiz[qi];
+        qAnswered = false;
+        document.getElementById("quizArea").innerHTML =
+          `<h3>${qi + 1}. ${q[0]}</h3><div class="quiz-options">${q[1].map((x) => `<button onclick="pickQuiz(this,'${encodeURIComponent(x)}')">${x}</button>`).join("")}</div>`;
+        document.getElementById("quizNext").textContent =
+          qi === quiz.length - 1 ? "Finish Check" : "Next →";
+        document.getElementById("quizResult").innerHTML = "";
+      }
+      function pickQuiz(btn, enc) {
+        if (qAnswered) return;
+        qAnswered = true;
+        const ans = decodeURIComponent(enc),
+          correct = quiz[qi][2];
+        document
+          .querySelectorAll("#quizArea .quiz-options button")
+          .forEach((b) => {
+            if (b.textContent === correct) b.style.borderColor = "#159447";
+          });
+        if (ans === correct) {
+          btn.style.background = "#effff4";
+          btn.style.borderColor = "#159447";
+          qscore++;
+          award(10);
+          document.getElementById("quizResult").innerHTML =
+            '<div class="callout success">Correct — your reasoning is on track.</div>';
+        } else {
+          btn.style.background = "#fff3f3";
+          btn.style.borderColor = "#d83b3b";
+          document.getElementById("quizResult").innerHTML =
+            `<div class="callout warning">Review: the answer is <strong>${correct}</strong>.</div>`;
+        }
+      }
+      function quizNext() {
+        if (!qAnswered) {
+          toast("Choose an answer first.");
+          return;
+        }
+        if (qi < quiz.length - 1) {
+          qi++;
+          renderQuiz();
+        } else {
+          document.getElementById("quizResult").innerHTML =
+            `<div class="result"><strong>Quick Check complete!</strong><br>Score: ${qscore}/${quiz.length}<br>${qscore >= 4 ? "Excellent reasoning!" : "Review the rulebook and try again."}</div>`;
+          document.getElementById("quizNext").disabled = true;
+          award(qscore * 5);
+        }
+      }
+      const boss = [
+        ["Simplify: 2⁴·2³", ["2⁷", "2¹²", "4⁷", "2"], "2⁷"],
+        ["Simplify: (3²)⁴", ["3⁶", "3⁸", "3¹⁶", "12⁴"], "3⁸"],
+        ["Simplify: 5⁷/5³", ["5¹⁰", "5⁴", "5³", "1/5⁴"], "5⁴"],
+        ["Simplify: (2·5)²", ["2²·5²", "10²·2", "2·5²", "2⁴·5²"], "2²·5²"],
+        ["Simplify: (3/4)²", ["3²/4²", "9/4", "3/16", "6/8"], "3²/4²"],
+        ["Evaluate: 9⁰", ["0", "1", "9", "90"], "1"],
+        ["Rewrite 4⁻²", ["−4²", "1/4²", "4²", "1/8"], "1/4²"],
+        ["Which equals 16?", ["−4²", "(−4)²", "4⁰", "2³"], "(−4)²"],
+        [
+          "Is (x+2)³=x³+2³ always true?",
+          ["Yes", "No", "Only when x=0", "Only when x=1"],
+          "No",
+        ],
+        [
+          "Simplify: 3²/3⁶",
+          ["3⁴", "3⁻⁴", "1/3⁴", "Both 3⁻⁴ and 1/3⁴"],
+          "Both 3⁻⁴ and 1/3⁴",
+        ],
+      ];
+      let bi = 0,
+        bScore = 0,
+        bPicked = false;
+      function renderBoss() {
+        const q = boss[bi];
+        bPicked = false;
+        document.getElementById("bossQ").textContent = `${bi + 1}. ${q[0]}`;
+        document.getElementById("bossOptions").innerHTML = q[1]
+          .map(
+            (x) =>
+              `<button onclick="pickBoss(this,'${encodeURIComponent(x)}')">${x}</button>`,
+          )
+          .join("");
+        document.getElementById("bossFeedback").textContent = "";
+        document.getElementById("bossResult").innerHTML = "";
+      }
+      function pickBoss(btn, enc) {
+        if (bPicked) return;
+        bPicked = true;
+        const ans = decodeURIComponent(enc),
+          correct = boss[bi][2];
+        if (ans === correct) {
+          btn.style.background = "#effff4";
+          btn.style.borderColor = "#159447";
+          bScore++;
+          award(15);
+          document.getElementById("bossFeedback").textContent =
+            "✓ Correct — strategist move!";
+        } else {
+          btn.style.background = "#fff3f3";
+          btn.style.borderColor = "#d83b3b";
+          document.getElementById("bossFeedback").textContent =
+            `✗ Review the structure. Correct: ${correct}`;
+        }
+      }
+      function bossNext() {
+        if (!bPicked) {
+          toast("Choose an answer first.");
+          return;
+        }
+        if (bi < boss.length - 1) {
+          bi++;
+          renderBoss();
+        } else {
+          const pct = Math.round((bScore / boss.length) * 100);
+          document.getElementById("bossResult").innerHTML =
+            `<div class="result"><div class="stars">${bScore >= 8 ? "🏆" : "⭐"}</div><strong>Boss battle complete!</strong><br>${bScore}/10 correct (${pct}%).<br>${bScore >= 8 ? "Mastery badge unlocked: EXPONENT STRATEGIST!" : "Keep training — revisit the rule cards and retry."}</div>`;
+          award(bScore * 5);
+        }
+      }
+      document.getElementById("menuBtn").onclick = () =>
+        document.getElementById("nav").classList.toggle("mobile-open");
+      document.querySelectorAll(".navlinks button").forEach(
+        (b) =>
+          (b.onclick = () => {
+            go(b.dataset.target);
+            document.getElementById("nav").classList.remove("mobile-open");
+          }),
+      );
+      renderLab();
+      renderGame();
+      renderQuiz();
+      renderBoss();
+      renderProgress();
+      document.getElementById("xpText").textContent = xp + " XP";
+    </script>
+  </body>
+</html>

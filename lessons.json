@@ -988,5 +988,15 @@
     "date": "2026-09-30",
     "featured": true,
     "icon": "user"
+  },
+  {
+    "title": "Math 7 | Law of Exponents",
+    "subject": "Math", 
+    "grade": "Grade 7",
+    "description": "Master the laws of exponents through a Singapore Mathematics-inspired journey: Concrete → Pictorial → Abstract. Build the idea, see the pattern, then use the rule.",
+    "file": "lessons/mathematics/grade-7/grade7-exponents/index.html",
+    "date": "2026-10-05",
+    "featured": true,
+    "icon": "user"
   }
 ]
