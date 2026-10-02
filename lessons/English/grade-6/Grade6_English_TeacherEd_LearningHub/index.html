@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2d5c">
+  <title>Teacher Ed Learning Hub | Grade 6 English</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <img src="assets/logo.jpg" alt="Teacher Ed Learning Hub logo">
+    <div>
+      <strong>Teacher Ed</strong>
+      <span>Learning Hub • Grade 6 English</span>
+    </div>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+  <nav id="mainNav">
+    <button data-section="home">🏠 Home</button>
+    <button data-section="lesson">📖 Lesson</button>
+    <button data-section="activities">🎯 Activities</button>
+    <button data-section="practice">🎮 Practice</button>
+    <button data-section="review">🧠 Review</button>
+    <button data-section="assessment">✅ Assessment</button>
+    <button data-section="boss">🏆 Final Challenge</button>
+    <button data-section="results">📊 Results</button>
+  </nav>
+</header>
+
+<div class="progress-wrap">
+  <div class="progress-label"><span>Lesson Progress</span><strong id="progressText">0%</strong></div>
+  <div class="progress"><div id="progressBar"></div></div>
+</div>
+
+<main>
+<section id="home" class="section active">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">GRADE 6 ENGLISH • BETTER ENGLISH FOR GLOBAL COMMUNICATION</p>
+      <h1>Speak Clearly. Write Better. Think Like a Language Detective.</h1>
+      <p class="lead">Explore adverbs, polite telephone conversations, and the basics of film blocking through examples, guided practice, games, and challenges.</p>
+      <div class="hero-actions">
+        <button class="primary" data-section="lesson">Start the Lesson →</button>
+        <button class="secondary" data-section="activities">Jump to Activities</button>
+      </div>
+    </div>
+    <div class="hero-card">
+      <img src="assets/logo.jpg" alt="Teacher Ed Learning Hub">
+      <p><b>Mission:</b> Understand → Practice → Apply → Master</p>
+    </div>
+  </div>
+
+  <div class="grid three">
+    <article class="card"><span class="icon">🗣️</span><h3>Communication</h3><p>Practice a polite telephone conversation and useful expressions.</p></article>
+    <article class="card"><span class="icon">✍️</span><h3>Adverbs</h3><p>Recognize adverbs and use them naturally in sentences.</p></article>
+    <article class="card"><span class="icon">🎬</span><h3>Blocking</h3><p>Understand how actor movement and camera position help tell a story.</p></article>
+  </div>
+</section>
+
+<section id="lesson" class="section">
+  <div class="section-heading">
+    <p class="eyebrow">ENGAGE → CONNECT → EXPLORE → LEARN</p>
+    <h2>📖 Lesson Journey</h2>
+    <p>Work through the lesson in small steps. Use the hints when you need them.</p>
+  </div>
+
+  <div class="card challenge">
+    <h3>🚀 ENGAGE: Can You Spot the Polite Call?</h3>
+    <p>Which opening sounds most appropriate when calling a person at an office?</p>
+    <div class="choice-row" data-single-choice="engage">
+      <button data-value="a">“Hey! Put Mrs. Deloso on.”</button>
+      <button data-value="b">“Hello, good morning. This is John Rivera. May I speak with Mrs. Ramona Deloso?”</button>
+      <button data-value="c">“Give me Mrs. Deloso now.”</button>
+    </div>
+    <p class="feedback" id="engageFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>🎯 CONNECT: Where Do You Use These Skills?</h3>
+    <p>Select all that apply.</p>
+    <label class="check"><input type="checkbox" class="connectBox"> Calling a school office</label>
+    <label class="check"><input type="checkbox" class="connectBox"> Writing a message</label>
+    <label class="check"><input type="checkbox" class="connectBox"> Making a short film</label>
+    <label class="check"><input type="checkbox" class="connectBox"> Talking with family and friends</label>
+    <button class="small-btn" id="connectCheck">Check My Thinking</button>
+    <p class="feedback" id="connectFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>🔍 EXPLORE: What Does the Word Tell Us?</h3>
+    <p>Click the highlighted words. What do you notice?</p>
+    <div class="sentence-box">
+      John spoke <button class="word-chip" data-tip="The word tells HOW John spoke.">politely</button> to Judy.
+      <br>Judy answered <button class="word-chip" data-tip="The word tells HOW Judy answered.">quietly</button>.
+      <br>John asked <button class="word-chip" data-tip="The word tells HOW John asked.">carefully</button>.
+    </div>
+    <p id="wordTip" class="tip"></p>
+  </div>
+
+  <div class="card lesson-card">
+    <h3>🧠 LEARN: Adverbs</h3>
+    <p><b>An adverb</b> can tell us more about an action. Many adverbs tell <b>how</b> an action happens.</p>
+    <div class="example-grid">
+      <div><span class="label">Action</span><b>spoke</b></div>
+      <div><span class="label">Adverb</span><b>politely</b></div>
+      <div><span class="label">Meaning</span>in a polite way</div>
+    </div>
+    <p class="note">Examples from the lesson include: <b>happily, slowly, safely, quickly, softly, gradually, quietly, angrily, gratefully, greatly, tearfully, sadly, surely, impatiently, fearfully, wonderfully, breathlessly, undoubtedly, haughtily, fearfully.</b></p>
+  </div>
+
+  <div class="card lesson-card">
+    <h3>🗣️ LEARN: Sample Telephone Conversation</h3>
+    <div class="dialogue">
+      <p><b>John:</b> Hello, good morning. This is John Rivera. May I speak with Mrs. Ramona Deloso?</p>
+      <p><b>Judy:</b> I’m sorry, Mr. Rivera. Mrs. Deloso is in the meeting today. Would you like to leave a message?</p>
+      <p><b>John:</b> Yes, please. Could you ask her to call me back later? We have important matters to discuss.</p>
+      <p><b>Judy:</b> Okay, I’ll give her the message.</p>
+      <p><b>John:</b> Thank you very much!</p>
+      <p><b>Judy:</b> You’re welcome!</p>
+    </div>
+    <div class="two-col">
+      <div>
+        <h4>Useful expressions</h4>
+        <ul>
+          <li>May I speak with…?</li>
+          <li>Would you like to leave a message?</li>
+          <li>Could you ask her/him to call me back?</li>
+          <li>Thank you very much.</li>
+          <li>You’re welcome.</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Why they work</h4>
+        <p>They are clear, respectful, and appropriate for a formal telephone conversation.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card lesson-card">
+    <h3>🎬 LEARN: Film Blocking</h3>
+    <p><b>Blocking</b> is the relationship of the camera to the actors. It includes the physical movement of actors in relation to the camera.</p>
+    <div class="four-grid">
+      <div><b>Why?</b><span>Why does the actor move?</span></div>
+      <div><b>Where?</b><span>Where does the actor move?</span></div>
+      <div><b>When?</b><span>When does the actor move?</span></div>
+      <div><b>How?</b><span>How does the actor move?</span></div>
+    </div>
+    <p class="note">Good blocking should help the audience understand the central idea, the story, and what the characters are feeling. Actor movement should have a purpose.</p>
+  </div>
+
+  <div class="card">
+    <h3>📸 Source Pages</h3>
+    <div class="source-images">
+      <img src="assets/lesson-page-97.jpg" alt="Textbook page 97">
+      <img src="assets/lesson-page-98.jpg" alt="Textbook page 98">
+      <img src="assets/lesson-page-99.jpg" alt="Textbook page 99">
+    </div>
+    <p class="muted">These images are included as references from the supplied lesson material.</p>
+  </div>
+</section>
+
+<section id="activities" class="section">
+  <div class="section-heading"><p class="eyebrow">GUIDED PRACTICE</p><h2>🎯 Activities</h2><p>Try each activity. Objective questions have fixed answers; writing tasks have sample answers.</p></div>
+
+  <div class="card">
+    <h3>Activity 1 — Adverb Meaning Match</h3>
+    <p>Choose the meaning of <b>quietly</b>.</p>
+    <div class="choice-row" data-single-choice="quietly">
+      <button data-value="a">in a loud way</button>
+      <button data-value="b">in a quiet way</button>
+      <button data-value="c">in an angry way</button>
+    </div>
+    <p class="feedback" id="quietlyFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>Activity 2 — Find the Adverb</h3>
+    <p>Which word tells <b>how</b> the action happened?</p>
+    <p class="sentence-box">The children listened <b>carefully</b> to the instructions.</p>
+    <div class="choice-row" data-single-choice="findAdverb">
+      <button data-value="a">children</button>
+      <button data-value="b">listened</button>
+      <button data-value="c">carefully</button>
+    </div>
+    <p class="feedback" id="findAdverbFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>Activity 3 — Polite Telephone Language</h3>
+    <p>Choose the best sentence for asking to speak with someone.</p>
+    <div class="choice-row" data-single-choice="phone">
+      <button data-value="a">“Put Maria on.”</button>
+      <button data-value="b">“May I speak with Maria, please?”</button>
+      <button data-value="c">“I need Maria. Now.”</button>
+    </div>
+    <p class="feedback" id="phoneFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>Activity 4 — Open-Ended: Give Advice</h3>
+    <p>If you are about to meet an old person and have a chance to offer some pieces of advice, what would you say?</p>
+    <textarea id="adviceInput" placeholder="Write 2–3 sentences here..."></textarea>
+    <div class="button-row">
+      <button class="small-btn" id="adviceSample">👀 Show Sample</button>
+      <button class="small-btn" id="adviceCheck">Check for a Response</button>
+    </div>
+    <div class="sample hidden" id="adviceSampleBox"><b>Sample Answer:</b> I would advise the person to take care of their health, stay connected with people they love, and continue doing meaningful activities. <br><span>Your answer may be different. It should give sensible and respectful advice.</span></div>
+    <p class="feedback" id="adviceFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>Activity 5 — Open-Ended: Use an Adverb</h3>
+    <p>Write one sentence using <b>gratefully</b>.</p>
+    <input id="adverbInput" type="text" placeholder="Example: Write your own sentence here...">
+    <div class="button-row">
+      <button class="small-btn" id="adverbSample">👀 Show Sample</button>
+      <button class="small-btn" id="adverbCheck">Check for a Response</button>
+    </div>
+    <div class="sample hidden" id="adverbSampleBox"><b>Sample Answer:</b> She gratefully thanked her teacher for the help. <br><span>Your answer may be different if it uses <b>gratefully</b> correctly.</span></div>
+    <p class="feedback" id="adverbFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>Activity 6 — Blocking: Tell What You Notice</h3>
+    <p>In the supplied sample, an actor is positioned on a stage while the camera/viewpoint observes the scene. What can blocking help communicate?</p>
+    <div class="choice-row" data-single-choice="blocking">
+      <button data-value="a">Only the actor’s costume</button>
+      <button data-value="b">The story, focus, movement, and feelings of the characters</button>
+      <button data-value="c">Only the spelling of dialogue</button>
+    </div>
+    <p class="feedback" id="blockingFeedback"></p>
+  </div>
+</section>
+
+<section id="practice" class="section">
+  <div class="section-heading"><p class="eyebrow">🎮 PLAY TO PRACTICE</p><h2>Language Quest</h2><p>Complete three mini challenges. Your score is saved on this page.</p></div>
+
+  <div class="game-card">
+    <div class="game-head"><span>LEVEL 1</span><b id="gameCounter">1 / 6</b></div>
+    <div id="gameArea"></div>
+    <div class="game-controls">
+      <button class="primary" id="gameSubmit">Submit</button>
+      <button class="secondary hidden" id="gameNext">Next Challenge →</button>
+    </div>
+    <p class="feedback" id="gameFeedback"></p>
+  </div>
+
+  <div class="card">
+    <h3>🏅 Possible Achievements</h3>
+    <div class="badges">
+      <span>🏅 Vocabulary Master</span><span>🗣️ Communication Pro</span><span>🎬 Blocking Detective</span><span>🧠 Critical Thinker</span>
+    </div>
+  </div>
+</section>
+
+<section id="review" class="section">
+  <div class="section-heading"><p class="eyebrow">🔄 REVIEW</p><h2>What Should You Remember?</h2></div>
+  <div class="grid two">
+    <article class="card"><h3>⭐ Remember This</h3><ul><li>Adverbs can add information about an action, often telling how it happens.</li><li>Polite telephone language makes communication respectful and clear.</li><li>Blocking gives purpose to actor movement in relation to the camera.</li></ul></article>
+    <article class="card"><h3>🧠 Vocabulary</h3><ul><li><b>adverb</b> — a word that adds information about an action or another word.</li><li><b>blocking</b> — planned actor movement and position in relation to the camera.</li><li><b>message</b> — information given to another person.</li></ul></article>
+    <article class="card"><h3>📌 Quick Rules</h3><ul><li>Choose words that fit the meaning and situation.</li><li>Formal calls use respectful expressions.</li><li>Movement in a scene should contribute to the story or idea.</li></ul></article>
+    <article class="card"><h3>💡 Common Mistakes</h3><p>❌ “Put her on.” in a formal call.</p><p>✅ “May I speak with her, please?”</p><p>❌ Moving an actor without a purpose.</p><p>✅ Make movement support the scene.</p></article>
+  </div>
+  <div class="card">
+    <h3>🌍 Where Can I Use This?</h3>
+    <p>Use these skills when making phone calls, speaking respectfully, writing stories, describing actions, reading scripts, creating videos, or explaining how a scene communicates an idea.</p>
+  </div>
+</section>
+
+<section id="assessment" class="section">
+  <div class="section-heading"><p class="eyebrow">✅ CHECK YOUR LEARNING</p><h2>10-Item Assessment</h2><p>Answer all items. You can retry the assessment after reviewing.</p></div>
+  <form id="quizForm" class="quiz"></form>
+  <div class="button-row">
+    <button class="primary" id="submitQuiz" type="button">Check Assessment</button>
+    <button class="secondary" id="resetQuiz" type="button">Retry</button>
+  </div>
+  <div id="quizResult" class="result-box hidden"></div>
+</section>
+
+<section id="boss" class="section">
+  <div class="section-heading"><p class="eyebrow">🏆 FINAL MISSION</p><h2>English Communication Boss Challenge</h2></div>
+  <div class="card boss-card">
+    <h3>Read the situation</h3>
+    <p>You are making a short video about a student who needs to call an office. The student must speak politely, use an adverb to describe an action, and plan meaningful movement for the scene.</p>
+    <ol>
+      <li>Write one polite opening for the telephone call.</li>
+      <li>Write one sentence using an adverb.</li>
+      <li>Explain one reason why the actor might move during the scene.</li>
+    </ol>
+
+    <label>1. Polite opening <input id="bossPhone" type="text" placeholder="Write your answer..."></label>
+    <label>2. Sentence with an adverb <input id="bossAdverb" type="text" placeholder="Write your answer..."></label>
+    <label>3. Why should the actor move? <textarea id="bossBlocking" placeholder="Explain in one or two sentences..."></textarea></label>
+
+    <div class="button-row">
+      <button class="small-btn" id="bossSample">👀 Show Samples</button>
+      <button class="primary" id="bossCheck">Complete Mission</button>
+    </div>
+    <div class="sample hidden" id="bossSampleBox">
+      <b>Sample answers:</b><br>
+      1. “Hello, good morning. May I speak with Mrs. Deloso, please?”<br>
+      2. “She spoke politely to the caller.”<br>
+      3. “The actor may move to show a change in focus, feeling, or action in the story.”<br>
+      <span>Your answers may be different if they are clear and appropriate.</span>
+    </div>
+    <p class="feedback" id="bossFeedback"></p>
+  </div>
+</section>
+
+<section id="results" class="section">
+  <div class="section-heading"><p class="eyebrow">📊 YOUR PROGRESS</p><h2>Learning Results</h2></div>
+  <div class="result-dashboard">
+    <div class="score-circle"><span id="overallPercent">0%</span><small>progress</small></div>
+    <div>
+      <h3 id="masteryTitle">🌱 Learning</h3>
+      <p id="masteryMessage">Start the lesson to build your evidence of learning.</p>
+      <div class="stats">
+        <div><b id="assessmentScore">—</b><span>Assessment</span></div>
+        <div><b id="practiceScore">0</b><span>Practice points</span></div>
+        <div><b id="completedCount">0</b><span>Activities</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🌈 Reflect</h3>
+    <label>What did you learn today?<textarea placeholder="Write a short reflection..."></textarea></label>
+    <label>Where can you use this skill in real life?<textarea placeholder="Write a real-life connection..."></textarea></label>
+    <button class="small-btn" id="reflectionSample">👀 Show Sample</button>
+    <div class="sample hidden" id="reflectionSampleBox">Sample: I learned how adverbs can make my sentences more specific. I can use polite expressions when I make a formal phone call.</div>
+  </div>
+  <div class="celebrate">
+    <div>🎉</div><h2>Great work, English Explorer!</h2>
+    <p>Keep reading. Keep thinking. Keep learning.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="assets/logo.jpg" alt="Teacher Ed logo">
+  <div><b>Teacher Ed Learning Hub</b><br><span>Teach. Lead. Inspire.</span></div>
+  <small>Grade 6 English • Interactive Learning</small>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

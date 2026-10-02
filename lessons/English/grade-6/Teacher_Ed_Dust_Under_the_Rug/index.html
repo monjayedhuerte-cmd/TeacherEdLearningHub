@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b2a5b">
+  <meta name="description" content="Teacher Ed Learning Hub — Grade 6 English interactive lesson: Dust Under the Rug">
+  <title>Dust Under the Rug | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/jpeg" href="assets/teacher-ed-logo.jpg">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.jpg" alt="Teacher Ed Learning Hub logo" class="logo">
+      <div>
+        <div class="brand-name">TEACHER ED</div>
+        <div class="brand-sub">Learning Hub • Grade 6 English</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="themeBtn" title="Toggle theme" aria-label="Toggle theme">☼</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="lesson-mini">
+        <span class="eyebrow">LESSON 9</span>
+        <h2>Dust Under<br>the Rug</h2>
+        <p>Reading • Vocabulary • Story Elements • Reflection</p>
+      </div>
+      <nav class="nav" id="nav">
+        <button data-section="home" class="nav-item active">🏠 Home</button>
+        <button data-section="engage" class="nav-item">🚀 Engage</button>
+        <button data-section="connect" class="nav-item">🔗 Connect</button>
+        <button data-section="explore" class="nav-item">🔍 Explore</button>
+        <button data-section="read" class="nav-item">📖 Read</button>
+        <button data-section="ido" class="nav-item">👩‍🏫 I Do</button>
+        <button data-section="wedo" class="nav-item">🤝 We Do</button>
+        <button data-section="youdo" class="nav-item">✏️ You Do</button>
+        <button data-section="practice" class="nav-item">🎮 Practice</button>
+        <button data-section="apply" class="nav-item">🌍 Apply</button>
+        <button data-section="think" class="nav-item">🧠 Think Deeper</button>
+        <button data-section="review" class="nav-item">🔄 Review</button>
+        <button data-section="assessment" class="nav-item">✅ Check</button>
+        <button data-section="master" class="nav-item">🏆 Master</button>
+        <button data-section="reflect" class="nav-item">🌈 Reflect</button>
+        <button data-section="celebrate" class="nav-item">🎉 Celebrate</button>
+      </nav>
+      <div class="sidebar-footer">Teach. Lead. Inspire.</div>
+    </aside>
+
+    <main class="main">
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Lesson Progress</span><strong id="progressText">0%</strong></div>
+        <div class="progress-track"><div class="progress-bar" id="progressBar"></div></div>
+      </div>
+
+      <section id="home" class="section active-section">
+        <div class="hero">
+          <div>
+            <span class="eyebrow">BETTER ENGLISH FOR GLOBAL COMMUNICATION 6 • LESSON 9</span>
+            <h1>Dust Under the Rug</h1>
+            <p class="hero-lead">A Grade 6 reading adventure about faithful work, honesty, responsibility, and the value of doing even the smallest duty well.</p>
+            <div class="quote">“In the smallest duty done lies wealth of joy forever.”</div>
+            <div class="hero-actions">
+              <button class="primary" data-go="engage">Start the Adventure →</button>
+              <button class="secondary" data-go="read">Read the Story</button>
+            </div>
+          </div>
+          <div class="hero-art">
+            <div class="storybook-card">
+              <div class="storybook-top">📖</div>
+              <div class="storybook-title">MINNIE'S<br>HONESTY QUEST</div>
+              <div class="storybook-rug">▰ ▰ ▰</div>
+              <div class="gold-dot">✦</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="info-card"><span>🎯</span><h3>Learning Goals</h3><p>Understand the story, vocabulary, story elements, theme, and the lesson about honesty and faithful work.</p></article>
+          <article class="info-card"><span>🧠</span><h3>Skills</h3><p>Recall, infer, explain evidence, sequence events, use vocabulary, identify setting/characters/plot/conclusion, and reflect.</p></article>
+          <article class="info-card"><span>🏆</span><h3>Mission</h3><p>Progress from discovery to independent practice, then complete the final Story Detective challenge.</p></article>
+        </div>
+      </section>
+
+      <section id="engage" class="section">
+        <div class="section-head"><span class="step">01</span><div><span class="eyebrow">🚀 ENGAGE</span><h2>Can You Spot the Hidden Lesson?</h2></div></div>
+        <div class="challenge-card">
+          <p class="big-question">Imagine you cleaned a room and noticed a dusty corner that nobody could see. Would you still clean it?</p>
+          <div class="choice-grid" id="engageChoices">
+            <button data-correct="1">Yes — the work should be done properly.</button>
+            <button data-correct="0">No — if nobody sees it, it does not matter.</button>
+            <button data-correct="1">It depends, but I would think about what is right.</button>
+          </div>
+          <div id="engageFeedback" class="feedback"></div>
+        </div>
+        <div class="teacher-note">There is more than one reasonable personal response. The story will help you examine the idea of doing work faithfully.</div>
+      </section>
+
+      <section id="connect" class="section">
+        <div class="section-head"><span class="step">02</span><div><span class="eyebrow">🔗 CONNECT</span><h2>Activate What You Already Know</h2></div></div>
+        <p class="lead">Answer these quick questions. They are a warm-up, not a graded test.</p>
+        <div class="quiz-card" id="connectQuiz"></div>
+      </section>
+
+      <section id="explore" class="section">
+        <div class="section-head"><span class="step">03</span><div><span class="eyebrow">🔍 EXPLORE</span><h2>Meet the Story Before We Analyze It</h2></div></div>
+        <div class="explore-grid">
+          <div class="pattern-card">
+            <span class="tag">WHO?</span>
+            <h3>Minnie</h3>
+            <p>The older daughter. She helps at home, searches for work when her mother becomes sick, and learns that faithful work matters even when no one is watching.</p>
+          </div>
+          <div class="pattern-card">
+            <span class="tag">WHERE?</span>
+            <h3>Home & Forest</h3>
+            <p>The story begins near a great forest and later moves to a small house belonging to twelve dwarfs.</p>
+          </div>
+          <div class="pattern-card">
+            <span class="tag">WHAT CHANGES?</span>
+            <h3>A Dusty Rug</h3>
+            <p>A small unfinished task becomes the key to the story's surprise and its message about honesty.</p>
+          </div>
+        </div>
+        <div class="discovery">
+          <h3>🔎 Notice the pattern</h3>
+          <p>Sort each item into <strong>Story Element</strong> or <strong>Story Detail</strong>.</p>
+          <div class="sort-area" id="sortArea"></div>
+          <div id="sortResult" class="feedback"></div>
+        </div>
+      </section>
+
+      <section id="read" class="section">
+        <div class="section-head"><span class="step">04</span><div><span class="eyebrow">📖 READ</span><h2>Dust Under the Rug</h2></div></div>
+        <div class="reading-tools">
+          <button class="secondary" id="fontMinus">A−</button>
+          <button class="secondary" id="fontPlus">A+</button>
+          <button class="secondary" id="readAloud">🔊 Read visible story</button>
+        </div>
+        <div class="reading-progress"><span id="readProgress"></span></div>
+        <article class="story" id="story">
+          <p><strong>There was once a mother who had two little daughters.</strong> Her husband was dead and she was very poor. She worked faithfully so that they might be well-fed and clothed. She was a skilled worker, but she worked away from home. Her two little girls were good and helpful and kept their house neat and bright.</p>
+          <p>One of the little girls was lame and could not run about the house, so she sat still on her chair and sewed. Minnie, the older one, washed the dishes, swept the floor, and made the home beautiful.</p>
+          <p>Their home was on the edge of a great forest. After their tasks were finished, the little girls would sit by the window. They watched the tall trees bend in the wind as though the trees were real persons nodding, bending, and bowing to each other. In spring there were birds, in summer wild flowers, in autumn bright leaves, and in winter great drifts of white snow. The whole year was a round of delight to the two happy children.</p>
+          <p>One day the mother came home sick, and this made the children very sad. It was winter, and there were many things to buy. Minnie and her sister sat by the fire and talked it over. Finally, Minnie said, “Dear sister, I must find work before our food runs out.” She kissed her mother, wrapped herself up, and left home.</p>
+          <p>A narrow path led through the forest. Minnie followed it, hoping to reach a place where she might find work. As she hurried on, the shadows grew deeper. Night was coming fast when she saw a very small house, which was a welcome sight. She hurried to it and knocked on the door.</p>
+          <p>Nobody came to answer her knock. After trying again, she thought that nobody lived there, so she opened the door and walked in, thinking that she would stay for the night. Inside were twelve little beds with their bedclothes all tumbled, twelve little dirty plates on a very dusty table, and a dusty floor.</p>
+          <p>“Dear me!” said the little girl, “this will never do!” After warming her hands, she worked to make the room clean. She washed the plates, made up the beds, swept the floor, straightened the great rug, and set twelve little chairs in a half circle around the fire.</p>
+          <p>Just as she finished, the door opened. Twelve of the queerest little people she had ever seen walked in. They were dwarfs. They were surprised and delighted to find their room clean and bright. Minnie explained that she was looking for work because her mother was sick.</p>
+          <p>The dwarfs thanked Minnie and invited her to eat with them. Their fairy housekeeper was away on holiday, so they asked Minnie to stay and help them. They promised to reward her if she proved faithful and good.</p>
+          <p>Minnie happily agreed. Each day she cooked breakfast, cleaned the room, mended clothes, and prepared a warm supper. She worked faithfully until the last day of the housekeeper’s holiday.</p>
+          <p>One day, Minnie looked through a windowpane and saw a beautiful picture of fairy palaces with silver towers and frosted roofs. The sight was so beautiful that she forgot her work until the cuckoo clock struck twelve. She hurried to finish the beds and dishes.</p>
+          <p>When she took the broom to sweep the floor, she was almost out of time. “I believe,” Minnie said, “that I will not sweep under the rug today. After all, dust cannot be seen under the rug!” She hurried away and left the rug unturned.</p>
+          <p>That night, a little voice in Minnie’s heart seemed to say, “Dust under the rug! Dust under the rug!” She tried to ignore it, but she could not bear it any longer. She sprang out of bed and swept the dust away.</p>
+          <p><strong>Surprise!</strong> Under the rug were twelve shining gold pieces, as round and bright as the moon. The dwarfs came running to see what had happened.</p>
+          <p>Minnie told them everything. The dwarfs gathered around her and said that the gold was for her because she had proved faithful and true. They explained that the love that goes with the gold was more valuable than the gold itself. Minnie thanked them and hurried home with her golden treasure, which bought many good things for her mother and little sister.</p>
+          <p>She never saw the dwarfs again, but she never forgot their lesson to do her work faithfully. From then on, she always swept under the rug.</p>
+          <div class="moral"><strong>Honesty is the best policy!</strong><br><span>“In the smallest duty done lies wealth of joy forever.”</span></div>
+        </article>
+      </section>
+
+      <section id="ido" class="section">
+        <div class="section-head"><span class="step">05</span><div><span class="eyebrow">👩‍🏫 I DO</span><h2>Teacher Model: How to Find a Story Element</h2></div></div>
+        <div class="model-card">
+          <div class="model-question">Question: What is the <strong>setting</strong> of “Dust Under the Rug”?</div>
+          <div class="think-aloud">
+            <div class="thought"><span>1</span><p>First, I look for clues about <strong>where</strong> and <strong>when</strong> the story happens.</p></div>
+            <div class="thought"><span>2</span><p>The story mentions the family home at the edge of a <strong>great forest</strong>, and later a <strong>small house</strong> belonging to the dwarfs.</p></div>
+            <div class="thought"><span>3</span><p>It also mentions <strong>winter</strong>, night, and the changing seasons.</p></div>
+            <div class="thought"><span>4</span><p>Therefore, the setting includes the <strong>place</strong> and <strong>time</strong> in which these events occur.</p></div>
+          </div>
+          <div class="answer-reveal"><strong>Answer:</strong> The story takes place around a home near a great forest and later in the dwarfs’ small house; time clues include winter, night, and the changing seasons.</div>
+        </div>
+      </section>
+
+      <section id="wedo" class="section">
+        <div class="section-head"><span class="step">06</span><div><span class="eyebrow">🤝 WE DO</span><h2>Guided Practice</h2></div></div>
+        <div class="guided" id="guided"></div>
+      </section>
+
+      <section id="youdo" class="section">
+        <div class="section-head"><span class="step">07</span><div><span class="eyebrow">✏️ YOU DO</span><h2>Independent Story Detective</h2></div></div>
+        <div id="youDoQuiz"></div>
+      </section>
+
+      <section id="practice" class="section">
+        <div class="section-head"><span class="step">08</span><div><span class="eyebrow">🎮 PRACTICE</span><h2>Story Detective Arcade</h2></div></div>
+        <div class="game-shell">
+          <div class="game-header">
+            <div><span class="eyebrow">MISSION</span><h3>Catch the Correct Clue</h3></div>
+            <div class="game-score">Score <strong id="gameScore">0</strong></div>
+          </div>
+          <p id="gamePrompt" class="big-question"></p>
+          <div id="gameChoices" class="choice-grid"></div>
+          <div class="game-footer"><span id="gameRound">Round 1 of 8</span><span id="gameFeedback"></span></div>
+        </div>
+        <div class="vocab-game">
+          <div>
+            <span class="eyebrow">BONUS</span>
+            <h3>Word Watch: Unscramble It</h3>
+            <p>Use the textbook clues to rebuild the vocabulary words.</p>
+          </div>
+          <div id="scrambleGame"></div>
+        </div>
+      </section>
+
+      <section id="apply" class="section">
+        <div class="section-head"><span class="step">09</span><div><span class="eyebrow">🌍 APPLY</span><h2>Where Can You Use This?</h2></div></div>
+        <div class="scenario">
+          <p class="big-question">You notice that a classroom task is hidden from view. Write 2–3 sentences explaining what you would do and why.</p>
+          <textarea id="applyInput" rows="5" placeholder="Write your response here..."></textarea>
+          <button class="primary show-sample" data-target="applySample">👀 Show Sample</button>
+          <div class="sample" id="applySample">Sample: “I would finish the task even if no one could see it. Doing work faithfully shows responsibility and honesty.” Your answer may be different if it clearly explains your choice.</div>
+        </div>
+      </section>
+
+      <section id="think" class="section">
+        <div class="section-head"><span class="step">10</span><div><span class="eyebrow">🧠 THINK DEEPER</span><h2>Reason With Evidence</h2></div></div>
+        <div class="deep-question">
+          <h3>Was the gold the most important reward Minnie received?</h3>
+          <p>Think about what the dwarfs said about the gold and the love that went with it. Use evidence from the story.</p>
+          <textarea id="thinkInput" rows="6" placeholder="I think... because... The story says/shows..."></textarea>
+          <button class="primary show-sample" data-target="thinkSample">👀 Show Sample</button>
+          <div class="sample" id="thinkSample">Sample: The gold was valuable because it helped Minnie’s family, but the lesson about faithfulness and the love connected with the reward was also important. The story shows that Minnie never forgot the lesson.</div>
+        </div>
+      </section>
+
+      <section id="review" class="section">
+        <div class="section-head"><span class="step">11</span><div><span class="eyebrow">🔄 REVIEW</span><h2>Remember This</h2></div></div>
+        <div class="review-grid">
+          <article><h3>⭐ Key Ideas</h3><ul><li>Minnie helps her family and searches for work when her mother becomes sick.</li><li>She cleans the dwarfs’ home and is asked to work faithfully.</li><li>A hidden task under the rug tests her honesty.</li><li>The story teaches the value of faithful work and honesty.</li></ul></article>
+          <article><h3>📚 Vocabulary</h3><div class="vocab-list" id="vocabList"></div></article>
+          <article><h3>📌 Story Elements</h3><p><strong>Setting</strong> — where and when.</p><p><strong>Characters</strong> — people, animals, or animated objects.</p><p><strong>Plot</strong> — sequence of events leading to the climax.</p><p><strong>Conclusion</strong> — the ending.</p></article>
+          <article><h3>⚠️ Common Language Mistake</h3><p class="bad">Incorrect: “Minnie always sweep under the rug.”</p><p class="good">Correct: “Minnie always swept under the rug.”</p><p>Use the past tense when retelling events that already happened.</p></article>
+        </div>
+        <div class="silent-e">
+          <h3>🔊 Hear Ye: Silent e</h3>
+          <p>Practice reading the four-letter words with silent <strong>e</strong> at the end.</p>
+          <div class="word-cloud" id="silentWords"></div>
+        </div>
+      </section>
+
+      <section id="assessment" class="section">
+        <div class="section-head"><span class="step">12</span><div><span class="eyebrow">✅ CHECK</span><h2>Check Your Learning</h2></div></div>
+        <p class="lead">15 questions. Read carefully. You may retry each item before moving on.</p>
+        <div id="assessmentQuiz"></div>
+      </section>
+
+      <section id="master" class="section">
+        <div class="section-head"><span class="step">13</span><div><span class="eyebrow">🏆 MASTER</span><h2>Final Boss: The Honest Work Case</h2></div></div>
+        <div class="boss">
+          <div class="boss-badge">★</div>
+          <h3>Can you solve the case?</h3>
+          <p>A student finishes a classroom cleaning task but skips a hidden corner because “nobody will notice.” Use the ideas from <em>Dust Under the Rug</em> to complete all three stages.</p>
+          <div class="boss-stage">
+            <span>01</span><div><h4>Identify the lesson</h4><p>Which story idea is most closely connected?</p><div class="choice-grid compact" id="boss1"></div></div></div>
+          <div class="boss-stage">
+            <span>02</span><div><h4>Explain the reasoning</h4><textarea id="boss2" rows="4" placeholder="Explain what the student should do and why..."></textarea><button class="secondary show-sample" data-target="boss2Sample">👀 Show Sample</button><div class="sample" id="boss2Sample">Sample: The student should complete the hidden corner because a task should be done faithfully even when no one is watching.</div></div></div>
+          <div class="boss-stage">
+            <span>03</span><div><h4>Create a principle</h4><input id="boss3" type="text" placeholder="Complete: “True responsibility means...”"><button class="primary" id="bossFinish">Finish the Mission</button><div id="bossResult" class="feedback"></div></div></div>
+        </div>
+      </section>
+
+      <section id="reflect" class="section">
+        <div class="section-head"><span class="step">14</span><div><span class="eyebrow">🌈 REFLECT</span><h2>Make the Lesson Yours</h2></div></div>
+        <div class="reflection-grid">
+          <div class="reflection-card"><h3>What did you learn?</h3><textarea rows="4" placeholder="Write a few sentences..."></textarea></div>
+          <div class="reflection-card"><h3>Where can you use this lesson?</h3><textarea rows="4" placeholder="At home, at school, with friends..."></textarea></div>
+          <div class="reflection-card"><h3>What part do you still need to practice?</h3><textarea rows="4" placeholder="Vocabulary, story elements, reading..."></textarea></div>
+        </div>
+        <button class="primary show-sample" data-target="reflectionSample">👀 Show Sample</button>
+        <div class="sample" id="reflectionSample">Sample: “I learned that small duties still matter. I can use this lesson by finishing schoolwork carefully even when my teacher is not checking every step.”</div>
+      </section>
+
+      <section id="celebrate" class="section">
+        <div class="celebration">
+          <div class="confetti">✦ ✧ ★ ✦ ✧</div>
+          <div class="trophy">🏆</div>
+          <span class="eyebrow">MISSION COMPLETE</span>
+          <h1>Great work, English Explorer!</h1>
+          <p>You read, reasoned, practiced, applied, and reflected on <em>Dust Under the Rug</em>.</p>
+          <div class="badge-row">
+            <div class="badge">📖<span>Reading<br>Detective</span></div>
+            <div class="badge">🧠<span>Critical<br>Thinker</span></div>
+            <div class="badge">🎯<span>Story<br>Analyst</span></div>
+          </div>
+          <button class="primary" data-go="home">↺ Explore Again</button>
+        </div>
+      </section>
+
+      <footer>
+        <img src="assets/teacher-ed-logo.jpg" alt="Teacher Ed Learning Hub logo">
+        <div><strong>Teacher Ed Learning Hub</strong><br>Teach. Lead. Inspire.</div>
+        <div class="footer-note">Grade 6 English • Interactive Learning Experience</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

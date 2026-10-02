@@ -997,6 +997,36 @@
     "file": "lessons/mathematics/grade-7/grade7-exponents/index.html",
     "date": "2026-10-05",
     "featured": true,
-    "icon": "user"
+    "icon": "calculator"
+  },
+  {
+    "title": "English 6 | Subject-Verb Agreement",
+    "subject": "English", 
+    "grade": "Grade 6",
+    "description": "Learn how subjects and verbs work together, practice language skills, explore sea turtles, and use new words in meaningful sentences.",
+    "file": "lessons/English/grade-6/grade6_english_interactive/index.html",
+    "date": "2026-10-05",
+    "featured": true,
+    "icon": "languages"
+  },
+  {
+    "title": "English 6 |  Adverbs, Polite Telephone Conversations, and the Basics of Film Blocking",
+    "subject": "English", 
+    "grade": "Grade 6",
+    "description": "Explore adverbs, polite telephone conversations, and the basics of film blocking through examples, guided practice, games, and challenges.",
+    "file": "lessons/English/grade-6/Grade6_English_TeacherEd_LearningHub/index.html",
+    "date": "2026-10-05",
+    "featured": true,
+    "icon": "languages"
+  },
+  {
+    "title": "English 6 |  Dust Under the Rug",
+    "subject": "English", 
+    "grade": "Grade 6",
+    "description": "A Grade 6 reading adventure about faithful work, honesty, responsibility, and the value of doing even the smallest duty well.",
+    "file": "lessons/English/grade-6/Teacher_Ed_Dust_Under_the_Rug/index.html",
+    "date": "2026-10-07",
+    "featured": true,
+    "icon": "languages"
   }
 ]

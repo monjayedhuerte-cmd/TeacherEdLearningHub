@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2a5b">
+<title>Grade 6 English Adventure | Teacher Ed</title>
+<style>
+:root{
+  --navy:#0b2a5b; --blue:#1769aa; --gold:#f4b400; --sky:#eaf5ff;
+  --ink:#172033; --muted:#61708a; --white:#fff; --green:#16845b;
+  --red:#c0392b; --card:#ffffff; --shadow:0 12px 30px rgba(11,42,91,.10);
+  --radius:20px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#f6f9fd;line-height:1.55}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid #e5eaf2}
+.nav{max-width:1200px;margin:auto;padding:10px 18px;display:flex;align-items:center;gap:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--navy);min-width:210px}
+.brand img{width:42px;height:42px;object-fit:cover;border-radius:50%;border:2px solid var(--gold)}
+.brand small{display:block;color:var(--muted);font-weight:600;font-size:11px}
+.navlinks{display:flex;gap:6px;overflow:auto;margin-left:auto}
+.navlinks button{border:0;background:transparent;color:var(--muted);padding:9px 11px;border-radius:10px;white-space:nowrap}
+.navlinks button:hover,.navlinks button.active{background:var(--sky);color:var(--navy);font-weight:700}
+.progress-wrap{background:#edf1f7;height:5px}
+.progress{height:5px;background:linear-gradient(90deg,var(--blue),var(--gold));width:0;transition:.4s}
+
+.hero{background:linear-gradient(135deg,#0b2a5b 0%,#124b91 65%,#1769aa 100%);color:#fff;padding:64px 18px 56px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border-radius:50%;right:-120px;top:-150px;background:rgba(244,180,0,.18)}
+.hero-inner{max-width:1200px;margin:auto;display:grid;grid-template-columns:1.5fr .8fr;gap:30px;align-items:center;position:relative;z-index:1}
+.eyebrow{color:#ffd86a;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+h1{font-size:clamp(36px,6vw,68px);line-height:1.02;margin:10px 0 18px}
+.hero p{font-size:18px;color:#e6efff;max-width:700px}
+.hero-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.25);padding:24px;border-radius:24px;backdrop-filter:blur(8px)}
+.hero-card img{width:110px;height:110px;border-radius:50%;object-fit:cover;background:#fff;border:4px solid var(--gold);display:block;margin-bottom:15px}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.badge{padding:7px 11px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:13px}
+
+.container{max-width:1200px;margin:auto;padding:28px 18px 70px}
+.section{scroll-margin-top:90px;margin-top:34px}
+.section-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:18px}
+.section-head h2{margin:0;color:var(--navy);font-size:30px}
+.section-head p{margin:4px 0 0;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+.card{background:var(--card);border:1px solid #e4eaf2;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.span-12{grid-column:span 12}.span-8{grid-column:span 8}.span-6{grid-column:span 6}.span-4{grid-column:span 4}
+.kicker{font-weight:800;color:var(--blue);font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.rule{background:#fff7df;border-left:5px solid var(--gold);padding:17px;border-radius:12px;margin:15px 0}
+.example{background:#f7fbff;border:1px solid #dcecff;border-radius:15px;padding:16px;margin:12px 0}
+.highlight{font-weight:800;color:var(--navy)}
+.correct{color:var(--green);font-weight:800}
+.wrong{color:var(--red);font-weight:800}
+.muted{color:var(--muted)}
+.controls{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.btn{border:0;border-radius:11px;padding:10px 15px;font-weight:750;background:var(--navy);color:#fff}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.gold{background:var(--gold);color:#13213b}.btn.light{background:#edf5ff;color:var(--navy)}.btn.green{background:var(--green)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+.choice{background:#fff;border:2px solid #dfe6ef;border-radius:12px;padding:12px;text-align:left}
+.choice:hover{border-color:var(--blue);background:#f7fbff}
+.choice.selected{border-color:var(--blue);background:#eaf5ff}
+.choice.correct-choice{border-color:var(--green);background:#eaf9f2}
+.choice.wrong-choice{border-color:var(--red);background:#fff1ef}
+.feedback{margin-top:12px;padding:12px;border-radius:12px;display:none}
+.feedback.show{display:block}.feedback.good{background:#eaf9f2;color:#0b6847}.feedback.help{background:#fff7df;color:#795600}
+.hint{font-size:14px;color:var(--muted);margin-top:8px}
+.fill{border:0;border-bottom:2px solid var(--blue);outline:0;width:120px;text-align:center;background:#f8fbff;padding:4px}
+.fill:focus{border-color:var(--gold)}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+th,td{padding:11px;border-bottom:1px solid #e6ebf2;text-align:left;vertical-align:top}
+th{background:#f3f7fc;color:var(--navy)}
+.pill{display:inline-block;padding:4px 9px;border-radius:999px;background:#eef5ff;color:var(--navy);font-size:12px;font-weight:750}
+.callout{display:flex;gap:12px;align-items:flex-start;padding:15px;border-radius:15px;background:#f4f8ff}
+.icon{font-size:25px}
+textarea{width:100%;min-height:120px;border:1px solid #d9e1ec;border-radius:13px;padding:12px;resize:vertical;outline:none}
+textarea:focus,input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(23,105,170,.10)}
+.sample{display:none;margin-top:10px;background:#eef9f4;border:1px solid #cfeee0;padding:12px;border-radius:12px}
+.sample.show{display:block}
+.quiz-item{margin-bottom:22px;padding-bottom:20px;border-bottom:1px solid #e7ecf3}
+.score{font-size:40px;font-weight:900;color:var(--navy)}
+.result{display:none;margin-top:18px;padding:20px;border-radius:18px;background:linear-gradient(135deg,#edf7ff,#fff8e5)}
+.result.show{display:block}
+.progress-box{background:#edf1f7;height:10px;border-radius:99px;overflow:hidden}
+.progress-box>div{height:100%;background:linear-gradient(90deg,var(--blue),var(--gold));width:0}
+.footer{background:#081f45;color:#dce8fb;padding:35px 18px}
+.footer-inner{max-width:1200px;margin:auto;display:flex;align-items:center;gap:18px}
+.footer img{width:58px;height:58px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.small{font-size:13px}
+.lock{opacity:.65}
+@media(max-width:850px){
+  .hero-inner{grid-template-columns:1fr}.hero-card{display:none}
+  .span-8,.span-6,.span-4{grid-column:span 12}
+  .navlinks{display:none}.brand{min-width:0}
+  .choice-grid{grid-template-columns:1fr}
+  h1{font-size:44px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/edjay-logo.jpg" alt="Teacher Ed Learning Hub logo">
+      <div>Teacher Ed <small>Grade 6 English Adventure</small></div>
+    </div>
+    <div class="navlinks">
+      <button data-go="engage">Engage</button><button data-go="learn">Learn</button>
+      <button data-go="practice">Practice</button><button data-go="game">Play</button><button data-go="spelling">Spelling</button>
+      <button data-go="review">Review</button><button data-go="assessment">Check</button>
+      <button data-go="final">Master</button>
+    </div>
+  </div>
+  <div class="progress-wrap"><div class="progress" id="progress"></div></div>
+</header>
+
+<section class="hero">
+ <div class="hero-inner">
+  <div>
+   <div class="eyebrow">Grade 6 • English • Grammar + Language</div>
+   <h1>English Adventure:<br>Words That Agree</h1>
+   <p>Learn how subjects and verbs work together, practice language skills, explore sea turtles, and use new words in meaningful sentences.</p>
+   <div class="badges">
+    <span class="badge">Subject–Verb Agreement</span><span class="badge">Vocabulary</span>
+    <span class="badge">Spelling</span><span class="badge">Folklore</span>
+   </div>
+  </div>
+  <div class="hero-card">
+   <img src="assets/edjay-logo.jpg" alt="Teacher Ed logo">
+   <strong>Learning Mission</strong>
+   <p class="small">Understand → Practice → Apply → Master</p>
+   <div class="progress-box"><div id="heroProgress"></div></div>
+   <p class="small" id="progressText">0% complete</p>
+  </div>
+ </div>
+</section>
+
+<main class="container">
+<section id="engage" class="section">
+ <div class="section-head"><div><div class="kicker">01 • Engage</div><h2>Can You Spot the Mistake?</h2><p>Before we learn the rule, use your grammar detective eyes.</p></div></div>
+ <div class="grid">
+  <div class="card span-8">
+   <div class="example"><strong>Sentence A:</strong> The boys <span class="wrong">cleans</span> the canals.</div>
+   <div class="example"><strong>Sentence B:</strong> The boys <span class="correct">clean</span> the canals.</div>
+   <p><strong>Think:</strong> Which sentence sounds correct?</p>
+   <div class="choice-grid" data-question="engage1">
+    <button class="choice" onclick="answer(this,'engage1',false,'Look again. “Boys” refers to more than one person.')">A. Sentence A</button>
+    <button class="choice" onclick="answer(this,'engage1',true,'Correct! A plural subject such as “boys” takes the plural verb “clean.”')">B. Sentence B</button>
+   </div>
+   <div class="feedback" id="engage1"></div>
+  </div>
+  <div class="card span-4">
+   <div class="kicker">Big Question</div>
+   <h3>Why must subjects and verbs agree?</h3>
+   <p>Because the subject and verb need to match in <strong>number</strong>—singular or plural.</p>
+   <div class="rule"><strong>Singular subject → singular verb</strong><br><strong>Plural subject → plural verb</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="learn" class="section">
+ <div class="section-head"><div><div class="kicker">02 • Learn</div><h2>Subject–Verb Agreement</h2><p>The main grammar skill from the lesson.</p></div></div>
+ <div class="grid">
+  <div class="card span-6">
+   <h3>🧠 The Rule</h3>
+   <p>A singular subject takes a singular verb, while a plural subject takes a plural verb.</p>
+   <table><tr><th>Subject</th><th>Verb</th><th>Example</th></tr>
+   <tr><td>Mr. Luna</td><td>helps</td><td>Mr. Luna <strong>helps</strong> keep the barangay clean.</td></tr>
+   <tr><td>People</td><td>throw</td><td>People <strong>throw</strong> the garbage in the pit.</td></tr>
+   <tr><td>Mother</td><td>loves</td><td>Mother <strong>loves</strong> to cook pastries.</td></tr>
+   <tr><td>Bright flowers</td><td>attract</td><td>Bright flowers <strong>attract</strong> bees and butterflies.</td></tr></table>
+  </div>
+  <div class="card span-6">
+   <h3>👀 A Helpful Pattern</h3>
+   <div class="example"><strong>One person/thing:</strong> The captain <span class="highlight">visits</span> the barangay.</div>
+   <div class="example"><strong>More than one:</strong> Doctors and nurses <span class="highlight">talk</span> to the people.</div>
+   <div class="callout"><div class="icon">💡</div><div><strong>Tip:</strong> First find the subject. Then ask: “Is it one or more than one?” Choose a verb that matches.</div></div>
+  </div>
+  <div class="card span-12">
+   <h3>👩‍🏫 I Do — Worked Example</h3>
+   <p><strong>Sentence:</strong> Everybody (live, lives) happily in the community.</p>
+   <ol><li>Find the subject: <strong>Everybody</strong>.</li><li>“Everybody” refers to each person one at a time, so it is treated as <strong>singular</strong>.</li><li>Choose the singular verb: <strong>lives</strong>.</li></ol>
+   <div class="rule">✅ <strong>Everybody lives happily in the community.</strong></div>
+  </div>
+ </div>
+</section>
+
+<section id="practice" class="section">
+ <div class="section-head"><div><div class="kicker">03 • Practice</div><h2>Try It With Me → Then Try It Yourself</h2><p>Start guided, then become independent.</p></div></div>
+ <div class="card">
+  <h3>🤝 Guided Practice</h3>
+  <p>Choose the correct verb. Use the hint if you need help.</p>
+  <div id="guided"></div>
+ </div>
+ <div class="card" style="margin-top:18px">
+  <h3>✏️ Independent Practice</h3>
+  <p>These are based on the “Try These” activity in the lesson.</p>
+  <div id="independent"></div>
+ </div>
+ <div class="card" style="margin-top:18px">
+  <h3>🐢 Reading + Grammar: Sea Turtle Passage</h3>
+  <p>Complete the passage with verbs that agree with their subjects.</p>
+  <div class="example">
+   A turtle <input class="fill turtle" data-answer="is"> a reptile with a shell.
+   Some turtles <input class="fill turtle" data-answer="live"> in the sea, some in fresh water, and some on land.
+   The shells of turtles <input class="fill turtle" data-answer="are"> made of bony plates covered by thorny scales.
+   Turtles that live on land <input class="fill turtle" data-answer="are"> often called tortoises.
+   Most sea turtles <input class="fill turtle" data-answer="have"> flatter shells than tortoises, and <input class="fill turtle" data-answer="are"> more streamlined.
+   Marine or sea turtles <input class="fill turtle" data-answer="spend"> most of their lives in warm seas.
+   They <input class="fill turtle" data-answer="travel"> great distances to find food and <input class="fill turtle" data-answer="eat"> water plants and sea animals.
+   Sea turtles <input class="fill turtle" data-answer="come"> ashore to lay eggs.
+   They usually <input class="fill turtle" data-answer="bury"> their eggs in the sand to keep them warm and safe until they hatch.
+  </div>
+  <button class="btn" onclick="checkTurtle()">Check Passage</button>
+  <div id="turtleFeedback" class="feedback"></div>
+ </div>
+</section>
+
+<section id="game" class="section">
+ <div class="section-head"><div><div class="kicker">04 • Play</div><h2>Grammar Detective</h2><p>Fix the sentence before the mistake escapes!</p></div></div>
+ <div class="card">
+  <div id="detective"></div>
+  <div class="controls"><button class="btn gold" onclick="nextDetective()">Next Case →</button></div>
+ </div>
+ <div class="card" style="margin-top:18px">
+  <h3>🎯 Word Sorter</h3>
+  <p>Sort each subject into <strong>Singular</strong> or <strong>Plural</strong>.</p>
+  <div class="choice-grid" id="sorter"></div>
+  <div id="sortFeedback" class="feedback"></div>
+ </div>
+</section>
+
+<section id="vocab" class="section">
+ <div class="section-head"><div><div class="kicker">05 • Vocabulary</div><h2>Words in Meaningful Sentences</h2><p>Use the lesson words in context.</p></div></div>
+ <div class="grid">
+  <div class="card span-8">
+   <div id="vocabTasks"></div>
+  </div>
+  <div class="card span-4">
+   <h3>📚 Word Bank</h3>
+   <p><span class="pill">arrogant</span> too proud of oneself</p>
+   <p><span class="pill">cruel</span> causing pain or showing no kindness</p>
+   <p><span class="pill">village</span> a small community or settlement</p>
+   <p><span class="pill">poor</span> having little money or resources</p>
+   <p><span class="pill">dreadful</span> very bad, frightening, or unpleasant</p>
+  </div>
+ </div>
+</section>
+
+<section id="spelling" class="section">
+ <div class="section-head"><div><div class="kicker">05 • Spelling</div><h2>Spelling Challenge</h2><p>Type the word correctly. Use the meaning clue to help you.</p></div></div>
+ <div class="card">
+  <div class="callout"><div class="icon">🔤</div><div><strong>How to play:</strong> Read each clue, type the word, then press <strong>Check Spelling</strong>. You can try again when needed.</div></div>
+  <div id="spellingList" style="margin-top:18px"></div>
+  <button class="btn green" onclick="checkSpelling()">Check Spelling</button>
+  <div id="spellingFeedback" class="feedback"></div>
+ </div>
+</section>
+
+<section id="review" class="section">
+ <div class="section-head"><div><div class="kicker">06 • Review</div><h2>Quick Review</h2><p>Save these ideas in your grammar toolkit.</p></div></div>
+ <div class="grid">
+  <div class="card span-4"><h3>⭐ Remember</h3><p><strong>Singular subject → singular verb.</strong></p><p><strong>Plural subject → plural verb.</strong></p></div>
+  <div class="card span-4"><h3>💡 Watch Out</h3><p>Words like <strong>everybody</strong> are treated as singular.</p><p>Example: Everybody <strong>lives</strong> happily.</p></div>
+  <div class="card span-4"><h3>🐢 Reading Link</h3><p>In informational writing, verbs must still agree with their subjects—even when the sentence contains extra details.</p></div>
+  <div class="card span-12">
+   <h3>Folklore Connection</h3>
+   <p><strong>Folklore</strong> is a collection of traditional stories about animals and people, cultural myths, jokes, songs, tales, and even quotes. It is passed down from generation to generation.</p>
+   <div class="callout"><div class="icon">🌏</div><div><strong>Think deeper:</strong> What story, tale, song, joke, or saying has been passed down in your family or community?</div></div>
+  </div>
+ </div>
+</section>
+
+<section id="assessment" class="section">
+ <div class="section-head"><div><div class="kicker">07 • Check</div><h2>Mission Checkpoint</h2><p>Show what you know. 12 questions.</p></div></div>
+ <div class="card">
+  <div id="quiz"></div>
+  <button class="btn green" onclick="gradeQuiz()">Submit Checkpoint</button>
+  <div class="result" id="quizResult"></div>
+ </div>
+</section>
+
+<section id="final" class="section">
+ <div class="section-head"><div><div class="kicker">08 • Master</div><h2>🏆 Final English Mission</h2><p>Apply the grammar skill, vocabulary, and folklore connection.</p></div></div>
+ <div class="grid">
+  <div class="card span-6">
+   <h3>Mission A — Grammar</h3>
+   <p>Write one sentence with a <strong>singular subject</strong> and one sentence with a <strong>plural subject</strong>. Make sure each verb agrees.</p>
+   <textarea id="finalGrammar" placeholder="Example: The turtle lives in the sea."></textarea>
+   <div class="controls"><button class="btn" onclick="checkFinalGrammar()">Check My Grammar</button><button class="btn light" onclick="toggleSample('sampleGrammar')">👀 Show Sample</button></div>
+   <div id="finalGrammarFeedback" class="feedback"></div><div class="sample" id="sampleGrammar">Sample: <strong>The turtle lives in warm seas.</strong><br>Sample: <strong>Sea turtles travel great distances.</strong><br><span class="muted">Your sentences may be different.</span></div>
+  </div>
+  <div class="card span-6">
+   <h3>Mission B — Folklore</h3>
+   <p>Write a short paragraph about a favorite folklore story or traditional tale and explain why you like it.</p>
+   <textarea id="finalFolklore" placeholder="Write 4–6 sentences. Include the story/tale and your reason."></textarea>
+   <div class="controls"><button class="btn" onclick="checkFinalFolklore()">Check My Paragraph</button><button class="btn light" onclick="toggleSample('sampleFolklore')">👀 Show Sample</button></div>
+   <div id="finalFolkloreFeedback" class="feedback"></div><div class="sample" id="sampleFolklore">Sample: <strong>I enjoy the folk tale “The Monkey and the Turtle” because it is entertaining and teaches a lesson about how our choices affect others. I like the characters because they are easy to remember. The story also makes me think about fairness and kindness.</strong><br><span class="muted">This is only a model. Your answer can be different.</span></div>
+  </div>
+  <div class="card span-12">
+   <h3>🌈 Reflection</h3>
+   <div class="choice-grid">
+    <button class="choice" onclick="reflect(this)">I can explain subject–verb agreement.</button>
+    <button class="choice" onclick="reflect(this)">I can choose a verb that agrees with a subject.</button>
+    <button class="choice" onclick="reflect(this)">I can use new words in sentences.</button>
+    <button class="choice" onclick="reflect(this)">I can connect English to real-life communication.</button>
+   </div>
+   <div class="feedback" id="reflectionFeedback"></div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer class="footer">
+ <div class="footer-inner">
+  <img src="assets/edjay-logo.jpg" alt="Teacher Ed logo">
+  <div><strong>Teacher Ed Learning Hub</strong><br><span class="small">Teach. Lead. Inspire. • Grade 6 English Interactive Learning</span></div>
+ </div>
+</footer>
+
+<script>
+const guidedData=[
+ ["The barangay captain (visit, visits) the barangay every morning.","visits","The subject “barangay captain” is singular."],
+ ["Doctors and nurses (talk, talks) to the people.","talk","The subject has two people: doctors and nurses."],
+ ["They (explain, explains) the importance of cleanliness.","explain","“They” is plural, so use “explain”."]
+];
+const independentData=[
+ ["The people in Barangay Marshall (sweep, sweeps) the streets.","sweep"],
+ ["The boys (clean, cleans) the canals, too.","clean"],
+ ["The residents (make, makes) their community clean.","make"],
+ ["The barangay captain (visit, visits) the barangay every morning.","visits"],
+ ["He (want, wants) to make sure that the people are working.","wants"],
+ ["Doctors and nurses (talk, talks) to the people.","talk"],
+ ["They (explain, explains) the importance of cleanliness.","explain"],
+ ["The people (is, are) happy that their community is disease-free.","are"],
+ ["Everybody (live, lives) happily in the community.","lives"],
+ ["Barangay Marshall (receive, receives) an award for cleanliness.","receives"]
+];
+let guidedIndex=0, detectiveIndex=0, quizAnswers={};
+
+function answer(btn,id,ok,msg){
+ const box=document.getElementById(id);
+ btn.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected','correct-choice','wrong-choice'));
+ btn.classList.add(ok?'correct-choice':'wrong-choice');
+ box.className='feedback show '+(ok?'good':'help');
+ box.textContent=(ok?'✅ ':'💡 ')+msg;
+ updateProgress();
+}
+function renderGuided(){
+ const [q,a,h]=guidedData[guidedIndex];
+ document.getElementById('guided').innerHTML=`<p><strong>${q}</strong></p>
+ <div class="choice-grid">
+  ${q.includes('(visit, visits)')?'<button class="choice" onclick="guidedCheck(this,\'visit\')">visit</button><button class="choice" onclick="guidedCheck(this,\'visits\')">visits</button>':
+    q.includes('(talk, talks)')?'<button class="choice" onclick="guidedCheck(this,\'talk\')">talk</button><button class="choice" onclick="guidedCheck(this,\'talks\')">talks</button>':
+    '<button class="choice" onclick="guidedCheck(this,\'explain\')">explain</button><button class="choice" onclick="guidedCheck(this,\'explains\')">explains</button>'}
+ </div>
+ <div id="guidedFeedback" class="feedback"></div>
+ <div class="controls"><button class="btn light" onclick="document.getElementById('guidedHint').style.display='block'">💡 Show Hint</button></div>
+ <div id="guidedHint" class="hint" style="display:none">${h}</div>`;
+}
+function guidedCheck(btn,val){
+ const ok=val===guidedData[guidedIndex][1];
+ const box=document.getElementById('guidedFeedback');
+ box.className='feedback show '+(ok?'good':'help');
+ box.textContent=ok?'✅ Correct! '+guidedData[guidedIndex][2]:'💡 Not quite. '+guidedData[guidedIndex][2]+' Try again.';
+ btn.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('correct-choice','wrong-choice'));
+ btn.classList.add(ok?'correct-choice':'wrong-choice');
+ if(ok){guidedIndex=(guidedIndex+1)%guidedData.length;setTimeout(renderGuided,900);}
+ updateProgress();
+}
+function renderIndependent(){
+ document.getElementById('independent').innerHTML=independentData.map((x,i)=>`
+ <div class="quiz-item"><p><strong>${i+1}.</strong> ${x[0]}</p>
+ <input id="indInput${i}" class="fill" style="width:min(100%,220px);text-align:left" autocomplete="off" placeholder="Type the correct verb...">
+ <span id="indMark${i}" class="pill lock">Not checked</span>
+ <div class="sample" id="indSample${i}">Answer: <strong>${x[1]}</strong></div></div>`).join('')+
+ '<div class="controls"><button class="btn green" onclick="checkIndependent()">Check My Answers</button><button class="btn light" onclick="showAllIndependentSamples()">👀 Show Samples</button></div><div id="indFeedback" class="feedback"></div>';
+}
+function checkIndependent(){
+ let score=0;
+ independentData.forEach((x,i)=>{
+  const input=document.getElementById('indInput'+i), mark=document.getElementById('indMark'+i);
+  const ok=input.value.trim().toLowerCase()===x[1].toLowerCase();
+  if(ok)score++;
+  input.style.borderBottomColor=ok?'#16845b':'#c0392b';
+  mark.textContent=ok?'✓ Correct':'Try again';
+  mark.style.background=ok?'#eaf9f2':'#fff1ef';
+  mark.style.color=ok?'#0b6847':'#9c2f24';
+ });
+ const box=document.getElementById('indFeedback'); box.className='feedback show '+(score===independentData.length?'good':'help');
+ box.innerHTML=score===independentData.length?`🎉 Excellent! ${score}/${independentData.length} correct.`:`You got <strong>${score}/${independentData.length}</strong>. Review the subject in each sentence and try again.`;
+ updateProgress();
+}
+function showAllIndependentSamples(){independentData.forEach((x,i)=>document.getElementById('indSample'+i).classList.add('show'));updateProgress()}
+
+function checkTurtle(){
+ const els=[...document.querySelectorAll('.turtle')];
+ let score=0; els.forEach(e=>{const ok=e.value.trim().toLowerCase()===e.dataset.answer;if(ok)score++;e.style.borderColor=ok?'#16845b':'#c0392b';});
+ const b=document.getElementById('turtleFeedback');b.className='feedback show '+(score===els.length?'good':'help');
+ b.innerHTML=score===els.length?`✅ Excellent! ${score}/${els.length} verbs agree with their subjects.`:`You got <strong>${score}/${els.length}</strong>. Review the subject first, then choose a verb that matches it.`;
+ updateProgress();
+}
+
+const detectiveCases=[
+ {bad:'The people throws the garbage in the pit.',fix:'The people throw the garbage in the pit.',why:'“People” is plural, so the verb is “throw.”'},
+ {bad:'Mr. Luna help keep the barangay clean.',fix:'Mr. Luna helps keep the barangay clean.',why:'“Mr. Luna” is singular, so the verb is “helps.”'},
+ {bad:'Bright flowers attracts bees and butterflies.',fix:'Bright flowers attract bees and butterflies.',why:'“Flowers” is plural, so the verb is “attract.”'},
+ {bad:'Mother love to cook pastries.',fix:'Mother loves to cook pastries.',why:'“Mother” is singular, so the verb is “loves.”'}
+];
+function renderDetective(){
+ const c=detectiveCases[detectiveIndex];
+ document.getElementById('detective').innerHTML=`<p><span class="pill">CASE ${detectiveIndex+1}</span></p>
+ <h3>🚨 ${c.bad}</h3><p>What should the detective change?</p>
+ <textarea id="detectiveInput" placeholder="Rewrite the sentence correctly."></textarea>
+ <div class="controls"><button class="btn" onclick="checkDetective()">Check Case</button><button class="btn light" onclick="document.getElementById('detectiveSample').classList.toggle('show')">👀 Show Sample</button></div>
+ <div id="detectiveSample" class="sample">Correct sentence: <strong>${c.fix}</strong><br>${c.why}</div>
+ <div id="detectiveFeedback" class="feedback"></div>`;
+}
+function checkDetective(){
+ const c=detectiveCases[detectiveIndex], val=document.getElementById('detectiveInput').value.trim().replace(/\\s+/g,' ');
+ const box=document.getElementById('detectiveFeedback');
+ if(val.toLowerCase()===c.fix.toLowerCase()){box.className='feedback show good';box.textContent='✅ Case solved! '+c.why}
+ else{box.className='feedback show help';box.innerHTML='💡 Not yet. Find the subject first, then check whether the verb matches it.'}
+ updateProgress();
+}
+function nextDetective(){detectiveIndex=(detectiveIndex+1)%detectiveCases.length;renderDetective()}
+
+const subjects=[
+ ['Everybody','singular'],['Mother','singular'],['The barangay captain','singular'],
+ ['People','plural'],['Doctors and nurses','plural'],['Bright flowers','plural']
+];
+function renderSorter(){
+ document.getElementById('sorter').innerHTML=subjects.map((s,i)=>`<button class="choice" onclick="sortAnswer(this,${i})">${s[0]}</button>`).join('');
+}
+function sortAnswer(btn,i){
+ const ok=subjects[i][1]===((i===0||i===1||i===2)?'singular':'plural');
+ btn.classList.add('correct-choice');
+ const b=document.getElementById('sortFeedback');b.className='feedback show good';b.textContent='✅ Think about whether the subject names one or more than one. The category is '+subjects[i][1]+'.';
+ updateProgress();
+}
+
+const vocab=[
+ ['arrogant','The arrogant boy refused to listen to anyone.'],
+ ['cruel','It is cruel to hurt an animal for fun.'],
+ ['village','My grandparents live in a quiet village.'],
+ ['poor','The story tells how a poor family helped a stranger.'],
+ ['dreadful','The storm created a dreadful night for the villagers.']
+];
+document.getElementById('vocabTasks').innerHTML=vocab.map((v,i)=>`<div class="quiz-item">
+ <p><strong>${i+1}. Use <em>${v[0]}</em> in a meaningful sentence.</strong></p>
+ <textarea placeholder="Write your own sentence..."></textarea>
+ <button class="btn light" onclick="toggleSample('v${i}')">👀 Show Sample</button>
+ <div class="sample" id="v${i}">Sample: <strong>${v[1]}</strong><br><span class="muted">Your sentence may be different.</span></div>
+ </div>`).join('');
+
+const spellingWords=[
+ ['arrogant','very proud and sometimes unpleasantly self-important'],
+ ['cruel','causing pain or showing no kindness'],
+ ['village','a small community or settlement'],
+ ['poor','having little money or few resources'],
+ ['dreadful','very bad, frightening, or unpleasant'],
+ ['turtle','a reptile with a shell'],
+ ['community','a group of people living or working together'],
+ ['cleanliness','the state of being clean'],
+ ['butterflies','insects with wings covered in tiny scales'],
+ ['generation','people born and living around the same time']
+];
+document.getElementById('spellingList').innerHTML=spellingWords.map((w,i)=>`<div class="quiz-item"><p><strong>${i+1}. ${w[1]}</strong></p><input id="spell${i}" class="fill" style="width:min(100%,360px);text-align:left" autocomplete="off" placeholder="Type the word..."><span id="spellMark${i}" class="pill lock" style="margin-left:8px">Not checked</span></div>`).join('');
+function checkSpelling(){
+ let score=0;
+ spellingWords.forEach((w,i)=>{
+  const input=document.getElementById('spell'+i), mark=document.getElementById('spellMark'+i);
+  const ok=input.value.trim().toLowerCase()===w[0].toLowerCase();
+  input.style.borderBottomColor=ok?'#16845b':'#c0392b';
+  mark.textContent=ok?'✓ Correct':'Try again';
+  mark.style.background=ok?'#eaf9f2':'#fff1ef';
+  mark.style.color=ok?'#0b6847':'#9c2f24';
+  if(ok)score++;
+ });
+ const box=document.getElementById('spellingFeedback'); box.className='feedback show '+(score===spellingWords.length?'good':'help');
+ box.innerHTML=score===spellingWords.length?`🎉 Perfect spelling! ${score}/${spellingWords.length}.`:`You got <strong>${score}/${spellingWords.length}</strong>. Correct the words marked “Try again” and check again.`;
+ updateProgress();
+}
+
+const quiz=[
+ ['Which verb agrees with “The residents”?',['make','makes','is'],'make'],
+ ['Which verb agrees with “The barangay captain”?',['visit','visits','visiting'],'visits'],
+ ['Which verb agrees with “They”?',['explain','explains','explaining'],'explain'],
+ ['Which verb agrees with “Everybody”?',['live','lives','living'],'lives'],
+ ['Which verb agrees with “Doctors and nurses”?',['talk','talks','talking'],'talk'],
+ ['Which sentence is correct?',['The people throws garbage.','The people throw garbage.','The people throwing garbage.'],'The people throw garbage.'],
+ ['Which sentence is correct?',['Mother love to cook.','Mother loves to cook.','Mother loving to cook.'],'Mother loves to cook.'],
+ ['What is folklore?',['A collection of traditional stories and cultural expressions.','A list of grammar rules.','A science experiment.'],'A collection of traditional stories and cultural expressions.'],
+ ['Which word means very proud of oneself?',['arrogant','village','dreadful'],'arrogant'],
+ ['Which word describes something very bad, frightening, or unpleasant?',['poor','dreadful','cruel'],'dreadful'],
+ ['In “Some turtles live in the sea,” what is the subject?',['Some turtles','live','sea'],'Some turtles'],
+ ['In “Sea turtles travel great distances,” why is “travel” correct?',['The subject is plural.','The subject is singular.','The sentence has no subject.'],'The subject is plural.']
+];
+document.getElementById('quiz').innerHTML=quiz.map((q,i)=>`<div class="quiz-item">
+ <p><strong>${i+1}. ${q[0]}</strong></p>
+ <div class="choice-grid">${q[1].map(opt=>`<button class="choice" onclick="quizPick(this,${i},${JSON.stringify(opt)})">${opt}</button>`).join('')}</div>
+ <div id="qfb${i}" class="feedback"></div>
+ </div>`).join('');
+function quizPick(btn,i,val){
+ quizAnswers[i]=val;
+ btn.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));
+ btn.classList.add('selected');
+ document.getElementById('qfb'+i).className='feedback';
+}
+function gradeQuiz(){
+ let score=0;
+ quiz.forEach((q,i)=>{
+  const fb=document.getElementById('qfb'+i);
+  if(quizAnswers[i]===q[2]){score++;fb.className='feedback show good';fb.textContent='✅ Correct!'}
+  else{fb.className='feedback show help';fb.innerHTML='💡 Review this one. <strong>Correct answer:</strong> '+q[2]}
+ });
+ const pct=Math.round(score/quiz.length*100);
+ let level=pct>=90?'🏆 Mastery':pct>=75?'🌳 Proficient':pct>=60?'🌿 Developing':'🌱 Learning';
+ const r=document.getElementById('quizResult');r.className='result show';
+ r.innerHTML=`<div class="score">${score}/${quiz.length}</div><h3>${pct}% • ${level}</h3><p>${pct>=75?'Great work! Keep applying the rule when you write and speak.':'You are still learning. Review the examples, then try the checkpoint again.'}</p>`;
+ updateProgress(true);
+ r.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function toggleSample(id){document.getElementById(id).classList.toggle('show')}
+function checkFinalGrammar(){
+ const text=document.getElementById('finalGrammar').value.trim();
+ const box=document.getElementById('finalGrammarFeedback');
+ if(!text){box.className='feedback show help';box.textContent='💡 Write at least two sentences: one with a singular subject and one with a plural subject.';return;}
+ const sentences=text.split(/[.!?]+/).map(x=>x.trim()).filter(Boolean);
+ const hasTwo=sentences.length>=2;
+ const hasSingular=/(\bthe\s+\w+\b|\bmother\b|\bmr\.\s+\w+\b|\bthe\s+captain\b)/i.test(text);
+ const hasPlural=/(\bthey\b|\bpeople\b|\bchildren\b|\bstudents\b|\bdoctors\b|\bturtles\b|\bflowers\b)/i.test(text);
+ box.className='feedback show '+(hasTwo&&hasSingular&&hasPlural?'good':'help');
+ box.textContent=hasTwo&&hasSingular&&hasPlural?'✅ Good start! Your response contains at least two sentences and examples of singular/plural subjects. Check that every verb matches its subject.':'💡 Try writing two clear sentences—one with a singular subject and one with a plural subject. Then check each verb carefully.';
+ updateProgress();
+}
+function checkFinalFolklore(){
+ const text=document.getElementById('finalFolklore').value.trim();
+ const box=document.getElementById('finalFolkloreFeedback');
+ const words=text.split(/\s+/).filter(Boolean);
+ if(words.length<25){box.className='feedback show help';box.textContent='💡 Add more detail. Aim for 4–6 sentences and explain both the story and why you like it.';return;}
+ box.className='feedback show good';box.textContent='✅ Nice work! You wrote a complete paragraph. Reread it and check capitalization, punctuation, spelling, and clear ideas.';
+ updateProgress();
+}
+
+function reflect(btn){
+ btn.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));
+ btn.classList.add('selected');
+ const b=document.getElementById('reflectionFeedback');b.className='feedback show good';b.textContent='🌟 Nice reflection! Keep using English to communicate your ideas clearly.';
+ updateProgress();
+}
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>document.getElementById(b.dataset.go).scrollIntoView({behavior:'smooth'})));
+
+const sections=['engage','learn','practice','game','vocab','spelling','review','assessment','final'];
+function updateProgress(force=false){
+ const maxScroll=Math.max(1,document.body.scrollHeight-window.innerHeight); const done=force?100:Math.min(95,Math.round(window.scrollY/maxScroll*100));
+ document.getElementById('progress').style.width=done+'%';
+ document.getElementById('heroProgress').style.width=done+'%';
+ document.getElementById('progressText').textContent=done+'% complete';
+}
+window.addEventListener('scroll',()=>updateProgress());
+renderGuided();renderIndependent();renderDetective();renderSorter();updateProgress();
+</script>
+</body>
+</html>
