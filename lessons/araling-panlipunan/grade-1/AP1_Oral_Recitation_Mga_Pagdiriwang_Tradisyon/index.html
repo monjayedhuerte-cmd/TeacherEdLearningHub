@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b2b63" />
+  <meta name="description" content="Teacher Ed Learning Hub — Grade 1 Araling Panlipunan interactive oral recitation: Mga Pagdiriwang at Tradisyon ng Aking Pamilya." />
+  <title>Oral Recitation | Mga Pagdiriwang at Tradisyon ng Aking Pamilya</title>
+  <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand-wrap">
+      <img src="assets/teacher-ed-logo.png" class="brand-logo" alt="Teacher Ed Learning Hub Logo" />
+      <div>
+        <div class="brand-name">TEACHER ED LEARNING HUB</div>
+        <div class="brand-sub">Teacher Ed • Araling Panlipunan 1</div>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="ghost-btn" id="soundBtn" type="button" aria-pressed="true">🔊 Tunog</button>
+      <button class="ghost-btn" id="englishBtn" type="button" aria-pressed="false">EN English Support</button>
+      <button class="ghost-btn" id="resetBtn" type="button">↺ I-reset</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">ARALING PANLIPUNAN 1 • ARALIN 12</span>
+        <h1>Mga Pagdiriwang at Tradisyon ng Aking Pamilya</h1>
+        <p>Interactive Oral Recitation</p>
+        <p class="hero-note">Tumawag ng isang mag-aaral, ipasagot ang tanong, at markahan agad ang sagot.</p>
+      </div>
+      <div class="hero-logo-card">
+        <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub" />
+        <strong>Teacher Ed</strong>
+        <span>Learn • Practice • Play • Master</span>
+      </div>
+    </section>
+
+    <section class="teacher-panel card">
+      <div class="panel-heading">
+        <div>
+          <span class="section-kicker">TEACHER MODE</span>
+          <h2>Handa na ba ang klase?</h2>
+        </div>
+        <div class="round-badge" id="roundBadge">Round 1</div>
+      </div>
+      <div class="teacher-grid">
+        <label class="field">
+          <span>Pangalan ng Mag-aaral</span>
+          <input id="studentName" type="text" placeholder="Hal. Juan Dela Cruz" autocomplete="off" />
+        </label>
+        <div class="teacher-stat">
+          <span>Kasalukuyang Iskor</span>
+          <strong id="scoreDisplay">0 / 30</strong>
+        </div>
+        <div class="teacher-stat">
+          <span>Streak</span>
+          <strong id="streakDisplay">0 🔥</strong>
+        </div>
+      </div>
+      <div class="progress-shell" aria-label="Progress">
+        <div class="progress-top"><span id="progressText">Tanong 1 sa 30</span><span id="percentText">3%</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+    </section>
+
+    <section class="recitation-layout">
+      <article class="question-card card" id="questionCard">
+        <div class="question-top">
+          <span class="category-pill" id="categoryPill">KILALANIN</span>
+          <span class="difficulty" id="difficulty">Madali</span>
+        </div>
+        <div class="question-number" id="questionNumber">01</div>
+        <h2 id="questionText">Loading…</h2>
+        <p class="english-text" id="questionEnglish"></p>
+
+        <div class="choices" id="choices"></div>
+
+        <div class="thinking-box">
+          <div class="thinking-icon">💡</div>
+          <div>
+            <strong>Gabay sa guro</strong>
+            <p id="hintText">Pakinggan muna ang sagot ng bata bago ipakita ang sagot.</p>
+            <p class="english-text" id="hintEnglish"></p>
+          </div>
+        </div>
+
+        <div class="answer-box hidden" id="answerBox">
+          <span>Tamang sagot / Halimbawang sagot</span>
+          <strong id="answerText"></strong>
+          <p class="english-text" id="answerEnglish"></p>
+        </div>
+
+        <div class="teacher-controls">
+          <button class="secondary-btn" id="revealBtn" type="button">👀 Ipakita ang Sagot</button>
+          <button class="wrong-btn" id="wrongBtn" type="button">↩ Hindi Tama</button>
+          <button class="correct-btn" id="correctBtn" type="button">✓ Tama!</button>
+        </div>
+        <p class="control-note">Pagkatapos marinig ang sagot ng mag-aaral, pindutin ang <strong>Tama!</strong> o <strong>Hindi Tama</strong>.</p>
+      </article>
+
+      <aside class="side-column">
+        <div class="card game-map">
+          <div class="side-title"><span>🗺️</span><h3>Recitation Map</h3></div>
+          <div class="map-item active"><span>1</span><div><strong>Kilalanin</strong><small>Mga konsepto</small></div></div>
+          <div class="map-item"><span>2</span><div><strong>Piliin</strong><small>Mga halimbawa</small></div></div>
+          <div class="map-item"><span>3</span><div><strong>Isipin at Sagutin</strong><small>Mga sitwasyon</small></div></div>
+          <div class="map-item"><span>★</span><div><strong>Mastery</strong><small>30 tanong</small></div></div>
+        </div>
+
+        <div class="card quick-tools">
+          <div class="side-title"><span>⚡</span><h3>Mabilis na Gamit</h3></div>
+          <button class="tool-btn" id="randomBtn" type="button">🎲 Random na Tanong</button>
+          <button class="tool-btn" id="skipBtn" type="button">⏭ Laktawan</button>
+          <button class="tool-btn" id="scoreboardBtn" type="button">🏆 Scoreboard</button>
+        </div>
+
+        <div class="card mini-objectives">
+          <div class="side-title"><span>🎯</span><h3>Layunin</h3></div>
+          <ul>
+            <li>Makilala ang pagdiriwang at tradisyon.</li>
+            <li>Maibigay ang mga halimbawa.</li>
+            <li>Mapahalagahan ang tradisyon ng pamilya.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+
+    <section class="card teacher-guide">
+      <div class="guide-heading"><span>👩‍🏫</span><div><span class="section-kicker">TEACHER GUIDE</span><h2>Gawing Masaya ang Recitation</h2></div></div>
+      <div class="guide-grid">
+        <div><b>1. Tumawag</b><p>Piliin ang mag-aaral na sasagot.</p></div>
+        <div><b>2. Makinig</b><p>Bigyan ng oras ang bata na mag-isip at magsalita.</p></div>
+        <div><b>3. Magbigay ng gabay</b><p>Kung kailangan, gamitin ang clue bago ipakita ang sagot.</p></div>
+        <div><b>4. Markahan</b><p>Pindutin ang <strong>Tama!</strong> o <strong>Hindi Tama</strong>.</p></div>
+      </div>
+    </section>
+
+    <section class="celebrate card hidden" id="celebrateCard">
+      <div class="celebrate-icon">🏆</div>
+      <div>
+        <span class="section-kicker">MASTERY CHECK COMPLETE</span>
+        <h2 id="finalTitle">Mahusay!</h2>
+        <p id="finalMessage"></p>
+      </div>
+      <div class="final-score" id="finalScore">0 / 30</div>
+      <div class="final-actions">
+        <button class="primary-btn" id="retryBtn" type="button">🔄 Muling Subukan</button>
+        <button class="secondary-btn" id="practiceBtn" type="button">💡 Magsanay Pa</button>
+      </div>
+    </section>
+
+    <section class="card scoreboard hidden" id="scoreboardCard">
+      <div class="panel-heading"><div><span class="section-kicker">CLASS RECORD</span><h2>Mga Naitalang Iskor</h2></div><button class="ghost-btn" id="clearScoresBtn" type="button">Burahin ang Record</button></div>
+      <div id="scoreList" class="score-list"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-brand"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo" /><div><strong>Teacher Ed Learning Hub</strong><span>Learn • Practice • Play • Master</span><small>Teacher Ed • Educational Learning Website</small></div></div>
+    <div class="footer-lesson">Grade 1 Araling Panlipunan<br /><b>Mga Pagdiriwang at Tradisyon ng Aking Pamilya</b></div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>

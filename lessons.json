@@ -1044,7 +1044,17 @@
     "subject": "Araling Panlipunan", 
     "grade": "Grade 3",
     "description": "Hindi ito ordinaryong recitation. Pumili ng bata, pumili ng challenge, at gawing isang mini-game ang oral recitation.",
-    "file": "lessons/araling-panlipunan/grade-3/Katutubong_Kanta_Recitation/index.html",
+    "file": "lessons/araling-panlipunan/grade-3/katutubong_kanta_recitation/index.html",
+    "date": "2026-10-05",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "AP 1 | Graded Recitation sa Mga Tradisyon at Pagdiriwang ng Pamilya",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 1",
+    "description": "Tumawag ng isang mag-aaral, ipasagot ang tanong, at markahan agad ang sagot.",
+    "file": "lessons/araling-panlipunan/grade-1/AP1_Oral_Recitation_Mga_Pagdiriwang_Tradisyon/index.html",
     "date": "2026-10-05",
     "featured": false,
     "icon": "user"
