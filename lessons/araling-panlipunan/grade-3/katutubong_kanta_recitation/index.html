@@ -1,0 +1,1031 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Graded Recitation | Katutubong Kanta | Teacher Ed Learning Hub
+    </title>
+    <link rel="icon" type="image/png" href="BrandLogo.png" />
+    <style>
+      :root {
+        --navy: #071a33;
+        --navy2: #0e2a4b;
+        --gold: #e7b83f;
+        --cream: #f7f3e8;
+        --ink: #162236;
+        --green: #24a36b;
+        --red: #d9534f;
+        --muted: #6c7890;
+        --card: #fff;
+        --line: #dfe5ee;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, "Segoe UI", Arial, sans-serif;
+        background: linear-gradient(135deg, #eef3f8, #f8f5eb);
+        color: var(--ink);
+      }
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+      .top {
+        background: linear-gradient(120deg, var(--navy), var(--navy2));
+        color: #fff;
+        padding: 16px 24px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 8px 25px #071a3322;
+      }
+      .bar {
+        max-width: 1250px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        border-radius: 14px;
+        background: #fff;
+      }
+      .brand h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      .brand p {
+        margin: 3px 0 0;
+        color: #dbe7f7;
+        font-size: 12px;
+      }
+      .actions {
+        margin-left: auto;
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-weight: 800;
+        transition: 0.2s;
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+      .gold {
+        background: var(--gold);
+        color: #241b00;
+      }
+      .light {
+        background: #ffffff18;
+        color: #fff;
+        border: 1px solid #ffffff35;
+      }
+      .danger {
+        background: #d9534f;
+        color: #fff;
+      }
+      .wrap {
+        max-width: 1250px;
+        margin: 24px auto;
+        padding: 0 18px;
+      }
+      .hero {
+        background: linear-gradient(120deg, #0b2340, #12395e);
+        color: #fff;
+        border-radius: 28px;
+        padding: 28px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "♫";
+        position: absolute;
+        right: 7%;
+        top: -35px;
+        font-size: 170px;
+        opacity: 0.08;
+      }
+      .eyebrow {
+        color: var(--gold);
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+      .hero h2 {
+        font-size: clamp(28px, 4vw, 46px);
+        margin: 8px 0;
+      }
+      .hero p {
+        max-width: 720px;
+        color: #dce8f6;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .card {
+        background: #fffffff2;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        padding: 20px;
+        box-shadow: 0 14px 40px #13233d12;
+      }
+      .bento {
+        margin-top: 18px;
+      }
+      .span4 {
+        grid-column: span 4;
+      }
+      .span8 {
+        grid-column: span 8;
+      }
+      .span12 {
+        grid-column: span 12;
+      }
+      .stat {
+        font-size: 32px;
+        font-weight: 900;
+      }
+      .muted {
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .section-title h3 {
+        margin: 0;
+      }
+      .pill {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: #eef3f8;
+        color: #34506d;
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .field label {
+        font-size: 12px;
+        font-weight: 900;
+        color: #43516a;
+      }
+      .field input,
+      .field textarea,
+      .field select {
+        border: 1px solid #ccd6e3;
+        border-radius: 12px;
+        padding: 11px 12px;
+        background: #fff;
+        outline: none;
+      }
+      .field textarea {
+        min-height: 78px;
+        resize: vertical;
+      }
+      .student-tools {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .student-tools input {
+        flex: 1;
+        min-width: 190px;
+        border: 1px solid #ccd6e3;
+        border-radius: 12px;
+        padding: 11px;
+      }
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .chip {
+        border: 1px solid #cdd8e6;
+        background: #f6f9fc;
+        padding: 9px 12px;
+        border-radius: 999px;
+        cursor: pointer;
+        font-weight: 800;
+      }
+      .chip.active {
+        background: var(--navy);
+        color: #fff;
+        border-color: var(--navy);
+      }
+      .mode {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .mode button {
+        border: 1px solid #d3dce8;
+        background: #fff;
+        border-radius: 16px;
+        padding: 16px;
+        cursor: pointer;
+        text-align: left;
+      }
+      .mode button:hover {
+        border-color: var(--gold);
+        background: #fffaf0;
+      }
+      .mode b {
+        display: block;
+        margin-bottom: 5px;
+      }
+      .question-card {
+        background: linear-gradient(135deg, #fffdf5, #f7fbff);
+        border: 2px solid #eadba8;
+        border-radius: 24px;
+        padding: 24px;
+      }
+      .qnum {
+        color: #876600;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+      }
+      .question {
+        font-size: clamp(20px, 3vw, 31px);
+        font-weight: 900;
+        line-height: 1.25;
+        margin: 8px 0 16px;
+      }
+      .en {
+        display: block;
+        color: #718096;
+        font-size: 12px;
+        font-weight: 600;
+        margin-top: 6px;
+      }
+      .timer {
+        font-size: 30px;
+        font-weight: 900;
+      }
+      .score-buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      .score-buttons button {
+        border: 0;
+        border-radius: 16px;
+        padding: 15px;
+        cursor: pointer;
+        font-weight: 900;
+      }
+      .s0 {
+        background: #f3d7d5;
+      }
+      .s1 {
+        background: #ffe8b5;
+      }
+      .s2 {
+        background: #d9eaf9;
+      }
+      .s3 {
+        background: #cdeedc;
+      }
+      .rubric {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+      .rubric div {
+        padding: 10px;
+        border-radius: 12px;
+        background: #f6f8fb;
+        border: 1px solid #e0e6ef;
+        font-size: 12px;
+      }
+      .result {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .bigscore {
+        font-size: 52px;
+        font-weight: 1000;
+        color: var(--navy);
+      }
+      .feed {
+        padding: 14px;
+        border-radius: 14px;
+        background: #eef8f2;
+        border: 1px solid #cce9d8;
+      }
+      .table-wrap {
+        overflow: auto;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        min-width: 620px;
+      }
+      .table th,
+      .table td {
+        padding: 10px;
+        border-bottom: 1px solid #e2e7ef;
+        text-align: left;
+        font-size: 13px;
+      }
+      .table th {
+        background: #f4f7fb;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .footer {
+        text-align: center;
+        padding: 28px;
+        color: #64748b;
+      }
+      .toast {
+        position: fixed;
+        right: 18px;
+        bottom: 18px;
+        background: #071a33;
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px #0003;
+        opacity: 0;
+        transform: translateY(10px);
+        pointer-events: none;
+        transition: 0.25s;
+        z-index: 50;
+      }
+      .toast.show {
+        opacity: 1;
+        transform: none;
+      }
+      @media (max-width: 850px) {
+        .span4,
+        .span8 {
+          grid-column: span 12;
+        }
+        .mode {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .rubric,
+        .score-buttons {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .result {
+          grid-template-columns: 1fr;
+        }
+        .actions {
+          margin-left: 0;
+        }
+        .bar {
+          flex-wrap: wrap;
+        }
+        .actions {
+          width: 100%;
+        }
+      }
+      @media (max-width: 520px) {
+        .mode {
+          grid-template-columns: 1fr;
+        }
+        .score-buttons {
+          grid-template-columns: 1fr 1fr;
+        }
+        .top {
+          padding: 12px;
+        }
+        .wrap {
+          padding: 0 10px;
+        }
+        .hero {
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="bar">
+        <img class="logo" src="BrandLogo.png" alt="Teacher Ed Learning Hub" />
+        <div class="brand">
+          <h1>Teacher Ed Learning Hub</h1>
+          <p>Grade 3 AP • Graded Recitation • Katutubong Kanta</p>
+        </div>
+        <div class="actions">
+          <button class="btn light" id="fullBtn">⛶ Full Screen</button
+          ><button class="btn danger" id="resetBtn">↺ Reset</button>
+        </div>
+      </div>
+    </header>
+    <main class="wrap">
+      <section class="hero">
+        <div class="eyebrow">GRADE 3 • ARALING PANLIPUNAN</div>
+        <h2>🎤 Kanta Quest: Graded Recitation</h2>
+        <p>
+          Hindi ito ordinaryong recitation. Pumili ng bata, pumili ng challenge,
+          at gawing isang mini-game ang oral recitation.
+        </p>
+        <button class="btn gold" id="startBtn">Simulan ang Recitation →</button>
+      </section>
+      <section class="grid bento">
+        <div class="card span4">
+          <div class="muted">BATANG SUMASAGOT</div>
+          <div class="stat" id="studentDisplay">Walang napili</div>
+          <div class="student-tools">
+            <input id="studentInput" placeholder="I-type ang pangalan" /><button
+              class="btn gold"
+              id="addBtn"
+            >
+              + Idagdag
+            </button>
+          </div>
+          <div class="chips" id="students"></div>
+        </div>
+        <div class="card span4">
+          <div class="muted">KASALUKUYANG PUNTOS</div>
+          <div class="stat" id="scoreDisplay">0 / 30</div>
+          <div class="muted">Teacher-awarded points</div>
+        </div>
+        <div class="card span4">
+          <div class="muted">PROGRESS</div>
+          <div class="stat" id="progressDisplay">0 / 10</div>
+          <div class="muted">Questions answered</div>
+        </div>
+      </section>
+      <section class="card bento">
+        <div class="section-title">
+          <div>
+            <h3>🎮 Pumili ng Recitation Mode</h3>
+            <span class="muted"
+              >Teacher controls the scoring; the learner answers orally.</span
+            >
+          </div>
+          <span class="pill" id="modeBadge">Choose a mode</span>
+        </div>
+        <div class="mode">
+          <button data-mode="mystery">
+            <b>🎁 Mystery Question</b
+            ><span class="muted">Random reveal</span></button
+          ><button data-mode="music">
+            <b>🎵 Music Box</b
+            ><span class="muted">Pick a song clue</span></button
+          ><button data-mode="spotlight">
+            <b>🌟 Spotlight</b
+            ><span class="muted">Hot-seat challenge</span></button
+          ><button data-mode="boss">
+            <b>👑 Final Encore</b><span class="muted">Harder question</span>
+          </button>
+        </div>
+      </section>
+      <section class="card bento">
+        <div class="section-title">
+          <div>
+            <h3>🎤 Live Recitation Stage</h3>
+            <span class="muted"
+              >Ask the question aloud. Let the selected learner answer.</span
+            >
+          </div>
+          <div class="timer" id="timer">30</div>
+        </div>
+        <div class="question-card">
+          <div class="qnum" id="qnum">READY</div>
+          <div class="question" id="question">
+            Piliin muna ang isang bata at isang recitation mode.
+          </div>
+          <div class="en" id="translation">
+            Choose a learner and a recitation mode.
+          </div>
+          <div class="student-tools" style="margin-top: 18px">
+            <button class="btn gold" id="nextBtn">🎲 Bunutin ang Tanong</button
+            ><button
+              class="btn light"
+              style="background: var(--navy)"
+              id="timerBtn"
+            >
+              ⏱ Start 30s
+            </button>
+          </div>
+        </div>
+        <div id="feedback" class="feed hidden" style="margin-top: 14px"></div>
+        <div style="margin-top: 16px">
+          <div class="muted" style="margin-bottom: 8px">
+            Teacher scoring — piliin ang antas pagkatapos sumagot:
+          </div>
+          <div class="score-buttons">
+            <button class="s0" data-score="0">0 • Hindi pa nasagot</button
+            ><button class="s1" data-score="1">1 • Kailangan ng gabay</button
+            ><button class="s2" data-score="2">2 • Mahusay</button
+            ><button class="s3" data-score="3">3 • Napakahusay</button>
+          </div>
+        </div>
+      </section>
+      <section class="grid bento">
+        <div class="card span8">
+          <div class="section-title">
+            <h3>📋 Quick Rubric</h3>
+            <span class="pill">0–3 bawat tanong</span>
+          </div>
+          <div class="rubric">
+            <div>
+              <b>3 — Napakahusay</b><br />Malinaw at wasto ang sagot; may sapat
+              na paliwanag.
+            </div>
+            <div>
+              <b>2 — Mahusay</b><br />Tamang ideya ngunit kulang sa detalye.
+            </div>
+            <div>
+              <b>1 — May Gabay</b><br />Bahagi lamang ng sagot ang naibigay;
+              kailangan ng prompt.
+            </div>
+            <div>
+              <b>0 — Hindi pa</b><br />Hindi nakasagot o hindi naipakita ang
+              pag-unawa.
+            </div>
+          </div>
+        </div>
+        <div class="card span4">
+          <h3>💡 Teacher Prompt</h3>
+          <p id="prompt">
+            “Sabihin mo sa sariling salita. Huwag matakot magkamali.”
+          </p>
+          <button class="btn" style="background: #edf2f7" id="hintBtn">
+            💬 Bigyan ng Hint
+          </button>
+        </div>
+      </section>
+      <section class="card bento">
+        <div class="section-title">
+          <h3>🏆 Recitation Board</h3>
+          <button class="btn" style="background: #edf2f7" id="saveBtn">
+            💾 Save Results
+          </button>
+        </div>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Learner</th>
+                <th>Items</th>
+                <th>Score</th>
+                <th>Percent</th>
+                <th>Performance</th>
+              </tr>
+            </thead>
+            <tbody id="board"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="card bento hidden" id="finalCard">
+        <div class="result">
+          <div>
+            <div class="muted">FINAL RESULT</div>
+            <div class="bigscore" id="finalScore">0 / 30</div>
+            <p id="finalName"></p>
+          </div>
+          <div class="feed">
+            <b>🎉 Recitation complete!</b>
+            <p id="finalMessage">
+              Magaling! I-record ang resulta sa iyong class record kung
+              kinakailangan.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <img
+        src="BrandLogo.png"
+        alt=""
+        style="
+          width: 45px;
+          height: 45px;
+          object-fit: contain;
+          vertical-align: middle;
+        "
+      /><br /><b>Teacher Ed Learning Hub</b><br />Teach • Lead • Inspire • ©
+      2026 Teacher Ed
+    </footer>
+    <div class="toast" id="toast"></div>
+    <script>
+      const questions = [
+        {
+          q: "Ano ang tinutukoy ng katutubong kanta?",
+          en: "What is meant by an indigenous/folk song?",
+          mode: "mystery",
+          hint: "Isipin ang kanta na kaugnay ng kultura at tradisyon ng isang pamayanan.",
+        },
+        {
+          q: "Magbigay ng isang halimbawa ng katutubong kanta na binanggit sa aralin.",
+          en: "Give one example of a folk song mentioned in the lesson.",
+          mode: "mystery",
+          hint: "May kantang “Dandansoy” sa aralin.",
+        },
+        {
+          q: "Ano ang Dandansoy?",
+          en: "What is Dandansoy?",
+          mode: "music",
+          hint: "Tukuyin ito bilang isa sa mga kantang tinalakay sa aralin.",
+        },
+        {
+          q: "Ano ang Atin Cu Pung Singsing?",
+          en: "What is Atin Cu Pung Singsing?",
+          mode: "music",
+          hint: "Alalahanin ang isa pang kantang kabilang sa mga halimbawa sa aralin.",
+        },
+        {
+          q: "Bakit mahalaga ang mga katutubong kanta sa kultura?",
+          en: "Why are folk songs important to culture?",
+          mode: "spotlight",
+          hint: "Isipin ang kultura, tradisyon, karanasan, at pagkakakilanlan.",
+        },
+        {
+          q: "Ano ang maaaring maipakita o maipasa sa pamamagitan ng katutubong kanta?",
+          en: "What can folk songs help express or pass on?",
+          mode: "spotlight",
+          hint: "Isipin ang mga karanasan, tradisyon, at paraan ng pamumuhay.",
+        },
+        {
+          q: "Banggitin ang isang katutubong kanta mula sa aralin at sabihin kung ano ang natatandaan mo tungkol dito.",
+          en: "Name one folk song from the lesson and tell what you remember about it.",
+          mode: "mystery",
+          hint: "Pumili sa mga kantang tinalakay sa aklat.",
+        },
+        {
+          q: "Ano ang Pasyon na binanggit sa aralin?",
+          en: "What is Pasyon as mentioned in the lesson?",
+          mode: "music",
+          hint: "Alalahanin ang halimbawang binanggit sa aklat.",
+        },
+        {
+          q: "Paano nakatutulong ang mga katutubong kanta sa pagpapanatili ng kultura?",
+          en: "How can folk songs help preserve culture?",
+          mode: "boss",
+          hint: "Pag-isipan kung paano naipapasa ang mga kuwento, tradisyon, at pagkakakilanlan.",
+        },
+        {
+          q: "Kung ikaw ang magpapakilala ng isang katutubong kanta sa kaklase, ano ang sasabihin mo tungkol dito?",
+          en: "If you introduced a folk song to classmates, what would you say about it?",
+          mode: "boss",
+          hint: "Magbigay ng malinaw na sagot at iugnay sa kultura o tradisyon.",
+        },
+        {
+          q: "Ano ang pagkakatulad ng Dandansoy at Atin Cu Pung Singsing batay sa aralin?",
+          en: "What do Dandansoy and Atin Cu Pung Singsing have in common based on the lesson?",
+          mode: "spotlight",
+          hint: "Pareho silang mga halimbawa ng kantang tinalakay sa aralin.",
+        },
+        {
+          q: "Magbanggit ng dalawang katutubong kanta na natutuhan mo sa aralin.",
+          en: "Name two folk songs you learned in the lesson.",
+          mode: "mystery",
+          hint: "Isipin ang Dandansoy at Atin Cu Pung Singsing.",
+        },
+        {
+          q: "Magbanggit ng tatlong kantang binanggit sa aralin.",
+          en: "Name three songs mentioned in the lesson.",
+          mode: "boss",
+          hint: "Tandaan ang Dandansoy, Atin Cu Pung Singsing, at Pasyon.",
+        },
+        {
+          q: "Anong kanta ang maiuugnay mo sa salitang “katutubong kanta”? Ipaliwanag.",
+          en: "Which song can you connect with the term “folk song”? Explain.",
+          mode: "spotlight",
+          hint: "Pumili ng isang halimbawa mula sa aralin at ipaliwanag ang iyong sagot.",
+        },
+        {
+          q: "Kung tinanong ka ng kaklase kung ano ang katutubong kanta, paano mo ito ipaliliwanag?",
+          en: "How would you explain a folk song to a classmate?",
+          mode: "mystery",
+          hint: "Gamitin ang sariling salita at ang ideya mula sa aralin.",
+        },
+        {
+          q: "Bakit dapat nating pahalagahan ang mga kantang bahagi ng kultura?",
+          en: "Why should we value songs that are part of culture?",
+          mode: "spotlight",
+          hint: "Isipin ang kahalagahan ng kultura at tradisyon.",
+        },
+        {
+          q: "Paano mo maipapakita ang pagpapahalaga sa katutubong kanta?",
+          en: "How can you show appreciation for folk songs?",
+          mode: "spotlight",
+          hint: "Magbigay ng isang konkretong paraan.",
+        },
+        {
+          q: "Ano ang maaari mong gawin upang maibahagi sa iba ang isang katutubong kanta?",
+          en: "What can you do to share a folk song with others?",
+          mode: "mystery",
+          hint: "Isipin ang isang paraan ng pagbabahagi sa klase o pamayanan.",
+        },
+        {
+          q: "Kung may bagong kaklase na hindi pa nakaririnig ng Dandansoy, paano mo ito ipakikilala?",
+          en: "If a new classmate has not heard Dandansoy, how would you introduce it?",
+          mode: "music",
+          hint: "Banggitin na isa ito sa mga kantang tinalakay sa aralin.",
+        },
+        {
+          q: "Kung may kaklase kang nakakalimot sa mga katutubong kanta, bakit mahalagang balikan at pag-aralan ang mga ito?",
+          en: "Why is it important to revisit and study folk songs?",
+          mode: "boss",
+          hint: "Iugnay ang sagot sa kultura at pagpapanatili ng kaalaman.",
+        },
+        {
+          q: "Ano ang masasabi mo tungkol sa kahalagahan ng Atin Cu Pung Singsing bilang bahagi ng aralin?",
+          en: "What can you say about the importance of Atin Cu Pung Singsing in the lesson?",
+          mode: "music",
+          hint: "Iugnay ito sa pag-aaral ng katutubong kanta.",
+        },
+        {
+          q: "Ano ang masasabi mo tungkol sa Dandansoy bilang bahagi ng aralin?",
+          en: "What can you say about Dandansoy as part of the lesson?",
+          mode: "music",
+          hint: "Tukuyin ang papel nito bilang halimbawa sa aralin.",
+        },
+        {
+          q: "Ano ang masasabi mo tungkol sa Pasyon bilang bahagi ng aralin?",
+          en: "What can you say about Pasyon as part of the lesson?",
+          mode: "music",
+          hint: "Banggitin ang natutuhan mo mula sa aklat.",
+        },
+        {
+          q: "Paano nakatutulong ang pag-aaral ng mga katutubong kanta sa pagkilala sa ating kultura?",
+          en: "How does studying folk songs help us understand our culture?",
+          mode: "spotlight",
+          hint: "Iugnay ang mga kanta sa kultura at tradisyon.",
+        },
+        {
+          q: "Kung bibigyan ka ng pagkakataong pumili ng isang kanta mula sa aralin para ipakinig sa klase, ano ang pipiliin mo at bakit?",
+          en: "If you could choose one song from the lesson for the class, which would you choose and why?",
+          mode: "mystery",
+          hint: "Pumili sa mga kantang binanggit sa aralin at ipaliwanag ang dahilan.",
+        },
+        {
+          q: "Ano ang natutuhan mo tungkol sa mga katutubong kanta pagkatapos ng aralin?",
+          en: "What did you learn about folk songs after the lesson?",
+          mode: "spotlight",
+          hint: "Magbigay ng isang mahalagang natutuhan.",
+        },
+        {
+          q: "Bakit mahalagang malaman ng mga bata ang mga katutubong kanta?",
+          en: "Why is it important for children to know folk songs?",
+          mode: "boss",
+          hint: "Iugnay sa kultura, tradisyon, at pagpasa ng kaalaman.",
+        },
+        {
+          q: "Paano mo maipagmamalaki ang mga katutubong kanta ng ating kultura?",
+          en: "How can you show pride in the folk songs of our culture?",
+          mode: "spotlight",
+          hint: "Magbigay ng isang paraan na maaari mong gawin bilang mag-aaral.",
+        },
+        {
+          q: "Ano ang isang mahalagang mensahe na nais mong ibahagi tungkol sa katutubong kanta?",
+          en: "What important message would you share about folk songs?",
+          mode: "mystery",
+          hint: "Bumuo ng maikling mensahe tungkol sa pagpapahalaga sa kultura.",
+        },
+        {
+          q: "FINAL ENCORE: Ipaliwanag sa loob ng 30 segundo kung bakit dapat pahalagahan, alalahanin, at ipasa sa susunod na henerasyon ang mga katutubong kanta.",
+          en: "FINAL ENCORE: In 30 seconds, explain why folk songs should be valued, remembered, and passed to the next generation.",
+          mode: "boss",
+          hint: "Gamitin ang mga ideya tungkol sa kultura, tradisyon, at pagpapanatili ng kaalaman.",
+        },
+      ];
+      let students = [],
+        selected = "",
+        scores = {},
+        answered = 0,
+        total = 0,
+        current = null,
+        timer = null,
+        time = 30;
+      const $ = (id) => document.getElementById(id);
+      function toast(t) {
+        $("toast").textContent = t;
+        $("toast").classList.add("show");
+        setTimeout(() => $("toast").classList.remove("show"), 1800);
+      }
+      function renderStudents() {
+        const box = $("students");
+        box.innerHTML = "";
+        students.forEach((n) => {
+          const b = document.createElement("button");
+          b.className = "chip" + (n === selected ? " active" : "");
+          b.textContent = n;
+          b.onclick = () => {
+            selected = n;
+            $("studentDisplay").textContent = n;
+            renderStudents();
+            toast("Napili si " + n);
+          };
+          box.appendChild(b);
+        });
+      }
+      function addStudent() {
+        const n = $("studentInput").value.trim();
+        if (!n) return toast("Maglagay muna ng pangalan.");
+        if (!students.includes(n)) students.push(n);
+        $("studentInput").value = "";
+        renderStudents();
+        selected = n;
+        $("studentDisplay").textContent = n;
+        toast("Handa na si " + n);
+      }
+      function pickQuestion() {
+        if (!selected) return toast("Pumili muna ng batang sasagot.");
+        let pool = questions.filter((x) => !current || x !== current);
+        if (pool.length === 0) pool = questions;
+        current = pool[Math.floor(Math.random() * pool.length)];
+        $("qnum").textContent =
+          "QUESTION " + (answered + 1) + " • " + current.mode.toUpperCase();
+        $("question").textContent = current.q;
+        $("translation").textContent = current.en;
+        $("feedback").classList.add("hidden");
+        $("prompt").textContent =
+          "“Sabihin mo sa sariling salita. Huwag matakot magkamali.”";
+        resetTimer();
+        toast("🎤 Tanong para kay " + selected);
+      }
+      function resetTimer() {
+        clearInterval(timer);
+        time = 30;
+        $("timer").textContent = time;
+        $("timer").style.color = "var(--ink)";
+      }
+      function startTimer() {
+        clearInterval(timer);
+        time = 30;
+        $("timer").textContent = time;
+        timer = setInterval(() => {
+          time--;
+          $("timer").textContent = time;
+          if (time <= 5) $("timer").style.color = "var(--red)";
+          if (time <= 0) {
+            clearInterval(timer);
+            toast("⏰ Oras! Maaari nang mag-score.");
+          }
+        }, 1000);
+      }
+      function score(s) {
+        if (!current) return toast("Bunot muna ng tanong.");
+        if (!selected) return toast("Pumili muna ng learner.");
+        if (!scores[selected]) scores[selected] = { score: 0, items: 0 };
+        scores[selected].score += Number(s);
+        scores[selected].items++;
+        answered++;
+        total += Number(s);
+        $("scoreDisplay").textContent =
+          scores[selected].score + " / " + scores[selected].items * 3;
+        $("progressDisplay").textContent = scores[selected].items + " / 30";
+        let msg =
+          s == 3
+            ? "🌟 Napakahusay!"
+            : s == 2
+              ? "👏 Mahusay!"
+              : s == 1
+                ? "💡 May kaunting gabay pa."
+                : "🌱 Patuloy na magsanay.";
+        $("feedback").textContent =
+          msg + " Teacher awarded " + s + " point(s).";
+        $("feedback").classList.remove("hidden");
+        renderBoard();
+        clearInterval(timer);
+        if (scores[selected].items >= 30) finish();
+      }
+      function renderBoard() {
+        const tb = $("board");
+        tb.innerHTML = "";
+        Object.entries(scores).forEach(([n, v]) => {
+          const tr = document.createElement("tr");
+          const pct = Math.round((v.score / (v.items * 3)) * 100);
+          const perf =
+            pct >= 85
+              ? "Napakahusay"
+              : pct >= 75
+                ? "Mahusay"
+                : pct >= 60
+                  ? "May Gabay"
+                  : "Kailangan ng Pagsasanay";
+          [n, v.items, v.score + " / " + v.items * 3, pct + "%", perf].forEach(
+            (x) => {
+              const td = document.createElement("td");
+              td.textContent = x;
+              tr.appendChild(td);
+            },
+          );
+          tb.appendChild(tr);
+        });
+      }
+      function finish() {
+        const v = scores[selected];
+        $("finalCard").classList.remove("hidden");
+        $("finalScore").textContent = v.score + " / " + v.items * 3;
+        $("finalName").textContent =
+          selected + " • " + Math.round((v.score / (v.items * 3)) * 100) + "%";
+        $("finalMessage").textContent =
+          v.score / (v.items * 3) >= 0.85
+            ? "Napakahusay na pagganap!"
+            : "Magandang simula. Gamitin ang feedback para sa susunod na recitation.";
+        $("finalCard").scrollIntoView({ behavior: "smooth" });
+      }
+      function resetAll() {
+        if (!confirm("I-reset ang recitation board?")) return;
+        students = [];
+        selected = "";
+        scores = {};
+        answered = 0;
+        total = 0;
+        current = null;
+        $("studentDisplay").textContent = "Walang napili";
+        $("scoreDisplay").textContent = "0 / 90";
+        $("progressDisplay").textContent = "0 / 30";
+        $("question").textContent =
+          "Piliin muna ang isang bata at isang recitation mode.";
+        $("translation").textContent =
+          "Choose a learner and a recitation mode.";
+        $("finalCard").classList.add("hidden");
+        renderStudents();
+        renderBoard();
+        resetTimer();
+        toast("Na-reset na.");
+      }
+      function save() {
+        localStorage.setItem(
+          "TEKantaRecitation",
+          JSON.stringify({ students, scores }),
+        );
+        toast("Na-save sa browser.");
+      }
+      function load() {
+        try {
+          const x = JSON.parse(
+            localStorage.getItem("TEKantaRecitation") || "null",
+          );
+          if (x) {
+            students = x.students || [];
+            scores = x.scores || {};
+            renderStudents();
+            renderBoard();
+          }
+        } catch (e) {}
+      }
+      $("addBtn").onclick = addStudent;
+      $("studentInput").addEventListener("keydown", (e) => {
+        if (e.key === "Enter") addStudent();
+      });
+      $("nextBtn").onclick = pickQuestion;
+      $("timerBtn").onclick = startTimer;
+      $("hintBtn").onclick = () => {
+        if (current) {
+          $("prompt").textContent = "💡 HINT: " + current.hint;
+        } else toast("Bunot muna ng tanong.");
+      };
+      document
+        .querySelectorAll("[data-score]")
+        .forEach((b) => (b.onclick = () => score(b.dataset.score)));
+      document.querySelectorAll("[data-mode]").forEach(
+        (b) =>
+          (b.onclick = () => {
+            $("modeBadge").textContent = b.dataset.mode.toUpperCase() + " MODE";
+            toast("Mode: " + b.dataset.mode + " — bunot na!");
+            pickQuestion();
+          }),
+      );
+      $("startBtn").onclick = () => {
+        $("nextBtn").scrollIntoView({ behavior: "smooth" });
+        toast("🎤 Stage is ready!");
+      };
+      $("resetBtn").onclick = resetAll;
+      $("saveBtn").onclick = save;
+      $("fullBtn").onclick = () => {
+        if (!document.fullscreenElement)
+          document.documentElement.requestFullscreen();
+        else document.exitFullscreen();
+      };
+      load();
+    </script>
+  </body>
+</html>

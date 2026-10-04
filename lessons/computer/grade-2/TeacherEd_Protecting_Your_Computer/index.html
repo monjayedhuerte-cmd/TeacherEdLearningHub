@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Protecting Your Computer | Teacher Ed Learning Hub</title>
+    <link rel="icon" type="image/png" href="teacher-ed-logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="teacher-ed-logo.png" />
+        <div><b>Teacher Ed</b><small>Learning Hub</small></div>
+      </div>
+      <nav>
+        <button onclick="show('learn')">Learn</button
+        ><button onclick="show('game')">Cyber Defender</button
+        ><button onclick="show('backup')">Backup Lab</button
+        ><button onclick="show('quiz')">Quiz</button>
+      </nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span>COMPUTER 2 • NEW LESSON</span>
+        <h1>Protecting Your Computer</h1>
+        <p>
+          Become a <b>Cyber Defender</b>. Explore malware, antivirus protection,
+          safe browsing, backups, personal information, and computer
+          maintenance.
+        </p>
+        <button class="gold" onclick="show('learn')">Start Learning →</button>
+        <button class="white" onclick="show('game')">Play the Game</button>
+      </div>
+      <div class="shield">🛡️<i>🔐</i><i>💾</i><i>🦠</i></div>
+    </section>
+    <main>
+      <section id="learn" class="section">
+        <div class="head">
+          <div>
+            <span>EXPLORE</span>
+            <h2>Protect your computer, one idea at a time.</h2>
+          </div>
+          <p>Click a card to reveal the explanation.</p>
+        </div>
+        <div class="cards">
+          <article onclick="this.classList.toggle('open')">
+            <strong>🦠</strong>
+            <h3>Malware</h3>
+            <p>
+              Software designed to damage a computer or gain unauthorized
+              access.
+            </p>
+            <em>Viruses, worms, Trojan horses, and spyware are examples.</em>
+          </article>
+          <article onclick="this.classList.toggle('open')">
+            <strong>🛡️</strong>
+            <h3>Antivirus</h3>
+            <p>Software that helps protect a computer from malware.</p>
+            <em
+              >It can help prevent malware from being installed and can remove
+              malware.</em
+            >
+          </article>
+          <article onclick="this.classList.toggle('open')">
+            <strong>🌐</strong>
+            <h3>Stay Smart Online</h3>
+            <p>Think before clicking or downloading.</p>
+            <em
+              >Avoid suspicious websites, links, and email attachments.
+              Antivirus may not catch everything.</em
+            >
+          </article>
+          <article onclick="this.classList.toggle('open')">
+            <strong>💾</strong>
+            <h3>Backup</h3>
+            <p>Keep another copy of important files.</p>
+            <em
+              >Back up to an external hard drive or an online backup
+              service.</em
+            >
+          </article>
+          <article onclick="this.classList.toggle('open')">
+            <strong>🔐</strong>
+            <h3>Personal Information</h3>
+            <p>Protect information from unauthorized access.</p>
+            <em
+              >Use user IDs and passwords and keep sensitive information
+              private.</em
+            >
+          </article>
+          <article onclick="this.classList.toggle('open')">
+            <strong>🧹</strong>
+            <h3>Maintenance</h3>
+            <p>Keep files and folders uncluttered.</p>
+            <em
+              >Delete unwanted files and use tools such as Disk Cleanup to free
+              space.</em
+            >
+          </article>
+        </div>
+      </section>
+      <section class="bridge">
+        <h2>THINK → PROTECT → BACK UP → MAINTAIN</h2>
+        <p>
+          Your safest habit is to think before you click, protect your computer,
+          keep copies of important files, and maintain an organized system.
+        </p>
+      </section>
+      <section id="game" class="section">
+        <div class="head">
+          <div>
+            <span>GAME • 10 MISSIONS</span>
+            <h2>🛡️ Cyber Defender</h2>
+          </div>
+          <p>Make the safest decision. Security starts at 100.</p>
+        </div>
+        <div class="panel">
+          <div class="status">
+            Security: <b id="sec">100</b>
+            <span>Mission <b id="mn">1</b>/10</span>
+          </div>
+          <div id="mission"></div>
+          <div id="choices" class="choices"></div>
+          <div id="fb" class="feedback"></div>
+          <button id="next" class="gold hidden" onclick="nextM()">
+            Next Mission →
+          </button>
+        </div>
+      </section>
+      <section id="backup" class="section">
+        <div class="head">
+          <div>
+            <span>INTERACTIVE LAB</span>
+            <h2>💾 Backup Lab</h2>
+          </div>
+          <p>Choose important files and a safe backup destination.</p>
+        </div>
+        <div class="twocol">
+          <div class="box">
+            <h3>Important files</h3>
+            <label
+              ><input type="checkbox" value="School Report" /> 📄 School
+              Report</label
+            ><label
+              ><input type="checkbox" value="Family Photos" /> 📷 Family
+              Photos</label
+            ><label
+              ><input type="checkbox" value="Project Files" /> 📁 Project
+              Files</label
+            ><label
+              ><input type="checkbox" value="Saved Work" /> 📝 Saved Work</label
+            >
+          </div>
+          <div class="box">
+            <h3>Backup destination</h3>
+            <button onclick="backup('External hard drive')">
+              💾 External hard drive</button
+            ><button onclick="backup('Online backup service')">
+              ☁️ Online backup service
+            </button>
+            <div id="br" class="feedback"></div>
+          </div>
+        </div>
+      </section>
+      <section id="quiz" class="section">
+        <div class="head">
+          <div>
+            <span>CHECK YOUR LEARNING</span>
+            <h2>🎯 Cyber Safety Challenge</h2>
+          </div>
+          <p>10 questions. The answer choices are randomized.</p>
+        </div>
+        <div class="panel">
+          <div class="status">
+            Question <b id="qc">1</b>/10 <span>Score: <b id="score">0</b></span>
+          </div>
+          <div class="bar"><i id="prog"></i></div>
+          <h3 id="question"></h3>
+          <div id="answers" class="choices"></div>
+          <div id="qfb" class="feedback"></div>
+          <button id="qn" class="gold hidden" onclick="nextQ()">
+            Next Question →
+          </button>
+        </div>
+      </section>
+      <section class="promise">
+        <h2>💡 My Cyber Defender Promise</h2>
+        <p>“I will protect my computer by ______________________________.”</p>
+      </section>
+    </main>
+    <footer>
+      <img src="teacher-ed-logo.png" />
+      <div>
+        <b>Teacher Ed Learning Hub</b><br /><small>Teach. Lead. Inspire.</small>
+      </div>
+      <span>Computer 2 • Protecting Your Computer</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
