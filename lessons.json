@@ -991,10 +991,20 @@
   },
   {
     "title": "Math 7 | Law of Exponents",
-    "subject": "Math", 
+    "subject": "Mathematics", 
     "grade": "Grade 7",
     "description": "Master the laws of exponents through a Singapore Mathematics-inspired journey: Concrete → Pictorial → Abstract. Build the idea, see the pattern, then use the rule.",
     "file": "lessons/mathematics/grade-7/grade7-exponents/index.html",
+    "date": "2026-10-05",
+    "featured": true,
+    "icon": "calculator"
+  },
+  {
+    "title": "Math 2 | Properties of Addition",
+    "subject": "Mathematics", 
+    "grade": "Grade 2",
+    "description": "Discover how changing the order, grouping, or adding zero can make addition easier.",
+    "file": "lessons/mathematics/grade-2/TeacherEd_Grade2_Properties_of_Addition/index.html",
     "date": "2026-10-05",
     "featured": true,
     "icon": "calculator"
@@ -1050,6 +1060,16 @@
     "icon": "user"
   },
   {
+    "title": "Filipino |Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya",
+    "subject": "Filipino", 
+    "grade": "Grade 3",
+    "description": "Matututuhan natin ang mahahalagang salita, pag-unawa sa teksto, pagtutulungan, kasanayan, at pagpapahalaga sa pamayanan.",
+    "file": "lessons/filipino/grade-3/Ang_Husay_sa_Paggawa_ng_Walis_Tingting_Interactive_Lesson/Ang_Husay_sa_Paggawa_ng_Walis_Tingting_Interactive_Lesson.html",
+    "date": "2026-10-05",
+    "featured": false,
+    "icon": "user"
+  },
+  {
     "title": "AP 1 | Graded Recitation sa Mga Tradisyon at Pagdiriwang ng Pamilya",
     "subject": "Araling Panlipunan", 
     "grade": "Grade 1",
@@ -1059,4 +1079,5 @@
     "featured": false,
     "icon": "user"
   }
+  
 ]

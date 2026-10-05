@@ -1,0 +1,1127 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Ang Husay sa Paggawa ng Walis-Tingting | Teacher Ed</title>
+    <link rel="icon" type="image/png" href="BrandLogo.png" />
+    <style>
+      :root {
+        --n: #183153;
+        --b: #2563eb;
+        --g: #f59e0b;
+        --gr: #16a34a;
+        --r: #dc2626;
+        --ink: #172033;
+        --bg: #f4f8fc;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Arial, system-ui, sans-serif;
+        color: var(--ink);
+        background: linear-gradient(135deg, #edf7ff, #fffaf0);
+        line-height: 1.6;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        background: #183153;
+        color: white;
+        box-shadow: 0 4px 16px #0002;
+      }
+      .head {
+        max-width: 1100px;
+        margin: auto;
+        padding: 10px 15px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo {
+        width: 48px;
+        height: 48px;
+        background: #fff;
+        border-radius: 12px;
+        object-fit: contain;
+      }
+      .brand {
+        flex: 1;
+      }
+      .brand b {
+        font-size: 1.05rem;
+      }
+      .brand small {
+        display: block;
+        opacity: 0.8;
+      }
+      .btn {
+        border: 0;
+        border-radius: 11px;
+        padding: 10px 14px;
+        font-weight: 800;
+        cursor: pointer;
+        background: white;
+        color: var(--n);
+      }
+      .gold {
+        background: var(--g);
+      }
+      .green {
+        background: #22c55e;
+      }
+      .bar {
+        height: 5px;
+        background: #ffffff33;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--g);
+        width: 0;
+      }
+      main {
+        max-width: 1100px;
+        margin: auto;
+        padding: 22px 15px 95px;
+      }
+      .slide {
+        display: none;
+      }
+      .slide.active {
+        display: block;
+        animation: in 0.25s;
+      }
+      @keyframes in {
+        from {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .hero,
+      .card {
+        border-radius: 22px;
+        padding: 24px;
+        margin-bottom: 16px;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--n), var(--b));
+        color: white;
+        box-shadow: 0 12px 30px #2563eb33;
+      }
+      .card {
+        background: #fffffff2;
+        border: 1px solid #d9e4ef;
+        box-shadow: 0 6px 22px #17304d0d;
+      }
+      h1,
+      h2,
+      h3 {
+        line-height: 1.2;
+      }
+      .hero h1 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+        margin: 0.2rem 0;
+      }
+      .title {
+        color: var(--n);
+      }
+      .en {
+        display: block;
+        color: #64748b;
+        font-size: 0.9em;
+      }
+      .hero .en {
+        color: #e2e8f0;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 12px;
+      }
+      .box {
+        background: #f8fbff;
+        border: 2px solid #dbeafe;
+        border-radius: 15px;
+        padding: 15px;
+      }
+      .teacher {
+        background: #fff7df;
+        border-left: 6px solid var(--g);
+        padding: 14px;
+        border-radius: 12px;
+      }
+      .tip {
+        background: #ecfdf5;
+        border-left: 6px solid var(--gr);
+        padding: 14px;
+        border-radius: 12px;
+      }
+      .story {
+        background: #fffaf0;
+        border: 2px dashed #eabf62;
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .story p {
+        margin: 0.65rem 0;
+      }
+      .words {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .word {
+        padding: 8px 11px;
+        background: #e7f0ff;
+        color: #17427c;
+        border-radius: 99px;
+        font-weight: 700;
+      }
+      .choice {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin: 7px 0;
+        padding: 11px;
+        border: 2px solid #dbe4ee;
+        border-radius: 11px;
+        background: white;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .choice:hover {
+        border-color: #60a5fa;
+        background: #eff6ff;
+      }
+      .correct {
+        background: #dcfce7 !important;
+        border-color: #22c55e !important;
+      }
+      .wrong {
+        background: #fee2e2 !important;
+        border-color: #ef4444 !important;
+      }
+      .input,
+      textarea {
+        width: 100%;
+        padding: 11px;
+        border: 2px solid #dbe4ee;
+        border-radius: 11px;
+        margin: 5px 0 10px;
+      }
+      textarea {
+        min-height: 120px;
+      }
+      .feedback {
+        font-weight: 800;
+        min-height: 25px;
+      }
+      .score {
+        font-size: 1.2rem;
+        font-weight: 900;
+        color: var(--n);
+      }
+      .nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fffffff5;
+        border-top: 1px solid #dbe4ee;
+        z-index: 8;
+      }
+      .navin {
+        max-width: 1100px;
+        margin: auto;
+        padding: 8px 14px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .navin button {
+        flex: 1;
+      }
+      .count {
+        flex: 1;
+        text-align: center;
+        font-weight: 900;
+        color: var(--n);
+      }
+      footer {
+        background: var(--n);
+        color: white;
+        border-radius: 20px;
+        padding: 20px;
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      footer img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        background: white;
+        border-radius: 10px;
+      }
+      @media (max-width: 650px) {
+        .top {
+          display: none;
+        }
+        .head {
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="head">
+        <img class="logo" src="BrandLogo.png" alt="Brand Logo" />
+        <div class="brand">
+          <b>Teacher Ed Learning Hub</b
+          ><small>Filipino 3 • Interactive Lesson • English Support</small>
+        </div>
+        <div class="top">
+          <button class="btn" onclick="guide()">Teacher Guide</button>
+          <button class="btn" onclick="fs()">⛶</button>
+        </div>
+      </div>
+      <div class="bar"><i id="pb"></i></div>
+    </header>
+
+    <main>
+      <section class="slide active">
+        <div class="hero">
+          <small>FILIPINO 3 • READING • VOCABULARY • VALUES</small>
+          <h1>Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya</h1>
+          <p>
+            <b>English:</b> Anya's Skill in Making a Coconut-Leaf Broom During
+            Vacation
+          </p>
+          <p>
+            Matututuhan natin ang mahahalagang salita, pag-unawa sa teksto,
+            pagtutulungan, kasanayan, at pagpapahalaga sa pamayanan.
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="title">Master Prompt Learning Flow</h2>
+          <div class="grid">
+            <div class="box">
+              🎮 <b>ENGAGE</b><span class="en">Get ready.</span>
+            </div>
+            <div class="box">
+              🎯 <b>CONNECT</b><span class="en">Relate to life.</span>
+            </div>
+            <div class="box">
+              🔎 <b>EXPLORE</b><span class="en">Discover words.</span>
+            </div>
+            <div class="box">
+              🧠 <b>LEARN</b><span class="en">Understand.</span>
+            </div>
+            <div class="box">
+              🤝 <b>GUIDED PRACTICE</b
+              ><span class="en">Practice together.</span>
+            </div>
+            <div class="box">
+              🎮 <b>PRACTICE</b><span class="en">Try it.</span>
+            </div>
+            <div class="box">
+              💭 <b>THINK</b><span class="en">Explain.</span>
+            </div>
+            <div class="box">
+              🔄 <b>REVIEW</b><span class="en">Recall.</span>
+            </div>
+            <div class="box">
+              ✅ <b>CHECK</b><span class="en">Show learning.</span>
+            </div>
+            <div class="box">
+              🏆 <b>MASTER</b><span class="en">Apply.</span>
+            </div>
+            <div class="box">
+              🌈 <b>REFLECT</b><span class="en">Value.</span>
+            </div>
+            <div class="box">
+              🎉 <b>CELEBRATE</b><span class="en">Celebrate.</span>
+            </div>
+          </div>
+        </div>
+        <div class="teacher">
+          <b>Teacher Call:</b> “Handa na ba kayong tuklasin kung paano naging
+          makabuluhan ang bakasyon nina Anya at Luis?”<span class="en"
+            >English: “Are you ready to discover how Anya and Luis made their
+            vacation meaningful?”</span
+          >
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🎮 ENGAGE — Salita at Larawan</h2>
+          <span class="en"
+            >Look, think, and connect the topic to your experience.</span
+          >
+          <p>
+            <b>Gawain:</b> Mag-upload ng larawan ng walis-tingting o gawain sa
+            pamayanan.
+          </p>
+          <label class="btn gold"
+            >📷 Palitan ang Larawan
+            <input type="file" accept="image/*" hidden onchange="pic(event)"
+          /></label>
+          <div
+            id="photo"
+            class="box"
+            style="margin-top: 15px; text-align: center; min-height: 130px"
+          >
+            Ilagay dito ang larawan.<span class="en"
+              >Upload an image here.</span
+            >
+          </div>
+          <div class="grid">
+            <div class="box">
+              <b>Ano ang nakikita mo?</b
+              ><span class="en">What do you see?</span>
+            </div>
+            <div class="box">
+              <b>Saan ito ginagamit?</b
+              ><span class="en">Where is it used?</span>
+            </div>
+            <div class="box">
+              <b>Anong gawain ang kaya mong gawin?</b
+              ><span class="en">What helpful task can you do?</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🎯 CONNECT — Ang Aking Husay</h2>
+          <span class="en">Connect the story to your own skill.</span>
+          <p>
+            Ang bawat bata ay may kakayahan. Maaari itong gamitin upang
+            makatulong sa pamilya at pamayanan.
+          </p>
+          <span class="en"
+            >Every child has a skill that can be used to help family and
+            community.</span
+          >
+          <p><b>Ano ang isang bagay na mahusay mong ginagawa?</b></p>
+          <input
+            id="skill"
+            class="input"
+            placeholder="Isulat ang sagot / Write your answer"
+          />
+          <button class="btn green" onclick="skill()">Ibahagi</button>
+          <p id="skillout"></p>
+        </div>
+        <div class="tip">
+          <b>Big Idea:</b> Mas nagiging makabuluhan ang husay kapag ginagamit sa
+          pagtulong.<span class="en"
+            >A skill becomes more meaningful when used to help others.</span
+          >
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🔎 EXPLORE — Talasalitaan</h2>
+          <span class="en">Important vocabulary from the story.</span>
+          <div class="words">
+            <span class="word">bayong</span><span class="word">bakuran</span
+            ><span class="word">bungkos</span><span class="word">palapa</span
+            ><span class="word">minindal</span
+            ><span class="word">pamayanan</span
+            ><span class="word">pagkakataon</span
+            ><span class="word">magsalansan</span
+            ><span class="word">tumambad</span
+            ><span class="word">pagsidlan</span>
+          </div>
+          <div class="grid" style="margin-top: 15px">
+            <div class="box">
+              <b>Bayong</b><span class="en">Woven bag/container</span>
+              <p>Lalagyan o bag na karaniwang hinahabi.</p>
+            </div>
+            <div class="box">
+              <b>Bakuran</b><span class="en">Yard</span>
+              <p>Bahagi sa paligid ng bahay.</p>
+            </div>
+            <div class="box">
+              <b>Bungkos</b><span class="en">Bundle</span>
+              <p>Mga bagay na pinagsama-sama at itinali.</p>
+            </div>
+            <div class="box">
+              <b>Palapa</b><span class="en">Coconut-leaf stalk/midrib</span>
+              <p>Matigas na bahagi ng dahon ng niyog.</p>
+            </div>
+            <div class="box">
+              <b>Minindal</b><span class="en">Snack/light meal</span>
+              <p>Magaan na pagkain sa pagitan ng pangunahing pagkain.</p>
+            </div>
+            <div class="box">
+              <b>Pamayanan</b><span class="en">Community</span>
+              <p>Pangkat ng mga taong naninirahan sa isang lugar.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🧠 LEARN — Pagbasa at Pag-unawa</h2>
+          <span class="en">Read the story summary.</span>
+          <div class="story">
+            <p>
+              Si Anya ay nagbakasyon kasama ang kaniyang pamilya sa Quezon.
+              Masaya siyang makasama ang kaniyang pinsang si Luis. Sa bakasyon,
+              nakita niya kung paano ginagawa ang <b>walis-tingting</b> at kung
+              paano nagtutulungan ang mga tao sa isang gawain.
+            </p>
+            <p>
+              Sa pamayanan, tumutulong ang mga tao sa pag-aani, pamimitas ng
+              gulay at prutas, at paggawa ng mga kagamitang kapaki-pakinabang.
+              Natutuhan ni Anya na nagiging masaya ang gawain kapag sama-sama at
+              may kanya-kanyang tungkulin.
+            </p>
+            <p>
+              Nakita rin niya na ang mga materyales mula sa niyog ay maaaring
+              gamitin sa paggawa ng walis, bayong, banig, laruan, at iba pang
+              handicraft. Naunawaan niyang mahalaga ang kasanayan,
+              pagtutulungan, at wastong paggamit ng likas na yaman.
+            </p>
+          </div>
+          <p class="en">
+            <b>English Support:</b> Anya visits Quezon with her family. She
+            learns how people work together to make useful products from coconut
+            materials. She realizes that cooperation, skills, and helpful work
+            make a community stronger.
+          </p>
+          <div class="grid">
+            <div class="box">
+              <b>Sino?</b><span class="en">Who?</span><br />Anya, Luis, Tiya
+              Maria
+            </div>
+            <div class="box">
+              <b>Saan?</b><span class="en">Where?</span><br />Quezon / pamayanan
+            </div>
+            <div class="box">
+              <b>Ano?</b><span class="en">What?</span><br />Paggawa at
+              pagtutulungan
+            </div>
+            <div class="box">
+              <b>Aral?</b><span class="en">Lesson?</span><br />Kasanayan +
+              pagtutulungan
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">
+            🤝 GUIDED PRACTICE — Pagpapayaman ng Bokabularyo
+          </h2>
+          <span class="en">Choose the word that matches the description.</span>
+          <div id="vocab"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🎮 PRACTICE — Kahulugan ng Salita</h2>
+          <span class="en">Choose the closest meaning.</span>
+          <div id="match"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🎮 PRACTICE — High-Frequency Words</h2>
+          <span class="en"
+            >Use five words from the box in meaningful sentences.</span
+          >
+          <div class="words" id="hf"></div>
+          <div id="sent"></div>
+          <button class="btn green" onclick="sentcheck()">Tingnan</button>
+          <p id="sentout" class="score"></p>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">💭 THINK — Pag-unawa sa Teksto</h2>
+          <span class="en">Answer the comprehension questions.</span>
+          <div id="comp"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🔄 REVIEW — TAMA o MALI</h2>
+          <span class="en"
+            >Decide whether each statement is true or false based on the
+            story.</span
+          >
+          <div id="tf"></div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🏆 MASTER — Tulong Ko sa Pamayanan</h2>
+          <span class="en">Apply the lesson to real life.</span>
+          <p>
+            <b
+              >Magbigay ng tatlong gawain na maaari mong gawin upang makatulong
+              sa bahay o pamayanan.</b
+            >
+          </p>
+          <ol>
+            <li><input class="input" placeholder="Gawain 1 / Action 1" /></li>
+            <li><input class="input" placeholder="Gawain 2 / Action 2" /></li>
+            <li><input class="input" placeholder="Gawain 3 / Action 3" /></li>
+          </ol>
+          <div class="tip">
+            Ipaliwanag: Paano makatutulong ang bawat gawain sa ibang tao?<span
+              class="en"
+              >Explain how each action can help others.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">🌈 REFLECT — Pagpapahalaga</h2>
+          <span class="en">Reflect on the values shown in the story.</span>
+          <div class="grid">
+            <div class="box">
+              <b>Pagtutulungan</b><span class="en">Cooperation</span>
+              <p>Paano ito nakatutulong sa gawain?</p>
+            </div>
+            <div class="box">
+              <b>Husay</b><span class="en">Skill</span>
+              <p>Paano mo gagamitin ang iyong husay?</p>
+            </div>
+            <div class="box">
+              <b>Pamayanan</b><span class="en">Community</span>
+              <p>Bakit mahalaga ang pagtulong?</p>
+            </div>
+          </div>
+          <textarea
+            placeholder="Ang aking natutuhan... / What I learned..."
+          ></textarea>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="card">
+          <h2 class="title">✅ CHECK — 10-Item Quick Check</h2>
+          <span class="en">Show what you learned.</span>
+          <div id="final"></div>
+          <button class="btn gold" onclick="finalcheck()">
+            I-check ang Sagot
+          </button>
+          <p id="result" class="score"></p>
+        </div>
+      </section>
+
+      <section class="slide">
+        <div class="hero">
+          <h1>🎉 CELEBRATE — Mission Complete!</h1>
+          <p>
+            Mahusay! Naunawaan mo ang kuwento, mahahalagang salita,
+            pagtutulungan, kasanayan, at kahalagahan ng pagtulong sa pamayanan.
+          </p>
+          <p class="en">
+            Great job! You understood the story, vocabulary, cooperation,
+            skills, and the importance of helping the community.
+          </p>
+        </div>
+        <div class="card">
+          <h2 class="title">Exit Ticket</h2>
+          <p><b>Gagamitin ko ang aking husay upang ________.</b></p>
+          <span class="en">I will use my skill to ________.</span
+          ><input id="exit" class="input" /><button
+            class="btn green"
+            onclick="celebrate()"
+          >
+            Ipasa
+          </button>
+          <p id="cele" class="score"></p>
+        </div>
+        <footer>
+          <img src="BrandLogo.png" alt="Brand Logo" />
+          <div>
+            <b>Teacher Ed Learning Hub</b><br /><small
+              >Teach. Lead. Inspire. • Filipino 3 Interactive Learning</small
+            >
+          </div>
+        </footer>
+      </section>
+    </main>
+
+    <div class="nav">
+      <div class="navin">
+        <button class="btn" onclick="prev()">← Back</button
+        ><span class="count" id="count"></span
+        ><button class="btn gold" onclick="next()">Next →</button>
+      </div>
+    </div>
+
+    <script>
+      "use strict";
+
+      const slides = Array.from(document.querySelectorAll(".slide"));
+      const totalSlides = slides.length;
+      let currentSlide = 0;
+
+      const countEl = document.getElementById("count");
+      const progressEl = document.getElementById("pb");
+
+      function showSlide() {
+        slides.forEach((slide, index) =>
+          slide.classList.toggle("active", index === currentSlide),
+        );
+        countEl.textContent = `${currentSlide + 1} / ${totalSlides}`;
+        progressEl.style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function next() {
+        if (currentSlide < totalSlides - 1) {
+          currentSlide++;
+          showSlide();
+        }
+      }
+
+      function prev() {
+        if (currentSlide > 0) {
+          currentSlide--;
+          showSlide();
+        }
+      }
+
+      function fs() {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+        } else if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        }
+      }
+
+      function guide() {
+        alert(
+          "TEACHER GUIDE\n\n" +
+            "• Filipino ang pangunahing wika; gamitin ang English bilang support/scaffolding.\n" +
+            "• Basahin muna ang panuto at hayaang sumagot ang mga bata nang pasalita.\n" +
+            "• Hikayatin ang mga mag-aaral na ipaliwanag ang kanilang sagot.\n" +
+            "• Maaaring pair work o small-group work para sa mga nangangailangan ng dagdag na gabay.\n" +
+            "• Iugnay ang walis-tingting at pagtutulungan sa tunay na karanasan ng mga bata.",
+        );
+      }
+
+      function pic(event) {
+        const file = event.target.files && event.target.files[0];
+        const photo = document.getElementById("photo");
+        if (!file) return;
+        if (!file.type.startsWith("image/")) {
+          photo.innerHTML =
+            'Pumili ng image file lamang.<span class="en">Please choose an image file.</span>';
+          return;
+        }
+        const url = URL.createObjectURL(file);
+        photo.innerHTML = `<img src="${url}" style="max-width:100%;max-height:330px;border-radius:14px" alt="Uploaded lesson image">`;
+      }
+
+      function skill() {
+        const input = document.getElementById("skill");
+        const output = document.getElementById("skillout");
+        const value = input.value.trim();
+        output.innerHTML = value
+          ? `Mahusay! Ang husay sa <b>${escapeHTML(value)}</b> ay maaaring gamitin sa pagtulong sa iba.`
+          : "Sumulat muna ng sagot.";
+      }
+
+      function escapeHTML(value) {
+        return value.replace(
+          /[&<>'"]/g,
+          (char) =>
+            ({
+              "&": "&amp;",
+              "<": "&lt;",
+              ">": "&gt;",
+              "'": "&#39;",
+              '"': "&quot;",
+            })[char],
+        );
+      }
+
+      function buildChoiceQuiz(containerId, questions, options = {}) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        container.innerHTML = questions
+          .map((question, index) => {
+            const prompt = question.prompt;
+            const choices = question.choices;
+            const correct = question.answer;
+            const buttons = choices
+              .map((choice) => {
+                const button = document.createElement("button");
+                button.className = "choice";
+                button.type = "button";
+                button.textContent = choice;
+                button.dataset.answer = choice;
+                return button.outerHTML;
+              })
+              .join("");
+
+            return `<div class="box quiz-item" data-correct="${escapeHTML(correct)}">
+      <b>${index + 1}. ${escapeHTML(prompt)}</b>
+      <span class="en">${options.instruction || "Choose the correct answer."}</span>
+      ${buttons}
+      <div class="feedback" aria-live="polite"></div>
+    </div>`;
+          })
+          .join("");
+
+        container.querySelectorAll(".quiz-item .choice").forEach((button) => {
+          button.addEventListener("click", () => {
+            const item = button.closest(".quiz-item");
+            const feedback = item.querySelector(".feedback");
+            const correct = item.dataset.correct;
+            item
+              .querySelectorAll(".choice")
+              .forEach((btn) => btn.classList.remove("correct", "wrong"));
+
+            if (button.dataset.answer === correct) {
+              button.classList.add("correct");
+              feedback.textContent = "✓ Tama! / Correct!";
+              feedback.style.color = "var(--gr)";
+            } else {
+              button.classList.add("wrong");
+              feedback.textContent = "✗ Hindi pa. Subukan muli. / Try again.";
+              feedback.style.color = "var(--r)";
+            }
+          });
+        });
+      }
+
+      const vocabularyQuestions = [
+        {
+          prompt:
+            "Isang uri ng lalagyan na maaaring gawin mula sa dahon o materyales ng niyog.",
+          choices: ["bayong", "bungkos", "palapa"],
+          answer: "bayong",
+        },
+        {
+          prompt:
+            "Pagkaing magaan na kinakain sa pagitan ng pangunahing pagkain.",
+          choices: ["minindal", "bakuran", "pamayanan"],
+          answer: "minindal",
+        },
+        {
+          prompt: "Bahagi sa paligid ng bahay na maaaring pagdausan ng gawain.",
+          choices: ["bakuran", "bayong", "bungkos"],
+          answer: "bakuran",
+        },
+        {
+          prompt: "Mga bagay na pinagsama-sama at itinali.",
+          choices: ["bungkos", "palapa", "minindal"],
+          answer: "bungkos",
+        },
+        {
+          prompt:
+            "Bahagi ng dahon ng niyog na maaaring gamitin sa paggawa ng walis-tingting.",
+          choices: ["palapa", "bayong", "bakuran"],
+          answer: "palapa",
+        },
+        {
+          prompt: "Pangkat ng mga taong naninirahan sa isang lugar.",
+          choices: ["pamayanan", "bungkos", "minindal"],
+          answer: "pamayanan",
+        },
+      ];
+
+      const matchingQuestions = [
+        {
+          prompt: "pamayanan",
+          choices: ["komunidad", "sakay", "nakita"],
+          answer: "komunidad",
+        },
+        {
+          prompt: "pagsidlan",
+          choices: ["lalagyan", "mag-ayos", "bayan"],
+          answer: "lalagyan",
+        },
+        {
+          prompt: "tumambad",
+          choices: ["nakita", "sakay", "paglagyan"],
+          answer: "nakita",
+        },
+        {
+          prompt: "magsalansan",
+          choices: ["mag-ayos / magpatong-patong", "bayan", "lalagyan"],
+          answer: "mag-ayos / magpatong-patong",
+        },
+      ];
+
+      buildChoiceQuiz("vocab", vocabularyQuestions, {
+        instruction:
+          "Piliin ang salitang tumutugma sa kahulugan. / Choose the word that matches the meaning.",
+      });
+      buildChoiceQuiz("match", matchingQuestions, {
+        instruction:
+          "Piliin ang pinakamalapit na kahulugan. / Choose the closest meaning.",
+      });
+
+      const highFrequencyWords = [
+        "masaya",
+        "bahay",
+        "sila",
+        "paaralan",
+        "lahat",
+        "walis",
+        "marami",
+        "araw",
+        "kabila",
+        "excited",
+        "bakasyon",
+      ];
+      const hf = document.getElementById("hf");
+      const sent = document.getElementById("sent");
+
+      hf.innerHTML = highFrequencyWords
+        .map((word) => `<span class="word">${word}</span>`)
+        .join("");
+      sent.innerHTML = Array.from(
+        { length: 5 },
+        (_, index) =>
+          `<p><b>${index + 1}.</b> <input class="input sentence-input" placeholder="Gamitin ang napiling salita. / Use one of the words."></p>`,
+      ).join("");
+
+      function sentcheck() {
+        const inputs = Array.from(document.querySelectorAll(".sentence-input"));
+        const completed = inputs.filter(
+          (input) => input.value.trim().length >= 5,
+        ).length;
+        document.getElementById("sentout").textContent =
+          `Nakasulat: ${completed}/5 pangungusap.`;
+      }
+
+      const comprehensionQuestions = [
+        {
+          prompt: "Bakit pumunta ang pamilya ni Anya sa Quezon?",
+          choices: ["Upang magbakasyon.", "Upang lumipat.", "Upang pumasok."],
+          answer: "Upang magbakasyon.",
+        },
+        {
+          prompt:
+            "Ano ang natutuhan ni Anya mula sa paggawa ng walis-tingting?",
+          choices: [
+            "Paano nagtutulungan ang mga tao at gumagawa ng kapaki-pakinabang na bagay.",
+            "Paano maglaro lamang.",
+            "Paano bumili ng prutas.",
+          ],
+          answer:
+            "Paano nagtutulungan ang mga tao at gumagawa ng kapaki-pakinabang na bagay.",
+        },
+        {
+          prompt: "Bakit naging masaya ang gawain?",
+          choices: [
+            "May kanya-kanyang tungkulin at nagtutulungan.",
+            "Nag-iisa sila.",
+            "Walang gumagawa.",
+          ],
+          answer: "May kanya-kanyang tungkulin at nagtutulungan.",
+        },
+        {
+          prompt: "Ano ang maaaring gawin mula sa mga materyales ng niyog?",
+          choices: [
+            "Walis, bayong, banig at handicraft.",
+            "Telebisyon.",
+            "Sapatos lamang.",
+          ],
+          answer: "Walis, bayong, banig at handicraft.",
+        },
+        {
+          prompt: "Ano ang pangunahing aral ng kuwento?",
+          choices: [
+            "Mahalaga ang kasanayan at pagtutulungan.",
+            "Huwag tumulong.",
+            "Mag-isa palagi.",
+          ],
+          answer: "Mahalaga ang kasanayan at pagtutulungan.",
+        },
+      ];
+
+      buildChoiceQuiz("comp", comprehensionQuestions, {
+        instruction:
+          "Sagutin batay sa binasang teksto. / Answer based on the story.",
+      });
+
+      const trueFalse = [
+        ["Pumunta ang pamilya ni Anya sa Quezon para magbakasyon.", true],
+        ["Ayaw ni Anya matuto tungkol sa paggawa ng walis-tingting.", false],
+        ["Tumulong sina Anya at Luis sa gawain.", true],
+        [
+          "Maaaring gamitin ang dahon ng niyog sa paggawa ng walis-tingting.",
+          true,
+        ],
+        ["Nag-iisa ang bawat tao sa paggawa ng walis-tingting.", false],
+        ["May kanya-kanyang tungkulin ang mga tumutulong.", true],
+      ];
+
+      const tf = document.getElementById("tf");
+      tf.innerHTML = trueFalse
+        .map(
+          ([statement, answer], index) => `
+  <div class="box tf-item" data-answer="${answer}">
+    <b>${index + 1}. ${escapeHTML(statement)}</b>
+    <button class="choice" type="button" data-value="true">TAMA / TRUE</button>
+    <button class="choice" type="button" data-value="false">MALI / FALSE</button>
+    <div class="feedback" aria-live="polite"></div>
+  </div>`,
+        )
+        .join("");
+
+      tf.querySelectorAll(".tf-item").forEach((item) => {
+        item.querySelectorAll(".choice").forEach((button) => {
+          button.addEventListener("click", () => {
+            const answer = button.dataset.value === "true";
+            const correct = item.dataset.answer === "true";
+            const feedback = item.querySelector(".feedback");
+            item
+              .querySelectorAll(".choice")
+              .forEach((btn) => btn.classList.remove("correct", "wrong"));
+            if (answer === correct) {
+              button.classList.add("correct");
+              feedback.textContent = "✓ Tama!";
+              feedback.style.color = "var(--gr)";
+            } else {
+              button.classList.add("wrong");
+              feedback.textContent = "✗ Balikan ang teksto.";
+              feedback.style.color = "var(--r)";
+            }
+          });
+        });
+      });
+
+      const finalQuestions = [
+        [
+          "Ano ang ginawa ng pamilya ni Anya sa Quezon?",
+          ["Nagbakasyon.", "Nag-aral.", "Lumipat."],
+          0,
+        ],
+        ["Sino ang pinsan ni Anya?", ["Luis", "Pedro", "Juan"], 0],
+        [
+          "Ano ang pangunahing gawain sa kuwento?",
+          ["Paggawa ng walis-tingting", "Pagluluto", "Paglalaro"],
+          0,
+        ],
+        [
+          "Ano ang bayong?",
+          ["Lalagyan o bag na hinabi", "Pagkain", "Lugar"],
+          0,
+        ],
+        ["Ano ang pamayanan?", ["Komunidad", "Lalagyan", "Bundok"], 0],
+        [
+          "Anong pagpapahalaga ang ipinakita sa kuwento?",
+          ["Pagtutulungan", "Pagiging makasarili", "Pag-iwas"],
+          0,
+        ],
+        [
+          "Ano ang maaaring gawin mula sa palapa?",
+          ["Gamitin sa paggawa ng walis", "Itapon", "Gawing telepono"],
+          0,
+        ],
+        [
+          "Bakit naging masaya ang gawain?",
+          ["May kanya-kanyang tungkulin", "Walang ginagawa", "Nag-aaway"],
+          0,
+        ],
+        [
+          "Ano ang natutuhan ni Anya?",
+          ["Gamitin ang husay upang makatulong", "Huwag tumulong", "Mag-isa"],
+          0,
+        ],
+        [
+          "Alin ang halimbawa ng pagtulong sa pamayanan?",
+          ["Paglilinis ng paligid", "Pagtatapon kung saan-saan", "Paninira"],
+          0,
+        ],
+      ];
+
+      const finalContainer = document.getElementById("final");
+      finalContainer.innerHTML = finalQuestions
+        .map(
+          (question, index) => `
+  <div class="box final-item" data-q="${index}" data-answer="${question[2]}">
+    <b>${index + 1}. ${escapeHTML(question[0])}</b>
+    ${question[1].map((choice, choiceIndex) => `<button class="choice final-choice" type="button" data-index="${choiceIndex}">${escapeHTML(choice)}</button>`).join("")}
+  </div>`,
+        )
+        .join("");
+
+      finalContainer.querySelectorAll(".final-item").forEach((item) => {
+        item.querySelectorAll(".final-choice").forEach((button) => {
+          button.addEventListener("click", () => {
+            item
+              .querySelectorAll(".final-choice")
+              .forEach((btn) =>
+                btn.classList.remove("selected", "correct", "wrong"),
+              );
+            button.classList.add("selected");
+          });
+        });
+      });
+
+      function finalcheck() {
+        let score = 0;
+        finalContainer.querySelectorAll(".final-item").forEach((item) => {
+          const selected = item.querySelector(".final-choice.selected");
+          const correctIndex = Number(item.dataset.answer);
+          item
+            .querySelectorAll(".final-choice")
+            .forEach((button) => button.classList.remove("correct", "wrong"));
+          if (selected) {
+            const selectedIndex = Number(selected.dataset.index);
+            if (selectedIndex === correctIndex) score++;
+            selected.classList.add(
+              selectedIndex === correctIndex ? "correct" : "wrong",
+            );
+          }
+        });
+        const result = document.getElementById("result");
+        result.textContent = `Iskor: ${score}/10 — ${score >= 8 ? "Mahusay! 🏆" : "Mag-review at subukang muli."}`;
+      }
+
+      function celebrate() {
+        const input = document.getElementById("exit");
+        const output = document.getElementById("cele");
+        const value = input.value.trim();
+        output.textContent = value
+          ? `🎉 Mahusay! Gagamitin mo ang iyong husay upang ${value}.`
+          : "Sumulat muna ng sagot.";
+      }
+
+      document.addEventListener("keydown", (event) => {
+        if (event.target.matches("input, textarea")) return;
+        if (event.key === "ArrowRight") next();
+        if (event.key === "ArrowLeft") prev();
+        if (event.key.toLowerCase() === "f") fs();
+      });
+
+      showSlide();
+    </script>
+  </body>
+</html>
