@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2d5c">
+<title>Teacher Ed Learning Hub | Grade 2 Math — Properties of Addition</title>
+<link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+<style>
+:root{
+  --navy:#0b2d5c; --navy2:#123f78; --gold:#f5b700; --blue:#1d73d8;
+  --sky:#eaf4ff; --ink:#16324f; --muted:#5e7187; --white:#fff;
+  --green:#238636; --red:#c62828; --purple:#6941c6; --shadow:0 12px 32px rgba(11,45,92,.12);
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);
+background:linear-gradient(180deg,#f5f9ff 0%,#fff 55%,#f6f9fd 100%);line-height:1.55}
+button,input{font:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid #dce8f5}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 18px}
+.brand{display:flex;align-items:center;gap:12px;min-width:230px}
+.brand img{width:52px;height:52px;object-fit:contain}
+.brand strong{display:block;color:var(--navy);font-size:15px;letter-spacing:.3px}
+.brand span{display:block;color:var(--muted);font-size:11px}
+.progress-wrap{flex:1;display:flex;align-items:center;gap:10px}
+.progress{height:10px;background:#e5edf7;border-radius:99px;overflow:hidden;flex:1}
+.progress>span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--gold));transition:.35s}
+#progressText{font-size:12px;font-weight:800;color:var(--navy);white-space:nowrap}
+.nav button{border:1px solid #c9d9eb;background:#fff;color:var(--navy);padding:9px 12px;border-radius:12px;font-weight:800}
+.nav button:hover{background:var(--sky)}
+main{max-width:1180px;margin:auto;padding:24px 18px 70px}
+.screen{display:none;animation:fade .35s ease}
+.screen.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{min-height:calc(100vh - 100px);display:grid;place-items:center}
+.hero-card{width:min(940px,100%);background:linear-gradient(135deg,#0b2d5c 0%,#174d8d 60%,#246fc1 100%);
+color:#fff;border-radius:32px;padding:42px;box-shadow:0 25px 70px rgba(11,45,92,.28);position:relative;overflow:hidden}
+.hero-card:before,.hero-card:after{content:"";position:absolute;border-radius:50%;background:rgba(245,183,0,.14)}
+.hero-card:before{width:280px;height:280px;right:-100px;top:-100px}.hero-card:after{width:220px;height:220px;left:-100px;bottom:-100px}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:130px 1fr;gap:28px;align-items:center}
+.hero-logo{width:125px;height:125px;object-fit:contain;background:#fff;border-radius:28px;padding:10px}
+.kicker{display:inline-block;background:rgba(245,183,0,.16);border:1px solid rgba(245,183,0,.55);color:#ffd65a;padding:6px 10px;border-radius:999px;font-weight:900;font-size:12px;letter-spacing:.7px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;margin:12px 0}
+.hero-card p{font-size:18px;max-width:700px;color:#e7f1ff}
+.objectives{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+.pill{background:#fff;color:var(--navy);padding:8px 11px;border-radius:999px;font-size:12px;font-weight:800}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.primary,.secondary,.choice,.small-btn{border:0;border-radius:14px;padding:12px 17px;font-weight:900;transition:.18s}
+.primary{background:var(--gold);color:#18253b;box-shadow:0 7px 0 #c99100}
+.primary:active{transform:translateY(4px);box-shadow:0 3px 0 #c99100}
+.secondary{background:#fff;color:var(--navy)}
+.section-head{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:18px 0 20px}
+.section-head h2{font-size:34px;margin:0;color:var(--navy)}
+.section-head p{margin:5px 0 0;color:var(--muted)}
+.card{background:#fff;border:1px solid #dce7f3;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);margin-bottom:18px}
+.card h3{margin-top:0;color:var(--navy)}
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.callout{background:var(--sky);border-left:6px solid var(--blue);padding:16px;border-radius:14px}
+.word{font-weight:900;color:var(--purple)}
+.big-equation{font-size:clamp(28px,5vw,46px);font-weight:950;text-align:center;padding:18px;color:var(--navy);letter-spacing:1px}
+.property-card{border:2px solid #d9e5f3;background:linear-gradient(180deg,#fff,#f8fbff);border-radius:18px;padding:18px}
+.property-card .symbol{font-size:34px;font-weight:950;color:var(--blue)}
+.property-card h3{margin:4px 0}
+.example{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;font-size:27px;font-weight:900;margin:15px 0}
+.number-chip{background:#edf5ff;border:2px solid #c7dcf4;padding:8px 13px;border-radius:13px}
+.arrow{color:var(--gold);font-weight:950}
+.interaction{border:2px dashed #b9cce0;background:#fbfdff}
+.feedback{min-height:28px;margin-top:12px;font-weight:800}
+.correct{color:var(--green)} .incorrect{color:var(--red)}
+.choice-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.choice{background:#fff;border:2px solid #cbd9e8;color:var(--ink);text-align:left}
+.choice:hover{border-color:var(--blue);transform:translateY(-1px)}
+.choice.selected-correct{border-color:var(--green);background:#effbf2}
+.choice.selected-wrong{border-color:var(--red);background:#fff1f1}
+.stepper{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.step{padding:8px 11px;border-radius:10px;background:#eef4fb;font-size:12px;font-weight:800}
+.step.on{background:var(--navy);color:#fff}
+.drag-zone{display:flex;gap:10px;flex-wrap:wrap;min-height:64px;padding:12px;border:2px dashed #c5d6e8;border-radius:14px}
+.token{padding:10px 14px;background:#fff;border:2px solid #9fb9d5;border-radius:12px;font-weight:950;user-select:none}
+.token.active{background:#fff5cf;border-color:var(--gold)}
+.answer-box{min-height:64px;display:flex;align-items:center;justify-content:center;border:3px solid #bcd0e5;border-radius:16px;background:#fff;font-size:27px;font-weight:950;margin:12px 0}
+input.answer{width:150px;padding:11px 13px;border:2px solid #b8cce1;border-radius:12px;font-weight:900;text-align:center}
+table{width:100%;border-collapse:collapse}
+th,td{padding:11px;border-bottom:1px solid #e1e9f2;text-align:left}
+th{background:#f1f6fc;color:var(--navy)}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:900;background:#eef4fb}
+.footer{text-align:center;color:var(--muted);padding:28px 0 10px}
+.mini-nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.small-btn{background:#edf4fb;color:var(--navy);border:1px solid #c9d9eb}
+.small-btn.primaryish{background:var(--navy);color:#fff}
+.scoreboard{display:flex;gap:10px;flex-wrap:wrap}
+.stat{background:#fff;border:1px solid #dce7f3;padding:10px 13px;border-radius:14px;min-width:105px}
+.stat b{display:block;color:var(--navy);font-size:19px}
+.stat span{font-size:11px;color:var(--muted)}
+.confidence{display:flex;gap:10px;flex-wrap:wrap}
+.confidence button{border:2px solid #d1deeb;background:#fff;border-radius:14px;padding:13px;font-weight:900}
+.confidence button.active{border-color:var(--gold);background:#fff8db}
+.master-box{background:linear-gradient(135deg,#fffaf0,#f7fbff);border:2px solid #efd28a}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:100}
+.conf{position:absolute;width:9px;height:16px;animation:fall 1.8s linear forwards}
+@keyframes fall{to{transform:translateY(110vh) rotate(620deg);opacity:0}}
+@media(max-width:760px){
+  .nav{padding:8px 12px}.brand{min-width:0}.brand div{display:none}.brand img{width:44px;height:44px}
+  .nav button{display:none}.progress-wrap{gap:6px}
+  main{padding:15px 12px 50px}.hero-card{padding:28px 20px;border-radius:24px}.hero-content{grid-template-columns:1fr;text-align:center}
+  .hero-logo{margin:auto;width:100px;height:100px}.objectives{justify-content:center}.cta{justify-content:center}
+  .grid2,.grid3,.choice-grid{grid-template-columns:1fr}.section-head{display:block}.section-head h2{font-size:29px}
+  .card{padding:18px}.example{font-size:22px}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="nav">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+      <div><strong>TEACHER ED LEARNING HUB</strong><span>Interactive Primary Learning</span></div>
+    </div>
+    <div class="progress-wrap">
+      <div class="progress"><span id="progressBar"></span></div>
+      <span id="progressText">0%</span>
+    </div>
+    <button id="restartBtn" type="button">Restart</button>
+  </div>
+</header>
+
+<main>
+<section id="s0" class="screen active hero">
+  <div class="hero-card">
+    <div class="hero-content">
+      <img class="hero-logo" src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub">
+      <div>
+        <span class="kicker">GRADE 2 • MATHEMATICS</span>
+        <h1>Properties of Addition</h1>
+        <p>Discover how changing the <b>order</b>, changing the <b>grouping</b>, or adding <b>zero</b> can make addition easier.</p>
+        <div class="objectives">
+          <span class="pill">Commutative Property</span><span class="pill">Associative Property</span><span class="pill">Identity Property</span>
+          <span class="pill">Mental Math & Reasoning</span>
+        </div>
+        <div class="cta"><button class="primary" onclick="go(1)">Start the Learning Mission</button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="s1" class="screen">
+  <div class="section-head"><div><span class="badge">01 • ENGAGE</span><h2>The Zoo Number Mystery</h2><p>Can you spot what stays the same?</p></div></div>
+  <div class="card interaction">
+    <h3>Warm-up: Parrot Switch</h3>
+    <p>There are 4 parrots in one cage and 8 in another. Two friends write the total in different orders.</p>
+    <div class="example"><span class="number-chip">4 + 8</span><span class="arrow">=</span><span class="number-chip">12</span><span class="arrow">and</span><span class="number-chip">8 + 4</span><span class="arrow">=</span><span class="number-chip">12</span></div>
+    <p><b>Your prediction:</b> If we switch the order of the addends, will the sum change?</p>
+    <div class="choice-grid">
+      <button class="choice" onclick="warm(this,false)">Yes, the sum changes.</button>
+      <button class="choice" onclick="warm(this,true)">No, the sum stays the same.</button>
+    </div>
+    <div id="warmFeedback" class="feedback"></div>
+  </div>
+  <div class="callout"><b>Mission idea:</b> Today you will become an <b>Addition Strategy Detective</b>. Your job is to find patterns that make addition easier.</div>
+  <div class="mini-nav"><span></span><button class="small-btn primaryish" onclick="go(2)">Continue →</button></div>
+</section>
+
+<section id="s2" class="screen">
+  <div class="section-head"><div><span class="badge">02 • CONNECT</span><h2>Where Do We Use It?</h2><p>Connect properties to things you already know.</p></div></div>
+  <div class="grid2">
+    <div class="card"><h3>Make a Friendly Ten</h3><p>Which pair is easier to add first?</p><div class="example"><span class="number-chip">2 + 8</span><span>or</span><span class="number-chip">2 + 7</span></div>
+      <div class="choice-grid"><button class="choice" onclick="connect(this,true)">2 + 8</button><button class="choice" onclick="connect(this,false)">2 + 7</button></div>
+      <div id="connect1" class="feedback"></div>
+    </div>
+    <div class="card"><h3>Zero Does Not Change a Number</h3><p>You have 6 pencils. Add 0 more pencils. How many do you have?</p>
+      <div class="choice-grid"><button class="choice" onclick="connect2(this,false)">0</button><button class="choice" onclick="connect2(this,true)">6</button></div>
+      <div id="connect2" class="feedback"></div>
+    </div>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(1)">← Back</button><button class="small-btn primaryish" onclick="go(3)">Explore →</button></div>
+</section>
+
+<section id="s3" class="screen">
+  <div class="section-head"><div><span class="badge">03 • EXPLORE</span><h2>Discover the Three Properties</h2><p>Tap each card, observe the pattern, then explain what changed.</p></div></div>
+  <div class="grid3">
+    <div class="property-card"><div class="symbol">A + B = B + A</div><h3>Commutative</h3><p>Change the <b>order</b> of the addends. The sum stays the same.</p><button class="small-btn" onclick="reveal('r1')">Reveal example</button><div id="r1" class="feedback" hidden>4 + 8 = 8 + 4 = 12</div></div>
+    <div class="property-card"><div class="symbol">(A+B)+C</div><h3>Associative</h3><p>Change the <b>grouping</b> of the addends. The sum stays the same.</p><button class="small-btn" onclick="reveal('r2')">Reveal example</button><div id="r2" class="feedback" hidden>(5 + 7) + 3 = 5 + (7 + 3) = 15</div></div>
+    <div class="property-card"><div class="symbol">A + 0 = A</div><h3>Identity</h3><p>Add <b>zero</b>. The sum is the number itself.</p><button class="small-btn" onclick="reveal('r3')">Reveal example</button><div id="r3" class="feedback" hidden>3 + 0 = 3</div></div>
+  </div>
+  <div class="card interaction"><h3>Sort the Clues</h3><p>Choose the property that matches each clue.</p>
+    <div id="sortQuestion"></div><div id="sortChoices" class="choice-grid"></div><div id="sortFeedback" class="feedback"></div>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(2)">← Back</button><button class="small-btn primaryish" onclick="go(4)">Learn the Rule →</button></div>
+</section>
+
+<section id="s4" class="screen">
+  <div class="section-head"><div><span class="badge">04 • LEARN</span><h2>Three Rules That Make Addition Easier</h2><p>Teacher-guided discussion: show → ask → think → explain → apply.</p></div></div>
+  <div class="card">
+    <div class="stepper"><span class="step on">CONCEPT</span><span class="step">EXAMPLE</span><span class="step">WHY?</span><span class="step">APPLY</span></div>
+    <div class="grid3">
+      <div class="property-card"><h3>Commutative</h3><div class="big-equation">3 + 7 = 7 + 3</div><p><b>Order</b> changes; the total does not.</p><div class="callout">Ask: “Did the amount change, or only the order?”</div></div>
+      <div class="property-card"><h3>Associative</h3><div class="big-equation">(3 + 7) + 2 = 3 + (7 + 2)</div><p><b>Grouping</b> changes; the total does not.</p><div class="callout">Ask: “Which two addends are we combining first?”</div></div>
+      <div class="property-card"><h3>Identity</h3><div class="big-equation">9 + 0 = 9</div><p>Adding <b>zero</b> leaves the number unchanged.</p><div class="callout">Ask: “What happens when nothing is added?”</div></div>
+    </div>
+  </div>
+  <div class="card"><h3>Singapore Math Connection: Make a Friendly Ten</h3><p>Use number bonds and the properties to group numbers that are easy to combine.</p>
+    <div class="example"><span class="number-chip">2</span> + <span class="number-chip">4</span> + <span class="number-chip">8</span> + <span class="number-chip">6</span> + 0</div>
+    <p>Reorder and regroup: <b>(2 + 8) + (4 + 6) + 0</b> → <b>10 + 10 = 20</b>.</p>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(3)">← Back</button><button class="small-btn primaryish" onclick="go(5)">Guided Practice →</button></div>
+</section>
+
+<section id="s5" class="screen">
+  <div class="section-head"><div><span class="badge">05 • GUIDED PRACTICE</span><h2>Let's Solve It Together</h2><p>Use a hint before you answer if you need one.</p></div></div>
+  <div class="card interaction">
+    <h3>Guided Example</h3>
+    <p>Which property is shown?</p>
+    <div class="big-equation">6 + 4 = 4 + 6</div>
+    <div class="choice-grid"><button class="choice" onclick="guided(this,'Commutative')">Commutative Property</button><button class="choice" onclick="guided(this,'Associative')">Associative Property</button><button class="choice" onclick="guided(this,'Identity')">Identity Property</button></div>
+    <button class="small-btn" onclick="hint('gHint')">💡 Hint</button><div id="gHint" class="callout" hidden>Look at what changed: the two addends switched places.</div>
+    <div id="gFeedback" class="feedback"></div>
+  </div>
+  <div class="card interaction">
+    <h3>Build an Easier Sum</h3>
+    <p>Reorder the addends mentally: <b>2 + 4 + 8 + 6 = ?</b></p>
+    <p>Which pair should you combine first to make 10?</p>
+    <div class="choice-grid"><button class="choice" onclick="guided2(this,false)">2 + 4</button><button class="choice" onclick="guided2(this,true)">2 + 8</button><button class="choice" onclick="guided2(this,false)">4 + 8</button></div>
+    <div id="g2Feedback" class="feedback"></div>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(4)">← Back</button><button class="small-btn primaryish" onclick="go(6)">Practice Game →</button></div>
+</section>
+
+<section id="s6" class="screen">
+  <div class="section-head"><div><span class="badge">06 • TOPIC-SPECIFIC GAME</span><h2>Addition Property Lab</h2><p>Repair the equation by choosing the strategy that makes it easier.</p></div></div>
+  <div class="card interaction">
+    <h3>Level 1 — Property Detective</h3>
+    <div id="gamePrompt" class="big-equation"></div>
+    <div id="gameChoices" class="choice-grid"></div>
+    <div id="gameFeedback" class="feedback"></div>
+    <div class="scoreboard"><div class="stat"><b id="gameScore">0</b><span>Points</span></div><div class="stat"><b id="gameRound">1/6</b><span>Round</span></div></div>
+    <button id="nextGame" class="small-btn primaryish" onclick="nextGameRound()" disabled>Next Challenge →</button>
+  </div>
+  <div class="callout"><b>Why this game?</b> Properties of addition are strategy tools. The learner must recognize whether the useful move is changing order, changing grouping, or using zero.</div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(5)">← Back</button><button class="small-btn primaryish" onclick="go(7)">Independent Practice →</button></div>
+</section>
+
+<section id="s7" class="screen">
+  <div class="section-head"><div><span class="badge">07 • PRACTICE</span><h2>Practice Zone</h2><p>Three levels: recognize → apply → challenge.</p></div></div>
+  <div class="card">
+    <div class="grid3">
+      <div class="property-card"><h3>Easy</h3><p>What property?</p><div class="big-equation">5 + 2 = 2 + 5</div><button class="small-btn" onclick="practice(this,'Commutative')">Commutative</button><button class="small-btn" onclick="practice(this,'Associative')">Associative</button><button class="small-btn" onclick="practice(this,'Identity')">Identity</button></div>
+      <div class="property-card"><h3>Developing</h3><p>Choose the missing number.</p><div class="big-equation">7 + 0 = □</div><input id="p2" class="answer" type="number" inputmode="numeric"><button class="small-btn primaryish" onclick="checkInput('p2',7,'p2f')">Check</button><div id="p2f" class="feedback"></div></div>
+      <div class="property-card"><h3>Challenge</h3><p>Make the calculation easier.</p><div class="big-equation">4 + 6 + 3 + 7</div><button class="small-btn" onclick="challenge(this,false)">4 + 6 first</button><button class="small-btn" onclick="challenge(this,true)">6 + 3 first</button><div id="p3f" class="feedback"></div></div>
+    </div>
+  </div>
+  <div id="practiceFeedback" class="feedback"></div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(6)">← Back</button><button class="small-btn primaryish" onclick="go(8)">Think →</button></div>
+</section>
+
+<section id="s8" class="screen">
+  <div class="section-head"><div><span class="badge">08 • THINK</span><h2>Think Like a Mathematician</h2><p>Explain your reasoning, not just your answer.</p></div></div>
+  <div class="card master-box">
+    <h3>Which is the better strategy?</h3>
+    <p>Sam wants to solve <b>8 + 2 + 7</b>. Ana solves <b>(8 + 2) + 7</b>. Ben solves <b>8 + (2 + 7)</b>.</p>
+    <p>Both are correct. Which strategy is likely easier for a Grade 2 learner, and why?</p>
+    <div class="choice-grid">
+      <button class="choice" onclick="think(this,true)">Ana's grouping, because 8 + 2 makes 10.</button>
+      <button class="choice" onclick="think(this,false)">Ben's grouping, because 2 + 7 is always better.</button>
+      <button class="choice" onclick="think(this,false)">Neither strategy can work.</button>
+    </div>
+    <div id="thinkFeedback" class="feedback"></div>
+  </div>
+  <div class="card"><h3>Teacher Discussion Prompt</h3><p>Ask: <b>“Can we use the commutative and associative properties together to make an addition problem friendlier?”</b></p></div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(7)">← Back</button><button class="small-btn primaryish" onclick="go(9)">Quick Review →</button></div>
+</section>
+
+<section id="s9" class="screen">
+  <div class="section-head"><div><span class="badge">09 • REVIEW</span><h2>Quick Recall</h2><p>Five short retrieval questions.</p></div></div>
+  <div class="card interaction">
+    <div id="reviewArea"></div>
+    <div id="reviewFeedback" class="feedback"></div>
+    <button id="reviewNext" class="small-btn primaryish" onclick="nextReview()" disabled>Next →</button>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(8)">← Back</button><button class="small-btn primaryish" onclick="go(10)">Check Understanding →</button></div>
+</section>
+
+<section id="s10" class="screen">
+  <div class="section-head"><div><span class="badge">10 • CHECK</span><h2>Check Your Understanding</h2><p>Assessment: identify, apply, and explain.</p></div></div>
+  <div class="card interaction">
+    <div id="checkArea"></div>
+    <div id="checkFeedback" class="feedback"></div>
+    <button id="checkNext" class="small-btn primaryish" onclick="nextCheck()" disabled>Next →</button>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(9)">← Back</button><button class="small-btn primaryish" onclick="go(11)">Master Challenge →</button></div>
+</section>
+
+<section id="s11" class="screen">
+  <div class="section-head"><div><span class="badge">11 • MASTER</span><h2>Final Math Mission</h2><p>Use the properties to make a calculation easier.</p></div></div>
+  <div class="card master-box">
+    <h3>Zoo Keeper's Addition Challenge</h3>
+    <p>A zoo keeper records <b>2 + 8 + 4 + 6 + 0</b> animals in five groups. Use the properties of addition to make the calculation easier.</p>
+    <p><b>Step 1:</b> Which numbers should you pair to make friendly tens?</p>
+    <div class="choice-grid"><button class="choice" onclick="master1(this,true)">2 + 8 and 4 + 6</button><button class="choice" onclick="master1(this,false)">2 + 4 and 8 + 6</button></div>
+    <div id="m1f" class="feedback"></div>
+    <p><b>Step 2:</b> What is the total?</p>
+    <input id="masterAns" class="answer" type="number" inputmode="numeric" placeholder="Answer">
+    <button class="small-btn primaryish" onclick="checkInput('masterAns',20,'mf')">Check</button>
+    <div id="mf" class="feedback"></div>
+    <p><b>Step 3:</b> Which property lets you put the pairs in a helpful order?</p>
+    <div class="choice-grid"><button class="choice" onclick="master3(this,true)">Commutative Property</button><button class="choice" onclick="master3(this,false)">Identity Property only</button></div>
+    <div id="m3f" class="feedback"></div>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(10)">← Back</button><button class="small-btn primaryish" onclick="go(12)">Reflect →</button></div>
+</section>
+
+<section id="s12" class="screen">
+  <div class="section-head"><div><span class="badge">12 • REFLECT</span><h2>Think About Your Learning</h2><p>Choose the statement that best describes you today.</p></div></div>
+  <div class="card">
+    <h3>My confidence</h3>
+    <div class="confidence">
+      <button onclick="confidence(this)">I need more practice</button>
+      <button onclick="confidence(this)">I'm getting there</button>
+      <button onclick="confidence(this)">I understand</button>
+      <button onclick="confidence(this)">I can teach someone else!</button>
+    </div>
+    <div id="confFeedback" class="feedback"></div>
+    <h3>Complete the sentence</h3>
+    <p>“One property of addition I can use to make a calculation easier is ______ because ______.”</p>
+    <textarea id="reflection" rows="4" style="width:100%;padding:12px;border:2px solid #c9d9eb;border-radius:14px;resize:vertical" placeholder="Write your mathematical idea here..."></textarea>
+    <button class="small-btn primaryish" onclick="saveReflection()">Save Reflection</button>
+    <div id="reflectionFeedback" class="feedback"></div>
+  </div>
+  <div class="mini-nav"><button class="small-btn" onclick="go(11)">← Back</button><button class="small-btn primaryish" onclick="go(13)">Celebrate →</button></div>
+</section>
+
+<section id="s13" class="screen">
+  <div class="hero">
+    <div class="hero-card">
+      <div class="hero-content">
+        <img class="hero-logo" src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub">
+        <div>
+          <span class="kicker">LESSON COMPLETE</span>
+          <h1>Math Mission Accomplished!</h1>
+          <p>You explored, practiced, reasoned, checked, and applied the three properties of addition.</p>
+          <div class="scoreboard">
+            <div class="stat"><b id="finalScore">0</b><span>Activity Points</span></div>
+            <div class="stat"><b id="mastery">—</b><span>Mastery Status</span></div>
+          </div>
+          <div class="cta"><button class="primary" onclick="celebrate()">Celebrate Learning</button><button class="secondary" onclick="go(0)">Restart Lesson</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">Teacher Ed Learning Hub • Grade 2 Mathematics • Properties of Addition</div>
+</main>
+<div id="confetti"></div>
+
+<script>
+const screens=[...document.querySelectorAll('.screen')];
+let current=0, points=0, completed=new Set();
+const total=screens.length-1;
+function go(n){
+  n=Math.max(0,Math.min(total,n));
+  screens[current].classList.remove('active');
+  current=n;screens[current].classList.add('active');
+  completed.add(current);
+  updateProgress();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(n===3) loadSort();
+  if(n===6) loadGame();
+  if(n===9) loadReview();
+  if(n===10) loadCheck();
+  if(n===13){document.getElementById('finalScore').textContent=points;document.getElementById('mastery').textContent=(points>=22?'MASTERED':'KEEP PRACTICING');}
+}
+function updateProgress(){
+  const pct=Math.round((current/total)*100);
+  document.getElementById('progressBar').style.width=pct+'%';
+  document.getElementById('progressText').textContent=pct+'%';
+}
+document.getElementById('restartBtn').onclick=()=>{location.reload()};
+
+function award(n){points+=n}
+function mark(btn,ok){btn.classList.add(ok?'selected-correct':'selected-wrong')}
+
+function warm(btn,ok){mark(btn,ok);const f=document.getElementById('warmFeedback');f.textContent=ok?'Excellent. The order changed, but the total stayed 12. That is the commutative property.':'Look again: 4 + 8 and 8 + 4 both equal 12.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+function connect(btn,ok){mark(btn,ok);const f=document.getElementById('connect1');f.textContent=ok?'Yes. 2 + 8 makes a friendly 10.':'Try finding a pair that makes 10.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+function connect2(btn,ok){mark(btn,ok);const f=document.getElementById('connect2');f.textContent=ok?'Correct. Adding zero keeps the number the same.':'If you add nothing, the 6 pencils remain 6.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+function reveal(id){const e=document.getElementById(id);e.hidden=false;award(1)}
+const sortItems=[
+  ['6 + 3 = 3 + 6','Commutative Property'],
+  ['(2 + 8) + 4 = 2 + (8 + 4)','Associative Property'],
+  ['7 + 0 = 7','Identity Property']
+];let sortI=0;
+function loadSort(){sortI=0;renderSort()}
+function renderSort(){
+ const q=sortItems[sortI];document.getElementById('sortQuestion').innerHTML='<div class="big-equation">'+q[0]+'</div>';
+ const c=document.getElementById('sortChoices');c.innerHTML='';
+ ['Commutative Property','Associative Property','Identity Property'].forEach(x=>{const b=document.createElement('button');b.className='choice';b.textContent=x;b.onclick=()=>{const ok=x===q[1];mark(b,ok);const f=document.getElementById('sortFeedback');f.textContent=ok?'Correct! You spotted the pattern.':'Not yet. Look at what changed in the equation.';f.className='feedback '+(ok?'correct':'incorrect');if(ok){award(1);sortI=(sortI+1)%sortItems.length;setTimeout(renderSort,700)}};c.appendChild(b)})
+}
+function hint(id){document.getElementById(id).hidden=false}
+function guided(btn,ans){const ok=ans==='Commutative';mark(btn,ok);const f=document.getElementById('gFeedback');f.textContent=ok?'Correct. The addends switched order.':'Look at the order of the addends.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+function guided2(btn,ok){mark(btn,ok);const f=document.getElementById('g2Feedback');f.textContent=ok?'Great. 2 + 8 = 10, so the calculation becomes easier.':'Try to find two addends that make 10.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+
+const gameRounds=[
+ ['6 + 4 = 4 + 6','Commutative Property','The addends switched places.'],
+ ['(5 + 7) + 3 = 5 + (7 + 3)','Associative Property','The grouping changed.'],
+ ['9 + 0 = 9','Identity Property','Zero leaves the number unchanged.'],
+ ['3 + 8 = 8 + 3','Commutative Property','The order changed.'],
+ ['(2 + 8) + 5 = 2 + (8 + 5)','Associative Property','The grouping changed.'],
+ ['12 + 0 = 12','Identity Property','Adding zero keeps the number the same.']
+];let gi=0,gs=0;
+function loadGame(){gi=0;gs=0;document.getElementById('gameScore').textContent=0;renderGame()}
+function renderGame(){
+ const r=gameRounds[gi];document.getElementById('gamePrompt').textContent=r[0];
+ const c=document.getElementById('gameChoices');c.innerHTML='';
+ ['Commutative Property','Associative Property','Identity Property'].forEach(x=>{let b=document.createElement('button');b.className='choice';b.textContent=x;b.onclick=()=>{const ok=x===r[1];mark(b,ok);const f=document.getElementById('gameFeedback');f.textContent=ok?'Correct! '+r[2]:'Not quite. '+r[2];f.className='feedback '+(ok?'correct':'incorrect');if(ok){gs++;award(2);document.getElementById('gameScore').textContent=gs;document.getElementById('nextGame').disabled=false}else{document.getElementById('nextGame').disabled=true}};c.appendChild(b)});
+ document.getElementById('gameRound').textContent=(gi+1)+'/6';document.getElementById('nextGame').disabled=true
+}
+function nextGameRound(){if(gi<gameRounds.length-1){gi++;renderGame()}else{document.getElementById('gameFeedback').textContent='Game complete! You identified all three properties.';document.getElementById('gameFeedback').className='feedback correct';document.getElementById('nextGame').disabled=true}}
+function practice(btn,ans){mark(btn,ans==='Commutative');const f=document.getElementById('practiceFeedback');f.textContent=ans==='Commutative'?'Correct. The order changed.':'Check whether the order, grouping, or zero changed.';f.className='feedback '+(ans==='Commutative'?'correct':'incorrect');if(ans==='Commutative')award(1)}
+function checkInput(id,correct,feedId){const v=Number(document.getElementById(id).value);const f=document.getElementById(feedId);const ok=v===correct;f.textContent=ok?'Correct!':'Almost. Try again using the property rule.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(2)}
+function challenge(btn,ok){mark(btn,ok);const f=document.getElementById('p3f');f.textContent=ok?'Good choice. 4 + 6 = 10 and 3 + 7 = 10, so the sum is easy to see.':'You can make two friendly tens by pairing 4 + 6 and 3 + 7.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(1)}
+function think(btn,ok){mark(btn,ok);const f=document.getElementById('thinkFeedback');f.textContent=ok?'Strong reasoning. 8 + 2 makes 10, so Ana’s grouping is especially efficient.':'Look for a pair that makes 10 first.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(2)}
+
+const reviewQ=[
+ ['Which property changes the order of addends?',['Commutative','Associative','Identity'],'Commutative'],
+ ['Which property changes grouping?',['Commutative','Associative','Identity'],'Associative'],
+ ['9 + 0 = ?', ['0','9','10'],'9'],
+ ['Which is true?',['4 + 7 = 7 + 4','4 + 7 = 4 + 0','(4+7)+2 = 4+(7+0)'],'4 + 7 = 7 + 4'],
+ ['Which pair makes a friendly ten?',['3 + 5','2 + 8','4 + 5'],'2 + 8']
+];let ri=0,rs=0;
+function loadReview(){ri=0;rs=0;renderReview()}
+function renderReview(){
+ const q=reviewQ[ri],a=document.getElementById('reviewArea');a.innerHTML='<h3>Question '+(ri+1)+' of '+reviewQ.length+'</h3><p>'+q[0]+'</p>';
+ const c=document.createElement('div');c.className='choice-grid';q[1].forEach(x=>{let b=document.createElement('button');b.className='choice';b.textContent=x;b.onclick=()=>{const ok=x===q[2];mark(b,ok);const f=document.getElementById('reviewFeedback');f.textContent=ok?'Correct!':'Try again: think about the rule.';f.className='feedback '+(ok?'correct':'incorrect');if(ok){rs++;award(1);document.getElementById('reviewNext').disabled=false}};c.appendChild(b)});a.appendChild(c);document.getElementById('reviewNext').disabled=true}
+function nextReview(){if(ri<reviewQ.length-1){ri++;renderReview()}else{document.getElementById('reviewFeedback').textContent='Review complete!';document.getElementById('reviewFeedback').className='feedback correct';document.getElementById('reviewNext').disabled=true}}
+
+const checkQ=[
+ ['Which property is shown? 8 + 5 = 5 + 8',['Commutative','Associative','Identity'],'Commutative'],
+ ['Which property is shown? (3 + 7) + 2 = 3 + (7 + 2)',['Commutative','Associative','Identity'],'Associative'],
+ ['Which property is shown? 14 + 0 = 14',['Commutative','Associative','Identity'],'Identity'],
+ ['A learner wants to make 2 + 8 + 4 + 6 easier. Which idea is best?',['Group 2+8 and 4+6','Add 2+4 first only','Change every number to zero'],'Group 2+8 and 4+6']
+];let ci=0,cs=0;
+function loadCheck(){ci=0;cs=0;renderCheck()}
+function renderCheck(){
+ const q=checkQ[ci],a=document.getElementById('checkArea');a.innerHTML='<h3>Assessment '+(ci+1)+' of '+checkQ.length+'</h3><p>'+q[0]+'</p>';
+ const c=document.createElement('div');c.className='choice-grid';q[1].forEach(x=>{let b=document.createElement('button');b.className='choice';b.textContent=x;b.onclick=()=>{const ok=x===q[2];mark(b,ok);const f=document.getElementById('checkFeedback');f.textContent=ok?'Excellent. Your answer matches the rule.':'Almost. Read the equation again and identify what changed.';f.className='feedback '+(ok?'correct':'incorrect');if(ok){cs++;award(2);document.getElementById('checkNext').disabled=false}};c.appendChild(b)});a.appendChild(c);document.getElementById('checkNext').disabled=true}
+function nextCheck(){if(ci<checkQ.length-1){ci++;renderCheck()}else{document.getElementById('checkFeedback').textContent='Assessment complete!';document.getElementById('checkFeedback').className='feedback correct';document.getElementById('checkNext').disabled=true}}
+
+function master1(btn,ok){mark(btn,ok);const f=document.getElementById('m1f');f.textContent=ok?'Correct. The two pairs make 10 and 10.':'Look for pairs that make 10.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(2)}
+function master3(btn,ok){mark(btn,ok);const f=document.getElementById('m3f');f.textContent=ok?'Correct. Commutative lets us change the order so helpful pairs can be together.':'We are changing the order of the addends.';f.className='feedback '+(ok?'correct':'incorrect');if(ok)award(2)}
+function confidence(btn){document.querySelectorAll('.confidence button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');document.getElementById('confFeedback').textContent='Reflection saved as your current confidence choice.'}
+function saveReflection(){const v=document.getElementById('reflection').value.trim();const f=document.getElementById('reflectionFeedback');f.textContent=v?'Great. You explained your mathematical thinking.':'Write one short idea before saving.';f.className='feedback '+(v?'correct':'incorrect');if(v)award(1)}
+function celebrate(){
+ const box=document.getElementById('confetti');box.innerHTML='';
+ for(let i=0;i<90;i++){let s=document.createElement('span');s.className='conf';s.style.left=Math.random()*100+'vw';s.style.top=(-10-Math.random()*20)+'vh';s.style.animationDelay=Math.random()*.7+'s';s.style.background=['#0b2d5c','#f5b700','#1d73d8','#238636','#6941c6'][i%5];box.appendChild(s)}
+ setTimeout(()=>box.innerHTML='',2600)
+}
+updateProgress();
+</script>
+</body>
+</html>

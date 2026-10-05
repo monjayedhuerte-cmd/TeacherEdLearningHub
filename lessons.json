@@ -1004,7 +1004,7 @@
     "subject": "Mathematics", 
     "grade": "Grade 2",
     "description": "Discover how changing the order, grouping, or adding zero can make addition easier.",
-    "file": "lessons/mathematics/grade-2/TeacherEd_Grade2_Properties_of_Addition/index.html",
+    "file": "lessons/mathematics/grade-2/TeacherEd_Grade2_Properties_of_Addition_Interactive/index.html",
     "date": "2026-10-05",
     "featured": true,
     "icon": "calculator"
@@ -1054,7 +1054,7 @@
     "subject": "Araling Panlipunan", 
     "grade": "Grade 3",
     "description": "Hindi ito ordinaryong recitation. Pumili ng bata, pumili ng challenge, at gawing isang mini-game ang oral recitation.",
-    "file": "lessons/araling-panlipunan/grade-3/katutubong_kanta_recitation/index.html",
+    "file": "lessons/araling-panlipunan/grade-3/kanta_mc/index.html",
     "date": "2026-10-05",
     "featured": false,
     "icon": "user"
@@ -1075,6 +1075,16 @@
     "grade": "Grade 1",
     "description": "Tumawag ng isang mag-aaral, ipasagot ang tanong, at markahan agad ang sagot.",
     "file": "lessons/araling-panlipunan/grade-1/AP1_Oral_Recitation_Mga_Pagdiriwang_Tradisyon/index.html",
+    "date": "2026-10-05",
+    "featured": false,
+    "icon": "user"
+  },
+   {
+    "title": "ESP 2 | Graded Recitation sa Ako ay Matapat at Ako ay Palakaibigan",
+    "subject": "ESP", 
+    "grade": "Grade 2",
+    "description": "TInteractive Graded Recitation — Sagutin ang bawat tanong nang pasalita. Basahin ang tanong, mag-isip, at sabihin ang iyong sagot. May English support para mas madaling maunawaan ang instructions at key ideas.",
+    "file": "lessons/esp/grade-2/ESP2_Ako_Ay_Palakaibigan_Ako_Ay_Matapat_Graded_Recitation/index.html",
     "date": "2026-10-05",
     "featured": false,
     "icon": "user"

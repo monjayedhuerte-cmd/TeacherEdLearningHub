@@ -1,0 +1,934 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      ESP 2 | Graded Recitation – Ako ay Palakaibigan at Ako ay Matapat
+    </title>
+    <link rel="icon" type="image/jpeg" href="assets/TeacherEdLogo.jpg" />
+    <style>
+      :root {
+        --navy: #082b63;
+        --blue: #0d4b9f;
+        --gold: #f4b400;
+        --cream: #fff8e7;
+        --bg: #f4f7fb;
+        --ink: #172033;
+        --muted: #64748b;
+        --line: #dbe3ef;
+        --green: #15803d;
+        --red: #b91c1c;
+        --white: #fff;
+        --shadow: 0 14px 35px rgba(8, 43, 99, 0.1);
+        --r: 18px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          Segoe UI,
+          Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      button {
+        font: inherit;
+        cursor: pointer;
+      }
+      .top {
+        background: linear-gradient(135deg, var(--navy), #104d9b);
+        color: #fff;
+        padding: 12px 22px;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+      }
+      .bar {
+        max-width: 1120px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 800;
+      }
+      .brand img {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+        object-fit: cover;
+        background: #fff;
+      }
+      .brand small {
+        display: block;
+        font-weight: 500;
+        opacity: 0.82;
+      }
+      .nav {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .nav button {
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        color: #fff;
+        border-radius: 999px;
+        padding: 8px 13px;
+        font-weight: 700;
+      }
+      .nav button:hover,
+      .nav button.active {
+        background: #fff;
+        color: var(--navy);
+      }
+      main {
+        max-width: 1120px;
+        margin: 28px auto;
+        padding: 0 18px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #fff, #eef5ff);
+        border: 1px solid var(--line);
+        border-radius: 28px;
+        padding: 34px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        right: -70px;
+        top: -80px;
+        background: rgba(244, 180, 0, 0.15);
+      }
+      .tag {
+        display: inline-block;
+        background: var(--cream);
+        color: #7a5200;
+        padding: 6px 11px;
+        border-radius: 999px;
+        font-size: 13px;
+        font-weight: 800;
+      }
+      .hero h1 {
+        font-size: clamp(30px, 5vw, 48px);
+        line-height: 1.08;
+        margin: 15px 0 10px;
+        color: var(--navy);
+      }
+      .hero p {
+        max-width: 780px;
+        color: #475569;
+        font-size: 17px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin: 20px 0;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      .card h3 {
+        margin-top: 0;
+        color: var(--navy);
+      }
+      .stat {
+        font-size: 34px;
+        font-weight: 900;
+        color: var(--blue);
+      }
+      .section {
+        display: none;
+      }
+      .section.active {
+        display: block;
+      }
+      .recitation {
+        display: grid;
+        grid-template-columns: 260px 1fr;
+        gap: 18px;
+      }
+      .side {
+        position: sticky;
+        top: 92px;
+        align-self: start;
+      }
+      .progress {
+        height: 10px;
+        background: #e8edf5;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .progress i {
+        display: block;
+        height: 100%;
+        background: linear-gradient(90deg, var(--blue), var(--gold));
+        width: 0;
+      }
+      .qcard {
+        min-height: 390px;
+        display: flex;
+        flex-direction: column;
+      }
+      .qmeta {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: center;
+        color: var(--muted);
+        font-weight: 800;
+      }
+      .topic {
+        color: var(--blue);
+      }
+      .question {
+        font-size: clamp(24px, 3.5vw, 36px);
+        font-weight: 900;
+        line-height: 1.2;
+        color: var(--navy);
+        margin: 30px 0 12px;
+      }
+      .english {
+        background: #f7f9fc;
+        border-left: 4px solid var(--gold);
+        padding: 12px 15px;
+        border-radius: 8px;
+        color: #475569;
+      }
+      .answerbox {
+        margin: 22px 0;
+        padding: 18px;
+        border: 1px dashed #a9b8ce;
+        border-radius: 14px;
+        background: #fbfdff;
+      }
+      .answerbox h4 {
+        margin: 0 0 8px;
+        color: var(--navy);
+      }
+      .reveal {
+        display: none;
+        margin-top: 14px;
+        background: #ecfdf3;
+        border: 1px solid #bbf7d0;
+        padding: 14px;
+        border-radius: 12px;
+        color: #166534;
+      }
+      .reveal.show {
+        display: block;
+      }
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: auto;
+      }
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 12px 17px;
+        font-weight: 850;
+      }
+      .primary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .gold {
+        background: var(--gold);
+        color: #13223c;
+      }
+      .light {
+        background: #eef3fa;
+        color: var(--navy);
+        border: 1px solid var(--line);
+      }
+      .good {
+        background: #dcfce7;
+        color: #166534;
+        border: 1px solid #86efac;
+      }
+      .bad {
+        background: #fee2e2;
+        color: #991b1b;
+        border: 1px solid #fecaca;
+      }
+      .btn:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      .scorebox {
+        background: linear-gradient(135deg, #06275c, #0d4b9f);
+        color: #fff;
+        border-radius: 22px;
+        padding: 28px;
+        text-align: center;
+      }
+      .bigscore {
+        font-size: 62px;
+        font-weight: 950;
+      }
+      .result {
+        font-size: 20px;
+        font-weight: 800;
+      }
+      .list {
+        padding-left: 20px;
+      }
+      .mini {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .pill {
+        display: inline-block;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #eef3fa;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 800;
+        margin: 3px;
+      }
+      .activity-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .callout {
+        border-left: 5px solid var(--gold);
+        background: #fffaf0;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      .footer {
+        margin-top: 40px;
+        background: #fff;
+        border-top: 1px solid var(--line);
+        padding: 22px;
+      }
+      .footerin {
+        max-width: 1120px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+      }
+      .footer img {
+        width: 42px;
+        height: 42px;
+        border-radius: 10px;
+        object-fit: cover;
+        vertical-align: middle;
+        margin-right: 8px;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 15, 35, 0.65);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 18px;
+        z-index: 50;
+      }
+      .modal.show {
+        display: flex;
+      }
+      .modalbox {
+        max-width: 600px;
+        background: #fff;
+        border-radius: 22px;
+        padding: 24px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+      }
+      .modalbox h2 {
+        color: var(--navy);
+      }
+      @media (max-width: 800px) {
+        .bar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+        .nav {
+          width: 100%;
+          overflow: auto;
+          flex-wrap: nowrap;
+        }
+        .recitation {
+          grid-template-columns: 1fr;
+        }
+        .side {
+          position: static;
+        }
+        .grid,
+        .activity-grid {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          padding: 24px;
+        }
+        .footerin {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .question {
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="bar">
+        <div class="brand">
+          <img
+            src="assets/TeacherEdLogo.jpg"
+            alt="Teacher Ed Learning Hub logo"
+          />
+          <div>
+            Teacher Ed Learning Hub<small>ESP 2 • Graded Recitation</small>
+          </div>
+        </div>
+        <nav class="nav">
+          <button data-go="home" class="active">Home</button
+          ><button data-go="guide">Guide</button
+          ><button data-go="recite">Recitation</button
+          ><button data-go="result">Result</button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="section active">
+        <div class="hero">
+          <span class="tag">EDUKASYON SA PAGPAPAKATAO 2</span>
+          <h1>Ako ay Palakaibigan at Ako ay Matapat</h1>
+          <p>
+            <b>Interactive Graded Recitation</b> — Sagutin ang bawat tanong nang
+            pasalita. Basahin ang tanong, mag-isip, at sabihin ang iyong sagot.
+            May English support para mas madaling maunawaan ang instructions at
+            key ideas.
+          </p>
+          <div class="actions">
+            <button class="btn primary" onclick="go('guide')">
+              Start Recitation</button
+            ><button class="btn light" onclick="go('recite')">Continue</button>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>30</h3>
+            <p>Oral Recitation Questions</p>
+          </div>
+          <div class="card">
+            <h3>100%</h3>
+            <p>Maximum Score</p>
+          </div>
+          <div class="card">
+            <h3>80%</h3>
+            <p>Suggested Mastery Level</p>
+          </div>
+        </div>
+        <div class="activity-grid">
+          <div class="card">
+            <h3>Topic 1 — Ako ay Palakaibigan</h3>
+            <p>
+              Practice being friendly, welcoming, helpful, calm, and trustworthy
+              when interacting with classmates, family members, visitors, and
+              new friends.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Topic 2 — Ako ay Matapat</h3>
+            <p>
+              Practice telling the truth, admitting mistakes, respecting other
+              people's things, and being honest in words and actions.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section id="guide" class="section">
+        <div class="card">
+          <h2>How to Do the Graded Recitation</h2>
+          <ol class="list">
+            <li>Read the question carefully.</li>
+            <li>Say your answer aloud in your own words.</li>
+            <li>Click <b>Show Guide Answer</b> after you answer.</li>
+            <li>Compare your answer with the guide answer.</li>
+            <li>
+              If your answer is correct or shows the same idea, click
+              <b>Correct</b>.
+            </li>
+            <li>
+              If you need to improve your answer, click
+              <b>Needs Improvement</b>.
+            </li>
+            <li>Continue until all 30 questions are completed.</li>
+            <li>
+              Take a <b>screenshot of your final score</b> for submission.
+            </li>
+          </ol>
+          <div class="callout">
+            <b>English Support:</b> You may use the English translation to
+            understand the question. Your oral answer may be given in Filipino.
+          </div>
+          <div class="actions">
+            <button class="btn primary" onclick="start()">
+              Begin Graded Recitation
+            </button>
+          </div>
+        </div>
+      </section>
+      <section id="recite" class="section">
+        <div class="recitation">
+          <aside class="side">
+            <div class="card">
+              <h3>Your Progress</h3>
+              <div class="progress"><i id="bar"></i></div>
+              <p id="progressText" class="mini">Question 1 of 30</p>
+              <hr />
+              <div id="topicPills"></div>
+              <p class="mini">
+                Tip: Speak clearly and answer in your own words.
+              </p>
+              <button class="btn light" onclick="go('home')">Exit</button>
+            </div>
+          </aside>
+          <div class="card qcard">
+            <div class="qmeta">
+              <span id="num">Question 1 of 30</span
+              ><span id="topic" class="topic">Ako ay Palakaibigan</span>
+            </div>
+            <div id="q" class="question"></div>
+            <div id="en" class="english"></div>
+            <div class="answerbox">
+              <h4>Oral Response</h4>
+              <p>Answer aloud before revealing the guide answer.</p>
+              <button id="show" class="btn gold" onclick="reveal()">
+                Show Guide Answer
+              </button>
+              <div id="guideAnswer" class="reveal"></div>
+            </div>
+            <div id="grading" class="actions" style="display: none">
+              <button class="btn good" onclick="grade(true)">✓ Correct</button
+              ><button class="btn bad" onclick="grade(false)">
+                ✗ Needs Improvement
+              </button>
+            </div>
+            <div id="nextActions" class="actions">
+              <button class="btn primary" disabled>
+                Answer first, then show the guide.
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="result" class="section">
+        <div class="scorebox">
+          <div>Your Graded Recitation Score</div>
+          <div id="score" class="bigscore">0 / 30</div>
+          <div id="percent" class="result">0%</div>
+          <p id="message">Complete the recitation to see your result.</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3 id="friendlyScore">0 / 15</h3>
+            <p>Ako ay Palakaibigan</p>
+          </div>
+          <div class="card">
+            <h3 id="honestScore">0 / 15</h3>
+            <p>Ako ay Matapat</p>
+          </div>
+          <div class="card">
+            <h3 id="mastery">—</h3>
+            <p>Mastery Status</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Submission Reminder</h3>
+          <p>
+            📸 Please take a screenshot of this result and submit it according
+            to your teacher's instructions.
+          </p>
+          <div class="actions">
+            <button class="btn primary" onclick="window.print()">
+              Print Result</button
+            ><button class="btn light" onclick="start()">Try Again</button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footerin">
+        <div>
+          <img src="assets/TeacherEdLogo.jpg" alt="Teacher Ed logo" /><b
+            >Teacher Ed Learning Hub</b
+          ><br /><span class="mini">Learn • Teach • Lead • Inspire</span>
+        </div>
+        <div class="mini">ESP 2 • Interactive Graded Recitation</div>
+      </div>
+    </footer>
+    <div id="modal" class="modal">
+      <div class="modalbox">
+        <h2>Great job!</h2>
+        <p>
+          Your graded recitation is complete. Please check your score and take a
+          screenshot for submission.
+        </p>
+        <button
+          class="btn primary"
+          onclick="
+            document.getElementById('modal').classList.remove('show');
+            go('result');
+          "
+        >
+          View Result
+        </button>
+      </div>
+    </div>
+    <script>
+      const questionBank = [
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May bago kang kaklase. Ano ang maaari mong gawin upang maipakita na ikaw ay palakaibigan?",
+          e: "You have a new classmate. What can you do to show that you are friendly?",
+          a: "Batiin siya, maging mabait, at anyayahan siyang makipagkaibigan o makipaglaro.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May bisita sa inyong bahay. Paano mo siya pakikitunguhan?",
+          e: "A visitor comes to your home. How should you treat the visitor?",
+          a: "Batiin at tanggapin siya nang maayos at magpakita ng paggalang at pagiging magiliw.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May kaibigan kang nangangailangan ng tulong. Ano ang maaari mong gawin?",
+          e: "A friend needs help. What can you do?",
+          a: "Tulungan siya kung kaya ko at ipakita ang malasakit sa kanya.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Ano ang isang katangian ng mabuting kaibigan?",
+          e: "What is one quality of a good friend?",
+          a: "Ang mabuting kaibigan ay mabait, matulungin, magalang, mahinahon, at mapagkakatiwalaan.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May bagong kakilala mula sa ibang lugar. Paano mo siya tatanggapin?",
+          e: "You meet someone new from another place. How will you welcome the person?",
+          a: "Tatanggapin ko siya nang maayos, babatiin, at makikipag-usap nang magalang at palakaibigan.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Nakikita mong mag-isa ang isang kaklase sa recess. Ano ang maaari mong gawin?",
+          e: "You see a classmate alone during recess. What can you do?",
+          a: "Maaari ko siyang batiin, kausapin, at anyayahang makipaglaro kung nais niya.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Paano mo maipapakita ang pagiging magiliw sa isang panauhin?",
+          e: "How can you show friendliness to a visitor?",
+          a: "Batiin siya, ngumiti, makipag-usap nang maayos, at tulungan kung kailangan.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May kaibigan kang nagkamali sa laro. Ano ang dapat mong gawin?",
+          e: "Your friend made a mistake in a game. What should you do?",
+          a: "Huwag siyang pagtawanan; hikayatin at kausapin siya nang mahinahon.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Ano ang dapat mong gawin kapag may gustong sumali sa inyong laro?",
+          e: "What should you do when someone wants to join your game?",
+          a: "Kung maaari, tanggapin at isali siya sa laro nang maayos.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Paano mo mapapanatili ang magandang pakikipagkaibigan?",
+          e: "How can you maintain a good friendship?",
+          a: "Maging mabait, matapat, matulungin, marunong makinig, at gumalang sa kaibigan.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "May kaklase kang hindi mo pa gaanong kilala. Ano ang magandang unang hakbang?",
+          e: "You do not know a classmate well yet. What is a good first step?",
+          a: "Batiin siya at makipagkilala nang magalang.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Paano mo maipapakita na handa kang tumulong sa kaibigan?",
+          e: "How can you show that you are willing to help a friend?",
+          a: "Makinig sa kanya at tumulong sa paraang kaya ko.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Ano ang dapat mong gawin kapag may kaibigang malungkot?",
+          e: "What should you do when a friend is sad?",
+          a: "Kumustahin siya, makinig, at magpakita ng malasakit.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Paano ka makikipag-usap sa isang bagong kakilala?",
+          e: "How should you talk to someone you have just met?",
+          a: "Makipag-usap nang magalang, mahinahon, at palakaibigan.",
+        },
+        {
+          t: "Ako ay Palakaibigan",
+          q: "Bakit mahalagang maging palakaibigan sa kapwa?",
+          e: "Why is it important to be friendly to others?",
+          a: "Nakakatulong ito upang magkaroon ng mabuting ugnayan, tiwala, at pagkakaibigan.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nabasag mo ang isang bagay nang hindi sinasadya. Ano ang dapat mong gawin?",
+          e: "You accidentally broke something. What should you do?",
+          a: "Sabihin ang totoo, aminin ang pagkakamali, at humingi ng paumanhin kung kinakailangan.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nakakita ka ng gamit na hindi sa iyo. Ano ang dapat mong gawin?",
+          e: "You found something that does not belong to you. What should you do?",
+          a: "Huwag itong kunin para sa sarili. Ibalik ito o ibigay sa guro o may-ari.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Bakit mahalagang magsabi ng totoo?",
+          e: "Why is it important to tell the truth?",
+          a: "Mahalaga ang katotohanan dahil nakatutulong ito upang magkaroon ng tiwala at magandang ugnayan sa kapwa.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nagkamali ka sa isang gawain. Ano ang magandang gawin?",
+          e: "You made a mistake in an activity. What is the right thing to do?",
+          a: "Aminin ang pagkakamali, sabihin ang totoo, at subukang itama ang nagawa.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Ano ang ibig sabihin ng pagiging matapat sa salita at gawa?",
+          e: "What does it mean to be honest in words and actions?",
+          a: "Nangangahulugan ito na nagsasabi ako ng totoo at ginagawa ko ang tama kahit walang nakakakita.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "May nakita kang pera sa sahig ng silid-aralan. Ano ang gagawin mo?",
+          e: "You found money on the classroom floor. What will you do?",
+          a: "Ibigay ito sa guro o hanapin ang may-ari sa halip na angkinin ito.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nakapaglaro ka sa computer nang hindi nagpapaalam. Tinanong ka ng magulang mo kung naglaro ka. Ano ang dapat mong gawin?",
+          e: "You used the computer without asking. Your parent asks if you did it. What should you do?",
+          a: "Sabihin ang totoo at aminin ang ginawa.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Hindi mo alam ang sagot sa isang tanong sa pagsusulit. Ano ang matapat na gawin?",
+          e: "You do not know the answer to a test question. What is the honest thing to do?",
+          a: "Gawin ang makakaya ko at huwag mangopya sa sagot ng iba.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "May kaibigan kang nagsabi ng lihim na hindi dapat ikalat. Paano ka magiging matapat?",
+          e: "A friend tells you something private that should not be shared. How can you be trustworthy?",
+          a: "Igalang ang tiwala niya at huwag ikalat ang kanyang pribadong sinabi.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nakapulot ka ng lapis na alam mong pag-aari ng kaklase mo. Ano ang gagawin mo?",
+          e: "You found a pencil that belongs to your classmate. What will you do?",
+          a: "Ibalik ito sa kaklase ko o ibigay sa guro para maibalik sa may-ari.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Nagawa mo ang isang bagay na ipinagbabawal. Ano ang tamang unang hakbang?",
+          e: "You did something that was not allowed. What is the right first step?",
+          a: "Aminin ang ginawa at sabihin ang totoo.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Paano mo maipapakita ang katapatan kapag may nagkamali kang sagot?",
+          e: "How can you show honesty when you make a mistake in an answer?",
+          a: "Sabihin na nagkamali ako at tanggapin ang tamang sagot nang hindi nandaraya.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "May nagsabi sa iyo na magsinungaling para hindi mapagalitan ang kaibigan mo. Ano ang dapat mong gawin?",
+          e: "Someone asks you to lie so your friend will not get in trouble. What should you do?",
+          a: "Hindi ako magsisinungaling; sasabihin ko ang totoo nang maayos.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Bakit mahalagang ibalik ang bagay na hindi mo pag-aari?",
+          e: "Why is it important to return something that does not belong to you?",
+          a: "Dahil ito ay nagpapakita ng katapatan at paggalang sa pag-aari ng ibang tao.",
+        },
+        {
+          t: "Ako ay Matapat",
+          q: "Paano mo maipapakita ang katapatan kahit walang nakakakita?",
+          e: "How can you show honesty even when no one is watching?",
+          a: "Gagawin ko ang tama at sasabihin ang totoo kahit walang nakakakita.",
+        },
+      ];
+      let qs = [];
+      let i = 0,
+        score = 0,
+        answers = [],
+        sessionQs = [];
+      function shuffle(arr) {
+        const a = [...arr];
+        for (let n = a.length - 1; n > 0; n--) {
+          const j = Math.floor(Math.random() * (n + 1));
+          [a[n], a[j]] = [a[j], a[n]];
+        }
+        return a;
+      }
+      function go(id) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        document
+          .querySelectorAll("[data-go]")
+          .forEach((b) => b.classList.toggle("active", b.dataset.go === id));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (id === "recite") render();
+      }
+      document
+        .querySelectorAll("[data-go]")
+        .forEach((b) => (b.onclick = () => go(b.dataset.go)));
+      function start() {
+        i = 0;
+        score = 0;
+        answers = [];
+        sessionQs = shuffle(questionBank);
+        go("recite");
+        render();
+      }
+      function render() {
+        const x = sessionQs[i];
+        document.getElementById("num").textContent =
+          `Question ${i + 1} of ${sessionQs.length}`;
+        document.getElementById("topic").textContent = x.t;
+        document.getElementById("q").textContent = x.q;
+        document.getElementById("en").textContent = x.e;
+        document.getElementById("guideAnswer").textContent = x.a;
+        document.getElementById("guideAnswer").classList.remove("show");
+        document.getElementById("grading").style.display = "none";
+        document.getElementById("show").disabled = false;
+        document.getElementById("nextActions").innerHTML =
+          '<button class="btn primary" disabled>Answer first, then show the guide.</button>';
+        document.getElementById("bar").style.width =
+          (i / sessionQs.length) * 100 + "%";
+        document.getElementById("progressText").textContent =
+          `Question ${i + 1} of ${sessionQs.length}`;
+        const remainingFriend = sessionQs
+          .slice(i)
+          .filter((x) => x.t === "Ako ay Palakaibigan").length;
+        const remainingHonest = sessionQs
+          .slice(i)
+          .filter((x) => x.t === "Ako ay Matapat").length;
+        document.getElementById("topicPills").innerHTML =
+          `<span class="pill">${x.t}</span><span class="pill">Randomized set</span>`;
+      }
+      function reveal() {
+        document.getElementById("guideAnswer").classList.add("show");
+        document.getElementById("grading").style.display = "flex";
+        document.getElementById("show").disabled = true;
+      }
+      function grade(correct) {
+        answers[i] = correct;
+        if (correct) score++;
+        document.getElementById("grading").style.display = "none";
+        document.getElementById("nextActions").innerHTML =
+          i < sessionQs.length - 1
+            ? '<button class="btn primary" onclick="nextQ()">Next Question →</button>'
+            : '<button class="btn gold" onclick="finish()">Finish & View Score</button>';
+      }
+      function nextQ() {
+        i++;
+        render();
+      }
+      function finish() {
+        const friend = sessionQs.filter(
+          (q, idx) => q.t === "Ako ay Palakaibigan" && answers[idx],
+        ).length;
+        const honest = sessionQs.filter(
+          (q, idx) => q.t === "Ako ay Matapat" && answers[idx],
+        ).length;
+        localStorage.setItem(
+          "esp2Recitation",
+          JSON.stringify({
+            score,
+            friend,
+            honest,
+            date: new Date().toLocaleString(),
+          }),
+        );
+        document.getElementById("score").textContent = `${score} / 30`;
+        document.getElementById("percent").textContent =
+          `${Math.round((score / 30) * 100)}%`;
+        document.getElementById("friendlyScore").textContent = `${friend} / 15`;
+        document.getElementById("honestScore").textContent = `${honest} / 15`;
+        const m = document.getElementById("mastery");
+        if (score >= 24) {
+          m.textContent = "MASTERED";
+          document.getElementById("message").textContent =
+            "Excellent! You demonstrated strong understanding of both topics.";
+        } else if (score >= 18) {
+          m.textContent = "DEVELOPING";
+          document.getElementById("message").textContent =
+            "Good effort! Review the guide answers and practice the skills again.";
+        } else {
+          m.textContent = "NEEDS PRACTICE";
+          document.getElementById("message").textContent =
+            "Keep practicing. Ask a parent or teacher to guide you through the questions again.";
+        }
+        go("result");
+        document.getElementById("modal").classList.add("show");
+      }
+      const saved = JSON.parse(
+        localStorage.getItem("esp2Recitation") || "null",
+      );
+      if (saved) {
+        document.getElementById("score").textContent = `${saved.score} / 30`;
+        document.getElementById("percent").textContent =
+          `${Math.round((saved.score / 30) * 100)}%`;
+        document.getElementById("friendlyScore").textContent =
+          `${saved.friend} / 15`;
+        document.getElementById("honestScore").textContent =
+          `${saved.honest} / 15`;
+        document.getElementById("mastery").textContent =
+          saved.score >= 24
+            ? "MASTERED"
+            : saved.score >= 18
+              ? "DEVELOPING"
+              : "NEEDS PRACTICE";
+        document.getElementById("message").textContent =
+          "Your latest result is saved on this device.";
+      }
+    </script>
+  </body>
+</html>
