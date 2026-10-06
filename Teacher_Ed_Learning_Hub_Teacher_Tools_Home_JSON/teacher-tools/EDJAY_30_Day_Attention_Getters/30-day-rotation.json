@@ -1,0 +1,302 @@
+[
+  {
+    "day": 1,
+    "grade": "Grade 1",
+    "category": "Math",
+    "title": "Eyes on Me",
+    "teacher": "Teacher: “Math minds, eyes on me!”",
+    "students": "Students: “Ready to think!”",
+    "teacherMove": "Use before modeling a new number idea.",
+    "bestFor": "Whole-class instruction"
+  },
+  {
+    "day": 2,
+    "grade": "Grade 1",
+    "category": "English",
+    "title": "Hocus Pocus",
+    "teacher": "Teacher: “Hocus pocus!”",
+    "students": "Students: “Everybody focus!”",
+    "teacherMove": "Pause until the response is complete, then begin reading.",
+    "bestFor": "Reading / phonics"
+  },
+  {
+    "day": 3,
+    "grade": "Grade 1",
+    "category": "Science",
+    "title": "Scientists Ready",
+    "teacher": "Teacher: “Scientists…”",
+    "students": "Students: “Observe!”",
+    "teacherMove": "Point to an object and ask students to prepare their eyes and ears.",
+    "bestFor": "Science observation"
+  },
+  {
+    "day": 4,
+    "grade": "Grade 1",
+    "category": "Filipino",
+    "title": "Makinig Tayo",
+    "teacher": "Guro: “Mga batang handa…”",
+    "students": "Mag-aaral: “Makikinig!”",
+    "teacherMove": "Use before storytelling, vocabulary, or oral practice.",
+    "bestFor": "Talakayan"
+  },
+  {
+    "day": 5,
+    "grade": "Grade 1",
+    "category": "Araling Panlipunan",
+    "title": "Mga Historyador",
+    "teacher": "Guro: “Mga historyador!”",
+    "students": "Mag-aaral: “Handa!”",
+    "teacherMove": "Use when shifting into community, family, or history content.",
+    "bestFor": "AP discussion"
+  },
+  {
+    "day": 6,
+    "grade": "Grade 1",
+    "category": "Transition",
+    "title": "5–4–3–2–1",
+    "teacher": "Teacher: “5…4…3…2…1…”",
+    "students": "Students: “Ready!”",
+    "teacherMove": "Give a concrete action: pencils down, turn, eyes front.",
+    "bestFor": "Transitions"
+  },
+  {
+    "day": 7,
+    "grade": "Grade 1",
+    "category": "Group Work",
+    "title": "Team Check",
+    "teacher": "Teacher: “Teams, check!”",
+    "students": "Students: “Ready to learn!”",
+    "teacherMove": "Use before giving the next group-work direction.",
+    "bestFor": "Collaborative work"
+  },
+  {
+    "day": 8,
+    "grade": "Grade 1",
+    "category": "Noisy Class Reset",
+    "title": "Hands on Top",
+    "teacher": "Teacher: “Hands on top!”",
+    "students": "Students: “That means stop!”",
+    "teacherMove": "Raise both hands; wait for hands and voices to settle.",
+    "bestFor": "High-noise moments"
+  },
+  {
+    "day": 9,
+    "grade": "Grade 2",
+    "category": "Math",
+    "title": "Number Sense",
+    "teacher": "Teacher: “Number minds…”",
+    "students": "Students: “Think!”",
+    "teacherMove": "Use before posing a mental-math question.",
+    "bestFor": "Math discussion"
+  },
+  {
+    "day": 10,
+    "grade": "Grade 2",
+    "category": "English",
+    "title": "Word Detectives",
+    "teacher": "Teacher: “Word detectives…”",
+    "students": "Students: “Ready to find!”",
+    "teacherMove": "Use before vocabulary, context clues, or grammar.",
+    "bestFor": "English"
+  },
+  {
+    "day": 11,
+    "grade": "Grade 2",
+    "category": "Science",
+    "title": "Science Signal",
+    "teacher": "Teacher: “Ready, scientists?”",
+    "students": "Students: “Ready to discover!”",
+    "teacherMove": "Pair with a visual or object students must inspect.",
+    "bestFor": "Science"
+  },
+  {
+    "day": 12,
+    "grade": "Grade 2",
+    "category": "Filipino",
+    "title": "Wika Tayo",
+    "teacher": "Guro: “Mga batang mahusay sa wika…”",
+    "students": "Mag-aaral: “Handa nang magsalita!”",
+    "teacherMove": "Use before sentence building or oral language practice.",
+    "bestFor": "Filipino"
+  },
+  {
+    "day": 13,
+    "grade": "Grade 2",
+    "category": "Araling Panlipunan",
+    "title": "Bayanihan Beat",
+    "teacher": "Guro: “Bayanihan!”",
+    "students": "Mag-aaral: “Sama-sama!”",
+    "teacherMove": "Great for civic/community lessons and cooperative tasks.",
+    "bestFor": "AP / values"
+  },
+  {
+    "day": 14,
+    "grade": "Grade 2",
+    "category": "Transition",
+    "title": "Freeze Like a Statue",
+    "teacher": "Teacher: “Freeze like a statue!”",
+    "students": "Students: “Freeze!”",
+    "teacherMove": "Use a playful freeze, then give the next direction.",
+    "bestFor": "Movement transition"
+  },
+  {
+    "day": 15,
+    "grade": "Grade 2",
+    "category": "Group Work",
+    "title": "1–2–3 Check",
+    "teacher": "Teacher: “One, two, three—check!”",
+    "students": "Students: “Team is ready!”",
+    "teacherMove": "Students check materials, roles, and voices.",
+    "bestFor": "Group work"
+  },
+  {
+    "day": 16,
+    "grade": "Grade 2",
+    "category": "Noisy Class Reset",
+    "title": "Clap Copy",
+    "teacher": "Teacher: clap a short rhythm",
+    "students": "Students: repeat the exact rhythm",
+    "teacherMove": "Change the pattern occasionally; wait for silence after the echo.",
+    "bestFor": "Noisy / energetic class"
+  },
+  {
+    "day": 17,
+    "grade": "Grade 3",
+    "category": "Math",
+    "title": "Solve It Signal",
+    "teacher": "Teacher: “Problem solvers…”",
+    "students": "Students: “Think before you speak!”",
+    "teacherMove": "Excellent before word problems and multi-step reasoning.",
+    "bestFor": "Math problem solving"
+  },
+  {
+    "day": 18,
+    "grade": "Grade 3",
+    "category": "English",
+    "title": "Eyes, Ears, Mind",
+    "teacher": "Teacher: “Eyes, ears…”",
+    "students": "Students: “Mind ready!”",
+    "teacherMove": "Use before a complex text or explanation.",
+    "bestFor": "English discussion"
+  },
+  {
+    "day": 19,
+    "grade": "Grade 3",
+    "category": "Science",
+    "title": "Observe–Think",
+    "teacher": "Teacher: “Observe…”",
+    "students": "Students: “Think!”",
+    "teacherMove": "Hold up an image, specimen, or demonstration.",
+    "bestFor": "Science inquiry"
+  },
+  {
+    "day": 20,
+    "grade": "Grade 3",
+    "category": "Filipino",
+    "title": "Salita at Diwa",
+    "teacher": "Guro: “Salita…”",
+    "students": "Mag-aaral: “Diwa!”",
+    "teacherMove": "Use before discussing meaning, context, or author’s message.",
+    "bestFor": "Filipino reading"
+  },
+  {
+    "day": 21,
+    "grade": "Grade 3",
+    "category": "Araling Panlipunan",
+    "title": "Lakbay Kasaysayan",
+    "teacher": "Guro: “Biyahe sa kasaysayan!”",
+    "students": "Mag-aaral: “Handa!”",
+    "teacherMove": "Use to signal a story, timeline, or historical source.",
+    "bestFor": "AP history"
+  },
+  {
+    "day": 22,
+    "grade": "Grade 3",
+    "category": "Transition",
+    "title": "Ready, Set… Learn!",
+    "teacher": "Teacher: “Ready, set…”",
+    "students": "Students: “Learn!”",
+    "teacherMove": "Use between stations, subjects, or learning phases.",
+    "bestFor": "Transitions"
+  },
+  {
+    "day": 23,
+    "grade": "Grade 3",
+    "category": "Group Work",
+    "title": "Team Signal",
+    "teacher": "Teacher: “Team, team!”",
+    "students": "Students: “Yes, team!”",
+    "teacherMove": "Use once; teams stop and look before the next instruction.",
+    "bestFor": "Group work"
+  },
+  {
+    "day": 24,
+    "grade": "Grade 3",
+    "category": "Noisy Class Reset",
+    "title": "Waterfall",
+    "teacher": "Teacher: “Waterfall…”",
+    "students": "Students: make a soft “shhhhh” sound",
+    "teacherMove": "Use sparingly; it should end in complete silence.",
+    "bestFor": "Noisy reset"
+  },
+  {
+    "day": 25,
+    "grade": "Grade 1",
+    "category": "Math",
+    "title": "Show Me Ready",
+    "teacher": "Teacher: “Show me you’re ready for math.”",
+    "students": "Students: eyes forward, hands ready",
+    "teacherMove": "Make readiness observable rather than asking “Are you listening?”",
+    "bestFor": "Math transition"
+  },
+  {
+    "day": 26,
+    "grade": "Grade 2",
+    "category": "English",
+    "title": "If You Hear Me",
+    "teacher": "Teacher: “If you hear me, touch your head.”",
+    "students": "Students: follow the cue",
+    "teacherMove": "Move from simple actions to eyes-on-teacher.",
+    "bestFor": "English / reset"
+  },
+  {
+    "day": 27,
+    "grade": "Grade 1",
+    "category": "Science",
+    "title": "Curious Minds",
+    "teacher": "Teacher: “Curious minds…”",
+    "students": "Students: “Look, listen, learn!”",
+    "teacherMove": "Use before a demonstration or prediction.",
+    "bestFor": "Science"
+  },
+  {
+    "day": 28,
+    "grade": "Grade 2",
+    "category": "Filipino",
+    "title": "Makinig, Isipin, Sabihin",
+    "teacher": "Guro: “Makinig…”",
+    "students": "Mag-aaral: “Isipin, saka sabihin!”",
+    "teacherMove": "Builds a habit of thinking before answering.",
+    "bestFor": "Oral recitation"
+  },
+  {
+    "day": 29,
+    "grade": "Grade 3",
+    "category": "Araling Panlipunan",
+    "title": "Eyes on the Evidence",
+    "teacher": "Teacher: “Eyes on the evidence!”",
+    "students": "Students: “Ready to investigate!”",
+    "teacherMove": "Use before maps, photos, primary sources, or charts.",
+    "bestFor": "AP inquiry"
+  },
+  {
+    "day": 30,
+    "grade": "Grade 3",
+    "category": "Noisy Class Reset",
+    "title": "Quiet Challenge",
+    "teacher": "Teacher: “Can this class get ready in 5?”",
+    "students": "Students: silently reset before 1",
+    "teacherMove": "Turn attention into a timed challenge without yelling.",
+    "bestFor": "Noisy reset"
+  }
+]
