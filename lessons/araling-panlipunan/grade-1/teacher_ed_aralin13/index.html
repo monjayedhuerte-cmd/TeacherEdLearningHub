@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Teacher Ed Learning Hub | Ang Aking Pamilya ay Nagmamahalan</title>
+<link rel="icon" type="image/jpeg" href="assets/logo/teacher-ed-logo.jpg">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo/teacher-ed-logo.jpg" alt="Teacher Ed Learning Hub logo" class="brand-logo">
+    <div><div class="brand-name">TEACHER ED</div><div class="brand-sub">LEARNING HUB</div></div>
+  </div>
+  <div class="lesson-pill">ARALIN 13 • ARALING PANLIPUNAN 1</div>
+  <div class="top-actions"><button class="icon-btn" id="largeTextBtn" title="Palakihin ang teksto">A+</button><button class="icon-btn" id="contrastBtn" title="Mataas na contrast">◐</button></div>
+</header>
+
+<main>
+<section class="hero panel">
+  <div class="hero-copy">
+    <span class="eyebrow">INTERACTIVE LEARNING ADVENTURE</span>
+    <h1>Ang Aking Pamilya<br><span>ay Nagmamahalan</span></h1>
+    <p>Alamin kung paano ipinapakita ng mga kasapi ng pamilya ang <b>pagmamahal, paggalang, pagtutulungan, at pakikisalamuha.</b></p>
+    <button class="primary" onclick="goTo('engage')">▶ Simulan ang Aralin</button>
+  </div>
+  <div class="hero-art"><img src="assets/images/family-portrait.jpg" alt="Pamilyang magkakasama"><div class="floating-card">❤️ <b>Tanong:</b> Paano mo ipinapakita ang pagmamahal sa iyong pamilya?</div></div>
+</section>
+
+<section class="progress-wrap">
+  <div class="progress-top"><b id="missionLabel">Misyon 1 sa 10</b><span id="progressText">10%</span></div>
+  <div class="progress"><div id="progressBar"></div></div>
+</section>
+
+<section id="engage" class="lesson-section">
+ <div class="section-head"><span class="step">01</span><div><span class="eyebrow">ENGAGE</span><h2>Larawan Detective</h2></div></div>
+ <div class="game-card image-mystery">
+   <div class="mystery-image"><img id="mysteryImg" src="assets/images/share-toys.jpg" alt="Larawan"><div class="image-tag">TINGNAN • ISIPIN • SABIHIN</div></div>
+   <div class="mystery-content"><h3>Ano ang ipinapakita ng larawan?</h3><p id="mysteryPrompt">May dalawang magkapatid na naglalaro. Ano kaya ang magandang gawin kapag nais mong gamitin ang laruan ng iyong kapatid?</p>
+   <div class="choice-grid" id="mysteryChoices">
+    <button data-correct="true">Magpaalam muna.</button><button>Agawin ang laruan.</button><button>Itago ang laruan.</button>
+   </div><div id="mysteryFeedback" class="feedback"></div><button class="secondary next-btn" onclick="nextMystery()">Susunod na Larawan →</button></div>
+ </div>
+</section>
+
+<section id="connect" class="lesson-section">
+ <div class="section-head"><span class="step">02</span><div><span class="eyebrow">CONNECT</span><h2>Iugnay sa Iyong Buhay</h2></div></div>
+ <div class="prompt-card"><div class="prompt-icon">💬</div><div><h3>Ikaw naman!</h3><p>Kapag may kailangan ang isang kasapi ng iyong pamilya, ano ang maaari mong gawin?</p><div class="teacher-note">👩‍🏫 <b>Guro:</b> Tumawag ng isang mag-aaral. Pakinggan ang kaniyang sagot at itanong: “Bakit?”</div></div></div>
+</section>
+
+<section id="explore" class="lesson-section">
+ <div class="section-head"><span class="step">03</span><div><span class="eyebrow">EXPLORE</span><h2>Larawan ng Pagmamahal</h2></div></div>
+ <p class="section-intro">Pindutin ang bawat larawan. Sabihin kung paano ipinapakita rito ang pagmamahal o paggalang.</p>
+ <div class="photo-grid" id="photoGrid"></div>
+</section>
+
+<section id="learn" class="lesson-section">
+ <div class="section-head"><span class="step">04</span><div><span class="eyebrow">LEARN</span><h2>Ano ang Natutuhan Natin?</h2></div></div>
+ <div class="concept-grid">
+  <article class="concept"><span>❤️</span><h3>Pagmamahal</h3><p>Mahalaga ang pagmamahalan ng bawat kasapi ng pamilya upang magkaroon ng maayos at masayang pagsasama.</p></article>
+  <article class="concept"><span>🤝</span><h3>Paggalang</h3><p>Dapat igalang ng bawat kasapi ng pamilya ang isa't isa.</p></article>
+  <article class="concept"><span>🫶</span><h3>Pagtutulungan</h3><p>Maipapakita ang pagmamahal sa pagtulong sa kapamilya at paggawa ng mga gawain nang sama-sama.</p></article>
+  <article class="concept"><span>👨‍👩‍👧‍👦</span><h3>Malapit na Ugnayan</h3><p>Ang pagkakaroon ng malapit na ugnayan ay pagpapahalaga sa isa't isa at nagpapakita ng pagmamahal sa pamilya.</p></article>
+ </div>
+ <div class="teacher-panel"><b>🗣️ Talakayin:</b> “Magkakaroon ng maayos at masayang pagsasama sa tahanan kung igagalang at mamahalin natin ang bawat isa.”</div>
+</section>
+
+<section id="guided" class="lesson-section">
+ <div class="section-head"><span class="step">05</span><div><span class="eyebrow">GUIDED PRACTICE</span><h2>Alin ang Mabuting Gawin?</h2></div></div>
+ <div class="scenario-card"><div class="scenario-num" id="scenarioNum">1</div><h3 id="scenarioText">Nakita mong nahihirapan si Lolo sa pagdidilig ng mga halaman. Ano ang maaari mong gawin?</h3><div class="scenario-options" id="scenarioOptions"></div><div id="scenarioFeedback" class="feedback"></div><button class="secondary" id="scenarioNext">Susunod na Sitwasyon →</button></div>
+</section>
+
+<section id="game" class="lesson-section">
+ <div class="section-head"><span class="step">06</span><div><span class="eyebrow">TOPIC-SPECIFIC GAME</span><h2>Mabuting Kasapi Mission</h2></div></div>
+ <div class="game-banner"><div><h3>🎯 Tulungan ang pamilya!</h3><p>Pumili ng kilos na nagpapakita ng pagmamahal at paggalang. Mas mahirap nang kaunti ang bawat round.</p></div><div class="score-box"><span>Puntos</span><strong id="gameScore">0</strong></div></div>
+ <div class="game-round" id="gameRound"></div>
+</section>
+
+<section id="practice" class="lesson-section">
+ <div class="section-head"><span class="step">07</span><div><span class="eyebrow">PRACTICE</span><h2>Larawan-to-Kilos Challenge</h2></div></div>
+ <p class="section-intro">Pumili ng tamang kilos para sa larawan. Ipaliwanag ang iyong sagot kapag tinawag ka ng guro.</p>
+ <div class="picture-challenge" id="pictureChallenge"></div>
+</section>
+
+<section id="think" class="lesson-section">
+ <div class="section-head"><span class="step">08</span><div><span class="eyebrow">THINK</span><h2>Isipin Mo!</h2></div></div>
+ <div class="think-card"><div class="think-badge">🧠</div><h3>May kapamilyang may sakit.</h3><p>Alin ang mas magandang gawin?</p><div class="think-options"><button onclick="thinkAnswer(true,this)">Tulungan at alagaan siya.</button><button onclick="thinkAnswer(false,this)">Huwag siyang pansinin.</button></div><div id="thinkFeedback" class="feedback"></div></div>
+</section>
+
+<section id="challenge" class="lesson-section">
+ <div class="section-head"><span class="step">09</span><div><span class="eyebrow">CHALLENGE</span><h2>30-Second Family Challenge</h2></div></div>
+ <div class="challenge-card"><div class="timer" id="timer">30</div><h3>Magbanggit ng <span>3 paraan</span> ng pagpapakita ng pagmamahal o paggalang sa pamilya.</h3><p>Kapag handa ka na, pindutin ang START. Sabihin ang mga sagot nang malakas.</p><button class="primary" id="startTimer">START</button><div id="timerMessage" class="feedback"></div></div>
+</section>
+
+<section id="check" class="lesson-section">
+ <div class="section-head"><span class="step">10</span><div><span class="eyebrow">CHECK</span><h2>Mabilisang Pagsusulit</h2></div></div>
+ <div class="quiz-card"><div class="quiz-meta"><span id="quizCount">Tanong 1 sa 8</span><span id="quizScore">Puntos: 0</span></div><h3 id="quizQuestion"></h3><div id="quizOptions" class="quiz-options"></div><div id="quizFeedback" class="feedback"></div><button class="secondary" id="quizNext">Susunod →</button></div>
+</section>
+
+<section id="master" class="lesson-section">
+ <div class="section-head"><span class="step">11</span><div><span class="eyebrow">MASTER</span><h2>Mastery Mission</h2></div></div>
+ <div class="master-card"><div class="master-icon">🏆</div><h3>Bagong Sitwasyon</h3><p>May kapatid kang gustong gumamit ng iyong laruan. Ano ang pinakaangkop na gawin?</p><div class="master-options"><button onclick="masterAnswer(true,this)">Magpaalam at magbahagi.</button><button onclick="masterAnswer(false,this)">Agawin ang laruan niya.</button><button onclick="masterAnswer(false,this)">Itago ang laruan para walang makagamit.</button></div><div id="masterFeedback" class="feedback"></div></div>
+</section>
+
+<section id="reflect" class="lesson-section">
+ <div class="section-head"><span class="step">12</span><div><span class="eyebrow">REFLECT</span><h2>Pagnilayan Natin</h2></div></div>
+ <div class="reflection"><p><b>Tapusin ang pangungusap:</b></p><div class="sentence">“Ipinapakita ko ang pagmamahal at paggalang sa aking pamilya sa pamamagitan ng ______.”</div><div class="teacher-note">👩‍🏫 <b>Guro:</b> Pumili ng 2–3 mag-aaral upang magbahagi ng kanilang sagot.</div></div>
+</section>
+
+<section id="celebrate" class="lesson-section final-section">
+ <div class="celebrate-card"><img src="assets/logo/teacher-ed-logo.jpg" alt="Teacher Ed logo"><div><span class="eyebrow">CELEBRATE</span><h2>Mahusay, Family Helper!</h2><p>Ang tunay na pagmamahal ay nakikita sa ating mga kilos—paggalang, pagtulong, pakikinig, pagbabahagi, at pagsasama-sama.</p><button class="primary" onclick="showTeacherReport()">📊 Tingnan ang Resulta</button></div></div>
+</section>
+
+<div id="teacherReport" class="modal hidden"><div class="modal-box"><button class="close" onclick="closeModal()">×</button><h2>Teacher Report</h2><div class="report-grid"><div><span>Accuracy</span><strong id="reportAccuracy">0%</strong></div><div><span>Game</span><strong id="reportGame">0</strong></div><div><span>Mastery</span><strong id="reportMastery">Developing</strong></div></div><div class="report-text"><b>Lakas:</b> Nakikilala ang mga kilos na nagpapakita ng pagmamahal at paggalang.<br><b>Susunod na hakbang:</b> Magbigay ng pagkakataong maipaliwanag ng mag-aaral kung bakit mabuti ang isang kilos.</div></div></div>
+</main>
+
+<footer><img src="assets/logo/teacher-ed-logo.jpg" alt="Teacher Ed Learning Hub"><div><b>TEACHER ED LEARNING HUB</b><br><span>Teach. Lead. Inspire.</span></div><button onclick="attentionSignal()" class="attention-btn">👀 ATTENTION!</button></footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

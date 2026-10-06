@@ -1079,13 +1079,23 @@
     "featured": false,
     "icon": "user"
   },
-   {
+  {
     "title": "ESP 2 | Graded Recitation sa Ako ay Matapat at Ako ay Palakaibigan",
     "subject": "ESP", 
     "grade": "Grade 2",
-    "description": "TInteractive Graded Recitation — Sagutin ang bawat tanong nang pasalita. Basahin ang tanong, mag-isip, at sabihin ang iyong sagot. May English support para mas madaling maunawaan ang instructions at key ideas.",
+    "description": "Interactive Graded Recitation — Sagutin ang bawat tanong nang pasalita. Basahin ang tanong, mag-isip, at sabihin ang iyong sagot. May English support para mas madaling maunawaan ang instructions at key ideas.",
     "file": "lessons/esp/grade-2/ESP2_Ako_Ay_Palakaibigan_Ako_Ay_Matapat_Graded_Recitation/index.html",
     "date": "2026-10-05",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "AP 1 | Lesson 13 : Ang Aking Pamilya ay Nagmamahalan",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 1",
+    "description": "Alamin kung paano ipinapakita ng mga kasapi ng pamilya ang pagmamahal, paggalang, pagtutulungan, at pakikisalamuha.",
+    "file": "lessons/araling-panlipunan/grade-1/teacher_ed_aralin13/index.html",
+    "date": "2026-10-06",
     "featured": false,
     "icon": "user"
   }
