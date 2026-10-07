@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#123b78">
+<title>Science 1 • Sense Organs Review | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img src="assets/logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>TEACHER ED</strong><span>LEARNING HUB</span></div>
+  </div>
+  <div class="header-actions">
+    <button class="icon-btn" id="soundBtn" aria-label="Toggle sound">🔊</button>
+    <button class="icon-btn" id="resetBtn" aria-label="Reset progress">↺</button>
+  </div>
+</header>
+
+<main>
+<section class="hero screen" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">SCIENCE 1 • REVIEW ADVENTURE</div>
+    <h1>Sense Organs Working Together<br><span>& Taking Care of Them</span></h1>
+    <p>See what you remember, fix mistakes, practice smart choices, and get ready for your Science assessment.</p>
+    <div class="hero-actions">
+      <button class="primary" data-go="recall">🚀 Start Reviewing</button>
+      <button class="secondary" data-go="memory">🧠 Memory Booster</button>
+    </div>
+    <div class="progress-card">
+      <div><span>Best Score</span><strong id="bestScore">0%</strong></div>
+      <div><span>Questions Practiced</span><strong id="practiceCount">0</strong></div>
+      <div><span>Badges</span><strong id="badgeCount">0</strong></div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="sense-orbit">
+      <div class="center">🧠<small>Use your<br>senses!</small></div>
+      <div class="orb o1">👁️<small>Eyes</small></div>
+      <div class="orb o2">👂<small>Ears</small></div>
+      <div class="orb o3">👃<small>Nose</small></div>
+      <div class="orb o4">👅<small>Tongue</small></div>
+      <div class="orb o5">✋<small>Skin</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="screen hidden" id="recall">
+  <div class="section-head"><div><div class="eyebrow">STAGE 1</div><h2>What Do You Remember?</h2><p>Try first. You can learn from every mistake.</p></div><div class="stage-pill">Recall</div></div>
+  <div id="recallApp"></div>
+</section>
+
+<section class="screen hidden" id="memory">
+  <div class="section-head"><div><div class="eyebrow">STAGE 2</div><h2>Memory Booster</h2><p>Small chunks. Big ideas.</p></div><div class="stage-pill">Remember</div></div>
+  <div class="memory-grid" id="memoryGrid"></div><div class="next-row stage-continue"><span>Ready to test what you remember?</span><button class="primary" data-go="quickfire">Quick Fire →</button></div>
+</section>
+
+<section class="screen hidden" id="quickfire">
+  <div class="section-head"><div><div class="eyebrow">STAGE 3</div><h2>Quick Fire</h2><p>Short questions. Careful thinking. No need to rush.</p></div><div class="stage-pill">10 Questions</div></div>
+  <div id="quickApp"></div>
+</section>
+
+<section class="screen hidden" id="match">
+  <div class="section-head"><div><div class="eyebrow">STAGE 4</div><h2>Match & Connect</h2><p>Connect each sense organ to what the book says it helps you do.</p></div><div class="stage-pill">Tap to Match</div></div>
+  <div id="matchApp"></div>
+</section>
+
+<section class="screen hidden" id="mistakes">
+  <div class="section-head"><div><div class="eyebrow">STAGE 5</div><h2>Fix the Mistake</h2><p>Scientists and healthy people notice unsafe choices.</p></div><div class="stage-pill">Think Again</div></div>
+  <div id="mistakeApp"></div>
+</section>
+
+<section class="screen hidden" id="game">
+  <div class="section-head"><div><div class="eyebrow">STAGE 6</div><h2>Sense Safety Quest</h2><p>Choose the safest action for each situation.</p></div><div class="stage-pill">Mission Game</div></div>
+  <div id="gameApp"></div>
+</section>
+
+<section class="screen hidden" id="boss">
+  <div class="section-head"><div><div class="eyebrow">STAGE 7</div><h2>Boss Challenge</h2><p>Mixed questions from the whole lesson.</p></div><div class="stage-pill">Mastery</div></div>
+  <div id="bossApp"></div>
+</section>
+
+<section class="screen hidden" id="sources">
+  <div class="section-head"><div><div class="eyebrow">VISUAL REVIEW</div><h2>Look, Think, Remember</h2><p>These cropped visuals come from the book pages you provided.</p></div><div class="stage-pill">Source Gallery</div></div>
+  <div class="source-grid" id="sourceGrid"></div>
+</section>
+
+<section class="screen hidden" id="results">
+  <div class="results-card">
+    <div class="result-icon" id="resultIcon">🏆</div>
+    <div class="eyebrow">YOUR REVIEW RESULTS</div>
+    <h2 id="resultTitle">Great reviewing!</h2>
+    <div class="big-score" id="finalScore">0%</div>
+    <p id="resultMessage"></p>
+    <div class="stats-grid" id="statsGrid"></div>
+    <div class="weak-card" id="weakCard"></div>
+    <div class="five-things"><h3>⭐ The 5 Things You Must Remember</h3><div id="fiveThings"></div></div>
+    <div class="thirty"><h3>⏱️ 30-Second Review</h3><p><b>SENSE ORGANS:</b> Eyes, ears, nose, tongue, and skin.</p><p><b>WORK TOGETHER:</b> When eating, the eyes see the food, the nose smells it, and the tongue tastes it.</p><p><b>CARE:</b> Keep sense organs clean, protect them from harmful things, and ask an adult/doctor when help is needed.</p></div>
+    <div class="result-actions"><button class="primary" data-go="boss">Try Boss Challenge Again</button><button class="secondary" data-go="home">Back to Home</button></div>
+  </div>
+</section>
+</main>
+
+<nav class="bottom-nav" aria-label="Reviewer navigation">
+  <button data-go="home">🏠<span>Home</span></button>
+  <button data-go="memory">🧠<span>Memory</span></button>
+  <button data-go="game">🎮<span>Game</span></button>
+  <button data-go="sources">🖼️<span>Pictures</span></button>
+  <button data-go="boss">🏆<span>Boss</span></button>
+</nav>
+
+<footer><img src="assets/logo.png" alt=""><b>Teacher Ed Learning Hub</b><span>Learn • Practice • Play • Master</span><span>Teacher Ed</span></footer>
+<script src="script.js"></script>
+</body>
+</html>

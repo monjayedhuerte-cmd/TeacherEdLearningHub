@@ -1098,6 +1098,27 @@
     "date": "2026-10-06",
     "featured": false,
     "icon": "user"
+  },
+  {
+    "title": "AP 1 | Lesson 14 : Ang Aking Pamilya at ang Aming mga Kapitbahay",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 1",
+    "description": "Matutong makipag-ugnayan nang maayos sa pamilya at mga kapitbahay, pahalagahan ang pagtutulungan, at kilalanin ang mga bansang kapitbahay ng Pilipinas.",
+    "file": "lessons/araling-panlipunan/grade-1/Teacher_Ed_AP1_Aralin14_Ang_Aking_Pamilya_at_Kapitbahay/index.html",
+    "date": "2026-10-15",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Science 1 | Reviewer in Sense Organ Working Together and Proper Care of the Eyes, Ears, Nose, Tongue, and Skin",
+    "subject": "Science", 
+    "grade": "Grade 1",
+    "description": "See what you remember, fix mistakes, practice smart choices, and get ready for your Science assessment.",
+    "file": "lessons/science/grade-1/Sense_Organs_Review/index.html",
+    "date": "2026-10-15",
+    "featured": false,
+    "icon": "user"
   }
+
   
 ]

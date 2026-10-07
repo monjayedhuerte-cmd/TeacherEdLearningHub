@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123B73">
+  <meta name="description" content="Teacher Ed Learning Hub — Araling Panlipunan Baitang 1: Ang Aking Pamilya at ang Aming mga Kapitbahay">
+  <title>Aralin 14 • Ang Aking Pamilya at ang Aming mga Kapitbahay</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="toast" class="toast" aria-live="polite"></div>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+      <div>
+        <div class="brand-name">TEACHER ED LEARNING HUB</div>
+        <div class="brand-sub">Learn • Practice • Play • Master</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="icon-btn" id="soundBtn" title="Tunog">🔊</button>
+      <button class="outline-btn" id="resetBtn">I-reset ang progreso</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="pill">ARALING PANLIPUNAN • BAITANG 1</span>
+        <h1>Ang Aking Pamilya at ang Aming mga Kapitbahay</h1>
+        <p>Matutong makipag-ugnayan nang maayos sa pamilya at mga kapitbahay, pahalagahan ang pagtutulungan, at kilalanin ang mga bansang kapitbahay ng Pilipinas.</p>
+        <div class="hero-actions">
+          <button class="primary-btn" data-go="connect">Simulan ang Aralin →</button>
+          <button class="secondary-btn" data-go="map">Tingnan ang Game Map</button>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="assets/3715.jpg" alt="Larawan mula sa aralin">
+        <div class="hero-card-caption">Mabuting pakikitungo sa mga kapitbahay</div>
+      </div>
+    </section>
+
+    <section class="progress-panel">
+      <div>
+        <strong>Ang Iyong Pag-unlad</strong>
+        <span id="progressText">0% nakumpleto</span>
+      </div>
+      <div class="progress-track"><div id="progressBar"></div></div>
+      <div class="stats">
+        <span>⭐ <b id="starCount">0</b></span>
+        <span>🏅 <b id="badgeCount">0</b></span>
+        <span>🏆 Best: <b id="bestScore">0%</b></span>
+      </div>
+    </section>
+
+    <section id="map" class="section">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">GAME MAP</span>
+          <h2>Ang Ating Paglalakbay</h2>
+          <p>Buksan ang mga misyon habang natututo ka.</p>
+        </div>
+      </div>
+      <div class="map-grid">
+        <button class="map-card active" data-go="connect"><span>1</span><b>CONNECT</b><small>Alamin ang alam mo na.</small></button>
+        <button class="map-card" data-go="teach"><span>2</span><b>TEACH</b><small>Unawain ang mahahalagang ideya.</small></button>
+        <button class="map-card" data-go="model"><span>3</span><b>MODEL</b><small>Tingnan ang halimbawa.</small></button>
+        <button class="map-card" data-go="guided"><span>4</span><b>GUIDED PRACTICE</b><small>Subukan natin nang sama-sama.</small></button>
+        <button class="map-card" data-go="independent"><span>5</span><b>YOUR TURN</b><small>Ikaw naman!</small></button>
+        <button class="map-card" data-go="game"><span>6</span><b>GAME ZONE</b><small>Maglaro habang natututo.</small></button>
+        <button class="map-card" data-go="review"><span>7</span><b>SPIRAL REVIEW</b><small>Balikan ang mahahalagang ideya.</small></button>
+        <button class="map-card" data-go="apply"><span>8</span><b>APPLY</b><small>Gamitin sa tunay na buhay.</small></button>
+        <button class="map-card" data-go="mastery"><span>9</span><b>MASTERY CHECK</b><small>Patunayan ang iyong natutuhan.</small></button>
+        <button class="map-card" data-go="remediate"><span>10</span><b>PRACTICE AGAIN</b><small>Ayusin ang mga hindi pa malinaw.</small></button>
+        <button class="map-card" data-go="celebrate"><span>11</span><b>CELEBRATE</b><small>Ipagdiwang ang iyong pag-unlad.</small></button>
+      </div>
+    </section>
+
+    <section id="connect" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 1 • CONNECT</span><h2>Sino ang mga kapitbahay?</h2></div>
+        <span class="tag">Pag-iisip muna</span>
+      </div>
+      <div class="two-col">
+        <div class="card">
+          <h3>💭 Isipin mo</h3>
+          <p>May mga taong nakatira malapit sa inyong bahay. Sila ay maaaring maging inyong mga <strong>kapitbahay</strong>.</p>
+          <p>Ang mabuting kapitbahay ay marunong <strong>makitungo nang maayos, tumulong, at makiisa</strong> kapag may pangangailangan.</p>
+        </div>
+        <div class="question-card">
+          <h3>Quick Pick</h3>
+          <p>Alin ang magandang gawin kapag may kapitbahay kang nangangailangan?</p>
+          <div class="choice-grid" data-question="connect1">
+            <button data-correct="true">🤝 Tumulong kung kaya</button>
+            <button>🙈 Iwasan siya</button>
+            <button>😠 Sigawan siya</button>
+          </div>
+          <div class="feedback" id="connect1-feedback"></div>
+        </div>
+      </div>
+      <button class="next-btn" data-go="teach">Natutuhan ko na →</button>
+    </section>
+
+    <section id="teach" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 2 • TEACH</span><h2>Mahahalagang Kaisipan</h2></div>
+      </div>
+      <div class="concept-grid">
+        <article class="concept-card"><div class="concept-icon">🏠</div><h3>Pamilya</h3><p>Ang mga kasapi ng pamilya ay may kani-kaniyang <strong>papel at tungkulin</strong>. Mahalaga ang pagtutulungan sa tahanan.</p></article>
+        <article class="concept-card"><div class="concept-icon">❤️</div><h3>Mabuting Pakikitungo</h3><p>Maging <strong>magalang, mabait, matulungin, at maunawain</strong> sa mga kasapi ng pamilya at kapitbahay.</p></article>
+        <article class="concept-card"><div class="concept-icon">🤝</div><h3>Pagtutulungan</h3><p>Ang magkakapitbahay ay maaaring magtulungan sa oras ng pangangailangan, tulad ng panahon ng sakuna.</p></article>
+        <article class="concept-card"><div class="concept-icon">🌏</div><h3>Bansang Kapitbahay</h3><p>May mga bansang malapit sa Pilipinas. Kabilang sa mga binanggit sa aralin ang <strong>Brunei, Cambodia, East Timor, Indonesia, Laos, Malaysia, Myanmar, Singapore, Thailand, at Vietnam</strong>.</p></article>
+      </div>
+      <div class="note-box">⭐ <b>Tandaan:</b> Hindi pare-pareho ang mga kapitbahay, ngunit lahat ay dapat tratuhin nang may paggalang.</div>
+      <button class="next-btn" data-go="model">Tingnan ang mga halimbawa →</button>
+    </section>
+
+    <section id="model" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 3 • MODEL</span><h2>Ganito ang Mabuting Pakikitungo</h2></div>
+      </div>
+      <div class="story-grid">
+        <article class="story-card">
+          <img src="assets/3715.jpg" alt="Pamilya de Guzman">
+          <div><b>Pamilya de Guzman</b><p>Makikita sa aralin ang isang pamilya na nakatira sa Valenzuela at nakikipag-ugnayan sa kanilang mga kapitbahay.</p></div>
+        </article>
+        <article class="story-card">
+          <img src="assets/3716.jpg" alt="Pamilya Santos at Pamilya Guillermo">
+          <div><b>Pamilya Santos at Pamilya Guillermo</b><p>Ang mga kapitbahay ay maaaring magtulungan. Halimbawa, may mga pamilyang tumutulong sa mga kapitbahay na may sakit o nangangailangan.</p></div>
+        </article>
+        <article class="story-card">
+          <img src="assets/3717.jpg" alt="Pamilya Tan at Pamilya dela Cruz">
+          <div><b>Pamilya Tan at Pamilya dela Cruz</b><p>Maaaring maging maganda ang samahan sa kapitbahayan sa pamamagitan ng pagiging mabait, pakikipaglaro, pagtulong, at sama-samang pagkilos.</p></div>
+        </article>
+      </div>
+      <div class="model-example">
+        <div class="model-icon">🧠</div>
+        <div><strong>Halimbawa:</strong> Kung may bagyo at may kapitbahay na nangangailangan ng tulong, maaaring magbigay ng pagkain, damit, o iba pang tulong na kaya nating ibigay.</div>
+      </div>
+      <button class="next-btn" data-go="guided">Subukan natin →</button>
+    </section>
+
+    <section id="guided" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 4 • GUIDED PRACTICE</span><h2>Tulungan Mo Ako</h2><p>Piliin ang pinakamagandang sagot. May gabay pagkatapos ng bawat sagot.</p></div>
+      </div>
+      <div id="guidedQuiz" class="quiz-card"></div>
+    </section>
+
+    <section id="independent" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 5 • INDEPENDENT PRACTICE</span><h2>Ikaw Naman!</h2><p>Subukan mong sagutin nang mag-isa.</p></div>
+      </div>
+      <div id="independentQuiz" class="quiz-card"></div>
+    </section>
+
+    <section id="game" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 6 • GAME PRACTICE</span><h2>Game Zone</h2><p>Dalawang laro para sa iyong kaalaman.</p></div>
+      </div>
+      <div class="game-tabs">
+        <button class="game-tab active" data-game="sortGame">🎯 Mabuti o Hindi?</button>
+        <button class="game-tab" data-game="countryGame">🌏 Bansang Kapitbahay</button>
+      </div>
+      <div id="sortGame" class="game-panel active">
+        <div class="game-intro"><h3>🎯 Mabuti o Hindi?</h3><p>Piliin kung <strong>MABUTI</strong> o <strong>HINDI MABUTI</strong> ang kilos.</p></div>
+        <div id="sortQuestion" class="game-question"></div>
+        <div class="sort-buttons">
+          <button data-sort="mabuti">✅ MABUTI</button>
+          <button data-sort="hindi">❌ HINDI MABUTI</button>
+        </div>
+        <div id="sortFeedback" class="feedback"></div>
+        <div class="game-score">Puntos: <b id="sortScore">0</b></div>
+      </div>
+      <div id="countryGame" class="game-panel">
+        <div class="game-intro"><h3>🌏 Bansang Kapitbahay</h3><p>Alin sa mga bansa ang kabilang sa mga bansang binanggit sa aralin bilang mga kapitbahay ng Pilipinas?</p></div>
+        <div id="countryQuestion" class="game-question"></div>
+        <div id="countryChoices" class="choice-grid"></div>
+        <div id="countryFeedback" class="feedback"></div>
+        <div class="game-score">Puntos: <b id="countryScore">0</b></div>
+      </div>
+    </section>
+
+    <section id="review" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 7 • SPIRAL REVIEW</span><h2>Balikan Natin</h2></div>
+      </div>
+      <div class="review-grid">
+        <div class="review-item"><span>1</span><p><b>Kapitbahay</b> — taong o pamilyang nakatira malapit sa atin.</p></div>
+        <div class="review-item"><span>2</span><p><b>Mabuting pakikitungo</b> — pagiging magalang, mabait, at matulungin.</p></div>
+        <div class="review-item"><span>3</span><p><b>Pagtutulungan</b> — sama-samang pagkilos lalo na kapag may pangangailangan.</p></div>
+        <div class="review-item"><span>4</span><p><b>Bansang kapitbahay</b> — mga bansang malapit sa Pilipinas na binanggit sa aralin.</p></div>
+      </div>
+      <div class="mini-review">
+        <p><strong>Tanong:</strong> Bakit mahalaga ang mabuting ugnayan ng mga magkakapitbahay?</p>
+        <div class="choice-grid" data-question="review1">
+          <button data-correct="true">Dahil maaari tayong magtulungan.</button>
+          <button>Dahil kailangan nating laging mag-away.</button>
+          <button>Dahil hindi natin sila dapat kausapin.</button>
+        </div>
+        <div class="feedback" id="review1-feedback"></div>
+      </div>
+      <button class="next-btn" data-go="apply">Gamitin sa tunay na buhay →</button>
+    </section>
+
+    <section id="apply" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 8 • APPLICATION</span><h2>Ano ang Gagawin Mo?</h2><p>Piliin ang mabuting kilos sa bawat sitwasyon.</p></div>
+      </div>
+      <div class="scenario-grid">
+        <div class="scenario"><div class="scenario-num">A</div><p>May bagong kapitbahay. Ano ang maaari mong gawin?</p><button data-scenario="good">Batiin at makipagkilala nang magalang.</button><button data-scenario="bad">Huwag pansinin at pagtawanan.</button><div class="feedback scenario-feedback"></div></div>
+        <div class="scenario"><div class="scenario-num">B</div><p>May kapitbahay na nangangailangan ng tulong. Ano ang maaari mong gawin?</p><button data-scenario="good">Tumulong kung kaya at humingi ng tulong sa nakatatanda kung kailangan.</button><button data-scenario="bad">Iwan siya kahit kaya mong tumulong.</button><div class="feedback scenario-feedback"></div></div>
+        <div class="scenario"><div class="scenario-num">C</div><p>May hindi pagkakaunawaan. Ano ang mabuting gawin?</p><button data-scenario="good">Makipag-usap nang mahinahon at magalang.</button><button data-scenario="bad">Sumigaw at makipag-away.</button><div class="feedback scenario-feedback"></div></div>
+      </div>
+      <button class="next-btn" data-go="mastery">Handa na ako sa Mastery Check →</button>
+    </section>
+
+    <section id="mastery" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 9 • MASTERY CHECK</span><h2>Mastery Challenge</h2><p>10 tanong. Piliin ang pinakamainam na sagot.</p></div>
+      </div>
+      <div id="masteryQuiz" class="quiz-card"></div>
+    </section>
+
+    <section id="remediate" class="section lesson-section">
+      <div class="section-head">
+        <div><span class="eyebrow">PHASE 10 • REMEDIATION / ENRICHMENT</span><h2>Practice Again</h2><p>Balikan ang mga tanong na hindi mo nasagot nang tama. Kung mataas ang iyong marka, subukan ang hamon.</p></div>
+      </div>
+      <div id="remediationBox" class="remediation-box">
+        <div class="empty-state">Tapusin muna ang Mastery Challenge para makita ang iyong practice set.</div>
+      </div>
+    </section>
+
+    <section id="celebrate" class="section celebrate">
+      <div class="celebrate-card">
+        <div class="trophy">🏆</div>
+        <span class="eyebrow">PHASE 11 • CELEBRATE</span>
+        <h2>Mahusay, batang mag-aaral!</h2>
+        <p id="celebrateText">Ang pagkatuto ay hindi paligsahan. Ang mahalaga ay naiintindihan mo, nagsasanay ka, at patuloy kang umuunlad.</p>
+        <div class="achievement-grid">
+          <div><span>⭐</span><b id="finalStars">0</b><small>Stars</small></div>
+          <div><span>🏅</span><b id="finalBadges">0</b><small>Badges</small></div>
+          <div><span>🎯</span><b id="finalBest">0%</b><small>Best Score</small></div>
+        </div>
+        <button class="primary-btn" data-go="map">Balikan ang Game Map</button>
+      </div>
+    </section>
+
+    <section class="source-section">
+      <div class="section-head">
+        <div><span class="eyebrow">SOURCE CORNER</span><h2>Mula sa Iyong Aralin</h2><p>Mga larawang ibinigay bilang sanggunian para sa lesson experience.</p></div>
+      </div>
+      <div class="source-gallery">
+        <img src="assets/3714.jpg" alt="Pahina ng Aralin 14">
+        <img src="assets/3715.jpg" alt="Pamilya de Guzman">
+        <img src="assets/3716.jpg" alt="Pamilya Santos at Guillermo">
+        <img src="assets/3717.jpg" alt="Pamilya Tan at dela Cruz">
+        <img src="assets/3718.jpg" alt="Subukin Natin">
+        <img src="assets/3719.jpg" alt="Mapa ng mga bansang kapitbahay">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo">
+    <div><b>Teacher Ed Learning Hub</b><br>Learn • Practice • Play • Master<br><small>Teacher Ed • Educational Learning Website</small></div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
