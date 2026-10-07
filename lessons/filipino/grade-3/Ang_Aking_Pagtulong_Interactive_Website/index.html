@@ -1,0 +1,1826 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Ang Aking Pagtulong sa Kasapi ng Komunidad | Teacher Ed Learning Hub
+    </title>
+    <link rel="icon" type="image/png" href="assets/BrandLogo.png" />
+    <style>
+      :root {
+        --navy: #17345d;
+        --blue: #2f6fbd;
+        --sky: #eef7ff;
+        --gold: #f4b942;
+        --green: #1f9d67;
+        --red: #d9534f;
+        --ink: #1d2939;
+        --muted: #667085;
+        --white: #fff;
+        --line: #dbe5f0;
+        --purple: #6558d3;
+        --cream: #fffaf0;
+        --shadow: 0 12px 30px rgba(23, 52, 93, 0.12);
+        --radius: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Arial,
+          sans-serif;
+        background: linear-gradient(180deg, #f7fbff, #eef6ff 45%, #fff);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .no-en .en {
+        display: none !important;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(255, 255, 255, 0.96);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 5px 18px rgba(23, 52, 93, 0.06);
+      }
+      .topbar {
+        max-width: 1200px;
+        margin: auto;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand-logo {
+        width: 58px;
+        height: 58px;
+        object-fit: contain;
+        border-radius: 14px;
+        background: #fff;
+      }
+      .brand-text {
+        flex: 1;
+      }
+      .brand-text strong {
+        display: block;
+        color: var(--navy);
+        letter-spacing: 0.3px;
+      }
+      .brand-text small {
+        color: var(--muted);
+      }
+      .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+      .btn {
+        border: 0;
+        border-radius: 14px;
+        padding: 10px 14px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.2s;
+        box-shadow: 0 4px 10px rgba(23, 52, 93, 0.08);
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .btn-primary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .btn-secondary {
+        background: #eaf3ff;
+        color: var(--navy);
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: #3b2a00;
+      }
+      .btn-green {
+        background: #ddf6eb;
+        color: #106241;
+      }
+      .btn-danger {
+        background: #ffe9e8;
+        color: #9d2d2a;
+      }
+      .progress-wrap {
+        height: 7px;
+        background: #e8eef6;
+      }
+      .progress {
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          var(--blue),
+          var(--purple),
+          var(--gold)
+        );
+        width: 0;
+        transition: 0.3s;
+      }
+      main {
+        max-width: 1200px;
+        margin: auto;
+        padding: 26px 16px 110px;
+      }
+      .hero {
+        background: linear-gradient(135deg, var(--navy), #2b609f);
+        color: #fff;
+        border-radius: 30px;
+        padding: 34px 28px;
+        box-shadow: var(--shadow);
+        position: relative;
+        overflow: hidden;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.08);
+        right: -50px;
+        top: -80px;
+      }
+      .hero h1 {
+        font-size: clamp(30px, 5vw, 52px);
+        line-height: 1.08;
+        margin: 10px 0;
+      }
+      .hero p {
+        max-width: 820px;
+        margin: 10px 0;
+      }
+      .chips {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .chip {
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 7px 11px;
+        border-radius: 999px;
+        font-weight: 800;
+        font-size: 0.9rem;
+      }
+      .lesson-nav {
+        display: flex;
+        gap: 8px;
+        overflow: auto;
+        padding: 12px 0 4px;
+        position: sticky;
+        top: 79px;
+        z-index: 40;
+        background: rgba(247, 251, 255, 0.92);
+        backdrop-filter: blur(8px);
+      }
+      .lesson-nav button {
+        white-space: nowrap;
+        border: 1px solid var(--line);
+        background: #fff;
+        color: var(--navy);
+        border-radius: 999px;
+        padding: 9px 12px;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .lesson-nav button.active {
+        background: var(--navy);
+        color: #fff;
+      }
+      .section {
+        display: none;
+        padding-top: 24px;
+      }
+      .section.active {
+        display: block;
+      }
+      .section-head {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        margin: 10px 0 18px;
+      }
+      .phase {
+        min-width: 55px;
+        height: 55px;
+        border-radius: 18px;
+        background: var(--gold);
+        color: #382900;
+        display: grid;
+        place-items: center;
+        font-weight: 900;
+      }
+      .section-head h2 {
+        margin: 0;
+        color: var(--navy);
+        font-size: clamp(25px, 4vw, 36px);
+      }
+      .section-head p {
+        margin: 2px 0;
+        color: var(--muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+      }
+      .span-12 {
+        grid-column: span 12;
+      }
+      .span-8 {
+        grid-column: span 8;
+      }
+      .span-6 {
+        grid-column: span 6;
+      }
+      .span-4 {
+        grid-column: span 4;
+      }
+      .card h3 {
+        margin-top: 0;
+        color: var(--navy);
+      }
+      .en {
+        color: #58667a;
+        font-size: 0.93em;
+        border-left: 3px solid #b7d6f7;
+        padding-left: 10px;
+        margin-top: 7px;
+      }
+      .callout {
+        padding: 14px 16px;
+        border-radius: 16px;
+        background: var(--sky);
+        border-left: 5px solid var(--blue);
+      }
+      .teacher {
+        background: #fff8e6;
+        border-left: 5px solid var(--gold);
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+      .success {
+        background: #eaf9f2;
+        border-left: 5px solid var(--green);
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+      .warning {
+        background: #fff0ef;
+        border-left: 5px solid var(--red);
+        padding: 14px 16px;
+        border-radius: 16px;
+      }
+      .story {
+        font-size: 1.06rem;
+        background: #fffdf7;
+        border: 1px solid #f0dfb0;
+      }
+      .story p {
+        margin: 0 0 14px;
+      }
+      .story em {
+        color: #745300;
+      }
+      .source-img {
+        width: 100%;
+        max-height: 580px;
+        object-fit: contain;
+        background: #f3f6fa;
+        border-radius: 16px;
+        border: 1px solid var(--line);
+        cursor: zoom-in;
+      }
+      .caption {
+        font-size: 0.86rem;
+        color: var(--muted);
+        margin-top: 6px;
+        text-align: center;
+      }
+      .option-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 10px;
+      }
+      .option {
+        border: 2px solid var(--line);
+        background: #fff;
+        border-radius: 16px;
+        padding: 13px;
+        text-align: left;
+        font-weight: 800;
+        cursor: pointer;
+      }
+      .option:hover {
+        border-color: #8bb7e7;
+        background: #f7fbff;
+      }
+      .option.correct {
+        border-color: var(--green);
+        background: #e9f8f0;
+      }
+      .option.wrong {
+        border-color: var(--red);
+        background: #fff0ef;
+      }
+      .feedback {
+        margin-top: 12px;
+        font-weight: 800;
+        min-height: 28px;
+      }
+      .match-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        align-items: center;
+        margin: 10px 0;
+      }
+      .match-row select,
+      .text-input {
+        width: 100%;
+        padding: 12px;
+        border: 2px solid var(--line);
+        border-radius: 14px;
+        font-size: 1rem;
+        background: #fff;
+      }
+      .checkline {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 14px;
+      }
+      .sort-zone {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .dropbox {
+        min-height: 170px;
+        border: 2px dashed #a9bfd8;
+        border-radius: 18px;
+        padding: 14px;
+        background: #f9fcff;
+      }
+      .dragitem {
+        display: inline-block;
+        margin: 6px;
+        padding: 10px 12px;
+        background: #fff;
+        border: 2px solid #d8e3ef;
+        border-radius: 12px;
+        font-weight: 800;
+        cursor: grab;
+      }
+      .dragitem.selected {
+        outline: 3px solid #b7d6f7;
+      }
+      .story-map {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 8px;
+      }
+      .story-step {
+        background: #edf5ff;
+        border: 1px solid #cfe1f6;
+        border-radius: 14px;
+        padding: 12px;
+        text-align: center;
+        font-weight: 800;
+        min-height: 88px;
+      }
+      .story-step .num {
+        display: block;
+        font-size: 1.4rem;
+        color: var(--blue);
+      }
+      .quiz {
+        display: grid;
+        gap: 14px;
+      }
+      .q-card {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 16px;
+        background: #fff;
+      }
+      .q-card h4 {
+        margin: 0 0 10px;
+      }
+      .q-options {
+        display: grid;
+        gap: 8px;
+      }
+      .q-options label {
+        display: block;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 10px;
+        cursor: pointer;
+      }
+      .q-options label:hover {
+        background: #f7fbff;
+      }
+      .result {
+        font-size: 1.2rem;
+        font-weight: 900;
+      }
+      .stars {
+        font-size: 2rem;
+        letter-spacing: 5px;
+      }
+      .badge-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 12px;
+      }
+      .badge {
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        padding: 15px;
+        text-align: center;
+        background: #fff;
+      }
+      .badge .icon {
+        font-size: 2.1rem;
+      }
+      .locked {
+        opacity: 0.42;
+        filter: grayscale(1);
+      }
+      footer {
+        background: var(--navy);
+        color: #fff;
+        margin-top: 40px;
+      }
+      .footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        padding: 24px 18px;
+        display: flex;
+        gap: 18px;
+        align-items: center;
+      }
+      .footer-inner img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 12px;
+      }
+      .footer-inner small {
+        color: #d8e5f5;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 24, 42, 0.7);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+        padding: 18px;
+      }
+      .modal.open {
+        display: flex;
+      }
+      .modal-box {
+        background: #fff;
+        border-radius: 24px;
+        max-width: 900px;
+        width: 100%;
+        max-height: 90vh;
+        overflow: auto;
+        padding: 20px;
+      }
+      .modal-box img {
+        max-width: 100%;
+        display: block;
+        margin: auto;
+      }
+      @media (max-width: 850px) {
+        .span-8,
+        .span-6,
+        .span-4 {
+          grid-column: span 12;
+        }
+        .story-map {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .sort-zone {
+          grid-template-columns: 1fr;
+        }
+        .actions {
+          display: none;
+        }
+        .lesson-nav {
+          top: 78px;
+        }
+        .topbar {
+          padding: 8px 12px;
+        }
+        .brand-logo {
+          width: 48px;
+          height: 48px;
+        }
+      }
+      @media (max-width: 520px) {
+        main {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .hero {
+          padding: 26px 20px;
+          border-radius: 24px;
+        }
+        .card {
+          padding: 16px;
+        }
+        .match-row {
+          grid-template-columns: 1fr;
+        }
+        .story-map {
+          grid-template-columns: 1fr;
+        }
+        .section-head {
+          gap: 9px;
+        }
+        .phase {
+          min-width: 46px;
+          height: 46px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="topbar">
+        <img
+          class="brand-logo"
+          src="assets/BrandLogo.png"
+          alt="Teacher Ed Learning Hub logo"
+        />
+        <div class="brand-text">
+          <strong>TEACHER ED LEARNING HUB</strong
+          ><small>Teacher Ed • Filipino 3 • Interactive Learning</small>
+        </div>
+        <div class="actions">
+          <button class="btn btn-secondary" onclick="toggleEnglish()">
+            ENGLISH SUPPORT
+          </button>
+          <button class="btn btn-secondary" onclick="toggleTeacher()">
+            TEACHER MODE
+          </button>
+          <button class="btn btn-secondary" onclick="toggleFullscreen()">
+            ⛶ FULL SCREEN
+          </button>
+          <button class="btn btn-danger" onclick="resetProgress()">
+            RESET
+          </button>
+        </div>
+      </div>
+      <div class="progress-wrap">
+        <div id="progress" class="progress"></div>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="chip">ARALIN 2 • FILIPINO 3</div>
+        <h1>Ang Aking Pagtulong sa Kasapi ng Komunidad</h1>
+        <p>
+          <strong>Batay sa ibinigay mong aralin:</strong> talasalitaan,
+          <b>pang-angkop</b>, pag-unawa sa tekstong naratibo, katangian ng
+          tauhan, personal na karanasan, magagalang na pananalita, at
+          pagtutulungan sa komunidad.
+        </p>
+        <p class="en">
+          English support:
+          <strong>My Help to Members of the Community</strong> — vocabulary,
+          linking words, story comprehension, character traits, polite
+          expressions, and community cooperation.
+        </p>
+        <div class="chips">
+          <span class="chip">Teach • Model • Practice • Apply</span
+          ><span class="chip">Filipino + English Support</span
+          ><span class="chip">Teacher Ed</span
+          ><span class="chip" id="scoreChip">⭐ 0 points</span>
+        </div>
+      </section>
+      <nav class="lesson-nav" id="nav"></nav>
+
+      <section class="section active" id="s0">
+        <div class="section-head">
+          <div class="phase">01</div>
+          <div>
+            <h2>ENGAGE • Kumonekta</h2>
+            <p>Activate prior knowledge • Paunang pag-unawa</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-8">
+            <h3>👀 Tingnan at Mag-isip</h3>
+            <p>
+              Kapag may gawain sa inyong bahay o barangay, paano ka
+              makatutulong?
+            </p>
+            <p class="en">
+              When there is a task at home or in your community, how can you
+              help?
+            </p>
+            <div class="option-grid" id="engageChoices"></div>
+            <div id="engageFeedback" class="feedback"></div>
+          </div>
+          <div class="card span-4">
+            <img
+              id="engageImage"
+              class="source-img"
+              src="assets/2323.jpg"
+              alt="Aralin 2 source page"
+              onclick="openImg(this.src)"
+            />
+            <div class="caption">
+              Ibinigay na pahina ng aralin • Source page
+            </div>
+            <label
+              class="btn btn-secondary"
+              style="display: inline-block; margin-top: 10px"
+              >🖼️ Palitan ang Larawan / Change Image<input
+                type="file"
+                accept="image/*"
+                style="display: none"
+                onchange="replaceImage(this, 'engageImage')"
+            /></label>
+          </div>
+          <div class="card span-12">
+            <div class="teacher">
+              <b>👩‍🏫 Teacher Call:</b> “Bago tayo magbasa, isipin muna natin ang
+              mga pagkakataong nakatulong ka sa bahay, paaralan, o komunidad.”
+              <div class="en">
+                Teacher prompt: “Before we read, think about times you helped at
+                home, at school, or in your community.”
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s1">
+        <div class="section-head">
+          <div class="phase">02</div>
+          <div>
+            <h2>CONNECT • Iugnay</h2>
+            <p>Mula sa sariling karanasan patungo sa kuwento</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>💬 Ano ang “pagtulong”?</h3>
+            <div class="option-grid">
+              <button class="option" onclick="choice(this, 'connect', 'A')">
+                Paggawa ng bagay para makatulong sa iba</button
+              ><button class="option" onclick="choice(this, 'connect', 'B')">
+                Pag-iwas sa lahat ng gawain</button
+              ><button class="option" onclick="choice(this, 'connect', 'C')">
+                Pagpapagawa ng lahat sa iba
+              </button>
+            </div>
+            <div id="connectFeedback" class="feedback"></div>
+            <p class="en">
+              Helping means doing something useful for another person or for the
+              community.
+            </p>
+          </div>
+          <div class="card span-6">
+            <h3>🤝 Saan tayo maaaring tumulong?</h3>
+            <ul>
+              <li>Sa bahay — <span class="en">at home</span></li>
+              <li>Sa paaralan — <span class="en">at school</span></li>
+              <li>Sa komunidad — <span class="en">in the community</span></li>
+            </ul>
+            <div class="callout">
+              <b>Big Idea:</b> Ang pagtutulungan ay nagpapadali ng gawain at
+              nakabubuti sa lahat.
+              <div class="en">
+                Cooperation makes work easier and benefits everyone.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s2">
+        <div class="section-head">
+          <div class="phase">03</div>
+          <div>
+            <h2>EXPLORE • Tuklasin ang Kuwento</h2>
+            <p>
+              Basahin, pakinggan sa isip, at hanapin ang mahahalagang detalye
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-8 story">
+            <h3>
+              📖 Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya
+            </h3>
+            <p>
+              Masayang uuwi si Anya kasama ang kaniyang pamilya sa kanilang
+              lalawigan sa Quezon para magbakasyon. Muli na naman niyang
+              makakasama ang kaniyang kababatang pinsan si Luis.
+            </p>
+            <p>
+              Simula nang lumipat ang kaniyang pamilya sa Maynila, ay tuwing
+              tag-araw na lamang sila nagkakasama.
+            </p>
+            <p>
+              “Yehey! Mamimitas kami ng bayabas, mangga, at iba pang prutas
+              tulad ng nakaraang bakasyon!” nasasabik na isip ni Anya habang
+              umaandar ang sasakyan.
+            </p>
+            <p>
+              Pagdating sa kanilang tahanan, sinalubong siya ni Luis. Walang
+              pagsidlan ng tuwa ang dalawa dahil matagal-tagal din silang hindi
+              nagkita.
+            </p>
+            <p>
+              “Anya, mamaya pupunta tayo sa kabilang bayan. Samahan natin si
+              Tiya Maria para kunin ang mga dadalhing walis-tingting pagbalik
+              ninyo ng Maynila,” bungad ni Luis.
+            </p>
+            <p>
+              Nagtaka si Anya dahil unang pagkakataon niyang saksihan ang
+              paggawa ng walis-tingting. Nalaman niyang ang walis-tingting na
+              panlinis ng sahig at bakuran ay minsan ding ginagamit sa paggawa
+              ng saranggola, pagsasabong ng mga gagamba, at paggawa ng
+              handicraft tulad ng pamaypay at parol.
+            </p>
+            <p>
+              Muling nagbalik sa kaniyang alaala ang mga puno ng buko na
+              kanilang nadaraanan. Hindi nga siya nagkamali: tumambad sa
+              kaniyang paningin ang tambak ng palapa ng niyog para gawing
+              walis-tingting at bayong.
+            </p>
+            <p>
+              Katulad ng pamimitas ng mga gulay at prutas, sama-sama ang lahat
+              ng nasa pamayanan para sa gawain. May nagtatabas ng dahon. May
+              naghihiwalay ng tingting sa dahon at may nagbubungkos ng mga
+              naipong tingting.
+            </p>
+            <p>
+              Nakiisa si Anya at si Luis sa gawain. Sayang-saya sila sa
+              pagtulong. Si Luis ang tagatali ng mga dahon para gawing bayong at
+              banig habang si Anya naman ang taga-ipon ng tingting para gawing
+              walis.
+            </p>
+            <p>
+              “O di ba! Masayang ginagawa nang sama-sama ang paggawa ng mga
+              walis-tingting. Bukod sa mabilis ay marami tayong nagagawa dahil
+              bawat isa ay may kani-kaniyang tungkuling ginagampanan,” sabi ng
+              kanilang tiya habang inaayos ang mga yari nang walis-tingting.
+            </p>
+            <p>
+              “Oo nga po, Tiya Maria. Higit na nagiging kapaki-pakinabang ang
+              gawain kung sama-sama itong ginagawa. Parang mga tingting. Walang
+              silbi kung nag-iisa. Hindi nakapagwawalis o nakabubuo ng
+              makabuluhang produkto!” makahulugang sambit ni Anya habang masaya
+              silang gumagawa ng kanilang tungkulin.
+            </p>
+            <p>
+              “Tama! Oh siya, pagkatapos niya, kakain lamang tayo ng meryenda at
+              tutuloy na tayo para dalhin ang mga walis na inyong ginawa,”
+              banggit ng tiya sa magpinsan.
+            </p>
+            <p>
+              “Yehey! May pasalubong tayo kina Mama at Papa! Siyempre gawa natin
+              ang mga ito!” Masayang umuwi ang dalawa dahil sa kanilang gawang
+              walis-tingting na bunga ng sama-samang paggawa.
+            </p>
+          </div>
+          <div class="card span-4">
+            <h3>📚 Source Pages</h3>
+            <img
+              class="source-img"
+              src="assets/3539.jpg"
+              onclick="openImg(this.src)"
+              alt="Story page 139"
+            />
+            <div class="caption">Pahina ng kuwento</div>
+            <img
+              class="source-img"
+              style="margin-top: 10px"
+              src="assets/3540.jpg"
+              onclick="openImg(this.src)"
+              alt="Story page 140"
+            />
+            <div class="caption">Karugtong ng kuwento</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s3">
+        <div class="section-head">
+          <div class="phase">04</div>
+          <div>
+            <h2>LEARN • Alamin</h2>
+            <p>
+              Mini-lessons: bokabularyo, pang-angkop, at magagalang na
+              pananalita
+            </p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-4">
+            <h3>🧠 Talasalitaan</h3>
+            <p>
+              <b>kadang-kadang</b> — uri ng laruan na may pares ng bao ng niyog
+              na may tali.
+            </p>
+            <p>
+              <b>minindal</b> — pagkaing magaan na kinakain sa pagitan ng
+              pangunahing pagkain.
+            </p>
+            <p>
+              <b>bakuran</b> — bahagi ng labas ng bahay na maaaring pagdausan ng
+              gawain.
+            </p>
+            <p><b>bungkos</b> — pinagsama-samang bagay na itinali.</p>
+            <p><b>palapa</b> — dahon ng niyog.</p>
+            <p>
+              <b>bayong</b> — lalagyan na karaniwang hinahabi o yari sa
+              materyales na mula sa halaman.
+            </p>
+            <p class="en">
+              Vocabulary support: toy made from coconut shells; snack; yard;
+              bundle; coconut frond; woven carrying bag.
+            </p>
+          </div>
+          <div class="card span-4">
+            <h3>🔗 Pang-angkop</h3>
+            <p>
+              Ang <b>pang-angkop</b> ay salitang nag-uugnay ng panuring at
+              salitang inilalarawan upang maging maayos ang pahayag.
+            </p>
+            <div class="callout">
+              <b>na</b> — kapag ang unang salita ay nagtatapos sa katinig,
+              maliban sa <i>n</i>.<br /><b>-ng</b> — kapag ang unang salita ay
+              nagtatapos sa patinig.<br /><b>-g</b> — kapag ang unang salita ay
+              nagtatapos sa <i>n</i>.
+            </div>
+            <p>
+              <b>Halimbawa:</b> mabuti + ng gawa → <b>mabuting gawa</b
+              ><br />masaya + ng bata → <b>masayang bata</b><br />mabait + na
+              bata → <b>mabait na bata</b><br />laruan + g gawa?
+              <span class="warning"
+                >Teacher note: gamitin ang wastong anyo batay sa salita; huwag
+                basta magdagdag ng “-g” kung hindi naaangkop.</span
+              >
+            </p>
+            <p class="en">
+              Linking words connect a describing word to the word it describes:
+              <b>na, -ng, -g</b>.
+            </p>
+          </div>
+          <div class="card span-4">
+            <h3>🌷 Magagalang na Pananalita</h3>
+            <ul>
+              <li>Po / Opo</li>
+              <li>Salamat po.</li>
+              <li>Magandang araw po.</li>
+              <li>Paumanhin po.</li>
+              <li>Makikiraan po.</li>
+              <li>Maaari po ba?</li>
+              <li>Walang anuman.</li>
+            </ul>
+            <p class="en">
+              Polite expressions show respect when greeting, asking, thanking,
+              apologizing, or speaking with others.
+            </p>
+          </div>
+          <div class="card span-12">
+            <div class="teacher">
+              <b>👩‍🏫 WATCH ME — I DO:</b> Tingnan natin:
+              <b>masaya + ng bata = masayang bata</b>. Dahil patinig ang hulihan
+              ng “masaya,” ginagamit ang <b>-ng</b> bilang pang-angkop.
+              <div class="en">
+                Teacher model: “masaya + ng bata = masayang bata.” Because
+                “masaya” ends in a vowel, use <b>-ng</b>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s4">
+        <div class="section-head">
+          <div class="phase">05</div>
+          <div>
+            <h2>GUIDED PRACTICE • Sabay Natin</h2>
+            <p>WE DO • May gabay ng guro</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>🔗 Pang-angkop Detective</h3>
+            <p>Piliin ang tamang pang-angkop.</p>
+            <div id="guidedAngkop"></div>
+            <div id="guidedFeedback" class="feedback"></div>
+            <button class="btn btn-primary" onclick="nextGuided()">
+              Next Item
+            </button>
+          </div>
+          <div class="card span-6">
+            <h3>🌷 Piliin ang Magalang na Sagot</h3>
+            <p>May nag-abot sa iyo ng gamit. Ano ang sasabihin mo?</p>
+            <div class="option-grid">
+              <button class="option" onclick="choice(this, 'polite', 'A')">
+                “Salamat po!”</button
+              ><button class="option" onclick="choice(this, 'polite', 'B')">
+                “Akin na!”</button
+              ><button class="option" onclick="choice(this, 'polite', 'C')">
+                “Bilisan mo.”
+              </button>
+            </div>
+            <div id="politeFeedback" class="feedback"></div>
+            <p class="en">Choose the polite response.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s5">
+        <div class="section-head">
+          <div class="phase">06</div>
+          <div>
+            <h2>PRACTICE • Ikaw Naman</h2>
+            <p>YOU DO • Independent practice</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>📝 Buoin ang Pangungusap</h3>
+            <p>Piliin ang tamang pang-angkop.</p>
+            <div id="angkopQuiz"></div>
+            <button class="btn btn-primary" onclick="checkAngkopQuiz()">
+              Suriin
+            </button>
+            <div id="angkopResult" class="feedback"></div>
+          </div>
+          <div class="card span-6">
+            <h3>🧩 Talasalitaan Match</h3>
+            <p>Iugnay ang salita sa tamang kahulugan.</p>
+            <div id="vocabMatch"></div>
+            <button class="btn btn-primary" onclick="checkVocab()">
+              Suriin
+            </button>
+            <div id="vocabResult" class="feedback"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s6">
+        <div class="section-head">
+          <div class="phase">07</div>
+          <div>
+            <h2>THINK • Mag-isip at Maglaro</h2>
+            <p>Game practice • Pag-uuri at pagbuo ng pangungusap</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>🎯 Polite or Not Polite?</h3>
+            <p>I-click ang bawat pahayag at ilagay sa tamang kahon.</p>
+            <div class="sort-zone">
+              <div>
+                <h4>Mga Pahayag</h4>
+                <div id="sortItems"></div>
+              </div>
+              <div>
+                <h4>Magalang</h4>
+                <div class="dropbox" id="politeZone" data-zone="polite"></div>
+                <h4>Hindi Magalang</h4>
+                <div class="dropbox" id="notPoliteZone" data-zone="not"></div>
+              </div>
+            </div>
+            <button class="btn btn-gold" onclick="checkSort()">
+              Check Sorting
+            </button>
+            <div id="sortResult" class="feedback"></div>
+          </div>
+          <div class="card span-6">
+            <h3>🧱 Pangungusap Builder</h3>
+            <p>
+              Ayusin ang mga salita upang makabuo ng magalang na pangungusap.
+            </p>
+            <div id="sentenceWords" class="option-grid"></div>
+            <p id="builtSentence" class="callout">
+              Pindutin ang mga salita sa tamang ayos.
+            </p>
+            <button class="btn btn-green" onclick="checkSentence()">
+              Suriin
+            </button>
+            <div id="sentenceResult" class="feedback"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s7">
+        <div class="section-head">
+          <div class="phase">08</div>
+          <div>
+            <h2>REVIEW • Balikan</h2>
+            <p>Spiral review • Kuwento + tauhan + pagtutulungan</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>👧👦 Katangian ng Tauhan</h3>
+            <p>
+              Alin ang pinakamainam na katangian nina Anya at Luis batay sa
+              kuwento?
+            </p>
+            <div class="option-grid">
+              <button class="option" onclick="choice(this, 'traits', 'A')">
+                Matulungin at masipag</button
+              ><button class="option" onclick="choice(this, 'traits', 'B')">
+                Makasarili at tamad</button
+              ><button class="option" onclick="choice(this, 'traits', 'C')">
+                Magulo at walang pakialam
+              </button>
+            </div>
+            <div id="traitsFeedback" class="feedback"></div>
+          </div>
+          <div class="card span-6">
+            <h3>🧭 Ayusin ang Pangyayari</h3>
+            <p>Mag-click ng mga hakbang ayon sa wastong pagkakasunod-sunod.</p>
+            <div class="story-map" id="sequence"></div>
+            <button class="btn btn-primary" onclick="checkSequence()">
+              Suriin ang Ayos
+            </button>
+            <div id="sequenceResult" class="feedback"></div>
+          </div>
+          <div class="card span-12">
+            <div class="callout">
+              <b>Quick Review:</b> Ang mga tauhan ay nakiisa sa gawain at bawat
+              isa ay may tungkuling ginagampanan. Kapag nagtutulungan, mas
+              mabilis at mas marami ang nagagawa.
+              <div class="en">
+                The characters cooperated, and each person had a role. When
+                people cooperate, work becomes easier and more productive.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s8">
+        <div class="section-head">
+          <div class="phase">09</div>
+          <div>
+            <h2>APPLY • Gamitin sa Buhay</h2>
+            <p>Meaningful situations • Pagsasabuhay</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>🏘️ Sitwasyon 1</h3>
+            <p>May paglilinis sa barangay. Ano ang magandang gawin?</p>
+            <div class="option-grid">
+              <button class="option" onclick="choice(this, 'apply1', 'A')">
+                Makilahok at tumulong ayon sa tungkulin.</button
+              ><button class="option" onclick="choice(this, 'apply1', 'B')">
+                Umalis at hayaan ang iba.</button
+              ><button class="option" onclick="choice(this, 'apply1', 'C')">
+                Magkalat pa.
+              </button>
+            </div>
+            <div id="apply1Feedback" class="feedback"></div>
+          </div>
+          <div class="card span-6">
+            <h3>🏫 Sitwasyon 2</h3>
+            <p>
+              May kaklaseng nahihirapan magdala ng mga gamit. Ano ang magalang
+              na sasabihin?
+            </p>
+            <div class="option-grid">
+              <button class="option" onclick="choice(this, 'apply2', 'A')">
+                “Maaari po ba kitang tulungan?”</button
+              ><button class="option" onclick="choice(this, 'apply2', 'B')">
+                “Kaya mo na iyan.”</button
+              ><button class="option" onclick="choice(this, 'apply2', 'C')">
+                “Hindi ko problema iyan.”
+              </button>
+            </div>
+            <div id="apply2Feedback" class="feedback"></div>
+          </div>
+          <div class="card span-12">
+            <h3>✍️ Ikaw ang May Sagot</h3>
+            <p>
+              Sumulat ng isang pangungusap tungkol sa pagtulong mo sa komunidad.
+            </p>
+            <textarea
+              id="reflection"
+              class="text-input"
+              rows="5"
+              placeholder="Halimbawa: Tumulong ako sa paglilinis ng aming barangay. / Example: I helped clean our community."
+            ></textarea>
+            <div class="checkline">
+              <button class="btn btn-green" onclick="saveReflection()">
+                I-save ang Sagot</button
+              ><span id="reflectionMsg" class="feedback"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s9">
+        <div class="section-head">
+          <div class="phase">10</div>
+          <div>
+            <h2>CHECK • Mastery Check</h2>
+            <p>15-item assessment • Walang oras na hinahabol</p>
+          </div>
+        </div>
+        <div class="card">
+          <p class="en">
+            English support is provided under each question. Read carefully and
+            choose the best answer.
+          </p>
+          <div id="masteryQuiz" class="quiz"></div>
+          <div class="checkline">
+            <button class="btn btn-primary" onclick="submitMastery()">
+              I-submit ang Mastery Check</button
+            ><button class="btn btn-secondary" onclick="renderMastery()">
+              Subukan Muli
+            </button>
+          </div>
+          <div id="masteryResult" class="feedback"></div>
+        </div>
+      </section>
+
+      <section class="section" id="s10">
+        <div class="section-head">
+          <div class="phase">11</div>
+          <div>
+            <h2>REFLECT • REMEDIATE • ENRICH</h2>
+            <p>Matuto mula sa pagkakamali at hamunin ang sarili</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-6">
+            <h3>💡 Remediation</h3>
+            <p id="remediationText">
+              Kapag may maling sagot, babalik tayo sa paliwanag at isa pang
+              halimbawa.
+            </p>
+            <div class="en">
+              If you miss an item, review the concept and try another example.
+            </div>
+            <button class="btn btn-gold" onclick="showReviewHint()">
+              Bigyan Ako ng Hint
+            </button>
+            <div id="hint" class="feedback"></div>
+          </div>
+          <div class="card span-6">
+            <h3>🏆 Enrichment Challenge</h3>
+            <p>
+              Gumawa ng dalawang pangungusap na may pang-angkop at isang
+              magalang na pananalita.
+            </p>
+            <textarea
+              class="text-input"
+              id="enrich"
+              rows="5"
+              placeholder="1. Masayang ...
+2. Mabait na ..."
+            ></textarea
+            ><button class="btn btn-green" onclick="saveEnrich()">
+              I-save ang Challenge
+            </button>
+            <div id="enrichMsg" class="feedback"></div>
+          </div>
+          <div class="card span-12">
+            <h3>🏅 Mga Badge</h3>
+            <div class="badge-grid">
+              <div class="badge" id="badge1">
+                <div class="icon">📖</div>
+                <b>Story Explorer</b><small>Natapos ang kuwento.</small>
+              </div>
+              <div class="badge" id="badge2">
+                <div class="icon">🔗</div>
+                <b>Pang-angkop Pro</b><small>Mahusay sa linking words.</small>
+              </div>
+              <div class="badge" id="badge3">
+                <div class="icon">🌷</div>
+                <b>Magalang Kid</b
+                ><small>Gumagamit ng magagalang na pananalita.</small>
+              </div>
+              <div class="badge" id="badge4">
+                <div class="icon">🤝</div>
+                <b>Community Helper</b
+                ><small>Nauunawaan ang pagtutulungan.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="s11">
+        <div class="section-head">
+          <div class="phase">12</div>
+          <div>
+            <h2>CELEBRATE • Ipagdiwang</h2>
+            <p>Recognize progress • Kilalanin ang iyong pag-unlad</p>
+          </div>
+        </div>
+        <div class="grid">
+          <div class="card span-8">
+            <h3>🎉 Magaling, Learner!</h3>
+            <div class="stars" id="finalStars">☆☆☆☆☆</div>
+            <p id="finalMessage">
+              Kumpletuhin ang mga gawain upang makita ang iyong resulta.
+            </p>
+            <div class="callout">
+              <b>Remember:</b> Ang tunay na husay ay hindi lamang sa paggawa.
+              Makikita rin ito sa pagiging matulungin, magalang, masipag, at
+              marunong makiisa.
+              <div class="en">
+                True skill is not only about doing a task. It also means being
+                helpful, respectful, hardworking, and cooperative.
+              </div>
+            </div>
+          </div>
+          <div class="card span-4">
+            <h3>📊 Progress</h3>
+            <p class="result" id="finalScore">0 points</p>
+            <p id="bestScore">Best: 0</p>
+            <button class="btn btn-primary" onclick="goTo(0)">
+              🔁 Balikan ang Aralin
+            </button>
+          </div>
+          <div class="card span-12">
+            <div class="teacher">
+              <b>👩‍🏫 Teacher Closing:</b> “Tandaan: bawat isa ay may kakayahang
+              tumulong. Kapag may kani-kaniyang tungkulin at sama-sama, mas
+              nagiging kapaki-pakinabang ang gawain.”
+              <div class="en">
+                Closing: “Remember: everyone can help. When each person has a
+                role and works together, the task becomes more useful and
+                productive.”
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer-inner">
+        <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo" />
+        <div>
+          <b>Teacher Ed Learning Hub</b><br /><small
+            >Learn • Practice • Play • Master<br />Teacher Ed • Educational
+            Learning Website</small
+          >
+        </div>
+      </div>
+    </footer>
+    <div class="modal" id="imgModal" onclick="closeImg(event)">
+      <div class="modal-box">
+        <button class="btn btn-danger" onclick="closeImg(event)">Close</button
+        ><img id="modalImg" alt="Source image" />
+      </div>
+    </div>
+    <script>
+      const sections = [
+        ["ENGAGE", "Kumonekta"],
+        ["CONNECT", "Iugnay"],
+        ["EXPLORE", "Tuklasin"],
+        ["LEARN", "Alamin"],
+        ["GUIDED", "Sabay Natin"],
+        ["PRACTICE", "Ikaw Naman"],
+        ["THINK", "Maglaro"],
+        ["REVIEW", "Balikan"],
+        ["APPLY", "Gamitin"],
+        ["CHECK", "Mastery"],
+        ["REFLECT", "Remediate"],
+        ["CELEBRATE", "Ipagdiwang"],
+      ];
+      let current = 0,
+        score = Number(localStorage.getItem("teScore") || 0),
+        best = Number(localStorage.getItem("teBest") || 0),
+        english = true,
+        teacher = true,
+        missedMastery = [];
+      const nav = document.getElementById("nav");
+      sections.forEach((x, i) => {
+        const b = document.createElement("button");
+        b.textContent = i + 1 + ". " + x[0];
+        b.onclick = () => goTo(i);
+        nav.appendChild(b);
+      });
+      function goTo(i) {
+        current = i;
+        document
+          .querySelectorAll(".section")
+          .forEach((s, j) => s.classList.toggle("active", i === j));
+        nav
+          .querySelectorAll("button")
+          .forEach((b, j) => b.classList.toggle("active", i === j));
+        document.getElementById("progress").style.width =
+          (i / (sections.length - 1)) * 100 + "%";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        updateScore();
+      }
+      function updateScore() {
+        document.getElementById("scoreChip").textContent =
+          "⭐ " + score + " points";
+        document.getElementById("finalScore").textContent = score + " points";
+        document.getElementById("bestScore").textContent = "Best: " + best;
+        let stars = Math.min(5, Math.floor(score / 20));
+        document.getElementById("finalStars").textContent =
+          "★".repeat(stars) + "☆".repeat(5 - stars);
+        document.getElementById("finalMessage").textContent =
+          score >= 80
+            ? "Napakahusay! Ipinakita mo ang pag-unawa at malasakit sa komunidad."
+            : score >= 50
+              ? "Magaling! Kaunti pang pagsasanay at lalo kang gagaling."
+              : "Patuloy lang! Balikan ang mga mini-lesson at subukang muli.";
+        localStorage.setItem("teScore", score);
+        localStorage.setItem("teBest", best);
+      }
+      function addScore(n) {
+        score += n;
+        if (score > best) best = score;
+        updateScore();
+      }
+      function choice(el, key, val) {
+        const map = {
+          connect: "A",
+          polite: "A",
+          traits: "A",
+          apply1: "A",
+          apply2: "A",
+          engage: "A",
+        };
+        const fb = document.getElementById(key + "Feedback");
+        if (fb) {
+          if (val === map[key]) {
+            el.classList.add("correct");
+            fb.innerHTML =
+              '✅ Tama! <span class="en">Correct! Good thinking.</span>';
+            addScore(5);
+          } else {
+            el.classList.add("wrong");
+            fb.innerHTML =
+              '💡 Mag-isip muli. Tingnan ang sitwasyon at piliin ang sagot na nagpapakita ng pagtulong o paggalang. <span class="en">Think again and choose the response that shows helpfulness or respect.</span>';
+          }
+        }
+      }
+      function toggleEnglish() {
+        english = !english;
+        document.body.classList.toggle("no-en", !english);
+        alert(english ? "English support is ON." : "English support is OFF.");
+      }
+      function toggleTeacher() {
+        teacher = !teacher;
+        document
+          .querySelectorAll(".teacher")
+          .forEach((x) => x.classList.toggle("hidden", !teacher));
+        alert(
+          teacher
+            ? "Teacher Mode ON — prompts are visible."
+            : "Teacher Mode OFF.",
+        );
+      }
+      function toggleFullscreen() {
+        document.fullscreenElement
+          ? document.exitFullscreen()
+          : document.documentElement.requestFullscreen?.();
+      }
+      function resetProgress() {
+        if (confirm("I-reset ang score at progress? / Reset your progress?")) {
+          localStorage.removeItem("teScore");
+          score = 0;
+          updateScore();
+          location.reload();
+        }
+      }
+      function openImg(src) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("imgModal").classList.add("open");
+      }
+      function replaceImage(input, id) {
+        const f = input.files && input.files[0];
+        if (!f) return;
+        const url = URL.createObjectURL(f);
+        document.getElementById(id).src = url;
+      }
+      function closeImg(e) {
+        if (e.target.id === "imgModal" || e.target.tagName === "BUTTON")
+          document.getElementById("imgModal").classList.remove("open");
+      }
+      // Guided pang-angkop
+      const guided = [
+        ["masaya ___ bata", "-ng", "Masayang bata"],
+        ["mabait ___ bata", "na", "Mabait na bata"],
+        ["mabuti ___ gawa", "-ng", "Mabuting gawa"],
+        ["masayang ___ bata", "na", "Masayang bata"],
+      ];
+      let gi = 0;
+      function renderGuided() {
+        const q = guided[gi % guided.length];
+        document.getElementById("guidedAngkop").innerHTML =
+          `<p><b>${q[0]}</b></p><div class="option-grid"><button class="option" onclick="guidedPick(this,'na')">na</button><button class="option" onclick="guidedPick(this,'-ng')">-ng</button><button class="option" onclick="guidedPick(this,'-g')">-g</button></div><p class="en">Choose the correct linker.</p>`;
+      }
+      function guidedPick(el, a) {
+        const q = guided[gi % guided.length];
+        if (q[1] === "?") {
+          document.getElementById("guidedFeedback").innerHTML =
+            "👩‍🏫 Teacher guide: Tingnan muna ang buong salita at kung paano ito ginagamit sa pangungusap.";
+          return;
+        }
+        if (a === q[1]) {
+          el.classList.add("correct");
+          document.getElementById("guidedFeedback").innerHTML =
+            "✅ Tama! " + q[2] + ' <span class="en">Correct!</span>';
+          addScore(5);
+        } else {
+          el.classList.add("wrong");
+          document.getElementById("guidedFeedback").innerHTML =
+            "💡 Subukan muli. " + q[2] + ' <span class="en">Try again.</span>';
+        }
+      }
+      function nextGuided() {
+        gi++;
+        renderGuided();
+        document.getElementById("guidedFeedback").textContent = "";
+      }
+      renderGuided();
+      // Independent pang-angkop quiz
+      const angkopQ = [
+        ["masaya __ bata", "-ng", "na", "-g"],
+        ["mabait __ guro", "na", "-ng", "-g"],
+        ["mabuti __ gawain", "-ng", "na", "-g"],
+        ["mabilis __ kilos", "na", "-ng", "-g"],
+        ["maganda __ araw", "-ng", "na", "-g"],
+      ];
+      function renderAngkopQuiz() {
+        document.getElementById("angkopQuiz").innerHTML = angkopQ
+          .map(
+            (q, i) =>
+              `<div class="q-card"><h4>${i + 1}. ${q[0]}</h4><div class="option-grid">${q
+                .slice(1)
+                .map(
+                  (a) =>
+                    `<label><input type="radio" name="a${i}" value="${a}"> ${a}</label>`,
+                )
+                .join("")}</div></div>`,
+          )
+          .join("");
+      }
+      function checkAngkopQuiz() {
+        let ok = 0;
+        angkopQ.forEach((q, i) => {
+          const c = document.querySelector(`input[name=a${i}]:checked`);
+          if (c && c.value === q[1]) ok++;
+        });
+        document.getElementById("angkopResult").textContent =
+          `${ok}/${angkopQ.length} tama.`;
+        addScore(ok * 4);
+      }
+      renderAngkopQuiz();
+      const vocab = [
+        ["palapa", "dahon ng niyog"],
+        ["bungkos", "pinagsama-samang bagay na itinali"],
+        ["minindal", "magaan na pagkain sa pagitan ng pangunahing pagkain"],
+        ["bakuran", "bahagi sa labas ng bahay"],
+        ["bayong", "lalagyan na karaniwang hinahabi"],
+        ["kadang-kadang", "laruang may pares ng bao ng niyog"],
+      ];
+      function renderVocab() {
+        document.getElementById("vocabMatch").innerHTML = vocab
+          .map(
+            (v, i) =>
+              `<div class="match-row"><b>${i + 1}. ${v[0]}</b><select id="v${i}"><option value="">Pumili ng kahulugan</option>${vocab
+                .slice()
+                .sort(() => Math.random() - 0.5)
+                .map((x) => `<option value="${x[1]}">${x[1]}</option>`)
+                .join("")}</select></div>`,
+          )
+          .join("");
+      }
+      function checkVocab() {
+        let ok = 0;
+        vocab.forEach((v, i) => {
+          if (document.getElementById("v" + i).value === v[1]) ok++;
+        });
+        document.getElementById("vocabResult").textContent =
+          `${ok}/${vocab.length} tama.`;
+        addScore(ok * 3);
+      }
+      renderVocab();
+      // sorting
+      const sortData = [
+        ["Salamat po!", "polite"],
+        ["Akin na!", "not"],
+        ["Maaari po ba?", "polite"],
+        ["Bilisan mo!", "not"],
+        ["Paumanhin po.", "polite"],
+        ["Huwag kang maingay!", "not"],
+      ];
+      let sortSelected = null;
+      function renderSort() {
+        document.getElementById("sortItems").innerHTML = sortData
+          .map(
+            (x, i) =>
+              `<button class="dragitem" onclick="selectSort(${i},this)">${x[0]}</button>`,
+          )
+          .join("");
+      }
+      function selectSort(i, el) {
+        sortSelected = i;
+        document
+          .querySelectorAll(".dragitem")
+          .forEach((x) => x.classList.remove("selected"));
+        el.classList.add("selected");
+        const target =
+          sortData[i][1] === "polite" ? "politeZone" : "notPoliteZone";
+        document.getElementById(target).appendChild(el);
+      }
+      function checkSort() {
+        let good = 0;
+        ["politeZone", "notPoliteZone"].forEach((z) =>
+          document
+            .getElementById(z)
+            .querySelectorAll(".dragitem")
+            .forEach((el) => {
+              const text = el.textContent;
+              const item = sortData.find((x) => x[0] === text);
+              if (
+                item &&
+                ((z === "politeZone" && item[1] === "polite") ||
+                  (z === "notPoliteZone" && item[1] === "not"))
+              )
+                good++;
+            }),
+        );
+        document.getElementById("sortResult").textContent =
+          `${good}/${sortData.length} tama.`;
+        addScore(good * 2);
+      }
+      renderSort();
+      // sentence builder
+      const sentence = ["Salamat", "po", "sa", "iyong", "tulong", "!"];
+      let built = [];
+      document.getElementById("sentenceWords").innerHTML = sentence
+        .map(
+          (w, i) =>
+            `<button class="option" id="sw${i}" onclick="addWord(${i})">${w}</button>`,
+        )
+        .join("");
+      function addWord(i) {
+        if (!built.includes(i)) {
+          built.push(i);
+          document.getElementById("sw" + i).classList.add("correct");
+          document.getElementById("builtSentence").textContent = built
+            .map((j) => sentence[j])
+            .join(" ");
+        }
+      }
+      function checkSentence() {
+        const ans = built.map((i) => sentence[i]).join(" ");
+        if (ans === "Salamat po sa iyong tulong !") {
+          document.getElementById("sentenceResult").textContent =
+            "✅ Mahusay! Magalang at maayos ang pangungusap.";
+          addScore(8);
+        } else
+          document.getElementById("sentenceResult").textContent =
+            "💡 Ayusin muli ang pagkakasunod-sunod.";
+      }
+      // sequence
+      const seq = [
+        ["1", "Pumunta sina Anya at Luis sa kabilang bayan."],
+        ["2", "Nakita ni Anya ang paggawa ng walis-tingting."],
+        ["3", "Nakiisa sila sa gawain."],
+        ["4", "Ginampanan nila ang kani-kanilang tungkulin."],
+        ["5", "Natapos ang paggawa ng mga walis."],
+        ["6", "Masayang umuwi ang magpinsan."],
+      ];
+      let seqOrder = [0, 1, 2, 3, 4, 5].sort(() => Math.random() - 0.5);
+      function renderSequence() {
+        document.getElementById("sequence").innerHTML = seqOrder
+          .map(
+            (idx, pos) =>
+              `<button class="story-step" onclick="swapSeq(${pos})"><span class="num">${pos + 1}</span>${seq[idx][1]}</button>`,
+          )
+          .join("");
+      }
+      function swapSeq(pos) {
+        if (pos === seqOrder.length - 1) return;
+        [seqOrder[pos], seqOrder[pos + 1]] = [seqOrder[pos + 1], seqOrder[pos]];
+        renderSequence();
+      }
+      function checkSequence() {
+        const good = seqOrder.every((x, i) => x === i);
+        document.getElementById("sequenceResult").textContent = good
+          ? "✅ Tama ang pagkakasunod-sunod!"
+          : "💡 May kailangang ayusin. I-click ang magkatabing pangyayari upang magpalit.";
+        if (good) addScore(10);
+      }
+      renderSequence();
+      // mastery
+      const master = [
+        [
+          "Ano ang pangunahing aralin ng kuwento?",
+          "Ang kahalagahan ng pagtutulungan",
+          "Ang pag-iwas sa gawain",
+          "Ang paglalaro buong araw",
+          "B",
+        ],
+        [
+          "Sino ang magpinsan?",
+          "Anya at Luis",
+          "Anya at Maria",
+          "Luis at Maria",
+          "A",
+        ],
+        [
+          "Ano ang ginagawa ni Anya?",
+          "Nag-iipon ng tingting",
+          "Nagluluto ng meryenda",
+          "Nagtatanim ng mangga",
+          "A",
+        ],
+        [
+          "Ano ang ibig sabihin ng bungkos?",
+          "Pinagsama-samang bagay na itinali",
+          "Dahon ng niyog",
+          "Magaan na pagkain",
+          "A",
+        ],
+        ["Ano ang pang-angkop sa “masayang bata”?", "-ng", "na", "-g", "A"],
+        [
+          "Alin ang magalang na pananalita?",
+          "Salamat po.",
+          "Akin na!",
+          "Bilisan mo!",
+          "A",
+        ],
+        [
+          "Ano ang katangian nina Anya at Luis?",
+          "Matulungin",
+          "Makasarili",
+          "Tamad",
+          "A",
+        ],
+        [
+          "Bakit mas mabilis ang gawain?",
+          "May kani-kaniyang tungkulin at nagtutulungan",
+          "Walang gumagawa",
+          "Iisa lamang ang gumagawa",
+          "A",
+        ],
+        ["Ano ang palapa?", "Dahon ng niyog", "Laruang bao", "Bayong", "A"],
+        [
+          "Alin ang nagpapakita ng pagtulong?",
+          "Makilahok sa paglilinis",
+          "Magkalat",
+          "Umalis agad",
+          "A",
+        ],
+        [
+          "Alin ang wastong pang-angkop sa “mabait __ bata”?",
+          "na",
+          "-ng",
+          "-g",
+          "A",
+        ],
+        [
+          "Ano ang minindal?",
+          "Magaan na pagkain",
+          "Bundok ng niyog",
+          "Uri ng bayong",
+          "A",
+        ],
+        [
+          "Ano ang ipinakita ng komunidad?",
+          "Sama-samang paggawa",
+          "Pag-aaway",
+          "Pag-iwas sa tungkulin",
+          "A",
+        ],
+        [
+          "Ano ang dapat sabihin kapag hihingi ng tulong?",
+          "Maaari po ba?",
+          "Akin na!",
+          "Gawin mo!",
+          "A",
+        ],
+        [
+          "Ano ang magandang aral ng kuwento?",
+          "Bawat isa ay maaaring tumulong ayon sa kaniyang tungkulin.",
+          "Hindi kailangang tumulong.",
+          "Mas mabuting mag-isa.",
+          "A",
+        ],
+      ];
+      function renderMastery() {
+        document.getElementById("masteryQuiz").innerHTML = master
+          .map(
+            (q, i) =>
+              `<div class="q-card"><h4>${i + 1}. ${q[0]}<div class="en">English: ${q[0]}</div></h4><div class="q-options">${[q[1], q[2], q[3]].map((a, j) => `<label><input type="radio" name="m${i}" value="${String.fromCharCode(65 + j)}"> ${String.fromCharCode(65 + j)}. ${a}</label>`).join("")}</div></div>`,
+          )
+          .join("");
+      }
+      function submitMastery() {
+        let ok = 0;
+        missedMastery = [];
+        master.forEach((q, i) => {
+          const c = document.querySelector(`input[name=m${i}]:checked`);
+          if (c && c.value === q[4]) ok++;
+          else missedMastery.push(i);
+        });
+        const pct = Math.round((ok / master.length) * 100);
+        document.getElementById("masteryResult").innerHTML =
+          `<span class="result">${ok}/15 (${pct}%)</span> — ${pct >= 80 ? "Mastery achieved! 🎉" : pct >= 60 ? "Malapit na sa mastery. Balikan ang mga mini-lesson." : "Kailangan pa ng gabay. Huwag sumuko—subukan muli!"}`;
+        addScore(ok * 5);
+        if (pct >= 80) {
+          document.getElementById("badge1").classList.remove("locked");
+          document.getElementById("badge2").classList.remove("locked");
+          document.getElementById("badge3").classList.remove("locked");
+          document.getElementById("badge4").classList.remove("locked");
+        }
+      }
+      renderMastery();
+      function showReviewHint() {
+        let base =
+          "Hint: Pang-angkop = na, -ng, -g. Magagalang na pananalita = po/opo, salamat po, paumanhin po, maaari po ba. Pagtutulungan = bawat isa ay may tungkulin.";
+        let extra = missedMastery.length
+          ? ` May ${missedMastery.length} item(s) kang kailangang balikan.`
+          : "";
+        document.getElementById("hint").textContent = base + extra;
+      }
+      function saveReflection() {
+        const v = document.getElementById("reflection").value.trim();
+        document.getElementById("reflectionMsg").textContent = v
+          ? "✅ Na-save ang iyong sagot sa browser."
+          : "✍️ Sumulat muna ng sagot.";
+        if (v) {
+          localStorage.setItem("reflection", v);
+          addScore(5);
+        }
+      }
+      function saveEnrich() {
+        const v = document.getElementById("enrich").value.trim();
+        document.getElementById("enrichMsg").textContent = v
+          ? "🌟 Mahusay! Na-save ang iyong challenge response."
+          : "✍️ Sumulat muna ng dalawang pangungusap.";
+        if (v) {
+          localStorage.setItem("enrich", v);
+          addScore(5);
+        }
+      }
+      // Start in teacher mode off but teacher prompts available in DOM; user can toggle.
+      document
+        .querySelectorAll(".teacher")
+        .forEach((x) => x.classList.remove("hidden"));
+      updateScore();
+      goTo(0);
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowRight")
+          goTo(Math.min(sections.length - 1, current + 1));
+        if (e.key === "ArrowLeft") goTo(Math.max(0, current - 1));
+        if (e.key.toLowerCase() === "f") toggleFullscreen();
+      });
+    </script>
+  </body>
+</html>

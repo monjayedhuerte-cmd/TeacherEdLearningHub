@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b2a63">
+<meta name="description" content="Teacher Ed Learning Hub Grade 2 Mathematics Addition Power Quest">
+<link rel="icon" type="image/png" href="assets/TeacherEdLogo.png">
+<title>Teacher Ed Learning Hub | Grade 2 Math Addition Power Quest</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand">
+      <img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo">
+      <div><strong>TEACHER ED</strong><span>LEARNING HUB</span></div>
+    </div>
+    <div class="header-actions">
+      <button class="icon-btn" id="soundBtn" title="Toggle sounds">Sound</button>
+      <button class="icon-btn" id="contrastBtn" title="High contrast">Contrast</button>
+      <button class="icon-btn" id="motionBtn" title="Reduce motion">Motion</button>
+      <button class="icon-btn" id="teacherBtn">Teacher Mode</button>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-label"><span id="missionLabel">WELCOME</span><span id="xpLabel">0 XP</span></div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </div>
+
+  <main id="screen" class="screen"></main>
+
+  <footer>
+    <span>Teacher Ed Learning Hub</span>
+    <span>Grade 2 Mathematics • Addition Power Quest</span>
+  </footer>
+</div>
+
+<div id="modal" class="modal hidden" aria-hidden="true">
+  <div class="modal-card">
+    <button class="close" id="modalClose">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>

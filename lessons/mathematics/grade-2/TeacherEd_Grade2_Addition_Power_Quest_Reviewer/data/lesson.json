@@ -1,0 +1,326 @@
+{
+  "brand": "TEACHER ED LEARNING HUB",
+  "teacher": "Teacher Ed",
+  "grade": "Grade 2",
+  "subject": "Mathematics",
+  "title": "Addition Power Quest",
+  "subtitle": "Adding Without Regrouping \u2022 Adding With Regrouping \u2022 Properties of Addition",
+  "objectives": [
+    "Add 2- and 3-digit numbers without regrouping.",
+    "Add 2- and 3-digit numbers with regrouping using place-value reasoning.",
+    "Identify and use the commutative, associative, and identity properties of addition.",
+    "Choose an efficient strategy and explain why it works."
+  ],
+  "vocabulary": [
+    [
+      "addend",
+      "a number being added"
+    ],
+    [
+      "sum",
+      "the answer in an addition sentence"
+    ],
+    [
+      "regroup",
+      "trade 10 ones for 1 ten, or 10 tens for 1 hundred"
+    ],
+    [
+      "commutative",
+      "changing the order of addends does not change the sum"
+    ],
+    [
+      "associative",
+      "changing the grouping of addends does not change the sum"
+    ],
+    [
+      "identity",
+      "adding zero keeps the number the same"
+    ]
+  ],
+  "properties": [
+    {
+      "name": "Commutative Property",
+      "cue": "CHANGE PLACES",
+      "rule": "Changing the order of the addends does not change the sum.",
+      "example": "4 + 8 = 8 + 4"
+    },
+    {
+      "name": "Associative Property",
+      "cue": "CHANGE GROUPS",
+      "rule": "Changing the grouping of the addends does not change the sum.",
+      "example": "(5 + 7) + 3 = 5 + (7 + 3)"
+    },
+    {
+      "name": "Identity Property",
+      "cue": "ZERO CHANGES NOTHING",
+      "rule": "When zero is added to a number, the sum is the number itself.",
+      "example": "3 + 0 = 3"
+    }
+  ],
+  "reviewItems": [
+    {
+      "type": "mc",
+      "topic": "without",
+      "q": "What is 23 + 14?",
+      "options": [
+        "37",
+        "47",
+        "27"
+      ],
+      "answer": 0,
+      "why": "23 + 14 = 37. Add ones, then tens.",
+      "hint": "Add 3 + 4 first."
+    },
+    {
+      "type": "mc",
+      "topic": "without",
+      "q": "What is 142 + 235?",
+      "options": [
+        "367",
+        "377",
+        "387"
+      ],
+      "answer": 1,
+      "why": "2 + 5 = 7 ones, 4 + 3 = 7 tens, and 1 + 2 = 3 hundreds.",
+      "hint": "Line up ones, tens, and hundreds."
+    },
+    {
+      "type": "mc",
+      "topic": "with",
+      "q": "What is 28 + 17?",
+      "options": [
+        "35",
+        "45",
+        "55"
+      ],
+      "answer": 1,
+      "why": "8 + 7 = 15, so write 5 ones and regroup 1 ten. Then 2 + 1 + 1 = 4 tens.",
+      "hint": "Look at the ones. Do you have 10 or more?"
+    },
+    {
+      "type": "mc",
+      "topic": "with",
+      "q": "What is 156 + 278?",
+      "options": [
+        "424",
+        "434",
+        "444"
+      ],
+      "answer": 1,
+      "why": "6 + 8 = 14: regroup 1 ten. Then 5 + 7 + 1 = 13: regroup 1 hundred. 1 + 2 + 1 = 4.",
+      "hint": "Regroup first in the ones, then check the tens."
+    },
+    {
+      "type": "mc",
+      "topic": "property",
+      "q": "Which property is shown by 6 + 9 = 9 + 6?",
+      "options": [
+        "Identity",
+        "Associative",
+        "Commutative"
+      ],
+      "answer": 2,
+      "why": "The addends changed places, but the sum stayed the same.",
+      "hint": "Think: CHANGE PLACES."
+    },
+    {
+      "type": "mc",
+      "topic": "property",
+      "q": "Which property is shown by (2 + 4) + 5 = 2 + (4 + 5)?",
+      "options": [
+        "Associative",
+        "Identity",
+        "Commutative"
+      ],
+      "answer": 0,
+      "why": "The grouping changed, but the sum stayed the same.",
+      "hint": "Think: CHANGE GROUPS."
+    },
+    {
+      "type": "mc",
+      "topic": "property",
+      "q": "Which property is shown by 73 + 0 = 73?",
+      "options": [
+        "Commutative",
+        "Identity",
+        "Associative"
+      ],
+      "answer": 1,
+      "why": "Adding zero leaves the number unchanged.",
+      "hint": "ZERO CHANGES NOTHING."
+    },
+    {
+      "type": "mc",
+      "topic": "with",
+      "q": "A class has 247 red counters and 186 blue counters. How many counters are there?",
+      "options": [
+        "423",
+        "433",
+        "443"
+      ],
+      "answer": 1,
+      "why": "247 + 186 = 433. Regroup 7 + 6 = 13, then 4 + 8 + 1 = 13.",
+      "hint": "Start with the ones column."
+    },
+    {
+      "type": "mc",
+      "topic": "strategy",
+      "q": "Which is a smart way to add 9 + 1 + 6?",
+      "options": [
+        "Group 9 + 1 first to make 10.",
+        "Add 9 + 6 first.",
+        "Ignore the 1."
+      ],
+      "answer": 0,
+      "why": "Using 9 + 1 = 10 makes the remaining addition easier: 10 + 6 = 16.",
+      "hint": "Look for a pair that makes 10."
+    },
+    {
+      "type": "mc",
+      "topic": "property",
+      "q": "Which equation is an example of the identity property?",
+      "options": [
+        "8 + 0 = 8",
+        "8 + 5 = 5 + 8",
+        "(8 + 2) + 3 = 8 + (2 + 3)"
+      ],
+      "answer": 0,
+      "why": "The identity property uses zero and keeps the number the same.",
+      "hint": "Find the equation with zero."
+    }
+  ],
+  "masterItems": [
+    {
+      "q": "34 + 25 = ?",
+      "options": [
+        "49",
+        "59",
+        "69"
+      ],
+      "answer": 1,
+      "topic": "without",
+      "why": "34 + 25 = 59."
+    },
+    {
+      "q": "126 + 243 = ?",
+      "options": [
+        "359",
+        "369",
+        "379"
+      ],
+      "answer": 1,
+      "topic": "without",
+      "why": "6 + 3 = 9, 2 + 4 = 6, and 1 + 2 = 3."
+    },
+    {
+      "q": "47 + 36 = ?",
+      "options": [
+        "73",
+        "83",
+        "93"
+      ],
+      "answer": 1,
+      "topic": "with",
+      "why": "7 + 6 = 13, regroup 1 ten; 4 + 3 + 1 = 8."
+    },
+    {
+      "q": "268 + 157 = ?",
+      "options": [
+        "415",
+        "425",
+        "435"
+      ],
+      "answer": 1,
+      "topic": "with",
+      "why": "8 + 7 = 15, regroup; 6 + 5 + 1 = 12, regroup; 2 + 1 + 1 = 4."
+    },
+    {
+      "q": "375 + 248 = ?",
+      "options": [
+        "613",
+        "623",
+        "633"
+      ],
+      "answer": 1,
+      "topic": "with",
+      "why": "5 + 8 = 13; 7 + 4 + 1 = 12; 3 + 2 + 1 = 6."
+    },
+    {
+      "q": "9 + 7 = 7 + 9 shows which property?",
+      "options": [
+        "Commutative",
+        "Associative",
+        "Identity"
+      ],
+      "answer": 0,
+      "topic": "property",
+      "why": "The order of the addends changed."
+    },
+    {
+      "q": "(3 + 6) + 4 = 3 + (6 + 4) shows which property?",
+      "options": [
+        "Identity",
+        "Associative",
+        "Commutative"
+      ],
+      "answer": 1,
+      "topic": "property",
+      "why": "The grouping changed."
+    },
+    {
+      "q": "51 + 0 = 51 shows which property?",
+      "options": [
+        "Associative",
+        "Commutative",
+        "Identity"
+      ],
+      "answer": 2,
+      "topic": "property",
+      "why": "Zero is added and the number stays the same."
+    },
+    {
+      "q": "Which equation is true?",
+      "options": [
+        "7 + 0 = 0",
+        "5 + 8 = 8 + 5",
+        "(2 + 3) + 4 = 2 + 3 + 5"
+      ],
+      "answer": 1,
+      "topic": "property",
+      "why": "5 + 8 and 8 + 5 have the same sum."
+    },
+    {
+      "q": "A learner says 38 + 27 = 515 because 8 + 7 = 15. What should the learner do?",
+      "options": [
+        "Write 15 in the ones place.",
+        "Regroup 15 ones as 1 ten and 5 ones.",
+        "Add only the tens."
+      ],
+      "answer": 1,
+      "topic": "with",
+      "why": "10 ones can be traded for 1 ten. The 5 stays in the ones place."
+    },
+    {
+      "q": "Which is easier to calculate using properties: 2 + 8 + 4 + 6?",
+      "options": [
+        "(2 + 8) + (4 + 6) = 20",
+        "2 + (8 + 4) + 6 = 18",
+        "2 + 8 + 4 + 6 = 16"
+      ],
+      "answer": 0,
+      "topic": "strategy",
+      "why": "Group pairs that make 10: 2 + 8 and 4 + 6."
+    },
+    {
+      "q": "What is the sum of 239 + 164?",
+      "options": [
+        "393",
+        "403",
+        "413"
+      ],
+      "answer": 1,
+      "topic": "with",
+      "why": "9 + 4 = 13; 3 + 6 + 1 = 10; 2 + 1 + 1 = 4, so 403."
+    }
+  ]
+}

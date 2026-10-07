@@ -1060,12 +1060,22 @@
     "icon": "user"
   },
   {
-    "title": "Filipino |Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya",
+    "title": "Filipino | Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya",
     "subject": "Filipino", 
     "grade": "Grade 3",
     "description": "Matututuhan natin ang mahahalagang salita, pag-unawa sa teksto, pagtutulungan, kasanayan, at pagpapahalaga sa pamayanan.",
     "file": "lessons/filipino/grade-3/Ang_Husay_sa_Paggawa_ng_Walis_Tingting_Interactive_Lesson/Ang_Husay_sa_Paggawa_ng_Walis_Tingting_Interactive_Lesson.html",
     "date": "2026-10-05",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Filipino 3 | Lesson 3 Ang Aking Pagtulong sa Kasapi ng Komunidad",
+    "subject": "Filipino", 
+    "grade": "Grade 3",
+    "description": "Batay sa ibinigay mong aralin: talasalitaan, pang-angkop, pag-unawa sa tekstong naratibo, katangian ng tauhan, personal na karanasan, magagalang na pananalita, at pagtutulungan sa komunidad.",
+    "file": "lessons/filipino/grade-3/Ang_Aking_Pagtulong_Interactive_Website/index.html",
+    "date": "2026-10-08",
     "featured": false,
     "icon": "user"
   },
@@ -1115,10 +1125,29 @@
     "grade": "Grade 1",
     "description": "See what you remember, fix mistakes, practice smart choices, and get ready for your Science assessment.",
     "file": "lessons/science/grade-1/Sense_Organs_Review/index.html",
-    "date": "2026-10-15",
+    "date": "2026-10-12",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Math 2 | Reviewer in Adding with and without Regrouping, Properties of Addition",
+    "subject": "Mathematics", 
+    "grade": "Grade 2",
+    "description": "Adding Without Regrouping • Adding With Regrouping • Properties of Addition",
+    "file": "lessons/mathematics/grade-2/TeacherEd_Grade2_Addition_Power_Quest_Reviewer/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "Filipino 3 | Reviewer: Ang Aking Pagtulong sa Kasapi sa Komunidad | Mga Paksa: Ang Mabuting Samaritano • Pang-angkop na, -ng, -g • Ang Husay sa Paggawa ng Walis-Tingting sa Bakasyon ni Anya",
+    "subject": "Filipino", 
+    "grade": "Grade 3",
+    "description": "Alalahanin, unawain, magsanay, mag-apply, at maging handa sa pagsusulit. Recall, understand, practice, apply, and prepare for your assessment.",
+    "file": "lessons/filipino/grade-3/TeacherEd_Filipino3_Interactive_Reviewer/index.html",
+    "date": "2026-10-13",
     "featured": false,
     "icon": "user"
   }
-
   
 ]
