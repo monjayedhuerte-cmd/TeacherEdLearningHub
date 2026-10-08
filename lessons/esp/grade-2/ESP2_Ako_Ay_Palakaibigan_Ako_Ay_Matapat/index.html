@@ -1,0 +1,1560 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      ESP 2 | Ako ay Palakaibigan at Ako ay Matapat | Teacher Ed Learning Hub
+    </title>
+    <link rel="icon" type="image/jpeg" href="assets/BrandLogo.jpg" />
+    <style>
+      :root {
+        --navy: #092b63;
+        --blue: #1558a6;
+        --gold: #f5b700;
+        --ink: #172033;
+        --muted: #5d6b82;
+        --bg: #f4f7fb;
+        --card: #fff;
+        --line: #dce4ef;
+        --ok: #18794e;
+        --bad: #b42318;
+        --hint: #7a4b00;
+        --soft: #eef4ff;
+        --shadow: 0 14px 38px rgba(9, 43, 99, 0.1);
+        --r: 22px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          Arial,
+          sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      button {
+        font: inherit;
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--line);
+      }
+      .topinner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 10px 18px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 220px;
+      }
+      .brand img {
+        width: 44px;
+        height: 44px;
+        object-fit: contain;
+        border-radius: 12px;
+      }
+      .brand b {
+        display: block;
+        color: var(--navy);
+        font-size: 15px;
+      }
+      .brand span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+      }
+      .nav {
+        display: flex;
+        gap: 6px;
+        overflow: auto;
+        flex: 1;
+      }
+      .nav button {
+        border: 0;
+        background: transparent;
+        color: var(--muted);
+        padding: 9px 11px;
+        border-radius: 12px;
+        white-space: nowrap;
+        cursor: pointer;
+      }
+      .nav button:hover,
+      .nav button.active {
+        background: var(--soft);
+        color: var(--navy);
+        font-weight: 700;
+      }
+      .container {
+        max-width: 1180px;
+        margin: auto;
+        padding: 26px 18px 70px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #092b63, #1558a6);
+        color: white;
+        border-radius: 30px;
+        padding: 30px;
+        box-shadow: var(--shadow);
+        display: grid;
+        grid-template-columns: 1.5fr 0.7fr;
+        gap: 24px;
+        align-items: center;
+      }
+      .hero h1 {
+        font-size: clamp(28px, 4vw, 46px);
+        line-height: 1.08;
+        margin: 8px 0;
+      }
+      .hero p {
+        margin: 8px 0;
+        color: #eaf2ff;
+      }
+      .tag {
+        display: inline-flex;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.14);
+        font-weight: 800;
+        font-size: 12px;
+      }
+      .hero-logo {
+        justify-self: end;
+        background: white;
+        border-radius: 26px;
+        padding: 18px;
+        display: grid;
+        place-items: center;
+      }
+      .hero-logo img {
+        width: min(190px, 35vw);
+        height: 120px;
+        object-fit: contain;
+      }
+      .btn {
+        border: 0;
+        border-radius: 14px;
+        padding: 12px 16px;
+        font-weight: 800;
+        cursor: pointer;
+        transition: 0.15s;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+      }
+      .primary {
+        background: var(--gold);
+        color: #172033;
+      }
+      .secondary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .ghost {
+        background: #fff;
+        color: var(--navy);
+        border: 1px solid var(--line);
+      }
+      .section {
+        display: none;
+        margin-top: 22px;
+      }
+      .section.active {
+        display: block;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: var(--r);
+        padding: 20px;
+        box-shadow: 0 8px 24px rgba(23, 32, 51, 0.05);
+      }
+      .span4 {
+        grid-column: span 4;
+      }
+      .span6 {
+        grid-column: span 6;
+      }
+      .span8 {
+        grid-column: span 8;
+      }
+      .span12 {
+        grid-column: span 12;
+      }
+      .eyebrow {
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--blue);
+      }
+      h2 {
+        margin: 5px 0 10px;
+        color: var(--navy);
+      }
+      h3 {
+        margin: 0 0 8px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .en {
+        display: block;
+        color: #5b6b80;
+        font-size: 0.92em;
+        margin-top: 3px;
+      }
+      .key {
+        border-left: 5px solid var(--gold);
+        background: #fff9e6;
+        padding: 14px 16px;
+        border-radius: 14px;
+      }
+      .concept {
+        height: 100%;
+      }
+      .concept .icon {
+        font-size: 30px;
+      }
+      .memory {
+        background: #f0f7ff;
+        border: 1px solid #cfe0fb;
+      }
+      .mistake {
+        background: #fff5f5;
+        border: 1px solid #f3cccc;
+      }
+      .activity {
+        margin-top: 14px;
+      }
+      .choices {
+        display: grid;
+        gap: 10px;
+        margin-top: 14px;
+      }
+      .choice {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 14px;
+        padding: 13px 14px;
+        text-align: left;
+        cursor: pointer;
+      }
+      .choice:hover {
+        border-color: #7da3d8;
+        background: #f8fbff;
+      }
+      .choice.selected {
+        border-color: var(--blue);
+        background: #eef5ff;
+      }
+      .feedback {
+        margin-top: 14px;
+        padding: 14px;
+        border-radius: 14px;
+        display: none;
+      }
+      .feedback.show {
+        display: block;
+      }
+      .correct {
+        background: #ecfdf3;
+        color: #145c3d;
+      }
+      .incorrect {
+        background: #fff1f2;
+        color: #8a1c24;
+      }
+      .progress {
+        height: 9px;
+        background: #e7edf6;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .progress > i {
+        display: block;
+        height: 100%;
+        background: var(--gold);
+        width: 0;
+        transition: 0.25s;
+      }
+      .pill {
+        display: inline-flex;
+        padding: 5px 9px;
+        border-radius: 999px;
+        background: #edf3ff;
+        color: var(--navy);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .questionbox {
+        min-height: 220px;
+      }
+      .qnum {
+        font-weight: 900;
+        color: var(--blue);
+        font-size: 13px;
+      }
+      .question {
+        font-size: 21px;
+        font-weight: 800;
+        margin: 8px 0;
+      }
+      .controls {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 16px;
+      }
+      .scorebig {
+        font-size: 48px;
+        font-weight: 900;
+        color: var(--navy);
+      }
+      .bar {
+        height: 14px;
+        background: #e8edf4;
+        border-radius: 999px;
+        overflow: hidden;
+      }
+      .bar i {
+        display: block;
+        height: 100%;
+        background: var(--gold);
+        width: 0;
+      }
+      .flash {
+        animation: flash 0.35s;
+      }
+      .hide {
+        display: none !important;
+      }
+      @keyframes flash {
+        50% {
+          transform: scale(1.02);
+        }
+      }
+      .match-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .match-item {
+        padding: 14px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: #fff;
+        cursor: pointer;
+      }
+      .match-item.sel {
+        outline: 3px solid #c7daf7;
+      }
+      .match-item.done {
+        background: #ecfdf3;
+        border-color: #8bd1ad;
+      }
+      .sort-cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .dropzone {
+        min-height: 130px;
+        border: 2px dashed #b8c6d8;
+        border-radius: 16px;
+        padding: 12px;
+      }
+      .token {
+        display: inline-block;
+        margin: 5px;
+        padding: 8px 10px;
+        background: #edf3ff;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      .footer {
+        margin-top: 36px;
+        border-top: 1px solid var(--line);
+        padding: 20px 0;
+        color: var(--muted);
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        align-items: center;
+      }
+      .footer img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+      .notice {
+        padding: 12px 14px;
+        border-radius: 14px;
+        background: #f5f8fc;
+        border: 1px solid var(--line);
+      }
+      label {
+        font-weight: 800;
+        font-size: 13px;
+      }
+      .field {
+        display: grid;
+        gap: 6px;
+      }
+      .field input,
+      .field textarea {
+        width: 100%;
+        padding: 11px 12px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        font: inherit;
+      }
+      .checklist {
+        display: grid;
+        gap: 8px;
+      }
+      .checklist label {
+        font-weight: 600;
+      }
+      .badge {
+        display: inline-block;
+        padding: 8px 11px;
+        border-radius: 12px;
+        background: #fff3c4;
+        color: #654d00;
+        font-weight: 800;
+      }
+      .sr {
+        position: absolute;
+        left: -9999px;
+      }
+      @media (max-width: 850px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-logo {
+          justify-self: start;
+        }
+        .span4,
+        .span6,
+        .span8 {
+          grid-column: span 12;
+        }
+        .match-grid,
+        .sort-cols {
+          grid-template-columns: 1fr;
+        }
+        .nav {
+          order: 3;
+          flex-basis: 100%;
+        }
+        .topinner {
+          flex-wrap: wrap;
+        }
+        .brand {
+          min-width: 0;
+        }
+        .question {
+          font-size: 18px;
+        }
+      }
+      @media (max-width: 520px) {
+        .container {
+          padding: 16px 12px 45px;
+        }
+        .hero,
+        .card {
+          border-radius: 18px;
+          padding: 16px;
+        }
+        .topinner {
+          padding: 8px 12px;
+        }
+        .btn {
+          width: 100%;
+        }
+        .controls {
+          display: grid;
+        }
+        .hero-logo img {
+          width: 150px;
+          height: 90px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topinner">
+        <div class="brand">
+          <img src="assets/BrandLogo.jpg" alt="Teacher Ed Learning Hub logo" />
+          <div>
+            <b>Teacher Ed Learning Hub</b
+            ><span>Learn • Teach • Lead • Inspire</span>
+          </div>
+        </div>
+        <nav class="nav" id="nav"></nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="hero">
+        <div>
+          <span class="tag">ESP 2 • INTERACTIVE LEARNING GUIDE</span>
+          <h1>Ako ay Palakaibigan at Ako ay Matapat</h1>
+          <p><strong>I Am Friendly and I Am Honest</strong></p>
+          <p>Review, practice, think, and apply what you learned.</p>
+          <p class="en">
+            English support is provided beside the Filipino lesson so you can
+            understand the meaning clearly.
+          </p>
+          <div class="controls">
+            <button class="btn primary" onclick="go('welcome')">
+              Start Learning</button
+            ><button class="btn ghost" onclick="window.print()">
+              Print / Save
+            </button>
+          </div>
+        </div>
+        <div class="hero-logo">
+          <img src="assets/BrandLogo.jpg" alt="Teacher Ed Learning Hub" />
+        </div>
+      </section>
+
+      <section id="welcome" class="section active">
+        <div class="grid">
+          <div class="card span8">
+            <div class="eyebrow">Stage 1 • Welcome</div>
+            <h2>Handa ka na bang mag-review?</h2>
+            <span class="en">Are you ready to review?</span>
+            <p>
+              Ang gabay na ito ay tutulong sa iyo na
+              <b>maunawaan, maalala, at magamit</b> ang mahahalagang aral
+              tungkol sa pakikipagkaibigan at katapatan.
+            </p>
+            <span class="en"
+              >This guide will help you understand, remember, and apply the
+              important ideas about friendship and honesty.</span
+            >
+            <div class="key">
+              <b>Tandaan:</b> Hindi kailangang magmadali. Mag-isip muna bago
+              sumagot.<span class="en"
+                ><b>Remember:</b> You do not need to rush. Think before you
+                answer.</span
+              >
+            </div>
+            <div class="controls">
+              <button class="btn secondary" onclick="go('recall')">
+                Let's Review!
+              </button>
+            </div>
+          </div>
+          <div class="card span4">
+            <div class="eyebrow">Your Mission</div>
+            <h3>Understand → Recall → Practice → Apply</h3>
+            <p class="muted">Maaaring gumamit ng hint kung kailangan.</p>
+            <span class="en">You may use a hint when needed.</span>
+            <div class="notice">
+              ⭐ <b>Goal:</b> Maipakita ang pag-unawa, hindi lang ang tamang
+              pag-click.<span class="en"
+                >Show understanding, not just correct clicking.</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recall" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 2 • What Do You Remember?</div>
+          <h2>Subukan muna ang iyong alaala.</h2>
+          <span class="en">Try to recall what you already know.</span>
+          <div id="recallQ"></div>
+        </div>
+      </section>
+
+      <section id="memory" class="section">
+        <div class="eyebrow">Stage 3 • Memory Booster</div>
+        <h2>Mga Dapat Tandaan</h2>
+        <span class="en">Important things to remember</span>
+        <div class="grid" style="margin-top: 14px">
+          <div class="card span6 concept">
+            <div class="icon">🤝</div>
+            <h3>Palakaibigan <span class="en">Friendly</span></h3>
+            <p>
+              <b>Pagiging palakaibigan</b> ay pagiging mabait, magiliw, at
+              handang makipag-ugnayan sa iba.
+            </p>
+            <span class="en"
+              >Being friendly means being kind, welcoming, and willing to
+              connect with others.</span
+            >
+            <div class="memory">
+              <b>Memory Cue:</b> <i>“Bati • Tulong • Ngiti • Tanggap.”</i
+              ><span class="en">Greet • Help • Smile • Welcome.</span>
+            </div>
+          </div>
+          <div class="card span6 concept">
+            <div class="icon">🫱</div>
+            <h3>Matapat <span class="en">Honest</span></h3>
+            <p>
+              <b>Pagiging matapat</b> ay pagsasabi ng totoo at pagiging tapat sa
+              salita at gawa.
+            </p>
+            <span class="en"
+              >Being honest means telling the truth and being truthful in words
+              and actions.</span
+            >
+            <div class="memory">
+              <b>Memory Cue:</b> <i>“Sabihin ang totoo.”</i
+              ><span class="en">“Tell the truth.”</span>
+            </div>
+          </div>
+          <div class="card span4">
+            <h3>Pagbati <span class="en">Greeting</span></h3>
+            <p>
+              Maayos na pagbati sa kaibigan, kaklase, bisita, o bagong kakilala.
+            </p>
+            <span class="en"
+              >A polite greeting to a friend, classmate, visitor, or new
+              acquaintance.</span
+            >
+          </div>
+          <div class="card span4">
+            <h3>Pagtulong <span class="en">Helping</span></h3>
+            <p>Pagtulong sa iba kapag kaya at angkop.</p>
+            <span class="en"
+              >Helping others when you can and when it is appropriate.</span
+            >
+          </div>
+          <div class="card span4">
+            <h3>Katapatan <span class="en">Honesty</span></h3>
+            <p>
+              Pagsasabi ng totoo, pag-amin sa pagkakamali, at paggalang sa
+              pag-aari ng iba.
+            </p>
+            <span class="en"
+              >Telling the truth, admitting mistakes, and respecting other
+              people's property.</span
+            >
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn secondary" onclick="go('remember')">
+            Continue
+          </button>
+        </div>
+      </section>
+
+      <section id="remember" class="section">
+        <div class="grid">
+          <div class="card span6">
+            <div class="eyebrow">Stage 4 • Remember It!</div>
+            <h2>Think of it this way</h2>
+            <p><b>PALAKAIBIGAN = BUKAS SA IBA</b></p>
+            <span class="en">FRIENDLY = OPEN AND KIND TO OTHERS</span>
+            <p>
+              Kapag palakaibigan ka, ipinapakita mo ang kabaitan sa
+              pakikipag-ugnayan sa iba.
+            </p>
+            <span class="en"
+              >When you are friendly, you show kindness in the way you interact
+              with others.</span
+            >
+          </div>
+          <div class="card span6">
+            <div class="eyebrow">Memory Lock</div>
+            <h2>MATAPAT = TOTOO</h2>
+            <span class="en">HONEST = TRUTHFUL</span>
+            <p>
+              Kapag may nagawa kang mali, mas mabuting magsabi ng totoo at umako
+              sa ginawa.
+            </p>
+            <span class="en"
+              >When you make a mistake, it is better to tell the truth and take
+              responsibility for what you did.</span
+            >
+          </div>
+        </div>
+        <div class="controls">
+          <button class="btn secondary" onclick="go('quick')">
+            Quick Fire
+          </button>
+        </div>
+      </section>
+
+      <section id="quick" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 5 • Quick Fire</div>
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              gap: 12px;
+              align-items: center;
+            "
+          >
+            <div>
+              <h2>Bilisan ang pag-alala—huwag ang pag-iisip!</h2>
+              <span class="en"
+                >Recall quickly, but do not rush your thinking.</span
+              >
+            </div>
+            <span class="pill" id="quickCount">1 / 8</span>
+          </div>
+          <div class="progress"><i id="quickProg"></i></div>
+          <div id="quickBox" class="questionbox"></div>
+        </div>
+      </section>
+
+      <section id="sort" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 6 • Sort It Out</div>
+          <h2>Palakaibigan o Matapat?</h2>
+          <span class="en">Friendly or Honest?</span>
+          <p>I-click ang isang pahayag at piliin kung saan ito kabilang.</p>
+          <span class="en"
+            >Click a statement and choose which concept it belongs to.</span
+          >
+          <div id="sortArea"></div>
+        </div>
+      </section>
+
+      <section id="match" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 7 • Match & Connect</div>
+          <h2>Itugma ang konsepto at kahulugan.</h2>
+          <span class="en">Match the concept with its meaning.</span>
+          <div id="matchArea"></div>
+        </div>
+      </section>
+
+      <section id="mistake" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 8 • Fix the Mistake</div>
+          <h2>Ayusin ang maling ideya.</h2>
+          <span class="en">Fix the mistaken idea.</span>
+          <div class="mistake">
+            <b>Sinabi ni Carlo:</b> “Kapag nagkamali ako, kailangan kong
+            magsinungaling para hindi ako mapagalitan.”<span class="en"
+              ><b>Carlo says:</b> “When I make a mistake, I should lie so I will
+              not get scolded.”</span
+            >
+          </div>
+          <p>
+            <b>Ano ang dapat mong sabihin kay Carlo?</b
+            ><span class="en">What should you tell Carlo?</span>
+          </p>
+          <textarea
+            id="mistakeAns"
+            rows="4"
+            placeholder="Isulat ang iyong sagot... / Write your answer..."
+          ></textarea>
+          <div class="controls">
+            <button class="btn secondary" onclick="showMistake()">
+              Check My Thinking
+            </button>
+          </div>
+          <div id="mistakeFb" class="feedback"></div>
+        </div>
+      </section>
+
+      <section id="challenge" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 9 • Challenge Mode</div>
+          <h2>Mga Sitwasyon sa Tunay na Buhay</h2>
+          <span class="en">Real-life situations</span>
+          <div id="challengeArea"></div>
+        </div>
+      </section>
+
+      <section id="game" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 10 • Lesson Game</div>
+          <h2>Friendship & Honesty Mission</h2>
+          <span class="en"
+            >Complete the mission by choosing the best action.</span
+          >
+          <p>
+            Makakakuha ka ng ⭐ sa bawat tamang desisyon. Hindi mahalaga ang
+            bilis—mahalaga ang tamang pag-iisip.
+          </p>
+          <span class="en"
+            >Earn a star for each correct decision. Speed does not matter—good
+            thinking does.</span
+          >
+          <div id="gameArea"></div>
+        </div>
+      </section>
+
+      <section id="boss" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 11 • Boss Challenge</div>
+          <h2>Mastery Challenge</h2>
+          <span class="en">Show what you truly understand.</span>
+          <div id="bossArea"></div>
+        </div>
+      </section>
+
+      <section id="results" class="section">
+        <div class="grid">
+          <div class="card span4">
+            <div class="eyebrow">Your Results</div>
+            <div class="scorebig" id="scoreBig">0%</div>
+            <div class="bar"><i id="scoreBar"></i></div>
+            <p id="scoreMsg"></p>
+          </div>
+          <div class="card span8">
+            <h2>Weak-Area Review</h2>
+            <span class="en">Review the ideas you need to practice.</span>
+            <div id="weakArea"></div>
+            <div class="controls">
+              <button class="btn secondary" onclick="go('memory')">
+                Review Concepts</button
+              ><button class="btn ghost" onclick="go('boss')">
+                Try Boss Again
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="margin-top: 16px">
+          <div class="eyebrow">Confidence Check</div>
+          <h2>Kumusta ang iyong tiwala?</h2>
+          <span class="en">How confident do you feel?</span>
+          <div class="controls">
+            <button class="btn ghost" onclick="setConfidence('I know it!')">
+              😎 I know it!</button
+            ><button
+              class="btn ghost"
+              onclick="setConfidence('I think I know it.')"
+            >
+              🙂 I think I know it.</button
+            ><button
+              class="btn ghost"
+              onclick="setConfidence('I am not sure.')"
+            >
+              🤔 I am not sure.</button
+            ><button class="btn ghost" onclick="setConfidence('I need help.')">
+              😟 I need help.
+            </button>
+          </div>
+          <p id="confidence" class="muted"></p>
+        </div>
+      </section>
+
+      <section id="final" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 15 • Final Memory Lock-In</div>
+          <h2>5 Bagay na Dapat Mong Tandaan</h2>
+          <span class="en">The 5 things you must remember</span>
+          <div class="grid" style="margin-top: 12px">
+            <div class="card span4">
+              <b>1. PALAKAIBIGAN</b><span class="en">Friendly</span>
+              <p>Maging mabait at magiliw sa iba.</p>
+            </div>
+            <div class="card span4">
+              <b>2. PAGBATI</b><span class="en">Greeting</span>
+              <p>Batiin nang maayos ang iba.</p>
+            </div>
+            <div class="card span4">
+              <b>3. PAGTULONG</b><span class="en">Helping</span>
+              <p>Tumulong kung kaya at angkop.</p>
+            </div>
+            <div class="card span6">
+              <b>4. MATAPAT</b><span class="en">Honest</span>
+              <p>Sabihin ang totoo sa salita at gawa.</p>
+            </div>
+            <div class="card span6">
+              <b>5. PANANAGUTAN</b><span class="en">Responsibility</span>
+              <p>Umako sa sariling ginawa at pagkakamali.</p>
+            </div>
+          </div>
+          <div class="key" style="margin-top: 16px">
+            <b>Memory sentence:</b> “Ang palakaibigan ay mabait sa kapwa; ang
+            matapat ay nagsasabi ng totoo.”<span class="en"
+              >A friendly person is kind to others; an honest person tells the
+              truth.</span
+            >
+          </div>
+          <div class="controls">
+            <button class="btn secondary" onclick="go('mock')">
+              Take Mini Mock Quiz
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section id="mock" class="section">
+        <div class="card">
+          <div class="eyebrow">Stage 17 • Mini Mock Quiz</div>
+          <h2>Final Review Test</h2>
+          <span class="en">Complete the quiz before seeing your score.</span>
+          <div id="mockArea"></div>
+        </div>
+      </section>
+
+      <section id="done" class="section">
+        <div class="card">
+          <div class="eyebrow">Mastered!</div>
+          <h2>Mahusay! Natapos mo ang learning guide.</h2>
+          <span class="en">Great work! You completed the learning guide.</span>
+          <div id="doneSummary"></div>
+          <div class="key">
+            <b>30-Second Review:</b> Palakaibigan = mabait, magiliw, tumutulong,
+            at tumatanggap ng iba. Matapat = nagsasabi ng totoo, umaamin sa
+            pagkakamali, at gumagalang sa pag-aari ng iba.<span class="en"
+              ><b>30-Second Review:</b> Friendly = kind, welcoming, helpful, and
+              accepting. Honest = truthful, admits mistakes, and respects other
+              people's property.</span
+            >
+          </div>
+          <div class="controls">
+            <button class="btn primary" onclick="window.print()">
+              Print / Save Result</button
+            ><button class="btn ghost" onclick="location.reload()">
+              Restart Guide
+            </button>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div style="display: flex; align-items: center; gap: 10px">
+          <img src="assets/BrandLogo.jpg" alt="Logo" />
+          <div>
+            <b style="color: var(--navy)">Teacher Ed Learning Hub</b>
+            <div>Learn • Teach • Lead • Inspire</div>
+          </div>
+        </div>
+        <div>© 2026 Teacher Ed Learning Hub</div>
+      </footer>
+    </main>
+    <script>
+      const navItems = [
+        ["welcome", "Welcome"],
+        ["recall", "Recall"],
+        ["memory", "Memory Booster"],
+        ["quick", "Quick Fire"],
+        ["sort", "Sort It Out"],
+        ["match", "Match"],
+        ["mistake", "Fix Mistake"],
+        ["challenge", "Challenge"],
+        ["game", "Game"],
+        ["boss", "Boss"],
+        ["final", "5 Things"],
+        ["mock", "Mock Quiz"],
+        ["results", "Results"],
+      ];
+      const state = { score: 0, total: 0, missed: {}, confidence: "" };
+      const conceptData = {
+        palakaibigan: { name: "Ako ay Palakaibigan", en: "I Am Friendly" },
+        matapat: { name: "Ako ay Matapat", en: "I Am Honest" },
+      };
+      const recall = [
+        [
+          "Ano ang ibig sabihin ng pagiging palakaibigan?",
+          "What does being friendly mean?",
+          [
+            "Pagiging mabait at magiliw sa iba",
+            "Pagsisinungaling sa kaibigan",
+            "Pag-iwas sa lahat ng tao",
+          ],
+          "Pagiging mabait at magiliw sa iba",
+        ],
+        [
+          "Ano ang magandang gawin sa bagong kakilala?",
+          "What is a good thing to do with a new acquaintance?",
+          [
+            "Batiin at kausapin nang maayos",
+            "Tawanan siya",
+            "Iwasan siya palagi",
+          ],
+          "Batiin at kausapin nang maayos",
+        ],
+        [
+          "Ano ang ibig sabihin ng pagiging matapat?",
+          "What does being honest mean?",
+          ["Pagsasabi ng totoo", "Pagtatago ng katotohanan", "Pagsisi sa iba"],
+          "Pagsasabi ng totoo",
+        ],
+        [
+          "Kapag nagkamali ka, ano ang magandang gawin?",
+          "When you make a mistake, what is a good thing to do?",
+          ["Umamin at sabihin ang totoo", "Magsinungaling", "Itago ang ginawa"],
+          "Umamin at sabihin ang totoo",
+        ],
+      ];
+      const quick = [
+        [
+          "Alin ang nagpapakita ng pagiging palakaibigan?",
+          "Which shows friendliness?",
+          ["Pagbati sa bagong kaklase", "Pang-aasar", "Pag-iwas"],
+          "Pagbati sa bagong kaklase",
+          "palakaibigan",
+        ],
+        [
+          "Tama o Mali: Ang pagtulong sa kaibigan ay maaaring magpakita ng pagiging palakaibigan.",
+          "True or False: Helping a friend can show friendliness.",
+          ["Tama", "Mali"],
+          "Tama",
+          "palakaibigan",
+        ],
+        [
+          "Alin ang nagpapakita ng katapatan?",
+          "Which shows honesty?",
+          [
+            "Pagsasabi ng totoo",
+            "Pagsisinungaling",
+            "Pagtatago ng gamit ng iba",
+          ],
+          "Pagsasabi ng totoo",
+          "matapat",
+        ],
+        [
+          "Tama o Mali: Mabuting sisihin ang iba kapag ikaw ang nagkamali.",
+          "True or False: It is good to blame others when you made the mistake.",
+          ["Tama", "Mali"],
+          "Mali",
+          "matapat",
+        ],
+        [
+          "Ano ang dapat gawin kapag may bagong batang gustong makipagkaibigan?",
+          "What should you do when a new child wants to be your friend?",
+          ["Tanggapin at kausapin nang maayos", "Tawanan siya", "Itaboy siya"],
+          "Tanggapin at kausapin nang maayos",
+          "palakaibigan",
+        ],
+        [
+          "Ano ang dapat gawin sa bagay na hindi iyo?",
+          "What should you do with something that is not yours?",
+          ["Ibalik o ipaalam sa may-ari", "Iuwi ito", "Itago ito"],
+          "Ibalik o ipaalam sa may-ari",
+          "matapat",
+        ],
+        [
+          "Alin ang HINDI palakaibigan?",
+          "Which is NOT friendly?",
+          ["Pagtulong", "Pagbati", "Pang-aasar"],
+          "Pang-aasar",
+          "palakaibigan",
+        ],
+        [
+          "Alin ang HINDI matapat?",
+          "Which is NOT honest?",
+          [
+            "Pag-amin sa pagkakamali",
+            "Pagsasabi ng totoo",
+            "Pagsisinungaling upang makaiwas sa problema",
+          ],
+          "Pagsisinungaling upang makaiwas sa problema",
+          "matapat",
+        ],
+      ];
+      const challenge = [
+        [
+          "May bagong kaklase na tahimik at nahihiya. Ano ang pinakamainam mong gawin?",
+          "A new classmate is quiet and shy. What is the best thing to do?",
+          [
+            "Batiin siya at anyayahang makipaglaro",
+            "Pagtawanan siya",
+            "Huwag siyang pansinin",
+          ],
+          "Batiin siya at anyayahang makipaglaro",
+          "palakaibigan",
+        ],
+        [
+          "Nabasag mo ang gamit ng kapatid mo. Ano ang pinaka-matapat na kilos?",
+          "You broke your sibling’s belonging. What is the most honest action?",
+          [
+            "Sabihin ang totoo at humingi ng paumanhin",
+            "Itago ang nangyari",
+            "Sisihin ang iba",
+          ],
+          "Sabihin ang totoo at humingi ng paumanhin",
+          "matapat",
+        ],
+        [
+          "May kaibigan kang nahihirapan sa gawain. Ano ang magandang gawin?",
+          "A friend is having difficulty with a task. What is a good thing to do?",
+          [
+            "Tulungan siya kung kaya mo",
+            "Pagtawanan siya",
+            "Sabihing problema niya iyon",
+          ],
+          "Tulungan siya kung kaya mo",
+          "palakaibigan",
+        ],
+        [
+          "May nakita kang lapis na hindi iyo. Ano ang tamang gawin?",
+          "You found a pencil that is not yours. What should you do?",
+          ["Ibalik ito sa may-ari o ibigay sa guro", "Itago ito", "Iuwi ito"],
+          "Ibalik ito sa may-ari o ibigay sa guro",
+          "matapat",
+        ],
+      ];
+      const boss = [
+        [
+          "Si Mia ay bumati sa bagong kaklase, ngumiti, at nag-alok ng tulong. Anong katangian ang ipinakita niya?",
+          "Mia greeted a new classmate, smiled, and offered help. What trait did she show?",
+          ["Palakaibigan", "Hindi tapat", "Madamot"],
+          "Palakaibigan",
+          "palakaibigan",
+        ],
+        [
+          "Si Ben ay nakabasag ng baso at sinabi niya agad ang totoo. Anong katangian ang ipinakita niya?",
+          "Ben broke a glass and immediately told the truth. What trait did he show?",
+          ["Matapat", "Palakaibigan lamang", "Hindi responsable"],
+          "Matapat",
+          "matapat",
+        ],
+        [
+          "Alin ang pinakamagandang halimbawa ng parehong palakaibigan at matapat?",
+          "Which is the best example of being both friendly and honest?",
+          [
+            "Tumutulong sa kaibigan at nagsasabi ng totoo",
+            "Tumutulong ngunit nagsisinungaling",
+            "Nagsasabi ng totoo ngunit nananakit",
+          ],
+          "Tumutulong sa kaibigan at nagsasabi ng totoo",
+          "both",
+        ],
+        [
+          "Kapag hindi mo alam ang sagot sa tanong ng guro, ano ang matapat na sagot?",
+          "If you do not know the answer to the teacher’s question, what is the honest response?",
+          [
+            "“Hindi ko po alam, pero susubukan kong matuto.”",
+            "Gumawa ng sagot na hindi totoo.",
+            "Kopyahin ang sagot ng iba.",
+          ],
+          "“Hindi ko po alam, pero susubukan kong matuto.”",
+          "matapat",
+        ],
+        [
+          "May bagong bisita sa bahay. Ano ang palakaibigang kilos?",
+          "There is a new visitor at home. What is a friendly action?",
+          [
+            "Batiin siya nang maayos",
+            "Itago ang sarili at huwag pansinin",
+            "Tawanan siya",
+          ],
+          "Batiin siya nang maayos",
+          "palakaibigan",
+        ],
+        [
+          "Nalaman mong ikaw ang nakakuha ng laruan ng kaibigan nang hindi sinasadya. Ano ang matapat na gagawin?",
+          "You realize you took your friend’s toy by mistake. What is the honest thing to do?",
+          [
+            "Ibalik ito at sabihin ang totoo",
+            "Itago ito",
+            "Sabihing sa iyo iyon",
+          ],
+          "Ibalik ito at sabihin ang totoo",
+          "matapat",
+        ],
+      ];
+      const mock = [...boss, ...quick.slice(0, 4)].map((x, i) => ({
+        q: x[0],
+        en: x[1],
+        opts: x[2],
+        a: x[3],
+        c: x[4],
+      }));
+      function buildNav() {
+        document.getElementById("nav").innerHTML = navItems
+          .map(
+            (x) =>
+              `<button data-sec="${x[0]}" onclick="go('${x[0]}')">${x[1]}</button>`,
+          )
+          .join("");
+      }
+      function go(id) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.remove("active"));
+        document.getElementById(id).classList.add("active");
+        document
+          .querySelectorAll(".nav button")
+          .forEach((b) => b.classList.toggle("active", b.dataset.sec === id));
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (id === "quick" && !window.quickStarted) {
+          window.quickStarted = true;
+          renderQuick();
+        }
+        if (id === "sort") renderSort();
+        if (id === "match") renderMatch();
+        if (id === "challenge") renderChallenge();
+        if (id === "game") renderGame();
+        if (id === "boss") renderBoss();
+        if (id === "mock") renderMock();
+      }
+      function shuffle(a) {
+        return [...a].sort(() => Math.random() - 0.5);
+      }
+      function questionCard(item, idx, total, onNext, kind = "practice") {
+        let chosen = "";
+        return `<div class="activity"><div class="qnum">Question ${idx + 1} of ${total}</div><div class="question">${item[0]}</div><span class="en">${item[1]}</span><div class="choices">${item[2].map((o) => `<button class="choice" onclick="this.parentElement.querySelectorAll('.choice').forEach(x=>x.classList.remove('selected'));this.classList.add('selected');this.parentElement.dataset.answer=${JSON.stringify(o)}">${o}</button>`).join("")}</div><div class="controls"><button class="btn ghost" onclick="hint(this)">💡 Need a Hint? <span class="en">Need a clue?</span></button><button class="btn secondary" onclick="gradeChoice(this,${JSON.stringify(item[3])},'${item[4] || ""}',${onNext})">Check Answer</button></div><div class="feedback"></div></div>`;
+      }
+      function hint(btn) {
+        const f = btn.closest(".activity").querySelector(".feedback");
+        f.className = "feedback show";
+        f.innerHTML =
+          '<b>💡 Hint:</b> Think about kindness, truth, and respectful actions. <span class="en">Think about kindness, truth, and respectful actions.</span>';
+      }
+      function gradeChoice(btn, ans, concept, next) {
+        const box = btn.closest(".activity");
+        const picked = box.querySelector(".choices").dataset.answer;
+        const fb = box.querySelector(".feedback");
+        if (!picked) {
+          fb.className = "feedback show incorrect";
+          fb.innerHTML =
+            'Pumili muna ng sagot. <span class="en">Choose an answer first.</span>';
+          return;
+        }
+        if (picked === ans) {
+          state.score++;
+          fb.className = "feedback show correct";
+          fb.innerHTML =
+            '<b>Excellent!</b> Tama. <span class="en">Correct. Good thinking!</span>';
+          btn.disabled = true;
+          setTimeout(() => next(), 350);
+        } else {
+          state.missed[concept || "general"] =
+            (state.missed[concept || "general"] || 0) + 1;
+          fb.className = "feedback show incorrect";
+          fb.innerHTML = `<b>Not quite.</b> Ang tamang sagot ay <b>${ans}</b>. <span class="en">The correct answer is <b>${ans}</b>.</span><br><span class="en">Remember: Be kind, tell the truth, and take responsibility for your actions.</span>`;
+        }
+      }
+      let recallIdx = 0;
+      function renderRecall() {
+        const el = document.getElementById("recallQ");
+        if (recallIdx >= recall.length) {
+          go("memory");
+          return;
+        }
+        el.innerHTML = questionCard(
+          recall[recallIdx],
+          recallIdx,
+          recall.length,
+          () => {
+            recallIdx++;
+            renderRecall();
+          },
+          "recall",
+        );
+      }
+      renderRecall();
+      let quickIdx = 0;
+      function renderQuick() {
+        const el = document.getElementById("quickBox");
+        if (quickIdx >= quick.length) {
+          go("sort");
+          return;
+        }
+        document.getElementById("quickCount").textContent =
+          `${quickIdx + 1} / ${quick.length}`;
+        document.getElementById("quickProg").style.width =
+          (quickIdx / quick.length) * 100 + "%";
+        el.innerHTML = questionCard(
+          quick[quickIdx],
+          quickIdx,
+          quick.length,
+          () => {
+            quickIdx++;
+            renderQuick();
+          },
+        );
+      }
+      function renderSort() {
+        const el = document.getElementById("sortArea");
+        const items = shuffle([
+          { t: "Binabati ko ang bagong kaklase.", c: "palakaibigan" },
+          { t: "Sinasabi ko ang totoo kahit nagkamali ako.", c: "matapat" },
+          {
+            t: "Tinutulungan ko ang kaibigan na nangangailangan.",
+            c: "palakaibigan",
+          },
+          { t: "Ibinabalik ko ang bagay na hindi akin.", c: "matapat" },
+          {
+            t: "Inaanyayahan ko ang bagong kakilala na makipaglaro.",
+            c: "palakaibigan",
+          },
+          { t: "Umaamin ako sa aking ginawa.", c: "matapat" },
+        ]);
+        let html = '<div class="choices">';
+        items.forEach(
+          (it, i) =>
+            (html += `<button class="choice" onclick="sortPick(this,'${it.c}')">${it.t}<span class="en">${it.c === "palakaibigan" ? "Friendly action" : "Honest action"}</span></button>`),
+        );
+        html += '</div><div id="sortFb" class="feedback"></div>';
+        el.innerHTML = html;
+      }
+      let sortScore = 0;
+      function sortPick(btn, c) {
+        const answer = prompt(
+          "Piliin: P = Palakaibigan, M = Matapat\nChoose: P = Friendly, M = Honest",
+        );
+        if (!answer) return;
+        const good =
+          (answer.toUpperCase() === "P" && c === "palakaibigan") ||
+          (answer.toUpperCase() === "M" && c === "matapat");
+        const fb = document.getElementById("sortFb");
+        if (good) {
+          btn.classList.add("selected");
+          sortScore++;
+          fb.className = "feedback show correct";
+          fb.innerHTML = 'Tama! <span class="en">Correct!</span>';
+        } else {
+          fb.className = "feedback show incorrect";
+          fb.innerHTML =
+            'Hindi pa. Isipin kung ang kilos ay tungkol sa pakikipagkaibigan o pagsasabi ng totoo. <span class="en">Think whether the action is about friendship or honesty.</span>';
+        }
+        if (
+          document.querySelectorAll("#sortArea .choice.selected").length >= 6
+        ) {
+          setTimeout(() => go("match"), 500);
+        }
+      }
+      function renderMatch() {
+        const pairs = [
+          ["Palakaibigan", "Mabait at magiliw sa iba."],
+          ["Pagbati", "Maayos na pakikitungo sa iba."],
+          ["Pagtulong", "Pagbibigay ng tulong sa nangangailangan."],
+          ["Matapat", "Nagsasabi ng totoo."],
+          ["Pag-amin", "Pagsasabi na ikaw ang gumawa ng isang bagay."],
+          ["Pag-aari", "Bagay na pagmamay-ari ng isang tao."],
+        ];
+        let terms = shuffle(pairs.map((p, i) => ({ i, t: p[0] })));
+        let defs = shuffle(pairs.map((p, i) => ({ i, d: p[1] })));
+        document.getElementById("matchArea").innerHTML =
+          `<div class="match-grid"><div>${terms.map((x) => `<button class="match-item" data-i="${x.i}" onclick="matchTerm(this)">${x.t}<span class="en">${["Friendly", "Greeting", "Helping", "Honest", "Admitting", "Property"][x.i]}</span></button>`).join("")}</div><div>${defs.map((x) => `<button class="match-item" data-i="${x.i}" onclick="matchDef(this)">${x.d}<span class="en">${["Kind and welcoming", "Polite interaction", "Giving help", "Tells the truth", "Saying you did it", "Something owned by someone"][x.i]}</span></button>`).join("")}</div></div><div id="matchFb" class="feedback"></div>`;
+      }
+      let mt = null,
+        md = null,
+        matched = 0;
+      function matchTerm(b) {
+        document
+          .querySelectorAll("#matchArea .match-item")
+          .forEach((x) => x.classList.remove("sel"));
+        b.classList.add("sel");
+        mt = b;
+      }
+      function matchDef(b) {
+        if (!mt) return;
+        md = b;
+        const fb = document.getElementById("matchFb");
+        if (mt.dataset.i === md.dataset.i) {
+          mt.classList.add("done");
+          md.classList.add("done");
+          matched++;
+          fb.className = "feedback show correct";
+          fb.innerHTML = 'Tamang pares! <span class="en">Correct match!</span>';
+          mt = null;
+          md = null;
+          if (matched === 6) setTimeout(() => go("mistake"), 700);
+        } else {
+          fb.className = "feedback show incorrect";
+          fb.innerHTML =
+            'Hindi pa. Subukang iugnay ang salita sa tamang kahulugan. <span class="en">Not yet. Match the word with its correct meaning.</span>';
+        }
+      }
+      function showMistake() {
+        const fb = document.getElementById("mistakeFb");
+        const val = document.getElementById("mistakeAns").value.trim();
+        fb.className = "feedback show " + (val ? "correct" : "incorrect");
+        fb.innerHTML = val
+          ? '<b>Good thinking!</b> Ang pinakamahalaga: sabihin ang totoo at umako sa pagkakamali. <span class="en">The key idea: tell the truth and take responsibility for the mistake.</span>'
+          : 'Sumulat muna ng sagot. <span class="en">Write an answer first.</span>';
+        if (val) setTimeout(() => go("challenge"), 500);
+      }
+      function renderChallenge() {
+        let idx = 0;
+        const el = document.getElementById("challengeArea");
+        function next() {
+          if (idx >= challenge.length) {
+            go("game");
+            return;
+          }
+          el.innerHTML = questionCard(
+            challenge[idx],
+            idx,
+            challenge.length,
+            () => {
+              idx++;
+              next();
+            },
+          );
+        }
+        next();
+      }
+      function renderGame() {
+        let idx = 0,
+          stars = 0;
+        const missions = shuffle([...challenge, ...quick.slice(0, 2)]);
+        const el = document.getElementById("gameArea");
+        function next() {
+          if (idx >= missions.length) {
+            el.innerHTML = `<div class="key"><b>Mission Complete!</b> ⭐ ${stars}/${missions.length} correct decisions.<span class="en">You completed the mission!</span></div><div class="controls"><button class="btn secondary" onclick="go('boss')">Boss Challenge</button></div>`;
+            return;
+          }
+          const q = missions[idx];
+          el.innerHTML =
+            `<div class="pill">Mission ${idx + 1} of ${missions.length} • ⭐ ${stars}</div>` +
+            questionCard(q, idx, missions.length, () => {
+              stars++;
+              idx++;
+              next();
+            });
+        }
+        next();
+      }
+      function renderBoss() {
+        let idx = 0,
+          score = 0;
+        const arr = shuffle([...boss]);
+        const el = document.getElementById("bossArea");
+        function next() {
+          if (idx >= arr.length) {
+            const pct = Math.round((score / arr.length) * 100);
+            el.innerHTML = `<div class="scorebig">${pct}%</div><p>${pct >= 80 ? "Great job! Handa ka na. / You are ready." : "Let’s review that again. / Balikan natin ang mahirap na bahagi."}</p><div class="bar"><i style="width:${pct}%"></i></div><div class="controls"><button class="btn secondary" onclick="go('results')">See Results</button></div>`;
+            state.total += arr.length;
+            state.score += score;
+            return;
+          }
+          const q = arr[idx];
+          el.innerHTML = questionCard(q, idx, arr.length, () => {
+            idx++;
+            next();
+          });
+          const old = el.querySelector(".activity .btn.secondary");
+          old.onclick = function () {
+            const box = this.closest(".activity");
+            const picked = box.querySelector(".choices").dataset.answer;
+            const fb = box.querySelector(".feedback");
+            if (picked === q[3]) {
+              score++;
+              fb.className = "feedback show correct";
+              fb.innerHTML = "Tama! / Correct!";
+              setTimeout(() => {
+                idx++;
+                next();
+              }, 250);
+            } else {
+              fb.className = "feedback show incorrect";
+              fb.innerHTML = `Not quite. <span class="en">Correct answer: ${q[3]}</span>`;
+            }
+          };
+        }
+      }
+      function setConfidence(v) {
+        state.confidence = v;
+        document.getElementById("confidence").textContent =
+          "Your confidence: " + v;
+      }
+      function renderMock() {
+        let idx = 0,
+          score = 0;
+        const arr = shuffle(mock);
+        const el = document.getElementById("mockArea");
+        function next() {
+          if (idx >= arr.length) {
+            const pct = Math.round((score / arr.length) * 100);
+            document.getElementById("doneSummary").innerHTML =
+              `<div class="scorebig">${score}/${arr.length} • ${pct}%</div><p>${pct >= 90 ? "MASTERED!" : pct >= 80 ? "GREAT JOB!" : pct >= 70 ? "ALMOST THERE!" : "KEEP PRACTICING!"}</p>`;
+            go("done");
+            return;
+          }
+          const q = arr[idx];
+          el.innerHTML = questionCard(
+            [q.q, q.en, q.opts, q.a, q.c],
+            idx,
+            arr.length,
+            () => {
+              idx++;
+              next();
+            },
+          );
+          const old = el.querySelector(".btn.secondary");
+          old.onclick = function () {
+            const box = this.closest(".activity");
+            const picked = box.querySelector(".choices").dataset.answer;
+            const fb = box.querySelector(".feedback");
+            if (!picked) {
+              fb.className = "feedback show incorrect";
+              fb.innerHTML = "Choose an answer first. / Pumili muna ng sagot.";
+              return;
+            }
+            if (picked === q.a) {
+              score++;
+              fb.className = "feedback show correct";
+              fb.innerHTML = "Correct! / Tama!";
+              setTimeout(() => {
+                idx++;
+                next();
+              }, 250);
+            } else {
+              state.missed[q.c] = (state.missed[q.c] || 0) + 1;
+              fb.className = "feedback show incorrect";
+              fb.innerHTML = `Not quite. <span class="en">Correct answer: ${q.a}</span><br>Why? <span class="en">The answer matches the lesson concept.</span>`;
+            }
+          };
+        }
+        next();
+      }
+      function renderResults() {
+        const total = Math.max(1, state.total);
+        const pct = Math.round((state.score / total) * 100);
+        document.getElementById("scoreBig").textContent = pct + "%";
+        document.getElementById("scoreBar").style.width = pct + "%";
+        document.getElementById("scoreMsg").textContent =
+          pct >= 90
+            ? "MASTERED — Excellent understanding!"
+            : pct >= 80
+              ? "GREAT JOB — Strong understanding."
+              : pct >= 70
+                ? "ALMOST THERE — Review a few ideas."
+                : "KEEP PRACTICING — Let’s review again.";
+        document.getElementById("weakArea").innerHTML = Object.keys(
+          state.missed,
+        ).length
+          ? Object.entries(state.missed)
+              .map(
+                ([k, v]) =>
+                  `<div class="notice"><b>${k === "palakaibigan" ? "Ako ay Palakaibigan" : "Ako ay Matapat"}</b> — ${v} item(s) need review.<span class="en">Practice this concept again.</span></div>`,
+              )
+              .join("")
+          : '<div class="notice">No weak area detected yet. Keep practicing to confirm your learning.<span class="en">No weak area detected yet.</span></div>';
+      }
+      const oldGo = go;
+      go = function (id) {
+        if (id === "results") renderResults();
+        oldGo(id);
+      };
+      buildNav();
+    </script>
+  </body>
+</html>

@@ -1148,6 +1148,26 @@
     "date": "2026-10-13",
     "featured": false,
     "icon": "user"
+  },
+  {
+    "title": "Computer 2 | Reviewer: Loading Up the Computer • Protecting Your Computer",
+    "subject": "Computer", 
+    "grade": "Grade 2",
+    "description": "Complete missions, solve computer problems, protect your files, and prove that you are ready for the next topic.",
+    "file": "lessons/computer/grade-2/Computer2_Loading_Up_Protecting_Computer_Interactive_Reviewer/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "ESP 2 | Reviewer: Ako ay Palakaibigan • Ako ay Matapat",
+    "subject": "ESP", 
+    "grade": "Grade 2",
+    "description": "Review, practice, think, and apply what you learned.",
+    "file": "lessons/esp/grade-2/ESP2_Ako_Ay_Palakaibigan_Ako_Ay_Matapat/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
   }
   
 ]

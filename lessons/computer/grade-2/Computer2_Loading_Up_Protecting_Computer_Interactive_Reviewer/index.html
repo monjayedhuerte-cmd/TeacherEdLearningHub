@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0b2a5b">
+<link rel="icon" type="image/png" href="Teacher Ed Learning Hub Logo.png">
+<title>Computer 2 Cyber Quest | Teacher Ed Learning Hub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="toast" class="toast"></div>
+
+<header class="topbar">
+  <div class="brand">
+    <img src="Teacher Ed Learning Hub Logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>Teacher Ed Learning Hub</strong><span>Computer 2 • Interactive Reviewer</span></div>
+  </div>
+  <div class="stats">
+    <div><small>XP</small><b id="xp">0</b></div>
+    <div><small>LEVEL</small><b id="level">1</b></div>
+    <div><small>BADGES</small><b id="badges">0</b></div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <p class="eyebrow">🎮 COMPUTER 2 • CYBER QUEST</p>
+    <h1>Become a <span>Computer Guardian</span></h1>
+    <p class="heroText">Complete missions, solve computer problems, protect your files, and prove that you are ready for the next topic.</p>
+    <div class="actions">
+      <button class="btn primary" onclick="go('missions')">Start Mission</button>
+      <button class="btn ghost" onclick="go('review')">Quick Review</button>
+    </div>
+    <div class="progressLabel"><span>Quest Progress</span><b id="progressText">0%</b></div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </div>
+  <div class="console">
+    <div class="consoleBar"><i></i><i></i><i></i><span>CYBER-GUARDIAN.EXE</span></div>
+    <div class="screen">
+      <p>SYSTEM STATUS: <b>READY</b></p>
+      <p>THREAT LEVEL: <b>LOW</b></p>
+      <p>MISSION: <b>PROTECT + MAINTAIN</b></p>
+      <div class="scan"><i></i><i></i><i></i><i></i><i></i></div>
+      <strong>Your mission begins now.</strong>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="missions">
+  <div class="heading"><div><p class="eyebrow">MISSION SELECT</p><h2>Choose your training zone</h2></div><p>Finish both lessons to unlock the final challenge.</p></div>
+  <div class="missionGrid">
+    <article class="mission">
+      <div class="icon">📦</div><small>MISSION 01</small>
+      <h3>Loading Up Your Computer</h3>
+      <p>Install software safely, recognize installers, and make smart choices before downloading.</p>
+      <div class="meta">⚡ 250 XP <span>🧠 8 questions</span></div>
+      <button class="btn primary" onclick="start('loading')">Enter Mission</button>
+    </article>
+    <article class="mission">
+      <div class="icon">🛡️</div><small>MISSION 02</small>
+      <h3>Protecting Your Computer</h3>
+      <p>Defend your computer from malware, protect personal information, back up files, and maintain performance.</p>
+      <div class="meta">⚡ 300 XP <span>🧠 8 questions</span></div>
+      <button class="btn primary" onclick="start('protecting')">Enter Mission</button>
+    </article>
+    <article class="mission locked" id="masterCard">
+      <div class="icon">🏆</div><small>FINAL MISSION</small>
+      <h3>Cyber Guardian Challenge</h3>
+      <p>Combine both lessons and make the safest decision in realistic computer situations.</p>
+      <div class="meta">⚡ 500 XP <span>🔥 mastery</span></div>
+      <button class="btn primary" id="masterBtn" onclick="start('master')" disabled>Locked</button>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <div class="heading"><div><p class="eyebrow">LEARN BEFORE YOU PLAY</p><h2>Two lessons. One big mission.</h2></div></div>
+  <div class="bento">
+    <article class="info large"><span class="tag blue">LESSON 1</span><h3>📦 Loading Up Your Computer</h3><p>Software must be obtained and installed carefully. An installer helps set up software. Executable files can start programs, and compressed files may need to be decompressed.</p><div class="flow"><b>Trusted source</b> → <b>Download / media</b> → <b>Installer</b> → <b>Configure</b> → <b>Use safely</b></div></article>
+    <article class="info"><span class="tag gold">SAFETY</span><h3>🧠 Smart Download Rule</h3><p>Check the source before downloading. Suspicious websites, links, or attachments may contain malware.</p></article>
+    <article class="info"><span class="tag green">LESSON 2</span><h3>🛡️ Protecting Your Computer</h3><p>Use antivirus protection, stay alert online, protect personal information, back up important files, and maintain the computer.</p></article>
+    <article class="info"><span class="tag purple">BACKUP</span><h3>☁️ Keep a Copy</h3><p>Backups may be stored on an external hard drive or an online backup service so important files can be recovered.</p></article>
+    <article class="info"><span class="tag orange">MAINTENANCE</span><h3>🧹 Keep It Clean</h3><p>Delete unwanted files and use tools such as Disk Cleanup and Disk Defragmenter as taught in the lesson.</p></article>
+  </div>
+</section>
+
+<section class="section" id="game">
+  <div class="heading"><div><p class="eyebrow">ACTIVE MISSION</p><h2 id="gameTitle">Select a mission above</h2></div><div class="gameScore">Score <b id="score">0</b></div></div>
+  <div id="gamePanel" class="panel empty"><div class="placeholder"><div>🎮</div><h3>Your mission is waiting.</h3><p>Choose a mission above. Read the feedback after every answer—the goal is understanding, not guessing.</p></div></div>
+</section>
+
+<section class="section" id="review">
+  <div class="heading"><div><p class="eyebrow">🔄 QUICK REVIEW</p><h2>Tap a card to reveal the answer</h2></div><p>Use these before the final challenge.</p></div>
+  <div class="flash">
+    <button onclick="flip(this)"><span>What is malware?</span><em>Software designed to damage a computer or gain unauthorized access to personal information.</em></button>
+    <button onclick="flip(this)"><span>What does antivirus do?</span><em>It helps prevent malware from being installed and can remove malware.</em></button>
+    <button onclick="flip(this)"><span>Why make backups?</span><em>Backups provide copies of important files that can be recovered if files are lost.</em></button>
+    <button onclick="flip(this)"><span>What is an installer?</span><em>Software used to install another software program on a computer.</em></button>
+    <button onclick="flip(this)"><span>What is a firewall?</span><em>A security mechanism that helps block unauthorized access.</em></button>
+    <button onclick="flip(this)"><span>What is a honeypot?</span><em>A decoy designed to attract attackers so professionals can study their activity.</em></button>
+    <button onclick="flip(this)"><span>Why use strong passwords?</span><em>They make unauthorized access harder.</em></button>
+    <button onclick="flip(this)"><span>Why organize files?</span><em>Uncluttered files are easier to find and help prevent unnecessary storage use.</em></button>
+  </div>
+</section>
+
+<section class="section" id="results">
+  <div class="results">
+    <div class="resultIcon">🏆</div><p class="eyebrow">CYBER GUARDIAN STATUS</p>
+    <h2 id="resultTitle">Your results will appear here</h2>
+    <p id="resultMessage">Complete missions to see your progress.</p>
+    <div class="resultStats"><div><small>XP</small><b id="finalXP">0</b></div><div><small>MISSIONS</small><b id="done">0/3</b></div><div><small>BADGES</small><b id="finalBadges">0</b></div></div>
+    <div class="achievement" id="achievement">🔒 Complete the missions to unlock your achievement.</div>
+    <button class="btn ghost" onclick="resetProgress()">Reset Progress</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  <img src="Teacher Ed Learning Hub Logo.png" alt="Teacher Ed Learning Hub logo">
+  <div><strong>Teacher Ed Learning Hub</strong><p>Interactive Learning • Practice • Mastery</p><small>© 2026 Teacher Ed Learning Hub • Teacher Ed</small></div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
