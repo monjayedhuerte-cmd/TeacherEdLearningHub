@@ -1,47 +1,398 @@
 <!doctype html>
 <html lang="fil">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AP3 Culture Quest | Teacher Ed Learning Hub</title>
-<meta name="description" content="Interactive Grade 3 Araling Panlipunan reviewer for Mga Katutubong Sayaw and Mga Katutubong Kanta, based on lesson pointers and textbook pages.">
-<link rel="icon" type="image/png" href="assets/TeacherEdLogo.png"><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="topbar"><a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home"><img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo"><span><b>TEACHER ED LEARNING HUB</b><small>EDJAY • Teach. Lead. Inspire.</small></span></a><div class="tools"><button id="englishBtn" class="tool">EN Support: ON</button><button id="soundBtn" class="tool">Sound: OFF</button><button id="fullBtn" class="tool">Fullscreen</button><button id="resetBtn" class="tool">Reset</button></div></header>
-<main>
-<section id="home" class="screen active">
- <div class="hero"><div class="hero-copy"><span class="eyebrow">ARALING PANLIPUNAN 3 • REVIEW QUEST</span><h1>Mga Katutubong <em>Sayaw</em> at <em>Kanta</em></h1><p class="lead">Magbalik-aral, maglaro, at subukin ang iyong natutuhan gamit ang mga paksa mula sa Aralin 9 at Aralin 10.</p><div class="pills"><span>5 Katutubong Sayaw</span><span>4 Katutubong Kanta</span><span>30-Item Exam</span><span>May HOTS</span></div><button class="primary" id="beginBtn">Simulan ang Reviewer <span>→</span></button><p class="subnote">Gamitin ang reviewer bilang katuwang ng inyong aklat. Filipino ang pangunahing wika.</p></div><div class="hero-visual"><div class="orbit orbit1"></div><div class="orbit orbit2"></div><div class="floating dance">🕺</div><div class="floating music">🎶</div><div class="hero-logo"><img src="assets/TeacherEdLogo.png" alt="Teacher Ed logo"><b>Culture Quest</b><small>Learn • Recall • Apply • Master</small></div></div></div>
- <div class="overview-grid"><article class="panel"><span class="panel-icon">🕺</span><h2>Aralin 9</h2><h3>Mga Katutubong Sayaw</h3><p>Sayaw sa Bangko • Maglalatik • Pandanggo sa Ilaw • Tinikling • Pangalay</p><button class="textbtn" data-open="study">Balikan ang aralin →</button></article><article class="panel"><span class="panel-icon">🎵</span><h2>Aralin 10</h2><h3>Mga Katutubong Kanta</h3><p>Dandansoy • Atin Cu Pung Singsing • Ti-Ti Tulong Anay • Pasyon</p><button class="textbtn" data-open="study">Balikan ang aralin →</button></article><article class="panel accent"><span class="panel-icon">🧠</span><h2>30-Item Reviewer</h2><h3>Iba't ibang uri ng tanong</h3><p>Multiple Choice (3 pagpipilian), pag-uuri, Tama o Mali, pagkilala, at HOTS.</p><button class="textbtn" data-open="quiz">Pumunta sa pagsusulit →</button></article></div>
- <div class="note"><b>Batayan:</b> Ang mga pamagat at pangunahing ideya ay mula sa mga pointer at pahina ng aklat na naibigay mo. Kapag ang isang detalye ay hindi malinaw sa sanggunian, hindi ito ituturing na tiyak na impormasyon mula sa aklat.</div>
-</section>
-<section id="study" class="screen">
- <div class="section-title"><div><span class="eyebrow">MEMORY BOOSTER</span><h2>Balikan ang mahahalagang ideya</h2><p class="muted">Basahin muna ang mga paalala bago sagutan ang 30-item reviewer.</p></div><button class="secondary" data-open="home">← Home</button></div>
- <div class="tabrow"><button class="tab active" data-tab="dances">🕺 Katutubong Sayaw</button><button class="tab" data-tab="songs">🎵 Katutubong Kanta</button><button class="tab" data-tab="book">📚 Mga pahina ng aklat</button></div>
- <div id="dances" class="tabcontent active"><div class="memory-grid">
- <article class="memory-card"><span>🪑</span><h3>Sayaw sa Bangko</h3><p>Isa sa limang sayaw na dapat balikan sa Aralin 9.</p><small class="en">One of the five dances listed in Lesson 9.</small></article>
- <article class="memory-card"><span>🥥</span><h3>Maglalatik</h3><p>Isa sa mga katutubong sayaw sa listahan ng inyong pointer.</p><small class="en">A traditional dance included in your review pointers.</small></article>
- <article class="memory-card"><span>🕯️</span><h3>Pandanggo sa Ilaw</h3><p>Balikan ang paglalarawan at detalye nito sa aklat.</p><small class="en">Review its description and details in the textbook.</small></article>
- <article class="memory-card"><span>🎋</span><h3>Tinikling</h3><p>Balikan ang pangunahing katangian at paraan ng pagsasagawa nito sa inyong aralin.</p><small class="en">Review its main characteristics and how it is performed in your lesson.</small></article>
- <article class="memory-card"><span>🌊</span><h3>Pangalay</h3><p>Isa sa limang katutubong sayaw na kasama sa pointer.</p><small class="en">One of the five traditional dances in your pointers.</small></article>
- <article class="memory-card wide"><span>💡</span><div><h3>Pagpapahalaga sa katutubong sayaw</h3><p>Sa Aralin 9, binibigyang-diin ang pagkilala sa mga katutubong sayaw sa Pilipinas at sa mga pamayanan, gayundin ang pagpapahalaga sa lokal na sining at kultura.</p><small class="en">Lesson 9 emphasizes identifying traditional dances in the Philippines and communities, and valuing local art and culture.</small></div></article>
- </div></div>
- <div id="songs" class="tabcontent"><div class="memory-grid">
- <article class="memory-card"><span>🎶</span><h3>Dandansoy</h3><p>Sa pahina 153, pinakikinggan ang awit at pinag-uusapan ang kahulugan ng mga salita, paksa, at damdaming ipinahahayag nito.</p><small class="en">Page 153 asks learners to listen and discuss the words, topic, and feelings expressed.</small></article>
- <article class="memory-card"><span>💍</span><h3>Atin Cu Pung Singsing</h3><p>Ayon sa pahina 153, ang awit ng mga taga-Pampanga ay naglalahad ng isang kuwento.</p><small class="en">Page 153 states that this song of the Kapampangan people tells a story.</small></article>
- <article class="memory-card"><span>🎵</span><h3>Ti-Ti Tulong Anay</h3><p>Isa sa apat na katutubong kanta sa iyong pointer. Balikan ang eksaktong detalye sa talakayan ng klase.</p><small class="en">One of the four folk songs in your pointers. Review the exact details from class.</small></article>
- <article class="memory-card"><span>✝️</span><h3>Pasyon</h3><p>Ayon sa pahina 156, kinukuwento nito ang buhay, pagpapakasakit, pagkamatay, at muling pagkabuhay ni Hesukristo. Ang pag-awit nito ay tinatawag na “pabasa” at isinasagawa sa Mahal na Araw.</p><small class="en">Page 156 explains the story told by the Pasyon and identifies its chanting as the “pabasa,” associated with Holy Week.</small></article>
- <article class="memory-card wide"><span>💡</span><div><h3>Paglalahat sa pahina 157</h3><p>Maraming katutubong awit ang mga pamayanang Pilipino. Ang mga awit ay maaaring magpahayag ng damdamin o maglahad ng kuwento; may mga awit ding kinakanta sa takdang panahon o okasyon. Makikita sa mga ito ang ganda ng sining at mga wikang Pilipino.</p><small class="en">Folk songs can express feelings, tell stories, or be sung on particular occasions. They reflect Filipino arts and languages.</small></div></article>
- </div></div>
- <div id="book" class="tabcontent"><p class="note">Mga pahina ng aklat na naisama sa reviewer para madali mong mabalikan ang sanggunian. Ang mga larawan ay para sa pag-aaral kasama ng sariling aklat.</p><div class="book-grid"><figure><img src="assets/lesson-page-1920.jpg" alt="Aralin 9 Mga Katutubong Sayaw, pahina 142"><figcaption>Aralin 9 • Mga Katutubong Sayaw</figcaption></figure><figure><img src="assets/lesson-page-1921.jpg" alt="Mga pahina ng Aralin 9"><figcaption>Aralin 9 • Sanggunian</figcaption></figure><figure><img src="assets/page152.jpg" alt="Aralin 10 Mga Katutubong Kanta, pahina 152"><figcaption>Aralin 10 • Pahina 152</figcaption></figure><figure><img src="assets/page153.jpg" alt="Dandansoy at Atin Cu Pung Singsing, pahina 153"><figcaption>Aralin 10 • Pahina 153</figcaption></figure><figure><img src="assets/page156.jpg" alt="Pasyon, pahina 156"><figcaption>Aralin 10 • Pahina 156</figcaption></figure><figure><img src="assets/page157.jpg" alt="Paglalahat sa katutubong kanta, pahina 157"><figcaption>Aralin 10 • Pahina 157</figcaption></figure></div></div>
- <div class="bottom-actions"><button class="primary" data-open="quiz">Handa na ako — Simulan ang 30 Items →</button></div>
-</section>
-<section id="quiz" class="screen">
- <div class="quiz-head"><div><span class="eyebrow">MASTERY CHECK</span><h2>30-Item Interactive Reviewer</h2><p class="muted">Sagutan ang bawat tanong. May tatlong pagpipilian lamang sa multiple choice.</p></div><div class="quiz-stat"><b id="progressText">0 / 30</b><small>Nasagutan</small></div></div>
- <div class="progress-track"><div id="progressBar"></div></div>
- <div class="quiz-layout"><aside class="quiz-sidebar"><h3>Question Map</h3><div id="questionMap" class="question-map"></div><div class="legend"><span class="dot done"></span> Nasagutan <span class="dot current"></span> Kasalukuyan</div><button id="finishBtn" class="secondary fullwidth">Tingnan ang Resulta</button></aside><div class="question-panel"><div class="question-meta"><span id="sectionTag">MULTIPLE CHOICE</span><span id="questionNum">TANONG 1 / 30</span></div><h2 id="questionText">Pindutin ang Simulan upang magsimula.</h2><p id="questionEn" class="en hidden"></p><div id="answerArea" class="answer-area"></div><div id="feedback" class="feedback" aria-live="polite"></div><div class="question-controls"><button id="hintBtn" class="secondary">💡 Pahiwatig</button><button id="prevBtn" class="secondary">← Nakaraan</button><button id="nextBtn" class="primary">Susunod →</button></div><div id="hintText" class="hint hidden"></div></div></div>
-</section>
-<section id="results" class="screen"><div class="results-card"><img src="assets/TeacherEdLogo.png" alt="Teacher Ed logo"><span class="eyebrow">CULTURE QUEST • RESULTA</span><h2>Natapos mo ang Reviewer!</h2><div class="score-ring"><b id="finalScore">0</b><span>/30</span></div><p id="resultMessage" class="lead"></p><div class="result-stats"><div><b id="finalPercent">0%</b><small>Katumpakan</small></div><div><b id="danceCorrect">0</b><small>Sayaw items</small></div><div><b id="songCorrect">0</b><small>Kanta items</small></div></div><h3>Mga item na kailangang balikan</h3><div id="reviewMisses" class="miss-list"></div><div class="result-actions"><button id="retryBtn" class="primary">Ulitin ang Reviewer</button><button class="secondary" data-open="study">Balikan ang Memory Booster</button><button class="secondary" id="printBtn">I-print ang Resulta</button></div></div></section>
-</main>
-<footer><img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo"><div><b>TEACHER ED LEARNING HUB</b><small>EDJAY • Teach. Lead. Inspire.</small></div><span>Araling Panlipunan 3 • Aralin 9 at 10</span></footer>
-<script src="script.js"></script>
-</body></html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AP3 Culture Quest | Teacher Ed Learning Hub</title>
+    <meta
+      name="description"
+      content="Interactive Grade 3 Araling Panlipunan reviewer for Mga Katutubong Sayaw and Mga Katutubong Kanta, based on lesson pointers and textbook pages."
+    />
+    <link rel="icon" type="image/png" href="assets/TeacherEdLogo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home"
+        ><img
+          src="assets/TeacherEdLogo.png"
+          alt="Teacher Ed Learning Hub logo"
+        /><span
+          ><b>TEACHER ED LEARNING HUB</b
+          ><small>EDJAY • Teach. Lead. Inspire.</small></span
+        ></a
+      >
+      <div class="tools">
+        <button id="englishBtn" class="tool">EN Support: ON</button
+        ><button id="soundBtn" class="tool">Sound: OFF</button
+        ><button id="fullBtn" class="tool">Fullscreen</button
+        ><button id="resetBtn" class="tool">Reset</button>
+      </div>
+    </header>
+    <main>
+      <section id="home" class="screen active">
+        <div class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow">ARALING PANLIPUNAN 3 • REVIEW QUEST</span>
+            <h1>Mga Katutubong <em>Sayaw</em> at <em>Kanta</em></h1>
+            <p class="lead">
+              Magbalik-aral, maglaro, at subukin ang iyong natutuhan gamit ang
+              mga paksa mula sa Aralin 9 at Aralin 10.
+            </p>
+            <div class="pills">
+              <span>5 Katutubong Sayaw</span><span>4 Katutubong Kanta</span
+              ><span>30-Item Exam</span><span>May HOTS</span>
+            </div>
+            <button class="primary" id="beginBtn">
+              Simulan ang Reviewer <span>→</span>
+            </button>
+            <p class="subnote">
+              Gamitin ang reviewer bilang katuwang ng inyong aklat. Filipino ang
+              pangunahing wika.
+            </p>
+          </div>
+          <div class="hero-visual">
+            <div class="orbit orbit1"></div>
+            <div class="orbit orbit2"></div>
+            <div class="floating dance">🕺</div>
+            <div class="floating music">🎶</div>
+            <div class="hero-logo">
+              <img src="assets/TeacherEdLogo.png" alt="Teacher Ed logo" /><b
+                >Culture Quest</b
+              ><small>Learn • Recall • Apply • Master</small>
+            </div>
+          </div>
+        </div>
+        <div class="overview-grid">
+          <article class="panel">
+            <span class="panel-icon">🕺</span>
+            <h2>Aralin 9</h2>
+            <h3>Mga Katutubong Sayaw</h3>
+            <p>
+              Sayaw sa Bangko • Maglalatik • Pandanggo sa Ilaw • Tinikling •
+              Pangalay
+            </p>
+            <button class="textbtn" data-open="study">
+              Balikan ang aralin →
+            </button>
+          </article>
+          <article class="panel">
+            <span class="panel-icon">🎵</span>
+            <h2>Aralin 10</h2>
+            <h3>Mga Katutubong Kanta</h3>
+            <p>
+              Dandansoy • Atin Cu Pung Singsing • Ti-Ti Tulong Anay • Pasyon
+            </p>
+            <button class="textbtn" data-open="study">
+              Balikan ang aralin →
+            </button>
+          </article>
+          <article class="panel accent">
+            <span class="panel-icon">🧠</span>
+            <h2>30-Item Reviewer</h2>
+            <h3>Iba't ibang uri ng tanong</h3>
+            <p>
+              Multiple Choice (3 pagpipilian), pag-uuri, Tama o Mali, pagkilala,
+              at HOTS.
+            </p>
+            <button class="textbtn" data-open="quiz">
+              Pumunta sa pagsusulit →
+            </button>
+          </article>
+        </div>
+        <div class="note">
+          <b>Batayan:</b> Ang mga pamagat at pangunahing ideya ay mula sa mga
+          pointer at pahina ng aklat na naibigay mo. Kapag ang isang detalye ay
+          hindi malinaw sa sanggunian, hindi ito ituturing na tiyak na
+          impormasyon mula sa aklat.
+        </div>
+      </section>
+      <section id="study" class="screen">
+        <div class="section-title">
+          <div>
+            <span class="eyebrow">MEMORY BOOSTER</span>
+            <h2>Balikan ang mahahalagang ideya</h2>
+            <p class="muted">
+              Basahin muna ang mga paalala bago sagutan ang 30-item reviewer.
+            </p>
+          </div>
+          <button class="secondary" data-open="home">← Home</button>
+        </div>
+        <div class="tabrow">
+          <button class="tab active" data-tab="dances">
+            🕺 Katutubong Sayaw</button
+          ><button class="tab" data-tab="songs">🎵 Katutubong Kanta</button
+          ><button class="tab" data-tab="book">📚 Mga pahina ng aklat</button>
+        </div>
+        <div id="dances" class="tabcontent active">
+          <div class="memory-grid">
+            <article class="memory-card">
+              <span>🪑</span>
+              <h3>Sayaw sa Bangko</h3>
+              <p>Isa sa limang sayaw na dapat balikan sa Aralin 9.</p>
+              <small class="en"
+                >One of the five dances listed in Lesson 9.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>🥥</span>
+              <h3>Maglalatik</h3>
+              <p>Isa sa mga katutubong sayaw sa listahan ng inyong pointer.</p>
+              <small class="en"
+                >A traditional dance included in your review pointers.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>🕯️</span>
+              <h3>Pandanggo sa Ilaw</h3>
+              <p>Balikan ang paglalarawan at detalye nito sa aklat.</p>
+              <small class="en"
+                >Review its description and details in the textbook.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>🎋</span>
+              <h3>Tinikling</h3>
+              <p>
+                Balikan ang pangunahing katangian at paraan ng pagsasagawa nito
+                sa inyong aralin.
+              </p>
+              <small class="en"
+                >Review its main characteristics and how it is performed in your
+                lesson.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>🌊</span>
+              <h3>Pangalay</h3>
+              <p>Isa sa limang katutubong sayaw na kasama sa pointer.</p>
+              <small class="en"
+                >One of the five traditional dances in your pointers.</small
+              >
+            </article>
+            <article class="memory-card wide">
+              <span>💡</span>
+              <div>
+                <h3>Pagpapahalaga sa katutubong sayaw</h3>
+                <p>
+                  Sa Aralin 9, binibigyang-diin ang pagkilala sa mga katutubong
+                  sayaw sa Pilipinas at sa mga pamayanan, gayundin ang
+                  pagpapahalaga sa lokal na sining at kultura.
+                </p>
+                <small class="en"
+                  >Lesson 9 emphasizes identifying traditional dances in the
+                  Philippines and communities, and valuing local art and
+                  culture.</small
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div id="songs" class="tabcontent">
+          <div class="memory-grid">
+            <article class="memory-card">
+              <span>🎶</span>
+              <h3>Dandansoy</h3>
+              <p>
+                Sa pahina 153, pinakikinggan ang awit at pinag-uusapan ang
+                kahulugan ng mga salita, paksa, at damdaming ipinahahayag nito.
+              </p>
+              <small class="en"
+                >Page 153 asks learners to listen and discuss the words, topic,
+                and feelings expressed.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>💍</span>
+              <h3>Atin Cu Pung Singsing</h3>
+              <p>
+                Ayon sa pahina 153, ang awit ng mga taga-Pampanga ay naglalahad
+                ng isang kuwento.
+              </p>
+              <small class="en"
+                >Page 153 states that this song of the Kapampangan people tells
+                a story.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>🎵</span>
+              <h3>Ti-Ti Tulong Anay</h3>
+              <p>
+                Isa sa apat na katutubong kanta sa iyong pointer. Balikan ang
+                eksaktong detalye sa talakayan ng klase.
+              </p>
+              <small class="en"
+                >One of the four folk songs in your pointers. Review the exact
+                details from class.</small
+              >
+            </article>
+            <article class="memory-card">
+              <span>✝️</span>
+              <h3>Pasyon</h3>
+              <p>
+                Ayon sa pahina 156, kinukuwento nito ang buhay, pagpapakasakit,
+                pagkamatay, at muling pagkabuhay ni Hesukristo. Ang pag-awit
+                nito ay tinatawag na “pabasa” at isinasagawa sa Mahal na Araw.
+              </p>
+              <small class="en"
+                >Page 156 explains the story told by the Pasyon and identifies
+                its chanting as the “pabasa,” associated with Holy Week.</small
+              >
+            </article>
+            <article class="memory-card wide">
+              <span>💡</span>
+              <div>
+                <h3>Paglalahat sa pahina 157</h3>
+                <p>
+                  Maraming katutubong awit ang mga pamayanang Pilipino. Ang mga
+                  awit ay maaaring magpahayag ng damdamin o maglahad ng kuwento;
+                  may mga awit ding kinakanta sa takdang panahon o okasyon.
+                  Makikita sa mga ito ang ganda ng sining at mga wikang
+                  Pilipino.
+                </p>
+                <small class="en"
+                  >Folk songs can express feelings, tell stories, or be sung on
+                  particular occasions. They reflect Filipino arts and
+                  languages.</small
+                >
+              </div>
+            </article>
+          </div>
+        </div>
+        <div id="book" class="tabcontent">
+          <p class="note">
+            Mga pahina ng aklat na naisama sa reviewer para madali mong
+            mabalikan ang sanggunian. Ang mga larawan ay para sa pag-aaral
+            kasama ng sariling aklat.
+          </p>
+          <div class="book-grid">
+            <figure>
+              <img
+                src="assets/lesson-page-1920.jpg"
+                alt="Aralin 9 Mga Katutubong Sayaw, pahina 142"
+              />
+              <figcaption>Aralin 9 • Mga Katutubong Sayaw</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/lesson-page-1921.jpg"
+                alt="Mga pahina ng Aralin 9"
+              />
+              <figcaption>Aralin 9 • Sanggunian</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/page152.jpg"
+                alt="Aralin 10 Mga Katutubong Kanta, pahina 152"
+              />
+              <figcaption>Aralin 10 • Pahina 152</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/page153.jpg"
+                alt="Dandansoy at Atin Cu Pung Singsing, pahina 153"
+              />
+              <figcaption>Aralin 10 • Pahina 153</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/page156.jpg" alt="Pasyon, pahina 156" />
+              <figcaption>Aralin 10 • Pahina 156</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="assets/page157.jpg"
+                alt="Paglalahat sa katutubong kanta, pahina 157"
+              />
+              <figcaption>Aralin 10 • Pahina 157</figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="bottom-actions">
+          <button class="primary" data-open="quiz">
+            Handa na ako — Simulan ang 30 Items →
+          </button>
+        </div>
+      </section>
+      <section id="quiz" class="screen">
+        <div class="quiz-head">
+          <div>
+            <span class="eyebrow">MASTERY CHECK</span>
+            <h2>30-Item Interactive Reviewer</h2>
+            <p class="muted">
+              Sagutan ang bawat tanong. May tatlong pagpipilian lamang sa
+              multiple choice.
+            </p>
+          </div>
+          <div class="quiz-stat">
+            <b id="progressText">0 / 30</b><small>Nasagutan</small>
+          </div>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+        <div class="quiz-layout">
+          <aside class="quiz-sidebar">
+            <h3>Question Map</h3>
+            <div id="questionMap" class="question-map"></div>
+            <div class="legend">
+              <span class="dot done"></span> Nasagutan
+              <span class="dot current"></span> Kasalukuyan
+            </div>
+            <button id="finishBtn" class="secondary fullwidth">
+              Tingnan ang Resulta
+            </button>
+          </aside>
+          <div class="question-panel">
+            <div class="question-meta">
+              <span id="sectionTag">MULTIPLE CHOICE</span
+              ><span id="questionNum">TANONG 1 / 30</span>
+            </div>
+            <h2 id="questionText">Pindutin ang Simulan upang magsimula.</h2>
+            <p id="questionEn" class="en hidden"></p>
+            <div id="answerArea" class="answer-area"></div>
+            <div id="feedback" class="feedback" aria-live="polite"></div>
+            <div class="question-controls">
+              <button id="hintBtn" class="secondary">💡 Pahiwatig</button
+              ><button id="prevBtn" class="secondary">← Nakaraan</button
+              ><button id="nextBtn" class="primary">Susunod →</button>
+            </div>
+            <div id="hintText" class="hint hidden"></div>
+          </div>
+        </div>
+      </section>
+      <section id="results" class="screen">
+        <div class="results-card">
+          <img src="assets/TeacherEdLogo.png" alt="Teacher Ed logo" /><span
+            class="eyebrow"
+            >CULTURE QUEST • RESULTA</span
+          >
+          <h2>Natapos mo ang Reviewer!</h2>
+          <div class="score-ring"><b id="finalScore">0</b><span>/30</span></div>
+          <p id="resultMessage" class="lead"></p>
+          <div class="result-stats">
+            <div><b id="finalPercent">0%</b><small>Katumpakan</small></div>
+            <div><b id="danceCorrect">0</b><small>Sayaw items</small></div>
+            <div><b id="songCorrect">0</b><small>Kanta items</small></div>
+          </div>
+          <h3>Mga item na kailangang balikan</h3>
+          <div id="reviewMisses" class="miss-list"></div>
+          <div class="result-actions">
+            <button id="retryBtn" class="primary">Ulitin ang Reviewer</button
+            ><button class="secondary" data-open="study">
+              Balikan ang Memory Booster</button
+            ><button class="secondary" id="printBtn">
+              I-print ang Resulta
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <img src="assets/TeacherEdLogo.png" alt="Teacher Ed Learning Hub logo" />
+      <div>
+        <b>TEACHER ED LEARNING HUB</b
+        ><small>EDJAY • Teach. Lead. Inspire.</small>
+      </div>
+      <span>Araling Panlipunan 3 • Aralin 9 at 10</span>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
