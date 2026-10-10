@@ -1168,6 +1168,17 @@
     "date": "2026-10-13",
     "featured": false,
     "icon": "user"
+  },
+  {
+    "title": "Araling Panlipuna 3 | Reviewer: Katutubong Sayaw • Katutubong Kanta",
+    "subject": "Araling Panlipunan", 
+    "grade": "Grade 3",
+    "description": "Magbalik-aral, maglaro, at subukin ang iyong natutuhan gamit ang mga paksa mula sa Aralin 9 at Aralin 10.",
+    "file": "http://127.0.0.1:5500/lessons/araling-panlipunan/grade-3/AP3_Culture_Quest_Exam_Reviewer/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
   }
+
   
 ]
