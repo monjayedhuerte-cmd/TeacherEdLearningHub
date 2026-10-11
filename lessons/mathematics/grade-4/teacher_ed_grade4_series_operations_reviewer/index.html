@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102d63">
+  <meta name="description" content="Teacher Ed Learning Hub Grade 4 Mathematics interactive reviewer: Series of Operations on Whole Numbers and Decimals.">
+  <title>Series of Operations | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to reviewer</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo" class="brand-logo">
+      <div><strong>TEACHER ED</strong><span>LEARNING HUB</span></div>
+    </div>
+    <div class="header-tag">GRADE 4 MATHEMATICS</div>
+  </header>
+
+  <main id="main">
+    <section class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">INTERACTIVE REVIEWER · LESSON 3</p>
+        <h1>Operation Quest</h1>
+        <h2>Series of Operations on Whole Numbers and Decimals</h2>
+        <p class="hero-desc">Think carefully, follow the order of operations, and solve each mission. Mistakes are clues that help you learn.</p>
+        <div class="hero-actions">
+          <button id="startBtn" class="btn btn-primary">Ready to Review? <span aria-hidden="true">→</span></button>
+          <button id="resumeBtn" class="btn btn-secondary hidden">Resume review</button>
+        </div>
+        <div class="hero-stats">
+          <span><b>6</b> learning stages</span><span><b>20</b> practice problems</span><span><b>1</b> final mission</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="math-tile tile-a">12 − 4 + 3</div>
+        <div class="math-tile tile-b">(8 + 2) − 5</div>
+        <div class="math-core"><span>Σ</span><small>THINK · SOLVE · CHECK</small></div>
+        <div class="math-tile tile-c">4.5 + 2.1</div>
+      </div>
+    </section>
+
+    <section class="progress-panel panel" aria-label="Review progress">
+      <div class="progress-top"><span id="stageLabel">Your learning path</span><span id="progressText">0% complete</span></div>
+      <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+      <nav class="stage-nav" aria-label="Reviewer stages">
+        <button class="stage-link active" data-stage="recall">01 Recall</button>
+        <button class="stage-link" data-stage="booster">02 Memory Booster</button>
+        <button class="stage-link" data-stage="quickfire">03 Quick Fire</button>
+        <button class="stage-link" data-stage="fix">04 Fix the Mistake</button>
+        <button class="stage-link" data-stage="challenge">05 Challenge</button>
+        <button class="stage-link" data-stage="boss">06 Boss Quiz</button>
+      </nav>
+    </section>
+
+    <section id="reviewArea" class="review-layout">
+      <aside class="side-card panel">
+        <div class="mini-brand"><img src="assets/teacher-ed-logo.png" alt=""><div><b>MISSION BOARD</b><span>Small steps, strong thinking.</span></div></div>
+        <div class="side-metric"><span>XP earned</span><strong id="xpValue">0</strong></div>
+        <div class="side-metric"><span>Questions answered</span><strong id="answeredValue">0</strong></div>
+        <div class="side-metric"><span>Accuracy</span><strong id="accuracyValue">—</strong></div>
+        <div class="side-tip"><b>Remember</b><p>Without grouping symbols, addition and subtraction are performed from left to right. With grouping symbols, solve inside them first.</p></div>
+        <button id="resetBtn" class="btn btn-quiet full-width">Restart reviewer</button>
+      </aside>
+
+      <div class="lesson-column">
+        <section class="content-section panel" id="recallSection">
+          <div class="section-heading"><span class="section-number">01</span><div><p class="eyebrow">WAKE UP YOUR MEMORY</p><h2>What do you remember?</h2><p>Answer before reading the reminder. This helps you discover what you already know.</p></div></div>
+          <div id="recallQuestion" class="question-card"></div>
+        </section>
+
+        <section class="content-section panel" id="boosterSection">
+          <div class="section-heading"><span class="section-number gold">02</span><div><p class="eyebrow">MAKE IT STICK</p><h2>Memory Booster</h2><p>Keep these rules in mind as you solve.</p></div></div>
+          <div class="concept-grid">
+            <article class="concept-card"><span class="concept-icon">↔</span><h3>Left to right</h3><p>When an expression has only addition and subtraction, work from left to right.</p><div class="example">18 − 7 + 4 = 11 + 4 = <b>15</b></div></article>
+            <article class="concept-card"><span class="concept-icon">括</span><h3>Grouping first</h3><p>If parentheses or other grouping symbols appear, calculate inside them first.</p><div class="example">20 − (6 + 3) = 20 − 9 = <b>11</b></div></article>
+            <article class="concept-card"><span class="concept-icon">.</span><h3>Align decimals</h3><p>For decimal addition or subtraction, line up decimal points and add zeros when needed.</p><div class="example">5.4 + 2.35 = 5.40 + 2.35 = <b>7.75</b></div></article>
+            <article class="concept-card"><span class="concept-icon">₱</span><h3>Word problems</h3><p>Identify what is known and what must be found. Write an expression before calculating.</p><div class="example">Change = amount paid − total cost</div></article>
+          </div>
+          <div class="memory-strip"><b>Memory cue:</b> <span>“GROUPS FIRST; OTHERWISE, LEFT TO RIGHT.”</span></div>
+          <details class="teach-note"><summary>Why can 12 − 4 + 3 not be solved by adding 4 + 3 first?</summary><p>There are no grouping symbols. Addition and subtraction have equal priority in this lesson, so follow the expression from left to right: 12 − 4 = 8, then 8 + 3 = 11.</p></details>
+        </section>
+
+        <section class="content-section panel" id="quickfireSection">
+          <div class="section-heading"><span class="section-number teal">03</span><div><p class="eyebrow">RETRIEVE IT</p><h2>Quick Fire</h2><p>Short questions. Careful thinking. No speed pressure.</p></div></div>
+          <div id="quickfireQuestion" class="question-card"></div>
+        </section>
+
+        <section class="content-section panel" id="fixSection">
+          <div class="section-heading"><span class="section-number coral">04</span><div><p class="eyebrow">ERROR DETECTIVE</p><h2>Fix the Mistake</h2><p>Look for the step where the student's reasoning goes wrong.</p></div></div>
+          <div id="fixQuestion" class="question-card"></div>
+        </section>
+
+        <section class="content-section panel" id="challengeSection">
+          <div class="section-heading"><span class="section-number purple">05</span><div><p class="eyebrow">APPLY YOUR THINKING</p><h2>Challenge Mode</h2><p>Use the same rules in multi-step expressions and real-life situations.</p></div></div>
+          <div id="challengeQuestion" class="question-card"></div>
+        </section>
+
+        <section class="content-section panel" id="bossSection">
+          <div class="section-heading"><span class="section-number">06</span><div><p class="eyebrow">FINAL MISSION</p><h2>Boss Quiz</h2><p>Complete the mixed quiz. Your score and review recommendations appear at the end.</p></div></div>
+          <div id="bossQuestion" class="question-card"></div>
+          <div id="results" class="results-card hidden" aria-live="polite"></div>
+        </section>
+
+        <section class="content-section panel" id="lockInSection">
+          <div class="section-heading"><span class="section-number gold">★</span><div><p class="eyebrow">BEFORE YOU GO</p><h2>Final Memory Lock-In</h2></div></div>
+          <ol class="lock-list">
+            <li><b>Grouping symbols:</b> solve inside them first.</li>
+            <li><b>Addition and subtraction:</b> when there are no grouping symbols, work from left to right.</li>
+            <li><b>Decimals:</b> align decimal points; annex zeros when useful.</li>
+            <li><b>Word problems:</b> translate the situation into an expression before calculating.</li>
+            <li><b>Check your work:</b> estimate or use the context to see whether the answer makes sense.</li>
+          </ol>
+          <div class="thirty-second"><b>30-second review</b><p>GROUPS FIRST → LEFT TO RIGHT → ALIGN DECIMALS → WRITE AN EXPRESSION → CHECK THE ANSWER.</p></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>Teacher Ed Learning Hub</strong><span>Teach. Lead. Inspire.</span></div>
+    <p>Learn it. Recall it. Apply it.</p>
+  </footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

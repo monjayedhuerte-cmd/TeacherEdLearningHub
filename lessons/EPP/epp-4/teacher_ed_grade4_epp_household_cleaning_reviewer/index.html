@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="fil">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102d63">
+<meta name="description" content="Interactive Grade 4 EPP reviewer about household cleaning and cleaning the surroundings.">
+<title>EPP 4: Linis Quest | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/favicon.png"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Laktawan papunta sa reviewer / Skip to reviewer</a>
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Teacher Ed Learning Hub home">
+    <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+    <span><strong>TEACHER ED</strong><small>LEARNING HUB</small></span>
+  </a>
+  <div class="header-right"><span class="subject-tag">EPP · GRADE 4</span><button id="soundToggle" class="icon-btn" aria-pressed="false" title="Toggle sound effects">Sound: Off</button></div>
+</header>
+<main id="main">
+<section class="hero panel" id="top">
+  <div class="hero-text">
+    <p class="eyebrow">INTERACTIVE REVIEWER · EPP 4</p>
+    <h1>Linis <span>Quest</span></h1>
+    <h2>Malinis na Tahanan, Ligtas na Pamumuhay</h2>
+    <p class="lead">Balikan ang mga paraan ng paglilinis ng tahanan at bakuran. Sagutin, mag-isip, at matuto sa bawat gawain.</p>
+    <p class="english-support">Review household cleaning and yard maintenance through short missions, hints, and helpful explanations.</p>
+    <button id="startBtn" class="btn btn-primary">Handa ka na? / Ready to Review? <span>→</span></button>
+    <div class="hero-meta"><span>6 learning stages</span><span>Lesson-based practice</span><span>Phone-friendly</span></div>
+  </div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="sun"></div><div class="sparkle sp1">✦</div><div class="sparkle sp2">✦</div>
+    <div class="house"><div class="roof"></div><div class="window"><i></i><i></i><i></i><i></i></div><div class="door"></div></div>
+    <div class="plant plant1">♧</div><div class="plant plant2">♧</div>
+    <div class="visual-label">LINIS • AYOS • INGAT</div>
+  </div>
+</section>
+
+<section class="progress-panel panel" aria-label="Progress ng reviewer">
+  <div class="progress-row"><b id="stageLabel">Simulan ang iyong learning path</b><span id="progressText">0% complete</span></div>
+  <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+  <nav class="stage-nav" aria-label="Reviewer sections">
+    <button class="stage-link active" data-target="recall">01 Recall</button>
+    <button class="stage-link" data-target="booster">02 Memory</button>
+    <button class="stage-link" data-target="quickfire">03 Quick Fire</button>
+    <button class="stage-link" data-target="sort">04 Sort It</button>
+    <button class="stage-link" data-target="fix">05 Fix It</button>
+    <button class="stage-link" data-target="game">06 Linis Quest</button>
+    <button class="stage-link" data-target="boss">07 Boss Quiz</button>
+  </nav>
+</section>
+
+<section class="review-layout">
+<aside class="side panel">
+  <div class="side-brand"><img src="assets/teacher-ed-logo.png" alt=""><div><b>MISSION BOARD</b><small>Teacher Ed Learning Hub</small></div></div>
+  <div class="metric"><span>XP Points</span><b id="xpValue">0</b></div>
+  <div class="metric"><span>Nasagot / Answered</span><b id="answeredValue">0</b></div>
+  <div class="metric"><span>Accuracy</span><b id="accuracyValue">—</b></div>
+  <div class="tip"><b>Memory cue</b><p><strong>LINIS – AYOS – INGAT</strong><br>Linisin ang paligid, ayusin ang gamit, at ingatan ang sarili habang nagtatrabaho.</p></div>
+  <button id="resetBtn" class="btn btn-quiet wide">Restart reviewer</button>
+</aside>
+
+<div class="content-column">
+<section class="section panel" id="recallSection">
+  <div class="section-head"><span class="num">01</span><div><p class="eyebrow">WHAT DO YOU REMEMBER?</p><h2>Ano ang naaalala mo?</h2><p>Subukan muna bago basahin ang reviewer. Walang problema kung hindi mo pa maalala ang lahat.</p></div></div>
+  <div id="recallQuestion" class="question-card"></div>
+</section>
+
+<section class="section panel" id="boosterSection">
+  <div class="section-head"><span class="num gold">02</span><div><p class="eyebrow">MEMORY BOOSTER</p><h2>Mga dapat tandaan</h2><p>Maikling gabay mula sa mga pahina 39–41 ng ibinigay na aklat.</p></div></div>
+  <div class="concept-grid">
+    <article class="concept"><div class="concept-icon">🪟</div><h3>Paglilinis ng kisame, dingding at bintana</h3><p>Sa kisame, gumamit ng walis-tingting na may mahabang hawakan at takpan ang mga kasangkapan ng lumang diyaryo. Sa dingding, gumamit ng basahan, eskoba at tubig na may sabon kung naaangkop. Sa bintana, gumamit ng basang diyaryo para sa salamin o tuyong diyaryo para punasan; maaari ring feather duster o basahang tuyo para sa kahoy.</p><small>English: Choose a cleaning tool that fits the surface.</small></article>
+    <article class="concept"><div class="concept-icon">🧹</div><h3>Pagwawalis ng sahig</h3><p>Simulan sa mga sulok, ilalim ng kasangkapan, at tabi ng silid patungo sa gitna. Dahan-dahang walisin upang hindi lumipad at kumalat ang alikabok. Gumamit ng pandakot para ipunin ang dumi.</p><small>English: Sweep dust toward one place, then collect it.</small></article>
+    <article class="concept"><div class="concept-icon">🪑</div><h3>Paglilinis ng muwebles at kasangkapan</h3><p>Maaaring gumamit ng tuyong basahan o feather duster. Simulan sa itaas at magpatuloy pababa; linisin pati ang mga sulok at siwang.</p><small>English: Start high and work downward.</small></article>
+    <article class="concept"><div class="concept-icon">🌿</div><h3>Paglilinis ng bakuran</h3><p>Walisin ang kalat at tuyong dahon. Bunutin ang damo at mga ugat nito. Ihiwalay ang bote, lata at plastik. Ang nabubulok na dahon at balat ng gulay o prutas ay maaaring gawing compost ayon sa aralin.</p><small>English: Sweep, weed, sort waste, and compost suitable organic material.</small></article>
+    <article class="concept"><div class="concept-icon">💧</div><h3>Panatilihing malinis ang kanal</h3><p>Linisin ang kanal upang hindi maipon ang tubig at maiwasan ang pamugaran ng daga, lamok at mga insektong nagdadala ng sakit.</p><small>English: Clear drains to reduce standing water and pests.</small></article>
+    <article class="concept"><div class="concept-icon">🧤</div><h3>Kaligtasan habang naglilinis</h3><p>Magsuot ng maluwag at komportableng damit. Takpan ang ilong ng malaking panyo upang mabawasan ang paglanghap ng alikabok. Ipusod o itali ang buhok. Ayusin ang mga gamit, mag-ingat sa de-kuryenteng kasangkapan, at ilayo sa bata ang kutsilyo at disinfectant.</p><small>English: Dress safely, organize tools, and keep hazardous items away from children.</small></article>
+  </div>
+  <div class="memory-strip"><b>Memory cue:</b> <span>LINIS → AYOS → INGAT</span><p>Linisin ang ibabaw at paligid; ayusin at itabi ang gamit; ingatan ang sarili at ibang tao.</p></div>
+  <details class="note"><summary>Bakit nagsisimula sa itaas ang paglilinis?</summary><p>Ayon sa aralin, sa paglilinis ng muwebles at kasangkapan ay nagsisimula sa itaas at nagpapatuloy pababa. Sa ganitong paraan, mas madaling linisin ang mga ibabaw at sulok nang sunod-sunod.</p><p class="english-support">The lesson recommends starting at the top and moving downward when cleaning furniture and fixtures.</p></details>
+  <div class="safety-note"><b>Safety reminder / Paalala sa kaligtasan</b><p>Ang mga gawaing may kuryente, matutulis na bagay, disinfectant, o mabibigat na kagamitan ay dapat gawin lamang sa gabay ng nakatatanda. Huwag paghaluin ang mga panlinis.</p><small>Adult supervision is needed for electrical equipment, sharp tools, disinfectants, and heavy items. Never mix cleaning products.</small></div>
+</section>
+
+<section class="section panel" id="quickfireSection">
+  <div class="section-head"><span class="num teal">03</span><div><p class="eyebrow">QUICK FIRE</p><h2>Mabilisang balik-aral</h2><p>Basahin nang mabuti. Mas mahalaga ang tamang pag-iisip kaysa bilis.</p></div></div>
+  <div id="quickfireQuestion" class="question-card"></div>
+</section>
+
+<section class="section panel" id="sortSection">
+  <div class="section-head"><span class="num purple">04</span><div><p class="eyebrow">SORT IT OUT</p><h2>Saan ito nabibilang?</h2><p>I-tap ang kategoryang pinakatugma sa gawain.</p></div></div>
+  <div id="sortActivity" class="sort-card"></div>
+</section>
+
+<section class="section panel" id="fixSection">
+  <div class="section-head"><span class="num coral">05</span><div><p class="eyebrow">FIX THE MISTAKE</p><h2>Hanapin ang mali</h2><p>Isipin kung ligtas at angkop ba ang ginagawa ng tauhan.</p></div></div>
+  <div id="fixQuestion" class="question-card"></div>
+</section>
+
+<section class="section panel" id="gameSection">
+  <div class="section-head"><span class="num gold">06</span><div><p class="eyebrow">LESSON-SPECIFIC GAME</p><h2>Linis Quest: Ayusin ang Tahanan</h2><p>Pumili ng tamang gawain upang makumpleto ang bawat mission.</p></div></div>
+  <div id="gameQuestion" class="question-card"></div>
+</section>
+
+<section class="section panel" id="bossSection">
+  <div class="section-head"><span class="num">07</span><div><p class="eyebrow">FINAL MISSION</p><h2>Boss Quiz</h2><p>Halo-halong tanong tungkol sa paglilinis at kaligtasan. Makikita ang resulta pagkatapos ng huling tanong.</p></div></div>
+  <div id="bossQuestion" class="question-card"></div><div id="results" class="results hidden" aria-live="polite"></div>
+</section>
+
+<section class="section panel" id="lockSection">
+  <div class="section-head"><span class="num gold">★</span><div><p class="eyebrow">FINAL MEMORY LOCK-IN</p><h2>Ang 5 bagay na dapat tandaan</h2></div></div>
+  <ol class="lock-list">
+    <li><b>Simulan sa itaas.</b> Sa paglilinis ng muwebles at kasangkapan, magmula sa itaas pababa.</li>
+    <li><b>Walisin nang dahan-dahan.</b> Simulan sa sulok at tabi ng silid papunta sa gitna; gamitin ang pandakot.</li>
+    <li><b>Panatilihing malinis ang bakuran.</b> Walisin ang kalat, bunutin ang damo at paghiwalayin ang mga basura.</li>
+    <li><b>Alagaan ang kanal.</b> Linisin ito upang maiwasan ang naiipong tubig at mga pesteng nagdadala ng sakit.</li>
+    <li><b>Kaligtasan muna.</b> Ayusin ang mga kagamitan at ilayo sa mga bata ang kutsilyo at disinfectant.</li>
+  </ol>
+  <div class="memory-strip"><b>30-SECOND REVIEW</b><p>LINIS: ibabaw, sahig, bakuran at kanal. AYOS: itabi ang kagamitan at paghiwalayin ang basura. INGAT: komportableng damit, proteksiyon laban sa alikabok, at maingat na paggamit ng kagamitan.</p><p class="english-support">Clean surfaces and surroundings. Organize tools and waste. Protect yourself and others.</p></div>
+</section>
+</div></section>
+</main>
+<footer class="site-footer"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo"><div><strong>Teacher Ed Learning Hub</strong><span>Teach. Lead. Inspire.</span></div><p>Malinis na tahanan, ligtas na pamumuhay.</p></footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="data.js"></script><script src="script.js"></script>
+</body></html>

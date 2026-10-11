@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b63">
+  <title>Ekonomiya Quest | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#welcome" aria-label="Teacher Ed Learning Hub home">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+      <span><strong>TEACHER ED</strong><small>LEARNING HUB</small></span>
+    </a>
+    <div class="header-tag">ARALING PANLIPUNAN 4</div>
+  </header>
+
+  <main>
+    <section class="hero" id="welcome">
+      <div class="hero-copy">
+        <p class="eyebrow">INTERACTIVE REVIEWER • ARALIN 7</p>
+        <h1>Ekonomiya <span>Quest</span></h1>
+        <h2>Mga Hamong Hinaharap ng mga Gawaing Pangkabuhayan sa Pilipinas</h2>
+        <p class="lead">Balikan ang mahahalagang konsepto, tuklasin ang mga suliranin, at subukan kung kaya mong ilapat ang iyong natutuhan.</p>
+        <div class="hero-meta"><span>📘 Araling Panlipunan</span><span>🎓 Grade 4</span><span>⏱ Self-paced</span></div>
+        <button class="primary-btn" id="startBtn">Simulan ang Reviewer <span aria-hidden="true">→</span></button>
+      </div>
+      <div class="hero-logo"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed logo"></div>
+    </section>
+
+    <section class="progress-panel">
+      <div><strong>Ang iyong pag-unlad</strong><p id="progressText">Magsimula sa kahit anong bahagi. Naka-save ang progreso sa browser na ito.</p></div>
+      <div class="progress-track"><span id="progressBar"></span></div>
+    </section>
+
+    <nav class="section-nav" aria-label="Reviewer sections">
+      <button class="nav-btn active" data-target="recall">1. Recall</button>
+      <button class="nav-btn" data-target="memory">2. Memory Booster</button>
+      <button class="nav-btn" data-target="sort">3. Sort It Out</button>
+      <button class="nav-btn" data-target="challenge">4. Challenge</button>
+      <button class="nav-btn" data-target="quiz">5. Boss Quiz</button>
+    </nav>
+
+    <section class="content-section" id="recall">
+      <div class="section-heading"><span class="step">01</span><div><p class="eyebrow">ACTIVE RECALL</p><h2>Ano ang naaalala mo?</h2><p>Subukan muna bago basahin ang reviewer notes. Walang parusa sa pagkakamali.</p></div></div>
+      <div class="quiz-card" id="recallCard"></div>
+    </section>
+
+    <section class="content-section" id="memory">
+      <div class="section-heading"><span class="step">02</span><div><p class="eyebrow">CHUNK IT • CONNECT IT</p><h2>Memory Booster</h2><p>Mga konseptong dapat tandaan mula sa mga pahina ng aklat na ibinigay.</p></div></div>
+      <div class="concept-grid">
+        <article class="concept-card"><div class="concept-icon">🌾</div><h3>Repormang Agraryo</h3><p><b>Key idea:</b> Mga hakbang at programa upang maipamahagi ang lupang agrikultural sa mga magsasakang kwalipikadong benepisyaryo.</p><p class="memory-cue">Tandaan: <b>LUPA + SUPORTA</b> — hindi lupa lamang; kailangan din ng irigasyon, makinarya, puhunan at daan.</p><p class="example"><b>Halimbawa:</b> CARP at CARPER.</p></article>
+        <article class="concept-card"><div class="concept-icon">🍚</div><h3>Rice Tariffication Law</h3><p><b>Key idea sa aklat:</b> Inalis ang quota o limitasyon sa pag-angkat ng bigas at gumamit ng taripa o buwis sa imported rice.</p><p class="memory-cue">Tandaan: <b>ANGKAT + TARIPA</b>. Isaalang-alang ang epekto sa mamimili at lokal na magsasaka.</p><p class="example"><b>Isyu:</b> Maaaring magkaroon ng mas murang bigas para sa mamimili ngunit mas matinding kompetisyon para sa lokal na magsasaka.</p></article>
+        <article class="concept-card"><div class="concept-icon">🌦️</div><h3>Pagbabago ng Klima</h3><p><b>Key idea:</b> Ang pagtaas ng temperatura at mas matitinding pangyayari sa panahon ay maaaring makasira sa pananim, hayop at kabuhayan.</p><p class="memory-cue">Tandaan: <b>INIT • BAGYO • BAHA • TAGTUYOT</b>.</p><p class="example"><b>Epekto:</b> Nasirang pananim, pagbaha, storm surge, pagtaas ng alat ng tubig at panganib sa yamang-dagat.</p></article>
+        <article class="concept-card"><div class="concept-icon">🤖</div><h3>Automation sa Industriya</h3><p><b>Key idea:</b> Paggamit ng makabagong teknolohiya, robot o computer upang mapabilis at mapahusay ang produksyon.</p><p class="memory-cue">Tandaan: <b>BILIS + KALIDAD</b>, ngunit kailangang isaalang-alang ang gastos, kasanayan at epekto sa trabaho.</p><p class="example"><b>Hamon:</b> Kakulangan sa pananaliksik, teknolohiya, kooperasyon at balanseng paglikha ng trabaho.</p></article>
+        <article class="concept-card"><div class="concept-icon">🚚</div><h3>Logistik at Imprastruktura</h3><p><b>Key idea:</b> Logistik ang paggalaw at paghahatid ng produkto; imprastruktura ang mga pasilidad at sistemang sumusuporta rito.</p><p class="memory-cue">Tandaan: <b>DAAN • TULAY • DAUNGAN • PALIPARAN • KOMUNIKASYON • KURYENTE</b>.</p><p class="example"><b>Bakit mahalaga?</b> Nakakatulong ang maayos na transportasyon at komunikasyon sa pagdadala ng hilaw na materyales at produkto.</p></article>
+        <article class="concept-card"><div class="concept-icon">🛒</div><h3>Seguridad sa Pagkain</h3><p><b>Key idea:</b> Kailangang may sapat at abot-kayang pagkain ang mga mamamayan.</p><p class="memory-cue">Tandaan: <b>SUPLAY + ABOT-KAYA + MATATAG NA PRODUKSIYON</b>.</p><p class="example"><b>Mga panganib:</b> Pagdepende sa inaangkat na bigas, pagtaas ng presyo ng langis at pataba, at mga sakunang nakaaapekto sa ani.</p></article>
+      </div>
+      <div class="note-box"><strong>Isipin ang ugnayan:</strong> Kapag nasira ng bagyo ang pananim (agrikultura), bumababa ang suplay; kapag mahal ang transportasyon (imprastruktura), maaaring tumaas ang gastos sa pagdadala ng produkto.</div>
+    </section>
+
+    <section class="content-section" id="sort">
+      <div class="section-heading"><span class="step">03</span><div><p class="eyebrow">CLASSIFY & EXPLAIN</p><h2>Sort It Out</h2><p>Ilagay ang bawat sitwasyon sa angkop na kategorya. Pumili ng sagot at tingnan ang paliwanag.</p></div></div>
+      <div class="sort-card">
+        <div class="sort-top"><span class="pill" id="sortCount">Sitwasyon 1 sa 6</span><span class="pill muted">Tap-based • Mobile friendly</span></div>
+        <h3 id="sortPrompt"></h3><div class="sort-options" id="sortOptions"></div><div class="feedback" id="sortFeedback" aria-live="polite"></div>
+        <div class="action-row"><button class="secondary-btn" id="sortNext" disabled>Susunod na sitwasyon →</button></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="challenge">
+      <div class="section-heading"><span class="step">04</span><div><p class="eyebrow">APPLY YOUR LEARNING</p><h2>Challenge Mode</h2><p>Hindi sapat ang pagsasaulo. Piliin ang pinakamainam na paliwanag o solusyon.</p></div></div>
+      <div class="quiz-card" id="challengeCard"></div>
+    </section>
+
+    <section class="content-section" id="quiz">
+      <div class="section-heading"><span class="step">05</span><div><p class="eyebrow">FINAL ASSESSMENT</p><h2>Boss Quiz</h2><p>10 tanong na may halo-halong konsepto. Makikita ang resulta pagkatapos sagutin ang lahat.</p></div></div>
+      <div class="quiz-card" id="bossCard">
+        <div class="quiz-intro"><div class="big-icon">🏆</div><h3>Handa ka na ba sa Boss Quiz?</h3><p>Basahin nang mabuti ang bawat tanong. Maaari kang magbalik sa Memory Booster bago magsimula.</p><button class="primary-btn" id="beginBoss">Simulan ang 10-item quiz</button></div>
+      </div>
+    </section>
+
+    <section class="content-section" id="lockin">
+      <div class="section-heading"><span class="step">06</span><div><p class="eyebrow">FINAL MEMORY LOCK-IN</p><h2>Ang 5 Bagay na Dapat Tandaan</h2></div></div>
+      <ol class="lock-list">
+        <li><b>Repormang agraryo:</b> mahalaga ang lupa at suporta upang maging produktibo ang magsasaka.</li>
+        <li><b>Rice Tariffication Law:</b> unawain ang ugnayan ng pag-angkat, taripa, presyo at lokal na magsasaka.</li>
+        <li><b>Climate change:</b> maaaring makapinsala sa pananim, hayop, baybayin at kabuhayan.</li>
+        <li><b>Automation:</b> maaaring magpabilis ng produksyon ngunit may gastos at epekto sa trabaho.</li>
+        <li><b>Logistik at imprastruktura:</b> tumutulong sa paggalaw ng materyales at produkto sa bansa.</li>
+      </ol>
+      <div class="note-box"><strong>30-second review:</strong> Ang mga gawaing pangkabuhayan ay naaapektuhan ng lupa, presyo, klima, teknolohiya at imprastruktura. Ang mabisang tugon ay nangangailangan ng angkop na suporta, maayos na pagpaplano at pagtutulungan ng pamahalaan, industriya at mamamayan.</div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+    <div><strong>TEACHER ED LEARNING HUB</strong><p>Teach. Lead. Inspire.</p><small>Araling Panlipunan 4 • Interactive Reviewer</small></div>
+    <button class="text-btn" id="resetProgress">I-reset ang progreso</button>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

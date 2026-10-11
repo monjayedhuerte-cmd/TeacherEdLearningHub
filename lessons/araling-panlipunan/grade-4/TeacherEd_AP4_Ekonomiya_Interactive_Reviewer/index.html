@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="fil">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#09285b">
+  <meta name="description" content="Teacher Ed Learning Hub interactive reviewer para sa Araling Panlipunan 4: Mga Gawaing Pangkabuhayan sa Pilipinas.">
+  <title>AP 4 • Ekonomiya Quest | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="questions.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Lumaktaw sa pangunahing nilalaman</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo" class="brand-logo">
+      <div><strong>TEACHER ED</strong><span>LEARNING HUB</span></div>
+    </div>
+    <div class="header-tools"><span class="pill">ARALING PANLIPUNAN 4</span><button id="soundToggle" class="icon-btn" type="button" aria-pressed="false" title="I-toggle ang tunog">♫ <span>Tunog</span></button></div>
+  </header>
+
+  <main id="main">
+    <section class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">ARALIN 6 · REVIEW ADVENTURE</p>
+        <h1>Ekonomiya <em>Quest</em></h1>
+        <p class="lead">Mga Gawaing Pangkabuhayan sa Pilipinas</p>
+        <p>Balikan ang mahahalagang konsepto tungkol sa agrikultura, industriya, at mga salik na tumutulong sa pag-unlad ng ekonomiya. Filipino ang pangunahing wika; may maiikling English support notes para mas madaling maunawaan.</p>
+        <div class="hero-actions"><button class="btn primary" id="startBtn">Simulan ang Quest <span aria-hidden="true">→</span></button><button class="btn secondary" id="resumeBtn">Ituloy ang Review</button></div>
+        <div class="stats"><div><b id="statDone">0</b><span>Nasagot</span></div><div><b id="statBest">0%</b><span>Pinakamataas</span></div><div><b>30</b><span>Mga Tanong</span></div></div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="hero-symbol">₱</div><div class="float-card fc-one">🌾 <span>Agrikultura</span></div><div class="float-card fc-two">🏭 <span>Industriya</span></div><div class="float-card fc-three">🚢 <span>Logistik</span></div></div>
+    </section>
+
+    <section class="journey-section">
+      <div class="section-heading"><div><p class="eyebrow">ANG IYONG LEARNING PATH</p><h2>ENGAGE → LEARN → MASTER</h2></div><p class="muted">Kumpletuhin ang bawat hakbang. Maaari kang bumalik sa mga aralin anumang oras.</p></div>
+      <div class="journey-grid">
+        <button class="journey-card active" data-section="learn"><span class="step-icon">01</span><span><b>Explore & Learn</b><small>Balikan ang pangunahing ideya</small></span><span class="card-arrow">↗</span></button>
+        <button class="journey-card" data-section="practice"><span class="step-icon">02</span><span><b>Guided Practice</b><small>Subukan ang mga tanong</small></span><span class="card-arrow">↗</span></button>
+        <button class="journey-card" data-section="games"><span class="step-icon">03</span><span><b>Game Practice</b><small>Quick Fire at Fix the Mistake</small></span><span class="card-arrow">↗</span></button>
+        <button class="journey-card" data-section="quiz"><span class="step-icon">04</span><span><b>Boss Quiz</b><small>Sukatin ang iyong mastery</small></span><span class="card-arrow">↗</span></button>
+      </div>
+    </section>
+
+    <section id="learn" class="content-section panel">
+      <div class="section-heading"><div><p class="eyebrow">01 · EXPLORE & LEARN</p><h2>Memory Booster</h2></div><span class="badge">Quick review</span></div>
+      <div class="concept-grid">
+        <article class="concept"><div class="concept-icon">🌾</div><h3>Agrikultura</h3><p>May kaugnayan sa pagsasaka at pag-aalaga ng hayop. Mahahalagang hamon sa aralin ang repormang agraryo, pag-angkat ng bigas, at pagbabago ng klima.</p><p class="english-note">English support: Agriculture includes farming and raising animals.</p><ul><li><b>Repormang agraryo:</b> mga programa at pagbabago kaugnay ng lupang sakahan.</li><li><b>Rice Tariffication Law:</b> batas na nag-alis ng quota o limitasyon sa pag-angkat ng bigas; may mga layunin at hamong tinatalakay sa aklat.</li><li><b>Climate change:</b> pagbabago sa klima na maaaring magdulot ng bagyo, baha, at pinsala sa pananim at hayop.</li></ul></article>
+        <article class="concept"><div class="concept-icon">🏭</div><h3>Industriya at Automation</h3><p>Ang <b>automation</b> ay paggamit ng makabagong teknolohiya at makina upang mapabilis ang proseso at mabawasan ang pagkakamali.</p><p class="english-note">English support: Automation uses machines or technology to perform tasks more efficiently.</p><ul><li>Posibleng pakinabang: mas mabilis na paggawa at mas kaunting nasasayang na materyales.</li><li>Mga hamon: kakulangan sa teknolohiya, pasilidad, pananaliksik, at kooperasyon.</li><li>Kailangang isaalang-alang ang epekto nito sa mga manggagawa at trabaho.</li></ul></article>
+        <article class="concept"><div class="concept-icon">🚚</div><h3>Logistik at Imprastruktura</h3><p>Ang <b>logistik</b> ay tumutukoy sa pagdadala at pag-iimbak ng produkto. Ang imprastruktura ay mga pasilidad at sistemang sumusuporta sa mga gawaing pangkabuhayan.</p><p class="english-note">English support: Logistics moves and stores goods; infrastructure supports transport and production.</p><ul><li>Halimbawa: kalsada, tulay, daungan, paliparan, komunikasyon, at kuryente.</li><li>Maayos na transportasyon ang tumutulong sa paglipat ng hilaw na materyales at produkto.</li><li>Mahalaga ang komunikasyon at enerhiya sa operasyon ng industriya.</li></ul></article>
+      </div>
+      <div class="remember-strip"><span class="remember-icon">💡</span><div><b>Tandaan!</b><p>Magkakaugnay ang mga sektor ng ekonomiya. Ang problema sa klima, teknolohiya, transportasyon, o lupa ay maaaring makaapekto sa produksyon, presyo, trabaho, at kabuhayan.</p></div></div>
+    </section>
+
+    <section id="practice" class="content-section panel">
+      <div class="section-heading"><div><p class="eyebrow">02 · GUIDED PRACTICE</p><h2>Practice Arena</h2></div><span class="badge blue">Immediate feedback</span></div>
+      <div class="practice-layout">
+        <div class="practice-info"><h3>Subukan ang iyong pag-unawa</h3><p>Pumili ng sagot. Ipapakita kung tama ito at kung bakit. May hint kapag kailangan mo ng tulong.</p><label for="topicFilter">Pumili ng paksa</label><select id="topicFilter"><option value="all">Lahat ng paksa</option></select><button class="btn primary full" id="practiceStart">Magsimula ng Practice</button><div class="mini-progress"><div class="progress-track"><span id="practiceProgress"></span></div><small id="practiceCount">0 / 0 nasagot</small></div></div>
+        <div class="question-card" id="practiceCard"><div class="question-meta"><span class="badge">PRACTICE</span><span id="practiceNumber">Handa ka na?</span></div><h3 id="practiceQuestion">Pindutin ang “Magsimula ng Practice” upang makapagsimula.</h3><div id="practiceChoices" class="choices"></div><div id="practiceFeedback" class="feedback" aria-live="polite"></div><div class="question-actions"><button class="btn secondary" id="hintBtn" disabled>💡 Hint</button><button class="btn primary" id="nextPractice" disabled>Susunod →</button></div></div>
+      </div>
+    </section>
+
+    <section id="games" class="content-section panel">
+      <div class="section-heading"><div><p class="eyebrow">03 · GAME PRACTICE</p><h2>Quick Fire Challenge</h2></div><span class="badge gold">Earn points</span></div>
+      <div class="game-grid">
+        <article class="game-card"><div class="game-emoji">⚡</div><h3>Quick Fire</h3><p>Limang mabilisang tanong. Piliin ang tamang sagot bago maubos ang oras.</p><button class="btn primary" id="quickFireBtn">Laruin ang Quick Fire</button></article>
+        <article class="game-card"><div class="game-emoji">🛠️</div><h3>Fix the Mistake</h3><p>Hanapin ang maling pahayag at piliin ang tamang konsepto.</p><button class="btn secondary" id="fixMistakeBtn">Ayusin ang Pahayag</button></article>
+      </div>
+      <div id="gameStage" class="game-stage hidden" aria-live="polite"></div>
+    </section>
+
+    <section id="quiz" class="content-section panel">
+      <div class="section-heading"><div><p class="eyebrow">04 · CHECK → MASTER</p><h2>Boss Quiz</h2></div><span class="badge">10 questions</span></div>
+      <div id="quizIntro" class="quiz-intro"><div class="quiz-emblem">🏆</div><div><h3>Handa ka na bang subukin ang mastery mo?</h3><p>May 10 tanong na pinili mula sa iba't ibang paksa. Makikita mo ang iyong score, paliwanag, at mga paksang dapat balikan.</p><button class="btn primary" id="quizStart">Simulan ang Boss Quiz</button></div></div>
+      <div id="quizStage" class="hidden"></div>
+    </section>
+
+    <section id="teacherMode" class="content-section panel">
+      <div class="section-heading"><div><p class="eyebrow">TEACHER MODE</p><h2>Progress & Reflection</h2></div><button class="btn danger-outline" id="resetProgress">I-reset ang Progress</button></div>
+      <div class="teacher-grid"><div class="progress-box"><span class="muted">Mga tanong na nasagot</span><strong id="teacherDone">0</strong><div class="progress-track"><span id="teacherBar"></span></div></div><div class="progress-box"><span class="muted">Pinakamataas na quiz score</span><strong id="teacherBest">0%</strong><p class="muted">Ang progreso ay naka-save sa browser na ito lamang.</p></div><div class="progress-box"><span class="muted">Mga paksang dapat balikan</span><strong id="weakTopics">Wala pa</strong><p class="muted">Lalabas dito ang mga paksang may maling sagot.</p></div></div>
+      <div class="reflection"><h3>Reflect: Ano ang kailangan mo pang pag-aralan?</h3><textarea id="reflectionText" rows="3" placeholder="Isulat ang konseptong gusto mong balikan..."></textarea><button class="btn secondary" id="saveReflection">I-save ang Reflection</button><span id="reflectionStatus" class="muted" aria-live="polite"></span></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="footer-brand"><img src="assets/teacher-ed-logo.png" alt="" class="footer-logo"><div><strong>Teacher Ed Learning Hub</strong><span>Teach. Lead. Inspire.</span></div></div><p>Matuto • Magsanay • Magtagumpay</p><small>Araling Panlipunan 4 · Mga Gawaing Pangkabuhayan sa Pilipinas · Ginawa para sa pag-aaral at pag-uulit.</small></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="resultDialog" class="result-dialog"><div id="resultContent"></div><button class="btn primary full" id="closeDialog">Magpatuloy</button></dialog>
+</body>
+</html>

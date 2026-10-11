@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#082b67">
+  <title>Grade 4 Math Quest | Teacher Ed Learning Hub</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home">
+        <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+        <span><strong>Teacher Ed Learning Hub</strong><small>Teach. Lead. Inspire.</small></span>
+      </a>
+      <div class="header-tag">GRADE 4 <b>MATHEMATICS</b></div>
+    </header>
+
+    <main id="home">
+      <section class="hero panel">
+        <div class="hero-copy">
+          <span class="eyebrow">INTERACTIVE REVIEWER</span>
+          <h1>Decimal Detectives</h1>
+          <p>Explore decimal place value, add and subtract decimals, regroup with confidence, and solve real-world problems.</p>
+          <div class="hero-actions">
+            <button class="btn primary" id="startBtn">Start my quest <span aria-hidden="true">→</span></button>
+            <button class="btn secondary" id="resumeBtn">Resume progress</button>
+          </div>
+          <div class="hero-stats">
+            <div><strong id="xpStat">0</strong><span>XP earned</span></div>
+            <div><strong id="masteredStat">0/4</strong><span>Topics mastered</span></div>
+            <div><strong id="streakStat">0</strong><span>Correct in a row</span></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+          <div class="decimal-card"><span>PLACE VALUE</span><div class="digits"><b>4</b><i>.</i><b>7</b><b>5</b><b>0</b></div><div class="digit-labels"><span>ones</span><span>tenths</span><span>hundredths</span><span>thousandths</span></div></div>
+          <div class="float-chip chip-top">+ 0.638</div><div class="float-chip chip-bottom">− 13.608</div>
+          <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✦</div>
+        </div>
+      </section>
+
+      <section class="section-heading" id="topics">
+        <div><span class="eyebrow">YOUR LEARNING PATH</span><h2>Choose a mission</h2></div>
+        <span class="progress-pill"><span id="progressText">0% complete</span></span>
+      </section>
+      <div class="topic-grid">
+        <button class="topic-card" data-topic="place">
+          <span class="topic-icon blue">01</span><span class="topic-copy"><strong>Decimal Place Value</strong><small>Read, compare, and align decimal digits</small><em id="status-place">Ready to explore</em></span><span class="topic-arrow">↗</span>
+        </button>
+        <button class="topic-card" data-topic="add">
+          <span class="topic-icon gold">02</span><span class="topic-copy"><strong>Adding Decimals</strong><small>Align decimal points and regroup</small><em id="status-add">Ready to explore</em></span><span class="topic-arrow">↗</span>
+        </button>
+        <button class="topic-card" data-topic="subtract">
+          <span class="topic-icon teal">03</span><span class="topic-copy"><strong>Subtracting Decimals</strong><small>Annex zeros and regroup when needed</small><em id="status-subtract">Ready to explore</em></span><span class="topic-arrow">↗</span>
+        </button>
+        <button class="topic-card" data-topic="apply">
+          <span class="topic-icon purple">04</span><span class="topic-copy"><strong>Problem Solving</strong><small>Money, measurements, and word problems</small><em id="status-apply">Ready to explore</em></span><span class="topic-arrow">↗</span>
+        </button>
+      </div>
+
+      <section class="practice-layout" id="practice">
+        <div class="panel lesson-panel">
+          <div class="panel-top"><span class="eyebrow">LEARN • PRACTICE • MASTER</span><span class="mini-badge" id="lessonBadge">MISSION 01</span></div>
+          <h2 id="lessonTitle">Decimal Place Value</h2>
+          <p class="lesson-intro" id="lessonIntro">Decimals are easier to add or subtract when each digit is placed in the correct column.</p>
+          <div class="concept-box" id="conceptBox">
+            <h3>Remember this</h3>
+            <p>Line up decimal points. Ones go under ones, tenths under tenths, hundredths under hundredths, and thousandths under thousandths.</p>
+          </div>
+          <div class="worked-example" id="workedExample">
+            <div class="worked-label">WORKED EXAMPLE</div>
+            <div class="math-stack"><span>  56.932</span><span>+  0.638</span><hr><strong>  57.570</strong></div>
+            <p>Annex a zero when helpful: 56.932 + 0.638 = 57.570 = 57.57.</p>
+          </div>
+          <div class="lesson-tip"><span>★</span><p><strong>Math strategy:</strong> Think about place value first. Estimate whether your answer should be larger or smaller before calculating.</p></div>
+        </div>
+        <div class="panel quiz-panel" id="quizPanel">
+          <div class="quiz-header"><div><span class="eyebrow">QUICK CHECK</span><h2 id="quizTitle">Can you solve it?</h2></div><span class="question-count" id="questionCount">1 / 5</span></div>
+          <div class="question-progress"><span id="questionProgress"></span></div>
+          <p class="question-text" id="questionText">What is the sum of 56.932 and 0.638?</p>
+          <div class="answer-list" id="answerList"></div>
+          <div class="feedback" id="feedback" role="status" aria-live="polite" hidden></div>
+          <div class="quiz-actions"><button class="btn secondary" id="hintBtn">Show a hint</button><button class="btn primary" id="checkBtn">Check answer</button><button class="btn primary" id="nextBtn" hidden>Next question →</button></div>
+          <div class="hint-box" id="hintBox" hidden></div>
+        </div>
+      </section>
+
+      <section class="panel challenge-panel">
+        <div><span class="eyebrow">FINAL CHALLENGE</span><h2>Mastery Mission</h2><p>Complete a mixed review to check your understanding of the whole lesson.</p></div>
+        <div class="challenge-side"><div class="challenge-score"><strong id="finalBest">—</strong><span>best score</span></div><button class="btn primary" id="finalBtn">Start mastery check <span aria-hidden="true">→</span></button></div>
+      </section>
+      <section class="panel reflection-panel">
+        <div><span class="eyebrow">REFLECT</span><h2>How confident do you feel?</h2><p>Choose a reflection. Your choice is saved on this device.</p></div>
+        <div class="confidence-options">
+          <button data-confidence="learning">🌱 Still learning</button>
+          <button data-confidence="getting">🌤️ Getting there</button>
+          <button data-confidence="ready">🏆 Ready to teach it</button>
+        </div>
+        <p class="reflection-saved" id="reflectionSaved" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+      <div><strong>Teacher Ed Learning Hub</strong><small>Teach. Lead. Inspire. · Grade 4 Mathematics</small></div>
+      <a href="#home">Back to top ↑</a>
+    </footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
