@@ -1178,6 +1178,16 @@
     "date": "2026-10-12",
     "featured": false,
     "icon": "user"
+  },
+  {
+    "title": "Music 4 | Reviewer: The Major Scale",
+    "subject": "MAPEH", 
+    "grade": "Grade 4",
+    "description": "Climb the notes, spot the steps, and train your musical memory. Review the C Major Scale through quick challenges, matching, and a final quiz.",
+    "file": "lessons/MAPEH/grade-4/TeacherEd_Music4_MajorScale_Interactive_Reviewer.html",
+    "date": "2026-10-12",
+    "featured": false,
+    "icon": "user"
   }
 
   
