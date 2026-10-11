@@ -98,11 +98,19 @@
       "status": "available",
       "icon": "layout-dashboard"
     },
-     {
+    {
       "id": "TEACHER TOOL • PRIMARY CLASSROOM",
       "title": "30-Day Attention Getter Rotation",
       "description": "Classroom-ready cues for getting eyes, ears, hands, and minds ready to learn—without shouting.",
       "file": "EDJAY_30_Day_Attention_Getters/index.html",
+      "status": "available",
+      "icon": "layout-dashboard"
+    },
+    {
+      "id": "PRACTICAL TEACHER DEVELOPMENT",
+      "title": "Teach with purpose. Help every child learn.",
+      "description": "A hands-on masterclass in 25 teaching methods. Learn the idea, see it in action, and practise using it in your classroom.",
+      "file": "Teacher_Ed_Teaching_Methods_Masterclass/index.html",
       "status": "available",
       "icon": "layout-dashboard"
     }
