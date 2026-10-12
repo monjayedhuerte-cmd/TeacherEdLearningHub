@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#102d63">
+<meta name="description" content="Teacher Ed Learning Hub: interactive Grade 4 English reviewer based on the supplied textbook pages.">
+<title>English Quest | Teacher Ed Learning Hub</title>
+<link rel="icon" type="image/png" href="assets/teacher-ed-logo.png">
+<link rel="apple-touch-icon" href="assets/teacher-ed-logo.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="#home" aria-label="Teacher Ed Learning Hub home">
+    <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+    <span><strong>TEACHER ED</strong><small>LEARNING HUB</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+  <nav id="siteNav" aria-label="Main navigation">
+    <a href="#learn">Learn</a><a href="#practice">Practice</a><a href="#story">Story Lab</a><a href="#assessment">Assessment</a>
+  </nav>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">GRADE 4 • ENGLISH • INTERACTIVE REVIEWER</p>
+    <h1>English <span>Quest</span></h1>
+    <p class="hero-subtitle">Read carefully. Notice the clues. Connect ideas. Show what you know.</p>
+    <p>This reviewer is built for Grade 4<em>Better English for Global Communication 4</em> pages. It covers the story <em>Waiting for the Rain</em>, vocabulary, cause and effect, verbs.</p>
+    <div class="hero-actions"><a class="btn btn-gold" href="#learn">Start the Quest</a><button class="btn btn-outline" id="resumeBtn">Resume Progress</button></div>
+    <div class="stats">
+      <div><strong id="xpStat">0</strong><span>XP earned</span></div>
+      <div><strong id="doneStat">0</strong><span>Items answered</span></div>
+      <div><strong id="accuracyStat">—</strong><span>Accuracy</span></div>
+    </div>
+  </div>
+  <aside class="hero-panel">
+    <img src="assets/teacher-ed-logo.png" alt="" class="hero-logo">
+    <p class="eyebrow">YOUR LEARNING ROUTE</p>
+    <ol><li>Connect & recall</li><li>Learn the key ideas</li><li>Model and practise</li><li>Play, review, and apply</li><li>Check mastery</li></ol>
+    <p class="hero-tag">I DO → WE DO → YOU DO → YOU MASTER</p>
+  </aside>
+</section>
+
+<section class="section" id="learn">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 1 • CONNECT + TEACH</p><h2>Memory Booster</h2></div><span class="pill">Read, recall, explain</span></div>
+  <div class="topic-grid">
+    <article class="topic-card"><span class="topic-number">01</span><h3><em>Waiting for the Rain</em></h3><p>Velu is a hardworking farmer whose land suffers during a long period without rain. An old woman, Amma, helps him understand that the land also needs rest.</p><div class="memory-cue">Big idea: Nature needs care, balance, and time.</div></article>
+    <article class="topic-card"><span class="topic-number">02</span><h3>Story Vocabulary</h3><dl class="vocab-list">
+      <dt>crimson</dt><dd>a deep, rich red</dd><dt>barren</dt><dd>unable to produce much or any growth</dd><dt>dejected</dt><dd>sad or discouraged</dd><dt>ploughed</dt><dd>turned and prepared soil for planting</dd><dt>puzzled</dt><dd>confused or unsure</dd>
+    </dl><div class="memory-cue">Try it: Say the word, meaning, and a sentence.</div></article>
+    <article class="topic-card"><span class="topic-number">03</span><h3>Cause and Effect</h3><p><b>Cause</b> = why something happens. <b>Effect</b> = what happens as a result.</p><p class="example-line">The fields lay unattended, <b>so</b> the earth hardened and cracked.</p><div class="memory-cue">Signal words: because, so, since, therefore, as a result.</div></article>
+    <article class="topic-card"><span class="topic-number">04</span><h3>Action Verbs</h3><p>An action verb shows what someone or something does.</p><p class="example-line">The president <b>speaks</b> fluently. Gary <b>painted</b> the wall.</p><div class="memory-cue">Ask: What action is happening?</div></article>
+    <article class="topic-card"><span class="topic-number">05</span><h3>Linking Verbs</h3><p>A linking verb joins the subject to a word that describes or identifies it. Examples include <b>is, are, was, were</b>.</p><p class="example-line">The parade <b>was</b> long. The toys <b>are</b> soft.</p><div class="memory-cue">Linking verbs connect; they do not show an action.</div></article>
+    <article class="topic-card"><span class="topic-number">06</span><h3>Pronouns & Antecedents</h3><p>A pronoun takes the place of a noun. The <b>antecedent</b> is the word it refers to.</p><p class="example-line">The houses are simple. <b>They</b> are kept clean.</p><div class="memory-cue">Find the noun first; make the pronoun agree.</div></article>
+    <article class="topic-card"><span class="topic-number">07</span><h3>Making Inferences</h3><p>An inference is a reasonable conclusion based on clues in the text and what you already know.</p><p class="example-line">Text clues + what I know = inference.</p><div class="memory-cue">Do not guess randomly. Point to a clue.</div></article>
+    <article class="topic-card"><span class="topic-number">08</span><h3>Non-verbal Cues</h3><p>Signals communicate without words. Facial expressions and gestures can add meaning to speech.</p><p><b>Five roles:</b> repetition, contradiction, substitution, complementing, accenting.</p><div class="memory-cue">Notice the action and the situation.</div></article>
+  </div>
+  <div class="self-check-wrap">
+    <div class="section-heading"><div><p class="eyebrow">CHECK YOUR UNDERSTANDING</p><h2>Mini Checks</h2></div><span class="pill">One question per skill</span></div>
+    <div class="mini-check-grid" id="miniChecks"></div>
+  </div>
+</section>
+
+<section class="section alt" id="model">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 2 • MODEL + GUIDED PRACTICE</p><h2>See How It Works</h2></div></div>
+  <div class="model-grid">
+    <article class="model-card"><h3>Example 1: Cause → Effect</h3><p><b>Clue:</b> Velu's fields lay unattended. The earth hardened and cracked.</p><p><b>Cause:</b> The fields lay unattended.</p><p><b>Effect:</b> The earth hardened and cracked.</p><p class="memory-cue">Restated: The fields lay unattended, so the earth hardened and cracked.</p></article>
+    <article class="model-card"><h3>Example 2: Action or Linking?</h3><p>“The teachers <b>are</b> inside the library.” — <b>Linking verb</b>; it connects teachers to their location.</p><p>“Children <b>depend</b> on their parents.” — <b>Action verb</b>; it expresses what children do.</p></article>
+    <article class="model-card"><h3>Example 3: Inference</h3><p>Velu is worried because his crops need rain and the land is dry.</p><p><b>Inference:</b> Velu is anxious about his family's future.</p><p class="memory-cue">The conclusion is supported by story clues.</p></article>
+  </div>
+</section>
+
+<section class="section" id="practice">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 3 • INDEPENDENT PRACTICE</p><h2>Quick Fire Challenge</h2></div><span class="pill">Hints + explanations</span></div>
+  <div class="quiz-shell">
+    <div class="quiz-top"><strong id="qCount">Question 1</strong><span id="qScore">Score: 0</span></div><div class="progress"><i id="qProgress"></i></div>
+    <div id="questionArea" class="question-area"></div>
+    <div class="quiz-actions"><div class="action-left"><button class="btn btn-light" id="hintBtn">Give me a hint</button><button class="btn btn-light" id="restartBtn" type="button">Restart challenge</button></div><button class="btn btn-primary" id="nextBtn" disabled>Next question</button></div>
+    <div id="hintBox" class="feedback hint hidden"></div><div id="answerFeedback" class="feedback hidden" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section alt" id="story">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 4 • APPLY + THINK</p><h2>Story Lab: Waiting for the Rain</h2></div></div>
+  <div class="story-layout">
+    <article class="story-card"><h3>Story snapshot</h3><p>Velu has worked his land for years. When the rain does not come, the soil becomes dry and barren. He meets an old woman under a tree. She explains that the earth has worked for a long time and, like people, needs rest. Velu begins to understand that allowing the land to rest can help it become ready to grow again when rain returns.</p><p class="memory-cue">Main lesson: Hard work matters, but wise decisions also consider the bigger picture and the needs of nature.</p><small>Summary based on the supplied textbook excerpt; it is not a replacement for reading the complete story.</small></article>
+    <div class="story-prompts">
+      <h3>Think like a reader</h3>
+      <details><summary>Why was Velu dejected?</summary><p>The rain had not come, the land was dry, and he worried about growing crops and feeding his family.</p></details>
+      <details><summary>What did Amma help Velu understand?</summary><p>The land needs rest after years of cultivation; nature needs time and care.</p></details>
+      <details><summary>What is one supported inference about Velu?</summary><p>He is hardworking and deeply concerned about his family's livelihood. The text describes his long work and his worry about the crops.</p></details>
+      <details><summary>What is the cause of the cracked earth in the example?</summary><p>The fields were left unattended. The hardened, cracked earth is the effect.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="games">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 5 • GAME PRACTICE</p><h2>Word Detective</h2></div><span class="pill">Match word to meaning</span></div>
+  <p>Choose a word, then select its meaning. Match all pairs to earn bonus XP.</p>
+  <div class="match-board"><div><h3>Words</h3><div id="wordOptions" class="match-options"></div></div><div><h3>Meanings</h3><div id="meaningOptions" class="match-options"></div></div></div>
+  <div class="match-footer"><p id="matchStatus" aria-live="polite">Select a word to begin.</p><button class="btn btn-light" id="resetMatch">Reset matching</button></div>
+</section>
+
+<section class="section alt" id="fix">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 6 • CORRECT + RETRY</p><h2>Fix the Mistake</h2></div></div>
+  <div class="fix-card"><p class="eyebrow">PRONOUN AGREEMENT</p><h3>“The houses are simple. It are kept clean.”</h3><p>Choose the best correction.</p><div id="fixOptions" class="option-list"></div><div id="fixFeedback" class="feedback hidden"></div></div>
+  <div class="fix-card"><p class="eyebrow">VERB DETECTIVE</p><h3>“Some toys are soft and cuddly.”</h3><p>What kind of verb is <b>are</b> in this sentence?</p><div id="verbOptions" class="option-list"></div><div id="verbFeedback" class="feedback hidden"></div></div>
+</section>
+
+<section class="section" id="assessment">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 7 • ASSESS + MASTER</p><h2>Final Mastery Quiz</h2></div><span class="pill">20 questions</span></div>
+  <p>Answer each question, then submit to see your score, explanations, and topics to review.</p>
+  <div class="quiz-shell">
+    <div class="quiz-top"><strong id="mCount">0 of 20 answered</strong><span id="mScore">Not submitted</span></div><div class="progress"><i id="mProgress"></i></div>
+    <form id="masteryForm"><div id="masteryQuestions" class="mastery-questions"></div><button class="btn btn-gold" type="submit">Submit final quiz</button></form>
+    <div id="masteryResults" class="results hidden" aria-live="polite"></div>
+  </div>
+</section>
+
+<section class="section finish">
+  <div class="section-heading"><div><p class="eyebrow">STAGE 8 • REFLECT + CELEBRATE</p><h2>Lock It In</h2></div></div>
+  <div class="lock-grid"><article><strong>1</strong><h3>Cause and effect</h3><p>Cause = why. Effect = what happened as a result.</p></article><article><strong>2</strong><h3>Verbs</h3><p>Action verbs show doing. Linking verbs connect the subject to information.</p></article><article><strong>3</strong><h3>Vocabulary</h3><p>Learn the meaning, then use the word in a sentence.</p></article><article><strong>4</strong><h3>Story lesson</h3><p>Consider the big picture. Nature and land need care and rest.</p></article></div>
+  <div class="celebrate"><div><h3 id="celebrateTitle">Your progress is saved on this device.</h3><p id="celebrateText">Keep practising to build accuracy and confidence.</p></div><button class="btn btn-primary" id="resetProgress">Reset all progress</button></div>
+  <button class="btn btn-light" onclick="window.print()">Print study summary</button>
+</section>
+</main>
+
+<footer class="site-footer">
+  <img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo">
+  <div><strong>Teacher Ed Learning Hub</strong><p>Learn with purpose. Practise with confidence. Keep growing.</p><small>English Quest • Grade 4 • Based on the textbook pages supplied by the teacher</small></div>
+</footer>
+<script src="data.js"></script><script src="script.js"></script>
+</body>
+</html>

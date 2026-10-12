@@ -1258,6 +1258,26 @@
     "date": "2026-10-12",
     "featured": false,
     "icon": "user"
+  },
+  {
+    "title": "English 4| Reviewer: Non-Verbal Cues, Pronouns and Antecedents, Making Inferences, Vocabulary, and High and Lifted Up",
+    "subject": "English", 
+    "grade": "Grade 4",
+    "description": "Review non-verbal cues, pronouns and antecedents, making inferences, vocabulary, and High and Lifted Up.",
+    "file": "lessons/English/grade-4/TeacherEd_English4_Interactive_Reviewer/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
+  },
+  {
+    "title": "English 4| Reviewer: Waiting for the Rain, Vocabulary, Cause and Effect, Verbs",
+    "subject": "English", 
+    "grade": "Grade 4",
+    "description": "It covers the story Waiting for the Rain, vocabulary, cause and effect, verbs, and earlier topics shown in the supplied pages.",
+    "file": "lessons/English/grade-4/TeacherEd_English4_Interactive_Rain/index.html",
+    "date": "2026-10-13",
+    "featured": false,
+    "icon": "user"
   }
 
   
