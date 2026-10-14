@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#092c66" />
+    <title>Computer 2 | Lots of Software, Lots of Tasks</title>
+    <link rel="icon" href="assets/teacher-ed-logo.jpg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <img
+          src="assets/teacher-ed-logo.jpg"
+          alt="Teacher Ed Learning Hub logo"
+        />
+        <div>
+          <b>TEACHER ED LEARNING HUB</b
+          ><span>Computer 2 • Interactive Learning</span>
+        </div>
+      </div>
+      <button id="soundToggle" class="smallbtn" aria-pressed="false">
+        🔊 Sound: Off
+      </button>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR COMPUTER ADVENTURE</p>
+          <h1>Lots of Software,<br /><em>Lots of Tasks!</em></h1>
+          <p>
+            Discover how computer programs help us learn, work, and create.
+            Learn a little, practice together, and then show what you know!
+          </p>
+          <button class="primary" data-go="connect">🚀 Start Learning</button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="monitor">
+            <div class="screen">
+              <span>📄</span><span>📊</span><span>🎓</span
+              ><strong>SOFTWARE</strong>
+            </div>
+            <div class="stand"></div>
+          </div>
+          <div class="float f1">⌨️</div>
+          <div class="float f2">💡</div>
+          <div class="float f3">🖱️</div>
+        </div>
+      </section>
+      <section class="dashboard">
+        <div class="dash-title">
+          <div>
+            <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+            <h2>Keep going, learner!</h2>
+          </div>
+          <button class="textbtn" id="resetProgress">Reset progress ↺</button>
+        </div>
+        <div class="progress-card">
+          <div class="progress-line">
+            <span id="progressLabel">0% complete</span
+            ><span id="starsLabel">⭐ 0 stars</span>
+          </div>
+          <div class="track"><div id="progressFill"></div></div>
+          <div class="badges">
+            <span>🏅 Badges: <b id="badgesLabel">0</b></span
+            ><span id="levelLabel">Level 1 of 5</span>
+          </div>
+        </div>
+      </section>
+      <nav class="map" aria-label="Learning sections">
+        <button data-go="connect"><b>1</b><span>Connect</span></button><i>→</i
+        ><button data-go="learn"><b>2</b><span>Learn</span></button><i>→</i
+        ><button data-go="model"><b>3</b><span>Watch Me</span></button><i>→</i
+        ><button data-go="together"><b>4</b><span>We Do</span></button><i>→</i
+        ><button data-go="practice"><b>5</b><span>Your Turn</span></button
+        ><i>→</i><button data-go="games"><b>6</b><span>Game Zone</span></button
+        ><i>→</i
+        ><button data-go="challenge"><b>7</b><span>Mastery</span></button>
+      </nav>
+      <section class="panel" id="connect">
+        <div class="section-head">
+          <span class="icon">👋</span>
+          <div>
+            <p class="eyebrow">PHASE 1</p>
+            <h2>Let's Connect!</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Think about things you do on a computer. Which program would help with
+          each task?
+        </p>
+        <div class="task-grid">
+          <article class="task">
+            <span>✍️</span><b>Type a letter</b>
+            <p>Which kind of program can help?</p>
+            <button
+              class="choice"
+              data-answer="productivity"
+              data-group="connect1"
+            >
+              Productivity</button
+            ><button
+              class="choice"
+              data-answer="business"
+              data-group="connect1"
+            >
+              Business system
+            </button>
+            <div class="feedback" id="connect1-feedback"></div>
+          </article>
+          <article class="task">
+            <span>🎓</span><b>Learn a new topic</b>
+            <p>Which kind of program can help?</p>
+            <button
+              class="choice"
+              data-answer="instructional"
+              data-group="connect2"
+            >
+              Instructional / e-learning</button
+            ><button
+              class="choice"
+              data-answer="productivity"
+              data-group="connect2"
+            >
+              Productivity
+            </button>
+            <div class="feedback" id="connect2-feedback"></div>
+          </article>
+        </div>
+      </section>
+      <section class="panel" id="learn">
+        <div class="section-head">
+          <span class="icon">📚</span>
+          <div>
+            <p class="eyebrow">PHASE 2</p>
+            <h2>Learn in Small Steps</h2>
+          </div>
+        </div>
+        <div class="concept-grid">
+          <article class="concept blue">
+            <span class="concept-icon">🧩</span>
+            <h3>What is software?</h3>
+            <p>
+              <b>Software</b> is the programs and instructions that tell a
+              computer what to do. A computer needs software to perform many
+              tasks.
+            </p>
+            <div class="example">💡 Example: a program for typing words.</div>
+          </article>
+          <article class="concept gold">
+            <span class="concept-icon">📝</span>
+            <h3>1. Productivity Software</h3>
+            <p>
+              Helps people work more easily and quickly at home or in an office.
+            </p>
+            <ul>
+              <li>Word processor — type and edit text</li>
+              <li>Spreadsheet — work with numbers and data</li>
+              <li>Presentation software — make slides</li>
+            </ul>
+          </article>
+          <article class="concept purple">
+            <span class="concept-icon">🏢</span>
+            <h3>2. Business and Specialty Software</h3>
+            <p>
+              Used in areas such as banking, education, health, manufacturing,
+              and other industries.
+            </p>
+            <ul>
+              <li>Inventory system — keeps track of items for sale</li>
+              <li>Payroll system — keeps records of workers' pay</li>
+            </ul>
+          </article>
+          <article class="concept green">
+            <span class="concept-icon">🎓</span>
+            <h3>3. Instructional / E-learning Software</h3>
+            <p>
+              Helps people learn and practice. It can teach and entertain at the
+              same time.
+            </p>
+            <ul>
+              <li>Encyclopedia</li>
+              <li>Dictionary</li>
+              <li>Interactive tutorial</li>
+              <li>Interactive exercises</li>
+            </ul>
+          </article>
+          <article class="concept blue">
+            <span class="concept-icon">🖥️</span>
+            <h3>GUI: The Screen You Use</h3>
+            <p>
+              A <b>graphical user interface (GUI)</b> lets people use a program
+              through things they can see, such as windows, buttons, and icons.
+            </p>
+            <div class="example">
+              💡 A window is the work area of an application.
+            </div>
+          </article>
+          <article class="concept gold">
+            <span class="concept-icon">🎛️</span>
+            <h3>Ribbons, Tabs, and Commands</h3>
+            <p>
+              A <b>ribbon</b> contains tools and commands. <b>Tabs</b> organize
+              tools by name. <b>Icons</b> are small pictures that represent
+              commands.
+            </p>
+            <div class="example">
+              💡 Click a tool or icon to give a command.
+            </div>
+          </article>
+        </div>
+        <div class="note">
+          <b>Remember:</b> Application software helps people do tasks. It needs
+          an operating system to work.
+        </div>
+      </section>
+      <section class="panel" id="model">
+        <div class="section-head">
+          <span class="icon">👩‍🏫</span>
+          <div>
+            <p class="eyebrow">PHASE 3 • I DO</p>
+            <h2>Watch Me</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Let's identify the kind of software used in a situation.
+        </p>
+        <div class="model-card">
+          <div class="model-step">
+            <span>1</span>
+            <div>
+              <b>Situation</b>
+              <p>
+                A teacher opens an interactive tutorial to learn how a tool
+                works.
+              </p>
+            </div>
+          </div>
+          <div class="model-step">
+            <span>2</span>
+            <div>
+              <b>Look for clues</b>
+              <p>
+                The program teaches or explains something. It is for learning.
+              </p>
+            </div>
+          </div>
+          <div class="model-step">
+            <span>3</span>
+            <div>
+              <b>Choose the answer</b>
+              <p class="answer-reveal">Instructional / e-learning software ✓</p>
+            </div>
+          </div>
+          <button class="primary" id="showModel">Show the steps again</button>
+        </div>
+        <div class="mini-tip">
+          🔎 Tip: Ask, “What task does the program help people do?”
+        </div>
+      </section>
+      <section class="panel" id="together">
+        <div class="section-head">
+          <span class="icon">🤝</span>
+          <div>
+            <p class="eyebrow">PHASE 4 • WE DO</p>
+            <h2>Let's Do It Together</h2>
+          </div>
+        </div>
+        <div class="question-card">
+          <div class="q-count" id="guidedCount">GUIDED QUESTION 1 OF 3</div>
+          <h3 id="guidedQuestion">
+            Which software helps you type and edit a letter?
+          </h3>
+          <div class="options" id="guidedOptions"></div>
+          <button class="hintbtn" id="guidedHint">💡 Hint</button>
+          <div class="feedback" id="guidedFeedback" aria-live="polite"></div>
+          <button class="primary hidden" id="guidedNext">
+            Next question →
+          </button>
+        </div>
+      </section>
+      <section class="panel" id="practice">
+        <div class="section-head">
+          <span class="icon">🎯</span>
+          <div>
+            <p class="eyebrow">PHASE 5 • YOU DO</p>
+            <h2>Your Turn</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Answer on your own. You can try again if you need more practice.
+        </p>
+        <div id="practiceQuiz" class="quiz"></div>
+        <button class="primary" id="checkPractice">Check My Answers</button>
+        <div id="practiceResult" class="feedback" aria-live="polite"></div>
+      </section>
+      <section class="panel" id="games">
+        <div class="section-head">
+          <span class="icon">🎮</span>
+          <div>
+            <p class="eyebrow">PHASE 6</p>
+            <h2>Game Zone</h2>
+          </div>
+        </div>
+        <div class="game-tabs">
+          <button class="game-tab active" data-game="quick">
+            ⚡ Quick Pick</button
+          ><button class="game-tab" data-game="sort">🗂️ Sort It</button
+          ><button class="game-tab" data-game="memory">🧠 Memory Match</button>
+        </div>
+        <div id="gameArea" class="game-area"></div>
+      </section>
+      <section class="panel" id="review">
+        <div class="section-head">
+          <span class="icon">🔄</span>
+          <div>
+            <p class="eyebrow">PHASE 7 • SPIRAL REVIEW</p>
+            <h2>Quick Review</h2>
+          </div>
+        </div>
+        <p>
+          Remember: a ribbon contains commands, and an icon is a small picture
+          that represents a tool.
+        </p>
+        <div class="review-question">
+          <h3>What is a small picture that represents a command called?</h3>
+          <div class="options">
+            <button class="choice" data-answer="icon" data-group="review">
+              Icon</button
+            ><button class="choice" data-answer="payroll" data-group="review">
+              Payroll</button
+            ><button class="choice" data-answer="window" data-group="review">
+              Window
+            </button>
+          </div>
+          <div class="feedback" id="review-feedback"></div>
+        </div>
+      </section>
+      <section class="panel" id="challenge">
+        <div class="section-head">
+          <span class="icon">🏆</span>
+          <div>
+            <p class="eyebrow">PHASE 8–11</p>
+            <h2>Final Mastery Challenge</h2>
+          </div>
+        </div>
+        <p class="lead">
+          Show what you learned. These questions are new practice, not the same
+          questions you answered before.
+        </p>
+        <div id="finalQuiz" class="quiz"></div>
+        <button class="primary" id="submitFinal">Finish Challenge</button>
+        <div
+          id="finalResult"
+          class="result-card hidden"
+          aria-live="polite"
+        ></div>
+        <div class="remediate hidden" id="remediate">
+          <h3>🔄 Practice My Mistakes</h3>
+          <p>Review the concepts you missed, then try the challenge again.</p>
+          <div id="missedList"></div>
+          <button class="secondary" id="retryFinal">Try Again</button>
+        </div>
+      </section>
+      <section class="panel reflection">
+        <div class="section-head">
+          <span class="icon">💭</span>
+          <div>
+            <p class="eyebrow">REFLECTION</p>
+            <h2>Think About It</h2>
+          </div>
+        </div>
+        <p>How did today's learning feel?</p>
+        <div class="reflection-options">
+          <button data-reflect="easy">😊 It was easy</button
+          ><button data-reflect="some">🙂 I learned with practice</button
+          ><button data-reflect="hard">🌱 I want more practice</button>
+        </div>
+        <p class="feedback" id="reflectionFeedback" aria-live="polite"></p>
+      </section>
+    </main>
+    <footer>
+      <img
+        src="assets/teacher-ed-logo.jpg"
+        alt="Teacher Ed Learning Hub logo"
+      />
+      <div>
+        <b>Teacher Ed Learning Hub</b
+        ><span>Learn • Practice • Play • Master</span
+        ><small>Teacher Ed · Educational Learning Website</small>
+      </div>
+      <a href="#top" class="backtop">Back to top ↑</a>
+    </footer>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
