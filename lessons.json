@@ -950,11 +950,11 @@
     "icon": "user"
   },
   {
-    "title": "Computer 7 | How Do Computers Know What to Do?",
+    "title": "Computer 7 | How many ways can a computer solve a problem?",
     "subject": "Computer", 
     "grade": "Grade 7",
-    "description": "Explore how algorithms receive input, process information, produce output, and make decisions through sequences, conditions, and loops.",
-    "file": "lessons/computer/grade-7/grade7-computer-algorithms/index.html",
+    "description": "Algorithms can use different strategies. In this lesson you will discover Brute Force, Recursive, Divide and Conquer, Greedy, and Dynamic Programming strategies to solve problems.",
+    "file": "lessons/computer/grade-7/Grade7_Computer_Types_of_Algorithm/grade7-computer-algorithms/index.html",
     "date": "2026-09-24",
     "featured": true,
     "icon": "user"
@@ -1295,7 +1295,7 @@
     "grade":"Grade 2",
     "description" : "Discover how a computer programs help us learn, work, and create. Learn a little practice together, and then show how you know!",
     "file" : "lessons/computer/grade-2/Computer2_Software_Learning_Website/index.html",
-    "date" : "2026-10-20",
+    "date" : "2026-10-20",  
     "featured" : false,
     "icon" : "monitor"
 
