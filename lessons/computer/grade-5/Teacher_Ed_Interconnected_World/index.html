@@ -1,0 +1,2772 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101f49" />
+    <title>Lesson 9: An Interconnected World | Teacher Ed Learning Hub</title>
+    <style>
+      :root {
+        --navy: #101f49;
+        --navy2: #1d3267;
+        --gold: #f5b82e;
+        --gold2: #ffdf85;
+        --ink: #17233d;
+        --muted: #5b6880;
+        --paper: #f4f7fc;
+        --line: #dce4f1;
+        --white: #fff;
+        --green: #16845b;
+        --red: #b33b48;
+        --blue: #2d77db;
+        --shadow: 0 14px 38px rgba(16, 31, 73, 0.1);
+        --radius: 20px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: linear-gradient(
+          180deg,
+          #edf2fb 0,
+          #f7f9fd 420px,
+          #f7f9fd 100%
+        );
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--ink);
+        line-height: 1.55;
+      }
+      button,
+      input,
+      textarea,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      select:focus-visible {
+        outline: 3px solid #e9ac21;
+        outline-offset: 3px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: var(--blue);
+      }
+      .app-header {
+        background: linear-gradient(120deg, var(--navy), #192e61);
+        color: #fff;
+        padding: 18px clamp(16px, 4vw, 56px) 0;
+        box-shadow: 0 8px 28px #101f4922;
+      }
+      .brandline {
+        max-width: 1450px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+      }
+      .brand-mark {
+        height: 48px;
+        width: 48px;
+        border-radius: 15px;
+        background: var(--gold);
+        display: grid;
+        place-items: center;
+        color: var(--navy);
+        font-weight: 1000;
+        font-size: 17px;
+        box-shadow: inset 0 0 0 2px #fff6;
+      }
+      .brand-name {
+        font-weight: 900;
+        letter-spacing: 0.01em;
+        font-size: 1.04rem;
+      }
+      .tagline {
+        color: #dbe4ff;
+        font-size: 0.78rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .header-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .header-btn {
+        border: 1px solid #ffffff48;
+        background: #ffffff12;
+        color: #fff;
+        padding: 9px 12px;
+        border-radius: 12px;
+        font-weight: 750;
+      }
+      .header-btn:hover {
+        background: #ffffff25;
+      }
+      .hero {
+        max-width: 1450px;
+        margin: auto;
+        padding: 27px 0 24px;
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 26px;
+        align-items: center;
+      }
+      .eyebrow {
+        font-size: 0.75rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #d6a11f;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 4.3vw, 3.6rem);
+        line-height: 1.04;
+        letter-spacing: -0.045em;
+        margin: 8px 0 14px;
+        max-width: 780px;
+      }
+      .hero h1 span {
+        color: var(--gold);
+      }
+      .hero p {
+        color: #e1e8fa;
+        max-width: 680px;
+        margin: 0;
+      }
+      .hero-image {
+        width: 100%;
+        max-height: 265px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 18px;
+        padding: 7px;
+        box-shadow: 0 15px 35px #0002;
+      }
+      .hero-meta {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+        margin-top: 18px;
+      }
+      .meta-pill {
+        background: #ffffff13;
+        border: 1px solid #ffffff32;
+        border-radius: 999px;
+        padding: 6px 11px;
+        font-size: 0.82rem;
+        color: #f4f6ff;
+      }
+      .topnav-wrap {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: #ffffffed;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 7px 20px #15284c0b;
+      }
+      .topnav {
+        max-width: 1450px;
+        margin: auto;
+        padding: 10px clamp(12px, 3vw, 42px);
+        display: flex;
+        gap: 7px;
+        overflow-x: auto;
+        scrollbar-width: thin;
+      }
+      .tab {
+        border: 1px solid transparent;
+        background: transparent;
+        color: #5b6880;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 9px 12px;
+        border-radius: 12px;
+        white-space: nowrap;
+        font-size: 0.85rem;
+        font-weight: 800;
+        transition: 0.18s;
+      }
+      .tab .n {
+        height: 22px;
+        width: 22px;
+        display: grid;
+        place-items: center;
+        border-radius: 7px;
+        background: #edf1f8;
+        color: #5c6a83;
+        font-size: 0.72rem;
+      }
+      .tab:hover {
+        background: #f3f6fb;
+        color: var(--navy);
+      }
+      .tab.active {
+        background: var(--navy);
+        color: #fff;
+        box-shadow: 0 5px 14px #101f4924;
+      }
+      .tab.active .n {
+        background: var(--gold);
+        color: var(--navy);
+      }
+      .progressbar {
+        height: 4px;
+        background: #e7ecf5;
+      }
+      .progressbar span {
+        display: block;
+        height: 100%;
+        width: 8.333%;
+        background: linear-gradient(90deg, var(--gold), #ffe5a3);
+        transition: width 0.25s;
+      }
+      .container {
+        max-width: 1250px;
+        margin: 30px auto 70px;
+        padding: 0 clamp(14px, 3vw, 30px);
+      }
+      .section {
+        display: none;
+        animation: fadeIn 0.22s ease;
+      }
+      .section.active {
+        display: block;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0.5;
+          transform: translateY(5px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+      .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        margin: 0 0 20px;
+      }
+      .section-head h2 {
+        font-size: clamp(1.6rem, 3vw, 2.35rem);
+        line-height: 1.15;
+        letter-spacing: -0.035em;
+        margin: 4px 0 8px;
+        color: var(--navy);
+      }
+      .section-head p {
+        color: var(--muted);
+        margin: 0;
+        max-width: 800px;
+      }
+      .stage-tag {
+        background: #fff;
+        border: 1px solid var(--line);
+        padding: 7px 11px;
+        border-radius: 999px;
+        color: var(--navy);
+        font-size: 0.78rem;
+        font-weight: 850;
+        white-space: nowrap;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 15px;
+      }
+      .card {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: var(--radius);
+        padding: clamp(17px, 2.3vw, 26px);
+        box-shadow: var(--shadow);
+        min-width: 0;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        color: var(--navy);
+        font-size: 1.12rem;
+      }
+      .card p {
+        margin: 8px 0;
+        color: #43516a;
+      }
+      .card p:last-child {
+        margin-bottom: 0;
+      }
+      .card .small {
+        font-size: 0.88rem;
+        color: var(--muted);
+      }
+      .card-icon {
+        height: 44px;
+        width: 44px;
+        border-radius: 14px;
+        background: #fff2ca;
+        display: grid;
+        place-items: center;
+        font-size: 1.45rem;
+        margin-bottom: 13px;
+      }
+      .visual {
+        width: 100%;
+        display: block;
+        object-fit: contain;
+        background: #f7f9fc;
+        border: 1px solid #e1e8f2;
+        border-radius: 15px;
+        padding: 7px;
+        margin: 0 0 15px;
+        max-height: 330px;
+      }
+      .visual.tall {
+        max-height: 470px;
+      }
+      .visual-caption {
+        font-size: 0.78rem !important;
+        color: #71809a !important;
+        margin-top: -8px !important;
+        margin-bottom: 12px !important;
+      }
+      .callout {
+        border-left: 4px solid var(--gold);
+        background: #fff8e6;
+        border-radius: 0 13px 13px 0;
+        padding: 13px 15px;
+        margin: 15px 0;
+        color: #4e4228;
+      }
+      .callout strong {
+        color: #6b4c08;
+      }
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 16px;
+        background: var(--navy);
+        color: #fff;
+        font-weight: 850;
+        box-shadow: 0 5px 12px #101f4918;
+      }
+      .btn:hover {
+        background: var(--navy2);
+        transform: translateY(-1px);
+      }
+      .btn.gold {
+        background: var(--gold);
+        color: var(--navy);
+      }
+      .btn.light {
+        background: #edf2fa;
+        color: var(--navy);
+        box-shadow: none;
+        border: 1px solid var(--line);
+      }
+      .btn.ghost {
+        background: transparent;
+        color: var(--navy);
+        border: 1px solid var(--line);
+        box-shadow: none;
+      }
+      .btn-row {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 17px;
+      }
+      .nav-actions {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin-top: 22px;
+      }
+      .option-list {
+        display: grid;
+        gap: 9px;
+        margin-top: 12px;
+      }
+      .option {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px 14px;
+        text-align: left;
+        color: var(--ink);
+        font-weight: 700;
+        width: 100%;
+      }
+      .option:hover {
+        border-color: #aebbd2;
+        background: #f8faff;
+      }
+      .option.selected {
+        border-color: var(--blue);
+        background: #edf5ff;
+      }
+      .option.correct {
+        border-color: var(--green);
+        background: #eaf8f1;
+      }
+      .option.incorrect {
+        border-color: var(--red);
+        background: #fff0f0;
+      }
+      .feedback {
+        margin-top: 12px;
+        padding: 11px 13px;
+        border-radius: 11px;
+        background: #f2f5fa;
+        color: #43516a;
+        font-weight: 650;
+      }
+      .feedback:empty {
+        display: none;
+      }
+      .feedback.good {
+        background: #eaf8f1;
+        color: #126343;
+      }
+      .feedback.bad {
+        background: #fff0f0;
+        color: #8d2632;
+      }
+      .big-question {
+        font-size: clamp(1.3rem, 2.4vw, 1.9rem);
+        font-weight: 900;
+        color: var(--navy);
+        line-height: 1.25;
+        margin: 8px 0 14px;
+      }
+      .word-chip {
+        display: inline-flex;
+        align-items: center;
+        background: #edf3ff;
+        color: #19366e;
+        border: 1px solid #d9e4fb;
+        border-radius: 9px;
+        padding: 6px 10px;
+        font-weight: 800;
+        margin: 3px;
+      }
+      .sort-board {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 14px;
+      }
+      .sort-zone {
+        border: 2px dashed #c5d1e4;
+        background: #f8faff;
+        border-radius: 15px;
+        padding: 14px;
+        min-height: 130px;
+      }
+      .sort-zone h4 {
+        margin: 0 0 10px;
+        color: var(--navy);
+      }
+      .sort-item {
+        display: inline-block;
+        border: 1px solid #d5dfef;
+        background: white;
+        border-radius: 10px;
+        padding: 8px 10px;
+        margin: 4px;
+        cursor: pointer;
+        font-weight: 750;
+      }
+      .sort-item:focus {
+        outline: 3px solid var(--gold);
+      }
+      .sort-item.placed {
+        background: #e8f6ef;
+        border-color: #a7d9bf;
+      }
+      .sequence {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 9px;
+        align-items: stretch;
+      }
+      .sequence-item {
+        flex: 1 1 150px;
+        border: 1px solid var(--line);
+        border-radius: 13px;
+        background: #f7f9fd;
+        padding: 13px;
+        text-align: center;
+      }
+      .sequence-item .stepnum {
+        height: 29px;
+        width: 29px;
+        margin: 0 auto 8px;
+        border-radius: 9px;
+        background: var(--gold);
+        color: var(--navy);
+        font-weight: 950;
+        display: grid;
+        place-items: center;
+      }
+      .sequence-arrow {
+        align-self: center;
+        font-size: 1.4rem;
+        color: #8290a7;
+      }
+      .answer-input {
+        width: 100%;
+        border: 1px solid #cfd9e8;
+        border-radius: 12px;
+        padding: 12px;
+        background: #fff;
+        color: var(--ink);
+      }
+      textarea.answer-input {
+        min-height: 110px;
+        resize: vertical;
+      }
+      .definition-list {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 0;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+      }
+      .definition-list div {
+        padding: 12px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+      .definition-list div:nth-child(odd) {
+        font-weight: 850;
+        background: #f1f5fc;
+        color: var(--navy);
+      }
+      .definition-list div:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+      .url-builder {
+        background: #f4f8ff;
+        border: 1px solid #d9e5f8;
+        border-radius: 16px;
+        padding: 18px;
+      }
+      .url-display {
+        font-size: clamp(1rem, 2.4vw, 1.5rem);
+        font-weight: 900;
+        word-break: break-word;
+        background: #fff;
+        padding: 14px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+        margin: 10px 0;
+      }
+      .url-parts {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .url-part {
+        padding: 10px;
+        border-radius: 10px;
+        background: #fff;
+        border: 1px solid var(--line);
+        text-align: center;
+        font-size: 0.82rem;
+      }
+      .url-part b {
+        display: block;
+        color: var(--navy);
+      }
+      .progress-label {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 0.84rem;
+        color: var(--muted);
+        font-weight: 750;
+        margin-bottom: 7px;
+      }
+      .mini-progress {
+        height: 8px;
+        background: #e9eef7;
+        border-radius: 99px;
+        overflow: hidden;
+      }
+      .mini-progress span {
+        display: block;
+        height: 100%;
+        background: var(--green);
+        width: 0;
+        transition: width 0.2s;
+      }
+      .question-block {
+        border-bottom: 1px solid var(--line);
+        padding: 17px 0;
+      }
+      .question-block:first-child {
+        padding-top: 0;
+      }
+      .question-block:last-child {
+        border-bottom: 0;
+      }
+      .question-block h3 {
+        font-size: 1rem;
+      }
+      .question-block .option-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .score-display {
+        font-size: 2.5rem;
+        font-weight: 1000;
+        color: var(--navy);
+        letter-spacing: -0.05em;
+      }
+      .score-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        background: #f2f6ff;
+        border-radius: 16px;
+        padding: 16px;
+      }
+      .score-badge {
+        height: 64px;
+        width: 64px;
+        flex: 0 0 64px;
+        border-radius: 18px;
+        background: var(--gold);
+        display: grid;
+        place-items: center;
+        font-size: 1.9rem;
+      }
+      .flashcard {
+        perspective: 900px;
+        min-height: 190px;
+        cursor: pointer;
+      }
+      .flash-inner {
+        min-height: 190px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        background: linear-gradient(145deg, #142655, #254581);
+        color: #fff;
+        border-radius: 17px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+      .flash-inner h3 {
+        color: #fff;
+        font-size: 1.35rem;
+      }
+      .flash-inner p {
+        color: #e1eaff;
+      }
+      .flashcard small {
+        display: block;
+        margin-top: 10px;
+        color: #d6e0f8;
+      }
+      .hint {
+        font-size: 0.88rem;
+        color: #63718a;
+        margin-top: 10px;
+      }
+      .lesson-footer {
+        max-width: 1250px;
+        margin: 0 auto 25px;
+        padding: 0 24px;
+        color: #7a879d;
+        font-size: 0.82rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .mastery-box {
+        border: 1px solid #d7e4f6;
+        background: linear-gradient(135deg, #f2f7ff, #fff);
+        border-radius: 20px;
+        padding: 24px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .tiny-note {
+        font-size: 0.78rem;
+        color: #7b879a;
+      }
+      .checkline {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 10px 0;
+      }
+      .checkline input {
+        margin-top: 5px;
+        accent-color: var(--navy);
+      }
+      .celebration {
+        font-size: 3.3rem;
+      }
+      .readable-mode {
+        font-size: 1.12rem;
+      }
+      .focus-mode .app-header .hero-image,
+      .focus-mode .hero-meta,
+      .focus-mode .tagline,
+      .focus-mode .lesson-footer {
+        display: none;
+      }
+      .focus-mode .app-header {
+        padding-bottom: 18px;
+      }
+      .focus-mode .hero {
+        grid-template-columns: 1fr;
+        padding-top: 18px;
+        padding-bottom: 12px;
+      }
+      .focus-mode .hero-image {
+        display: none;
+      }
+      .focus-mode .container {
+        max-width: 1100px;
+      }
+      .focus-mode .card {
+        box-shadow: none;
+      }
+      .toast {
+        position: fixed;
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--navy);
+        color: #fff;
+        padding: 12px 16px;
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        z-index: 99;
+        max-width: calc(100vw - 30px);
+      }
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .hero-image {
+          max-height: 230px;
+        }
+        .grid3 {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .hero {
+          padding-top: 22px;
+        }
+      }
+      @media (max-width: 650px) {
+        .grid2,
+        .grid3 {
+          grid-template-columns: 1fr;
+        }
+        .section-head {
+          display: block;
+        }
+        .stage-tag {
+          display: inline-block;
+          margin-top: 12px;
+        }
+        .sort-board {
+          grid-template-columns: 1fr;
+        }
+        .question-block .option-list {
+          grid-template-columns: 1fr;
+        }
+        .url-parts {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .definition-list {
+          grid-template-columns: 1fr;
+        }
+        .definition-list div:nth-child(odd) {
+          border-bottom: 0;
+          padding-bottom: 2px;
+        }
+        .definition-list div:nth-child(even) {
+          padding-top: 4px;
+        }
+        .nav-actions .btn {
+          flex: 1;
+        }
+        .brand-name {
+          font-size: 0.94rem;
+        }
+        .header-btn {
+          font-size: 0.8rem;
+          padding: 8px 10px;
+        }
+        .container {
+          margin-top: 22px;
+        }
+        .hero h1 {
+          font-size: 2.3rem;
+        }
+        .sequence-arrow {
+          display: none;
+        }
+      }
+      @media print {
+        .topnav-wrap,
+        .header-actions,
+        .nav-actions,
+        .btn-row,
+        .app-header .hero-image {
+          display: none !important;
+        }
+        .section {
+          display: block !important;
+          break-inside: avoid;
+        }
+        .app-header {
+          background: #fff;
+          color: #111;
+        }
+        .hero p {
+          color: #333;
+        }
+        .hero h1 span {
+          color: #9a6a00;
+        }
+        .card {
+          box-shadow: none;
+          break-inside: avoid;
+        }
+        .container {
+          margin: 0 auto;
+        }
+        .section {
+          margin-bottom: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="brandline">
+        <div class="brand">
+          <div class="brand-mark" aria-label="EDJAY logo mark">EDJ</div>
+          <div>
+            <div class="brand-name">Teacher Ed Learning Hub</div>
+            <div class="tagline">EDJAY · Teach. Lead. Inspire.</div>
+          </div>
+        </div>
+        <div class="header-actions">
+          <button
+            class="header-btn"
+            id="readMode"
+            type="button"
+            aria-pressed="false"
+          >
+            A+ Readable text
+          </button>
+          <button
+            class="header-btn"
+            id="focusMode"
+            type="button"
+            aria-pressed="false"
+          >
+            ◉ Focus view
+          </button>
+          <button class="header-btn" id="fullscreenBtn" type="button">
+            ⛶ Full screen
+          </button>
+        </div>
+      </div>
+      <div class="hero">
+        <div>
+          <div class="eyebrow">UNIT 3 · LESSON 9</div>
+          <h1>An <span>Interconnected</span> World</h1>
+          <p>
+            Discover how the Internet connects computers, how the World Wide Web
+            shares information, and how browsers, URLs, DNS, IP addresses, and
+            protocols work together.
+          </p>
+          <div class="hero-meta">
+            <span class="meta-pill">💻 Computer / ICT</span
+            ><span class="meta-pill">🌐 Internet</span
+            ><span class="meta-pill">🎯 Learn by exploring</span>
+          </div>
+        </div>
+        <img
+          class="hero-image"
+          src="assets/internet-journey-infographic.png"
+          alt="Illustrated journey of a web request from a device through a router and Internet to DNS, a web server, and a web page"
+        />
+      </div>
+    </header>
+    <div class="topnav-wrap">
+      <nav class="topnav" id="topnav" aria-label="Lesson stages">
+        <button class="tab active" data-stage="engage">
+          <span class="n">1</span>Engage
+        </button>
+        <button class="tab" data-stage="connect">
+          <span class="n">2</span>Connect
+        </button>
+        <button class="tab" data-stage="explore">
+          <span class="n">3</span>Explore
+        </button>
+        <button class="tab" data-stage="learn">
+          <span class="n">4</span>Learn
+        </button>
+        <button class="tab" data-stage="guided">
+          <span class="n">5</span>Guided Practice
+        </button>
+        <button class="tab" data-stage="practice">
+          <span class="n">6</span>Practice
+        </button>
+        <button class="tab" data-stage="think">
+          <span class="n">7</span>Think
+        </button>
+        <button class="tab" data-stage="review">
+          <span class="n">8</span>Review
+        </button>
+        <button class="tab" data-stage="check">
+          <span class="n">9</span>Check
+        </button>
+        <button class="tab" data-stage="master">
+          <span class="n">10</span>Master
+        </button>
+        <button class="tab" data-stage="reflect">
+          <span class="n">11</span>Reflect
+        </button>
+        <button class="tab" data-stage="celebrate">
+          <span class="n">12</span>Celebrate
+        </button>
+      </nav>
+      <div class="progressbar" aria-label="Lesson progress">
+        <span id="globalProgress"></span>
+      </div>
+    </div>
+
+    <main class="container">
+      <section
+        class="section active"
+        id="engage"
+        aria-labelledby="engage-title"
+      >
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🎮 STAGE 1 · ENGAGE</div>
+            <h2 id="engage-title">
+              A message can travel around the world. How?
+            </h2>
+            <p>
+              Imagine you open a browser and type a website address. What do you
+              think happens before the page appears?
+            </p>
+          </div>
+          <span class="stage-tag">Predict first</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/internet-journey-infographic.png"
+              alt="Illustration showing a student, router, connected globe, DNS server, web server, and web page"
+            />
+            <h3>Look closely at the picture</h3>
+            <p>
+              A web page seems to appear in seconds, but several devices and
+              rules help your request reach the right place.
+            </p>
+            <div class="callout">
+              <strong>Your mission:</strong> Discover the difference between the
+              Internet and the Web, then explain the journey of a web page.
+            </div>
+          </article>
+          <article class="card">
+            <div class="card-icon">💭</div>
+            <h3>Prediction challenge</h3>
+            <p class="big-question">
+              What do you think helps your browser find a website?
+            </p>
+            <div class="option-list" data-question="prediction">
+              <button class="option" data-value="a">
+                A. A domain name and network communication
+              </button>
+              <button class="option" data-value="b">
+                B. The browser guesses randomly
+              </button>
+              <button class="option" data-value="c">
+                C. The monitor searches the Internet by itself
+              </button>
+            </div>
+            <div
+              class="feedback"
+              id="predictionFeedback"
+              aria-live="polite"
+            ></div>
+            <p class="tiny-note">
+              This is a prediction, not a graded test. You can change your
+              thinking as you learn.
+            </p>
+            <div class="btn-row">
+              <button class="btn gold" data-next="connect">
+                Let's connect it to real life →
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="connect" aria-labelledby="connect-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🎯 STAGE 2 · CONNECT</div>
+            <h2 id="connect-title">Where do you use the Internet?</h2>
+            <p>
+              Connect the lesson to familiar experiences before exploring the
+              technical vocabulary.
+            </p>
+          </div>
+          <span class="stage-tag">Prior knowledge</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <div class="card-icon">📱</div>
+            <h3>Everyday connections</h3>
+            <p>
+              Choose the activities you have seen or used. More than one answer
+              is possible.
+            </p>
+            <label class="checkline"
+              ><input type="checkbox" class="life-use" /> Searching for school
+              information</label
+            >
+            <label class="checkline"
+              ><input type="checkbox" class="life-use" /> Sending an email or
+              message</label
+            >
+            <label class="checkline"
+              ><input type="checkbox" class="life-use" /> Watching a video or
+              opening a website</label
+            >
+            <label class="checkline"
+              ><input type="checkbox" class="life-use" /> Sharing or downloading
+              a file</label
+            >
+            <button class="btn" id="connectCheck">Connect my examples</button>
+            <div class="feedback" id="connectFeedback" aria-live="polite"></div>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-internet.jfif"
+              alt="Reference page explaining the Internet as a worldwide network of connected computers"
+            />
+            <h3>Important distinction</h3>
+            <p>
+              The Internet is a worldwide network of connected computers and
+              networks. The World Wide Web is a system for sharing information
+              using the Internet infrastructure.
+            </p>
+            <div class="callout">
+              <strong>Remember:</strong> The Web is not the same thing as the
+              Internet. The Web uses the Internet.
+            </div>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="engage">← Previous</button
+          ><button class="btn" data-next="explore">
+            Explore the concept →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="explore" aria-labelledby="explore-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🔎 STAGE 3 · EXPLORE</div>
+            <h2 id="explore-title">Explore a web address</h2>
+            <p>
+              Investigate how a URL is organized. Select each part to see what
+              it tells you.
+            </p>
+          </div>
+          <span class="stage-tag">Observe & investigate</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <h3>Tap a part of this URL</h3>
+            <div class="url-builder">
+              <div class="url-display" aria-label="Example URL">
+                <span style="color: #b34b38">https://</span
+                ><span style="color: #7c3aa3">www.</span
+                ><span style="color: #2067bd">example</span
+                ><span style="color: #16845b">.com</span>
+              </div>
+              <div class="url-parts">
+                <button class="url-part" data-urlpart="protocol">
+                  <b>https://</b>Protocol
+                </button>
+                <button class="url-part" data-urlpart="subdomain">
+                  <b>www</b>Subdomain
+                </button>
+                <button class="url-part" data-urlpart="domain">
+                  <b>example</b>Domain name
+                </button>
+                <button class="url-part" data-urlpart="extension">
+                  <b>.com</b>Top-level domain
+                </button>
+              </div>
+            </div>
+            <div class="feedback" id="urlFeedback" aria-live="polite">
+              Choose one URL part to investigate.
+            </div>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-www-url.jfif"
+              alt="Textbook diagram showing the parts of a URL and examples of web browsers"
+            />
+            <h3>Look for patterns</h3>
+            <p>
+              Every web page has an address called a
+              <strong>Uniform Resource Locator (URL)</strong>. A domain name is
+              easier for people to remember than a numeric IP address.
+            </p>
+            <p class="small">
+              Supplemental note: HTTPS is the secure form of HTTP used by many
+              modern websites.
+            </p>
+          </article>
+        </div>
+        <div class="card" style="margin-top: 18px">
+          <h3>Quick investigation</h3>
+          <p>
+            Which part of <strong>https://www.example.com</strong> is the domain
+            name in this lesson's example?
+          </p>
+          <div class="option-list" data-question="domainExplore">
+            <button class="option" data-value="a">https://</button
+            ><button class="option" data-value="b">www</button
+            ><button class="option" data-value="c">example.com</button>
+          </div>
+          <div
+            class="feedback"
+            id="domainExploreFeedback"
+            aria-live="polite"
+          ></div>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="connect">← Previous</button
+          ><button class="btn" data-next="learn">Learn the big ideas →</button>
+        </div>
+      </section>
+
+      <section class="section" id="learn" aria-labelledby="learn-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🧠 STAGE 4 · LEARN</div>
+            <h2 id="learn-title">
+              Understand the parts of an interconnected world
+            </h2>
+            <p>
+              Read the short explanations, study the diagrams, and check each
+              important term.
+            </p>
+          </div>
+          <span class="stage-tag">Explicit instruction</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-internet.jfif"
+              alt="Textbook page about the Internet and its history"
+            />
+            <h3>1. The Internet</h3>
+            <p>
+              The Internet is a vast network of computers and networks around
+              the world. It allows devices and networks to communicate and
+              exchange information.
+            </p>
+            <p class="small">
+              The reference describes ARPANET as an early major computer network
+              launched in 1969 and notes that the Philippines connected to the
+              Internet on March 29, 1994.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-www-url.jfif"
+              alt="World Wide Web, hyperlink, and browser illustrations"
+            />
+            <h3>2. The World Wide Web (WWW)</h3>
+            <p>
+              The Web is a system for sharing information through the Internet
+              infrastructure. Web pages may contain <strong>hyperlinks</strong>,
+              which take users to another page, file, or resource when selected.
+            </p>
+            <p class="small">
+              Tim Berners-Lee invented the World Wide Web in 1989, according to
+              the supplied reference.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-infrastructure.jfif"
+              alt="Textbook illustrations of a modem, Internet service providers, and points of presence"
+            />
+            <h3>3. Internet infrastructure</h3>
+            <p>
+              A <strong>modem</strong> helps connect a device or local network
+              to an Internet service. An
+              <strong>Internet Service Provider (ISP)</strong> provides Internet
+              access. The reference also introduces Points of Presence (POPs)
+              and Network Access Points (NAPs).
+            </p>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-tcpip-dns.jfif"
+              alt="Textbook diagrams about TCP/IP, IP addresses, and the Domain Name System"
+            />
+            <h3>4. IP address and DNS</h3>
+            <p>
+              An <strong>IP address</strong> identifies a device or network
+              interface for Internet communication. The
+              <strong>Domain Name System (DNS)</strong> helps translate a domain
+              name into an IP address so a browser can find the appropriate
+              destination.
+            </p>
+            <div class="callout">
+              <strong>Analogy:</strong> A domain name is like a contact name; an
+              IP address is like a number used by the network to reach the
+              destination.
+            </div>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-url-http.jfif"
+              alt="Textbook page explaining web browsers, HTTP, and URL structure"
+            />
+            <h3>5. Web browser, URL, and HTTP</h3>
+            <p>
+              A <strong>web browser</strong> is an application used to access
+              web pages. A <strong>URL</strong> is the address of a web
+              resource. <strong>HTTP</strong> specifies how web content is
+              requested and transferred; HTTPS adds transport security.
+            </p>
+          </article>
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-protocols.jfif"
+              alt="Textbook diagrams of SMTP email transfer and FTP file transfer"
+            />
+            <h3>6. Protocols</h3>
+            <div class="definition-list">
+              <div>TCP/IP</div>
+              <div>
+                A protocol suite that enables network communication and data
+                delivery.
+              </div>
+              <div>HTTP</div>
+              <div>Used to transfer web resources.</div>
+              <div>SMTP</div>
+              <div>Used to send email.</div>
+              <div>FTP</div>
+              <div>A protocol designed for file transfer.</div>
+            </div>
+          </article>
+        </div>
+        <div class="card" style="margin-top: 18px">
+          <h3>How a web page reaches you</h3>
+          <img
+            class="visual tall"
+            src="assets/internet-journey-infographic.png"
+            alt="Step-by-step illustration of a browser request moving through a router, Internet, DNS, web server, and back to the browser"
+          />
+          <div class="sequence">
+            <div class="sequence-item">
+              <div class="stepnum">1</div>
+              <b>Enter a URL</b>
+              <p class="small">You type a web address into the browser.</p>
+            </div>
+            <div class="sequence-arrow">→</div>
+            <div class="sequence-item">
+              <div class="stepnum">2</div>
+              <b>Resolve the name</b>
+              <p class="small">DNS helps find an IP address.</p>
+            </div>
+            <div class="sequence-arrow">→</div>
+            <div class="sequence-item">
+              <div class="stepnum">3</div>
+              <b>Request the page</b>
+              <p class="small">Protocols carry data between devices.</p>
+            </div>
+            <div class="sequence-arrow">→</div>
+            <div class="sequence-item">
+              <div class="stepnum">4</div>
+              <b>Display the result</b>
+              <p class="small">The browser shows the web page it receives.</p>
+            </div>
+          </div>
+          <div class="callout">
+            <strong>Common misconception:</strong> The browser does not randomly
+            guess a server. Network addressing and protocols help route the
+            request to the correct destination.
+          </div>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="explore">← Previous</button
+          ><button class="btn" data-next="guided">
+            Practise with support →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="guided" aria-labelledby="guided-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🤝 STAGE 5 · GUIDED PRACTICE</div>
+            <h2 id="guided-title">Trace the journey, one step at a time</h2>
+            <p>
+              Complete the missing parts of the process. Use the hints if you
+              need help.
+            </p>
+          </div>
+          <span class="stage-tag">I do · We do · You do</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <h3>Teacher model: one example</h3>
+            <img
+              class="visual"
+              src="assets/internet-journey-infographic.png"
+              alt="Illustrated web request journey"
+            />
+            <p>
+              <strong>Step 1:</strong> A learner enters a domain name in a
+              browser.
+            </p>
+            <p>
+              <strong>Step 2:</strong> DNS helps find the IP address associated
+              with the domain.
+            </p>
+            <p>
+              <strong>Step 3:</strong> The browser sends a request using web
+              protocols.
+            </p>
+            <p>
+              <strong>Step 4:</strong> The web server sends a response and the
+              browser displays the page.
+            </p>
+          </article>
+          <article class="card">
+            <h3>We do: choose the missing part</h3>
+            <p class="big-question">
+              After a learner enters a domain name, which service helps
+              translate the name into an IP address?
+            </p>
+            <div class="option-list" data-question="guidedDNS">
+              <button class="option" data-value="a">SMTP</button
+              ><button class="option" data-value="b">DNS</button
+              ><button class="option" data-value="c">FTP</button>
+            </div>
+            <div
+              class="feedback"
+              id="guidedDNSFeedback"
+              aria-live="polite"
+            ></div>
+            <hr
+              style="
+                border: 0;
+                border-top: 1px solid var(--line);
+                margin: 20px 0;
+              "
+            />
+            <h3>You do: finish the sentence</h3>
+            <p>Complete the sentence with the correct term.</p>
+            <p>
+              <strong
+                >A program used to access web pages is a web ______.</strong
+              >
+            </p>
+            <input
+              id="guidedBlank"
+              class="answer-input"
+              type="text"
+              placeholder="Type the missing word"
+              autocomplete="off"
+            />
+            <div class="btn-row">
+              <button class="btn" id="guidedCheck">Check my answer</button
+              ><button class="btn light" id="guidedHint">Show hint</button>
+            </div>
+            <div
+              class="feedback"
+              id="guidedBlankFeedback"
+              aria-live="polite"
+            ></div>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="learn">← Previous</button
+          ><button class="btn" data-next="practice">
+            Try interactive practice →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="practice" aria-labelledby="practice-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🎮 STAGE 6 · PRACTICE</div>
+            <h2 id="practice-title">Three ways to practise</h2>
+            <p>
+              Try the sorting task, URL builder, and protocol challenge. Learn
+              from the feedback and retry if needed.
+            </p>
+          </div>
+          <span class="stage-tag">Practise without a timer</span>
+        </div>
+        <div class="card">
+          <h3>Activity A · Sort the examples</h3>
+          <p>Tap an item, then tap the category where it belongs.</p>
+          <div id="sortItems">
+            <button class="sort-item" data-item="browser" data-correct="web">
+              Chrome browser</button
+            ><button
+              class="sort-item"
+              data-item="email"
+              data-correct="protocol"
+            >
+              SMTP</button
+            ><button
+              class="sort-item"
+              data-item="address"
+              data-correct="address"
+            >
+              https://example.com</button
+            ><button
+              class="sort-item"
+              data-item="files"
+              data-correct="protocol"
+            >
+              FTP</button
+            ><button class="sort-item" data-item="www" data-correct="web">
+              Web page</button
+            ><button class="sort-item" data-item="dns" data-correct="service">
+              DNS
+            </button>
+          </div>
+          <div class="sort-board">
+            <div class="sort-zone" data-zone="web">
+              <h4>🧭 Browser / Web resource</h4>
+              <div class="zone-items"></div>
+            </div>
+            <div class="sort-zone" data-zone="protocol">
+              <h4>📜 Protocol</h4>
+              <div class="zone-items"></div>
+            </div>
+            <div class="sort-zone" data-zone="address">
+              <h4>🔗 URL / address</h4>
+              <div class="zone-items"></div>
+            </div>
+            <div class="sort-zone" data-zone="service">
+              <h4>🗂️ Naming service</h4>
+              <div class="zone-items"></div>
+            </div>
+          </div>
+          <div class="feedback" id="sortFeedback" aria-live="polite"></div>
+          <div class="btn-row">
+            <button class="btn light" id="sortReset">Reset sorting</button>
+          </div>
+        </div>
+        <div class="grid2" style="margin-top: 18px">
+          <article class="card">
+            <h3>Activity B · URL builder</h3>
+            <p>Select the part described.</p>
+            <div class="option-list" data-question="urlBuild">
+              <button class="option" data-value="a">
+                .com — top-level domain</button
+              ><button class="option" data-value="b">
+                https:// — domain name</button
+              ><button class="option" data-value="c">example — protocol</button>
+            </div>
+            <div
+              class="feedback"
+              id="urlBuildFeedback"
+              aria-live="polite"
+            ></div>
+            <p class="hint">
+              Hint: the protocol tells the browser what communication method is
+              being used.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Activity C · Protocol challenge</h3>
+            <p>Match each purpose with the appropriate protocol.</p>
+            <label for="protocolSelect"><strong>Sending email:</strong></label
+            ><select class="answer-input" id="protocolSelect">
+              <option value="">Choose a protocol</option>
+              <option>HTTP</option>
+              <option>SMTP</option>
+              <option>FTP</option>
+              <option>TCP/IP</option>
+            </select>
+            <div class="btn-row">
+              <button class="btn" id="protocolCheck">Check protocol</button>
+            </div>
+            <div
+              class="feedback"
+              id="protocolFeedback"
+              aria-live="polite"
+            ></div>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="guided">← Previous</button
+          ><button class="btn" data-next="think">Apply your learning →</button>
+        </div>
+      </section>
+
+      <section class="section" id="think" aria-labelledby="think-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">💭 STAGE 7 · THINK</div>
+            <h2 id="think-title">Explain your reasoning</h2>
+            <p>
+              Go beyond memorizing definitions. Use the concepts to explain a
+              real situation.
+            </p>
+          </div>
+          <span class="stage-tag">Reason & apply</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <img
+              class="visual"
+              src="assets/textbook-tcpip-dns.jfif"
+              alt="Reference diagrams showing IP addresses and DNS"
+            />
+            <h3>Scenario: the website will not load</h3>
+            <p>
+              A learner types <strong>www.example.com</strong>, but the page
+              does not appear. A classmate says, “The Internet and the Web are
+              broken because they are the same thing.”
+            </p>
+            <p>
+              <strong
+                >What is one better explanation or troubleshooting step?</strong
+              >
+            </p>
+            <div class="option-list" data-question="thinkScenario">
+              <button class="option" data-value="a">
+                The Web and Internet are different; check the connection, URL,
+                or name resolution.</button
+              ><button class="option" data-value="b">
+                A web browser is the same as an ISP.</button
+              ><button class="option" data-value="c">
+                A URL is the computer monitor.
+              </button>
+            </div>
+            <div
+              class="feedback"
+              id="thinkScenarioFeedback"
+              aria-live="polite"
+            ></div>
+          </article>
+          <article class="card">
+            <div class="card-icon">✍️</div>
+            <h3>Explain in your own words</h3>
+            <p>Use this sentence starter if helpful:</p>
+            <div class="callout">
+              “The Internet is different from the World Wide Web because…”
+            </div>
+            <textarea
+              class="answer-input"
+              id="thinkAnswer"
+              placeholder="Write your explanation here."
+            ></textarea>
+            <div class="btn-row">
+              <button class="btn" id="thinkReveal">
+                Compare with a sample answer
+              </button>
+            </div>
+            <div class="feedback hidden" id="thinkSample">
+              Sample: The Internet is the global network of connected networks.
+              The World Wide Web is a system of web pages and information that
+              uses the Internet.
+            </div>
+            <p class="tiny-note">
+              This written response is for self-reflection; it is not
+              automatically graded.
+            </p>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="practice">← Previous</button
+          ><button class="btn" data-next="review">Review key ideas →</button>
+        </div>
+      </section>
+
+      <section class="section" id="review" aria-labelledby="review-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🔄 STAGE 8 · REVIEW</div>
+            <h2 id="review-title">Review with flashcards</h2>
+            <p>
+              Try to recall the definition before revealing the explanation.
+            </p>
+          </div>
+          <span class="stage-tag">Retrieval practice</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <div
+              class="flashcard"
+              id="flashcard"
+              role="button"
+              tabindex="0"
+              aria-label="Flashcard. Select to reveal the definition"
+            >
+              <div class="flash-inner">
+                <div>
+                  <h3 id="flashTerm">Internet</h3>
+                  <p id="flashDefinition" class="hidden">
+                    A worldwide network of connected computers and networks.
+                  </p>
+                  <small id="flashInstruction"
+                    >Select card to reveal answer</small
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="btn-row">
+              <button class="btn light" id="flashPrev">← Previous card</button
+              ><button class="btn" id="flashNext">Next card →</button>
+            </div>
+            <p class="tiny-note" id="flashCount">Card 1 of 6</p>
+          </article>
+          <article class="card">
+            <h3>Essential vocabulary</h3>
+            <div class="definition-list">
+              <div>Internet</div>
+              <div>A worldwide network of networks.</div>
+              <div>WWW</div>
+              <div>A system for sharing information using the Internet.</div>
+              <div>Browser</div>
+              <div>An application used to access web pages.</div>
+              <div>URL</div>
+              <div>The address of a web resource.</div>
+              <div>DNS</div>
+              <div>Translates domain names into IP addresses.</div>
+              <div>Protocol</div>
+              <div>Rules that allow devices to communicate.</div>
+            </div>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="think">← Previous</button
+          ><button class="btn" data-next="check">
+            Check your understanding →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="check" aria-labelledby="check-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">✅ STAGE 9 · CHECK</div>
+            <h2 id="check-title">Knowledge check</h2>
+            <p>
+              Answer all five questions. Your score reflects only the answers
+              you submit here.
+            </p>
+          </div>
+          <span class="stage-tag">5 questions</span>
+        </div>
+        <div class="card">
+          <div class="progress-label">
+            <span id="checkProgressText">0 of 5 answered</span
+            ><span id="checkProgressPct">0%</span>
+          </div>
+          <div class="mini-progress"><span id="checkProgressBar"></span></div>
+          <form id="quizForm">
+            <div class="question-block">
+              <h3>1. What is the Internet?</h3>
+              <div class="option-list">
+                <label class="option"
+                  ><input type="radio" name="q1" value="a" /> A single
+                  website</label
+                ><label class="option"
+                  ><input type="radio" name="q1" value="b" /> A worldwide
+                  network of connected networks</label
+                ><label class="option"
+                  ><input type="radio" name="q1" value="c" /> A type of web
+                  browser</label
+                >
+              </div>
+              <div class="feedback" id="q1Feedback"></div>
+            </div>
+            <div class="question-block">
+              <h3>2. What does DNS help do?</h3>
+              <div class="option-list">
+                <label class="option"
+                  ><input type="radio" name="q2" value="a" /> Translate domain
+                  names into IP addresses</label
+                ><label class="option"
+                  ><input type="radio" name="q2" value="b" /> Send every
+                  email</label
+                ><label class="option"
+                  ><input type="radio" name="q2" value="c" /> Display images on
+                  a monitor</label
+                >
+              </div>
+              <div class="feedback" id="q2Feedback"></div>
+            </div>
+            <div class="question-block">
+              <h3>3. Which protocol is used for sending email?</h3>
+              <div class="option-list">
+                <label class="option"
+                  ><input type="radio" name="q3" value="a" /> FTP</label
+                ><label class="option"
+                  ><input type="radio" name="q3" value="b" /> HTTP</label
+                ><label class="option"
+                  ><input type="radio" name="q3" value="c" /> SMTP</label
+                >
+              </div>
+              <div class="feedback" id="q3Feedback"></div>
+            </div>
+            <div class="question-block">
+              <h3>4. Which statement about the Web is correct?</h3>
+              <div class="option-list">
+                <label class="option"
+                  ><input type="radio" name="q4" value="a" /> The Web and
+                  Internet are exactly the same thing</label
+                ><label class="option"
+                  ><input type="radio" name="q4" value="b" /> The Web shares
+                  information using the Internet infrastructure</label
+                ><label class="option"
+                  ><input type="radio" name="q4" value="c" /> The Web does not
+                  use links</label
+                >
+              </div>
+              <div class="feedback" id="q4Feedback"></div>
+            </div>
+            <div class="question-block">
+              <h3>5. What is a URL?</h3>
+              <div class="option-list">
+                <label class="option"
+                  ><input type="radio" name="q5" value="a" /> The address of a
+                  web resource</label
+                ><label class="option"
+                  ><input type="radio" name="q5" value="b" /> A computer network
+                  cable</label
+                ><label class="option"
+                  ><input type="radio" name="q5" value="c" /> An email
+                  protocol</label
+                >
+              </div>
+              <div class="feedback" id="q5Feedback"></div>
+            </div>
+            <div class="btn-row">
+              <button class="btn gold" type="submit">Submit answers</button
+              ><button class="btn light" type="button" id="quizRetry">
+                Retry quiz
+              </button>
+            </div>
+          </form>
+          <div
+            id="quizResult"
+            class="score-card hidden"
+            style="margin-top: 18px"
+            aria-live="polite"
+          >
+            <div class="score-badge">🎯</div>
+            <div>
+              <div class="score-display" id="quizScore">0/5</div>
+              <strong id="quizMessage">Keep learning</strong>
+              <p id="quizAdvice" class="small">
+                Review the key ideas and try again.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="review">← Previous</button
+          ><button class="btn" data-next="master">
+            Try the mastery challenge →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="master" aria-labelledby="master-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🏆 STAGE 10 · MASTER</div>
+            <h2 id="master-title">Mastery challenge: solve the web journey</h2>
+            <p>
+              Apply the lesson to a new example. You need at least 3 correct
+              answers out of 4 to meet this activity's success criterion.
+            </p>
+          </div>
+          <span class="stage-tag">Independent application</span>
+        </div>
+        <div class="mastery-box">
+          <div class="grid2">
+            <div>
+              <h3>Challenge situation</h3>
+              <p>
+                Mia enters <strong>https://school.example.edu</strong> in her
+                browser to open a school page.
+              </p>
+              <img
+                class="visual"
+                src="assets/internet-journey-infographic.png"
+                alt="Illustration of a web request moving from the browser to a server and returning with a page"
+              />
+            </div>
+            <div>
+              <div class="question-block">
+                <h3>1. Which tool does Mia use to access the page?</h3>
+                <div class="option-list" data-question="m1">
+                  <button class="option" data-value="a">Web browser</button
+                  ><button class="option" data-value="b">DNS server only</button
+                  ><button class="option" data-value="c">SMTP</button>
+                </div>
+                <div class="feedback" id="m1Feedback"></div>
+              </div>
+              <div class="question-block">
+                <h3>
+                  2. Which service helps find an IP address for the domain?
+                </h3>
+                <div class="option-list" data-question="m2">
+                  <button class="option" data-value="a">FTP</button
+                  ><button class="option" data-value="b">DNS</button
+                  ><button class="option" data-value="c">Hyperlink</button>
+                </div>
+                <div class="feedback" id="m2Feedback"></div>
+              </div>
+              <div class="question-block">
+                <h3>3. Which item is the URL?</h3>
+                <div class="option-list" data-question="m3">
+                  <button class="option" data-value="a">
+                    school.example.edu</button
+                  ><button class="option" data-value="b">
+                    https://school.example.edu</button
+                  ><button class="option" data-value="c">DNS</button>
+                </div>
+                <div class="feedback" id="m3Feedback"></div>
+              </div>
+              <div class="question-block">
+                <h3>4. What is the best description of the Internet?</h3>
+                <div class="option-list" data-question="m4">
+                  <button class="option" data-value="a">
+                    A worldwide network of networks</button
+                  ><button class="option" data-value="b">
+                    Only the pages viewed in a browser</button
+                  ><button class="option" data-value="c">
+                    A protocol for sending email
+                  </button>
+                </div>
+                <div class="feedback" id="m4Feedback"></div>
+              </div>
+            </div>
+          </div>
+          <div class="btn-row">
+            <button class="btn gold" id="masterSubmit">
+              Check mastery challenge</button
+            ><button class="btn light" id="masterRetry">Try again</button>
+          </div>
+          <div
+            class="score-card hidden"
+            id="masterResult"
+            style="margin-top: 18px"
+          >
+            <div class="score-badge">🏅</div>
+            <div>
+              <div class="score-display" id="masterScore">0/4</div>
+              <strong id="masterMessage">Keep practising</strong>
+              <p id="masterAdvice" class="small"></p>
+            </div>
+          </div>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="check">← Previous</button
+          ><button class="btn" data-next="reflect">
+            Reflect on your learning →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="reflect" aria-labelledby="reflect-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🌈 STAGE 11 · REFLECT</div>
+            <h2 id="reflect-title">Think about your learning</h2>
+            <p>
+              Reflection helps you notice what you understand and what you may
+              want to practise again.
+            </p>
+          </div>
+          <span class="stage-tag">Self-assessment</span>
+        </div>
+        <div class="grid2">
+          <article class="card">
+            <div class="card-icon">📝</div>
+            <h3>My learning reflection</h3>
+            <label for="reflectionLearn"
+              ><strong>One important thing I learned:</strong></label
+            ><textarea
+              id="reflectionLearn"
+              class="answer-input"
+              placeholder="I learned that..."
+            ></textarea
+            ><label
+              for="reflectionHard"
+              style="display: block; margin-top: 14px"
+              ><strong>One thing I want to practise more:</strong></label
+            ><textarea
+              id="reflectionHard"
+              class="answer-input"
+              placeholder="I want to practise..."
+            ></textarea>
+            <div class="btn-row">
+              <button class="btn" id="saveReflection">
+                Save reflection on this device
+              </button>
+            </div>
+            <div
+              class="feedback"
+              id="reflectionFeedback"
+              aria-live="polite"
+            ></div>
+            <p class="tiny-note">
+              Your reflection stays in this open page only. It is not sent to
+              your teacher or saved to a server.
+            </p>
+          </article>
+          <article class="card">
+            <h3>How confident do you feel?</h3>
+            <p>Choose the statement that best describes your understanding.</p>
+            <div class="option-list" data-question="confidence">
+              <button class="option" data-value="a">
+                I can explain it to a classmate.</button
+              ><button class="option" data-value="b">
+                I understand some parts but need more practice.</button
+              ><button class="option" data-value="c">
+                I need the lesson explained again.
+              </button>
+            </div>
+            <div
+              class="feedback"
+              id="confidenceFeedback"
+              aria-live="polite"
+            ></div>
+            <div class="callout">
+              <strong>Learning tip:</strong> If you are unsure, return to Learn
+              or Review. Making mistakes is part of learning.
+            </div>
+          </article>
+        </div>
+        <div class="nav-actions">
+          <button class="btn light" data-prev="master">← Previous</button
+          ><button class="btn gold" data-next="celebrate">
+            Finish the lesson →
+          </button>
+        </div>
+      </section>
+
+      <section class="section" id="celebrate" aria-labelledby="celebrate-title">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">🎉 STAGE 12 · CELEBRATE</div>
+            <h2 id="celebrate-title">You explored an interconnected world!</h2>
+            <p>
+              Celebrate the effort you put into predicting, investigating,
+              practising, and explaining.
+            </p>
+          </div>
+          <span class="stage-tag">Progress, not perfection</span>
+        </div>
+        <div
+          class="card"
+          style="text-align: center; padding: clamp(25px, 5vw, 55px)"
+        >
+          <div class="celebration">🌐🏆</div>
+          <h2 style="color: var(--navy); font-size: clamp(1.8rem, 4vw, 2.6rem)">
+            Great work, learner!
+          </h2>
+          <p>
+            You have explored the Internet, the World Wide Web, URLs, browsers,
+            IP addresses, DNS, and protocols.
+          </p>
+          <div class="grid3" style="margin: 22px 0; text-align: left">
+            <div class="card">
+              <h3>📚 Remember</h3>
+              <p>
+                The Internet connects networks; the Web shares information using
+                it.
+              </p>
+            </div>
+            <div class="card">
+              <h3>🔍 Explain</h3>
+              <p>DNS helps translate a domain name into an IP address.</p>
+            </div>
+            <div class="card">
+              <h3>🧠 Apply</h3>
+              <p>
+                Protocols help devices exchange data for different purposes.
+              </p>
+            </div>
+          </div>
+          <div
+            class="score-card"
+            style="max-width: 560px; margin: 0 auto; text-align: left"
+          >
+            <div class="score-badge">⭐</div>
+            <div>
+              <strong id="finalStatus">Keep building your understanding</strong>
+              <p id="finalScoreText" class="small">
+                Complete the Knowledge Check and Mastery Challenge to see your
+                results here.
+              </p>
+            </div>
+          </div>
+          <div class="btn-row" style="justify-content: center">
+            <button class="btn gold" id="restartLesson">Restart lesson ↺</button
+            ><button class="btn light" id="printLesson">
+              Print lesson summary
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="lesson-footer">
+      <span
+        ><strong>Teacher Ed Learning Hub</strong> · EDJAY: Teach. Lead.
+        Inspire.</span
+      ><span>Interactive lesson · An Interconnected World</span>
+    </footer>
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+    <script>
+      (function () {
+        "use strict";
+        const stages = [
+          "engage",
+          "connect",
+          "explore",
+          "learn",
+          "guided",
+          "practice",
+          "think",
+          "review",
+          "check",
+          "master",
+          "reflect",
+          "celebrate",
+        ];
+        let currentStage = "engage";
+        const completed = new Set();
+        const quizState = { submitted: false, score: 0 };
+        const masteryState = { submitted: false, score: 0 };
+        const stageLabels = {
+          engage: "Engage",
+          connect: "Connect",
+          explore: "Explore",
+          learn: "Learn",
+          guided: "Guided Practice",
+          practice: "Practice",
+          think: "Think",
+          review: "Review",
+          check: "Check",
+          master: "Master",
+          reflect: "Reflect",
+          celebrate: "Celebrate",
+        };
+        function toast(message) {
+          const t = document.getElementById("toast");
+          t.textContent = message;
+          t.classList.remove("hidden");
+          window.clearTimeout(toast.timer);
+          toast.timer = window.setTimeout(
+            () => t.classList.add("hidden"),
+            2400,
+          );
+        }
+        function updateProgress() {
+          const pct = Math.round((completed.size / stages.length) * 100);
+          document.getElementById("globalProgress").style.width =
+            Math.max(8.333, pct) + "%";
+        }
+        function showStage(id, markCurrent = true) {
+          if (!stages.includes(id)) return;
+          document
+            .querySelectorAll(".section")
+            .forEach((s) => s.classList.toggle("active", s.id === id));
+          document.querySelectorAll(".tab").forEach((b) => {
+            const active = b.dataset.stage === id;
+            b.classList.toggle("active", active);
+            if (active) b.setAttribute("aria-current", "step");
+            else b.removeAttribute("aria-current");
+          });
+          currentStage = id;
+          if (markCurrent) completed.add(id);
+          updateProgress();
+          const nav = document.querySelector(".tab.active");
+          if (nav)
+            nav.scrollIntoView({
+              block: "nearest",
+              inline: "nearest",
+              behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                .matches
+                ? "auto"
+                : "smooth",
+            });
+          window.scrollTo({
+            top: 0,
+            behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+              .matches
+              ? "auto"
+              : "smooth",
+          });
+        }
+        document
+          .querySelectorAll("[data-stage]")
+          .forEach((b) =>
+            b.addEventListener("click", () => showStage(b.dataset.stage)),
+          );
+        document
+          .querySelectorAll("[data-next]")
+          .forEach((b) =>
+            b.addEventListener("click", () => showStage(b.dataset.next)),
+          );
+        document
+          .querySelectorAll("[data-prev]")
+          .forEach((b) =>
+            b.addEventListener("click", () => showStage(b.dataset.prev)),
+          );
+        document
+          .getElementById("fullscreenBtn")
+          .addEventListener("click", async () => {
+            try {
+              if (!document.fullscreenElement) {
+                await document.documentElement.requestFullscreen();
+                document.getElementById("fullscreenBtn").textContent =
+                  "⛶ Exit full screen";
+              } else {
+                await document.exitFullscreen();
+              }
+            } catch (e) {
+              toast(
+                "Full screen is not available in this browser. Try pressing F11.",
+              );
+            }
+          });
+        document.addEventListener("fullscreenchange", () => {
+          document.getElementById("fullscreenBtn").textContent =
+            document.fullscreenElement ? "⛶ Exit full screen" : "⛶ Full screen";
+        });
+        document.getElementById("focusMode").addEventListener("click", () => {
+          const on = document.body.classList.toggle("focus-mode");
+          document
+            .getElementById("focusMode")
+            .setAttribute("aria-pressed", String(on));
+          document.getElementById("focusMode").textContent = on
+            ? "◉ Exit focus view"
+            : "◉ Focus view";
+        });
+        document.getElementById("readMode").addEventListener("click", () => {
+          const on = document.body.classList.toggle("readable-mode");
+          document
+            .getElementById("readMode")
+            .setAttribute("aria-pressed", String(on));
+          document.getElementById("readMode").textContent = on
+            ? "A− Standard text"
+            : "A+ Readable text";
+        });
+        function setFeedback(id, message, kind) {
+          const el = document.getElementById(id);
+          if (!el) return;
+          el.textContent = message;
+          el.classList.remove("good", "bad");
+          if (kind) el.classList.add(kind);
+        }
+        function bindChoice(
+          groupId,
+          answer,
+          feedbackId,
+          explainCorrect,
+          explainWrong,
+          opts = {},
+        ) {
+          const group = document.querySelector(
+            '[data-question="' + groupId + '"]',
+          );
+          if (!group) return;
+          group.querySelectorAll(".option").forEach((btn) =>
+            btn.addEventListener("click", () => {
+              group
+                .querySelectorAll(".option")
+                .forEach((b) =>
+                  b.classList.remove("selected", "correct", "incorrect"),
+                );
+              btn.classList.add("selected");
+              const ok = btn.dataset.value === answer;
+              btn.classList.add(ok ? "correct" : "incorrect");
+              setFeedback(
+                feedbackId,
+                ok ? explainCorrect : explainWrong,
+                ok ? "good" : "bad",
+              );
+              if (opts.revealOnly) {
+              }
+            }),
+          );
+        }
+        bindChoice(
+          "prediction",
+          "a",
+          "predictionFeedback",
+          "Good prediction. A browser uses a URL and network communication to reach a website.",
+          "Not quite. A website is reached through addressing and network communication.",
+        );
+        bindChoice(
+          "domainExplore",
+          "c",
+          "domainExploreFeedback",
+          "Correct. In this simplified example, example.com is the domain name.",
+          "Look at the part that identifies the website rather than the protocol.",
+        );
+        bindChoice(
+          "guidedDNS",
+          "b",
+          "guidedDNSFeedback",
+          "Correct. DNS helps translate a domain name into an IP address.",
+          "Remember: DNS stands for Domain Name System.",
+        );
+        bindChoice(
+          "urlBuild",
+          "a",
+          "urlBuildFeedback",
+          "Correct. .com is a top-level domain in this example.",
+          "Check the URL parts: https:// is the protocol, while .com is the extension/top-level domain.",
+        );
+        bindChoice(
+          "thinkScenario",
+          "a",
+          "thinkScenarioFeedback",
+          "Good reasoning. The Web and Internet are different, and checking the connection, URL, and name resolution are sensible steps.",
+          "Try again: the browser, ISP, DNS, and URL have different roles.",
+        );
+        bindChoice(
+          "confidence",
+          "a",
+          "confidenceFeedback",
+          "Excellent. Try explaining the key ideas without looking at the notes.",
+          "That is useful self-awareness. Return to Learn or Review and practise at your own pace.",
+        );
+        document
+          .getElementById("connectCheck")
+          .addEventListener("click", () => {
+            const n = document.querySelectorAll(".life-use:checked").length;
+            setFeedback(
+              "connectFeedback",
+              n
+                ? `You selected ${n} real-life example${n === 1 ? "" : "s"}. These are common ways people use Internet services.`
+                : "Choose at least one example you recognize. There is no single required choice.",
+              n ? "good" : "",
+            );
+          });
+        const urlDetails = {
+          protocol:
+            "Protocol: https:// indicates a secure way to communicate with a website. The original reference introduces HTTP as the protocol used for web pages.",
+          subdomain:
+            "Subdomain: www is a common subdomain label. A website may work with or without it.",
+          domain:
+            "Domain name: example identifies the named website in this simplified teaching example. The complete registered domain here is example.com.",
+          extension:
+            "Top-level domain: .com is a common top-level domain, often associated with commercial websites.",
+        };
+        document.querySelectorAll("[data-urlpart]").forEach((b) =>
+          b.addEventListener("click", () => {
+            document
+              .querySelectorAll("[data-urlpart]")
+              .forEach((x) => x.classList.remove("selected"));
+            b.classList.add("selected");
+            setFeedback("urlFeedback", urlDetails[b.dataset.urlpart], "");
+          }),
+        );
+        document.getElementById("guidedCheck").addEventListener("click", () => {
+          const v = document
+            .getElementById("guidedBlank")
+            .value.trim()
+            .toLowerCase();
+          if (!v) {
+            setFeedback(
+              "guidedBlankFeedback",
+              "Type an answer first, or use the hint.",
+              "",
+            );
+            return;
+          }
+          const ok = ["browser", "web browser"].includes(v);
+          setFeedback(
+            "guidedBlankFeedback",
+            ok
+              ? "Correct! A web browser is an application used to access web pages."
+              : "Not quite. Think of the application you use to open websites. Try “browser”.",
+            ok ? "good" : "bad",
+          );
+        });
+        document
+          .getElementById("guidedHint")
+          .addEventListener("click", () =>
+            setFeedback(
+              "guidedBlankFeedback",
+              "Hint: Chrome, Firefox, Edge, and Safari are examples of this application.",
+              "",
+            ),
+          );
+        let selectedSort = null;
+        let sortScore = 0;
+        let sortAttempts = 0;
+        document.querySelectorAll(".sort-item").forEach((item) =>
+          item.addEventListener("click", () => {
+            if (item.classList.contains("placed")) return;
+            document
+              .querySelectorAll(".sort-item")
+              .forEach((i) => (i.style.outline = ""));
+            selectedSort = item;
+            item.style.outline = "3px solid #f5b82e";
+            setFeedback(
+              "sortFeedback",
+              `Selected: ${item.textContent}. Now choose the category.`,
+              "",
+            );
+          }),
+        );
+        document.querySelectorAll(".sort-zone").forEach((zone) => {
+          zone.addEventListener("click", () => {
+            if (!selectedSort) return;
+            sortAttempts++;
+            const correct = selectedSort.dataset.correct === zone.dataset.zone;
+            const label = selectedSort.textContent;
+            if (correct) {
+              zone.querySelector(".zone-items").appendChild(selectedSort);
+              selectedSort.classList.add("placed");
+              selectedSort.style.outline = "";
+              sortScore++;
+              setFeedback(
+                "sortFeedback",
+                `Correct: ${label} belongs in ${zone.querySelector("h4").textContent.replace(/^[^ ]+ /, "")}. Score: ${sortScore}/6.`,
+                "good",
+              );
+            } else {
+              setFeedback(
+                "sortFeedback",
+                `Not quite. ${label} does not belong in that category. Try another category.`,
+                "bad",
+              );
+            }
+            selectedSort = null;
+            document
+              .querySelectorAll(".sort-item")
+              .forEach((i) => (i.style.outline = ""));
+            if (sortScore === 6)
+              setFeedback(
+                "sortFeedback",
+                "Excellent sorting! You classified all six items correctly.",
+                "good",
+              );
+          });
+        });
+        document.getElementById("sortReset").addEventListener("click", () => {
+          const list = document.getElementById("sortItems");
+          document.querySelectorAll(".sort-item").forEach((i) => {
+            i.classList.remove("placed");
+            i.style.outline = "";
+            list.appendChild(i);
+          });
+          sortScore = 0;
+          sortAttempts = 0;
+          selectedSort = null;
+          setFeedback("sortFeedback", "Sorting reset. Try again.", "");
+        });
+        document
+          .getElementById("protocolCheck")
+          .addEventListener("click", () => {
+            const v = document.getElementById("protocolSelect").value;
+            if (!v) {
+              setFeedback("protocolFeedback", "Choose a protocol first.", "");
+              return;
+            }
+            setFeedback(
+              "protocolFeedback",
+              v === "SMTP"
+                ? "Correct. SMTP is used for sending email."
+                : "Try again. SMTP stands for Simple Mail Transfer Protocol and is used for sending email.",
+              v === "SMTP" ? "good" : "bad",
+            );
+          });
+        document
+          .getElementById("thinkReveal")
+          .addEventListener("click", () =>
+            document.getElementById("thinkSample").classList.toggle("hidden"),
+          );
+        const flashcards = [
+          [
+            "Internet",
+            "A worldwide network of connected computers and networks.",
+          ],
+          [
+            "World Wide Web",
+            "A system for sharing information using the Internet infrastructure.",
+          ],
+          ["Web browser", "An application used to access web pages."],
+          ["URL", "The address of a web resource."],
+          [
+            "DNS",
+            "The Domain Name System helps translate domain names into IP addresses.",
+          ],
+          ["Protocol", "Rules that allow devices and networks to communicate."],
+        ];
+        let flashIndex = 0,
+          flashRevealed = false;
+        function renderFlash() {
+          const c = flashcards[flashIndex];
+          document.getElementById("flashTerm").textContent = c[0];
+          document.getElementById("flashDefinition").textContent = c[1];
+          document
+            .getElementById("flashDefinition")
+            .classList.toggle("hidden", !flashRevealed);
+          document.getElementById("flashInstruction").textContent =
+            flashRevealed
+              ? "Select card to hide answer"
+              : "Select card to reveal answer";
+          document.getElementById("flashCount").textContent =
+            `Card ${flashIndex + 1} of ${flashcards.length}`;
+        }
+        function toggleFlash() {
+          flashRevealed = !flashRevealed;
+          renderFlash();
+        }
+        document
+          .getElementById("flashcard")
+          .addEventListener("click", toggleFlash);
+        document
+          .getElementById("flashcard")
+          .addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              toggleFlash();
+            }
+          });
+        document.getElementById("flashNext").addEventListener("click", () => {
+          flashIndex = (flashIndex + 1) % flashcards.length;
+          flashRevealed = false;
+          renderFlash();
+        });
+        document.getElementById("flashPrev").addEventListener("click", () => {
+          flashIndex = (flashIndex - 1 + flashcards.length) % flashcards.length;
+          flashRevealed = false;
+          renderFlash();
+        });
+        const quizAnswers = {
+          q1: {
+            answer: "b",
+            why: "The Internet is a worldwide network of connected networks.",
+          },
+          q2: {
+            answer: "a",
+            why: "DNS helps translate domain names into IP addresses.",
+          },
+          q3: { answer: "c", why: "SMTP is used for sending email." },
+          q4: {
+            answer: "b",
+            why: "The Web is a system for sharing information using the Internet infrastructure.",
+          },
+          q5: { answer: "a", why: "A URL is the address of a web resource." },
+        };
+        function updateQuizProgress() {
+          let n = 0;
+          Object.keys(quizAnswers).forEach((q) => {
+            if (document.querySelector('input[name="' + q + '"]:checked')) n++;
+          });
+          document.getElementById("checkProgressText").textContent =
+            `${n} of 5 answered`;
+          document.getElementById("checkProgressPct").textContent =
+            `${Math.round((n / 5) * 100)}%`;
+          document.getElementById("checkProgressBar").style.width =
+            (n / 5) * 100 + "%";
+        }
+        document
+          .querySelectorAll("#quizForm input")
+          .forEach((i) => i.addEventListener("change", updateQuizProgress));
+        document.getElementById("quizForm").addEventListener("submit", (e) => {
+          e.preventDefault();
+          let answered = 0,
+            score = 0;
+          Object.entries(quizAnswers).forEach(([q, data]) => {
+            const choice = document.querySelector(
+              'input[name="' + q + '"]:checked',
+            );
+            const feedback = document.getElementById(q + "Feedback");
+            if (choice) answered++;
+            const ok = !!choice && choice.value === data.answer;
+            if (ok) score++;
+            feedback.textContent = !choice
+              ? "Not answered. " + data.why
+              : (ok ? "Correct. " : "Review: ") + data.why;
+            feedback.classList.remove("good", "bad");
+            feedback.classList.add(ok ? "good" : "bad");
+          });
+          if (answered < 5) {
+            toast("Answer all five questions for a complete score.");
+          }
+          quizState.submitted = true;
+          quizState.score = score;
+          document.getElementById("quizScore").textContent = `${score}/5`;
+          document.getElementById("quizMessage").textContent =
+            score >= 4
+              ? "Strong understanding!"
+              : score >= 3
+                ? "Good progress. Review the missed ideas."
+                : "Keep practising. Review the lesson and try again.";
+          document.getElementById("quizAdvice").textContent =
+            score >= 4
+              ? "You answered at least four questions correctly."
+              : "Review the feedback above, then use Retry quiz to practise again.";
+          document.getElementById("quizResult").classList.remove("hidden");
+          updateFinalSummary();
+        });
+        document.getElementById("quizRetry").addEventListener("click", () => {
+          document.getElementById("quizForm").reset();
+          Object.keys(quizAnswers).forEach((q) =>
+            setFeedback(q + "Feedback", "", ""),
+          );
+          document.getElementById("quizResult").classList.add("hidden");
+          quizState.submitted = false;
+          quizState.score = 0;
+          updateQuizProgress();
+          updateFinalSummary();
+        });
+        const masteryAnswers = {
+          m1: {
+            answer: "a",
+            why: "A web browser is used to access web pages.",
+          },
+          m2: {
+            answer: "b",
+            why: "DNS helps find an IP address for a domain name.",
+          },
+          m3: {
+            answer: "b",
+            why: "The URL includes the protocol and the domain.",
+          },
+          m4: {
+            answer: "a",
+            why: "The Internet is a worldwide network of networks.",
+          },
+        };
+        Object.entries(masteryAnswers).forEach(([id, d]) =>
+          bindChoice(
+            id,
+            d.answer,
+            id + "Feedback",
+            "Correct. " + d.why,
+            "Not quite. " + d.why,
+          ),
+        );
+        document
+          .getElementById("masterSubmit")
+          .addEventListener("click", () => {
+            let answered = 0,
+              score = 0;
+            Object.entries(masteryAnswers).forEach(([id, d]) => {
+              const chosen = document.querySelector(
+                '[data-question="' + id + '"] .option.selected',
+              );
+              if (chosen) answered++;
+              const ok = !!chosen && chosen.dataset.value === d.answer;
+              if (ok) score++;
+              setFeedback(
+                id + "Feedback",
+                !chosen
+                  ? "Choose an answer first. " + d.why
+                  : (ok ? "Correct. " : "Review: ") + d.why,
+                ok ? "good" : "bad",
+              );
+            });
+            if (answered < 4) {
+              toast("Choose an answer for all four mastery questions.");
+              return;
+            }
+            masteryState.submitted = true;
+            masteryState.score = score;
+            document.getElementById("masterScore").textContent = `${score}/4`;
+            document.getElementById("masterMessage").textContent =
+              score >= 3
+                ? "Success criterion met!"
+                : "Not yet—review and try again.";
+            document.getElementById("masterAdvice").textContent =
+              score >= 3
+                ? "You answered at least 3 of 4 questions correctly in this challenge."
+                : "Review the feedback, revisit the lesson, and retry. Completion alone does not mean mastery.";
+            document.getElementById("masterResult").classList.remove("hidden");
+            updateFinalSummary();
+          });
+        document.getElementById("masterRetry").addEventListener("click", () => {
+          document
+            .querySelectorAll('[data-question^="m"] .option')
+            .forEach((b) =>
+              b.classList.remove("selected", "correct", "incorrect"),
+            );
+          Object.keys(masteryAnswers).forEach((id) =>
+            setFeedback(id + "Feedback", "", ""),
+          );
+          document.getElementById("masterResult").classList.add("hidden");
+          masteryState.submitted = false;
+          masteryState.score = 0;
+          updateFinalSummary();
+        });
+        document
+          .getElementById("saveReflection")
+          .addEventListener("click", () => {
+            const a = document.getElementById("reflectionLearn").value.trim(),
+              b = document.getElementById("reflectionHard").value.trim();
+            if (!a && !b) {
+              setFeedback(
+                "reflectionFeedback",
+                "Write at least one reflection before saving.",
+                "",
+              );
+              return;
+            }
+            setFeedback(
+              "reflectionFeedback",
+              "Reflection kept in this page for this session. It has not been sent to a teacher or saved online.",
+              "good",
+            );
+          });
+        function updateFinalSummary() {
+          const hasQ = quizState.submitted,
+            hasM = masteryState.submitted;
+          const status = document.getElementById("finalStatus"),
+            txt = document.getElementById("finalScoreText");
+          if (hasQ && hasM) {
+            status.textContent =
+              quizState.score >= 4 && masteryState.score >= 3
+                ? "You met both lesson success criteria!"
+                : "You completed both assessments—review any missed ideas.";
+            txt.textContent = `Knowledge Check: ${quizState.score}/5. Mastery Challenge: ${masteryState.score}/4. Use the Review tab to strengthen any missed concepts.`;
+          } else if (hasQ || hasM) {
+            status.textContent = "You have assessment progress to build on.";
+            txt.textContent =
+              (hasQ
+                ? `Knowledge Check: ${quizState.score}/5. `
+                : "Knowledge Check not yet completed. ") +
+              (hasM
+                ? `Mastery Challenge: ${masteryState.score}/4.`
+                : "Mastery Challenge not yet completed.");
+          } else {
+            status.textContent = "Keep building your understanding";
+            txt.textContent =
+              "Complete the Knowledge Check and Mastery Challenge to see your results here.";
+          }
+        }
+        document
+          .getElementById("restartLesson")
+          .addEventListener("click", () => {
+            if (
+              !confirm(
+                "Restart the lesson? Your current answers and activity selections will be cleared.",
+              )
+            )
+              return;
+            completed.clear();
+            document
+              .querySelectorAll(".option")
+              .forEach((b) =>
+                b.classList.remove("selected", "correct", "incorrect"),
+              );
+            document.querySelectorAll(".feedback").forEach((f) => {
+              f.textContent = "";
+              f.classList.remove("good", "bad");
+            });
+            document
+              .querySelectorAll('input[type="radio"],input[type="checkbox"]')
+              .forEach((i) => (i.checked = false));
+            document
+              .querySelectorAll('textarea,input[type="text"]')
+              .forEach((i) => (i.value = ""));
+            document.getElementById("protocolSelect").value = "";
+            document.getElementById("quizRetry").click();
+            document.getElementById("masterRetry").click();
+            document.getElementById("sortReset").click();
+            showStage("engage", false);
+            toast("Lesson restarted. You can begin again.");
+          });
+        document
+          .getElementById("printLesson")
+          .addEventListener("click", () => window.print());
+        updateQuizProgress();
+        renderFlash();
+        updateProgress();
+        updateFinalSummary();
+      })();
+    </script>
+  </body>
+</html>

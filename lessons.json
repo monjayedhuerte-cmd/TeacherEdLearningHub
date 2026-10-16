@@ -1299,6 +1299,28 @@
     "featured" : false,
     "icon" : "monitor"
 
+  },
+  {
+    "title":"Computer 5 | Lesson 8: Connected, Small and Wide" ,
+    "subject":"Computer",
+    "grade":"Grade 5",
+    "description" : "Discover how computer networks are classified, how devices communicate, and why networks can connect a room, a city, or the world.",
+    "file" : "lessons/computer/grade-5/teacher_ed_learning_hub_networks/index.html",
+    "date" : "2026-10-20",  
+    "featured" : false,
+    "icon" : "monitor"
+
+  },
+  {
+    "title":"Computer 5 | Lesson 9: An Interconnected World" ,
+    "subject":"Computer",
+    "grade":"Grade 5",
+    "description" : "Discover how the Internet connects computers, how the World Wide Web shares information, and how browsers, URLs, DNS, IP addresses, and protocols work together.",
+    "file" : "lessons/computer/grade-5/Teacher_Ed_Interconnected_World/index.html",
+    "date" : "2026-10-22",  
+    "featured" : false,
+    "icon" : "monitor"
+
   }
 
 

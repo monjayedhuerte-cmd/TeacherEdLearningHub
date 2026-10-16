@@ -1,0 +1,1968 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#09275d" />
+    <title>Types of Computer Networks | Teacher Ed Learning Hub</title>
+    <link rel="icon" type="image/png" href="assets/teacher-ed-logo.png" />
+    <style>
+      :root {
+        --navy: #09275d;
+        --navy2: #123c83;
+        --blue: #1674dc;
+        --gold: #ffbd18;
+        --gold2: #ffe18a;
+        --ink: #17233b;
+        --muted: #63718a;
+        --paper: #f5f8ff;
+        --line: #e0e7f2;
+        --white: #fff;
+        --green: #16845b;
+        --red: #b63838;
+        --shadow: 0 16px 45px rgba(12, 39, 93, 0.1);
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at 90% 0%, #e7efff 0, transparent 26rem),
+          var(--paper);
+        color: var(--ink);
+        font-family:
+          Inter,
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        line-height: 1.55;
+      }
+      button,
+      input {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      input:focus-visible {
+        outline: 3px solid #ffbf28;
+        outline-offset: 3px;
+      }
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        background: rgba(255, 255, 255, 0.92);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .top-inner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 12px 22px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .logo {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        flex: none;
+      }
+      .brand {
+        font-weight: 850;
+        color: var(--navy);
+        letter-spacing: -0.03em;
+        line-height: 1.1;
+      }
+      .brand small {
+        display: block;
+        color: var(--muted);
+        font-weight: 600;
+        font-size: 0.72rem;
+        letter-spacing: 0.02em;
+        margin-top: 5px;
+      }
+      .top-spacer {
+        flex: 1;
+      }
+      .pill {
+        background: #fff4d1;
+        border: 1px solid #ffe09a;
+        border-radius: 999px;
+        padding: 6px 11px;
+        color: #684800;
+        font-size: 0.78rem;
+        font-weight: 800;
+      }
+      .top-tabs-wrap {
+        position: sticky;
+        top: 77px;
+        z-index: 15;
+        background: rgba(245, 248, 255, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid var(--line);
+      }
+      .top-tabs-inner {
+        max-width: 1180px;
+        margin: auto;
+        padding: 10px 22px 12px;
+      }
+      .tabs-caption {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 0.7rem;
+        font-weight: 900;
+        letter-spacing: 0.12em;
+        color: var(--muted);
+        margin-bottom: 8px;
+      }
+      .top-progress {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        letter-spacing: 0;
+        font-size: 0.75rem;
+        font-weight: 700;
+        min-width: 250px;
+      }
+      .top-progress strong {
+        color: var(--navy);
+      }
+      .top-progress .progress-line {
+        flex: 1;
+        margin: 0;
+        min-width: 60px;
+      }
+      .top-progress #progressText {
+        font-weight: 500;
+        letter-spacing: 0;
+        white-space: nowrap;
+      }
+      .layout {
+        max-width: 1180px;
+        margin: auto;
+        padding: 26px 22px 60px;
+        display: block;
+      }
+      .nav-list {
+        display: flex;
+        gap: 7px;
+        overflow-x: auto;
+        padding: 2px 0 5px;
+        scrollbar-width: thin;
+      }
+      .nav-btn {
+        flex: 1;
+        min-width: 86px;
+        border: 1px solid transparent;
+        background: transparent;
+        text-align: center;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: #53617a;
+        font-weight: 800;
+        display: flex;
+        gap: 7px;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+      }
+      .nav-btn .num {
+        width: 24px;
+        height: 24px;
+        flex: none;
+        display: grid;
+        place-items: center;
+        background: #eef3fb;
+        border-radius: 8px;
+        font-size: 0.7rem;
+      }
+      .nav-btn.active {
+        background: #eaf1ff;
+        border-color: #d7e4ff;
+        color: var(--navy);
+      }
+      .nav-btn.active .num {
+        background: var(--navy);
+        color: #fff;
+      }
+      .progress-line {
+        height: 7px;
+        background: #dce5f5;
+        border-radius: 99px;
+        overflow: hidden;
+        margin: 9px 0;
+      }
+      .progress-fill {
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, var(--blue), var(--gold));
+        transition: width 0.3s;
+      }
+      .fullscreen-btn {
+        border: 1px solid #d9e2f0;
+        border-radius: 11px;
+        background: #fff;
+        color: var(--navy);
+        padding: 9px 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+      .fullscreen-btn:hover {
+        background: #edf4ff;
+      }
+      .fullscreen-mode .topbar,
+      .fullscreen-mode .top-tabs-wrap {
+        position: relative;
+        top: auto;
+      }
+      .fullscreen-mode .layout {
+        max-width: 1440px;
+      }
+      .fullscreen-mode .hero {
+        min-height: 240px;
+      }
+      .fullscreen-mode main {
+        font-size: 1.04rem;
+      }
+      body:fullscreen {
+        overflow: auto;
+        background: var(--paper);
+      }
+      body:fullscreen .topbar {
+        position: sticky;
+        top: 0;
+      }
+      body:fullscreen .top-tabs-wrap {
+        position: sticky;
+        top: 77px;
+      }
+      .small {
+        font-size: 0.82rem;
+        color: var(--muted);
+      }
+      main {
+        min-width: 0;
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, #08265b, #124b9a 70%, #1377d8);
+        color: #fff;
+        border-radius: 26px;
+        padding: clamp(24px, 4vw, 42px);
+        box-shadow: 0 22px 50px #0c36722b;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        width: 270px;
+        height: 270px;
+        border: 35px solid #ffffff10;
+        border-radius: 50%;
+        right: -50px;
+        top: -95px;
+      }
+      .eyebrow {
+        color: #ffdb71;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-size: 0.75rem;
+        font-weight: 900;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 4vw, 3.3rem);
+        line-height: 1.05;
+        letter-spacing: -0.05em;
+        margin: 12px 0;
+      }
+      .hero p {
+        max-width: 660px;
+        color: #e3edff;
+        margin-bottom: 20px;
+      }
+      .hero-tags {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .hero-tags span {
+        font-size: 0.78rem;
+        border: 1px solid #ffffff45;
+        background: #ffffff13;
+        padding: 6px 10px;
+        border-radius: 999px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 24px;
+      }
+      .btn {
+        border: 0;
+        border-radius: 12px;
+        padding: 11px 16px;
+        font-weight: 850;
+        transition:
+          transform 0.15s,
+          filter 0.15s;
+      }
+      .btn:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.03);
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: #24200e;
+      }
+      .btn-white {
+        background: #fff;
+        color: var(--navy);
+      }
+      .btn-outline {
+        background: #fff;
+        border: 1px solid var(--line);
+        color: var(--navy);
+      }
+      .section {
+        display: none;
+        margin-top: 22px;
+        animation: fade 0.25s ease;
+      }
+      .section.active {
+        display: block;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.35;
+          transform: translateY(5px);
+        }
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin: 0 0 15px;
+      }
+      .section-head h2 {
+        font-size: 1.65rem;
+        line-height: 1.15;
+        margin: 0;
+        color: var(--navy);
+        letter-spacing: -0.035em;
+      }
+      .section-head p {
+        margin: 6px 0 0;
+        color: var(--muted);
+      }
+      .card {
+        background: rgba(255, 255, 255, 0.94);
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+        margin-bottom: 15px;
+      }
+      .card h3 {
+        margin: 0 0 8px;
+        color: var(--navy);
+        font-size: 1.15rem;
+      }
+      .callout {
+        border-left: 4px solid var(--gold);
+        background: #fff8e5;
+        padding: 14px 16px;
+        border-radius: 0 13px 13px 0;
+        margin: 15px 0;
+      }
+      .grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+      .grid3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .concept {
+        padding: 18px;
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        background: #fff;
+      }
+      .concept .icon {
+        font-size: 1.7rem;
+      }
+      .concept h3 {
+        margin: 6px 0;
+        color: var(--navy);
+      }
+      .concept p {
+        margin: 0;
+        color: #52617b;
+        font-size: 0.92rem;
+      }
+      .tag {
+        display: inline-flex;
+        background: #edf3ff;
+        color: #17478f;
+        border-radius: 999px;
+        padding: 4px 9px;
+        font-size: 0.73rem;
+        font-weight: 850;
+        margin: 3px 4px 0 0;
+      }
+      .diagram {
+        background: #f8faff;
+        border: 1px dashed #b8c9e7;
+        border-radius: 16px;
+        padding: 18px;
+        margin-top: 12px;
+      }
+      .node-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .node {
+        padding: 10px 13px;
+        background: #fff;
+        border: 2px solid #c8d7f0;
+        border-radius: 12px;
+        text-align: center;
+        font-size: 0.85rem;
+        font-weight: 800;
+        color: var(--navy);
+      }
+      .node.main {
+        background: #e9f1ff;
+        border-color: #4f83d5;
+      }
+      .arrow {
+        font-weight: 900;
+        color: #8b9bb8;
+      }
+      .question {
+        padding: 17px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .question:last-child {
+        border-bottom: 0;
+      }
+      .question p {
+        font-weight: 800;
+        margin: 0 0 11px;
+      }
+      .options {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .option {
+        padding: 11px 13px;
+        border: 1px solid #d9e2f0;
+        border-radius: 12px;
+        background: #fff;
+        text-align: left;
+        color: var(--ink);
+      }
+      .option:hover {
+        border-color: var(--blue);
+        background: #f4f8ff;
+      }
+      .option.selected {
+        border-color: var(--blue);
+        background: #eaf2ff;
+      }
+      .option.correct {
+        border-color: #75c7a5;
+        background: #e8f8f0;
+      }
+      .option.wrong {
+        border-color: #e5a2a2;
+        background: #fff0f0;
+      }
+      .feedback {
+        margin-top: 9px;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+      .feedback.good {
+        color: var(--green);
+      }
+      .feedback.bad {
+        color: var(--red);
+      }
+      .answer-input {
+        width: 100%;
+        padding: 12px 13px;
+        border: 1px solid #cbd7e8;
+        border-radius: 12px;
+        background: #fff;
+      }
+      .activity-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .score-chip {
+        background: #edf4ff;
+        border-radius: 999px;
+        padding: 7px 11px;
+        color: var(--navy);
+        font-weight: 850;
+        font-size: 0.85rem;
+      }
+      .flashcard {
+        min-height: 190px;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        padding: 25px;
+        background: linear-gradient(140deg, #eef4ff, #fff8e2);
+        border: 1px solid #dbe5f4;
+        border-radius: 18px;
+        cursor: pointer;
+      }
+      .flashcard strong {
+        display: block;
+        font-size: 1.55rem;
+        color: var(--navy);
+      }
+      .flashcard span {
+        display: block;
+        color: #53617a;
+        margin-top: 10px;
+      }
+      .match-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 9px;
+      }
+      .match-item {
+        min-height: 64px;
+        border: 1px solid #d5e0f1;
+        background: #fff;
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 750;
+        color: #34425b;
+      }
+      .match-item.chosen {
+        border: 2px solid var(--blue);
+        background: #edf4ff;
+      }
+      .match-item.done {
+        background: #e5f8ee;
+        border-color: #86cfaa;
+      }
+      .result {
+        display: none;
+        text-align: center;
+        background: linear-gradient(130deg, #e9f8f0, #f6fbff);
+        border: 1px solid #bce7ce;
+        border-radius: 18px;
+        padding: 24px;
+        margin-top: 16px;
+      }
+      .result.show {
+        display: block;
+      }
+      .result-score {
+        font-size: 2.5rem;
+        font-weight: 950;
+        color: var(--navy);
+      }
+      .footer {
+        text-align: center;
+        color: var(--muted);
+        padding: 28px 10px 0;
+        font-size: 0.82rem;
+      }
+      .footer strong {
+        color: var(--navy);
+      }
+      .mini-label {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--muted);
+        font-weight: 900;
+      }
+      .stepbar {
+        display: flex;
+        gap: 6px;
+        margin: 18px 0;
+      }
+      .stepbar span {
+        height: 5px;
+        flex: 1;
+        background: #dfe7f5;
+        border-radius: 99px;
+      }
+      .stepbar span.done {
+        background: var(--gold);
+      }
+      .list-check {
+        padding-left: 20px;
+      }
+      .list-check li {
+        margin: 7px 0;
+      }
+      .notice {
+        font-size: 0.86rem;
+        color: #65728a;
+      }
+      .hidden {
+        display: none !important;
+      }
+      @media (max-width: 850px) {
+        .layout {
+          padding: 16px;
+        }
+        .top-tabs-inner {
+          padding: 9px 16px;
+        }
+        .nav-list {
+          justify-content: flex-start;
+        }
+        .nav-btn {
+          flex: 0 0 auto;
+          padding: 8px 10px;
+          font-size: 0.8rem;
+        }
+        .top-inner {
+          padding: 10px 16px;
+        }
+        .logo {
+          width: 44px;
+          height: 44px;
+        }
+        .grid3 {
+          grid-template-columns: 1fr;
+        }
+        .hero {
+          border-radius: 20px;
+        }
+        .top-progress {
+          min-width: 0;
+          flex: 1;
+        }
+        .top-progress #progressText {
+          display: none;
+        }
+      }
+      @media (max-width: 540px) {
+        .layout {
+          padding: 12px;
+        }
+        .grid2,
+        .options {
+          grid-template-columns: 1fr;
+        }
+        .card {
+          padding: 17px;
+        }
+        .hero {
+          padding: 24px;
+        }
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+        .nav-btn {
+          padding: 7px 9px;
+          font-size: 0.76rem;
+        }
+        .nav-btn .num {
+          width: 22px;
+          height: 22px;
+        }
+        .top-pill-hide {
+          display: none;
+        }
+        .fullscreen-btn {
+          padding: 8px 9px;
+        }
+        .fullscreen-btn span {
+          display: none;
+        }
+        .tabs-caption {
+          font-size: 0.65rem;
+        }
+        .section-head {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *:before,
+        *:after {
+          scroll-behavior: auto !important;
+          animation: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="top-inner">
+        <img
+          class="logo"
+          src="assets/teacher-ed-logo.png"
+          alt="Teacher Ed Learning Hub official logo"
+        />
+        <div class="brand">
+          Teacher Ed Learning Hub<small>EDJAY · Teach. Lead. Inspire.</small>
+        </div>
+        <div class="top-spacer"></div>
+        <span class="pill top-pill-hide">INTERACTIVE LESSON</span
+        ><button
+          class="fullscreen-btn"
+          id="fullscreenBtn"
+          type="button"
+          aria-label="Enter full screen"
+          title="Full screen lesson"
+        >
+          ⛶ <span>Full screen</span>
+        </button>
+      </div>
+    </header>
+    <div class="top-tabs-wrap">
+      <div class="top-tabs-inner">
+        <div class="tabs-caption">
+          <span>YOUR LEARNING PATH</span>
+          <div class="top-progress">
+            <strong id="progressPct">0%</strong>
+            <div class="progress-line">
+              <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <span id="progressText">Start your learning journey.</span>
+          </div>
+        </div>
+        <nav
+          class="nav-list top-nav-list"
+          id="navList"
+          aria-label="Lesson navigation"
+        >
+          <button class="nav-btn active" data-section="engage">
+            <span class="num">01</span>Engage
+          </button>
+          <button class="nav-btn" data-section="learn">
+            <span class="num">02</span>Learn
+          </button>
+          <button class="nav-btn" data-section="explore">
+            <span class="num">03</span>Explore
+          </button>
+          <button class="nav-btn" data-section="practice">
+            <span class="num">04</span>Practice
+          </button>
+          <button class="nav-btn" data-section="think">
+            <span class="num">05</span>Think
+          </button>
+          <button class="nav-btn" data-section="check">
+            <span class="num">06</span>Check
+          </button>
+          <button class="nav-btn" data-section="master">
+            <span class="num">07</span>Master
+          </button>
+          <button class="nav-btn" data-section="reflect">
+            <span class="num">08</span>Reflect
+          </button>
+        </nav>
+      </div>
+    </div>
+    <div class="layout">
+      <main>
+        <section class="hero">
+          <div class="eyebrow">Computer Studies · Lesson 8</div>
+          <h1>Connected, Small<br />&amp; Wide</h1>
+          <p>
+            Discover how computer networks are classified, how devices
+            communicate, and why networks can connect a room, a city, or the
+            world.
+          </p>
+          <div class="hero-tags">
+            <span>Types of Networks</span><span>Protocols &amp; Packets</span
+            ><span>Learn by doing</span>
+          </div>
+          <div class="hero-actions">
+            <button class="btn btn-gold" onclick="showSection('engage')">
+              Start learning →</button
+            ><button class="btn btn-white" onclick="showSection('learn')">
+              Explore the concepts
+            </button>
+          </div>
+        </section>
+
+        <section class="section active" id="engage">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 1 · Engage + Connect</div>
+              <h2>Can your devices talk?</h2>
+              <p>Start with a familiar situation.</p>
+            </div>
+            <span class="tag">3–5 minutes</span>
+          </div>
+          <div class="card">
+            <h3>Imagine your classroom</h3>
+            <p>
+              Your teacher sends a document from a laptop to a printer. A
+              classmate opens a shared file on another computer. At home, your
+              phone connects to a Wi-Fi router.
+            </p>
+            <p>
+              <strong
+                >What makes these devices able to exchange information?</strong
+              >
+            </p>
+            <div class="options" id="hookOptions">
+              <button class="option" data-answer="network">
+                A computer network
+              </button>
+              <button class="option" data-answer="monitor">
+                A monitor by itself
+              </button>
+              <button class="option" data-answer="keyboard">
+                A keyboard only
+              </button>
+              <button class="option" data-answer="wallpaper">
+                A desktop wallpaper
+              </button>
+            </div>
+            <div class="feedback" id="hookFeedback" aria-live="polite"></div>
+            <div class="callout">
+              <strong>Today's mission:</strong> By the end, you should be able
+              to classify networks by scope, explain point-to-point networks,
+              and identify protocol, packet, header, payload, router/bridge, and
+              gateway.
+            </div>
+            <button
+              class="btn btn-gold"
+              onclick="
+                completeStage('engage');
+                showSection('learn');
+              "
+            >
+              Let's learn →
+            </button>
+          </div>
+          <div class="card">
+            <h3>Learning objectives</h3>
+            <ul class="list-check">
+              <li>
+                Identify scope, architecture, topology, and protocol as ways to
+                classify networks.
+              </li>
+              <li>
+                Distinguish LAN, WAN, MAN, and TAN using their coverage and
+                examples.
+              </li>
+              <li>
+                Explain point-to-point networking and its listed advantages and
+                disadvantages.
+              </li>
+              <li>
+                Describe packets, headers, payloads, routers/bridges, and
+                gateways.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id="learn">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 2 · Learn</div>
+              <h2>Meet the network concepts</h2>
+              <p>Short explanations, clear examples.</p>
+            </div>
+            <span class="tag">Explore each card</span>
+          </div>
+          <div class="grid2">
+            <article class="concept">
+              <div class="icon">📏</div>
+              <h3>Scope</h3>
+              <p>
+                The geographical distance or area covered by a network. Think:
+                one room, a building, a city, or a large region.
+              </p>
+              <span class="tag">Coverage</span>
+            </article>
+            <article class="concept">
+              <div class="icon">🏗️</div>
+              <h3>Architecture</h3>
+              <p>
+                Describes how a network is arranged and how resources are
+                shared. Examples include peer-to-peer and client/server.
+              </p>
+              <span class="tag">Organization</span>
+            </article>
+            <article class="concept">
+              <div class="icon">🔗</div>
+              <h3>Topology</h3>
+              <p>
+                The arrangement of connected devices. Common examples include
+                bus, star, ring, tree, mesh, and point-to-point.
+              </p>
+              <span class="tag">Arrangement</span>
+            </article>
+            <article class="concept">
+              <div class="icon">📨</div>
+              <h3>Protocol</h3>
+              <p>
+                A common set of rules and signals that computers use to transfer
+                data. TCP/IP is a widely used Internet protocol suite.
+              </p>
+              <span class="tag">Communication rules</span>
+            </article>
+          </div>
+          <div class="card">
+            <h3>Network scope: small to wide</h3>
+            <div class="grid2">
+              <div class="concept">
+                <h3>LAN · Local Area Network</h3>
+                <p>
+                  Connects devices within a relatively small area, such as a
+                  computer laboratory, home, or building.
+                </p>
+              </div>
+              <div class="concept">
+                <h3>TAN · Tiny Area Network</h3>
+                <p>
+                  The supplied lesson describes a very small LAN, often around
+                  two to four nodes, suitable for a home or small office space.
+                </p>
+              </div>
+              <div class="concept">
+                <h3>MAN · Metropolitan Area Network</h3>
+                <p>
+                  Connects networks across a city or metropolitan area. Examples
+                  in the lesson include offices, a university campus,
+                  residential areas, and government buildings.
+                </p>
+              </div>
+              <div class="concept">
+                <h3>WAN · Wide Area Network</h3>
+                <p>
+                  Connects networks across large geographical areas, potentially
+                  spanning cities, states, or countries. The lesson gives the
+                  Internet as an example.
+                </p>
+              </div>
+            </div>
+            <div class="callout">
+              <strong>Memory cue:</strong> LAN = local area; TAN = tiny area in
+              your lesson; MAN = metropolitan/city area; WAN = wide area.
+            </div>
+          </div>
+          <div class="card">
+            <h3>How a packet travels</h3>
+            <p>
+              Network data can be divided into packets. A packet contains a
+              header and a payload.
+            </p>
+            <div class="diagram">
+              <div class="node-row">
+                <div class="node">Sender</div>
+                <span class="arrow">→</span>
+                <div class="node main">PACKET</div>
+                <span class="arrow">→</span>
+                <div class="node">Receiver</div>
+              </div>
+              <div class="grid2" style="margin-top: 15px">
+                <div class="concept">
+                  <h3>Header</h3>
+                  <p>
+                    Contains addressing and identification information, such as
+                    sender address, destination address, and packet identifier.
+                  </p>
+                </div>
+                <div class="concept">
+                  <h3>Payload</h3>
+                  <p>Contains the actual data being sent.</p>
+                </div>
+              </div>
+            </div>
+            <p>
+              <strong>Router/bridge:</strong> The supplied lesson says LANs
+              using the same protocols can be connected using a router or
+              bridge. <strong>Gateway:</strong> A device that links networks
+              using different protocols by translating between them.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Direct point-to-point network</h3>
+            <div class="diagram">
+              <div class="node-row">
+                <div class="node">Computer A</div>
+                <span class="arrow">⇄</span>
+                <div class="node main">Dedicated link</div>
+                <span class="arrow">⇄</span>
+                <div class="node">Computer B</div>
+              </div>
+            </div>
+            <p>
+              Only two computers are connected over each communication channel.
+            </p>
+            <div class="grid2">
+              <div class="concept">
+                <h3>Advantages</h3>
+                <p>
+                  Flexible, exclusive, and secure. The communication channel is
+                  not shared with other pairs.
+                </p>
+              </div>
+              <div class="concept">
+                <h3>Disadvantages</h3>
+                <p>
+                  Connections and hardware costs can grow quickly as more
+                  computers are added. Long-distance connections may be
+                  difficult to manage.
+                </p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn btn-gold"
+            onclick="
+              completeStage('learn');
+              showSection('explore');
+            "
+          >
+            Explore your understanding →
+          </button>
+        </section>
+
+        <section class="section" id="explore">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 3 · Explore</div>
+              <h2>Choose the right network</h2>
+              <p>Read each situation and decide which scope fits best.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Scenario lab</h3>
+            <p id="scenarioText">
+              A computer laboratory connects desktop computers and a printer in
+              the same room.
+            </p>
+            <div class="options" id="scenarioOptions">
+              <button class="option" data-answer="LAN">LAN</button
+              ><button class="option" data-answer="MAN">MAN</button
+              ><button class="option" data-answer="WAN">WAN</button
+              ><button class="option" data-answer="TAN">TAN</button>
+            </div>
+            <div
+              class="feedback"
+              id="scenarioFeedback"
+              aria-live="polite"
+            ></div>
+            <div class="activity-footer">
+              <span class="score-chip" id="scenarioCount">Scenario 1 of 4</span
+              ><button class="btn btn-outline" id="nextScenario">
+                Next scenario →
+              </button>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Flashcard review</h3>
+            <p class="small">
+              Select the card to reveal the explanation. Use the arrows to move
+              through the key terms.
+            </p>
+            <div
+              class="flashcard"
+              id="flashcard"
+              role="button"
+              tabindex="0"
+              aria-label="Reveal flashcard answer"
+            >
+              <div>
+                <strong id="flashTerm">Protocol</strong
+                ><span id="flashDef"
+                  >Tap or press Enter to reveal the definition.</span
+                >
+              </div>
+            </div>
+            <div class="activity-footer">
+              <button class="btn btn-outline" id="flashPrev">← Previous</button
+              ><span class="score-chip" id="flashCount">1 / 6</span
+              ><button class="btn btn-outline" id="flashNext">Next →</button>
+            </div>
+          </div>
+          <button
+            class="btn btn-gold"
+            onclick="
+              completeStage('explore');
+              showSection('practice');
+            "
+          >
+            Go to practice →
+          </button>
+        </section>
+
+        <section class="section" id="practice">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 4 · Practice</div>
+              <h2>Network skills challenge</h2>
+              <p>Answer each question. Feedback explains the reason.</p>
+            </div>
+            <span class="tag">Retry encouraged</span>
+          </div>
+          <div class="card">
+            <div class="stepbar" id="practiceSteps"></div>
+            <div id="practiceQuestion"></div>
+            <div class="activity-footer">
+              <span class="score-chip" id="practiceCount">Question 1</span
+              ><button class="btn btn-gold" id="practiceNext">
+                Check answer
+              </button>
+            </div>
+            <div
+              class="feedback"
+              id="practiceFeedback"
+              aria-live="polite"
+            ></div>
+            <div class="notice" style="margin-top: 8px">
+              You can change your selection before checking. You need to answer
+              before moving to the next question.
+            </div>
+          </div>
+          <div class="result" id="practiceResult">
+            <div class="mini-label">Practice complete</div>
+            <div class="result-score" id="practiceScore">0 / 5</div>
+            <p id="practiceMessage"></p>
+            <button class="btn btn-outline" onclick="resetPractice()">
+              Try again
+            </button>
+          </div>
+        </section>
+
+        <section class="section" id="think">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 5 · Think & Apply</div>
+              <h2>Design a network for a school</h2>
+              <p>
+                There can be more than one sensible design. Explain your choice.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Challenge brief</h3>
+            <p>
+              A school has a computer laboratory, a library, and an
+              administration office in one campus. A second campus is in another
+              city. Staff need to share selected files between locations.
+            </p>
+            <p>
+              <strong>Which network types could be useful, and why?</strong>
+            </p>
+            <textarea
+              class="answer-input"
+              id="thinkAnswer"
+              rows="5"
+              placeholder="I would use a ... within each building because ... A ... could connect the two campuses because ..."
+            ></textarea>
+            <div class="activity-footer">
+              <span class="notice"
+                >Use the terms LAN, WAN, router/bridge, or gateway where
+                relevant.</span
+              ><button class="btn btn-gold" id="thinkReveal">
+                Compare with a sample response
+              </button>
+            </div>
+            <div class="callout hidden" id="thinkSample">
+              <strong>Sample reasoning:</strong> A LAN could connect devices
+              within each building or campus network. A WAN could connect the
+              two campuses across cities. Routers can forward traffic between
+              networks; a gateway is relevant when different protocols need
+              translation. The exact design depends on infrastructure, security,
+              and network requirements.
+            </div>
+          </div>
+          <button
+            class="btn btn-gold"
+            onclick="
+              completeStage('think');
+              showSection('check');
+            "
+          >
+            Ready for the check →
+          </button>
+        </section>
+
+        <section class="section" id="check">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 6 · Check</div>
+              <h2>Knowledge check</h2>
+              <p>Show what you understand independently.</p>
+            </div>
+            <span class="tag">5 questions</span>
+          </div>
+          <div class="card">
+            <div class="stepbar" id="checkSteps"></div>
+            <div id="checkQuestion"></div>
+            <div class="activity-footer">
+              <span class="score-chip" id="checkCount">Question 1 of 5</span
+              ><button class="btn btn-gold" id="checkNext">
+                Submit answer
+              </button>
+            </div>
+            <div class="feedback" id="checkFeedback" aria-live="polite"></div>
+          </div>
+          <div class="result" id="checkResult">
+            <div class="mini-label">Your result</div>
+            <div class="result-score" id="checkScore">0 / 5</div>
+            <p id="checkMessage"></p>
+            <p class="small" id="checkAdvice"></p>
+            <button class="btn btn-outline" onclick="resetCheck()">
+              Retake check</button
+            ><button class="btn btn-gold" onclick="showSection('master')">
+              Continue to mastery →
+            </button>
+          </div>
+        </section>
+
+        <section class="section" id="master">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">Stage 7 · Master</div>
+              <h2>Final mastery mission</h2>
+              <p>Use the concepts in new situations.</p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Match the situation to the best concept</h3>
+            <p class="small">
+              Select a situation, then select the matching concept. Correct
+              matches turn green.
+            </p>
+            <div class="match-grid" id="matchGrid"></div>
+            <div class="activity-footer">
+              <span class="score-chip" id="matchCount">0 of 4 matched</span
+              ><button class="btn btn-outline" id="matchReset">
+                Reset matching
+              </button>
+            </div>
+            <div class="feedback" id="matchFeedback" aria-live="polite"></div>
+          </div>
+          <div class="card">
+            <h3>Mastery criteria</h3>
+            <ul class="list-check">
+              <li>Classify a network by its scope.</li>
+              <li>Distinguish scope, architecture, topology, and protocol.</li>
+              <li>Explain a packet's header and payload.</li>
+              <li>Choose an appropriate networking device for a scenario.</li>
+            </ul>
+            <div class="callout">
+              Aim to answer accurately and explain your reasoning. If you miss a
+              match, review the related concept before trying again.
+            </div>
+            <button
+              class="btn btn-gold"
+              onclick="
+                completeStage('master');
+                showSection('reflect');
+              "
+            >
+              Finish lesson →
+            </button>
+          </div>
+        </section>
+
+        <section class="section" id="reflect">
+          <div class="section-head">
+            <div>
+              <div class="mini-label">
+                Stages 8–12 · Review, Reflect & Celebrate
+              </div>
+              <h2>Look back at your learning</h2>
+              <p>
+                Learning improves when you notice what you know and what you
+                still need to practise.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Quick review</h3>
+            <div class="grid2">
+              <div class="concept">
+                <h3>Scope</h3>
+                <p>How far or wide the network reaches.</p>
+              </div>
+              <div class="concept">
+                <h3>Architecture</h3>
+                <p>How the network is organized and shares resources.</p>
+              </div>
+              <div class="concept">
+                <h3>Topology</h3>
+                <p>How devices are arranged or connected.</p>
+              </div>
+              <div class="concept">
+                <h3>Protocol</h3>
+                <p>Rules used to communicate and transfer data.</p>
+              </div>
+              <div class="concept">
+                <h3>Packet</h3>
+                <p>A block of data sent over a network.</p>
+              </div>
+              <div class="concept">
+                <h3>Header / Payload</h3>
+                <p>
+                  Header gives addressing/identification information; payload
+                  holds the data.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Reflection</h3>
+            <label for="reflection"
+              >What concept do you understand best, and what do you want to
+              practise again?</label
+            ><textarea
+              class="answer-input"
+              id="reflection"
+              rows="3"
+              placeholder="I understand ... I want to practise ..."
+            ></textarea>
+            <div class="activity-footer">
+              <span class="notice"
+                >Your reflection stays in this page and is not sent to a
+                server.</span
+              ><button class="btn btn-gold" id="finishLesson">
+                Complete lesson
+              </button>
+            </div>
+          </div>
+          <div class="result" id="finalResult">
+            <div style="font-size: 2rem">🎓</div>
+            <div class="mini-label">Teacher Ed Learning Hub</div>
+            <h2>Learning journey complete!</h2>
+            <p id="finalSummary">You completed the lesson stages.</p>
+            <p>
+              Keep practising. Real mastery grows when you can explain a concept
+              and use it in a new situation.
+            </p>
+            <button class="btn btn-outline" onclick="window.print()">
+              Print lesson summary</button
+            ><button class="btn btn-gold" onclick="showSection('engage')">
+              Review from the beginning
+            </button>
+          </div>
+        </section>
+        <footer class="footer">
+          <strong>Teacher Ed Learning Hub</strong><br />EDJAY · Teach. Lead.
+          Inspire.<br /><span
+            >Interactive lesson based on the supplied “Lesson 8: Connected,
+            Small, &amp; Wide” reference pages.</span
+          >
+        </footer>
+      </main>
+    </div>
+    <script>
+      const fullscreenBtn = document.getElementById("fullscreenBtn");
+      async function toggleFullscreen() {
+        try {
+          if (!document.fullscreenElement) {
+            await document.documentElement.requestFullscreen();
+            document.body.classList.add("fullscreen-mode");
+            fullscreenBtn.innerHTML = "⤢ <span>Exit full screen</span>";
+            fullscreenBtn.setAttribute("aria-label", "Exit full screen");
+          } else {
+            await document.exitFullscreen();
+          }
+        } catch (err) {
+          document.body.classList.toggle("fullscreen-mode");
+          const active = document.body.classList.contains("fullscreen-mode");
+          fullscreenBtn.innerHTML = active
+            ? "⤢ <span>Exit expanded view</span>"
+            : "⛶ <span>Full screen</span>";
+          fullscreenBtn.setAttribute(
+            "aria-label",
+            active ? "Exit expanded view" : "Enter full screen",
+          );
+        }
+      }
+      fullscreenBtn.addEventListener("click", toggleFullscreen);
+      document.addEventListener("fullscreenchange", () => {
+        const active = !!document.fullscreenElement;
+        document.body.classList.toggle("fullscreen-mode", active);
+        fullscreenBtn.innerHTML = active
+          ? "⤢ <span>Exit full screen</span>"
+          : "⛶ <span>Full screen</span>";
+        fullscreenBtn.setAttribute(
+          "aria-label",
+          active ? "Exit full screen" : "Enter full screen",
+        );
+      });
+
+      const stageOrder = [
+        "engage",
+        "learn",
+        "explore",
+        "practice",
+        "think",
+        "check",
+        "master",
+        "reflect",
+      ];
+      const completed = new Set();
+      function showSection(id) {
+        document
+          .querySelectorAll(".section")
+          .forEach((s) => s.classList.toggle("active", s.id === id));
+        document
+          .querySelectorAll(".nav-btn")
+          .forEach((b) =>
+            b.classList.toggle("active", b.dataset.section === id),
+          );
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        if (id === "practice" && !practiceBuilt) buildPractice();
+        if (id === "check" && !checkBuilt) buildCheck();
+        if (id === "master" && !matchBuilt) buildMatches();
+      }
+      function completeStage(id) {
+        completed.add(id);
+        updateProgress();
+      }
+      function updateProgress() {
+        const n = completed.size;
+        document.getElementById("progressPct").textContent =
+          Math.round((n / stageOrder.length) * 100) + "%";
+        document.getElementById("progressFill").style.width =
+          (n / stageOrder.length) * 100 + "%";
+        document.getElementById("progressText").textContent =
+          n === stageOrder.length
+            ? "All lesson stages visited!"
+            : `${n} of ${stageOrder.length} learning stages completed.`;
+      }
+      document
+        .querySelectorAll(".nav-btn")
+        .forEach((b) =>
+          b.addEventListener("click", () => showSection(b.dataset.section)),
+        );
+      document.querySelectorAll("#hookOptions .option").forEach((b) =>
+        b.addEventListener("click", () => {
+          document
+            .querySelectorAll("#hookOptions .option")
+            .forEach((x) => x.classList.remove("selected", "correct", "wrong"));
+          b.classList.add(
+            "selected",
+            b.dataset.answer === "network" ? "correct" : "wrong",
+          );
+          const ok = b.dataset.answer === "network";
+          document.getElementById("hookFeedback").className =
+            "feedback " + (ok ? "good" : "bad");
+          document.getElementById("hookFeedback").textContent = ok
+            ? "Correct! A network connects devices so they can exchange data and share resources."
+            : "Not quite. Think about what lets different devices communicate and share resources.";
+          if (ok) completeStage("engage");
+        }),
+      );
+      const scenarios = [
+        {
+          text: "A computer laboratory connects desktop computers and a printer in the same room.",
+          answer: "LAN",
+          why: "A LAN connects devices in a limited area such as a room, lab, home, or building.",
+        },
+        {
+          text: "Several buildings and offices across one metropolitan city are connected.",
+          answer: "MAN",
+          why: "A MAN connects networks across a city or metropolitan area.",
+        },
+        {
+          text: "Networks in several countries exchange information over long distances.",
+          answer: "WAN",
+          why: "A WAN covers a large geographical area, potentially spanning countries.",
+        },
+        {
+          text: "A very small network with a few devices in a small home office, as described in the lesson.",
+          answer: "TAN",
+          why: "The supplied lesson calls this a Tiny Area Network (TAN), a small LAN for a home or small office.",
+        },
+      ];
+      let scenarioIndex = 0;
+      function renderScenario() {
+        const s = scenarios[scenarioIndex];
+        document.getElementById("scenarioText").textContent = s.text;
+        document.getElementById("scenarioCount").textContent =
+          `Scenario ${scenarioIndex + 1} of ${scenarios.length}`;
+        document.getElementById("scenarioFeedback").textContent = "";
+        document.getElementById("scenarioFeedback").className = "feedback";
+        document.querySelectorAll("#scenarioOptions .option").forEach((b) => {
+          b.className = "option";
+          b.onclick = () => {
+            document
+              .querySelectorAll("#scenarioOptions .option")
+              .forEach((x) =>
+                x.classList.remove("selected", "correct", "wrong"),
+              );
+            b.classList.add(
+              "selected",
+              b.dataset.answer === s.answer ? "correct" : "wrong",
+            );
+            const ok = b.dataset.answer === s.answer;
+            const f = document.getElementById("scenarioFeedback");
+            f.className = "feedback " + (ok ? "good" : "bad");
+            f.textContent = (ok ? "Correct. " : "Try again. ") + s.why;
+          };
+        });
+      }
+      document.getElementById("nextScenario").addEventListener("click", () => {
+        scenarioIndex = (scenarioIndex + 1) % scenarios.length;
+        renderScenario();
+      });
+      renderScenario();
+      const flashcards = [
+        [
+          "Protocol",
+          "A common set of rules and signals for transferring data.",
+        ],
+        ["Scope", "The distance or area covered by a network."],
+        ["Topology", "The way devices are arranged or connected."],
+        [
+          "Architecture",
+          "How a network is organized and how resources are shared.",
+        ],
+        [
+          "Header",
+          "Packet information such as sender, destination, and identifier.",
+        ],
+        ["Payload", "The data being sent inside a packet."],
+      ];
+      let flashIndex = 0,
+        flashRevealed = false;
+      function renderFlash() {
+        document.getElementById("flashTerm").textContent =
+          flashcards[flashIndex][0];
+        document.getElementById("flashDef").textContent = flashRevealed
+          ? flashcards[flashIndex][1]
+          : "Tap or press Enter to reveal the definition.";
+        document.getElementById("flashCount").textContent =
+          `${flashIndex + 1} / ${flashcards.length}`;
+      }
+      function revealFlash() {
+        flashRevealed = !flashRevealed;
+        renderFlash();
+      }
+      document
+        .getElementById("flashcard")
+        .addEventListener("click", revealFlash);
+      document.getElementById("flashcard").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          revealFlash();
+        }
+      });
+      document.getElementById("flashPrev").onclick = () => {
+        flashIndex = (flashIndex + flashcards.length - 1) % flashcards.length;
+        flashRevealed = false;
+        renderFlash();
+      };
+      document.getElementById("flashNext").onclick = () => {
+        flashIndex = (flashIndex + 1) % flashcards.length;
+        flashRevealed = false;
+        renderFlash();
+      };
+      renderFlash();
+      const practiceQs = [
+        {
+          q: "Which classification describes the geographical area a network covers?",
+          opts: ["Scope", "Topology", "Protocol", "Payload"],
+          a: 0,
+          why: "Scope refers to the distance or area covered by a network.",
+        },
+        {
+          q: "Which term describes how computers are arranged?",
+          opts: ["Header", "Topology", "Gateway", "Payload"],
+          a: 1,
+          why: "Topology describes the arrangement of network devices.",
+        },
+        {
+          q: "What does a packet payload contain?",
+          opts: [
+            "Only the destination address",
+            "The actual data being sent",
+            "The network name only",
+            "The cable type",
+          ],
+          a: 1,
+          why: "The payload contains the data being sent. Addressing and identification information is in the header.",
+        },
+        {
+          q: "Which network type is designed to cover a city or metropolitan area?",
+          opts: ["LAN", "TAN", "MAN", "PAN"],
+          a: 2,
+          why: "MAN stands for Metropolitan Area Network and is associated with a city or metropolitan area.",
+        },
+        {
+          q: "According to the lesson, which device can link networks using different protocols by translating between them?",
+          opts: ["Monitor", "Gateway", "Keyboard", "Repeater only"],
+          a: 1,
+          why: "The lesson defines a gateway as a device that links networks by translating between different protocols.",
+        },
+      ];
+      let practiceBuilt = false,
+        practiceIndex = 0,
+        practiceAnswers = [],
+        practiceChecked = false;
+      function buildPractice() {
+        practiceBuilt = true;
+        practiceIndex = 0;
+        practiceAnswers = Array(practiceQs.length).fill(null);
+        practiceChecked = false;
+        renderPractice();
+      }
+      function renderPractice() {
+        const q = practiceQs[practiceIndex];
+        document.getElementById("practiceCount").textContent =
+          `Question ${practiceIndex + 1} of ${practiceQs.length}`;
+        document.getElementById("practiceSteps").innerHTML = practiceQs
+          .map(
+            (_, i) =>
+              `<span class="${i <= practiceIndex ? "done" : ""}"></span>`,
+          )
+          .join("");
+        document.getElementById("practiceQuestion").innerHTML =
+          `<div class="question"><p>${q.q}</p><div class="options">${q.opts.map((o, i) => `<button class="option ${practiceAnswers[practiceIndex] === i ? "selected" : ""}" data-i="${i}">${o}</button>`).join("")}</div></div>`;
+        document.querySelectorAll("#practiceQuestion .option").forEach(
+          (b) =>
+            (b.onclick = () => {
+              if (practiceChecked) return;
+              practiceAnswers[practiceIndex] = Number(b.dataset.i);
+              renderPractice();
+            }),
+        );
+        document.getElementById("practiceFeedback").textContent = "";
+        document.getElementById("practiceFeedback").className = "feedback";
+        document.getElementById("practiceNext").textContent = practiceChecked
+          ? practiceIndex === practiceQs.length - 1
+            ? "See result"
+            : "Next question →"
+          : "Check answer";
+      }
+      document.getElementById("practiceNext").onclick = () => {
+        if (!practiceChecked) {
+          if (practiceAnswers[practiceIndex] === null) {
+            document.getElementById("practiceFeedback").textContent =
+              "Choose an answer before checking.";
+            document.getElementById("practiceFeedback").className =
+              "feedback bad";
+            return;
+          }
+          practiceChecked = true;
+          const q = practiceQs[practiceIndex],
+            ok = practiceAnswers[practiceIndex] === q.a;
+          document.getElementById("practiceFeedback").textContent =
+            (ok ? "Correct! " : "Review this: ") + q.why;
+          document.getElementById("practiceFeedback").className =
+            "feedback " + (ok ? "good" : "bad");
+          document
+            .querySelectorAll("#practiceQuestion .option")
+            .forEach((b, i) => {
+              if (i === q.a) b.classList.add("correct");
+              else if (i === practiceAnswers[practiceIndex])
+                b.classList.add("wrong");
+            });
+          document.getElementById("practiceNext").textContent =
+            practiceIndex === practiceQs.length - 1
+              ? "See result"
+              : "Next question →";
+          return;
+        }
+        if (practiceIndex < practiceQs.length - 1) {
+          practiceIndex++;
+          practiceChecked = false;
+          renderPractice();
+        } else {
+          const score = practiceAnswers.reduce(
+            (n, a, i) => n + (a === practiceQs[i].a ? 1 : 0),
+            0,
+          );
+          document.getElementById("practiceResult").classList.add("show");
+          document.getElementById("practiceScore").textContent =
+            `${score} / ${practiceQs.length}`;
+          document.getElementById("practiceMessage").textContent =
+            score >= 4
+              ? "Strong work. Review any missed concepts, then continue."
+              : "Good effort. Revisit the concept cards and try again to strengthen your understanding.";
+          completeStage("practice");
+        }
+      };
+      function resetPractice() {
+        document.getElementById("practiceResult").classList.remove("show");
+        buildPractice();
+      }
+      const checkQs = [
+        {
+          q: "Which network type commonly connects computers within one building?",
+          opts: ["LAN", "MAN", "WAN", "Internet backbone"],
+          a: 0,
+          why: "A LAN covers a relatively small local area, such as a room, laboratory, home, or building.",
+        },
+        {
+          q: "Which term means the rules used by networked computers to transfer data?",
+          opts: ["Scope", "Protocol", "Topology", "Architecture"],
+          a: 1,
+          why: "A protocol defines communication rules and signals.",
+        },
+        {
+          q: "Which part of a packet contains the sender address, destination address, and packet identifier in the supplied lesson?",
+          opts: ["Payload", "Header", "Monitor", "Topology"],
+          a: 1,
+          why: "The header carries addressing and packet-identification information.",
+        },
+        {
+          q: "The Internet is presented in the supplied lesson as an example of which network type?",
+          opts: ["TAN", "LAN", "WAN", "Direct point-to-point only"],
+          a: 2,
+          why: "The reference identifies the Internet as an example of a Wide Area Network (WAN).",
+        },
+        {
+          q: "Which statement best describes a direct point-to-point network?",
+          opts: [
+            "Every device shares one channel with all others",
+            "Only two computers are connected over each communication channel",
+            "It always covers several countries",
+            "It translates all protocols automatically",
+          ],
+          a: 1,
+          why: "A point-to-point communication channel directly connects two endpoints.",
+        },
+      ];
+      let checkBuilt = false,
+        checkIndex = 0,
+        checkAnswers = [],
+        checkChecked = false;
+      function buildCheck() {
+        checkBuilt = true;
+        checkIndex = 0;
+        checkAnswers = Array(checkQs.length).fill(null);
+        checkChecked = false;
+        document.getElementById("checkResult").classList.remove("show");
+        renderCheck();
+      }
+      function renderCheck() {
+        const q = checkQs[checkIndex];
+        document.getElementById("checkCount").textContent =
+          `Question ${checkIndex + 1} of ${checkQs.length}`;
+        document.getElementById("checkSteps").innerHTML = checkQs
+          .map(
+            (_, i) => `<span class="${i <= checkIndex ? "done" : ""}"></span>`,
+          )
+          .join("");
+        document.getElementById("checkQuestion").innerHTML =
+          `<div class="question"><p>${q.q}</p><div class="options">${q.opts.map((o, i) => `<button class="option ${checkAnswers[checkIndex] === i ? "selected" : ""}" data-i="${i}">${o}</button>`).join("")}</div></div>`;
+        document.querySelectorAll("#checkQuestion .option").forEach(
+          (b) =>
+            (b.onclick = () => {
+              if (checkChecked) return;
+              checkAnswers[checkIndex] = Number(b.dataset.i);
+              renderCheck();
+            }),
+        );
+        document.getElementById("checkFeedback").textContent = "";
+        document.getElementById("checkFeedback").className = "feedback";
+        document.getElementById("checkNext").textContent = checkChecked
+          ? checkIndex === checkQs.length - 1
+            ? "View results"
+            : "Next question →"
+          : "Submit answer";
+      }
+      document.getElementById("checkNext").onclick = () => {
+        if (!checkChecked) {
+          if (checkAnswers[checkIndex] === null) {
+            document.getElementById("checkFeedback").textContent =
+              "Select an answer before submitting.";
+            document.getElementById("checkFeedback").className = "feedback bad";
+            return;
+          }
+          checkChecked = true;
+          const q = checkQs[checkIndex],
+            ok = checkAnswers[checkIndex] === q.a;
+          document.getElementById("checkFeedback").textContent =
+            (ok ? "Correct. " : "Not quite. ") + q.why;
+          document.getElementById("checkFeedback").className =
+            "feedback " + (ok ? "good" : "bad");
+          document
+            .querySelectorAll("#checkQuestion .option")
+            .forEach((b, i) => {
+              if (i === q.a) b.classList.add("correct");
+              else if (i === checkAnswers[checkIndex]) b.classList.add("wrong");
+            });
+          document.getElementById("checkNext").textContent =
+            checkIndex === checkQs.length - 1
+              ? "View results"
+              : "Next question →";
+          return;
+        }
+        if (checkIndex < checkQs.length - 1) {
+          checkIndex++;
+          checkChecked = false;
+          renderCheck();
+        } else {
+          const score = checkAnswers.reduce(
+            (n, a, i) => n + (a === checkQs[i].a ? 1 : 0),
+            0,
+          );
+          document.getElementById("checkResult").classList.add("show");
+          document.getElementById("checkScore").textContent =
+            `${score} / ${checkQs.length}`;
+          document.getElementById("checkMessage").textContent =
+            score >= 4
+              ? "You demonstrated strong understanding of the core concepts."
+              : "You have a starting point. Review the topics named in the feedback and retake the check.";
+          document.getElementById("checkAdvice").textContent =
+            score >= 4
+              ? "Continue to the mastery mission and explain your reasoning aloud."
+              : "Suggested review: network scope, packet structure, and point-to-point networks.";
+          completeStage("check");
+        }
+      };
+      function resetCheck() {
+        buildCheck();
+      }
+      document.getElementById("thinkReveal").onclick = () =>
+        document.getElementById("thinkSample").classList.toggle("hidden");
+      const matchPairs = [
+        { left: "A school laboratory in one building", right: "LAN" },
+        { left: "Networks across a metropolitan city", right: "MAN" },
+        { left: "Networks across several countries", right: "WAN" },
+        { left: "Translates between different protocols", right: "Gateway" },
+      ];
+      let matchBuilt = false,
+        matchChoice = null,
+        matched = new Set();
+      function buildMatches() {
+        matchBuilt = true;
+        matched = new Set();
+        matchChoice = null;
+        renderMatches();
+      }
+      function renderMatches() {
+        const left = matchPairs.map((p, i) => ({
+          label: p.left,
+          id: "l" + i,
+          side: "l",
+          pair: i,
+        }));
+        const right = matchPairs.map((p, i) => ({
+          label: p.right,
+          id: "r" + i,
+          side: "r",
+          pair: i,
+        }));
+        const shuffledRight = [...right].sort((a, b) =>
+          a.label.localeCompare(b.label),
+        );
+        const items = [...left, ...shuffledRight];
+        document.getElementById("matchGrid").innerHTML = items
+          .map(
+            (it) =>
+              `<button class="match-item ${matched.has(it.pair) ? "done" : ""} ${matchChoice && matchChoice.id === it.id ? "chosen" : ""}" data-id="${it.id}" data-pair="${it.pair}" data-side="${it.side}" ${matched.has(it.pair) ? "disabled" : ""}>${it.label}</button>`,
+          )
+          .join("");
+        document.getElementById("matchCount").textContent =
+          `${matched.size} of ${matchPairs.length} matched`;
+        document.querySelectorAll("#matchGrid .match-item").forEach(
+          (b) =>
+            (b.onclick = () => {
+              const item = {
+                id: b.dataset.id,
+                pair: Number(b.dataset.pair),
+                side: b.dataset.side,
+                label: b.textContent,
+              };
+              if (!matchChoice) {
+                matchChoice = item;
+                document.getElementById("matchFeedback").textContent =
+                  "Now select its matching concept or situation.";
+                document.getElementById("matchFeedback").className = "feedback";
+                renderMatches();
+                return;
+              }
+              if (matchChoice.id === item.id) {
+                matchChoice = null;
+                renderMatches();
+                return;
+              }
+              if (
+                matchChoice.side !== item.side &&
+                matchChoice.pair === item.pair
+              ) {
+                matched.add(item.pair);
+                document.getElementById("matchFeedback").textContent =
+                  "Correct match!";
+                document.getElementById("matchFeedback").className =
+                  "feedback good";
+              } else {
+                document.getElementById("matchFeedback").textContent =
+                  "Not a match yet. Think about the coverage area or function of the device.";
+                document.getElementById("matchFeedback").className =
+                  "feedback bad";
+              }
+              matchChoice = null;
+              renderMatches();
+              if (matched.size === matchPairs.length) {
+                document.getElementById("matchFeedback").textContent =
+                  "Excellent! You matched all four correctly.";
+                document.getElementById("matchFeedback").className =
+                  "feedback good";
+                completeStage("master");
+              }
+            }),
+        );
+      }
+      document.getElementById("matchReset").onclick = () => buildMatches();
+      document.getElementById("finishLesson").onclick = () => {
+        completeStage("reflect");
+        completeStage("engage");
+        completeStage("learn");
+        completeStage("explore");
+        completeStage("practice");
+        completeStage("think");
+        completeStage("check");
+        completeStage("master");
+        document.getElementById("finalResult").classList.add("show");
+        document.getElementById("finalSummary").textContent =
+          "You visited the lesson stages and reached the reflection step. Use your practice and knowledge-check scores to decide what to review next.";
+        updateProgress();
+        document
+          .getElementById("finalResult")
+          .scrollIntoView({ behavior: "smooth", block: "center" });
+      };
+    </script>
+  </body>
+</html>
