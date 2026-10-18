@@ -1,0 +1,964 @@
+<!doctype html>
+<html lang="fil">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Filipino 3 | Paghihinuha at Hudyat ng Pagkakasunod-sunod</title>
+    <link rel="icon" type="image/png" href="assets/BrandLogo.png" />
+    <style>
+      :root {
+        --navy: #12336b;
+        --blue: #2463ad;
+        --sky: #eaf4ff;
+        --gold: #ffc94a;
+        --ink: #17243a;
+        --green: #14845c;
+        --pink: #ef6488;
+        --purple: #7657c8;
+        --paper: #fff;
+        --line: #d8e3f2;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f2f6fc;
+        color: var(--ink);
+        font-family: Arial, "Trebuchet MS", sans-serif;
+        line-height: 1.55;
+      }
+      button,
+      select {
+        font: inherit;
+      }
+      button {
+        cursor: pointer;
+        border: 0;
+        border-radius: 14px;
+        padding: 12px 17px;
+        font-weight: 700;
+        transition: 0.15s;
+      }
+      button:hover {
+        transform: translateY(-1px);
+      }
+      .top {
+        background: linear-gradient(120deg, #102b5c, #2463ad);
+        color: white;
+        padding: 12px max(16px, calc((100% - 1180px) / 2));
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand img {
+        width: 54px;
+        height: 54px;
+        object-fit: contain;
+        background: #fff;
+        border-radius: 50%;
+        padding: 3px;
+      }
+      .brand strong {
+        display: block;
+        font-size: 1.02rem;
+      }
+      .brand small {
+        opacity: 0.85;
+      }
+      .top-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .top-actions button {
+        background: #fff;
+        color: var(--navy);
+        padding: 9px 13px;
+      }
+      .hero {
+        background: linear-gradient(135deg, #ddecff, #fff6d9);
+        padding: 30px 16px 24px;
+        text-align: center;
+        border-bottom: 1px solid var(--line);
+      }
+      .hero h1 {
+        font-size: clamp(1.7rem, 4vw, 2.8rem);
+        line-height: 1.15;
+        color: var(--navy);
+        margin: 0 0 8px;
+      }
+      .hero p {
+        max-width: 800px;
+        margin: 8px auto;
+      }
+      .pill {
+        display: inline-block;
+        border-radius: 99px;
+        background: #fff;
+        padding: 5px 12px;
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 0.88rem;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: auto;
+        padding: 22px 16px 40px;
+      }
+      .lesson-select {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-bottom: 20px;
+      }
+      .lesson-card {
+        background: #fff;
+        border: 2px solid transparent;
+        border-radius: 20px;
+        padding: 18px;
+        box-shadow: 0 7px 20px #1d3c6410;
+        text-align: left;
+      }
+      .lesson-card.active {
+        border-color: var(--gold);
+        box-shadow: 0 0 0 3px #ffc94a35;
+      }
+      .lesson-card .emoji {
+        font-size: 2rem;
+      }
+      .lesson-card h2 {
+        margin: 5px 0;
+        color: var(--navy);
+        font-size: 1.2rem;
+      }
+      .lesson-card p {
+        margin: 4px 0 12px;
+      }
+      .primary {
+        background: var(--navy);
+        color: #fff;
+      }
+      .secondary {
+        background: #e6effc;
+        color: var(--navy);
+      }
+      .gold {
+        background: var(--gold);
+        color: #24304a;
+      }
+      .content {
+        display: grid;
+        grid-template-columns: 245px minmax(0, 1fr);
+        gap: 18px;
+        align-items: start;
+      }
+      .side {
+        position: sticky;
+        top: 12px;
+        background: #fff;
+        border-radius: 20px;
+        padding: 15px;
+        box-shadow: 0 6px 22px #1d3c6410;
+      }
+      .side h3 {
+        margin: 0 0 10px;
+        color: var(--navy);
+      }
+      .navitem {
+        display: block;
+        width: 100%;
+        text-align: left;
+        background: transparent;
+        color: #30415d;
+        padding: 10px;
+        border-radius: 10px;
+        margin: 2px 0;
+      }
+      .navitem.active,
+      .navitem:hover {
+        background: var(--sky);
+        color: var(--navy);
+      }
+      .progressbox {
+        margin-top: 14px;
+        padding: 12px;
+        background: #f7faff;
+        border-radius: 12px;
+      }
+      .bar {
+        height: 10px;
+        background: #dbe6f4;
+        border-radius: 99px;
+        overflow: hidden;
+        margin: 8px 0;
+      }
+      .bar span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #1a9b71, #f3c341);
+        transition: width 0.3s;
+      }
+      .lesson {
+        min-width: 0;
+      }
+      .panel {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: clamp(16px, 3vw, 28px);
+        margin-bottom: 16px;
+        box-shadow: 0 7px 22px #1d3c6409;
+      }
+      .panel h2 {
+        margin: 0 0 12px;
+        color: var(--navy);
+        font-size: 1.5rem;
+      }
+      .panel h3 {
+        color: var(--blue);
+        margin: 16px 0 6px;
+      }
+      .en {
+        color: #60718b;
+        font-size: 0.92rem;
+      }
+      .callout {
+        border-left: 5px solid var(--gold);
+        background: #fff9e8;
+        border-radius: 10px;
+        padding: 12px 15px;
+        margin: 12px 0;
+      }
+      .visual {
+        font-size: 2.2rem;
+        background: var(--sky);
+        padding: 14px;
+        border-radius: 14px;
+        text-align: center;
+        margin: 12px 0;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .step {
+        background: #f5f8fe;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 13px;
+      }
+      .step b {
+        color: var(--blue);
+      }
+      .question {
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 16px;
+        margin: 12px 0;
+        background: #fcfdff;
+      }
+      .options {
+        display: grid;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .opt {
+        background: #edf3fb;
+        color: #243b5b;
+        text-align: left;
+        border: 2px solid transparent;
+      }
+      .opt.selected {
+        border-color: var(--blue);
+      }
+      .feedback {
+        font-weight: 700;
+        min-height: 24px;
+        margin-top: 8px;
+      }
+      .good {
+        color: #087b50;
+      }
+      .try {
+        color: #a54c17;
+      }
+      .hint {
+        display: none;
+        background: #fff7d8;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 8px;
+      }
+      .hint.show {
+        display: block;
+      }
+      .inputrow {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .inputrow input {
+        flex: 1;
+        min-width: 170px;
+        padding: 12px;
+        border: 1px solid #bac9dc;
+        border-radius: 12px;
+        font: inherit;
+      }
+      .badge {
+        display: inline-block;
+        background: #e7f8ef;
+        color: #126343;
+        border-radius: 99px;
+        padding: 5px 10px;
+        font-size: 0.85rem;
+        font-weight: 700;
+      }
+      .gamegrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+      .game {
+        background: #f8fbff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 15px;
+      }
+      .game h3 {
+        margin: 0 0 8px;
+      }
+      .choice-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+      .choice-grid button {
+        background: #e9f1ff;
+        color: var(--navy);
+      }
+      .sequence-list {
+        display: grid;
+        gap: 8px;
+      }
+      .seq {
+        background: #edf3fb;
+        color: #223a5b;
+        text-align: left;
+      }
+      .seq.picked {
+        background: #fff0c2;
+      }
+      .result {
+        display: none;
+        text-align: center;
+        background: #f0fff7;
+        border: 2px solid #8edbb5;
+        border-radius: 18px;
+        padding: 20px;
+      }
+      .result.show {
+        display: block;
+      }
+      .source-note {
+        font-size: 0.88rem;
+        color: #64748b;
+      }
+      .footer {
+        background: #102b5c;
+        color: #fff;
+        padding: 20px 16px;
+        text-align: center;
+      }
+      .footer img {
+        width: 38px;
+        height: 38px;
+        object-fit: contain;
+        vertical-align: middle;
+        background: #fff;
+        border-radius: 50%;
+        padding: 2px;
+        margin-right: 8px;
+      }
+      .footer small {
+        display: block;
+        opacity: 0.8;
+        margin-top: 4px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      .full .top {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+      }
+      .full .wrap {
+        max-width: 1450px;
+      }
+      .full .side {
+        top: 80px;
+      }
+      @media (max-width: 800px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+        .side {
+          position: static;
+        }
+        .side nav {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 4px;
+        }
+        .steps {
+          grid-template-columns: 1fr;
+        }
+        .lesson-select {
+          grid-template-columns: 1fr;
+        }
+        .gamegrid {
+          grid-template-columns: 1fr;
+        }
+        .top {
+          justify-content: center;
+        }
+        .top-actions {
+          justify-content: center;
+        }
+      }
+      @media print {
+        .top-actions,
+        .lesson-select,
+        .side,
+        button {
+          display: none !important;
+        }
+        .content {
+          display: block;
+        }
+        .panel {
+          box-shadow: none;
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">
+        <img src="assets/BrandLogo.png" alt="Teacher Ed Learning Hub logo" />
+        <div>
+          <strong>TEACHER ED LEARNING HUB</strong
+          ><small>Learn • Practice • Play • Master</small>
+        </div>
+      </div>
+      <div class="top-actions">
+        <button id="fullBtn">⛶ Full Screen</button
+        ><button id="soundBtn" class="secondary">🔊 Sound: On</button
+        ><button id="resetBtn" class="secondary">↻ Reset Progress</button>
+      </div>
+    </header>
+    <section class="hero">
+      <span class="pill">FILIPINO 3 • INTERACTIVE LESSONS</span>
+      <h1>Basahin, Unawain, at Mahinuha!</h1>
+      <p>
+        Matuto sa maliliit na hakbang, magsanay kasama ang guro, at subukan ang
+        mga larong pampagkatuto.
+      </p>
+      <p class="en">
+        Read carefully, make inferences, and use sequence signal words to
+        organize ideas.
+      </p>
+    </section>
+    <main class="wrap">
+      <section class="lesson-select" aria-label="Pumili ng aralin">
+        <button class="lesson-card active" data-lesson="inference">
+          <span class="emoji">🔎💭</span>
+          <h2>Aralin 1: Paghihinuha</h2>
+          <p>
+            Gumamit ng mga pahiwatig at ebidensiya upang maunawaan ang hindi
+            tuwirang sinasabi sa teksto.
+          </p>
+          <span class="badge">Lesson 1</span></button
+        ><button class="lesson-card" data-lesson="sequence">
+          <span class="emoji">🪜📖</span>
+          <h2>Aralin 2: Mga Hudyat ng Pagkakasunod-sunod</h2>
+          <p>
+            Ayusin ang mga ideya at hakbang gamit ang mga salitang nagpapakita
+            ng pagkakasunod-sunod.
+          </p>
+          <span class="badge">Lesson 2</span>
+        </button>
+      </section>
+      <div class="content">
+        <aside class="side">
+          <h3>🗺️ Lakbay-Aral</h3>
+          <nav id="nav"></nav>
+          <div class="progressbox">
+            <b>Iyong progreso</b>
+            <div class="bar"><span id="progress"></span></div>
+            <small id="progressText">0% kumpleto</small>
+            <p>⭐ <b id="stars">0</b> bituin</p>
+          </div>
+        </aside>
+        <article class="lesson" id="lessonContent"></article>
+      </div>
+    </main>
+    <footer class="footer">
+      <img src="assets/BrandLogo.png" alt="Logo" /><strong
+        >Teacher Ed Learning Hub</strong
+      ><small
+        >Learn • Practice • Play • Master | Teacher Ed • Educational Learning
+        Website</small
+      >
+    </footer>
+    <script>
+      const lessonData = {
+        inference: {
+          title: "Paghihinuha",
+          subtitle: "Pagbuo ng lohikal na konklusyon mula sa mga pahiwatig",
+          sections: [
+            {
+              id: "connect",
+              nav: "1. Connect",
+              title: "1. CONNECT — Ano ang napapansin mo?",
+              body: `<p>May mga pagkakataong hindi direktang sinasabi ng teksto ang sagot. Kailangan nating pagsamahin ang mga pahiwatig at ang alam na natin.</p><div class="visual">🌧️💨🥶🤧</div><p><b>Halimbawa:</b> Malamig at malakas ang hangin. Nangangalig ang isang bata, giniginaw, at bumabahing.</p><p class="en">Clues help us figure out what may be happening, even when the text does not say it directly.</p><div class="callout"><b>Tanong:</b> Ano kaya ang nangyayari sa bata? Anong mga detalye ang nagsilbing pahiwatig?</div>`,
+            },
+            {
+              id: "teach",
+              nav: "2. Teach",
+              title: "2. TEACH — Ano ang paghihinuha?",
+              body: `<p>Ang <b>paghihinuha</b> ay pagbuo ng larawang-diwa batay sa mga impormasyon, pahiwatig, o ebidensiyang binabanggit o ipinahihiwatig sa teksto.</p><p>Kapag bumubuo tayo ng lohikal na konklusyon, pinagsasama natin ang mga pahiwatig sa teksto at ang alam na natin.</p><div class="steps"><div class="step"><b>👀 Pahiwatig</b><p>Ano ang sinabi o ipinakita sa teksto?</p></div><div class="step"><b>🧠 Dating kaalaman</b><p>Ano ang alam ko tungkol dito?</p></div><div class="step"><b>💡 Hinuha</b><p>Ano ang lohikal na maaaring nangyari?</p></div></div><div class="callout"><b>Tandaan:</b> Dapat may batayan ang hinuha. Hindi ito basta panghuhula.</div>`,
+            },
+            {
+              id: "model",
+              nav: "3. Watch Me",
+              title: "3. WATCH ME — Tingnan kung paano maghinuha",
+              body: `<h3>Halimbawa 1: Bakit umiiyak si Jan?</h3><p>Maaaring naiwan ni Jan ang mga takdang-aralin o ang perang pamb baon niya. Maraming posibleng dahilan ng kaniyang pag-iyak.</p><p><b>Pagmomodelo:</b> Hindi natin dapat piliin ang isang dahilan bilang tiyak kung walang sapat na ebidensiya. Maaari tayong magbigay ng posibleng hinuha at ipaliwanag ang batayan nito.</p><div class="callout"><b>Teacher Think-Aloud:</b> “Alam kong umiiyak si Jan, pero hindi pa sinabi kung bakit. Kailangan ko ng higit pang pahiwatig bago makapagpasya.”</div><h3>Halimbawa 2: Si Cheo</h3><p>Malakas at malamig ang simoy ng hangin. Nangangalisag ang balahibo ni Cheo, giniginaw siya, bumabahing at umuubo. Hindi siya nakapasok sa paaralan.</p><p><b>Hinuha:</b> Nagkasakit at nilagnat si Cheo. Ang mga pahiwatig ay ang panginginig, pag-ubo, at pagbahing.</p>`,
+            },
+            {
+              id: "guided",
+              nav: "4. We Do",
+              title: "4. WE DO — Maghinuha tayo nang magkasama",
+              body: `<p>Basahin ang sitwasyon. Piliin ang pinakamakatuwirang hinuha.</p><div class="question"><b>Si Mia ay pumasok sa bahay na basang-basa. May mga patak ng tubig sa kaniyang payong at sapatos.</b><p>Ano ang maaaring nangyari?</p><div class="options"><button class="opt" data-correct="true" data-feedback="Tama! Ang basang payong at sapatos ay mga pahiwatig na maaaring umulan." >A. Naulanan si Mia.</button><button class="opt" data-feedback="Balikan ang mga pahiwatig: basang payong at sapatos.">B. Naglaro siya ng basketball.</button><button class="opt" data-feedback="Hindi ito sinusuportahan ng mga pahiwatig sa sitwasyon.">C. Naghanda siya ng hapunan.</button></div><div class="feedback"></div></div><button class="secondary hintBtn">💡 Hint</button><div class="hint">Isipin kung anong pangyayari ang karaniwang nagiging dahilan ng basang payong at sapatos.</div>`,
+            },
+            {
+              id: "independent",
+              nav: "5. Your Turn",
+              title: "5. YOUR TURN — Ikaw naman!",
+              body: `<p>Basahin at sagutin ang tanong. Pumili ng sagot at tingnan ang paliwanag.</p><div class="question"><b>Hindi pa nagsisimula ang klase ngunit inilabas na ni Lito ang kaniyang kuwaderno, lapis, at aklat. Nakabukas din ang kaniyang takdang-aralin.</b><p>Ano ang mahihinuha tungkol kay Lito?</p><div class="options"><button class="opt" data-correct="true" data-feedback="Mahusay! Ang paghahanda ng mga gamit at pagbubukas ng takdang-aralin ay nagpapahiwatig na handa siyang mag-aral.">A. Naghahanda siyang mag-aral.</button><button class="opt" data-feedback="Walang pahiwatig na nagpapakitang aalis na siya pauwi.">B. Uuwi na siya.</button><button class="opt" data-feedback="Walang ganitong impormasyon sa sitwasyon.">C. Nawawala ang kaniyang bag.</button></div><div class="feedback"></div></div>`,
+            },
+            {
+              id: "game",
+              nav: "6. Game Zone",
+              title: "6. GAME ZONE — Hanapin ang pinakamahusay na hinuha",
+              body: `<p>Basahin ang bawat sitwasyon at piliin ang pinakamahusay na sagot. Bawat tamang sagot ay may bituin!</p><div class="question" data-game="1"><b>1. May dalang payong si Ana. Makulimlim ang langit at may kulog.</b><p>Ano ang maaaring inaasahan ni Ana?</p><div class="options"><button class="opt" data-correct="true" data-feedback="Tama! Ang makulimlim na langit at kulog ay pahiwatig na maaaring umulan.">A. Maaaring umulan.</button><button class="opt" data-feedback="Hindi ito ipinahihiwatig ng sitwasyon.">B. Magiging tag-init.</button><button class="opt" data-feedback="Walang pahiwatig tungkol sa pagkain.">C. May handaan.</button></div><div class="feedback"></div></div><div class="question" data-game="1"><b>2. Nakita ni Ben ang mga lobo, keyk, at regalong nakahanda sa sala.</b><p>Ano ang maaaring maganap?</p><div class="options"><button class="opt" data-feedback="Hindi ito ang pinakamakatuwirang hinuha mula sa mga bagay na nakita.">A. May naglilinis ng bakuran.</button><button class="opt" data-correct="true" data-feedback="Tama! Ang mga lobo, keyk, at regalo ay maaaring palatandaan ng pagdiriwang.">B. May pagdiriwang o sorpresa.</button><button class="opt" data-feedback="Walang pahiwatig na may klase.">C. Nagsisimula ang klase.</button></div><div class="feedback"></div></div><div class="question" data-game="1"><b>3. Pumasok si Ella na nakangiti at hawak ang medalya.</b><p>Ano ang maaaring nangyari?</p><div class="options"><button class="opt" data-correct="true" data-feedback="Mahusay! Ang medalya at ngiti ay pahiwatig na maaaring may nakamit siyang tagumpay.">A. May nakamit siyang tagumpay.</button><button class="opt" data-feedback="Hindi ito sinusuportahan ng mga pahiwatig.">B. Nawala ang kaniyang sapatos.</button><button class="opt" data-feedback="Walang pahiwatig tungkol sa ulan.">C. Bumuhos ang ulan.</button></div><div class="feedback"></div></div>`,
+            },
+            {
+              id: "apply",
+              nav: "7. Apply",
+              title: "7. APPLY — Paliwanag mo ang hinuha",
+              body: `<p>Gamitin ang pahiwatig upang bumuo ng sariling hinuha.</p><div class="question"><b>Si Carlo ay paulit-ulit na tumitingin sa orasan. Nasa tabi niya ang nakahandang bag at sapatos.</b><p>Ano ang maaari mong mahinuha? Banggitin ang isang pahiwatig.</p><div class="inputrow"><input id="inferInput" placeholder="Isulat ang iyong hinuha…"><button class="primary" id="inferCheck">Suriin</button></div><div class="feedback" id="inferFeedback"></div><p class="en">Possible idea: Carlo may be waiting for the time to leave. Explain which clues support your inference.</p></div>`,
+            },
+            {
+              id: "master",
+              nav: "8. Mastery Check",
+              title: "8. MASTERY CHECK — Kaya mo na ba?",
+              body: `<p>Subukan ang tatlong tanong. Layunin mong maipakita ang pag-unawa, hindi ang bilis.</p><div id="masterQuiz"></div><button class="primary" id="gradeMaster">Tingnan ang Iskor</button><div class="result" id="masterResult"></div>`,
+            },
+            {
+              id: "reflect",
+              nav: "9. Reflect & Celebrate",
+              title: "9. REFLECT — Ipagdiwang ang pagkatuto",
+              body: `<p>Ano ang natutuhan mo tungkol sa paghihinuha?</p><div class="choice-grid"><button class="reflectBtn">💡 Gumamit ng mga pahiwatig</button><button class="reflectBtn">🧠 Isama ang dating kaalaman</button><button class="reflectBtn">🔎 Maghanap ng ebidensiya</button><button class="reflectBtn">🌟 Magpraktis pa</button></div><div class="feedback" id="reflectFeedback"></div><div class="callout">Tandaan: Ang mahusay na hinuha ay may malinaw na batayan sa teksto.</div>`,
+            },
+          ],
+        },
+        sequence: {
+          title: "Mga Hudyat ng Pagkakasunod-sunod",
+          subtitle: "Mga salitang nagpapakita ng ayos ng mga ideya o hakbang",
+          sections: [
+            {
+              id: "connect",
+              nav: "1. Connect",
+              title: "1. CONNECT — Ano ang tamang ayos?",
+              body: `<p>Kapag naghahanda ka para pumasok sa paaralan, may mga gawaing ginagawa sa isang ayos.</p><div class="visual">⏰🛏️➡️🪥➡️🍳➡️🎒</div><p>Kung magulo ang ayos ng mga hakbang, mahihirapan tayong sundan ang mga ito.</p><p class="en">Sequence signal words tell us the order in which events or steps happen.</p>`,
+            },
+            {
+              id: "teach",
+              nav: "2. Teach",
+              title: "2. TEACH — Mga hudyat ng pagkakasunod-sunod",
+              body: `<p>Ang <b>mga hudyat ng pagkakasunod-sunod</b> ay mga salitang nagpapakita ng tamang ayos o pagkakasunod-sunod ng mga ideya o hakbang sa isang teksto o pahayag.</p><div class="steps"><div class="step"><b>🥇 Simula / Unang hakbang</b><p>Una • Sa simula • Unang-una • Noong una • Pinakauna</p></div><div class="step"><b>🥈 Kasunod na hakbang</b><p>Ikalawa • Sumunod • Pagkatapos • Kasunod • Samantala</p></div><div class="step"><b>🏁 Wakas / Panghuli</b><p>Sa wakas • Sa huli • Panghuli • Pagkalipas nito • Bilang pangwakas</p></div></div><h3>Hudyat ng pagkakasunod-sunod ng panahon</h3><p>Noong una • Nang maglaon • Hindi nagtagal • Kinabukasan • Sa kasalukuyan • Sa ngayon • Makalipas ang ilang araw/taon</p><div class="callout"><b>Tandaan:</b> Piliin ang hudyat na angkop sa posisyon o panahon ng pangyayari.</div>`,
+            },
+            {
+              id: "model",
+              nav: "3. Watch Me",
+              title: "3. WATCH ME — Paano ayusin ang mga hakbang",
+              body: `<h3>Halimbawa: Paghahanda ng Adobo</h3><div class="steps"><div class="step"><b>Una</b><p>Painitin ang mantika sa kawali at igisa ang bawang, sibuyas, at karne ng manok.</p></div><div class="step"><b>Ikalawa</b><p>Matapos igisa ang manok, ilagay ang toyo, paminta, laurel, at tubig.</p></div><div class="step"><b>Panghuli</b><p>Kapag kumulo at lumambot na ang karne, sundin ang huling hakbang sa pagluluto.</p></div></div><p>Ang mga hudyat na <b>una, ikalawa,</b> at <b>panghuli</b> ay tumutulong upang maging malinaw ang ayos ng mga hakbang.</p><p class="source-note">Paalala: Ang mga hakbang ay halimbawa ng paggamit ng mga hudyat, hindi kumpletong recipe.</p>`,
+            },
+            {
+              id: "guided",
+              nav: "4. We Do",
+              title: "4. WE DO — Piliin ang angkop na hudyat",
+              body: `<div class="question"><b>_____ , ihanda ang papel at lapis. Sumunod, basahin ang panuto.</b><p>Aling salita ang angkop sa simula?</p><div class="options"><button class="opt" data-correct="true" data-feedback="Tama! Ang “Una” ay hudyat ng unang hakbang.">A. Una</button><button class="opt" data-feedback="Ang “Panghuli” ay para sa huling hakbang.">B. Panghuli</button><button class="opt" data-feedback="Ang “Kinabukasan” ay hudyat ng panahon.">C. Kinabukasan</button></div><div class="feedback"></div></div><div class="question"><b>Una, maghukay ng maliit na butas. _____, ilagay ang punla.</b><p>Aling hudyat ang angkop?</p><div class="options"><button class="opt" data-feedback="“Sa wakas” ay karaniwang hudyat ng pagtatapos.">A. Sa wakas</button><button class="opt" data-correct="true" data-feedback="Mahusay! “Pagkatapos” ay nagsasaad ng kasunod na hakbang.">B. Pagkatapos</button><button class="opt" data-feedback="“Noong una” ay tumutukoy sa panahong nagdaan.">C. Noong una</button></div><div class="feedback"></div></div>`,
+            },
+            {
+              id: "independent",
+              nav: "5. Your Turn",
+              title: "5. YOUR TURN — Ayusin ang pang-araw-araw na gawain",
+              body: `<p>Piliin ang hudyat na babagay sa pangungusap.</p><div class="question"><b>_____ , gumising nang maaga. Sumunod, maghilamos at kumain ng almusal.</b><div class="options"><button class="opt" data-correct="true" data-feedback="Tama! Ang “Una” ay hudyat ng unang gawain.">A. Una</button><button class="opt" data-feedback="Ang “Panghuli” ay ginagamit sa huling gawain.">B. Panghuli</button><button class="opt" data-feedback="Ang “Kinabukasan” ay tumutukoy sa susunod na araw.">C. Kinabukasan</button></div><div class="feedback"></div></div>`,
+            },
+            {
+              id: "game",
+              nav: "6. Game Zone",
+              title: "6. GAME ZONE — Ayusin ang pagkakasunod-sunod",
+              body: `<p>I-tap ang mga hakbang sa tamang pagkakasunod-sunod. Unahin ang unang hakbang.</p><div class="question"><b>Pag-aalaga ng halaman 🌱</b><p>Pumili sa ganitong ayos: ihanda ang lupa → itanim ang punla → diligan → alagaan.</p><div class="sequence-list" id="seqGame"><button class="seq" data-order="2">A. Diligan ang halaman.</button><button class="seq" data-order="0">B. Ihanda ang lupa at paso.</button><button class="seq" data-order="3">C. Regular na alagaan ang halaman.</button><button class="seq" data-order="1">D. Itanim ang punla.</button></div><p>Napili mo: <b id="seqPicked">wala pa</b></p><button class="primary" id="checkSeq">Suriin ang ayos</button><div class="feedback" id="seqFeedback"></div><button class="secondary" id="seqAgain">Subukan muli</button></div><div class="question"><b>Aling salita ang hudyat ng pangwakas?</b><div class="options"><button class="opt" data-feedback="Ang “Ikalawa” ay hudyat ng kasunod na hakbang.">A. Ikalawa</button><button class="opt" data-correct="true" data-feedback="Tama! Ang “Sa wakas” ay hudyat ng wakas.">B. Sa wakas</button><button class="opt" data-feedback="Ang “Una” ay hudyat ng simula.">C. Una</button></div><div class="feedback"></div></div>`,
+            },
+            {
+              id: "apply",
+              nav: "7. Apply",
+              title: "7. APPLY — Gumawa ng malinaw na pagkakasunod-sunod",
+              body: `<p>Isipin ang paghahanda bago pumasok sa paaralan. Punan ang mga patlang ng angkop na hudyat.</p><div class="question"><p><b>_____</b>, gumising ako. <b>_____</b>, naghanda ako ng aking gamit. <b>_____</b>, umalis ako papunta sa paaralan.</p><p>Pumili ng tatlong hudyat na magpapalinaw sa ayos.</p><div class="inputrow"><input id="seqInput" placeholder="Hal. Una, sumunod, sa wakas"><button class="primary" id="seqCheck">Suriin</button></div><div class="feedback" id="seqInputFeedback"></div></div>`,
+            },
+            {
+              id: "master",
+              nav: "8. Mastery Check",
+              title: "8. MASTERY CHECK — Subukan ang iyong kaalaman",
+              body: `<p>Sagutin ang mga tanong tungkol sa mga hudyat ng pagkakasunod-sunod.</p><div id="masterQuiz"></div><button class="primary" id="gradeMaster">Tingnan ang Iskor</button><div class="result" id="masterResult"></div>`,
+            },
+            {
+              id: "reflect",
+              nav: "9. Reflect & Celebrate",
+              title: "9. REFLECT — Ipagdiwang ang pagkatuto",
+              body: `<p>Piliin ang pahayag na pinakaangkop sa iyong pagkatuto.</p><div class="choice-grid"><button class="reflectBtn">🥇 Alam ko ang hudyat ng simula</button><button class="reflectBtn">➡️ Alam ko ang hudyat ng kasunod</button><button class="reflectBtn">🏁 Alam ko ang hudyat ng wakas</button><button class="reflectBtn">🌟 Magpraktis pa ako</button></div><div class="feedback" id="reflectFeedback"></div><div class="callout">Gamitin ang mga hudyat upang maging malinaw, maayos, at madaling sundan ang iyong pagsasalaysay.</div>`,
+            },
+          ],
+        },
+      };
+      let current = "inference",
+        visited = new Set(),
+        stars = Number(localStorage.getItem("fil3stars") || 0),
+        sound = true,
+        seqPicks = [];
+      const nav = document.getElementById("nav"),
+        content = document.getElementById("lessonContent");
+      function render() {
+        const d = lessonData[current];
+        document
+          .querySelectorAll(".lesson-card")
+          .forEach((b) =>
+            b.classList.toggle("active", b.dataset.lesson === current),
+          );
+        nav.innerHTML = "";
+        d.sections.forEach((s, i) => {
+          let b = document.createElement("button");
+          b.className = "navitem" + (i === 0 ? " active" : "");
+          b.textContent = s.nav;
+          b.onclick = () => showSection(s.id);
+          nav.append(b);
+        });
+        content.innerHTML = d.sections
+          .map(
+            (s, i) =>
+              `<section class="panel ${i ? "hidden" : ""}" id="sec-${s.id}"><h2>${s.title}</h2>${s.body}<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-top:20px"><button class="secondary prev" data-i="${i}">← Balik</button><button class="primary next" data-i="${i}">${i === d.sections.length - 1 ? "Tapos na 🎉" : "Susunod →"}</button></div></section>`,
+          )
+          .join("");
+        bind();
+        setupMaster();
+        showSection(d.sections[0].id);
+        updateProgress();
+      }
+      function showSection(id) {
+        document
+          .querySelectorAll("#lessonContent .panel")
+          .forEach((p) => p.classList.toggle("hidden", p.id !== "sec-" + id));
+        const i = lessonData[current].sections.findIndex((s) => s.id === id);
+        document
+          .querySelectorAll(".navitem")
+          .forEach((b, j) => b.classList.toggle("active", i === j));
+        visited.add(current + ":" + id);
+        updateProgress();
+        content.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      function bind() {
+        document.querySelectorAll(".next").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let i = +b.dataset.i,
+                arr = lessonData[current].sections;
+              if (i < arr.length - 1) showSection(arr[i + 1].id);
+              else {
+                award(2);
+                showSection("reflect");
+              }
+            }),
+        );
+        document.querySelectorAll(".prev").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let i = +b.dataset.i,
+                arr = lessonData[current].sections;
+              if (i > 0) showSection(arr[i - 1].id);
+              else window.scrollTo({ top: 0, behavior: "smooth" });
+            }),
+        );
+        document
+          .querySelectorAll(".options .opt")
+          .forEach((b) => (b.onclick = () => choose(b)));
+        document
+          .querySelectorAll(".hintBtn")
+          .forEach(
+            (b) =>
+              (b.onclick = () => b.nextElementSibling.classList.toggle("show")),
+          );
+        document.querySelectorAll(".reflectBtn").forEach(
+          (b) =>
+            (b.onclick = () => {
+              document.getElementById("reflectFeedback").textContent =
+                "Magaling! Patuloy na magsanay at gamitin ang natutuhan.";
+              award(1);
+            }),
+        );
+        let ic = document.getElementById("inferCheck");
+        if (ic)
+          ic.onclick = () => {
+            let v = document.getElementById("inferInput").value.trim();
+            document.getElementById("inferFeedback").textContent =
+              v.length > 4
+                ? "Salamat! Makatuwiran ang sagot kung may pahiwatig na sumusuporta rito. Halimbawa: Naghihintay si Carlo na umalis; nakahanda ang bag at sapatos."
+                : "Magdagdag ng hinuha at banggitin ang pahiwatig na sumusuporta rito.";
+          };
+        let sc = document.getElementById("seqCheck");
+        if (sc)
+          sc.onclick = () => {
+            let v = document.getElementById("seqInput").value.toLowerCase();
+            let ok =
+              v.includes("una") &&
+              (v.includes("sumunod") || v.includes("pagkatapos")) &&
+              (v.includes("wakas") ||
+                v.includes("panghuli") ||
+                v.includes("sa huli"));
+            document.getElementById("seqInputFeedback").textContent = ok
+              ? "Mahusay! May hudyat ng simula, kasunod na hakbang, at wakas."
+              : "Subukan ang “Una, sumunod, sa wakas.” Maaari ring gumamit ng ibang angkop na hudyat.";
+            if (ok) award(1);
+          };
+        let check = document.getElementById("checkSeq");
+        if (check)
+          check.onclick = () => {
+            let correct =
+              seqPicks.length === 4 && seqPicks.every((v, i) => v === i);
+            document.getElementById("seqFeedback").textContent = correct
+              ? "Tama! Naayos mo ang mga hakbang."
+              : "Hindi pa tama ang ayos. Balikan ang mga hakbang at subukan muli.";
+            if (correct) award(2);
+          };
+        let again = document.getElementById("seqAgain");
+        if (again)
+          again.onclick = () => {
+            seqPicks = [];
+            document.getElementById("seqPicked").textContent = "wala pa";
+            document.getElementById("seqFeedback").textContent = "";
+            document
+              .querySelectorAll(".seq")
+              .forEach((b) => b.classList.remove("picked"));
+          };
+        document.querySelectorAll(".seq").forEach(
+          (b) =>
+            (b.onclick = () => {
+              if (b.classList.contains("picked")) return;
+              b.classList.add("picked");
+              seqPicks.push(+b.dataset.order);
+              document.getElementById("seqPicked").textContent = seqPicks
+                .map((n) => n + 1)
+                .join(" → ");
+            }),
+        );
+        let gm = document.getElementById("gradeMaster");
+        if (gm) gm.onclick = gradeMaster;
+      }
+      function choose(b) {
+        const box = b.closest(".question");
+        if (box.dataset.answered === "1") return;
+        box.dataset.answered = "1";
+        box.querySelectorAll(".opt").forEach((o) => (o.disabled = true));
+        let fb = box.querySelector(".feedback");
+        if (b.dataset.correct === "true") {
+          fb.textContent = "⭐ " + (b.dataset.feedback || "Tama! Mahusay!");
+          fb.className = "feedback good";
+          award(1);
+          if (sound) beep(true);
+        } else {
+          fb.textContent = "💡 " + (b.dataset.feedback || "Pag-isipan muli.");
+          fb.className = "feedback try";
+          if (sound) beep(false);
+        }
+      }
+      function award(n) {
+        stars += n;
+        localStorage.setItem("fil3stars", stars);
+        document.getElementById("stars").textContent = stars;
+      }
+      function updateProgress() {
+        let sections = lessonData[current].sections;
+        let n = sections.filter((s) =>
+          visited.has(current + ":" + s.id),
+        ).length;
+        let pct = Math.round((n / sections.length) * 100);
+        document.getElementById("progress").style.width = pct + "%";
+        document.getElementById("progressText").textContent =
+          pct + "% ng araling ito";
+        document.getElementById("stars").textContent = stars;
+      }
+      function setupMaster() {
+        let host = document.getElementById("masterQuiz");
+        if (!host) return;
+        let qs =
+          current === "inference"
+            ? [
+                {
+                  q: "Ano ang paghihinuha?",
+                  opts: [
+                    "Pagkopya ng pangungusap",
+                    "Lohikal na konklusyon batay sa pahiwatig",
+                    "Pagbibigay ng sagot nang walang batayan",
+                  ],
+                  a: 1,
+                },
+                {
+                  q: "Alin ang pinakamainam na pahiwatig na maaaring umulan?",
+                  opts: [
+                    "Makulimlim ang langit at kumukulog",
+                    "May hawak na lapis ang bata",
+                    "Nagluluto ang pamilya",
+                  ],
+                  a: 0,
+                },
+                {
+                  q: "Ano ang dapat gawin kung kulang ang impormasyon tungkol kay Jan?",
+                  opts: [
+                    "Magpasya agad na iisa ang dahilan",
+                    "Mag-imbento ng detalye",
+                    "Maghanap ng higit pang pahiwatig",
+                  ],
+                  a: 2,
+                },
+              ]
+            : [
+                {
+                  q: "Alin ang hudyat ng unang hakbang?",
+                  opts: ["Panghuli", "Una", "Sa wakas"],
+                  a: 1,
+                },
+                {
+                  q: "Alin ang hudyat ng kasunod na gawain?",
+                  opts: ["Pagkatapos", "Noong una", "Sa wakas"],
+                  a: 0,
+                },
+                {
+                  q: "Alin ang hudyat ng pangwakas?",
+                  opts: ["Ikalawa", "Sumunod", "Sa wakas"],
+                  a: 2,
+                },
+              ];
+        host.innerHTML = qs
+          .map(
+            (q, i) =>
+              `<div class="question masterQ" data-answer="${q.a}"><b>${i + 1}. ${q.q}</b><div class="options">${q.opts.map((o, j) => `<button class="opt" data-choice="${j}">${String.fromCharCode(65 + j)}. ${o}</button>`).join("")}</div><div class="feedback"></div></div>`,
+          )
+          .join("");
+        host.querySelectorAll(".opt").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let box = b.closest(".masterQ");
+              box
+                .querySelectorAll(".opt")
+                .forEach((o) => o.classList.remove("selected"));
+              b.classList.add("selected");
+            }),
+        );
+      }
+      function gradeMaster() {
+        let qs = [...document.querySelectorAll(".masterQ")],
+          score = 0;
+        qs.forEach((q) => {
+          let s = q.querySelector(".selected");
+          if (s && +s.dataset.choice === +q.dataset.answer) {
+            score++;
+            q.querySelector(".feedback").textContent = "Tama!";
+            q.querySelector(".feedback").className = "feedback good";
+          } else {
+            q.querySelector(".feedback").textContent =
+              "Balikan ang aralin at subukan muli.";
+            q.querySelector(".feedback").className = "feedback try";
+          }
+        });
+        let r = document.getElementById("masterResult");
+        r.classList.add("show");
+        r.innerHTML = `<h2>${score === 3 ? "🎉 Napakahusay!" : score === 2 ? "🌟 Magandang trabaho!" : "💪 Kaya mo pang pagbutihin!"}</h2><p>Iskor mo: <b>${score}/3</b></p><p>${score === 3 ? "Naipakita mo ang pag-unawa sa aralin." : "Balikan ang mga paliwanag at magsanay muli."}</p><button class="primary" onclick="setupMaster();document.getElementById('masterResult').classList.remove('show')">Subukan muli</button>`;
+        award(score);
+      }
+      function beep(ok) {
+        try {
+          let c = new (window.AudioContext || window.webkitAudioContext)(),
+            o = c.createOscillator(),
+            g = c.createGain();
+          o.connect(g);
+          g.connect(c.destination);
+          o.frequency.value = ok ? 740 : 230;
+          g.gain.value = 0.06;
+          o.start();
+          o.stop(c.currentTime + 0.12);
+        } catch (e) {}
+      }
+      document.querySelectorAll(".lesson-card").forEach(
+        (b) =>
+          (b.onclick = () => {
+            current = b.dataset.lesson;
+            render();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }),
+      );
+      document.getElementById("fullBtn").onclick = async () => {
+        if (!document.fullscreenElement) {
+          await document.documentElement.requestFullscreen?.();
+          document.body.classList.add("full");
+        } else {
+          await document.exitFullscreen?.();
+          document.body.classList.remove("full");
+        }
+      };
+      document.addEventListener("fullscreenchange", () => {
+        document.body.classList.toggle("full", !!document.fullscreenElement);
+        document.getElementById("fullBtn").textContent =
+          document.fullscreenElement ? "⛶ Exit Full Screen" : "⛶ Full Screen";
+      });
+      document.getElementById("soundBtn").onclick = () => {
+        sound = !sound;
+        document.getElementById("soundBtn").textContent = sound
+          ? "🔊 Sound: On"
+          : "🔇 Sound: Off";
+      };
+      document.getElementById("resetBtn").onclick = () => {
+        if (confirm("I-reset ang progreso at mga bituin sa device na ito?")) {
+          visited.clear();
+          stars = 0;
+          localStorage.removeItem("fil3stars");
+          render();
+        }
+      };
+      render();
+    </script>
+  </body>
+</html>
