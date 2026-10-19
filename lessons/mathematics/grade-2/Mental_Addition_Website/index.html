@@ -1,30 +1,401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#173b70"><title>Grade 2 Mental Addition | Teacher Ed Learning Hub</title>
-<link rel="icon" type="image/png" href="assets/favicon.png"><link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header class="topbar"><a class="brand" href="#home"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo"><span><b>TEACHER ED LEARNING HUB</b><small>Learn • Practice • Play • Master</small></span></a><div class="top-actions"><button id="soundBtn" class="small-btn" aria-pressed="false">🔊 Sound: Off</button><button id="fullBtn" class="small-btn">⛶ Fullscreen</button></div></header>
-<main id="home" class="shell">
-<section class="hero panel"><div><p class="eyebrow">GRADE 2 MATHEMATICS • LEARNING ADVENTURE</p><h1>Mental Addition <span>Mission!</span></h1><p class="lead">Learn smart ways to add. Build numbers, spot patterns, and help Stella count sea turtles!</p><div class="hero-buttons"><button class="primary" data-go="connect">Start Learning →</button><button class="secondary" data-go="map">View Mission Map</button></div></div><div class="hero-art" aria-hidden="true"><div class="sun">☀️</div><div class="island">🏝️</div><div class="turtles">🐢 🐢<br>🐢 🐢</div><div class="bubble">Think smart.<br>Add with confidence!</div></div></section>
-<section class="progress-panel panel"><div class="progress-head"><div><b>Your learning progress</b><small id="progressText">0 of 8 learning stops completed</small></div><div class="stats"><span>⭐ <b id="stars">0</b></span><span>🏅 <b id="badges">0</b></span></div></div><div class="progress-track"><div id="progressBar"></div></div></section>
-<nav id="map" class="mission-map panel"><h2>🗺️ Your Mission Map</h2><div class="map-grid"><button data-go="connect"><span>1</span>Connect</button><button data-go="teach"><span>2</span>Learn</button><button data-go="model"><span>3</span>Watch Me</button><button data-go="guided"><span>4</span>Let's Do It</button><button data-go="practice"><span>5</span>Your Turn</button><button data-go="games"><span>6</span>Game Zone</button><button data-go="apply"><span>7</span>Brain Challenge</button><button data-go="mastery"><span>8</span>Mastery Check</button></div></nav>
-<section id="connect" class="lesson panel"><div class="section-title"><span class="icon">👋</span><div><p class="eyebrow">STOP 1</p><h2>Connect: What Do You Know?</h2></div></div><p>Imagine you have <b>25 shells</b> and find <b>7 more</b>. You can count all of them, or use a smart strategy!</p><div class="visual-row"><div class="shell-pile">🐚 🐚 🐚 🐚 🐚</div><div class="plus">+</div><div class="shell-pile">🐚 🐚</div><div class="equals">= ?</div></div><p class="question">Which is a smart first step for 25 + 7?</p><div class="choices" data-question="connect"><button data-answer="a">Count from 1</button><button data-answer="b">Make the next ten: 25 + 5 + 2</button><button data-answer="c">Subtract 7</button></div><p class="feedback" aria-live="polite"></p><button class="hint-btn" data-hint="connect">💡 Need a hint?</button><p class="hint hidden" id="hint-connect">25 needs 5 to become 30. Split 7 into 5 and 2.</p><button class="complete-btn" data-complete="connect">Mark Connect Complete ✓</button></section>
-<section id="teach" class="lesson panel"><div class="section-title"><span class="icon">📘</span><div><p class="eyebrow">STOP 2</p><h2>Learn: Three Smart Strategies</h2></div></div><div class="tabs" role="tablist"><button class="tab active" data-tab="make10">Make a Ten</button><button class="tab" data-tab="compatible">Compatible Numbers</button><button class="tab" data-tab="properties">Addition Properties</button></div>
-<div class="tab-content" id="make10"><h3>Strategy 1: Make a friendly ten</h3><p>Break a number apart to make the next ten. This can make mental addition easier.</p><div class="equation-card"><div class="number-bond"><span class="whole">7</span><div><span>5</span><span>2</span></div></div><div><b>25 + 7</b><p>25 + <mark>5</mark> + 2</p><p>30 + 2 = <strong>32</strong></p></div></div><p class="mini-note">Singapore Math: part–part–whole number bonds help us see how a number can be split.</p></div>
-<div class="tab-content hidden" id="compatible"><h3>Strategy 2: Use compatible numbers</h3><p><b>Compatible numbers</b> are numbers that are easy to add mentally.</p><div class="equation-card"><div class="number-bond"><span class="whole">44</span><div><span>40</span><span>4</span></div></div><div><b>12 + 23 + 44</b><p>12 + 23 = 35</p><p>35 + 44 = <strong>79</strong></p></div></div><p>Look for pairs or groups that make a friendly ten or hundred.</p></div>
-<div class="tab-content hidden" id="properties"><h3>Strategy 3: Use properties of addition</h3><div class="property-grid"><article><b>🔄 Commutative</b><p>Switch the addends.</p><code>7 + 4 = 4 + 7</code><small>The sum stays 11.</small></article><article><b>🧺 Associative</b><p>Change the grouping.</p><code>(2 + 8) + 3 = 2 + (8 + 3)</code><small>The sum stays 13.</small></article><article><b>🪄 Identity</b><p>Add zero. The number stays the same.</p><code>76 + 0 = 76</code><small>Zero changes nothing.</small></article></div></div>
-<div class="check-box"><b>Quick check</b><p id="quickQ">Which property lets us change the order of addends?</p><div class="choices" data-question="quick"><button data-answer="a">Identity</button><button data-answer="b">Commutative</button><button data-answer="c">Associative</button></div><p class="feedback" aria-live="polite"></p></div><button class="complete-btn" data-complete="teach">Mark Learning Complete ✓</button></section>
-<section id="model" class="lesson panel"><div class="section-title"><span class="icon">👩‍🏫</span><div><p class="eyebrow">STOP 3 • I DO</p><h2>Watch Me: Add Mentally</h2></div></div><div class="model-problem"><p class="eyebrow">EXAMPLE</p><h3>27 + 43 = ?</h3><div class="step" id="modelStep">Step 1: Break 27 into 20 + 7 and 43 into 40 + 3.</div><div class="step-visual" id="stepVisual"><span>27</span><span>+</span><span>43</span></div><div class="model-controls"><button class="secondary" id="prevStep">← Back</button><span id="stepCount">Step 1 of 4</span><button class="primary" id="nextStep">Next Step →</button></div></div><p class="mini-note">Think in parts: tens first, then ones. 20 + 40 = 60 and 7 + 3 = 10, so 60 + 10 = 70.</p><button class="complete-btn" data-complete="model">I Understand ✓</button></section>
-<section id="guided" class="lesson panel"><div class="section-title"><span class="icon">🤝</span><div><p class="eyebrow">STOP 4 • WE DO</p><h2>Let's Do It Together</h2></div></div><p>Use the number bond to solve <b>18 + 32</b>.</p><div class="bar-model"><div class="bar-label">18</div><div class="bar"><span class="part blue">10</span><span class="part pink">8</span></div><div class="bar-label">32</div><div class="bar"><span class="part blue">30</span><span class="part pink">2</span></div></div><p class="question">First, add the tens: 10 + 30 = ?</p><div class="choices" data-question="guided"><button data-answer="a">30</button><button data-answer="b">40</button><button data-answer="c">50</button></div><p class="feedback" aria-live="polite"></p><button class="hint-btn" data-hint="guided">💡 Need a hint?</button><p class="hint hidden" id="hint-guided">Add 1 ten and 3 tens. That makes 4 tens.</p><button class="complete-btn" data-complete="guided">Guided Practice Complete ✓</button></section>
-<section id="practice" class="lesson panel"><div class="section-title"><span class="icon">✏️</span><div><p class="eyebrow">STOP 5 • YOU DO</p><h2>Your Turn: Practice</h2></div></div><p>Answer these three questions. Take your time.</p><div id="practiceQuiz" class="quiz"></div><div class="quiz-footer"><span id="practiceScore">0 of 3 correct</span><button class="primary" id="checkPractice">Check My Answers</button></div><p id="practiceFeedback" class="feedback" aria-live="polite"></p><button class="complete-btn" data-complete="practice">Practice Complete ✓</button></section>
-<section id="games" class="lesson panel"><div class="section-title"><span class="icon">🎮</span><div><p class="eyebrow">STOP 6</p><h2>Game Zone: Choose Your Challenge</h2></div></div><div class="game-grid"><article class="game-card"><span>🎯</span><h3>Quick Pick</h3><p>Choose the correct sum.</p><button class="primary game-start" data-game="quick">Play</button></article><article class="game-card"><span>🧠</span><h3>Property Detective</h3><p>Find the rule being used.</p><button class="primary game-start" data-game="property">Play</button></article><article class="game-card"><span>🔐</span><h3>Unlock the Door</h3><p>Solve a sum to earn a code digit.</p><button class="primary game-start" data-game="door">Play</button></article></div><div id="gameArea" class="game-area hidden"></div><button class="complete-btn" data-complete="games">Game Zone Complete ✓</button></section>
-<section id="apply" class="lesson panel"><div class="section-title"><span class="icon">🐢</span><div><p class="eyebrow">STOP 7</p><h2>Brain Challenge: Help Stella!</h2></div></div><div class="story-card"><div class="turtle-art">🐢 🐢 🐢<br>🐢 🐢 🐢</div><div><p>Stella sees a turtle nest with <b>43 eggs</b> and another nest with <b>27 eggs</b>.</p><p>How many eggs are there in all?</p></div></div><div class="choices" data-question="apply"><button data-answer="a">60 eggs</button><button data-answer="b">70 eggs</button><button data-answer="c">80 eggs</button></div><p class="feedback" aria-live="polite"></p><button class="hint-btn" data-hint="apply">💡 Need a hint?</button><p class="hint hidden" id="hint-apply">Add the tens: 40 + 20 = 60. Add the ones: 3 + 7 = 10. Then 60 + 10 = 70.</p><button class="complete-btn" data-complete="apply">Challenge Complete ✓</button></section>
-<section id="mastery" class="lesson panel"><div class="section-title"><span class="icon">🏆</span><div><p class="eyebrow">STOP 8</p><h2>Final Mastery Check</h2></div></div><p>Show what you know! Five new questions. You can try again.</p><div id="masteryQuiz" class="quiz"></div><div class="quiz-footer"><span id="masteryScore">Not checked yet</span><button class="primary" id="checkMastery">Check My Work</button></div><div id="results" class="results hidden" aria-live="polite"></div><button id="retryMastery" class="secondary hidden">Try Again</button><button class="complete-btn" data-complete="mastery">Mark Check Complete ✓</button></section>
-<section class="lesson panel reflection"><div class="section-title"><span class="icon">💭</span><div><p class="eyebrow">LOOK BACK</p><h2>Think About Your Learning</h2></div></div><p>How do you feel about mental addition?</p><div class="choices" id="reflection"><button>😊 I can do it!</button><button>🙂 I need more practice.</button><button>🤔 I want help.</button></div><p id="reflectionFeedback" class="feedback"></p><button id="resetBtn" class="reset-btn">Reset My Progress</button></section>
-</main>
-<footer class="footer"><img src="assets/teacher-ed-logo.png" alt="Teacher Ed Learning Hub logo"><div><b>Teacher Ed Learning Hub</b><p>Learn • Practice • Play • Master</p><small>Teacher Ed · Educational Learning Website</small></div><button id="footerFull" class="small-btn">⛶ Fullscreen</button></footer>
-<script src="script.js"></script>
-</body></html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173b70" />
+    <title>Grade 2 Mental Addition | Teacher Ed Learning Hub</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home"
+        ><img
+          src="assets/teacher-ed-logo.png"
+          alt="Teacher Ed Learning Hub logo"
+        /><span
+          ><b>TEACHER ED LEARNING HUB</b
+          ><small>Learn • Practice • Play • Master</small></span
+        ></a
+      >
+      <div class="top-actions">
+        <button id="soundBtn" class="small-btn" aria-pressed="false">
+          🔊 Sound: Off</button
+        ><button id="fullBtn" class="small-btn">⛶ Fullscreen</button>
+      </div>
+    </header>
+    <main id="home" class="shell">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">GRADE 2 MATHEMATICS • LEARNING ADVENTURE</p>
+          <h1>Mental Addition <span>Mission!</span></h1>
+          <p class="lead">
+            Learn smart ways to add. Build numbers, spot patterns, and help
+            Stella count sea turtles!
+          </p>
+          <div class="hero-buttons">
+            <button class="primary" data-go="connect">Start Learning →</button
+            ><button class="secondary" data-go="map">View Mission Map</button>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="sun">☀️</div>
+          <div class="island">🏝️</div>
+          <div class="turtles">🐢 🐢<br />🐢 🐢</div>
+          <div class="bubble">Think smart.<br />Add with confidence!</div>
+        </div>
+      </section>
+      <section class="progress-panel panel">
+        <div class="progress-head">
+          <div>
+            <b>Your learning progress</b
+            ><small id="progressText">0 of 8 learning stops completed</small>
+          </div>
+          <div class="stats">
+            <span>⭐ <b id="stars">0</b></span
+            ><span>🏅 <b id="badges">0</b></span>
+          </div>
+        </div>
+        <div class="progress-track"><div id="progressBar"></div></div>
+      </section>
+      <nav id="map" class="mission-map panel">
+        <h2>🗺️ Your Mission Map</h2>
+        <div class="map-grid">
+          <button data-go="connect"><span>1</span>Connect</button
+          ><button data-go="teach"><span>2</span>Learn</button
+          ><button data-go="model"><span>3</span>Watch Me</button
+          ><button data-go="guided"><span>4</span>Let's Do It</button
+          ><button data-go="practice"><span>5</span>Your Turn</button
+          ><button data-go="games"><span>6</span>Game Zone</button
+          ><button data-go="apply"><span>7</span>Brain Challenge</button
+          ><button data-go="mastery"><span>8</span>Mastery Check</button>
+        </div>
+      </nav>
+      <section id="connect" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">👋</span>
+          <div>
+            <p class="eyebrow">STOP 1</p>
+            <h2>Connect: What Do You Know?</h2>
+          </div>
+        </div>
+        <p>
+          Imagine you have <b>25 shells</b> and find <b>7 more</b>. You can
+          count all of them, or use a smart strategy!
+        </p>
+        <div class="visual-row">
+          <div class="shell-pile">🐚 🐚 🐚 🐚 🐚</div>
+          <div class="plus">+</div>
+          <div class="shell-pile">🐚 🐚</div>
+          <div class="equals">= ?</div>
+        </div>
+        <p class="question">Which is a smart first step for 25 + 7?</p>
+        <div class="choices" data-question="connect">
+          <button data-answer="a">Count from 1</button
+          ><button data-answer="b">Make the next ten: 25 + 5 + 2</button
+          ><button data-answer="c">Subtract 7</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button class="hint-btn" data-hint="connect">💡 Need a hint?</button>
+        <p class="hint hidden" id="hint-connect">
+          25 needs 5 to become 30. Split 7 into 5 and 2.
+        </p>
+        <button class="complete-btn" data-complete="connect">
+          Mark Connect Complete ✓
+        </button>
+      </section>
+      <section id="teach" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">📘</span>
+          <div>
+            <p class="eyebrow">STOP 2</p>
+            <h2>Learn: Three Smart Strategies</h2>
+          </div>
+        </div>
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="make10">Make a Ten</button
+          ><button class="tab" data-tab="compatible">Compatible Numbers</button
+          ><button class="tab" data-tab="properties">
+            Addition Properties
+          </button>
+        </div>
+        <div class="tab-content" id="make10">
+          <h3>Strategy 1: Make a friendly ten</h3>
+          <p>
+            Break a number apart to make the next ten. This can make mental
+            addition easier.
+          </p>
+          <div class="equation-card">
+            <div class="number-bond">
+              <span class="whole">7</span>
+              <div><span>5</span><span>2</span></div>
+            </div>
+            <div>
+              <b>25 + 7</b>
+              <p>25 + <mark>5</mark> + 2</p>
+              <p>30 + 2 = <strong>32</strong></p>
+            </div>
+          </div>
+          <p class="mini-note">
+            Singapore Math: part–part–whole number bonds help us see how a
+            number can be split.
+          </p>
+        </div>
+        <div class="tab-content hidden" id="compatible">
+          <h3>Strategy 2: Use compatible numbers</h3>
+          <p>
+            <b>Compatible numbers</b> are numbers that are easy to add mentally.
+          </p>
+          <div class="equation-card">
+            <div class="number-bond">
+              <span class="whole">44</span>
+              <div><span>40</span><span>4</span></div>
+            </div>
+            <div>
+              <b>12 + 23 + 44</b>
+              <p>12 + 23 = 35</p>
+              <p>35 + 44 = <strong>79</strong></p>
+            </div>
+          </div>
+          <p>Look for pairs or groups that make a friendly ten or hundred.</p>
+        </div>
+        <div class="tab-content hidden" id="properties">
+          <h3>Strategy 3: Use properties of addition</h3>
+          <div class="property-grid">
+            <article>
+              <b>🔄 Commutative</b>
+              <p>Switch the addends.</p>
+              <code>7 + 4 = 4 + 7</code><small>The sum stays 11.</small>
+            </article>
+            <article>
+              <b>🧺 Associative</b>
+              <p>Change the grouping.</p>
+              <code>(2 + 8) + 3 = 2 + (8 + 3)</code
+              ><small>The sum stays 13.</small>
+            </article>
+            <article>
+              <b>🪄 Identity</b>
+              <p>Add zero. The number stays the same.</p>
+              <code>76 + 0 = 76</code><small>Zero changes nothing.</small>
+            </article>
+          </div>
+        </div>
+        <div class="check-box">
+          <b>Quick check</b>
+          <p id="quickQ">Which property lets us change the order of addends?</p>
+          <div class="choices" data-question="quick">
+            <button data-answer="a">Identity</button
+            ><button data-answer="b">Commutative</button
+            ><button data-answer="c">Associative</button>
+          </div>
+          <p class="feedback" aria-live="polite"></p>
+        </div>
+        <button class="complete-btn" data-complete="teach">
+          Mark Learning Complete ✓
+        </button>
+      </section>
+      <section id="model" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">👩‍🏫</span>
+          <div>
+            <p class="eyebrow">STOP 3 • I DO</p>
+            <h2>Watch Me: Add Mentally</h2>
+          </div>
+        </div>
+        <div class="model-problem">
+          <p class="eyebrow">EXAMPLE</p>
+          <h3>27 + 43 = ?</h3>
+          <div class="step" id="modelStep">
+            Step 1: Break 27 into 20 + 7 and 43 into 40 + 3.
+          </div>
+          <div class="step-visual" id="stepVisual">
+            <span>27</span><span>+</span><span>43</span>
+          </div>
+          <div class="model-controls">
+            <button class="secondary" id="prevStep">← Back</button
+            ><span id="stepCount">Step 1 of 4</span
+            ><button class="primary" id="nextStep">Next Step →</button>
+          </div>
+        </div>
+        <p class="mini-note">
+          Think in parts: tens first, then ones. 20 + 40 = 60 and 7 + 3 = 10, so
+          60 + 10 = 70.
+        </p>
+        <button class="complete-btn" data-complete="model">
+          I Understand ✓
+        </button>
+      </section>
+      <section id="guided" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">🤝</span>
+          <div>
+            <p class="eyebrow">STOP 4 • WE DO</p>
+            <h2>Let's Do It Together</h2>
+          </div>
+        </div>
+        <p>Use the number bond to solve <b>18 + 32</b>.</p>
+        <div class="bar-model">
+          <div class="bar-label">18</div>
+          <div class="bar">
+            <span class="part blue">10</span><span class="part pink">8</span>
+          </div>
+          <div class="bar-label">32</div>
+          <div class="bar">
+            <span class="part blue">30</span><span class="part pink">2</span>
+          </div>
+        </div>
+        <p class="question">First, add the tens: 10 + 30 = ?</p>
+        <div class="choices" data-question="guided">
+          <button data-answer="a">30</button><button data-answer="b">40</button
+          ><button data-answer="c">50</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button class="hint-btn" data-hint="guided">💡 Need a hint?</button>
+        <p class="hint hidden" id="hint-guided">
+          Add 1 ten and 3 tens. That makes 4 tens.
+        </p>
+        <button class="complete-btn" data-complete="guided">
+          Guided Practice Complete ✓
+        </button>
+      </section>
+      <section id="practice" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">✏️</span>
+          <div>
+            <p class="eyebrow">STOP 5 • YOU DO</p>
+            <h2>Your Turn: Practice</h2>
+          </div>
+        </div>
+        <p>Answer these three questions. Take your time.</p>
+        <div id="practiceQuiz" class="quiz"></div>
+        <div class="quiz-footer">
+          <span id="practiceScore">0 of 3 correct</span
+          ><button class="primary" id="checkPractice">Check My Answers</button>
+        </div>
+        <p id="practiceFeedback" class="feedback" aria-live="polite"></p>
+        <button class="complete-btn" data-complete="practice">
+          Practice Complete ✓
+        </button>
+      </section>
+      <section id="games" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">🎮</span>
+          <div>
+            <p class="eyebrow">STOP 6</p>
+            <h2>Game Zone: Choose Your Challenge</h2>
+          </div>
+        </div>
+        <div class="game-grid">
+          <article class="game-card">
+            <span>🎯</span>
+            <h3>Quick Pick</h3>
+            <p>Choose the correct sum.</p>
+            <button class="primary game-start" data-game="quick">Play</button>
+          </article>
+          <article class="game-card">
+            <span>🧠</span>
+            <h3>Property Detective</h3>
+            <p>Find the rule being used.</p>
+            <button class="primary game-start" data-game="property">
+              Play
+            </button>
+          </article>
+          <article class="game-card">
+            <span>🔐</span>
+            <h3>Unlock the Door</h3>
+            <p>Solve a sum to earn a code digit.</p>
+            <button class="primary game-start" data-game="door">Play</button>
+          </article>
+        </div>
+        <div id="gameArea" class="game-area hidden"></div>
+        <button class="complete-btn" data-complete="games">
+          Game Zone Complete ✓
+        </button>
+      </section>
+      <section id="apply" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">🐢</span>
+          <div>
+            <p class="eyebrow">STOP 7</p>
+            <h2>Brain Challenge: Help Stella!</h2>
+          </div>
+        </div>
+        <div class="story-card">
+          <div class="turtle-art">🐢 🐢 🐢<br />🐢 🐢 🐢</div>
+          <div>
+            <p>
+              Stella sees a turtle nest with <b>43 eggs</b> and another nest
+              with <b>27 eggs</b>.
+            </p>
+            <p>How many eggs are there in all?</p>
+          </div>
+        </div>
+        <div class="choices" data-question="apply">
+          <button data-answer="a">60 eggs</button
+          ><button data-answer="b">70 eggs</button
+          ><button data-answer="c">80 eggs</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button class="hint-btn" data-hint="apply">💡 Need a hint?</button>
+        <p class="hint hidden" id="hint-apply">
+          Add the tens: 40 + 20 = 60. Add the ones: 3 + 7 = 10. Then 60 + 10 =
+          70.
+        </p>
+        <button class="complete-btn" data-complete="apply">
+          Challenge Complete ✓
+        </button>
+      </section>
+      <section id="mastery" class="lesson panel">
+        <div class="section-title">
+          <span class="icon">🏆</span>
+          <div>
+            <p class="eyebrow">STOP 8</p>
+            <h2>Final Mastery Check</h2>
+          </div>
+        </div>
+        <p>Show what you know! Five new questions. You can try again.</p>
+        <div id="masteryQuiz" class="quiz"></div>
+        <div class="quiz-footer">
+          <span id="masteryScore">Not checked yet</span
+          ><button class="primary" id="checkMastery">Check My Work</button>
+        </div>
+        <div id="results" class="results hidden" aria-live="polite"></div>
+        <button id="retryMastery" class="secondary hidden">Try Again</button
+        ><button class="complete-btn" data-complete="mastery">
+          Mark Check Complete ✓
+        </button>
+      </section>
+      <section class="lesson panel reflection">
+        <div class="section-title">
+          <span class="icon">💭</span>
+          <div>
+            <p class="eyebrow">LOOK BACK</p>
+            <h2>Think About Your Learning</h2>
+          </div>
+        </div>
+        <p>How do you feel about mental addition?</p>
+        <div class="choices" id="reflection">
+          <button>😊 I can do it!</button
+          ><button>🙂 I need more practice.</button
+          ><button>🤔 I want help.</button>
+        </div>
+        <p id="reflectionFeedback" class="feedback"></p>
+        <button id="resetBtn" class="reset-btn">Reset My Progress</button>
+      </section>
+    </main>
+    <footer class="footer">
+      <img
+        src="assets/teacher-ed-logo.png"
+        alt="Teacher Ed Learning Hub logo"
+      />
+      <div>
+        <b>Teacher Ed Learning Hub</b>
+        <p>Learn • Practice • Play • Master</p>
+        <small>Teacher Ed · Educational Learning Website</small>
+      </div>
+      <button id="footerFull" class="small-btn">⛶ Fullscreen</button>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

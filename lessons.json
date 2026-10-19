@@ -1343,8 +1343,19 @@
     "featured" : false,
     "icon" : "calculator"
 
-  }
+  },
 
+  {
+    "title":"Science 1 | Human Beings, Change and Grow" ,
+    "subject":"Science",
+    "grade":"Grade 1",
+    "description" : "Your body, skills, friendships, and feelings can change as you grow. Learn in small steps, practice, and play to remember!",
+    "file" : "lessons/science/grade-1/Human_Beings_Change_and_Grow_Website/index.html",
+    "date" : "2026-10-20",  
+    "featured" : false,
+    "icon" : "user-round"
+
+  }
 
   
 ]

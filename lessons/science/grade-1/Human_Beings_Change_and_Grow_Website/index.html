@@ -1,0 +1,1351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#102c59" />
+    <title>Human Beings Change and Grow | Teacher Ed Learning Hub</title>
+    <link rel="icon" href="assets/teacher-ed-logo.png" />
+    <style>
+      :root {
+        --n: #102c59;
+        --b: #2367b5;
+        --g: #f4bd3d;
+        --ink: #17243a;
+        --m: #607087;
+        --line: #dce5ef;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #f5f8fc;
+        color: var(--ink);
+        font:
+          16px/1.55 system-ui,
+          Arial,
+          sans-serif;
+      }
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px max(14px, calc((100% - 1120px) / 2));
+        background: white;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .brand img {
+        width: 55px;
+        height: 55px;
+        object-fit: contain;
+      }
+      .brand b {
+        display: block;
+        color: var(--n);
+        font-size: 13px;
+      }
+      .brand small {
+        color: var(--m);
+      }
+      button {
+        cursor: pointer;
+        border: 1px solid #ccd9e8;
+        border-radius: 12px;
+        background: #eef3fa;
+        color: var(--n);
+        padding: 11px 14px;
+        min-height: 44px;
+        font-weight: 800;
+      }
+      button:focus-visible {
+        outline: 3px solid var(--g);
+        outline-offset: 3px;
+      }
+      .primary {
+        background: var(--n);
+        color: white;
+        border-color: var(--n);
+      }
+      main {
+        max-width: 1120px;
+        margin: auto;
+        padding: 20px 16px 35px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 20px;
+        align-items: center;
+        background: linear-gradient(125deg, #eaf4ff, #fff9e8);
+        border: 1px solid #d7e6f6;
+        border-radius: 25px;
+        padding: 28px;
+      }
+      .eyebrow {
+        color: var(--b);
+        font-weight: 900;
+        font-size: 11px;
+        letter-spacing: 0.12em;
+      }
+      h1 {
+        font-size: clamp(36px, 5vw, 55px);
+        line-height: 1.04;
+        color: var(--n);
+        margin: 8px 0;
+      }
+      h1 span {
+        color: var(--b);
+      }
+      .chips {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+        margin-top: 15px;
+      }
+      .chips span,
+      .badge {
+        padding: 6px 10px;
+        border-radius: 99px;
+        background: white;
+        border: 1px solid var(--line);
+        font-size: 12px;
+        font-weight: 800;
+      }
+      .art {
+        min-height: 210px;
+        border-radius: 20px;
+        background: #ffffffa8;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        gap: 12px;
+        color: var(--n);
+      }
+      .growth {
+        font-size: 60px;
+        background: white;
+        border: 2px solid #dbe7f6;
+        border-radius: 100px;
+        padding: 10px;
+      }
+      .growth span {
+        font-size: 28px;
+        color: var(--g);
+      }
+      #menu,
+      .progress,
+      .card,
+      .source {
+        background: white;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        box-shadow: 0 10px 26px #1830530d;
+        padding: 19px;
+        margin-top: 17px;
+      }
+      .hidden {
+        display: none !important;
+      }
+      #menu h2 {
+        margin: 0 0 12px;
+        color: var(--n);
+      }
+      #closeMenu {
+        float: right;
+      }
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px;
+      }
+      .menu-grid button {
+        text-align: left;
+        background: #f7faff;
+      }
+      .menu-grid small {
+        display: block;
+        color: var(--m);
+        font-weight: 500;
+      }
+      .progress > div:first-child {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+      }
+      .muted,
+      .progress span {
+        color: var(--m);
+      }
+      .track {
+        height: 9px;
+        border-radius: 99px;
+        background: #e9eef5;
+        overflow: hidden;
+        margin: 10px 0;
+      }
+      .track i {
+        display: block;
+        width: 0;
+        height: 100%;
+        background: linear-gradient(90deg, var(--b), var(--g));
+      }
+      .stats {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+        font-size: 13px;
+        color: var(--m);
+      }
+      .lesson {
+        display: none;
+      }
+      .lesson.active {
+        display: block;
+      }
+      .lesson h2 {
+        color: var(--n);
+        font-size: clamp(25px, 3vw, 33px);
+        margin: 28px 0 15px;
+      }
+      .cols {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 14px;
+      }
+      .tint {
+        background: #f2f8ff;
+      }
+      .card h3 {
+        color: var(--n);
+        margin: 5px 0 9px;
+      }
+      .big {
+        font-size: 48px;
+      }
+      .choices {
+        display: grid;
+        gap: 8px;
+        margin: 12px 0;
+      }
+      .choices button {
+        text-align: left;
+        background: white;
+        color: var(--ink);
+      }
+      .choices button.correct {
+        background: #eaf8f1;
+        border-color: #46a780;
+      }
+      .choices button.incorrect {
+        background: #fff0f0;
+        border-color: #d87575;
+      }
+      .choices button:disabled {
+        cursor: default;
+      }
+      .feedback {
+        min-height: 24px;
+        font-weight: 800;
+        color: #16825d;
+      }
+      .feedback.bad {
+        color: #a34d3d;
+      }
+      .hinttext,
+      .note {
+        padding: 12px;
+        border-radius: 12px;
+        background: #fff8df;
+        border: 1px solid #f3df9b;
+        color: #66521d;
+        margin-top: 12px;
+      }
+      .next {
+        margin-top: 14px;
+      }
+      .concepts {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 11px;
+      }
+      .concept {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        text-align: left;
+        background: white;
+        border: 1px solid var(--line);
+        border-top: 4px solid var(--b);
+        padding: 15px;
+        border-radius: 16px;
+        min-height: 175px;
+        color: var(--ink);
+      }
+      .concept span {
+        font-size: 32px;
+      }
+      .concept em {
+        display: none;
+        font-style: normal;
+        border-top: 1px solid var(--line);
+        padding-top: 8px;
+        font-size: 14px;
+      }
+      .concept.open em {
+        display: block;
+      }
+      .concept strong {
+        color: var(--b);
+        font-size: 12px;
+        margin-top: auto;
+      }
+      .physical {
+        border-top-color: #3277c7;
+      }
+      .mental {
+        border-top-color: #e0ad34;
+      }
+      .social {
+        border-top-color: #32a17b;
+      }
+      .emotional {
+        border-top-color: #c85d8b;
+      }
+      .model {
+        display: grid;
+        grid-template-columns: 140px 1fr;
+        gap: 16px;
+        align-items: center;
+      }
+      .game {
+        text-align: center;
+      }
+      .game .choices {
+        max-width: 650px;
+        margin: 14px auto;
+        text-align: left;
+      }
+      .results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        margin: 16px 0;
+      }
+      .results div {
+        padding: 14px;
+        text-align: center;
+        background: #f1f6fc;
+        border-radius: 14px;
+      }
+      .results b {
+        display: block;
+        font-size: 23px;
+        color: var(--b);
+      }
+      textarea {
+        width: 100%;
+        border: 1px solid #cbd8e7;
+        border-radius: 12px;
+        padding: 12px;
+        font: inherit;
+      }
+      footer {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 32px;
+        border-top: 1px solid var(--line);
+        padding: 18px 0;
+        color: var(--n);
+      }
+      footer img {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+      }
+      .sourcegrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+      }
+      .sourcegrid figure {
+        margin: 0;
+        padding: 8px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+      }
+      .sourcegrid img {
+        width: 100%;
+        height: 290px;
+        object-fit: contain;
+        background: #eef2f7;
+      }
+      .sourcegrid figcaption {
+        font-size: 13px;
+        font-weight: 800;
+        padding: 5px;
+      }
+      @media (max-width: 800px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .menu-grid,
+        .concepts {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .sourcegrid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 540px) {
+        header {
+          padding: 9px;
+          align-items: flex-start;
+        }
+        .brand img {
+          width: 40px;
+          height: 40px;
+        }
+        .brand b {
+          font-size: 10px;
+        }
+        .brand small {
+          font-size: 10px;
+        }
+        .actions button {
+          font-size: 12px;
+          padding: 8px;
+        }
+        main {
+          padding: 12px;
+        }
+        .hero {
+          padding: 19px;
+        }
+        .cols,
+        .model {
+          grid-template-columns: 1fr;
+        }
+        .menu-grid,
+        .concepts,
+        .sourcegrid {
+          grid-template-columns: 1fr;
+        }
+        .concept {
+          min-height: unset;
+        }
+        .results {
+          grid-template-columns: 1fr;
+        }
+        .sourcegrid img {
+          height: 350px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          scroll-behavior: auto !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img
+          src="assets/teacher-ed-logo.png"
+          alt="Teacher Ed Learning Hub logo"
+        />
+        <div>
+          <b>TEACHER ED LEARNING HUB</b
+          ><small>Teacher Ed · Science Wonders 2</small>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="menuBtn" class="primary">☰ Lesson Menu</button
+        ><button id="soundBtn">🔈 Sound Off</button>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">SCIENCE · GRADE 2 · LESSON 1</p>
+          <h1>Human Beings<br /><span>Change and Grow</span></h1>
+          <p>
+            Your body, skills, friendships, and feelings can change as you grow.
+            Learn in small steps, practice, and play to remember!
+          </p>
+          <button class="primary" data-open="connect">Start Learning →</button>
+          <button id="sourceBtn">View Textbook Pages</button>
+          <div class="chips">
+            <span>📘 Learn</span><span>🧩 Practice</span><span>🎮 Play</span
+            ><span>🏆 Master</span>
+          </div>
+        </div>
+        <div class="art">
+          <div class="growth">👶 <span>➜</span> 🧒</div>
+          <b>Little by little, we grow and learn.</b>
+        </div>
+      </section>
+      <nav id="menu" class="hidden">
+        <h2>Choose a section <button id="closeMenu">✕</button></h2>
+        <div class="menu-grid">
+          <button data-open="connect">
+            01 · Connect<small>What do you know?</small></button
+          ><button data-open="learn">
+            02 · Learn<small>Four kinds of changes</small></button
+          ><button data-open="watch">
+            03 · Watch Me<small>See an example</small></button
+          ><button data-open="together">
+            04 · Let's Do It<small>Guided practice</small></button
+          ><button data-open="practice">
+            05 · Your Turn<small>Try it yourself</small></button
+          ><button data-open="games">
+            06 · Game Zone<small>Play and remember</small></button
+          ><button data-open="challenge">
+            07 · Final Challenge<small>Check your learning</small></button
+          ><button data-open="results">
+            08 · My Progress<small>Celebrate growth</small>
+          </button>
+        </div>
+      </nav>
+      <section class="progress">
+        <div>
+          <b>Your Learning Progress</b
+          ><span id="plabel">Start with Connect</span><b id="pct">0%</b>
+        </div>
+        <div class="track"><i id="bar"></i></div>
+        <div class="stats">
+          <span>⭐ Stars: <b id="stars">0</b></span
+          ><span>🏅 Best quiz: <b id="best">—</b></span
+          ><span>✓ Sections: <b id="done">0/8</b></span>
+        </div>
+      </section>
+      <section id="connect" class="lesson active">
+        <h2>01 · Connect — What do you know?</h2>
+        <div class="cols">
+          <article class="card tint">
+            <div class="big">👶 ➜ 🧒</div>
+            <h3>Look at the two stages.</h3>
+            <p>
+              A baby is smaller. A child may be taller and can do more things
+              independently. Think about yourself when you were a baby and how
+              you are now.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Choose the best answer.</h3>
+            <p><b>As children grow, what can happen?</b></p>
+            <div class="choices" data-q="connect">
+              <button data-a="0">They never change.</button
+              ><button data-a="1">Their bodies and abilities can change.</button
+              ><button data-a="0">They become babies again.</button>
+            </div>
+            <p class="feedback" aria-live="polite"></p>
+            <button
+              data-hint="Think about getting taller, learning to read, and making friends."
+            >
+              💡 Hint
+            </button>
+          </article>
+        </div>
+        <button class="primary next" data-open="learn" data-done="connect">
+          I’m ready to learn →
+        </button>
+      </section>
+      <section id="learn" class="lesson">
+        <h2>02 · Learn — Four kinds of changes</h2>
+        <p>Tap each card to learn more.</p>
+        <div class="concepts">
+          <button class="concept physical">
+            <span>💪</span><b>Physical Changes</b
+            ><small>Changes in your body</small
+            ><em
+              >You may become taller and bigger. Your body changes in size and
+              shape. Temporary teeth can be replaced by permanent teeth.</em
+            ><strong>Tap to learn +</strong></button
+          ><button class="concept mental">
+            <span>🧠</span><b>Mental Changes</b
+            ><small>Things you learn to do</small
+            ><em
+              >You learn new skills, such as bathing, dressing, eating, reading,
+              counting, singing, dancing, and doing school experiments more
+              independently.</em
+            ><strong>Tap to learn +</strong></button
+          ><button class="concept social">
+            <span>🤝</span><b>Social Changes</b
+            ><small>How you relate to others</small
+            ><em
+              >You may make friends, play with siblings and classmates,
+              cooperate, and learn sports. Do not talk to strangers you do not
+              know.</em
+            ><strong>Tap to learn +</strong></button
+          ><button class="concept emotional">
+            <span>💗</span><b>Emotional Changes</b
+            ><small>Feelings and values</small
+            ><em
+              >You learn to share, wait for your turn, listen when others speak,
+              cooperate, and develop values and traits.</em
+            ><strong>Tap to learn +</strong>
+          </button>
+        </div>
+        <div class="note">
+          <b>🧠 Remember:</b> Physical = body · Mental = skills and learning ·
+          Social = relationships · Emotional = feelings, sharing, and
+          cooperation.
+        </div>
+        <button class="primary next" data-open="watch" data-done="learn">
+          Show me an example →
+        </button>
+      </section>
+      <section id="watch" class="lesson">
+        <h2>03 · Watch Me — Teacher model</h2>
+        <div class="card model">
+          <div class="big">🧒📚</div>
+          <div>
+            <span class="badge">Example</span>
+            <h3>A child learns to read a book.</h3>
+            <p><b>Step 1:</b> Ask what is changing.</p>
+            <p><b>Step 2:</b> The child is learning a new skill.</p>
+            <p><b>Step 3:</b> Learning a skill is a <b>mental change</b>.</p>
+          </div>
+        </div>
+        <p>
+          <b>Check the model:</b> A child becomes taller. Which kind of change
+          is this?
+        </p>
+        <div class="choices" data-q="model">
+          <button data-a="1">Physical change</button
+          ><button data-a="0">Social change</button
+          ><button data-a="0">Emotional change</button>
+        </div>
+        <p class="feedback" aria-live="polite"></p>
+        <button class="primary next" data-open="together" data-done="watch">
+          Let’s practice together →
+        </button>
+      </section>
+      <section id="together" class="lesson">
+        <h2>04 · Let’s Do It — Guided practice</h2>
+        <div class="card">
+          <p class="muted" id="gc">Question 1 of 3</p>
+          <h3 id="gq">A child learns to tie their shoes.</h3>
+          <p>What kind of change is happening?</p>
+          <div id="gchoices" class="choices"></div>
+          <p id="gf" class="feedback" aria-live="polite"></p>
+          <button id="gh">💡 Hint</button>
+          <button id="gn" class="primary hidden">Next example →</button>
+          <p id="ght" class="hinttext hidden">
+            Ask: Is the body changing, is a skill being learned, or is the child
+            relating to others?
+          </p>
+        </div>
+        <button class="primary next" data-open="practice" data-done="together">
+          I can try on my own →
+        </button>
+      </section>
+      <section id="practice" class="lesson">
+        <h2>05 · Your Turn — Independent practice</h2>
+        <div class="card">
+          <p class="muted" id="pc">Question 1 of 5</p>
+          <div class="track"><i id="pb"></i></div>
+          <h3 id="pq"></h3>
+          <div id="pchoices" class="choices"></div>
+          <p id="pf" class="feedback" aria-live="polite"></p>
+          <button id="ph">💡 Hint</button>
+          <button id="pn" class="primary hidden">Next →</button>
+          <p id="pht" class="hinttext hidden"></p>
+        </div>
+        <button class="primary next" data-open="games" data-done="practice">
+          Go to Game Zone →
+        </button>
+      </section>
+      <section id="games" class="lesson">
+        <h2>06 · Game Zone — Change Detective</h2>
+        <p>
+          <span class="badge">Round <b id="round">1</b>/6</span>
+          <span class="badge">Score <b id="gs">0</b> ⭐</span>
+          <button id="restart">↻ Restart</button>
+        </p>
+        <div class="card game">
+          <div id="emoji" class="big">📏🧒</div>
+          <h3 id="gameq">You become taller as you grow.</h3>
+          <p>Which kind of change is it?</p>
+          <div id="gamechoices" class="choices"></div>
+          <p id="gamef" class="feedback" aria-live="polite"></p>
+          <button id="gamenext" class="primary hidden">Next clue →</button>
+        </div>
+        <button class="primary next" data-open="challenge" data-done="games">
+          Take the Final Challenge →
+        </button>
+      </section>
+      <section id="challenge" class="lesson">
+        <h2>07 · Final Challenge — 10 questions</h2>
+        <p>No timer. Take your time and think carefully.</p>
+        <div class="card">
+          <p class="muted" id="fc">Question 1 of 10</p>
+          <div class="track"><i id="fb"></i></div>
+          <h3 id="fq"></h3>
+          <div id="fchoices" class="choices"></div>
+          <p id="ff" class="feedback" aria-live="polite"></p>
+          <button id="fn" class="primary hidden">Next question →</button>
+          <div id="fsum" class="note hidden"></div>
+        </div>
+      </section>
+      <section id="results" class="lesson">
+        <h2>08 · Your learning report</h2>
+        <div class="card">
+          <div class="big">🏆</div>
+          <h3 id="rt">Every step helps you grow!</h3>
+          <p id="rr">Complete the Final Challenge to see your result.</p>
+          <div class="results">
+            <div><b id="rs">—</b><small>Final score</small></div>
+            <div><b id="rst">0 ⭐</b><small>Stars earned</small></div>
+            <div><b id="rm">Not yet</b><small>Progress</small></div>
+          </div>
+          <h3>Things to remember</h3>
+          <ul>
+            <li>Physical changes affect the body.</li>
+            <li>Mental changes include learning new skills.</li>
+            <li>Social changes relate to friends and other people.</li>
+            <li>
+              Emotional changes include feelings, sharing, listening, and
+              cooperation.
+            </li>
+          </ul>
+          <label for="reflection"
+            ><b>What is one thing you learned? (Optional)</b></label
+          ><textarea
+            id="reflection"
+            rows="3"
+            placeholder="I learned that..."
+          ></textarea>
+          <p>
+            <button id="saveR" class="primary">Save reflection</button>
+            <button id="retry">Try final challenge again</button>
+            <button id="reset">Reset my progress</button>
+          </p>
+          <p id="rf" class="feedback"></p>
+        </div>
+      </section>
+      <section id="sources" class="source hidden">
+        <h2>Textbook pages you provided</h2>
+        <p>Reference photos for this lesson.</p>
+        <div class="sourcegrid">
+          <figure>
+            <img
+              src="assets/lesson-page-3.jpg"
+              alt="Past and Present activity"
+            />
+            <figcaption>Past and Present</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lesson-page-4.jpg" alt="Physical changes" />
+            <figcaption>Physical Changes</figcaption>
+          </figure>
+          <figure>
+            <img
+              src="assets/lesson-page-5.jpg"
+              alt="Physical changes continued"
+            />
+            <figcaption>Physical Changes — continued</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lesson-page-6.jpg" alt="Mental changes" />
+            <figcaption>Mental Changes</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lesson-page-7.jpg" alt="Social changes" />
+            <figcaption>Social Changes</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/lesson-page-8.jpg" alt="Emotional changes" />
+            <figcaption>Emotional Changes & Science Words</figcaption>
+          </figure>
+        </div>
+        <button id="closeSources">Close textbook pages</button>
+      </section>
+      <footer>
+        <img src="assets/teacher-ed-logo.png" alt="" />
+        <div>
+          <b>Teacher Ed Learning Hub</b><br />Learn • Practice • Play •
+          Master<br /><small>Teacher Ed · Interactive Science Lesson</small>
+        </div>
+      </footer>
+    </main>
+    <script>
+      (() => {
+        const $ = (id) => document.getElementById(id),
+          all = (s, r = document) => [...r.querySelectorAll(s)],
+          ids = [
+            "connect",
+            "learn",
+            "watch",
+            "together",
+            "practice",
+            "games",
+            "challenge",
+            "results",
+          ];
+        let done = new Set(),
+          stars = 0,
+          best = 0,
+          sound = false;
+        try {
+          let s = JSON.parse(localStorage.getItem("growLesson") || "{}");
+          done = new Set(s.done || []);
+          stars = s.stars || 0;
+          best = s.best || 0;
+        } catch (e) {}
+        function save() {
+          try {
+            localStorage.setItem(
+              "growLesson",
+              JSON.stringify({ done: [...done], stars, best }),
+            );
+          } catch (e) {}
+          update();
+        }
+        function update() {
+          let p = Math.round((done.size / 8) * 100);
+          $("pct").textContent = p + "%";
+          $("bar").style.width = p + "%";
+          $("done").textContent = done.size + "/8";
+          $("stars").textContent = stars;
+          $("best").textContent = best ? best + "/10" : "—";
+          $("plabel").textContent = done.size + " of 8 sections completed";
+        }
+        function complete(id) {
+          done.add(id);
+          save();
+        }
+        function open(id) {
+          all(".lesson").forEach((s) =>
+            s.classList.toggle("active", s.id === id),
+          );
+          $("menu").classList.add("hidden");
+          if (id === "practice") rp();
+          if (id === "games") rg();
+          if (id === "challenge") rf();
+          window.scrollTo({
+            top:
+              document.getElementById(id).getBoundingClientRect().top +
+              scrollY -
+              10,
+            behavior: "smooth",
+          });
+        }
+        $("menuBtn").onclick = () => $("menu").classList.toggle("hidden");
+        $("closeMenu").onclick = () => $("menu").classList.add("hidden");
+        all("[data-open]").forEach(
+          (b) =>
+            (b.onclick = () => {
+              if (b.dataset.done) complete(b.dataset.done);
+              open(b.dataset.open);
+            }),
+        );
+        $("sourceBtn").onclick = () => $("sources").classList.toggle("hidden");
+        $("closeSources").onclick = () => $("sources").classList.add("hidden");
+        $("soundBtn").onclick = () => {
+          sound = !sound;
+          $("soundBtn").textContent = sound ? "🔊 Sound On" : "🔈 Sound Off";
+          if (sound && "speechSynthesis" in window)
+            speechSynthesis.speak(new SpeechSynthesisUtterance("Sound is on"));
+        };
+        function wire(box, fb, correct) {
+          all("button[data-a]", box).forEach(
+            (b) =>
+              (b.onclick = () => {
+                if (b.disabled) return;
+                let ok = b.dataset.a === "1";
+                all("button", box).forEach((x) => {
+                  x.disabled = true;
+                  if (x.dataset.a === "1") x.classList.add("correct");
+                });
+                if (!ok) b.classList.add("incorrect");
+                fb.textContent = ok
+                  ? "Excellent! That is correct."
+                  : "Let’s think again. Look at the main change.";
+                fb.classList.toggle("bad", !ok);
+                if (ok) {
+                  stars++;
+                  save();
+                  if (sound && "speechSynthesis" in window)
+                    speechSynthesis.speak(
+                      new SpeechSynthesisUtterance("Excellent"),
+                    );
+                }
+                if (correct) correct(ok);
+              }),
+          );
+        }
+        all(".choices[data-q]").forEach((b) =>
+          wire(b, b.parentElement.querySelector(".feedback")),
+        );
+        all("[data-hint]").forEach(
+          (b) =>
+            (b.onclick = () => {
+              let p = b.nextElementSibling;
+              if (!p || !p.classList.contains("hinttext")) {
+                p = document.createElement("p");
+                p.className = "hinttext";
+                p.textContent = b.dataset.hint;
+                b.after(p);
+              } else p.classList.toggle("hidden");
+            }),
+        );
+        all(".concept").forEach(
+          (c) =>
+            (c.onclick = () => {
+              c.classList.toggle("open");
+              c.querySelector("strong").textContent = c.classList.contains(
+                "open",
+              )
+                ? "Tap to close −"
+                : "Tap to learn +";
+              complete("learn");
+            }),
+        );
+        const guided = [
+          [
+            "A child learns to tie their shoes.",
+            "Mental change",
+            "Tying shoes is a skill the child learns.",
+          ],
+          [
+            "A child grows taller.",
+            "Physical change",
+            "Height is a change in the body.",
+          ],
+          [
+            "A child learns to share toys with friends.",
+            "Emotional change",
+            "Sharing and cooperation are described as emotional changes.",
+          ],
+        ];
+        let gi = 0;
+        function rguided() {
+          let q = guided[gi];
+          $("gc").textContent = `Question ${gi + 1} of 3`;
+          $("gq").textContent = q[0];
+          $("gchoices").innerHTML = [
+            "Physical change",
+            "Mental change",
+            "Social change",
+            "Emotional change",
+          ]
+            .map((x) => `<button data-v="${x}">${x}</button>`)
+            .join("");
+          $("gf").textContent = "";
+          $("gn").classList.add("hidden");
+          all("#gchoices button").forEach(
+            (b) =>
+              (b.onclick = () => {
+                if (b.disabled) return;
+                all("#gchoices button").forEach((x) => (x.disabled = true));
+                let ok = b.dataset.v === q[1];
+                if (ok) {
+                  stars++;
+                  save();
+                  b.classList.add("correct");
+                } else {
+                  b.classList.add("incorrect");
+                  all("#gchoices button").forEach((x) => {
+                    if (x.dataset.v === q[1]) x.classList.add("correct");
+                  });
+                }
+                $("gf").textContent =
+                  (ok ? "Great thinking! " : "Let’s think again. ") + q[2];
+                $("gf").classList.toggle("bad", !ok);
+                $("gn").classList.remove("hidden");
+              }),
+          );
+        }
+        $("gh").onclick = () => $("ght").classList.toggle("hidden");
+        $("gn").onclick = () => {
+          if (gi < 2) {
+            gi++;
+            rguided();
+          } else {
+            complete("together");
+            $("gq").textContent = "You practiced all three examples!";
+            $("gchoices").innerHTML = "";
+            $("gf").textContent = "Ready to try independently?";
+            $("gn").classList.add("hidden");
+          }
+        };
+        rguided();
+        const prac = [
+          [
+            "You learn to count and read.",
+            "Mental change",
+            "Think about learning a new skill.",
+          ],
+          [
+            "You make friends and play together.",
+            "Social change",
+            "Think about relationships with other people.",
+          ],
+          [
+            "Your body becomes bigger as you grow.",
+            "Physical change",
+            "Think about body size and shape.",
+          ],
+          [
+            "You learn to wait for your turn.",
+            "Emotional change",
+            "The lesson connects waiting and cooperation with emotional changes.",
+          ],
+          [
+            "You learn to dress by yourself.",
+            "Mental change",
+            "This is a skill you learn to do independently.",
+          ],
+        ];
+        let pi = 0,
+          ps = 0;
+        function rp() {
+          if (pi >= 5) {
+            $("pq").textContent = `Practice complete! You scored ${ps}/5.`;
+            $("pchoices").innerHTML = "";
+            $("pf").textContent =
+              "Review difficult examples, then continue to the games.";
+            $("pn").classList.add("hidden");
+            $("pb").style.width = "100%";
+            complete("practice");
+            return;
+          }
+          let q = prac[pi];
+          $("pc").textContent = `Question ${pi + 1} of 5`;
+          $("pb").style.width = (pi / 5) * 100 + "%";
+          $("pq").textContent = q[0];
+          $("pchoices").innerHTML = [
+            "Physical change",
+            "Mental change",
+            "Social change",
+            "Emotional change",
+          ]
+            .sort(() => Math.random() - 0.5)
+            .map((x) => `<button data-v="${x}">${x}</button>`)
+            .join("");
+          $("pf").textContent = "";
+          $("pn").classList.add("hidden");
+          $("pht").textContent = q[2];
+          $("pht").classList.add("hidden");
+          all("#pchoices button").forEach(
+            (b) =>
+              (b.onclick = () => {
+                if (b.disabled) return;
+                all("#pchoices button").forEach((x) => (x.disabled = true));
+                let ok = b.dataset.v === q[1];
+                if (ok) {
+                  ps++;
+                  stars++;
+                  save();
+                  b.classList.add("correct");
+                } else {
+                  b.classList.add("incorrect");
+                  all("#pchoices button").forEach((x) => {
+                    if (x.dataset.v === q[1]) x.classList.add("correct");
+                  });
+                }
+                $("pf").textContent =
+                  (ok ? "Excellent! " : "Not quite. ") + q[2];
+                $("pf").classList.toggle("bad", !ok);
+                $("pn").classList.remove("hidden");
+                $("pn").textContent = pi === 4 ? "Finish practice" : "Next →";
+              }),
+          );
+        }
+        $("ph").onclick = () => $("pht").classList.toggle("hidden");
+        $("pn").onclick = () => {
+          pi++;
+          rp();
+        };
+        const kinds = [
+            "Physical change",
+            "Mental change",
+            "Social change",
+            "Emotional change",
+          ],
+          games = [
+            ["📏🧒", "You become taller as you grow.", "Physical change"],
+            ["📖🧠", "You learn to read a story.", "Mental change"],
+            ["🧒🤝🧒", "You make friends and play together.", "Social change"],
+            [
+              "🧸🙂",
+              "You learn to share and wait for your turn.",
+              "Emotional change",
+            ],
+            [
+              "🦷",
+              "Temporary teeth are replaced by permanent teeth.",
+              "Physical change",
+            ],
+            ["🎶💃", "You learn to sing and dance.", "Mental change"],
+          ];
+        let gi2 = 0,
+          gs = 0;
+        function rg() {
+          if (gi2 >= 6) {
+            $("gameq").textContent = `Game complete! You scored ${gs}/6.`;
+            $("emoji").textContent = "🏆";
+            $("gamechoices").innerHTML = "";
+            $("gamef").textContent = "Nice work, Change Detective!";
+            $("gamenext").classList.add("hidden");
+            complete("games");
+            return;
+          }
+          let q = games[gi2];
+          $("round").textContent = gi2 + 1;
+          $("gs").textContent = gs;
+          $("emoji").textContent = q[0];
+          $("gameq").textContent = q[1];
+          $("gamef").textContent = "";
+          $("gamenext").classList.add("hidden");
+          let opts = [
+            q[2],
+            ...kinds
+              .filter((x) => x !== q[2])
+              .sort(() => Math.random() - 0.5)
+              .slice(0, 2),
+          ].sort(() => Math.random() - 0.5);
+          $("gamechoices").innerHTML = opts
+            .map((x) => `<button data-v="${x}">${x}</button>`)
+            .join("");
+          all("#gamechoices button").forEach(
+            (b) =>
+              (b.onclick = () => {
+                if (b.disabled) return;
+                all("#gamechoices button").forEach((x) => (x.disabled = true));
+                let ok = b.dataset.v === q[2];
+                if (ok) {
+                  gs++;
+                  stars++;
+                  save();
+                  b.classList.add("correct");
+                } else {
+                  b.classList.add("incorrect");
+                  all("#gamechoices button").forEach((x) => {
+                    if (x.dataset.v === q[2]) x.classList.add("correct");
+                  });
+                }
+                $("gs").textContent = gs;
+                $("gamef").textContent = ok
+                  ? "You found it! Great detective work."
+                  : "Look at the clue: " + q[2] + " is the best answer.";
+                $("gamef").classList.toggle("bad", !ok);
+                $("gamenext").classList.remove("hidden");
+                $("gamenext").textContent =
+                  gi2 === 5 ? "Finish game" : "Next clue →";
+              }),
+          );
+        }
+        $("gamenext").onclick = () => {
+          gi2++;
+          rg();
+        };
+        $("restart").onclick = () => {
+          gi2 = 0;
+          gs = 0;
+          rg();
+        };
+        const fq = [
+          [
+            "Which is an example of a physical change?",
+            "Your body becomes taller.",
+            [
+              "You make a new friend.",
+              "Your body becomes taller.",
+              "You learn to count.",
+            ],
+          ],
+          [
+            "A child learns to put on shoes independently. This is a…",
+            "Mental change",
+            ["Mental change", "Social change", "Physical change"],
+          ],
+          [
+            "Playing a game with classmates is most closely related to…",
+            "Social change",
+            kinds,
+          ],
+          [
+            "Which behavior shows sharing and cooperation?",
+            "Taking turns with others.",
+            [
+              "Taking turns with others.",
+              "Always grabbing first.",
+              "Ignoring the speaker.",
+            ],
+          ],
+          [
+            "Temporary teeth may later be replaced by…",
+            "Permanent teeth",
+            ["Permanent teeth", "Hair", "Bones"],
+          ],
+          [
+            "You learn to read and count. This is a…",
+            "Mental change",
+            ["Emotional change", "Mental change", "Physical change"],
+          ],
+          [
+            "Which behavior matches emotional changes?",
+            "Learning to listen and wait for our turn.",
+            [
+              "Never listening.",
+              "Learning to listen and wait for our turn.",
+              "Never sharing.",
+            ],
+          ],
+          [
+            "What should you do about strangers you do not know?",
+            "Do not talk to them.",
+            [
+              "Go anywhere with them.",
+              "Share private details.",
+              "Do not talk to them.",
+            ],
+          ],
+          [
+            "Which is a physical change?",
+            "Changes in body size and shape.",
+            [
+              "Changes in body size and shape.",
+              "Making friends.",
+              "Learning to sing.",
+            ],
+          ],
+          [
+            "Why do people change as they grow?",
+            "They grow and develop in their bodies and abilities.",
+            [
+              "They only change clothes.",
+              "They grow and develop in their bodies and abilities.",
+              "They never learn skills.",
+            ],
+          ],
+        ];
+        let fi = 0,
+          fs = 0,
+          miss = [],
+          order = [];
+        function rf() {
+          if (fi === 0 && !order.length)
+            order = fq.map((_, i) => i).sort(() => Math.random() - 0.5);
+          if (fi >= 10) {
+            let pct = fs * 10,
+              label =
+                pct >= 90
+                  ? "MASTERED"
+                  : pct >= 80
+                    ? "ALMOST THERE"
+                    : pct >= 70
+                      ? "GOOD PROGRESS"
+                      : "KEEP PRACTICING";
+            $("fq").textContent = "Challenge complete!";
+            $("fchoices").innerHTML = "";
+            $("ff").textContent = "";
+            $("fn").classList.add("hidden");
+            $("fb").style.width = "100%";
+            $("fsum").classList.remove("hidden");
+            $("fsum").innerHTML =
+              `<h3>${pct >= 90 ? "🌟 Excellent work!" : "🌱 You kept learning!"}</h3><p>You scored <b>${fs}/10 (${pct}%)</b> — <b>${label}</b>.</p>${miss.length ? "<b>Review these ideas:</b><ul>" + miss.map((x) => `<li>${x[0]}<br><b>Remember:</b> ${x[1]}</li>`).join("") + "</ul>" : "You answered every question correctly. Great work!"}<button id="viewReport" class="primary">View my learning report →</button>`;
+            best = Math.max(best, fs);
+            complete("challenge");
+            $("rt").textContent =
+              pct >= 90
+                ? "Lesson Master!"
+                : pct >= 80
+                  ? "Almost There!"
+                  : pct >= 70
+                    ? "Good Progress!"
+                    : "Keep Practicing!";
+            $("rr").textContent =
+              `You answered ${fs} out of 10 questions correctly.`;
+            $("rs").textContent = fs + "/10";
+            $("rst").textContent = stars + " ⭐";
+            $("rm").textContent = label;
+            save();
+            $("viewReport").onclick = () => {
+              complete("results");
+              open("results");
+            };
+            return;
+          }
+          let q = fq[order[fi]];
+          $("fc").textContent = `Question ${fi + 1} of 10`;
+          $("fb").style.width = (fi / 10) * 100 + "%";
+          $("fq").textContent = q[0];
+          $("fchoices").innerHTML = [...q[2]]
+            .sort(() => Math.random() - 0.5)
+            .map((x) => `<button data-v="${x}">${x}</button>`)
+            .join("");
+          $("ff").textContent = "";
+          $("fn").classList.add("hidden");
+          $("fsum").classList.add("hidden");
+          all("#fchoices button").forEach(
+            (b) =>
+              (b.onclick = () => {
+                if (b.disabled) return;
+                all("#fchoices button").forEach((x) => (x.disabled = true));
+                let ok = b.textContent === q[1];
+                if (ok) {
+                  fs++;
+                  stars++;
+                  save();
+                  b.classList.add("correct");
+                } else {
+                  b.classList.add("incorrect");
+                  all("#fchoices button").forEach((x) => {
+                    if (x.textContent === q[1]) x.classList.add("correct");
+                  });
+                  miss.push([q[0], q[1]]);
+                }
+                $("ff").textContent = ok
+                  ? "Correct! Keep going."
+                  : "Let’s think again. Remember: " + q[1];
+                $("ff").classList.toggle("bad", !ok);
+                $("fn").classList.remove("hidden");
+                $("fn").textContent =
+                  fi === 9 ? "See my result" : "Next question →";
+              }),
+          );
+        }
+        $("fn").onclick = () => {
+          fi++;
+          rf();
+        };
+        $("retry").onclick = () => {
+          fi = 0;
+          fs = 0;
+          miss = [];
+          order = [];
+          open("challenge");
+          rf();
+        };
+        $("saveR").onclick = () =>
+          ($("rf").textContent = $("reflection").value.trim()
+            ? "Reflection saved on this page."
+            : "Write one short idea first, if you wish.");
+        $("reset").onclick = () => {
+          if (confirm("Reset stars, best score, and completed sections?")) {
+            localStorage.removeItem("growLesson");
+            location.reload();
+          }
+        };
+        update();
+        rp();
+        rg();
+        rf();
+      })();
+    </script>
+  </body>
+</html>
