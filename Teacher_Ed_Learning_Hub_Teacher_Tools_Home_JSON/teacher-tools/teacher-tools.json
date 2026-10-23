@@ -113,6 +113,14 @@
       "file": "Teacher_Ed_Teaching_Methods_Masterclass/index.html",
       "status": "available",
       "icon": "layout-dashboard"
+    },
+    {
+      "id": "ACADEMIC PERSPECTIVE",
+      "title": "Irrelevance of Life and Works of Rizalto Music Students",
+      "description": "A student perspective on curriculum relevance, specialized training, and the place of general education in a Bachelor of Music program.",
+      "file": "rizal_music_opinion_article.html",
+      "status": "available",
+      "icon": "layout-dashboard"
     }
   ]
 }

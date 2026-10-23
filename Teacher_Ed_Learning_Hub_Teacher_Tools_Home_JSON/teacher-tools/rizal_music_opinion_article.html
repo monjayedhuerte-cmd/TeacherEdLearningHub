@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101d3a">
+  <title>Is Life and Works of Rizal Necessary for Music Students? | Teacher Ed Learning Hub</title>
+
+  <!-- Replace this path with the actual logo/favicon file in your website repository.
+       This displays in the browser tab only; it does not add a logo to the article body. -->
+  <link rel="icon" type="image/png" href="../teacher-tools/assets/teacher-ed-logo.png">
+  <meta name="description" content="An opinion article examining the relevance of Life and Works of Rizal in a Bachelor of Music performance curriculum.">
+
+  <style>
+    :root {
+      --navy: #101d3a;
+      --navy-2: #192b50;
+      --gold: #d7ad55;
+      --gold-light: #f3dfaa;
+      --ink: #20283a;
+      --muted: #667085;
+      --paper: #ffffff;
+      --surface: #f4f6fa;
+      --line: #e4e8f0;
+      --shadow: 0 18px 55px rgba(16, 29, 58, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(215,173,85,.13), transparent 28rem),
+        linear-gradient(180deg, #f4f6fa 0%, #edf1f7 100%);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.75;
+    }
+
+    .reading-progress {
+      position: fixed; inset: 0 auto auto 0; height: 4px; width: 0;
+      background: var(--gold); z-index: 1000; transition: width .08s linear;
+    }
+
+    .site-header {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      color: #fff;
+      padding: 17px 22px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .header-inner {
+      max-width: 1100px; margin: auto; display: flex;
+      align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .brand-text { font-size: .94rem; font-weight: 800; letter-spacing: .07em; }
+    .brand-text span { color: var(--gold-light); }
+    .header-label {
+      font-size: .76rem; color: #d9e0ee; text-transform: uppercase;
+      letter-spacing: .13em; text-align: right;
+    }
+
+    .page { width: min(900px, calc(100% - 32px)); margin: 38px auto 64px; }
+    .article-card {
+      background: rgba(255,255,255,.94);
+      border: 1px solid rgba(255,255,255,.8);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .article-hero {
+      position: relative; overflow: hidden;
+      padding: clamp(28px, 6vw, 58px);
+      color: #fff;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(215,173,85,.25), transparent 17rem),
+        linear-gradient(135deg, #101d3a, #20365f);
+    }
+    .article-hero::after {
+      content: "♪"; position: absolute; right: 28px; bottom: -70px;
+      font-family: Georgia, serif; font-size: 18rem; line-height: 1;
+      color: rgba(255,255,255,.045); pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      color: var(--gold-light); text-transform: uppercase;
+      letter-spacing: .15em; font-size: .73rem; font-weight: 800;
+      margin-bottom: 17px;
+    }
+    .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--gold); }
+    h1 {
+      position: relative; z-index: 1; max-width: 720px; margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 5vw, 3.45rem); line-height: 1.13;
+      letter-spacing: -.035em;
+    }
+    .subtitle {
+      position: relative; z-index: 1; max-width: 650px;
+      color: #dce4f2; font-size: 1.04rem; margin: 20px 0 0;
+    }
+    .article-meta {
+      display: flex; flex-wrap: wrap; gap: 10px; margin-top: 27px;
+      position: relative; z-index: 1;
+    }
+    .meta-chip {
+      border: 1px solid rgba(255,255,255,.19);
+      background: rgba(255,255,255,.07); color: #f4f6fb;
+      border-radius: 999px; padding: 6px 12px; font-size: .78rem;
+    }
+
+    .article-body { padding: clamp(24px, 5.5vw, 54px); }
+    .intro-note {
+      border-left: 4px solid var(--gold); padding: 15px 18px;
+      background: #fbf7ec; border-radius: 0 12px 12px 0;
+      color: #4c5362; margin-bottom: 34px; font-size: .97rem;
+    }
+    .article-section { margin: 0 0 30px; }
+    .article-section h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy); font-size: clamp(1.35rem, 3vw, 1.7rem);
+      line-height: 1.3; margin: 0 0 12px;
+      display: flex; align-items: baseline; gap: 12px;
+    }
+    .section-number {
+      color: var(--gold); font-family: Inter, sans-serif;
+      font-size: .78rem; letter-spacing: .08em; font-weight: 800;
+    }
+    .article-section p { margin: 0; color: #384153; font-size: 1.02rem; }
+    .article-section p + p { margin-top: 14px; }
+
+    .key-idea {
+      margin: 35px 0; padding: 23px 25px; border-radius: 16px;
+      background: linear-gradient(135deg, #f7f1e2, #fffaf0);
+      border: 1px solid #eadbb8;
+    }
+    .key-idea .label {
+      display: block; color: #8a6727; font-size: .72rem;
+      text-transform: uppercase; letter-spacing: .13em; font-weight: 850;
+      margin-bottom: 7px;
+    }
+    .key-idea p {
+      margin: 0; color: var(--navy); font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.23rem; line-height: 1.55;
+    }
+
+    .article-actions {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      padding-top: 25px; margin-top: 34px; border-top: 1px solid var(--line);
+    }
+    .action-btn {
+      appearance: none; border: 1px solid #d6dce7; border-radius: 10px;
+      padding: 10px 15px; font: inherit; font-size: .9rem; font-weight: 700;
+      cursor: pointer; background: #fff; color: var(--navy);
+      transition: transform .18s ease, background .18s ease;
+    }
+    .action-btn:hover { transform: translateY(-1px); background: #f6f8fc; }
+    .action-btn.primary { background: var(--navy); border-color: var(--navy); color: #fff; }
+    .action-btn.primary:hover { background: #20365f; }
+
+    .site-footer {
+      max-width: 900px; margin: 0 auto; padding: 0 16px 35px;
+      text-align: center; color: var(--muted); font-size: .84rem;
+    }
+    .site-footer strong { color: var(--navy); }
+
+    @media (max-width: 600px) {
+      .site-header { padding: 14px 16px; }
+      .header-label { font-size: .65rem; max-width: 110px; }
+      .page { width: min(100% - 20px, 900px); margin: 18px auto 35px; }
+      .article-card { border-radius: 16px; }
+      .article-hero { padding: 29px 23px 32px; }
+      .article-hero::after { right: 8px; font-size: 12rem; }
+      .article-body { padding: 25px 22px 28px; }
+      .article-section p { font-size: .98rem; }
+      .key-idea { padding: 19px; }
+      .action-btn { flex: 1 1 auto; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      .reading-progress, .site-header, .article-actions, .site-footer { display: none !important; }
+      .page { width: 100%; margin: 0; }
+      .article-card { box-shadow: none; border: 0; }
+      .article-hero { background: #fff !important; color: #000; padding: 0 0 24px; }
+      .article-hero h1 { color: #111; }
+      .subtitle, .meta-chip { color: #333; }
+      .meta-chip { border-color: #bbb; }
+      .article-body { padding: 0; }
+      .article-section { break-inside: avoid; }
+      .article-section h2 { color: #111; }
+      .article-section p { color: #222; }
+      .key-idea { background: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand-text">TEACHER ED <span>LEARNING HUB</span></div>
+      <div class="header-label">Teacher Tools · Opinion Article</div>
+    </div>
+  </header>
+
+  <main class="page">
+    <article class="article-card">
+      <header class="article-hero">
+        <div class="eyebrow">Academic Perspective</div>
+        <h1>Irrelevance of "Life and Works of Rizal" to Music Students</h1>
+        <p class="subtitle">A student perspective on curriculum relevance, specialized training, and the place of general education in a Bachelor of Music program.</p>
+        <div class="article-meta">
+          <span class="meta-chip">Music Performance · Piano Emphasis</span>
+          <span class="meta-chip">Universidad de Sta. Isabel</span>
+          <span class="meta-chip">Opinion Article</span>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="intro-note">
+          This article questions the course’s fit within a music performance curriculum—not the historical importance of José Rizal or the value of Philippine history.
+        </div>
+
+        <section class="article-section">
+          <h2><span class="section-number">01</span> A Question of Relevance</h2>
+          <p>As a college student pursuing a Bachelor of Music in Music Performance (Piano Emphasis) at Universidad de Sta. Isabel, I find it unnecessary for “Life and Works of Rizal” to be a required course in my program. The course may teach us about Rizal’s contributions to Philippine history, but its necessity for my field can be questioned in light of the specific skills, practice hours, rehearsals, and demanding instrument mastery that music performance requires.</p>
+          <p>Music students spend years developing their skills through practice, theory and harmony, composition, music history, and other areas directly related to their future careers as performers. In comparison, studying Rizal’s biography, novels, and historical contributions does not necessarily improve our musical technique or instrumental proficiency. With demanding practice schedules and academic requirements, a course with little direct application to our specialization can feel like an additional burden.</p>
+        </section>
+
+        <section class="article-section">
+          <h2><span class="section-number">02</span> The Opportunity Cost</h2>
+          <p>Another concern is the opportunity cost of requiring the subject. College students have limited time and energy, and every required course takes time away from other academic activities. Instead of devoting that time to practice and rehearsals, music students must also complete readings, written assignments, and projects related to “Life and Works of Rizal.” Although these tasks may develop general academic skills, they can contribute to an overloaded curriculum that does not always prioritize the practical needs of music students.</p>
+        </section>
+
+        <section class="article-section">
+          <h2><span class="section-number">03</span> Cultural Learning Through Music</h2>
+          <p>The goal of teaching national identity and appreciation for Philippine culture can also be supported through “Music of the Philippines 1 &amp; 2,” major subjects that music students already take and that are more directly connected to our discipline. Filipino folk songs, Indigenous musical instruments and traditions, kundiman, and the works of Filipino composers provide meaningful opportunities to understand and appreciate the country’s cultural heritage through music itself.</p>
+        </section>
+
+        <div class="key-idea">
+          <span class="label">Central distinction</span>
+          <p>Questioning whether a course is required in its current form is not the same as dismissing the historical importance of José Rizal.</p>
+        </div>
+
+        <section class="article-section">
+          <h2><span class="section-number">04</span> Preserve the Legacy, Rethink the Approach</h2>
+          <p>Arguing that “Life and Works of Rizal” is unnecessary for Bachelor of Music students does not mean that Rizal himself is irrelevant or that his contributions should be disregarded. His writings and contributions remain essential to understanding Philippine history. The more reasonable criticism is that requiring every college student to study the course in exactly the same manner may not be the most effective approach for all academic disciplines.</p>
+          <p>The content and teaching methods could be adapted to different programs so that students can better understand the course’s relevance to their future professions. Such an approach would preserve the importance of Rizal’s legacy while making the learning experience more meaningful across disciplines.</p>
+        </section>
+
+        <section class="article-section">
+          <h2><span class="section-number">05</span> Conclusion</h2>
+          <p>“Life and Works of Rizal” may be considered unnecessary in its current form for music students because it has little direct relation to specialized training and adds to an already demanding workload. Although learning about Rizal has historical value, universities should also consider whether the course requirements justify the time taken away from practice, rehearsals, and other activities essential to musical development.</p>
+          <p>A more flexible approach could preserve the importance of Rizal’s legacy while allowing music students to focus more effectively on musical growth and performance preparation. Rather than dismissing Philippine history, the goal should be to ensure that general education courses contribute meaningfully to every college student’s education. - Verdejo K.</p>
+        </section>
+
+        <div class="article-actions" aria-label="Article actions">
+          <button class="action-btn primary" type="button" onclick="window.print()">Print / Save as PDF</button>
+          <button class="action-btn" type="button" id="copyLinkBtn">Copy article link</button>
+          <button class="action-btn" type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <strong>Teacher Ed Learning Hub</strong> · Teach. Lead. Inspire.
+  </footer>
+
+  <script>
+    const progress = document.getElementById('readingProgress');
+    function updateReadingProgress() {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const percentage = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, percentage))}%`;
+    }
+    window.addEventListener('scroll', updateReadingProgress, { passive: true });
+    window.addEventListener('resize', updateReadingProgress);
+    updateReadingProgress();
+
+    document.getElementById('copyLinkBtn').addEventListener('click', async () => {
+      const button = document.getElementById('copyLinkBtn');
+      try {
+        await navigator.clipboard.writeText(window.location.href);
+        button.textContent = 'Link copied!';
+      } catch {
+        window.prompt('Copy this article link:', window.location.href);
+      }
+      window.setTimeout(() => { button.textContent = 'Copy article link'; }, 1800);
+    });
+  </script>
+</body>
+</html>
